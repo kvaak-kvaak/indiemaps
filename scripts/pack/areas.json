@@ -480,11 +480,12 @@
  "eu/gb/england/greater-london/westminster": {
   "name": "Westminster",
   "bbox": [
-   -0.13914,
-   51.48784,
-   -0.11394,
-   51.51304
+   -0.21609,
+   51.48381,
+   -0.11108,
+   51.53981
   ],
-  "fsa": 533
+  "fsa": 533,
+  "bbox_source": "nominatim-boundary"
  }
 }
