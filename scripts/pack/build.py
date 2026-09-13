@@ -44,6 +44,18 @@ def run(cmd, packdir):
         sys.exit(1)
 
 
+def mark_stage(packdir, meta_path, stage):
+    """Record completed stages in meta.json so partial packs are visible."""
+    try:
+        m = json.load(open(meta_path))
+        m.setdefault('stages_ok', [])
+        if stage not in m['stages_ok']:
+            m['stages_ok'].append(stage)
+        json.dump(m, open(meta_path, 'w'), indent=1)
+    except Exception as e:
+        log(packdir, f'could not mark stage {stage}: {e}')
+
+
 def build(area_id, args):
     if area_id not in AREAS:
         sys.exit(f'unknown area {area_id!r} (see areas.json)')
@@ -63,16 +75,20 @@ def build(area_id, args):
         cmd = ['node', 'scripts/build.js', '--bbox', bbox, '--pois', pois, '--meta', meta]
         cmd += ['--fsa', str(a['fsa']) if a.get('fsa') else 'none']
         run(cmd, packdir)
+        mark_stage(packdir, meta, 'base')
     if 'overture' in stages:
         run(['python3', 'scripts/pack/overture.py', '--bbox', bbox,
              '--pois', pois, '--meta', meta], packdir)
+        mark_stage(packdir, meta, 'overture')
     if 'nhs' in stages:
         run(['python3', 'scripts/pack/nhs.py', '--bbox', bbox,
              '--pois', pois, '--meta', meta], packdir)
+        mark_stage(packdir, meta, 'nhs')
     if 'atp' in stages:
         run(['node', 'scripts/atp.js', '--bbox', bbox, '--pois', pois, '--meta', meta,
              '--extract', str(packdir / 'atp-extract.json'),
              '--cache', str(ROOT / 'data' / 'atp' / 'raw')], packdir)
+        mark_stage(packdir, meta, 'atp')
     if 'sites' in stages and (args.sites or args.sites_all or args.only == 'sites'):
         pois_data = json.load(open(pois))
         food = [p for p in pois_data
@@ -94,9 +110,11 @@ def build(area_id, args):
                  '--out', str(packdir / 'site.json'), '--workers', '24',
                  '--resume', '--max-age', '80',  # refresh quarterly, resume crashes freely
                  '--dead-cache', str(ROOT / 'data' / 'dead-domains' / f'{slug}.json')], packdir)
+            mark_stage(packdir, meta, 'sites')
     if 'merge' in stages and (packdir / 'site.json').exists():
         run(['node', 'scripts/merge-site.js', '--in', str(packdir / 'site.json'),
              '--pois', pois, '--meta', meta], packdir)
+        mark_stage(packdir, meta, 'merge')
 
     m = json.load(open(meta))
     pois_data = json.load(open(pois))
@@ -127,13 +145,16 @@ def manifest():
             continue
         m = json.load(open(meta_f))
         counts = m.get('counts', {})
+        stages_ok = m.get('stages_ok', [])
         packs.append({
             'id': area_id, 'name': a['name'], 'bbox': a['bbox'],
             'file': f'{area_id.split("/")[-1]}.json',
             'bytes': pois_f.stat().st_size,
             'total': counts.get('total'), 'built_at': m.get('built_at'),
+            'complete': all(s in stages_ok for s in ('base', 'overture', 'nhs', 'atp')),
+            'stages_ok': stages_ok,
             'sources': {k: v for k, v in m.items()
-                        if k in ('fsa_extract_date', 'atp', 'site')},
+                        if k in ('fsa_extract_date', 'overture', 'nhs', 'atp', 'site')},
         })
     man = {'generated_at': datetime.now(timezone.utc).isoformat(),
            'packs': sorted(packs, key=lambda p: p['id'])}
@@ -161,13 +182,23 @@ def main():
     ids = list(AREAS) if args.all else ([args.area] if args.area else [])
     if not ids:
         sys.exit('give --area ID, --all, or --manifest')
+    failed = []
     for i, aid in enumerate(ids):
         t0 = time.time()
         try:
             build(aid, args)
         except SystemExit as e:
-            print(f'{aid}: {e}')
+            # per-area isolation: one flaky area must not kill the run,
+            # but the run must not pretend it succeeded either
+            failed.append(aid)
+            print(f'{aid}: FAILED ({e})')
         print(f'{aid} done in {time.time()-t0:.0f}s ({i+1}/{len(ids)})')
+    if failed:
+        print(f'\nFAILED AREAS ({len(failed)}):')
+        for aid in failed:
+            print(f'  {aid}')
+        print('re-run with: --areas "' + ' '.join(failed) + '"')
+        sys.exit(1)
 
 
 if __name__ == '__main__':

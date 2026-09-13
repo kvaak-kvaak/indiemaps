@@ -97,16 +97,20 @@ const distM = (a, b, c, d) => Math.hypot((a - c) * 111320, (b - d) * 62500);
 async function fetchOsm() {
   const { s, w, n, e } = BBOX;
   const q = `[out:json][timeout:25];(node["amenity"~"^(restaurant|cafe|pub|bar|fast_food|ice_cream|pharmacy|doctors|dentist|cinema|theatre|arts_centre|library|place_of_worship|clinic|optician)$"](${s},${w},${n},${e});node["shop"](${s},${w},${n},${e});node["tourism"~"^(hotel|guest_house|hostel|attraction|museum|gallery|viewpoint)$"](${s},${w},${n},${e});node["leisure"~"^(park|nature_reserve|miniature_golf|sports_centre)$"](${s},${w},${n},${e}););out 400;`;
-  for (const ep of ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter']) {
-    try {
-      const ctrl = new AbortController();
-      const t = setTimeout(() => ctrl.abort(), 30000);
-      const r = await fetch(ep + '?data=' + encodeURIComponent(q), { headers: { 'User-Agent': 'yellowpages-map-prototype/0.1' }, signal: ctrl.signal });
-      clearTimeout(t);
-      if (!r.ok) continue;
-      const j = await r.json();
-      return (j.elements || []).filter(el => el.tags?.name && el.lat != null && el.lon != null);
-    } catch { /* next endpoint */ }
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  for (let round = 0; round < 3; round++) {
+    for (const ep of ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter']) {
+      try {
+        const ctrl = new AbortController();
+        const t = setTimeout(() => ctrl.abort(), 30000);
+        const r = await fetch(ep + '?data=' + encodeURIComponent(q), { headers: { 'User-Agent': 'yellowpages-map-prototype/0.1' }, signal: ctrl.signal });
+        clearTimeout(t);
+        if (!r.ok) continue;
+        const j = await r.json();
+        return (j.elements || []).filter(el => el.tags?.name && el.lat != null && el.lon != null);
+      } catch { /* next endpoint */ }
+    }
+    if (round < 2) await sleep(15000 * (round + 1)); // Overpass storms pass
   }
   throw new Error('Overpass unavailable on all endpoints');
 }
@@ -136,7 +140,18 @@ async function geocodeMissing(rows) {
   }
 }
 
-const fsa = FSA_ID === 'none' ? null : await (await fetch(FSA_URL)).json();
+let fsa = null;
+if (FSA_ID !== 'none') {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      fsa = await (await fetch(FSA_URL)).json();
+      break;
+    } catch (e) {
+      if (attempt === 2) throw new Error(`FSA download failed: ${FSA_URL}`);
+      await new Promise(r => setTimeout(r, 10000 * (attempt + 1)));
+    }
+  }
+}
 const all = fsa ? fsa.FHRSEstablishment.EstablishmentCollection : [];
 const extractDate = fsa ? fsa.FHRSEstablishment.Header.ExtractDate : null;
 if (fsa) console.log(`FSA extract ${extractDate}, ${all.length} establishments`);

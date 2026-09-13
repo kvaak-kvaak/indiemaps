@@ -22,19 +22,26 @@ S3BASE = f's3://overturemaps-us-west-2/release/{RELEASE}/theme=places/type=place
 
 def pull(w, s, e, n):
     import duckdb
-    con = duckdb.connect()
-    con.execute("INSTALL httpfs; LOAD httpfs;")
-    con.execute("SET s3_region='us-west-2'; SET http_timeout=30000;")
-    rows = con.execute(f"""SELECT id, names.primary AS name,
-      (bbox.xmin+bbox.xmax)/2 AS lon, (bbox.ymin+bbox.ymax)/2 AS lat,
-      addresses[1].postcode AS postcode, websites[1] AS website, phones[1] AS phone
-    FROM read_parquet('{S3BASE}')
-    WHERE bbox.xmin <= {e} AND bbox.xmax >= {w} AND bbox.ymin <= {n} AND bbox.ymax >= {s}
-      AND NOT list_contains(list_distinct([s2.dataset FOR s2 IN sources]), 'Microsoft')
-      AND (len(websites) > 0 OR len(phones) > 0)
-    """).fetchall()
-    cols = ['id', 'name', 'lon', 'lat', 'postcode', 'website', 'phone']
-    return [dict(zip(cols, r)) for r in rows]
+    last = None
+    for attempt in range(3):
+        try:
+            con = duckdb.connect()
+            con.execute("INSTALL httpfs; LOAD httpfs;")
+            con.execute("SET s3_region='us-west-2'; SET http_timeout=30000;")
+            rows = con.execute(f"""SELECT id, names.primary AS name,
+              (bbox.xmin+bbox.xmax)/2 AS lon, (bbox.ymin+bbox.ymax)/2 AS lat,
+              addresses[1].postcode AS postcode, websites[1] AS website, phones[1] AS phone
+            FROM read_parquet('{S3BASE}')
+            WHERE bbox.xmin <= {e} AND bbox.xmax >= {w} AND bbox.ymin <= {n} AND bbox.ymax >= {s}
+              AND NOT list_contains(list_distinct([s2.dataset FOR s2 IN sources]), 'Microsoft')
+              AND (len(websites) > 0 OR len(phones) > 0)
+            """).fetchall()
+            cols = ['id', 'name', 'lon', 'lat', 'postcode', 'website', 'phone']
+            return [dict(zip(cols, r)) for r in rows]
+        except Exception as ex:
+            last = ex
+            time.sleep(15 * (attempt + 1))
+    raise RuntimeError(f'Overture pull failed x3: {str(last)[:120]}')
 
 
 def norm_pc(p):
