@@ -72,20 +72,23 @@ def build(area_id, args):
     log(packdir, f'=== pack {area_id} ({a["name"]}) stages={stages} ===')
 
     if 'base' in stages:
-        cmd = ['node', 'scripts/build.js', '--bbox', bbox, '--pois', pois, '--meta', meta]
+        cmd = ['node', 'scripts/build.js', f'--bbox={bbox}', '--pois', pois, '--meta', meta]
         cmd += ['--fsa', str(a['fsa']) if a.get('fsa') else 'none']
         run(cmd, packdir)
         mark_stage(packdir, meta, 'base')
     if 'overture' in stages:
-        run(['python3', 'scripts/pack/overture.py', '--bbox', bbox,
+        # NOTE: bbox passed as --bbox=<v> (equals form): argparse treats a
+        # space-separated negative longitude as a flag and aborts. Custom
+        # parsers (build.js/atp.js) tolerate both forms; keep '=' everywhere.
+        run(['python3', 'scripts/pack/overture.py', f'--bbox={bbox}',
              '--pois', pois, '--meta', meta], packdir)
         mark_stage(packdir, meta, 'overture')
     if 'nhs' in stages:
-        run(['python3', 'scripts/pack/nhs.py', '--bbox', bbox,
+        run(['python3', 'scripts/pack/nhs.py', f'--bbox={bbox}',
              '--pois', pois, '--meta', meta], packdir)
         mark_stage(packdir, meta, 'nhs')
     if 'atp' in stages:
-        run(['node', 'scripts/atp.js', '--bbox', bbox, '--pois', pois, '--meta', meta,
+        run(['node', 'scripts/atp.js', f'--bbox={bbox}', '--pois', pois, '--meta', meta,
              '--extract', str(packdir / 'atp-extract.json'),
              '--cache', str(ROOT / 'data' / 'atp' / 'raw')], packdir)
         mark_stage(packdir, meta, 'atp')
