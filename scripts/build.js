@@ -94,25 +94,55 @@ function nameScore(a, b) {
 }
 const distM = (a, b, c, d) => Math.hypot((a - c) * 111320, (b - d) * 62500);
 
+const OSM_ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter'];
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+function osmQuery(s, w, n, e) {
+  return `[out:json][timeout:25];(node["amenity"~"^(restaurant|cafe|pub|bar|fast_food|ice_cream|pharmacy|doctors|dentist|cinema|theatre|arts_centre|library|place_of_worship|clinic|optician)$"](${s},${w},${n},${e});node["shop"](${s},${w},${n},${e});node["tourism"~"^(hotel|guest_house|hostel|attraction|museum|gallery|viewpoint)$"](${s},${w},${n},${e});node["leisure"~"^(park|nature_reserve|miniature_golf|sports_centre)$"](${s},${w},${n},${e}););out 400;`;
+}
+
+async function queryOnce(q) {
+  for (const ep of OSM_ENDPOINTS) {
+    try {
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), 30000);
+      const r = await fetch(ep + '?data=' + encodeURIComponent(q), { headers: { 'User-Agent': 'yellowpages-map-prototype/0.1' }, signal: ctrl.signal });
+      clearTimeout(t);
+      if (!r.ok) continue;
+      const j = await r.json();
+      return (j.elements || []).filter(el => el.tags?.name && el.lat != null && el.lon != null);
+    } catch { /* next endpoint */ }
+  }
+  return null;
+}
+
+function splitBbox(s, w, n, e) {
+  const mw = (w + e) / 2, ms = (s + n) / 2;
+  return [[s, w, ms, mw], [s, mw, ms, e], [ms, w, n, mw], [ms, mw, n, e]];
+}
+
 async function fetchOsm() {
   const { s, w, n, e } = BBOX;
-  const q = `[out:json][timeout:25];(node["amenity"~"^(restaurant|cafe|pub|bar|fast_food|ice_cream|pharmacy|doctors|dentist|cinema|theatre|arts_centre|library|place_of_worship|clinic|optician)$"](${s},${w},${n},${e});node["shop"](${s},${w},${n},${e});node["tourism"~"^(hotel|guest_house|hostel|attraction|museum|gallery|viewpoint)$"](${s},${w},${n},${e});node["leisure"~"^(park|nature_reserve|miniature_golf|sports_centre)$"](${s},${w},${n},${e}););out 400;`;
-  const sleep = ms => new Promise(r => setTimeout(r, ms));
   for (let round = 0; round < 3; round++) {
-    for (const ep of ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter']) {
-      try {
-        const ctrl = new AbortController();
-        const t = setTimeout(() => ctrl.abort(), 30000);
-        const r = await fetch(ep + '?data=' + encodeURIComponent(q), { headers: { 'User-Agent': 'yellowpages-map-prototype/0.1' }, signal: ctrl.signal });
-        clearTimeout(t);
-        if (!r.ok) continue;
-        const j = await r.json();
-        return (j.elements || []).filter(el => el.tags?.name && el.lat != null && el.lon != null);
-      } catch { /* next endpoint */ }
-    }
+    const els = await queryOnce(osmQuery(s, w, n, e));
+    if (els) return els;
     if (round < 2) await sleep(15000 * (round + 1)); // Overpass storms pass
   }
-  throw new Error('Overpass unavailable on all endpoints');
+  // ultra-dense bbox (e.g. City of London): split 2x2 and merge, deduped.
+  // tiles overlap at edges; nodes are unique by id so merging is exact.
+  console.log('full-bbox Overpass query failing — sub-tiling 2x2');
+  const seen = new Map();
+  for (const [ts, tw, tn, te] of splitBbox(s, w, n, e)) {
+    let els = null;
+    for (let round = 0; round < 3 && !els; round++) {
+      els = await queryOnce(osmQuery(ts, tw, tn, te));
+      if (!els && round < 2) await sleep(15000 * (round + 1));
+    }
+    if (!els) throw new Error(`Overpass tile failed: ${ts},${tw},${tn},${te}`);
+    for (const el of els) seen.set(el.id, el);
+  }
+  console.log(`tiled query: ${seen.size} unique nodes`);
+  return [...seen.values()];
 }
 
 // Real postcode coordinates for FSA rows missing a geocode (postcode centroid)
