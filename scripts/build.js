@@ -121,28 +121,45 @@ function splitBbox(s, w, n, e) {
   return [[s, w, ms, mw], [s, mw, ms, e], [ms, w, n, mw], [ms, mw, n, e]];
 }
 
-async function fetchOsm() {
-  const { s, w, n, e } = BBOX;
+async function fetchBox(s, w, n, e, depth) {
   for (let round = 0; round < 3; round++) {
     const els = await queryOnce(osmQuery(s, w, n, e));
-    if (els) return els;
+    if (els) {
+      if (els.length >= 400 && depth < 2) {
+        // silent truncation guard: 'out 400' caps dense bboxes (e.g.
+        // Westminster keeps only 400 arbitrary OSM nodes). Sub-tile and merge.
+        console.log(`OSM cap hit (${s},${w},${n},${e}) — sub-tiling`);
+        const seen = new Map();
+        for (const [ts, tw, tn, te] of splitBbox(s, w, n, e))
+          for (const el of await fetchBox(ts, tw, tn, te, depth + 1)) seen.set(el.id, el);
+        return [...seen.values()];
+      }
+      return els;
+    }
     if (round < 2) await sleep(15000 * (round + 1)); // Overpass storms pass
   }
-  // ultra-dense bbox (e.g. City of London): split 2x2 and merge, deduped.
-  // tiles overlap at edges; nodes are unique by id so merging is exact.
-  console.log('full-bbox Overpass query failing — sub-tiling 2x2');
-  const seen = new Map();
-  for (const [ts, tw, tn, te] of splitBbox(s, w, n, e)) {
-    let els = null;
-    for (let round = 0; round < 3 && !els; round++) {
-      els = await queryOnce(osmQuery(ts, tw, tn, te));
-      if (!els && round < 2) await sleep(15000 * (round + 1));
+  throw new Error(`Overpass unavailable: ${s},${w},${n},${e}`);
+}
+
+async function fetchOsm() {
+  const { s, w, n, e } = BBOX;
+  try {
+    return await fetchBox(s, w, n, e, 0);
+  } catch (e) {
+    // last resort for ultra-dense bboxes (e.g. City of London): tile blindly.
+    // Tiles go back through fetchBox so cap-splitting still applies at depth.
+    console.log('full-bbox Overpass query failing — sub-tiling 2x2');
+    const seen = new Map();
+    for (const [ts, tw, tn, te] of splitBbox(s, w, n, e)) {
+      try {
+        for (const el of await fetchBox(ts, tw, tn, te, 1)) seen.set(el.id, el);
+      } catch (e2) {
+        throw new Error(`Overpass tile failed: ${ts},${tw},${tn},${te}`);
+      }
     }
-    if (!els) throw new Error(`Overpass tile failed: ${ts},${tw},${tn},${te}`);
-    for (const el of els) seen.set(el.id, el);
+    console.log(`tiled query: ${seen.size} unique nodes`);
+    return [...seen.values()];
   }
-  console.log(`tiled query: ${seen.size} unique nodes`);
-  return [...seen.values()];
 }
 
 // Real postcode coordinates for FSA rows missing a geocode (postcode centroid)
