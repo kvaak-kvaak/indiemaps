@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Essex Yellow-Pages Map — Southend Prototype</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+<link rel="stylesheet" href="/styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📍</text></svg>" />
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    <div id="brand">
+      <div id="brand-pin">📍</div>
+      <div>
+        <h1>Essex Pages <span id="proto-tag">PROTOTYPE</span></h1>
+        <p>Real local data: FSA + OpenStreetMap + chain hours</p>
+      </div>
+    </div>
+
+    <div id="search-wrap">
+      <span id="search-icon">🔍</span>
+      <input id="search" type="text" placeholder="Search businesses, cafés, pubs…" autocomplete="off" />
+      <button id="clear-search" title="Clear">✕</button>
+      <div id="suggest"></div>
+    </div>
+
+    <div id="chips">
+      <button data-cat="all" class="chip active">All</button>
+      <button data-cat="restaurant" class="chip">🍽️ Food</button>
+      <button data-cat="cafe" class="chip">☕ Cafés</button>
+      <button data-cat="pub" class="chip">🍺 Pubs</button>
+      <button data-cat="shopping" class="chip">🛍️ Shops</button>
+      <button data-cat="hotel" class="chip">🛏️ Hotels</button>
+      <button data-cat="attraction" class="chip">🎡 Days out</button>
+      <button data-cat="culture" class="chip">🎭 Culture</button>
+      <button data-cat="health" class="chip">⚕️ Health</button>
+      <button data-cat="services" class="chip">✂️ Services</button>
+    </div>
+
+    <div id="layer-bar">
+      <div class="segmented">
+        <button id="mode-curated" class="seg active" title="Listings built from FSA + OSM data">📋 Listings</button>
+        <button id="mode-all" class="seg" title="Listings + extra live OpenStreetMap features">🗺️ + OSM live</button>
+      </div>
+      <label id="open-toggle"><input type="checkbox" id="open-now-only" /> Open now</label>
+    </div>
+
+    <div id="stats"><span id="stats-text">Loading…</span><button id="recenter" title="Back to Southend">⌂ Southend</button></div>
+    <div id="results"></div>
+    <footer id="side-foot">Base map © OpenStreetMap · © CARTO · Listings: Food Standards Agency open data + OSM · Photos: Wikimedia Commons · <span id="cfg-link">data sources</span></footer>
+  </aside>
+
+  <main id="map-wrap">
+    <div id="map"></div>
+    <div id="map-hint">Real data only — gaps shown as “unknown”, never filled in</div>
+  </main>
+
+  <section id="detail" class="hidden">
+    <button id="detail-close">← All results</button>
+    <div id="detail-body"></div>
+  </section>
+</div>
+
+<div id="toast"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

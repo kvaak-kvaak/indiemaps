@@ -1,0 +1,117 @@
+{
+ "overture": 28535,
+ "osm_nodes": 1936,
+ "matched": 1166,
+ "match_rate": 0.0409,
+ "overture_only": 27369,
+ "food_overture": 4293,
+ "food_matched": 463,
+ "food_match_rate": 0.1078,
+ "osm_adds_hours": 322,
+ "osm_adds_phone": 284,
+ "osm_adds_website": 422,
+ "overture_has_phone": 24004,
+ "overture_has_website": 23722,
+ "overture_has_postcode": 26636,
+ "atp_feats_in_bbox": 458,
+ "atp_feats_with_hours": 390,
+ "overture_matched_atp": 401,
+ "overture_hours_via_atp": 336,
+ "pairs_with_both_hours": 48,
+ "pairs_hours_agree": 7,
+ "overture_with_any_hours": 350,
+ "overture_hours_coverage": 0.0123,
+ "atp_additive_new_pois": 60,
+ "atp_additive_examples": [
+  {
+   "name": "Aldi",
+   "brand": "Aldi",
+   "postcode": "n41ed",
+   "hours": "Mo-Sa 08:00-22:00; Su 11:00-17:00"
+  },
+  {
+   "name": "Aldi",
+   "brand": "Aldi",
+   "postcode": "e107nq",
+   "hours": "Mo-Sa 08:00-22:00; Su 10:00-16:00"
+  },
+  {
+   "name": "Aldi",
+   "brand": "Aldi",
+   "postcode": "e28jp",
+   "hours": "Mo-Sa 08:00-22:00; Su 11:00-17:00"
+  },
+  {
+   "name": "Aldi",
+   "brand": "Aldi",
+   "postcode": "e14uj",
+   "hours": "Mo-Sa 08:00-22:00; Su 10:00-16:00"
+  },
+  {
+   "name": "Argos",
+   "brand": "Argos",
+   "postcode": "e15sd",
+   "hours": "Mo-Sa 09:00-21:00; Su 11:00-17:00"
+  },
+  {
+   "name": "Argos",
+   "brand": "Argos",
+   "postcode": "ec1v9js",
+   "hours": "Mo-Fr 09:00-20:00; Sa 09:00-19:00; Su 11:00-17:00"
+  },
+  {
+   "name": "Argos",
+   "brand": "Argos",
+   "postcode": "e82lx",
+   "hours": "Mo-Sa 09:00-21:00; Su 11:00-17:00"
+  },
+  {
+   "name": "Argos",
+   "brand": "Argos",
+   "postcode": "e177jy",
+   "hours": "Mo-Sa 09:00-20:00; Su 11:00-17:00"
+  },
+  {
+   "name": "Asda",
+   "brand": "Asda",
+   "postcode": "e15bw",
+   "hours": "24/7"
+  },
+  {
+   "name": "Asda",
+   "brand": "Asda",
+   "postcode": "e105nh",
+   "hours": "24/7"
+  },
+  {
+   "name": "Barclays",
+   "brand": "Barclays",
+   "postcode": "n166ra",
+   "hours": "Mo-Fr 09:30-16:30; Sa-Su closed"
+  },
+  {
+   "name": "",
+   "brand": "bp pulse",
+   "postcode": "e177db",
+   "hours": "Mo-Su 00:00-24:00"
+  },
+  {
+   "name": "",
+   "brand": "bp pulse",
+   "postcode": "e177ab",
+   "hours": "Mo-Su 00:00-24:00"
+  },
+  {
+   "name": "",
+   "brand": "bp pulse",
+   "postcode": "n15lx",
+   "hours": "Mo-Su 00:00-24:00"
+  },
+  {
+   "name": "",
+   "brand": "bp pulse",
+   "postcode": "n167ux",
+   "hours": "Mo-Su 00:00-24:00"
+  }
+ ]
+}

@@ -1,0 +1,3 @@
+output/*.overture.json
+output/*.osm.json
+node_modules/

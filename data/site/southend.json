@@ -1,0 +1,2898 @@
+[
+ {
+  "name": "Asda Cafe",
+  "site": "https://storelocator.asda.com/east-of-england/shoeburyness/north-shoebury-road/cafe",
+  "postcode": "SS3 8DA",
+  "pages": [
+   {
+    "url": "https://storelocator.asda.com/east-of-england/shoeburyness/north-shoebury-road/cafe",
+    "ok": true,
+    "status": 200,
+    "final": "https://storelocator.asda.com/east-of-england/shoeburyness/north-shoebury-road/cafe",
+    "error": null
+   }
+  ],
+  "jsonld": [],
+  "regex": [
+   {
+    "osm": "Mo 08:30-17:00",
+    "raw": "Monday 8:30 AM - 5:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Tu 08:30-17:00",
+    "raw": "Tuesday 8:30 AM - 5:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "We 08:30-17:00",
+    "raw": "Wednesday 8:30 AM - 5:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Th 08:30-17:00",
+    "raw": "Thursday 8:30 AM - 5:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Fr 08:30-17:00",
+    "raw": "Friday 8:30 AM - 5:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Sa 08:30-17:00",
+    "raw": "Saturday 8:30 AM - 5:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Su 10:00-16:00",
+    "raw": "Sunday 10:00 AM - 4:00 PM",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Asda Cafe",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://dynl.mktgcdn.com/p/uxpSIwyZRALdFsUMpGERiKVVeUVlEaMMTBvKbuOZB-E/196x196.png",
+     "kind": "og:image",
+     "w": null,
+     "h": null,
+     "bytes": 3362,
+     "ok": false
+    }
+   ],
+   "menu": [],
+   "description": "Welcome to your Asda Caf\u00e9, the perfect pit stop when completing your shop. Great food at low prices. Just what you\u2019d expect from Asda",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Mo 08:30-17:00; Tu 08:30-17:00; We 08:30-17:00; Th 08:30-17:00; Fr 08:30-17:00; Sa 08:30-17:00; Su 10:00-16:00",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Ask",
+  "site": "https://www.askitalian.co.uk/italian/restaurants/southend-on-sea",
+  "postcode": "SS1 1TJ",
+  "pages": [
+   {
+    "url": "https://www.askitalian.co.uk/italian/restaurants/southend-on-sea",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.askitalian.co.uk/italian-restaurants/east-anglia/southend-on-sea",
+    "error": null
+   },
+   {
+    "url": "https://www.askitalian.co.uk/italian-restaurants",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.askitalian.co.uk/about-us/our-restaurants/families",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.askitalian.co.uk/help/contact-us",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [
+   [
+    "Southend | Unit 7/8, The Broadway London Road",
+    "Mo-Fr 11:30-22:00; Sa 11:30-23:00; Su 11:30-21:00"
+   ]
+  ],
+  "regex": [
+   {
+    "osm": "Mo 11:30-22:00",
+    "raw": "Monday 11:30\u201322:00",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Tu 11:30-22:00",
+    "raw": "Tuesday 11:30\u201322:00",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "We 11:30-22:00",
+    "raw": "Wednesday 11:30\u201322:00",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Th 11:30-22:00",
+    "raw": "Thursday 11:30\u201322:00",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Fr 11:30-22:00",
+    "raw": "Friday 11:30\u201322:00",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Sa 11:30-23:00",
+    "raw": "Saturday 11:30\u201323:00",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Su 11:30-21:00",
+    "raw": "Sunday 11:30\u201321:00",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Italian Restaurant in Southend | ASK Italian | Ask Italian Ask Italian Ask Italian Ask Italian Southend Ask Italian Sout",
+  "identity_match": false,
+  "extras": {
+   "images": [
+    {
+     "url": "https://cdn.sanity.io/images/ysupxjc9/production/e8e350cf65e9f2f48f4584740b44ddc43f06b01c-2048x1365.jpg",
+     "kind": "json-ld",
+     "w": null,
+     "h": null,
+     "bytes": 376611,
+     "ok": true
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/h__U2zvllejg2K5x5bLdsyKcXp8BxYjULMrZBYnqlsM/2048x1365.jpg",
+     "kind": "json-ld",
+     "w": null,
+     "h": null,
+     "bytes": 497393,
+     "ok": true
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/5K07Z3aW9xTzAZrMY6GZMpNHDSJBd6VdOyv31LWWsRg/2048x1365.jpg",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/bhSHiM0rfgJmPGJQpML_UsREsGTZSWB0S3C0aHhO7RQ/2048x1365.jpg",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/3QVPEetDKTmhcf5bftYag8HHFNcg9qjRBzSle8ufJXY/1365x2048.jpg",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://cdn.sanity.io/images/ysupxjc9/production/025376a56702a9823a76e7c32783101473bc9aa1-2134x2134.png",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://www.askitalian.co.uk/menus",
+     "label": "menu",
+     "kind": "page"
+    },
+    {
+     "url": "https://www.askitalian.co.uk/italian-restaurants/east-anglia/southend-on-sea/menus",
+     "label": "view menu",
+     "kind": "page"
+    },
+    {
+     "url": "https://www.askitalian.co.uk/italian-restaurants/east-anglia/southend-on-sea/menus/kids-set-menu",
+     "label": "view kids menu",
+     "kind": "page"
+    }
+   ],
+   "description": "Discover more about ASK Italian restaurant Southend-On-Sea. Opening times, menu directions and more. See our restaurant in Southend-On-Sea.",
+   "cuisine": [
+    "Italian"
+   ],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Mo-Fr 11:30-22:00; Sa 11:30-23:00; Su 11:30-21:00",
+   "method": "json-ld",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Bucatini",
+  "site": "https://bucatini.co.uk/",
+  "postcode": "SS0 7RA",
+  "pages": [
+   {
+    "url": "https://bucatini.co.uk/",
+    "ok": true,
+    "status": 200,
+    "final": "https://bucatini.co.uk/",
+    "error": null
+   },
+   {
+    "url": "https://bucatini.co.uk/",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://bucatini.co.uk/get-in-touch/",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Bucatini | The best in Italian street food",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://bucatini.co.uk/wp-content/uploads/2024/12/favicon-32x32-3.png",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 1379,
+     "ok": false
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://bucatini.co.uk/main/",
+     "label": "main menu",
+     "kind": "page"
+    },
+    {
+     "url": "https://bucatini.co.uk/bucatini-desserts-menu/",
+     "label": "bucatini desserts menu",
+     "kind": "page"
+    }
+   ],
+   "description": "",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": null,
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Caffe Nero",
+  "site": "https://www.caffenero.com/uk/stores/southend",
+  "postcode": "SS1 1LL",
+  "pages": [
+   {
+    "url": "https://www.caffenero.com/uk/stores/southend",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.caffenero.com/uk/stores/southend",
+    "error": null
+   },
+   {
+    "url": "https://www.caffenero.com/uk/help/contact-us",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": " Find A Store - Caff\u00e8 Nero: United Kingdom ",
+  "identity_match": true,
+  "extras": {
+   "images": [],
+   "menu": [
+    {
+     "url": "https://www.caffenero.com/uk/menu/coffee",
+     "label": "coffee",
+     "kind": "page"
+    },
+    {
+     "url": "https://www.caffenero.com/uk/menu/drinks/iced-drinks",
+     "label": "drinks",
+     "kind": "page"
+    },
+    {
+     "url": "https://www.caffenero.com/uk/menu/food/breakfast",
+     "label": "food",
+     "kind": "page"
+    }
+   ],
+   "description": "Locate your nearest Caff\u00e8 Nero.",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": null,
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Costa Coffee",
+  "site": "https://www.costa.co.uk/stores/southend-high-street",
+  "postcode": "SS1 1LL",
+  "pages": [
+   {
+    "url": "https://www.costa.co.uk/stores/southend-high-street",
+    "ok": false,
+    "status": null,
+    "final": null,
+    "error": "timeout: The read operation timed out"
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": false,
+  "js_required": false,
+  "fetch_ok": false
+ },
+ {
+  "name": "Eastwood Chinese Takeaway",
+  "site": "https://www.eastwoodchinesefood.co.uk/",
+  "postcode": "SS9 4LT",
+  "pages": [
+   {
+    "url": "https://www.eastwoodchinesefood.co.uk/",
+    "ok": false,
+    "status": null,
+    "final": null,
+    "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": false,
+  "js_required": false,
+  "fetch_ok": false
+ },
+ {
+  "name": "Favorite Chicken",
+  "site": "https://favorite.co.uk/store-finder/favorite-chicken-ribs-southend.html",
+  "postcode": "SS2 6RL",
+  "pages": [
+   {
+    "url": "https://favorite.co.uk/store-finder/favorite-chicken-ribs-southend.html",
+    "ok": true,
+    "status": 200,
+    "final": "https://favorite.co.uk/store-finder/favorite-chicken-ribs-southend.html",
+    "error": null
+   },
+   {
+    "url": "https://favorite.co.uk/about",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://favorite.co.uk/about?as=1&amp;row=row_2&amp;offset=50",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://favorite.co.uk/contact",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [
+   [
+    "Favorite Chicken &amp; Ribs | 87 Prince Avenue",
+    "Mo-Su 11:30-23:00"
+   ]
+  ],
+  "regex": [],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Favorite Chicken & Ribs Southend Favorite Chicken &amp; Ribs Favorite Chicken &amp; Ribs Southend Southend-on-Sea Essex ",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://a.mktgcdn.com/p/kh_LFr0-Urr-555d18fyhXuhgiIWtATba7T7zGgkV_0/400x400.png",
+     "kind": "og:image",
+     "w": null,
+     "h": null,
+     "bytes": 25601,
+     "ok": true
+    },
+    {
+     "url": "https://favorite.co.uk/assets/img/logo-social.png",
+     "kind": "logo",
+     "w": null,
+     "h": null,
+     "bytes": 23248,
+     "ok": true
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://favorite.co.uk/our-menu",
+     "label": "view menu",
+     "kind": "page"
+    },
+    {
+     "url": "https://deliveroo.co.uk/menu/London/southend-on-sea/favorite-chicken-and-ribs-southend?day=today&amp;geohash=u10mrcucmrd5&amp;time=ASAP",
+     "label": "Menu",
+     "kind": "third-party"
+    }
+   ],
+   "description": "Visit your Favorite Chicken Restaurant in Southend-on-Sea for Britain's Tastiest Chicken. Find our menu, order delivery, and timings here.",
+   "cuisine": [],
+   "price_range": "",
+   "ld_description": "Favorite Traditional Chicken pieces are prepared and cooked in store using only top quality fresh chicken from reliable approved suppliers.\nOur Chicken Fillet Burgers, whether it&apos;s Traditional, Fillet of Fire or Double Ringer, are just that - all tender chicken breast hand prepared and cooked the way only Favorite can. The same for our Crispy Fillet Strips &amp; Chicken Poppas, whole pieces o"
+  },
+  "hours_primary": {
+   "osm": "Mo-Su 11:30-23:00",
+   "method": "json-ld",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Franks",
+  "site": "https://www.frankslos.com",
+  "postcode": null,
+  "pages": [
+   {
+    "url": "https://www.frankslos.com",
+    "ok": false,
+    "status": null,
+    "final": null,
+    "error": "HTTPError: HTTP Error 403: Forbidden"
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": false,
+  "js_required": false,
+  "fetch_ok": false
+ },
+ {
+  "name": "Garrards",
+  "site": "https://www.garrards.co",
+  "postcode": "SS9 1AA",
+  "pages": [
+   {
+    "url": "https://www.garrards.co",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.garrards.co",
+    "error": null
+   },
+   {
+    "url": "https://www.garrards.co",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.garrards.co/general-8",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Garrards Bar and Restaurant | Leigh-on-Sea Garrards Garrards Garrards",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://static.wixstatic.com/media/7c7b84_31ac63a4a9f84b28b6e14a76a22dfa39~mv2.jpg/v1/fill/w_948,h_799,al_c/7c7b84_31ac63a4a9f84b28b6e14a76a22dfa39~mv2.jpg",
+     "kind": "og:image",
+     "w": 948,
+     "h": 799,
+     "bytes": 54279,
+     "ok": true
+    },
+    {
+     "url": "https://static.wixstatic.com/media/7c7b84_31ac63a4a9f84b28b6e14a76a22dfa39~mv2.jpg",
+     "kind": "json-ld",
+     "w": null,
+     "h": null,
+     "bytes": 55857,
+     "ok": true
+    },
+    {
+     "url": "https://static.wixstatic.com/media/7c7b84_31ac63a4a9f84b28b6e14a76a22dfa39%7Emv2.jpg/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/7c7b84_31ac63a4a9f84b28b6e14a76a22dfa39%7Emv2.jpg",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://www.garrards.co/menus",
+     "label": "weekly deals",
+     "kind": "page"
+    },
+    {
+     "url": "https://www.garrards.co",
+     "label": "menus",
+     "kind": "page"
+    },
+    {
+     "url": "https://www.garrards.co/_files/ugd/d4706e_be689bb2e8b24f22b21f8a87659b7f90.pdf",
+     "label": "main menu",
+     "kind": "pdf"
+    }
+   ],
+   "description": "Garrards Bar and Restaurant. Brunch, Booze and Good Food in the heart of Leigh-on-Sea.",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": null,
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "German Doner Kebab",
+  "site": "https://www.gdk.com/gb/gdk-locations/uk/southend-on-sea/177-179-high-street",
+  "postcode": "SS1 1LL",
+  "pages": [
+   {
+    "url": "https://www.gdk.com/gb/gdk-locations/uk/southend-on-sea/177-179-high-street",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.gdk.com/gb/gdk-locations/uk/southend-on-sea/177-179-high-street",
+    "error": null
+   },
+   {
+    "url": "https://www.gdk.com/gb/gdk-locations",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.gdk.com/gb/contact-us",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.gdk.com/gdk-locations/uk/southend-on-sea/177-179-high-street#top",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [
+   {
+    "osm": "Su 11:00-23:00",
+    "raw": "Sunday 11am - 11pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Mo 11:00-23:00",
+    "raw": "Monday 11am - 11pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Tu 11:00-23:00",
+    "raw": "Tuesday 11am - 11pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "We 11:00-23:00",
+    "raw": "Wednesday 11am - 11pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Th 11:00-23:00",
+    "raw": "Thursday 11am - 11pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Fr 11:00-23:00",
+    "raw": "Friday 11am - 11pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Sa 11:00-23:00",
+    "raw": "Saturday 11am - 11pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Su 11:00-00:00",
+    "raw": "Sunday 11am - 12am",
+    "kind": "delivery"
+   },
+   {
+    "osm": "Mo 11:00-00:00",
+    "raw": "Monday 11am - 12am",
+    "kind": "delivery"
+   },
+   {
+    "osm": "Tu 11:00-00:00",
+    "raw": "Tuesday 11am - 12am",
+    "kind": "delivery"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Visit our Southend-on-Sea, 177-179 High St Location | GDK German Doner Kebab",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://media.gdk.com/cdn-cgi/image/width=600,height=400/images/misc/GDK.jpg",
+     "kind": "og:image",
+     "w": null,
+     "h": null,
+     "bytes": 10019,
+     "ok": true
+    },
+    {
+     "url": "https://www.gdk.com/gb/gdk-locations/uk/southend-on-sea/apple-touch-icon.png",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 0,
+     "ok": false
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://www.gdk.com/gb/menu",
+     "label": "the menu the menu",
+     "kind": "page"
+    },
+    {
+     "url": "https://www.gdk.com/gb/our-food",
+     "label": "our food our food",
+     "kind": "page"
+    }
+   ],
+   "description": "Find store hours and information about GDK",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Su 11:00-23:00; Mo 11:00-23:00; Tu 11:00-23:00; We 11:00-23:00; Th 11:00-23:00; Fr 11:00-23:00; Sa 11:00-23:00",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Gunslingers",
+  "site": "https://www.gunslingers.co.uk/",
+  "postcode": "SS0 7RA",
+  "pages": [
+   {
+    "url": "https://www.gunslingers.co.uk/",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.gunslingers.co.uk/",
+    "error": null
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "American Themed Restaurant | Gunslingers Saloon Bar And Grill Gunslingers Gunslingers Saloon Bar and Grill Gunslingers",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://static.wixstatic.com/media/c3bef6_356e831e015c42c9a733b6a32e419898~mv2.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null,
+     "bytes": 1412355,
+     "ok": true
+    },
+    {
+     "url": "https://static.wixstatic.com/media/c3bef6_f63d338a36e84cd0acc839006198c3ab%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/c3bef6_f63d338a36e84cd0acc839006198c3ab%7Emv2.png",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 24723,
+     "ok": true
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://www.gunslingers.co.uk#menu",
+     "label": "menu",
+     "kind": "page"
+    }
+   ],
+   "description": "Wild West themed American restaurant, Gunslingers Saloon Bar & Grill in Westcliff, Essex. See our selection of American inspired dishes, including Burgers, nachos, BBQ ribs and steaks.",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": null,
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Hope Hotel",
+  "site": "https://southendhotel.co.uk/",
+  "postcode": "SS1 2EJ",
+  "pages": [
+   {
+    "url": "https://southendhotel.co.uk/",
+    "ok": true,
+    "status": 200,
+    "final": "https://southendhotel.co.uk/",
+    "error": null
+   },
+   {
+    "url": "https://southendhotel.co.uk/about-us/",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://southendhotel.co.uk/contact-us/",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "The Hope hotel",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://southendhotel.co.uk/wp-content/uploads/2023/05/cropped-fav-180x180.png",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 4413,
+     "ok": false
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://southendhotel.co.uk/testimonial/great-little-find/",
+     "label": "read more \u201cgreat little find!!\u201d",
+     "kind": "page"
+    }
+   ],
+   "description": "",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": null,
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "McDonalds",
+  "site": "https://www.mcdonalds.com/gb/en-gb/location/southend-on-sea/southend-2/high-st---odeon/8260396.html",
+  "postcode": "SS1 1JX",
+  "pages": [
+   {
+    "url": "https://www.mcdonalds.com/gb/en-gb/location/southend-on-sea/southend-2/high-st---odeon/8260396.html",
+    "ok": false,
+    "status": null,
+    "final": null,
+    "error": "timeout: The read operation timed out"
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": false,
+  "js_required": false,
+  "fetch_ok": false
+ },
+ {
+  "name": "Molo Lounge",
+  "site": "https://thelounges.co.uk/molo/",
+  "postcode": "SS1 1LL",
+  "pages": [
+   {
+    "url": "https://thelounges.co.uk/molo/",
+    "ok": true,
+    "status": 200,
+    "final": "https://thelounges.co.uk/molo/",
+    "error": null
+   },
+   {
+    "url": "https://thelounges.co.uk/locations",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://thelounges.co.uk/contact-us",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://thelounges.co.uk/about",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [
+   {
+    "osm": "Su-Th 09:00-22:00",
+    "raw": "Sunday - Thursday 9am - 10pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Fr-Sa 09:00-23:00",
+    "raw": "Friday & Saturday 9am - 11pm",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Lounge Molo in Southend | Seaside caf\u00e9 with coastal charm Lounges Lounges Molo Lounges Home Lounge Molo in Southend | Se",
+  "identity_match": true,
+  "extras": {
+   "images": [],
+   "menu": [
+    {
+     "url": "https://thelounges.co.uk/menus",
+     "label": "menus",
+     "kind": "page"
+    },
+    {
+     "url": "https://thelounges.co.uk/whats-on/spring-summer-2026-menu",
+     "label": "view event",
+     "kind": "page"
+    },
+    {
+     "url": "https://thelounges.co.uk/molo/menus",
+     "label": "view menu",
+     "kind": "page"
+    }
+   ],
+   "description": "Near the beach and cinema, Molo Lounge is a lively caf\u00e9 with floor-to-ceiling windows, bright murals, and a two-storey space for food and fun.",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Su-Th 09:00-22:00; Fr-Sa 09:00-23:00",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Muffin Break",
+  "site": "https://muffinbreak.co.uk/store/southend-sea-high-street/",
+  "postcode": "SS1 1LL",
+  "pages": [
+   {
+    "url": "https://muffinbreak.co.uk/store/southend-sea-high-street/",
+    "ok": true,
+    "status": 200,
+    "final": "https://muffinbreak.co.uk/store/southend-sea-high-street/",
+    "error": null
+   },
+   {
+    "url": "https://muffinbreak.co.uk/contact/",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://muffinbreak.co.uk/our-story/",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [
+   {
+    "osm": "Mo 07:00-18:00",
+    "raw": "Monday 7:00-6:00",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Tu 07:00-18:00",
+    "raw": "Tuesday 7:00-6:00",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "We 07:00-18:00",
+    "raw": "Wednesday 7:00-6:00",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Th 07:00-18:00",
+    "raw": "Thursday 7:00-6:00",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Fr 07:00-18:00",
+    "raw": "Friday 7:00-6:00",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Sa 07:00-18:00",
+    "raw": "Saturday 7:00-6:00",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Su 09:00-17:00",
+    "raw": "Sunday 9:00-5:00",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Southend on Sea : High Street - Muffin Break UK Muffin Break UK Muffin Break UK Southend on Sea : High Street Stores Hom",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://muffinbreak.co.uk/wp-content/uploads/2017/08/69448_img_7051southend.jpg",
+     "kind": "og:image",
+     "w": 650,
+     "h": 487,
+     "bytes": 106769,
+     "ok": true
+    },
+    {
+     "url": "https://muffinbreak.co.uk/wp-content/uploads/2017/09/cropped-icon-words-200x200.png",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 33017,
+     "ok": true
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://muffinbreak.co.uk/",
+     "label": "home of fresh food and great coffee",
+     "kind": "page"
+    },
+    {
+     "url": "https://muffinbreak.co.uk/our-menu/",
+     "label": "our menu",
+     "kind": "page"
+    },
+    {
+     "url": "https://muffinbreak.co.uk/our-menu/coffee/",
+     "label": "coffee",
+     "kind": "page"
+    }
+   ],
+   "description": "Southend on Sea : High Street - Muffin Break UK store - View opening times, directions, and more details.",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Mo 07:00-18:00; Tu 07:00-18:00; We 07:00-18:00; Th 07:00-18:00; Fr 07:00-18:00; Sa 07:00-18:00; Su 09:00-17:00",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Old Walnut Tree",
+  "site": "https://www.greeneking.co.uk/pubs/essex/old-walnut-tree",
+  "postcode": "SS2 4XA",
+  "pages": [
+   {
+    "url": "https://www.greeneking.co.uk/pubs/essex/old-walnut-tree",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.flaminggrillpubs.co.uk/pubs/essex/old-walnut-tree",
+    "error": null
+   },
+   {
+    "url": "https://www.flaminggrillpubs.co.uk/pubs/essex/old-walnut-tree/find-us",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.flaminggrillpubs.co.uk/pubs/essex/old-walnut-tree/book",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [
+   [
+    "Old Walnut Tree",
+    "Mo 11:00-23:00"
+   ],
+   [
+    "Old Walnut Tree",
+    "Tu 11:00-23:00"
+   ],
+   [
+    "Old Walnut Tree",
+    "We 11:00-23:00"
+   ],
+   [
+    "Old Walnut Tree",
+    "Th 11:00-23:00"
+   ],
+   [
+    "Old Walnut Tree",
+    "Fr 11:00-00:00"
+   ],
+   [
+    "Old Walnut Tree",
+    "Sa 11:00-00:00"
+   ],
+   [
+    "Old Walnut Tree",
+    "Su 11:00-22:30"
+   ],
+   [
+    "Old Walnut Tree | Southchurch Boulevard",
+    "Mo 11:00-23:00"
+   ],
+   [
+    "Old Walnut Tree | Southchurch Boulevard",
+    "Tu 11:00-23:00"
+   ],
+   [
+    "Old Walnut Tree | Southchurch Boulevard",
+    "We 11:00-23:00"
+   ],
+   [
+    "Old Walnut Tree | Southchurch Boulevard",
+    "Th 11:00-23:00"
+   ],
+   [
+    "Old Walnut Tree | Southchurch Boulevard",
+    "Fr 11:00-00:00"
+   ],
+   [
+    "Old Walnut Tree | Southchurch Boulevard",
+    "Sa 11:00-00:00"
+   ],
+   [
+    "Old Walnut Tree | Southchurch Boulevard",
+    "Su 11:00-22:30"
+   ]
+  ],
+  "regex": [
+   {
+    "osm": "Su 11:00-22:30",
+    "raw": "Sunday 11:00am - 10:30pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Mo 11:00-23:00",
+    "raw": "Monday 11:00am - 11:00pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Tu 11:00-23:00",
+    "raw": "Tuesday 11:00am - 11:00pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "We 11:00-23:00",
+    "raw": "Wednesday 11:00am - 11:00pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Th 11:00-23:00",
+    "raw": "Thursday 11:00am - 11:00pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Fr 11:00-00:00",
+    "raw": "Friday 11:00am - 12:00am",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Su 11:00-20:00",
+    "raw": "Sunday 11:00am - 8:00pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Mo 11:00-21:00",
+    "raw": "Monday 11:00am - 9:00pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Tu 11:00-21:00",
+    "raw": "Tuesday 11:00am - 9:00pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "We 11:00-21:00",
+    "raw": "Wednesday 11:00am - 9:00pm",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "The Old Walnut Tree Pub Restaurant in Southend-on-Sea,  Old Walnut Tree Essex Pubs home FlamingGrill Old Walnut Tree Old",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://gkbr-p-001.sitecorecontenthub.cloud/api/public/content/852ee25adee1447d837bc52504779ac2?v=9d2dcd56",
+     "kind": "og:image",
+     "w": null,
+     "h": null,
+     "bytes": 0,
+     "ok": false
+    },
+    {
+     "url": "https://gkbr-p-001.sitecorecontenthub.cloud/api/public/content/bbdc244129a94205beecd1d318ea4932?v=15b0d009",
+     "kind": "logo",
+     "w": null,
+     "h": null,
+     "bytes": 303298,
+     "ok": true
+    },
+    {
+     "url": "https://gkbr-p-001.sitecorecontenthub.cloud/api/public/content/d216b55ba05f4eae99688bd61c84779c?v=d5ec9ed9",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://www.flaminggrillpubs.co.uk/pubs/essex/old-walnut-tree/menu",
+     "label": "menu",
+     "kind": "page"
+    },
+    {
+     "url": "https://www.flaminggrillpubs.co.uk/pubs/essex/old-walnut-tree/deals/great-pints",
+     "label": "grab the deal",
+     "kind": "page"
+    },
+    {
+     "url": "https://www.flaminggrillpubs.co.uk/pubs/essex/old-walnut-tree/christmas",
+     "label": "see our christmas day menu",
+     "kind": "page"
+    }
+   ],
+   "description": "Combining good food & drink with friendly service and inviting atmosphere at The Old Walnut Tree in Southend-on-Sea. We can",
+   "cuisine": [],
+   "price_range": "",
+   "ld_description": "Savour the flavour of the grill at the Old Walnut Tree, serving up flame-grilled feasts near the seafront of Southend-on-Sea. Come hungry, as our generous menu delivers seared steaks, stacked burgers and tender chicken wings - all cooked to perfection over an open flame. Quench your thirst with a frosty pint in our beer garden and keep little ones entertained with our outdoor play area. Sports fan"
+  },
+  "hours_primary": {
+   "osm": "Mo 11:00-23:00; Tu 11:00-23:00; We 11:00-23:00; Th 11:00-23:00; Fr 11:00-00:00; Sa 11:00-00:00; Su 11:00-22:30",
+   "method": "json-ld",
+   "kind": "dine-in"
+  },
+  "hours_alt": {
+   "osm": "Su 11:00-22:30; Mo 11:00-23:00; Tu 11:00-23:00; We 11:00-23:00; Th 11:00-23:00; Fr 11:00-00:00; Su 11:00-20:00; Mo 11:00-21:00; Tu 11:00-21:00; We 11:00-21:00",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "internal_conflict": true
+ },
+ {
+  "name": "Padrino Italian Restaurant & Pizzeria",
+  "site": "https://padrinosouthend.co.uk",
+  "postcode": null,
+  "pages": [
+   {
+    "url": "https://padrinosouthend.co.uk",
+    "ok": true,
+    "status": 200,
+    "final": "https://padrinosouthend.co.uk",
+    "error": null
+   },
+   {
+    "url": "https://padrinosouthend.co.uk/about/",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://padrinosouthend.co.uk/contact/",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Home - Padrino Southend Padrino Southend",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://padrinosouthend.co.uk/wp-content/uploads/2019/08/flag.icon_.128.png",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 9063,
+     "ok": true
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://padrinosouthend.co.uk/set-menu/",
+     "label": "set menu",
+     "kind": "page"
+    },
+    {
+     "url": "https://padrinosouthend.co.uk/kids-menu/",
+     "label": "kids menu",
+     "kind": "page"
+    },
+    {
+     "url": "https://padrinosouthend.co.uk/a-la-carte/",
+     "label": "view menu",
+     "kind": "page"
+    }
+   ],
+   "description": "",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": null,
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Pizza Express",
+  "site": "https://www.pizzaexpress.com/southend-london-road",
+  "postcode": "SS1 1PE",
+  "pages": [
+   {
+    "url": "https://www.pizzaexpress.com/southend-london-road",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.pizzaexpress.com/southend-london-road",
+    "error": null
+   },
+   {
+    "url": "https://www.pizzaexpress.com/help-and-contact",
+    "ok": false,
+    "status": null
+   },
+   {
+    "url": "https://www.pizzaexpress.com/about-us/partnerships",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.pizzaexpress.com/about-us",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [
+   [
+    "PizzaExpress | 11 London Road",
+    "Mo,Tu,We,Th,Su 11:30-21:00"
+   ],
+   [
+    "PizzaExpress | 11 London Road",
+    "Fr,Sa 11:30-23:00"
+   ]
+  ],
+  "regex": [],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Italian Restaurant Southend, London Road PizzaExpress",
+  "identity_match": false,
+  "extras": {
+   "images": [
+    {
+     "url": "http://a.mktgcdn.com/p/wnvTXi2x7xmzKsiCAUQVMi14INp7xg14eaL5NQ4gaEY/700x700.png",
+     "kind": "og:image",
+     "w": null,
+     "h": null,
+     "bytes": 41405,
+     "ok": true
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/5hUDQxjfuiMKxcg_ACM6CNT8eZOFJlv8gOIvNMFg09U/1778x1000.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null,
+     "bytes": 2988742,
+     "ok": true
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/cm07lhwOMOa7McenkT9DRXpYgzh7wnTxJNn4UQ0LQPs/3000x1660.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/ZNQ_j4hqsX4-lHDCSegbvPhZuoNvPXErZj07mVe0T4c/3000x3240.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/4R8ndmDonxp_ktcCiop9DSGBRMhp4zgoXNC1HiYDxwI/1000x1007.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/6jDyKEEI3P_-rrqeoDEY_8hgoMY5UgOXl-gFOJuy-Pg/1000x1016.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/pbEhoN7qSOLWk_DwvfeMD3-XmLHDN_GbijOB-nAIwQo/1000x998.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/mhHYru8jxBPeoPS7O0B3gicCRoDZnyLeKCu61HW0g54/1000x726.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/UWFZbitPisiMb7KIEAf9I3zPy7YYYgR4giuB1-RqxDU/1000x562.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/gYZ7A0E1O5Wqe0p1XUJIg3dikP5ArbZkxzIEzh3g4z0/1000x562.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/CoKQBLLTLuFJjVPYlkOfN0dkUjA65XCKWkrtyvu6dB0/1000x562.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/0alNhjsS2fL6_hAkvE8xB8umuCzDgiz2Z1lQu_Nydxw/1000x562.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/wSBiIxwxh-JcTEIsLK9jOb_Ef5YKwzEhR_kAEWrkwgA/1000x1000.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/gWVw47qXuYjDBBNCt96Erl285xBX3dKY4w99XLPcQng/1000x1000.jpg",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/Dvogtk-dXStGAjYW7_QVQ2veyynZspTgkHez4XmLa6Q/640x480.jpg",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/o8tntoD-sMz4ub81cGnl4wySysydFLuvHAvzsEIfcSA/5663x3775.jpg",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://a.mktgcdn.com/p/WIDe6M1g2sdUjY2VJ81ZGAq9tG4NucCaAM4-nxPzxEE/360x270.jpg",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://deliveroo.co.uk/menu/southend-on-sea/southend-on-sea/pizzaexpress-southend-on-sea",
+     "label": "Menu",
+     "kind": "third-party"
+    }
+   ],
+   "description": "Enjoy fresh Italian pizza at PizzaExpress Southend on London Road. Perfect for family meals, dates, and iconic Dough Balls near the pier. Book now.",
+   "cuisine": [],
+   "price_range": "",
+   "ld_description": "Our new Autumn menu is bringing the heat with bold flavours, fiery favourites, and plenty of reasons to round up your friends and grab a table. Book now at PizzaExpress Southend London Road pizzeria or order for takeaway or delivery. Join the PizzaExpress Club and redeem rewards every time, from Dough Balls to a free child's meal."
+  },
+  "hours_primary": {
+   "osm": "Mo,Tu,We,Th,Su 11:30-21:00; Fr,Sa 11:30-23:00",
+   "method": "json-ld",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Pizza Go Go",
+  "site": "https://www.pizzagogo.co.uk/stores/southend",
+  "postcode": "SS0 7LP",
+  "pages": [
+   {
+    "url": "https://www.pizzagogo.co.uk/stores/southend",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.pizzagogo.co.uk/stores/southend",
+    "error": null
+   },
+   {
+    "url": "https://www.pizzagogo.co.uk/about",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.pizzagogo.co.uk/contact",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [
+   {
+    "osm": "Mo 11:30-00:30",
+    "raw": "Mon 11:30 - 00:30",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Tu 11:30-00:30",
+    "raw": "Tues 11:30 - 00:30",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "We 11:30-00:30",
+    "raw": "Wed 11:30 - 00:30",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Fr 11:30-00:30",
+    "raw": "Fri 11:30 - 00:30",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Sa 11:30-00:30",
+    "raw": "Sat 11:30 - 00:30",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Su 11:30-00:30",
+    "raw": "Sun 11:30 - 00:30",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Pizza GoGo Southend - Order fresh Pizza delivery and takeaway",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://www.pizzagogo.co.uk/img/apple/apple-touch-iphone.png",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 7293,
+     "ok": false
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://www.pizzagogo.co.uk/menu",
+     "label": "menu",
+     "kind": "page"
+    }
+   ],
+   "description": "Pizza GoGo Southend pizza delivery and takeaway - Order fresh and hot pizzas online. Fresh dough made daily!",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Mo 11:30-00:30; Tu 11:30-00:30; We 11:30-00:30; Fr 11:30-00:30; Sa 11:30-00:30; Su 11:30-00:30",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Pizza Hut",
+  "site": "https://www.pizzahut.co.uk/huts/uk-1/7590-leigh-on-sea/",
+  "postcode": "SS9 2AB",
+  "pages": [
+   {
+    "url": "https://www.pizzahut.co.uk/huts/uk-1/7590-leigh-on-sea/",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.pizzahut.co.uk/huts/uk-1/7590-leigh-on-sea/",
+    "error": null
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": true,
+  "js_required": true,
+  "fetch_ok": true,
+  "identity": "Pizza Delivery & Takeaway Near You | Pizza Hut UK",
+  "identity_match": true,
+  "extras": {
+   "images": [],
+   "menu": [],
+   "description": "Treat yourself to the best pizza, sides and desserts from your nearest Pizza Hut. Get delivery or takeaway today.",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": null,
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Pizza Hut",
+  "site": "https://www.pizzahut.co.uk/huts/uk-1/7578-westcliff-on-sea/",
+  "postcode": "SS0 7HZ",
+  "pages": [
+   {
+    "url": "https://www.pizzahut.co.uk/huts/uk-1/7578-westcliff-on-sea/",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.pizzahut.co.uk/huts/uk-1/7578-westcliff-on-sea/",
+    "error": null
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": true,
+  "js_required": true,
+  "fetch_ok": true,
+  "identity": "Pizza Delivery & Takeaway Near You | Pizza Hut UK",
+  "identity_match": true,
+  "extras": {
+   "images": [],
+   "menu": [],
+   "description": "Treat yourself to the best pizza, sides and desserts from your nearest Pizza Hut. Get delivery or takeaway today.",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": null,
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Prowse UK Ltd",
+  "site": "https://prowserestaurant.co.uk",
+  "postcode": "SS0 7RN",
+  "pages": [
+   {
+    "url": "https://prowserestaurant.co.uk",
+    "ok": true,
+    "status": 200,
+    "final": "https://prowserestaurant.co.uk",
+    "error": null
+   }
+  ],
+  "jsonld": [
+   [
+    "Prowse Restaurant | 5/6 Shorefield Road",
+    "Mo-Su 12:00-23:00"
+   ]
+  ],
+  "regex": [
+   {
+    "osm": "Mo-Su 12:00-23:00",
+    "raw": "Monday \u2013 Sunday 12:00 PM \u2013 11:00 PM",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Prowse Restaurant \u2014 Westcliff-on-Sea | Mediterranean Dining with Estuary Views Prowse Restaurant Prowse Restaurant",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://www.prowserestaurant.co.uk/img/og-image.webp",
+     "kind": "og:image",
+     "w": null,
+     "h": null,
+     "bytes": 0,
+     "ok": false
+    },
+    {
+     "url": "https://prowserestaurant.co.uk/img/favicon_io/apple-touch-icon.png",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 27939,
+     "ok": true
+    }
+   ],
+   "menu": [],
+   "description": "Prowse Restaurant is a family-run Mediterranean restaurant in Westcliff-on-Sea, Southend-on-Sea. Enjoy fresh food, great service, and stunning Thames Estuary views. Book a table online.",
+   "cuisine": [
+    "Mediterranean",
+    "Turkish",
+    "British"
+   ],
+   "price_range": "\u00a3\u00a3"
+  },
+  "hours_primary": {
+   "osm": "Mo-Su 12:00-23:00",
+   "method": "json-ld",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Slug and Lettuce",
+  "site": "https://www.slugandlettuce.co.uk/southend",
+  "postcode": "SS1 2NE",
+  "pages": [
+   {
+    "url": "https://www.slugandlettuce.co.uk/southend",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.stonegategroup.co.uk/find-your-local/?long=0.71308&lat=51.54002&address=SS1%202NE,%20Southend-on-Sea,%20United%20Kingdom",
+    "error": null
+   },
+   {
+    "url": "https://www.stonegategroup.co.uk/about-us/",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.stonegategroup.co.uk/contact-us/",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": false,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Find your local | Stonegate Group Stonegate Group Stonegate Group Stonegate Group Find your local Home Find your local |",
+  "identity_match": false,
+  "extras": {
+   "images": [
+    {
+     "url": "https://www.stonegategroup.co.uk/wp-content/uploads/2021/04/cropped-stg-favicon-black-180x180.png",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 3442,
+     "ok": false
+    }
+   ],
+   "menu": [],
+   "description": "",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": null,
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Southend Foodbank",
+  "site": "https://www.cyclesuk.com/",
+  "postcode": "SS0 0RJ",
+  "pages": [
+   {
+    "url": "https://www.cyclesuk.com/",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.cyclesuk.com/",
+    "error": null
+   },
+   {
+    "url": "https://www.cyclesuk.com/terms-conditions/",
+    "ok": false,
+    "status": null
+   }
+  ],
+  "jsonld": [],
+  "regex": [
+   {
+    "osm": "Mo 09:00-17:00",
+    "raw": "Monday: 9:00 AM - 5:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Tu 09:00-17:00",
+    "raw": "Tuesday: 9:00 AM - 5:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "We 09:00-17:00",
+    "raw": "Wednesday: 9:00 AM - 5:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Th 09:00-17:00",
+    "raw": "Thursday: 9:00 AM - 5:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Fr 09:00-17:00",
+    "raw": "Friday: 9:00 AM - 5:00 PM",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": false,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Cycles UK Ltd | Bike shop in Essex, Kent and London",
+  "identity_match": false,
+  "extras": {
+   "images": [],
+   "menu": [
+    {
+     "url": "https://www.cyclesuk.com/shop/accessories/sub/child-seats/",
+     "label": "child seats",
+     "kind": "page"
+    },
+    {
+     "url": "https://www.cyclesuk.com/shop/components/sub/seatposts/",
+     "label": "seatposts",
+     "kind": "page"
+    }
+   ],
+   "description": "Cycles UK are an Independent Bike Retailer with 6 cycle stores in Essex, Kent and London. Cycles UK stock the world\\",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Mo 09:00-17:00; Tu 09:00-17:00; We 09:00-17:00; Th 09:00-17:00; Fr 09:00-17:00",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Starbucks",
+  "site": "https://www.starbucks.co.uk/store-locator/27645-248280",
+  "postcode": "SS2 5SG",
+  "pages": [
+   {
+    "url": "https://www.starbucks.co.uk/store-locator/27645-248280",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.starbucks.co.uk/store-locator/27645-248280",
+    "error": null
+   },
+   {
+    "url": "https://www.starbucks.co.uk/about-us",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.starbucks.co.uk/contact-us",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [
+   {
+    "osm": "Sa 06:30-19:30",
+    "raw": "Saturday 6:30 AM \u2013 7:30 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Su 06:30-19:30",
+    "raw": "Sunday 6:30 AM \u2013 7:30 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Mo 06:30-19:00",
+    "raw": "Monday 6:30 AM \u2013 7:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Tu 06:30-19:00",
+    "raw": "Tuesday 6:30 AM \u2013 7:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "We 06:30-19:00",
+    "raw": "Wednesday 6:30 AM \u2013 7:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Th 06:30-19:00",
+    "raw": "Thursday 6:30 AM \u2013 7:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Fr 06:30-19:30",
+    "raw": "Friday 6:30 AM \u2013 7:30 PM",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Find a store - Details - Southend - High Street | Starbucks",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://www.starbucks.co.uk/assets/app/icons/apple-icon.png",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 0,
+     "ok": false
+    }
+   ],
+   "menu": [],
+   "description": "Find your nearest Starbucks. View store details and directions.",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Sa 06:30-19:30; Su 06:30-19:30; Mo 06:30-19:00; Tu 06:30-19:00; We 06:30-19:00; Th 06:30-19:00; Fr 06:30-19:30",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Subway",
+  "site": "https://restaurants.subway.com/united-kingdom/en/southend-on-sea/85-prince-avenue",
+  "postcode": "SS2 6RL",
+  "pages": [
+   {
+    "url": "https://restaurants.subway.com/united-kingdom/en/southend-on-sea/85-prince-avenue",
+    "ok": true,
+    "status": 200,
+    "final": "https://restaurants.subway.com/united-kingdom/en/southend-on-sea/85-prince-avenue",
+    "error": null
+   },
+   {
+    "url": "https://restaurants.subway.com/index.html",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://restaurants.subway.com/united-kingdom",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [
+   {
+    "osm": "Mo 08:00-22:30",
+    "raw": "Mon 08:00 - 22:30",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Tu 07:30-22:30",
+    "raw": "Tue 07:30 - 22:30",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "We 08:00-22:30",
+    "raw": "Wed 08:00 - 22:30",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Fr 08:00-22:30",
+    "raw": "Fri 08:00 - 22:30",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Sa 07:30-22:30",
+    "raw": "Sat 07:30 - 22:30",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Su 08:30-22:30",
+    "raw": "Sun 08:30 - 22:30",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Subway\u00ae Restaurants - Sandwiches, Salads, Wraps & More | SUBWAY at 85 Prince Avenue Southend-on-Sea EN",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://dynl.mktgcdn.com/p/nrW7uT2LniB-3ozNvXSk-7YzpnRswiIJF2aKkB7WlA4/150x150.png",
+     "kind": "og:image",
+     "w": null,
+     "h": null,
+     "bytes": 2572,
+     "ok": false
+    },
+    {
+     "url": "https://restaurants.subway.com/permanent-b0b701/assets/images/favicons/restaurants.subway.com/apple-touch-icon.5e9e0c95.png",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 4307,
+     "ok": false
+    }
+   ],
+   "menu": [],
+   "description": "Visit your local Subway at 85 Prince Avenue in Southend-on-Sea, EN to find a restaurant near you that serves fresh subs, sandwiches, salads, & more.  View the abundant options on the SUBWAY\u00ae menu and discover better-for-you meals!",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Mo 08:00-22:30; Tu 07:30-22:30; We 08:00-22:30; Fr 08:00-22:30; Sa 07:30-22:30; Su 08:30-22:30",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Tara Thai Restaurant",
+  "site": "https://www.tarathai.co.uk/",
+  "postcode": "SS0 7LP",
+  "pages": [
+   {
+    "url": "https://www.tarathai.co.uk/",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.tarathai.co.uk/",
+    "error": null
+   },
+   {
+    "url": "https://www.tarathai.co.uk/about.html",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.tarathai.co.uk/contact.html",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [
+   {
+    "osm": "Tu-Su 12:00-15:00",
+    "raw": "Tues - Sun 12PM - 3PM",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Tara Thai - Authentic Thai Cuisine",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://www.tarathai.co.uk/apple-touch-icon.png",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 13611,
+     "ok": true
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://www.tarathai.co.uk/menu.html",
+     "label": "our menu",
+     "kind": "page"
+    }
+   ],
+   "description": "",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Tu-Su 12:00-15:00",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Taste Of China",
+  "site": "https://tasteofchinafood.co.uk/",
+  "postcode": "SS9 3LB",
+  "pages": [
+   {
+    "url": "https://tasteofchinafood.co.uk/",
+    "ok": true,
+    "status": 200,
+    "final": "https://tasteofchinafood.co.uk/",
+    "error": null
+   }
+  ],
+  "jsonld": [
+   [
+    "TASTE OF CHINA Chinese Takeaway | 991 London Road, leigh-on-sea",
+    "Mo 17:00-22:10"
+   ],
+   [
+    "TASTE OF CHINA Chinese Takeaway | 991 London Road, leigh-on-sea",
+    "We 17:00-22:10"
+   ],
+   [
+    "TASTE OF CHINA Chinese Takeaway | 991 London Road, leigh-on-sea",
+    "Th 17:00-22:10"
+   ],
+   [
+    "TASTE OF CHINA Chinese Takeaway | 991 London Road, leigh-on-sea",
+    "Fr 17:00-22:10"
+   ],
+   [
+    "TASTE OF CHINA Chinese Takeaway | 991 London Road, leigh-on-sea",
+    "Sa 17:00-22:10"
+   ],
+   [
+    "TASTE OF CHINA Chinese Takeaway | 991 London Road, leigh-on-sea",
+    "Su 17:00-21:00"
+   ]
+  ],
+  "regex": [],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "TASTE OF CHINA Chinese Takeaway TASTE OF CHINA Chinese Takeaway TASTE OF CHINA Chinese Takeaway TASTE OF CHINA Chinese T",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://assets.foodhub.com/static/1a66af73b126873289675018af3d9568/img/1760715590phpadXjQ0.jpg",
+     "kind": "og:image",
+     "w": null,
+     "h": null,
+     "bytes": 96790,
+     "ok": true
+    },
+    {
+     "url": "https://public.touch2success.com/static/1a66af73b126873289675018af3d9568/img/1760715590phpXjI3pI.jpg",
+     "kind": "json-ld",
+     "w": null,
+     "h": null,
+     "bytes": 3661197,
+     "ok": true
+    },
+    {
+     "url": "https://assets.foodhub.com/static/a23542c88072d19f200700aba03b96f8/img/eac5410b-6ad3-4918-aadd-02e5d6d3a76b.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    },
+    {
+     "url": "https://assets.foodhub.com/static/1a66af73b126873289675018af3d9568/img/1583926111php7VEOnd.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null
+    }
+   ],
+   "menu": [],
+   "description": "TASTE OF CHINA Chinese Takeaway is your go-to for authentic Chinese takeaway in Leigh-On-Sea. Order online and enjoy delicious food delivered straight to your door.",
+   "cuisine": [
+    "Chinese, Chow Mein, Rice"
+   ],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Mo 17:00-22:10; We 17:00-22:10; Th 17:00-22:10; Fr 17:00-22:10; Sa 17:00-22:10; Su 17:00-21:00",
+   "method": "json-ld",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "The Acorn Pie and Mash",
+  "site": "https://www.acornpieandmash.co.uk/",
+  "postcode": "SS9 2GD",
+  "pages": [
+   {
+    "url": "https://www.acornpieandmash.co.uk/",
+    "ok": false,
+    "status": null,
+    "final": null,
+    "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": false,
+  "js_required": false,
+  "fetch_ok": false
+ },
+ {
+  "name": "The Broadway",
+  "site": "https://www.craftunionpubs.com/the-broadway-pub-leigh-on-sea",
+  "postcode": "SS9 1AW",
+  "pages": [
+   {
+    "url": "https://www.craftunionpubs.com/the-broadway-pub-leigh-on-sea",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.craftunionpubs.com/the-broadway-pub-leigh-on-sea",
+    "error": null
+   },
+   {
+    "url": "https://www.craftunionpubs.com/the-broadway-pub-leigh-on-sea/opening-times",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.craftunionpubs.com/the-broadway-pub-leigh-on-sea/contact",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [
+   {
+    "osm": "Su 12:00-22:00",
+    "raw": "Sunday: 12:00 PM - 10:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Mo 11:00-23:00",
+    "raw": "Monday: 11:00 AM - 11:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Tu 11:00-23:00",
+    "raw": "Tuesday: 11:00 AM - 11:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "We 11:00-23:00",
+    "raw": "Wednesday: 11:00 AM - 11:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Th 11:00-23:00",
+    "raw": "Thursday: 11:00 AM - 11:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Fr 11:00-23:00",
+    "raw": "Friday: 11:00 AM - 11:00 PM",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Broadway Leigh-On-Sea | Community Pub in Leigh-on-Sea Craft Union",
+  "identity_match": true,
+  "extras": {
+   "images": [],
+   "menu": [],
+   "description": "Welcome to Broadway Leigh-On-Sea, your local Craft Union Pub in Leigh-on-Sea! We show live sport every day, so stop by for a pint.",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Su 12:00-22:00; Mo 11:00-23:00; Tu 11:00-23:00; We 11:00-23:00; Th 11:00-23:00; Fr 11:00-23:00",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "The Dog Cafe",
+  "site": "https://thedogspa.net/",
+  "postcode": "SS1 3PA",
+  "pages": [
+   {
+    "url": "https://thedogspa.net/",
+    "ok": true,
+    "status": 200,
+    "final": "https://thedogspa.net/",
+    "error": null
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "The Dog Spa - Dog Groomer - Southend-on-Sea, England The Dog Spa",
+  "identity_match": false,
+  "extras": {
+   "images": [
+    {
+     "url": "https://isteam.wsimg.com/ip/5fe2ce62-94a0-417c-b5ee-e2a9e485d591/the-dog-spa-dogs-6.jpg",
+     "kind": "og:image",
+     "w": null,
+     "h": null,
+     "bytes": 69492,
+     "ok": true
+    },
+    {
+     "url": "https://img1.wsimg.com/isteam/ip/5fe2ce62-94a0-417c-b5ee-e2a9e485d591/logo/87c8bfab-c3dd-4f8d-9a1d-ff8340849397.jpg/:/rs=w:57,h:57,m",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 9540,
+     "ok": true
+    }
+   ],
+   "menu": [],
+   "description": "Dog groomer\nUltrasound teeth cleaning\nRetail shop selling dog products\nPuppy packages",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": null,
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "The Elms",
+  "site": "https://www.jdwetherspoon.com/pubs/all-pubs/england/essex/the-elms-leighonsea",
+  "postcode": "SS9 3ND",
+  "pages": [
+   {
+    "url": "https://www.jdwetherspoon.com/pubs/all-pubs/england/essex/the-elms-leighonsea",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.jdwetherspoon.com/",
+    "error": null
+   },
+   {
+    "url": "https://www.jdwetherspoon.com/new-openings/",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.jdwetherspoon.com/about-us/",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.jdwetherspoon.com/contact/",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [],
+  "name_on_page": false,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Award-Winning Pubs & Hotels Across The UK & Ireland - J D Wetherspoon J D Wetherspoon J D Wetherspoon J D Wetherspoon Ho",
+  "identity_match": false,
+  "extras": {
+   "images": [
+    {
+     "url": "https://www.jdwetherspoon.com/wp-content/uploads/2026/09/Tax-Equality-2000x800px-Homescreen-2026-scaled.png",
+     "kind": "og:image",
+     "w": 2560,
+     "h": 1024,
+     "bytes": 206049,
+     "ok": true
+    },
+    {
+     "url": "https://www.jdwetherspoon.com/apple-touch-icon.png",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 0,
+     "ok": false
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://www.jdwetherspoon.com/food-drink/",
+     "label": "food and drinks",
+     "kind": "page"
+    }
+   ],
+   "description": "Find your local Wetherspoon",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": null,
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "The Hamlet Court",
+  "site": "https://www.hamletcourt.co.uk/",
+  "postcode": "SS0 7LP",
+  "pages": [
+   {
+    "url": "https://www.hamletcourt.co.uk/",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.hamletcourt.co.uk/",
+    "error": null
+   },
+   {
+    "url": "https://www.hamletcourt.co.uk/contact-us",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [
+   [
+    "Hamlet Court | ",
+    "Mo-Th 12:00-22:00; Fr 12:00-23:00; Sa 11:00-23:00; Su 11:00-22:30"
+   ]
+  ],
+  "regex": [
+   {
+    "osm": "Mo-Th 00:00-23:00",
+    "raw": "Monday - Thursday 12:00 - 23:00",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Fr 12:00-00:00",
+    "raw": "Friday 12:00 - 00:00",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Sa 11:00-00:00",
+    "raw": "Saturday 11:00 - 00:00",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Su 11:00-22:30",
+    "raw": "Sunday 11:00 - 22:30",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Mo-Sa 00:00-20:30",
+    "raw": "Monday - Saturday 12:00 - 20:30",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Su 00:00-19:00",
+    "raw": "Sunday 12:00 - 19:00",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Menu Hamlet Court operatingModel Kitchen Historic Building Cask Ales Function Room Wheelchair Accessible Live Sport Live",
+  "identity_match": true,
+  "extras": {
+   "images": [],
+   "menu": [
+    {
+     "url": "https://www.hamletcourt.co.uk/menus",
+     "label": "menus",
+     "kind": "page"
+    }
+   ],
+   "description": "The Hamlet Court is a thriving pub restaurant in Westcliff, Essex, known for its delicious food and live music nights. Find out more and plan your visit today.",
+   "cuisine": [
+    "British"
+   ],
+   "price_range": "\u00a3\u00a3",
+   "ld_description": "In a historic building in Westcliff-on-Sea, the Hamlet Court is a lively pub run directly by Britain's oldest brewer, Shepherd Neame. It offers a menu of traditional and modern dishes, complemented by cask ales, cocktails, and a full wine list. With regular live music and sports screenings, a function room for private hire, and an outdoor area boasting sunset views, it's a vibrant community hub fo"
+  },
+  "hours_primary": {
+   "osm": "Mo-Th 12:00-22:00; Fr 12:00-23:00; Sa 11:00-23:00; Su 11:00-22:30",
+   "method": "json-ld",
+   "kind": "dine-in"
+  },
+  "hours_alt": {
+   "osm": "Mo-Th 00:00-23:00; Fr 12:00-00:00; Sa 11:00-00:00; Su 11:00-22:30; Mo-Sa 00:00-20:30; Su 00:00-19:00",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "internal_conflict": true
+ },
+ {
+  "name": "The Last Post Public House",
+  "site": "https://www.jdwetherspoon.com/pubs/the-last-post-southend-on-sea/",
+  "postcode": "SS1 1AS",
+  "pages": [
+   {
+    "url": "https://www.jdwetherspoon.com/pubs/the-last-post-southend-on-sea/",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.jdwetherspoon.com/pubs/the-last-post-southend-on-sea/",
+    "error": null
+   },
+   {
+    "url": "https://www.jdwetherspoon.com/new-openings/",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.jdwetherspoon.com/about-us/",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.jdwetherspoon.com/contact/",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [
+   {
+    "osm": "Mo 07:00-00:00",
+    "raw": "Monday 7:00am - 12:00am",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Tu 07:00-00:00",
+    "raw": "Tuesday 7:00am - 12:00am",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "We 07:00-00:00",
+    "raw": "Wednesday 7:00am - 12:00am",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Th 07:00-00:00",
+    "raw": "Thursday 7:00am - 12:00am",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Fr 07:00-01:00",
+    "raw": "Friday 7:00am - 1:00am",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Sa 07:00-01:00",
+    "raw": "Saturday 7:00am - 1:00am",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Su 07:00-00:00",
+    "raw": "Sunday 7:00am - 12:00am",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "The Last Post - J D Wetherspoon J D Wetherspoon J D Wetherspoon J D Wetherspoon The Last Post Home The Last Post - J D W",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://www.jdwetherspoon.com/wp-content/uploads/2024/06/148-feature.png",
+     "kind": "og:image",
+     "w": 800,
+     "h": 748,
+     "bytes": 1035591,
+     "ok": true
+    },
+    {
+     "url": "https://www.jdwetherspoon.com/apple-touch-icon.png",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 0,
+     "ok": false
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://www.jdwetherspoon.com/food-drink/",
+     "label": "food and drinks",
+     "kind": "page"
+    },
+    {
+     "url": "https://www.jdwetherspoon.com/pub-menus/the-last-post-southend-on-sea/",
+     "label": "view menu",
+     "kind": "page"
+    }
+   ],
+   "description": "",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Mo 07:00-00:00; Tu 07:00-00:00; We 07:00-00:00; Th 07:00-00:00; Fr 07:00-01:00; Sa 07:00-01:00; Su 07:00-00:00",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "The Woodcutters Arms",
+  "site": "https://www.craftunionpubs.com/woodcutters-arms-leigh-on-sea",
+  "postcode": "SS9 4LT",
+  "pages": [
+   {
+    "url": "https://www.craftunionpubs.com/woodcutters-arms-leigh-on-sea",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.craftunionpubs.com/woodcutters-arms-leigh-on-sea",
+    "error": null
+   },
+   {
+    "url": "https://www.craftunionpubs.com/woodcutters-arms-leigh-on-sea/opening-times",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.craftunionpubs.com/woodcutters-arms-leigh-on-sea/contact",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [
+   {
+    "osm": "Su 11:00-22:00",
+    "raw": "Sunday: 11:00 AM - 10:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Mo 12:00-23:00",
+    "raw": "Monday: 12:00 PM - 11:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Tu 12:00-23:00",
+    "raw": "Tuesday: 12:00 PM - 11:00 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "We 12:00-23:30",
+    "raw": "Wednesday: 12:00 PM - 11:30 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Th 12:00-23:30",
+    "raw": "Thursday: 12:00 PM - 11:30 PM",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Fr 12:00-00:00",
+    "raw": "Friday: 12:00 PM - 12:00 AM",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Woodcutter Leigh On Sea | Community Pub in Leigh-on-Sea Craft Union",
+  "identity_match": false,
+  "extras": {
+   "images": [],
+   "menu": [],
+   "description": "Welcome to Woodcutter Leigh On Sea, your local Craft Union Pub in Leigh-on-Sea! We show live sport every day, so stop by for a pint.",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Su 11:00-22:00; Mo 12:00-23:00; Tu 12:00-23:00; We 12:00-23:30; Th 12:00-23:30; Fr 12:00-00:00",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Visitor Information Centre Southend Pier",
+  "site": "https://southendpiermuseum.co.uk/",
+  "postcode": "SS1 1EE",
+  "pages": [
+   {
+    "url": "https://southendpiermuseum.co.uk/",
+    "ok": true,
+    "status": 200,
+    "final": "https://www.southendpiermuseum.co.uk/",
+    "error": null
+   },
+   {
+    "url": "https://www.southendpiermuseum.co.uk/visiting%20us",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.southendpiermuseum.co.uk/about",
+    "ok": true,
+    "status": 200
+   },
+   {
+    "url": "https://www.southendpiermuseum.co.uk/education/school%20visits/",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [],
+  "regex": [
+   {
+    "osm": "Fr 11:00-17:00",
+    "raw": "Friday 11 am to 5 pm",
+    "kind": "dine-in"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Southend Pier Museum \u2013 A History of the World's Longest Pier",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://usercontent.one/wp/www.southendpiermuseum.co.uk/wp-content/uploads/2024/02/elementor/thumbs/Museum-display-logo-complete-150x150.png?media=1759338534",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 0,
+     "ok": false
+    }
+   ],
+   "menu": [],
+   "description": "",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Fr 11:00-17:00",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Wimpy",
+  "site": "https://location.wimpy.uk.com/restaurants-Westcliff-On-Sea-WimpyWestcliff-on-Sea",
+  "postcode": "SS0 7EW",
+  "pages": [
+   {
+    "url": "https://location.wimpy.uk.com/restaurants-Westcliff-On-Sea-WimpyWestcliff-on-Sea",
+    "ok": true,
+    "status": 200,
+    "final": "https://location.wimpy.uk.com/restaurants-Westcliff-On-Sea-WimpyWestcliff-on-Sea",
+    "error": null
+   },
+   {
+    "url": "https://location.wimpy.uk.com/",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [
+   [
+    "Wimpy Westcliff-on-Sea | 141 Hamlet Court Road",
+    "Mo-Th 11:00-21:00; Fr-Sa 10:00-21:30; Su 10:00-21:00"
+   ]
+  ],
+  "regex": [],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Welcome to Wimpy Westcliff-on-Sea | Burgers, Breakfast and Coffee Wimpy Westcliff-on-Sea eddie slevin Tay Alison Wright ",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://s3-eu-west-1.amazonaws.com/goreview-eb/uploads/local-pages/d92be8168f87bd6a35c892fe65e8d52d/TqrhsO1W.svg",
+     "kind": "og:image",
+     "w": null,
+     "h": null,
+     "bytes": 0,
+     "ok": false
+    },
+    {
+     "url": "https://goreview-eb.s3.eu-west-1.amazonaws.com/uploads/platform-media/mediaSquare/d9b3097d8ae4721939662f905dcb1d32.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null,
+     "bytes": 238471,
+     "ok": true
+    }
+   ],
+   "menu": [
+    {
+     "url": "https://deliveroo.co.uk/menu/southend-on-sea/southend-on-sea/wimpy-westcliff?day=today&amp;postcode=SS07EW&amp;time=ASAP",
+     "label": "deliveroo",
+     "kind": "third-party"
+    }
+   ],
+   "description": "Visit Wimpy Westcliff-on-Sea for a wide range of burgers, breakfast and coffee. Discover our menu of burgers, mixed grills or fish",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Mo-Th 11:00-21:00; Fr-Sa 10:00-21:30; Su 10:00-21:00",
+   "method": "json-ld",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Wimpy",
+  "site": "https://location.wimpy.uk.com/restaurants-Leigh-On-Sea-WimpyLeigh-on-Sea",
+  "postcode": "SS9 1PG",
+  "pages": [
+   {
+    "url": "https://location.wimpy.uk.com/restaurants-Leigh-On-Sea-WimpyLeigh-on-Sea",
+    "ok": true,
+    "status": 200,
+    "final": "https://location.wimpy.uk.com/restaurants-Leigh-On-Sea-WimpyLeigh-on-Sea",
+    "error": null
+   },
+   {
+    "url": "https://location.wimpy.uk.com/",
+    "ok": true,
+    "status": 200
+   }
+  ],
+  "jsonld": [
+   [
+    "Wimpy Leigh-on-Sea | 97 Broadway",
+    "Tu-Sa 10:00-20:00; Su 11:00-17:00"
+   ]
+  ],
+  "regex": [],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Welcome to Wimpy Leigh-on-Sea | Burgers, Breakfast and Coffee Wimpy Leigh-on-Sea Yawen Amy .C Mark Redding Daniel Jones ",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://s3-eu-west-1.amazonaws.com/goreview-eb/uploads/local-pages/d92be8168f87bd6a35c892fe65e8d52d/TqrhsO1W.svg",
+     "kind": "og:image",
+     "w": null,
+     "h": null,
+     "bytes": 0,
+     "ok": false
+    },
+    {
+     "url": "https://goreview-eb.s3.eu-west-1.amazonaws.com/uploads/platform-media/mediaSquare/d9b3097d8ae4721939662f905dcb1d32.png",
+     "kind": "json-ld",
+     "w": null,
+     "h": null,
+     "bytes": 238471,
+     "ok": true
+    }
+   ],
+   "menu": [],
+   "description": "Visit Wimpy Leigh-on-Sea for a wide range of burgers, breakfast and coffee. Discover our menu of burgers, mixed grills or fish",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "Tu-Sa 10:00-20:00; Su 11:00-17:00",
+   "method": "json-ld",
+   "kind": "dine-in"
+  },
+  "hours_alt": null,
+  "internal_conflict": false
+ },
+ {
+  "name": "Red Chilliezs",
+  "site": "https://redchilliezs.co.uk",
+  "postcode": "SS0 9PE",
+  "pages": [
+   {
+    "url": "https://redchilliezs.co.uk",
+    "ok": true,
+    "status": 200,
+    "final": "https://redchilliezs.co.uk",
+    "error": null
+   }
+  ],
+  "jsonld": [
+   [
+    "Red Chilliezs | 629 London Road",
+    "Mo,Tu,We,Th,Fr,Sa,Su 09:00-17:00"
+   ]
+  ],
+  "regex": [
+   {
+    "osm": "We-Mo 12:00-14:30",
+    "raw": "Wed to Mon : 12 pm to 2:30 pm , 5:30 pm to 10:30 pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "We-Mo 17:30-22:30",
+    "raw": "Wed to Mon : 12 pm to 2:30 pm , 5:30 pm to 10:30 pm",
+    "kind": "dine-in"
+   },
+   {
+    "osm": "Mo 12:00-14:30",
+    "raw": "Mon : 12 pm to 2:30 pm",
+    "kind": "delivery"
+   },
+   {
+    "osm": "We-Su 17:30-22:30",
+    "raw": "Wed to Sun : 5:30 pm to 10:30 pm",
+    "kind": "delivery"
+   }
+  ],
+  "name_on_page": true,
+  "js_required": false,
+  "fetch_ok": true,
+  "identity": "Premier Indian Restaurant in Southend - Red Chilliez's Red Chilliezs Premier Indian Restaurant in Southend - Red Chillie",
+  "identity_match": true,
+  "extras": {
+   "images": [
+    {
+     "url": "https://redchilliezs.co.uk/wp-content/uploads/2023/02/cropped-fav-180x180.jpg",
+     "kind": "touch-icon",
+     "w": null,
+     "h": null,
+     "bytes": 4749,
+     "ok": false
+    }
+   ],
+   "menu": [],
+   "description": "Ready to experience the best Indian restaurant in Southend? Visit us at redchilliezs.co.uk or call us at 01702 333323 to make a reservation. Follow us on facebook, instagram for updates and special offers.",
+   "cuisine": [],
+   "price_range": ""
+  },
+  "hours_primary": {
+   "osm": "We-Mo 12:00-14:30; We-Mo 17:30-22:30",
+   "method": "regex",
+   "kind": "dine-in"
+  },
+  "hours_alt": {
+   "osm": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-17:00",
+   "method": "json-ld",
+   "kind": "dine-in"
+  },
+  "internal_conflict": true
+ }
+]

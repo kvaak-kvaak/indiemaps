@@ -1,0 +1,15 @@
+{
+  "name": "yellowpages-map-essex",
+  "version": "0.1.0",
+  "description": "Modern Yellow Pages map prototype — Essex / Southend focus. Rich POIs with hours, contact, socials, reviews.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build:data": "node scripts/build.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  }
+}

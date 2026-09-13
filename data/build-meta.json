@@ -1,0 +1,53 @@
+{
+ "built_at": "2026-09-13T18:13:51.133Z",
+ "fsa_extract_date": "2026-09-12",
+ "fsa_authority": "FHRS893",
+ "bbox": {
+  "s": 51.505,
+  "w": 0.615,
+  "n": 51.575,
+  "e": 0.825
+ },
+ "counts": {
+  "total": 1437,
+  "fsa_only": 419,
+  "merged": 150,
+  "osm_only": 140,
+  "nhs_added": 14,
+  "with_hours": 237
+ },
+ "with_hours": 32,
+ "with_phone": 31,
+ "with_website": 92,
+ "overture": {
+  "release": "2026-07-22.0",
+  "contact_rows_in_bbox": 7031,
+  "websites_filled": 648,
+  "phones_filled": 773
+ },
+ "nhs": {
+  "cache_updated": "2026-09-13",
+  "rows_in_bbox": 39,
+  "matched": 23,
+  "added": 16
+ },
+ "atp": {
+  "run_id": "2026-09-05-13-32-25",
+  "spiders": 61,
+  "feats_in_bbox": 179,
+  "feats_with_hours": 146,
+  "matched": 88,
+  "web_matched": 19,
+  "wikidata_matched": 33,
+  "hours_added": 63,
+  "hours_before": 32,
+  "hours_after": 95
+ },
+ "site": {
+  "input": "/Users/evelinakuusinen/Documents/mapsmaps/packs/eu/gb/england/essex/southend-on-sea/site.json",
+  "sites": 393,
+  "matched": 378,
+  "hours_added": 110,
+  "conflicts": 1
+ }
+}

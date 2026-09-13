@@ -1,0 +1,78 @@
+# Quarterly POI pack build. Single sequential job: all 47 phase-1 areas fit
+# comfortably in the 6h cap (measured: Southend end-to-end ~20s; borough
+# site-stages single-digit minutes). Split into a matrix only if this
+# ever approaches the cap. All sources are keyless: no secrets needed.
+name: build-packs
+
+on:
+  schedule:
+    - cron: '0 0 1 */3 *'   # quarterly, 1st of Jan/Apr/Jul/Oct
+  workflow_dispatch:
+    inputs:
+      spider:
+        description: 'Run first-party site spider (phase 1b+)'
+        type: boolean
+        default: false
+      areas:
+        description: 'Space-separated area ids (default: all)'
+        default: ''
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: pip install duckdb
+      - name: Build packs
+        run: |
+          if [ -n "${{ inputs.areas }}" ]; then
+            for a in ${{ inputs.areas }}; do
+              python3 scripts/pack/build.py --area "$a" ${{ inputs.spider && '--sites' || '' }}
+            done
+          else
+            python3 scripts/pack/build.py --all ${{ inputs.spider && '--sites' || '' }}
+          fi
+      - name: Manifest
+        run: python3 scripts/pack/build.py --manifest
+      - name: Commit dead-domain cache
+        run: |
+          git config user.name "pack-builder"
+          git config user.email "pack-builder@users.noreply.github.com"
+          mkdir -p data/dead-domains
+          git add data/dead-domains/ || true
+          git diff --cached --quiet || (git commit -m "pack builder: dead-domain cache [skip ci]" && git push) || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: packs
+          path: packs/
+          retention-days: 30
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event.inputs.spider == 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: packs
+          path: packs/
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Assemble release assets
+        run: |
+          TAG="pois-$(date +%Y)-Q$(( ( $(date +%-m) - 1 ) / 3 + 1 ))"
+          echo "TAG=$TAG" >> $GITHUB_ENV
+          python3 scripts/pack/release.py --tag "$TAG" --out dist/
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create "$TAG" dist/* --title "$TAG" --notes "Quarterly POI packs. See manifest.json for provenance per pack."
