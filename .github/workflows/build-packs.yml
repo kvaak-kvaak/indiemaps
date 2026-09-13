@@ -31,17 +31,28 @@ jobs:
           node-version: '20'
       - run: pip install duckdb
       - name: Build packs
+        # NOTE: GitHub runs each step with bash -e, so a bare failing command
+        # would abort the remaining areas. Failures are collected to
+        # failed.txt instead; the completeness check at the end fails loudly.
         run: |
+          rm -f failed.txt
+          run_area() {
+            python3 scripts/pack/build.py --area "$1" $2 || echo "$1" >> failed.txt
+          }
           if [ -n "${{ inputs.areas }}" ]; then
             for a in ${{ inputs.areas }}; do
-              python3 scripts/pack/build.py --area "$a" ${{ inputs.spider && '--sites' || '' }}
+              run_area "$a" "${{ inputs.spider && '--sites' || '' }}"
             done
           else
             python3 scripts/pack/build.py --all ${{ inputs.spider && '--sites' || '' }}
           fi
+          if [ -s failed.txt ]; then echo "FAILED AREAS:"; cat failed.txt; fi
+          true
       - name: Manifest
+        if: always()
         run: python3 scripts/pack/build.py --manifest
       - name: Commit dead-domain cache
+        if: always()
         run: |
           git config user.name "pack-builder"
           git config user.email "pack-builder@users.noreply.github.com"
@@ -49,10 +60,21 @@ jobs:
           git add data/dead-domains/ || true
           git diff --cached --quiet || (git commit -m "pack builder: dead-domain cache [skip ci]" && git push) || true
       - uses: actions/upload-artifact@v7
+        if: always()
         with:
           name: packs
           path: packs/
           retention-days: 30
+      - name: Check completeness
+        if: always()
+        run: |
+          if [ -s failed.txt ]; then
+            echo "## Failed areas" >> $GITHUB_STEP_SUMMARY
+            cat failed.txt >> $GITHUB_STEP_SUMMARY
+            echo "re-run with these ids in the areas input"
+            exit 1
+          fi
+          echo "all dispatched areas completed"
 
   release:
     needs: build
