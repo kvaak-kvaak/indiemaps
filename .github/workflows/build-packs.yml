@@ -21,6 +21,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 330
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
@@ -79,6 +81,8 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # gh release create needs this; default token is read-only
     if: github.event_name == 'schedule' || github.event.inputs.spider == 'true'
     steps:
       - uses: actions/checkout@v7
