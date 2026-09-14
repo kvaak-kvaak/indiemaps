@@ -48,7 +48,11 @@ for (const p of pois) {
   const u = normUrl(p.website);
   if (u) byUrl.set(u, p);
 }
-let matched = 0, hoursAdded = 0, conflicts = 0;
+// Distinct-POI counts: site rows are per-POI input, but several POIs can
+// share one website (same premises, rebrand, directory page), and byUrl
+// collapses them onto a single POI. Counting rows inflates matched /
+// hours_added (measured on Southend: 377 rows -> 370 POIs, 104 -> 102).
+const matchedIds = new Set(), hoursAddedIds = new Set(), conflictIds = new Set();
 for (const r of site) {
   const p = byUrl.get(normUrl(r.site));
   if (!p) continue;
@@ -64,7 +68,8 @@ for (const r of site) {
   // names share nothing with the POI) AND body text doesn't name it either.
   // Absence alone (JS shells, logo-only brands) is not contradiction.
   if (r.identity && !r.identity_match && r.name_on_page === false) { console.log(`skip (wrong business): ${r.name} @ ${r.site} (page: ${r.identity.slice(0, 60)})`); continue; }
-  matched++;
+  if (matchedIds.has(p.id)) console.log(`note (shared website): ${r.name} merges into already-counted ${p.name}`);
+  matchedIds.add(p.id);
   const jl = (r.jsonld || []).map(([lbl, h]) => h).filter(Boolean);
   const rx = (r.regex || []).map(h => h.osm);
   // spider verdict preferred (cross-checked JSON-LD vs visible + specificity);
@@ -89,12 +94,13 @@ for (const r of site) {
   if ((ex.cuisine || []).length) p.site_cuisine = ex.cuisine.slice(0, 4);
   if (ex.price_range) p.site_price = ex.price_range;
   if (!p.sources.includes('site')) p.sources.push('site');
-  if (!p.opening_hours_osm && !p.atp_hours) hoursAdded++;
+  if (!p.opening_hours_osm && !p.atp_hours) hoursAddedIds.add(p.id);
   const eff = p.opening_hours_osm || p.atp_hours || '';
-  if (eff && eff.replace(/\s/g, '') !== hours.replace(/\s/g, '')) conflicts++;
+  if (eff && eff.replace(/\s/g, '') !== hours.replace(/\s/g, '')) conflictIds.add(p.id);
 }
 fs.writeFileSync(POIS_PATH, JSON.stringify(pois, null, 2));
 const meta = JSON.parse(fs.readFileSync(META_PATH, 'utf8'));
+const matched = matchedIds.size, hoursAdded = hoursAddedIds.size, conflicts = conflictIds.size;
 meta.site = { input: args.in, sites: site.length, matched, hours_added: hoursAdded, conflicts };
 fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2));
 console.log(`site-hours: ${site.length} sites → ${matched} matched, +${hoursAdded} new hours, ${conflicts} conflicts with existing`);
