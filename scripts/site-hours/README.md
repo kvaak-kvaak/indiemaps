@@ -48,7 +48,9 @@ Input items need `name`, `website`, optional `postcode`.
 ## Production notes
 
 - urllib skips HTTP 308 redirects; handled manually here.
-- Add robots.txt compliance + crawl-delay + contact UA before scaling.
+- robots.txt honored per host (User-agent: `*` disallows + crawl-delay, capped
+  at 30s) plus a 0.5s minimum per-host gap; contactable UA ships a repo URL.
+  Subpage discovery re-checks robots per URL.
 - Social-only web presence (Facebook/Instagram as `website`) is unscrapable —
   treat as its own coverage class, not a failure.
 - Facts (hours) aren't copyrightable expression, but respect sites' ToS and

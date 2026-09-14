@@ -27,7 +27,8 @@ Read these three docs first, in order:
 ## Current state (2026-09-13)
 
 - Phase 1a GREEN: 47/47 packs complete via Actions (base+overture+nhs+atp).
-  Southend reference: 1,437 POIs / 237 with hours (incl. site stage).
+  Southend reference: 1,437 POIs / 231 with hours in release `pois-2026-Q3`
+  (local demo `data/pois.json` shows 237 — different build vintage).
 - Open threads: Phase 1b spider dispatch; Westminster rebuilt post-bbox-fix;
   `record_id`→`fsq_place_id` hypothesis unverified (needs Portal lookup).
 

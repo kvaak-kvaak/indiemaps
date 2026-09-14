@@ -16,7 +16,7 @@ for SPA sites (recorded here as js_required instead).
 import argparse, concurrent.futures, html, http.client, json, re, socket, ssl, threading, time, urllib.parse, urllib.error, urllib.request
 from pathlib import Path
 
-UA = {'User-Agent': 'Mozilla/5.0 (compatible; yellowpages-hours-prototype/0.1; research sample)'}
+UA = {'User-Agent': 'Mozilla/5.0 (compatible; yellowpages-hours-prototype/0.1; +https://github.com/kvaak-kvaak/indiemaps)'}
 CONNECT_TIMEOUT = 5   # dead hosts fail here, fast
 READ_TIMEOUT = 15     # slow-but-real shared hosting gets room
 MAX_BODY = 1_500_000

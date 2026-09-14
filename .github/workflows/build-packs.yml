@@ -22,7 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 330
     permissions:
-      contents: read
+      # write is load-bearing: the dead-domain cache step commits+pushes
+      # learned corpses back to the repo (read-only token 403s the push).
+      contents: write
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
@@ -41,12 +43,14 @@ jobs:
           run_area() {
             python3 scripts/pack/build.py --area "$1" $2 || echo "$1" >> failed.txt
           }
+          # Phase 1b scope (agreed): full spider incl. OSM/ATP-covered POIs
+          # (--sites-all) for conflict/specificity signals, not residual-only.
           if [ -n "${{ inputs.areas }}" ]; then
             for a in ${{ inputs.areas }}; do
-              run_area "$a" "${{ inputs.spider && '--sites' || '' }}"
+              run_area "$a" "${{ inputs.spider && '--sites-all' || '' }}"
             done
           else
-            python3 scripts/pack/build.py --all ${{ inputs.spider && '--sites' || '' }}
+            python3 scripts/pack/build.py --all ${{ inputs.spider && '--sites-all' || '' }}
           fi
           if [ -s failed.txt ]; then echo "FAILED AREAS:"; cat failed.txt; fi
           true
@@ -101,4 +105,11 @@ jobs:
       - name: Create release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "$TAG" dist/* --title "$TAG" --notes "Quarterly POI packs. See manifest.json for provenance per pack."
+        # Idempotent: a re-dispatch in the same quarter refreshes the tag's
+        # assets instead of failing on the duplicate tag.
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" dist/* --clobber
+          else
+            gh release create "$TAG" dist/* --title "$TAG" --notes "Quarterly POI packs. See manifest.json for provenance per pack."
+          fi
