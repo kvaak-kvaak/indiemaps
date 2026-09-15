@@ -16,9 +16,40 @@ app.use(express.json());
 const POIS = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'pois.json'), 'utf8'));
 const BASE_META = (() => { try { return JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'build-meta.json'), 'utf8')); } catch { return {}; } })();
 
-// Multi-pack debugging: ?pack=eu/fi/uusimaa/helsinki serves a built pack
-// from packs/<id>/ (gitignored build output, e.g. downloaded from a CI
-// artifact). Falls back to the committed demo data when absent.
+// Pack catalog for the debugging selector: the committed demo data plus
+// every built pack under packs/<id>/ (gitignored build output, e.g. CI
+// artifacts). Entries carry bbox for map fly-to.
+app.get('/api/packs', (req, res) => {
+  const out = [{ id: '', name: 'Southend-on-Sea (demo data)', total: POIS.length,
+    built_at: BASE_META.built_at || null, bbox: BASE_META.bbox || null }];
+  let areas = {};
+  try { areas = JSON.parse(fs.readFileSync(path.join(__dirname, 'scripts', 'pack', 'areas.json'), 'utf8')); } catch {}
+  const walk = dir => {
+    let ents = [];
+    try { ents = fs.readdirSync(dir, { withFileTypes: true }); } catch { return []; }
+    return ents.flatMap(e => {
+      const full = path.join(dir, e.name);
+      if (e.isDirectory()) return walk(full);
+      if (e.name === 'meta.json') return [full];
+      return [];
+    });
+  };
+  for (const mf of walk(path.join(__dirname, 'packs'))) {
+    try {
+      const m = JSON.parse(fs.readFileSync(mf, 'utf8'));
+      const id = path.relative(path.join(__dirname, 'packs'), path.dirname(mf)).split(path.sep).join('/');
+      const a = areas[id] || {};
+      const b = a.bbox; // [w,s,e,n]
+      out.push({ id, name: a.name || id.split('/').pop(),
+        total: m.counts?.total ?? null, built_at: m.built_at || null,
+        stages_ok: m.stages_ok || [],
+        bbox: b ? { s: b[1], w: b[0], n: b[3], e: b[2] } : (m.bbox || null) });
+    } catch {}
+  }
+  res.json({ packs: out });
+});
+// ?pack=<area-id> serves a built pack from packs/<id>/, falling back to
+// the committed demo data when absent or invalid.
 function loadPack(id) {
   if (!id || !/^[a-z0-9][a-z0-9/-]*$/.test(id) || id.includes('..')) return null;
   try {

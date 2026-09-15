@@ -3,7 +3,9 @@
  * business websites / visitor contributions). Anything unverified renders
  * as "unknown" — never invented. */
 const SOUTHEND = [51.5414, 0.7120];
-const state = { pois: [], meta: {}, curatedCount: 0, liveCount: 0, cat: 'all', mode: 'curated', openOnly: false, q: '', selectedId: null, markers: new Map() };
+const state = { pois: [], meta: {}, curatedCount: 0, liveCount: 0, cat: 'all', mode: 'curated', openOnly: false, q: '', selectedId: null, markers: new Map(), pack: '', packs: [] };
+const packQ = () => state.pack ? `pack=${encodeURIComponent(state.pack)}` : '';
+const packName = () => (state.packs.find(p => p.id === state.pack) || {}).name || 'Listings';
 
 const map = L.map('map', { zoomControl: false }).setView(SOUTHEND, 13);
 L.control.zoom({ position: 'bottomright' }).addTo(map);
@@ -107,10 +109,10 @@ async function loadPois() {
   statsText.textContent = 'Loading…';
   try {
     const [metaR, poisR] = await Promise.all([
-      fetch('/api/meta').then(r => r.json()).catch(() => ({})),
+      fetch('/api/meta' + (packQ() ? '?' + packQ() : '')).then(r => r.json()).catch(() => ({})),
       state.mode === 'curated'
-        ? fetch('/api/pois').then(r => r.json())
-        : fetch('/api/combined?bbox=' + encodeURIComponent(bboxStr())).then(r => r.json()),
+        ? fetch('/api/pois' + (packQ() ? '?' + packQ() : '')).then(r => r.json())
+        : fetch('/api/combined?bbox=' + encodeURIComponent(bboxStr()) + (packQ() ? '&' + packQ() : '')).then(r => r.json()),
     ]);
     state.meta = metaR;
     state.pois = poisR.pois || [];
@@ -150,9 +152,10 @@ function renderAll() {
     clusters.addLayer(m); state.markers.set(p.id, m);
   }
   const fsaDate = state.meta.fsa_extract_date ? ` · FSA extract ${state.meta.fsa_extract_date}` : '';
+  const built = state.meta.built_at ? ` · verified ${fmtDate(state.meta.built_at.slice(0, 10))}` : '';
   statsText.textContent = state.mode === 'curated'
-    ? `${list.length} listings · real FSA + OSM data${fsaDate}`
-    : `${list.length} shown (${state.curatedCount} listed + ${state.liveCount} live OSM)`;
+    ? `${list.length} listings · ${packName()}${fsaDate}${built}`
+    : `${list.length} shown (${state.curatedCount} listed + ${state.liveCount} live OSM) · ${packName()}`;
   resultsEl.innerHTML = list.slice(0, 200).map(p => {
     const o = openStatus(p);
     return `<div class="card${p.id === state.selectedId ? ' selected' : ''}" data-id="${p.id}">
@@ -431,7 +434,7 @@ async function suggest(v) {
   const hits = state.pois.filter(p => (p.name + ' ' + (p.address || '')).toLowerCase().includes(needle)).slice(0, 5);
   let places = [];
   try {
-    const r = await fetch('/api/search?q=' + encodeURIComponent(v));
+    const r = await fetch('/api/search?q=' + encodeURIComponent(v) + (packQ() ? '&' + packQ() : ''));
     const j = await r.json();
     places = j.places || [];
   } catch {}
@@ -464,4 +467,25 @@ $('#cfg-link').addEventListener('click', async () => {
 
 function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2600); }
 
-loadPois();
+// ---------- pack selector (debugging across built packs) ----------
+async function initPacks() {
+  try {
+    const r = await fetch('/api/packs');
+    state.packs = (await r.json()).packs || [];
+  } catch { state.packs = []; }
+  const sel = $('#pack-sel');
+  sel.innerHTML = state.packs.map(p =>
+    `<option value="${esc(p.id)}">${esc(p.name)}${p.total != null ? ` (${p.total})` : ''}</option>`).join('')
+    || `<option value="">Southend-on-Sea</option>`;
+  sel.addEventListener('change', () => {
+    state.pack = sel.value;
+    state.selectedId = null;
+    $('#detail').classList.add('hidden');
+    const b = (state.packs.find(p => p.id === state.pack) || {}).bbox;
+    if (b && [b.s, b.w, b.n, b.e].every(Number.isFinite)) map.flyToBounds([[b.s, b.w], [b.n, b.e]], { duration: 0.7 });
+    loadPois();
+  });
+  loadPois();
+}
+
+initPacks();

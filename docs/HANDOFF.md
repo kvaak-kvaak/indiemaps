@@ -41,6 +41,8 @@ Read these three docs first, in order:
   223 matched + 1,440 added, FI hours normalized). Oiva has no bulk
   path — manual verification reference only. Open FI gaps: FI-specific
   ATP spiders (UK list yielded 28 matches), Swedish day names in spider.
+- Demo serves three debugging turfs via pack selector (`/api/packs`):
+  Southend demo data, Hackney (Stoke Newington), Helsinki.
 
 ## Working conventions (non-negotiable, learned the hard way)
 
