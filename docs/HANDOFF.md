@@ -27,10 +27,15 @@ Read these three docs first, in order:
 ## Current state (2026-09-13)
 
 - Phase 1a GREEN: 47/47 packs complete via Actions (base+overture+nhs+atp).
-  Southend reference: 1,437 POIs / 231 with hours in release `pois-2026-Q3`
-  (local demo `data/pois.json` shows 237 — different build vintage).
-- Open threads: Phase 1b spider dispatch; Westminster rebuilt post-bbox-fix;
-  `record_id`→`fsq_place_id` hypothesis unverified (needs Portal lookup).
+- Phase 1b spider GREEN: 47/47 via Actions run 34909795573 (full
+  --sites-all); release `pois-2026-Q3` = 48 assets, 87,690 POIs.
+  Southend reference (post-fix rebuild 34984689428): 1,723 POIs / 258
+  with hours — Overpass raw-count cap guard recovered ~290 POIs the
+  Sep-14 pull silently truncated (Wendy's + Nagawa were the canaries).
+- Open threads: Westminster rebuilt post-bbox-fix (verify in next full
+  run); `record_id`→`fsq_place_id` hypothesis unverified (needs Portal
+  lookup); Gogi (2 Queens Rd) correctly absent — premises churned
+  Nagawa→Gogi, FSA delisted 1426811, new occupant unregistered.
 
 ## Working conventions (non-negotiable, learned the hard way)
 

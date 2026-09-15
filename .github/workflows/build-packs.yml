@@ -101,7 +101,12 @@ jobs:
         run: |
           TAG="pois-$(date +%Y)-Q$(( ( $(date +%-m) - 1 ) / 3 + 1 ))"
           echo "TAG=$TAG" >> $GITHUB_ENV
-          python3 scripts/pack/release.py --tag "$TAG" --out dist/
+          # Union with the published manifest so single-area dispatches
+          # refresh their own packs without orphaning the others (missing
+          # base = first release of the quarter; release.py handles that).
+          curl -sL -o /tmp/base-manifest.json "https://github.com/${{ github.repository }}/releases/download/$TAG/manifest.json" || true
+          BASE=""; [ -s /tmp/base-manifest.json ] && BASE="--base-manifest /tmp/base-manifest.json"
+          python3 scripts/pack/release.py --tag "$TAG" --out dist/ $BASE
       - name: Create release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
