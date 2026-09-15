@@ -1,5 +1,5 @@
 {
- "built_at": "2026-09-14T23:39:06.960Z",
+ "built_at": "2026-09-15T15:03:07.221Z",
  "fsa_extract_date": "2026-09-14",
  "fsa_authority": "FHRS893",
  "bbox": {
@@ -9,16 +9,16 @@
   "e": 0.825
  },
  "counts": {
-  "total": 1435,
-  "fsa_only": 419,
-  "merged": 149,
-  "osm_only": 140,
-  "nhs_added": 15,
-  "with_hours": 230
+  "total": 1723,
+  "fsa_only": 377,
+  "merged": 283,
+  "osm_only": 273,
+  "nhs_added": 12,
+  "with_hours": 258
  },
- "with_hours": 32,
- "with_phone": 31,
- "with_website": 92,
+ "with_hours": 57,
+ "with_phone": 66,
+ "with_website": 210,
  "stages_ok": [
   "base",
   "overture",
@@ -30,32 +30,32 @@
  "overture": {
   "release": "2026-07-22.0",
   "contact_rows_in_bbox": 7031,
-  "websites_filled": 646,
-  "phones_filled": 771
+  "websites_filled": 692,
+  "phones_filled": 900
  },
  "nhs": {
   "cache_updated": "2026-09-13",
   "rows_in_bbox": 39,
-  "matched": 22,
-  "added": 17
+  "matched": 25,
+  "added": 14
  },
  "atp": {
   "run_id": "2026-09-05-13-32-25",
-  "spiders": 61,
-  "feats_in_bbox": 179,
-  "feats_with_hours": 146,
-  "matched": 88,
-  "web_matched": 19,
-  "wikidata_matched": 33,
-  "hours_added": 63,
-  "hours_before": 32,
-  "hours_after": 95
+  "spiders": 62,
+  "feats_in_bbox": 180,
+  "feats_with_hours": 147,
+  "matched": 97,
+  "web_matched": 15,
+  "wikidata_matched": 55,
+  "hours_added": 65,
+  "hours_before": 57,
+  "hours_after": 122
  },
  "site": {
   "input": "/home/runner/work/indiemaps/indiemaps/packs/eu/gb/england/essex/southend-on-sea/site.json",
-  "sites": 429,
-  "matched": 403,
-  "hours_added": 101,
-  "conflicts": 10
+  "sites": 462,
+  "matched": 433,
+  "hours_added": 102,
+  "conflicts": 15
  }
 }
