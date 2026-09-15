@@ -477,15 +477,27 @@
   "fsa": 532,
   "bbox_source": "nominatim-boundary"
  },
- "eu/gb/england/greater-london/westminster": {
-  "name": "Westminster",
-  "bbox": [
-   -0.21609,
-   51.48381,
-   -0.11108,
-   51.53981
-  ],
-  "fsa": 533,
-  "bbox_source": "nominatim-boundary"
- }
+  "eu/gb/england/greater-london/westminster": {
+    "name": "Westminster",
+    "bbox": [
+      -0.21609,
+      51.48381,
+      -0.11108,
+      51.53981
+    ],
+    "fsa": 533,
+    "bbox_source": "nominatim-boundary"
+  },
+  "eu/fi/uusimaa/helsinki": {
+    "name": "Helsinki",
+    "bbox": [
+      24.7828,
+      59.92249,
+      25.25451,
+      60.29785
+    ],
+    "fsa": null,
+    "servicemap_muni": "helsinki",
+    "bbox_source": "nominatim-boundary"
+  }
 }

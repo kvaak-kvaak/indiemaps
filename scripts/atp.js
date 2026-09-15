@@ -84,7 +84,7 @@ fs.mkdirSync(path.dirname(EXTRACT_PATH), { recursive: true });
 fs.writeFileSync(EXTRACT_PATH, JSON.stringify({ run_id: RUN_ID, bbox, count: feats.length, feats }, null, 2));
 
 // ---- match to built listings ----
-const normName = s => (s || '').toLowerCase().replace(/\bltd\b|\blimited\b|\bplc\b|\bthe\b/g, '').replace(/&/g, 'and').replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+const normName = s => (s || '').toLowerCase().replace(/\bltd\b|\blimited\b|\bplc\b|\bthe\b/g, '').replace(/&/g, 'and').replace(/[^a-z0-9åäö ]/g, ' ').replace(/\s+/g, ' ').trim(); // åäö retained (FI/SE names)
 const STOP = new Set(['and', 'of', 'de', 'la', 's']); // 's' = possessive artifact ("Wendy's" vs "McDonald's")
 const GENERIC = new Set(['southend', 'Leigh', 'westcliff', 'chalkwell', 'shoebury', 'shoeburyness', 'thorpe', 'essex', 'london', 'high', 'street', 'road', 'avenue', 'broadway', 'parade', 'town', 'centre', 'center', 'branch', 'store', 'station', 'sea', 'old', 'new', 'north', 'south', 'east', 'west', 'great', 'little', 'upper', 'lower', 'saint', 'on']);
 const tokens = (s, minLen = 3) => new Set(normName(s).split(' ').filter(w => w.length >= minLen && !STOP.has(w)));

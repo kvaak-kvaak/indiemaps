@@ -51,8 +51,8 @@ def pull_osm(w, s, e, n):
 
 
 def norm(s):
-    s = re.sub(r'\bltd\b|\blimited\b|\bplc\b|\bthe\b', '', (s or '').lower())
-    return re.sub(r'[^a-z0-9 ]', ' ', s.replace('&', 'and'))
+    s = re.sub(r'\bltd\b|\blimited\b|\bplc\b|\bthe\b|\boy\b|\bab\b', '', (s or '').lower())
+    return re.sub(r'[^a-z0-9åäö ]', ' ', s.replace('&', 'and'))  # åäö retained (FI/SE names)
 
 STOP = {'and', 'of', 'de', 'la', 's'}  # 's' = possessive artifact
 GENERIC = {'southend', 'Leigh', 'westcliff', 'chalkwell', 'hackney', 'london',

@@ -118,11 +118,14 @@ def merge(bbox, pois_path, meta_path):
     pois = json.load(open(pois_path))
     matched = added = 0
     used = set()
+    # Match against a snapshot: appended NHS records must never become match
+    # targets mid-loop (same-name branches would collapse onto each other).
+    base_pois = list(pois)
     for r in rows:
         hours = '; '.join(f'{d} {r["hours"][d]}' for d in OSM_DAYS if d in r['hours'])
         best, bs = None, 0
         rpc = (r['postcode'] or '').replace(' ', '').lower()
-        for p in pois:
+        for p in base_pois:
             if id(p) in used:
                 continue
             if p.get('category') not in ('health', 'shopping', 'services'):

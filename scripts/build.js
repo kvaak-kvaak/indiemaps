@@ -74,9 +74,9 @@ function mapOsmCategory(tags = {}) {
 }
 
 const normName = s => (s || '').toLowerCase()
-  .replace(/\bltd\b|\blimited\b|\bplc\b|\bthe\b/g, '')
+  .replace(/\bltd\b|\blimited\b|\bplc\b|\bthe\b|\boy\b|\bab\b/g, '')
   .replace(/&/g, 'and')
-  .replace(/[^a-z0-9 ]/g, ' ')
+  .replace(/[^a-z0-9åäö ]/g, ' ') // åäö retained: Finnish/Swedish names must survive normalization
   .replace(/\s+/g, ' ')
   .trim();
 const tokens = s => new Set(normName(s).split(' ').filter(w => w.length > 2));

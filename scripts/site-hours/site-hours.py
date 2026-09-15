@@ -32,10 +32,10 @@ _ROBOTS = {}      # host -> (allowed_fn, delay) — fetched once per run
 _ROBOTS_LOCK = threading.Lock()
 _DEAD = {}  # set from --dead-cache in main(); {domain: {fails, last}}
 HOUR_LINK_RE = re.compile(r'hour|opening|open-|/open|contact|visit|find[-\s]?us|location|about', re.I)
-DAY = r'(?:mon(?:day)?|tue(?:sday)?|wed(?:nesday)?|thu(?:rsday)?|fri(?:day)?|sat(?:urday)?|sun(?:day)?)s?'
-TIME = r'(\d{1,2})(?::(\d{2}))?\s*(am|pm)?'
+DAY = r'(?:mon(?:day)?|tue(?:sday)?|wed(?:nesday)?|thu(?:rsday)?|fri(?:day)?|sat(?:urday)?|sun(?:day)?|ma(?:nantai)?|ti(?:istai)?|ke(?:skiviikko)?|to(?:rstai)?|pe(?:rjantai)?|la(?:uantai)?|su(?:nnuntai)?)s?'
+TIME = r'(\d{1,2})(?:(?::|\.)(\d{2}))?\s*(am|pm)?'  # '.' separator for FI-style 9.00–17.00
 SECOND_RANGE_RE = re.compile(rf'^\s*(?:,|and|&|\+)\s*{TIME}\s*(?:-|–|to)\s*{TIME}', re.I)
-DAY_WORD_RE = re.compile(r'mon|tue|wed|thu|fri|sat|sun', re.I)
+DAY_WORD_RE = re.compile(r'mon|tue|wed|thu|fri|sat|sun|ma\b|ti\b|ke\b|to\b|pe\b|la\b|su\b', re.I)
 DELIVERY_RE = re.compile(r'deliver|take\s?away|collection', re.I)
 DINEIN_RE = re.compile(r'dine.?in|eat.?in|restaurant|kitchen|opening|hours|visit', re.I)
 DAYSEP = r'(?:\s*([-–&/]|to|through|thru|and)\s*' + DAY + r')?'
@@ -45,7 +45,14 @@ RANGE_RE = re.compile(
 OSM_DAYS = {'monday': 'Mo', 'mon': 'Mo', 'tuesday': 'Tu', 'tue': 'Tu', 'tues': 'Tu',
             'wednesday': 'We', 'wed': 'We', 'thursday': 'Th', 'thu': 'Th', 'thur': 'Th',
             'thurs': 'Th', 'friday': 'Fr', 'fri': 'Fr', 'saturday': 'Sa', 'sat': 'Sa',
-            'sunday': 'Su', 'sun': 'Su'}
+            'sunday': 'Su', 'sun': 'Su',
+            'maanantai': 'Mo', 'ma': 'Mo', 'tiistai': 'Tu', 'ti': 'Tu',
+            'keskiviikko': 'We', 'ke': 'We', 'torstai': 'Th', 'to': 'Th',
+            'perjantai': 'Fr', 'pe': 'Fr', 'lauantai': 'Sa', 'la': 'Sa',
+            'sunnuntai': 'Su', 'su': 'Su',
+            # 3-letter truncations (regex_hours looks up day[:3])
+            'maa': 'Mo', 'tii': 'Tu', 'kes': 'We', 'tor': 'Th',
+            'per': 'Fr', 'lau': 'Sa'}
 FOOD_TYPES = {'restaurant', 'foodestablishment', 'cafeorcoffeeshop', 'barorpub',
               'bakery', 'icecreamshop', 'fastfoodrestaurant', 'store', 'localbusiness'}
 
@@ -241,7 +248,7 @@ def visible_text(html_text, keep_alt=True):
 
 
 def norm(s):
-    return re.sub(r'[^a-z0-9 ]', ' ', (s or '').lower())
+    return re.sub(r'[^a-z0-9åäö ]', ' ', (s or '').lower())  # åäö retained (FI/SE names)
 
 
 def page_identity(html_text):
@@ -324,6 +331,8 @@ def infer_range(h1, m1, ap1, h2, m2, ap2):
     if not ap1 and not ap2:
         if int(h1) == 0 or int(h2 or 0) == 0:
             pass  # explicit midnight ('00:30') = 24h clock, no inference
+        elif int(h2 or 0) > 12:
+            pass  # 24h clock evidence: bare '12:00-22:00' is noon-22, not 00-22
         elif int(h1) >= int(h2 or 0):
             ap1, ap2 = 'am', 'pm'
         else:
@@ -468,10 +477,13 @@ def regex_hours(text):
     hits = []
     for m in RANGE_RE.finditer(text):
         day, sep, h1, m1, ap1, h2, m2, ap2 = m.groups()
-        d1 = OSM_DAYS.get(day.split()[0].lower()[:3], '')
-        d2 = OSM_DAYS.get(day.split()[-1].lower()[:3], '') if len(day.split()) > 1 else d1
-        if not d1:
+        # Day words from the day expression ('Mon-Fri', 'ma-pe', 'Mon and Fri'):
+        # spaceless hyphenates must split ('ma-pe' -> ma, pe), connector words
+        # ('and') are ignored, lookup is on the 3-letter stem.
+        words = [w for w in re.findall(r'[a-zåäö]+', day.lower()) if w[:3] in OSM_DAYS]
+        if not words:
             continue
+        d1, d2 = OSM_DAYS[words[0][:3]], OSM_DAYS[words[-1][:3]]
         ap2 = ap2 or ap1
         ranges = []
         try:
