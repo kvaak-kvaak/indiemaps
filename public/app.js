@@ -82,11 +82,12 @@ function sourceBadges(p) {
     : s === 'atp' ? '<span class="badge src-atp" title="Chain-published data via AllThePlaces">chains</span>'
     : s === 'site' ? '<span class="badge src-site" title="Hours stated on the business website">website</span>'
     : s === 'nhs' ? '<span class="badge src-nhs" title="NHS listed pharmacy (England)">NHS</span>'
+    : s === 'servicemap' ? '<span class="badge src-sm" title="City of Helsinki Service Map (CC BY 4.0)">HKI map</span>'
     : '<span class="badge src-osm" title="OpenStreetMap contributors">OSM</span>').join('');
 }
-// Effective hours: OSM mapping first, then chain, site, NHS — every differing
-// source is shown, never merged.
-const effHours = p => p.opening_hours_osm || p.atp_hours || p.site_hours || p.nhs_hours || '';
+// Effective hours: OSM mapping first, then chain, site, NHS, municipal —
+// every differing source is shown, never merged.
+const effHours = p => p.opening_hours_osm || p.atp_hours || p.site_hours || p.nhs_hours || p.sm_hours || '';
 const tblKey = s => JSON.stringify(parseOsmHours(s || ''));
 function hourVariants(p) {
   const v = [];
@@ -94,6 +95,7 @@ function hourVariants(p) {
   if (p.atp_hours) v.push([`Published by ${p.atp_brand || 'the chain'}`, p.atp_hours]);
   if (p.site_hours) v.push(['On the business website', p.site_hours]);
   if (p.nhs_hours) v.push(['NHS listed hours', p.nhs_hours]);
+  if (p.sm_hours) v.push(['Municipal listing (Helsinki Service Map)', p.sm_hours]);
   if (p.site_alt) v.push(['Also stated on the business website', p.site_alt]);
   return v;
 }
@@ -246,6 +248,7 @@ function detailSkeleton(p) {
       ${(p.sources || []).includes('osm') ? `· <b>Position, hours & contact</b> — OpenStreetMap contributors${p.osm_id ? ` (node ${p.osm_id})` : ''}<br/>` : ''}
       ${(p.sources || []).includes('atp') ? `· <b>Opening hours</b> — as published by ${esc(p.atp_brand || 'the chain')}, via AllThePlaces (CC0)<br/>` : ''}
       ${(p.sources || []).includes('nhs') ? `· <b>Listed pharmacy</b> — NHS England${p.nhs_ods ? ` (ODS ${esc(p.nhs_ods)})` : ''}<br/>` : ''}
+      ${(p.sources || []).includes('servicemap') ? `· <b>Municipal listing</b> — City of Helsinki Service Map (CC BY 4.0)${p.sm_id ? ` (unit ${esc(String(p.sm_id))})` : ''}<br/>` : ''}
       ${(p.sources || []).includes('site') ? `· <b>Opening hours${p.site_image ? ', photo' : ''}${p.site_menu ? ', menu' : ''}${p.site_description ? ', description' : ''}</b> — from the business website${p.site_url ? ` (<a target="_blank" href="${esc(p.site_url)}">source</a>, ${esc(p.site_method || 'parsed')})` : ''}<br/>` : ''}
       · <b>Position accuracy</b> — ${p.geo_precision === 'postcode' ? 'postcode area (approximate)' : 'mapped point'}
       </div>
@@ -280,6 +283,10 @@ function debugHtml(p) {
     const m = p.nhs_match || {};
     rows.push(['NHS', `ODS ${esc(p.nhs_ods || '?')}${m.dist_m != null ? ` · ${m.dist_m} m` : ''}`]);
   }
+  if (src.includes('servicemap')) {
+    const m = p.sm_match || {};
+    rows.push(['ServiceMap', `unit ${esc(String(p.sm_id ?? '?'))}${m.dist_m != null ? ` · ${m.dist_m} m` : ''}`]);
+  }
   if (src.includes('site')) rows.push(['Website', `${esc(p.site_method || 'parsed')}${p.site_url ? ` · <a target="_blank" href="${esc(p.site_url)}">source page</a>` : ''}${p.site_raw ? ` · ${p.site_raw.length} snippets` : ''}${p.site_alt ? ' · disputed on-site' : ''}`]);
   if (p.wikipedia || p.wikidata) rows.push(['Wikipedia', `mapper-asserted${p.wikipedia ? ` ${esc(p.wikipedia)}` : ''}${p.wikidata ? ` · <a target="_blank" href="https://www.wikidata.org/wiki/${esc(p.wikidata)}">${esc(p.wikidata)}</a>` : ''}`]);
   if (!rows.length) return '';
@@ -295,6 +302,7 @@ function hoursHtml(p) {
   const srcNote = primaryWho === 'Mapped on OpenStreetMap' ? 'As mapped on OpenStreetMap — may be out of date.'
     : primaryWho.startsWith('Published by') ? `As published by ${esc(p.atp_brand || 'the chain')} (via AllThePlaces) — may be out of date.`
     : primaryWho === 'NHS listed hours' ? 'As listed by NHS England — may be out of date.'
+    : primaryWho.startsWith('Municipal listing') ? 'As listed by the City of Helsinki Service Map — may be out of date.'
     : primaryWho.startsWith('Also stated') ? 'As also stated on the business website — may be out of date.'
     : `As stated on the business website — may be out of date.`;
   // table-compare so formatting-only differences don't flag as conflicts
@@ -305,7 +313,7 @@ function hoursHtml(p) {
   const table = parseOsmHours(raw);
   if (!Object.keys(table).length) return `<p style="font-size:13px;font-family:monospace;background:#f6f6f6;padding:8px;border-radius:8px">${esc(raw)}</p>`;
   return `<table class="hours-tbl">${days.map(d => {
-    const v = table[d];
+    const v = table[d.slice(0, 2)]; // parse keys are 2-letter (Mo); rows are 3-letter (Mon)
     const txt = !v ? '—' : v.length === 0 ? 'Closed' : v.map(([o, c]) => `${String(Math.floor(o / 60)).padStart(2, '0')}:${String(o % 60).padStart(2, '0')}–${String(Math.floor(c / 60) % 24).padStart(2, '0')}:${String(c % 60).padStart(2, '0')}`).join(', ');
     const isToday = d === jsToday;
     return `<tr class="${isToday ? 'today' : ''}"><td>${full[d]}${isToday ? ' · today' : ''}</td><td style="text-align:right">${esc(txt)}</td></tr>`;

@@ -14,6 +14,24 @@ app.use(cors());
 app.use(express.json());
 
 const POIS = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'pois.json'), 'utf8'));
+const BASE_META = (() => { try { return JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'build-meta.json'), 'utf8')); } catch { return {}; } })();
+
+// Multi-pack debugging: ?pack=eu/fi/uusimaa/helsinki serves a built pack
+// from packs/<id>/ (gitignored build output, e.g. downloaded from a CI
+// artifact). Falls back to the committed demo data when absent.
+function loadPack(id) {
+  if (!id || !/^[a-z0-9][a-z0-9/-]*$/.test(id) || id.includes('..')) return null;
+  try {
+    return JSON.parse(fs.readFileSync(path.join(__dirname, 'packs', id, 'pois.json'), 'utf8'));
+  } catch { return null; }
+}
+function loadPackMeta(id) {
+  if (!id || !/^[a-z0-9][a-z0-9/-]*$/.test(id) || id.includes('..')) return null;
+  try {
+    return JSON.parse(fs.readFileSync(path.join(__dirname, 'packs', id, 'meta.json'), 'utf8'));
+  } catch { return null; }
+}
+const poisFor = req => loadPack(req.query.pack) || POIS;
 let REVIEWS = {};
 try {
   REVIEWS = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'reviews.json'), 'utf8'));
@@ -29,7 +47,7 @@ function inBbox(poi, bbox) {
 
 function richness(poi) {
   // Detail completeness: share of real fields actually present (never invented)
-  const fields = ['phone', 'email', 'website', 'opening_hours_osm', 'atp_hours', 'site_hours', 'nhs_hours', 'amenities', 'cuisine', 'facebook', 'instagram'];
+  const fields = ['phone', 'email', 'website', 'opening_hours_osm', 'atp_hours', 'site_hours', 'nhs_hours', 'sm_hours', 'amenities', 'cuisine', 'facebook', 'instagram'];
   let score = 0;
   for (const f of fields) {
     const v = poi[f];
@@ -126,10 +144,12 @@ async function fetchLiveOsm(bboxStr) {
 
 // ---- API ----
 
-// Curated Yellow-Pages POIs (rich detail guaranteed)
+// Curated Yellow-Pages POIs (rich detail guaranteed). ?pack=<area-id>
+// serves a built pack instead of the default demo data (debugging).
 app.get('/api/pois', (req, res) => {
   const { bbox, category, q } = req.query;
-  let out = POIS.map(p => ({ ...p, richness: richness(p), community_reviews: (REVIEWS[p.id] || []).length }));
+  const SRC = poisFor(req);
+  let out = SRC.map(p => ({ ...p, richness: richness(p), community_reviews: (REVIEWS[p.id] || []).length }));
   if (bbox) out = out.filter(p => inBbox(p, bbox));
   if (category && category !== 'all') out = out.filter(p => p.category === category);
   if (q) {
@@ -152,14 +172,15 @@ app.get('/api/live-pois', async (req, res) => {
 // Unified: curated + live, de-duplicated roughly by name+proximity
 app.get('/api/combined', async (req, res) => {
   const { bbox, category, q } = req.query;
-  let curated = POIS.map(p => ({ ...p, richness: richness(p) }));
+  const SRC = poisFor(req);
+  let curated = SRC.map(p => ({ ...p, richness: richness(p) }));
   if (bbox) curated = curated.filter(p => inBbox(p, bbox));
   if (category && category !== 'all') curated = curated.filter(p => p.category === category);
   let live = [];
   try { live = await fetchLiveOsm(req.query.bbox); } catch { live = []; }
   if (category && category !== 'all') live = live.filter(p => p.category === category);
   // de-dupe: drop OSM POIs within ~60m with same-ish name as curated
-  const norm = s => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const norm = s => (s || '').toLowerCase().replace(/[^a-z0-9åäö]/g, ''); // åäö retained (FI/SE names)
   live = live.filter(lp => !curated.some(cp => {
     const dLat = (lp.lat - cp.lat) * 111320, dLng = (lp.lng - cp.lng) * 62500;
     const dist = Math.hypot(dLat, dLng);
@@ -174,7 +195,7 @@ app.get('/api/combined', async (req, res) => {
 });
 
 app.get('/api/pois/:id', (req, res) => {
-  const poi = POIS.find(p => p.id === req.params.id);
+  const poi = poisFor(req).find(p => p.id === req.params.id);
   if (!poi) return res.status(404).json({ error: 'Not found. IDs rebuild from real sources — search /api/pois instead.' });
   res.json({ ...poi, richness: richness(poi), reviews: REVIEWS[poi.id] || [] });
 });
@@ -198,7 +219,7 @@ app.get('/api/search', async (req, res) => {
   const q = (req.query.q || '').trim();
   if (!q) return res.json({ pois: [], places: [] });
   const needle = q.toLowerCase();
-  const pois = POIS.filter(p => (p.name + ' ' + p.category_label + ' ' + p.address).toLowerCase().includes(needle)).map(p => ({ ...p, richness: richness(p) })).slice(0, 10);
+  const pois = poisFor(req).filter(p => (p.name + ' ' + p.category_label + ' ' + p.address).toLowerCase().includes(needle)).map(p => ({ ...p, richness: richness(p) })).slice(0, 10);
   let places = [];
   try {
     const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=6&viewbox=0.55,51.60,0.85,51.50&bounded=1&q=${encodeURIComponent(q)}`;
@@ -295,11 +316,10 @@ app.get('/api/enrich', async (req, res) => {
   res.json(out);
 });
 
-// Build provenance: when the dataset was built and from which FSA extract
+// Build provenance: when the dataset was built and from which extract.
+// ?pack=<area-id> serves that pack's meta instead of the demo meta.
 app.get('/api/meta', (req, res) => {
-  try {
-    res.json(JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'build-meta.json'), 'utf8')));
-  } catch { res.json({}); }
+  res.json(loadPackMeta(req.query.pack) || BASE_META);
 });
 
 // Where premium providers would plug in (Google Places, Foursquare, Yelp, TripAdvisor)
