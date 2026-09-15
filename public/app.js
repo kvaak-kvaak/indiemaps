@@ -1,6 +1,7 @@
 /* Essex Yellow-Pages Map — honest frontend.
- * Every field shown comes from a real source (FSA / OSM / Wikipedia / Commons /
- * visitor contributions). Anything unverified renders as "unknown" — never invented. */
+ * Every field shown comes from a real source (FSA / OSM / chain feeds /
+ * business websites / visitor contributions). Anything unverified renders
+ * as "unknown" — never invented. */
 const SOUTHEND = [51.5414, 0.7120];
 const state = { pois: [], meta: {}, curatedCount: 0, liveCount: 0, cat: 'all', mode: 'curated', openOnly: false, q: '', selectedId: null, markers: new Map() };
 
@@ -187,7 +188,7 @@ function detailSkeleton(p) {
   const gUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name + ', ' + (p.address || 'Southend-on-Sea'))}`;
   const taUrl = `https://www.tripadvisor.co.uk/Search?q=${encodeURIComponent(p.name + ' ' + (p.address || ''))}`;
   return `
-  <div class="hero" id="hero"><div class="hero-empty"><span>${CAT_ICON[p.category] || '📍'}</span><p>No photo on record.<br/>Photos come from Wikimedia Commons only.</p></div></div>
+  <div class="hero" id="hero"><div class="hero-empty"><span>${CAT_ICON[p.category] || '📍'}</span><p>No photo on record.</p></div></div>
   <div class="dpad">
     <h2>${esc(p.name)}</h2>
     <div class="sub">${esc(p.category_label || p.category)}${(p.site_cuisine || [])[0] ? ` · ${esc(p.site_cuisine.join(', '))}` : p.cuisine ? ` · ${esc(p.cuisine)}` : ''}${p.site_price ? ` · ${esc(p.site_price)}` : ''}</div>
@@ -198,7 +199,6 @@ function detailSkeleton(p) {
       ${p.phone ? `<a class="act" style="text-decoration:none;color:inherit" href="${tel}"><span>📞</span>Call</a>` : `<button class="act" disabled style="opacity:.4" title="No phone number on record"><span>📞</span>No phone</button>`}
       ${p.website ? `<a class="act" style="text-decoration:none;color:inherit" target="_blank" href="${esc(p.website)}"><span>🌐</span>Website</a>` : `<button class="act" disabled style="opacity:.4" title="No website on record"><span>🌐</span>No site</button>`}
       ${p.site_menu ? `<a class="act" style="text-decoration:none;color:inherit" target="_blank" href="${esc(p.site_menu.url)}" title="Menu on the business website${p.site_menu.kind === 'pdf' ? ' (PDF)' : p.site_menu.kind === 'third-party' ? ' (third party)' : ''}"><span>📖</span>Menu</a>` : ''}
-      <button class="act" id="share-btn"><span>🔗</span>Share</button>
     </div>
     <div class="hr"></div>
     <div class="sec"><h4>About</h4><div id="wiki"><p style="font-size:13px;color:#666;margin:0">Checking Wikipedia for this place…</p></div>${p.site_description ? `<div class="wiki" style="margin-top:10px;background:#fffdf4;border-color:#f0e6c8"><b>In their own words</b> <span style="color:#888;font-size:11px">from the business website</span><br/>${esc(p.site_description)}</div>` : ''}</div>
@@ -247,12 +247,45 @@ function detailSkeleton(p) {
       ${(p.sources || []).includes('atp') ? `· <b>Opening hours</b> — as published by ${esc(p.atp_brand || 'the chain')}, via AllThePlaces (CC0)<br/>` : ''}
       ${(p.sources || []).includes('nhs') ? `· <b>Listed pharmacy</b> — NHS England${p.nhs_ods ? ` (ODS ${esc(p.nhs_ods)})` : ''}<br/>` : ''}
       ${(p.sources || []).includes('site') ? `· <b>Opening hours${p.site_image ? ', photo' : ''}${p.site_menu ? ', menu' : ''}${p.site_description ? ', description' : ''}</b> — from the business website${p.site_url ? ` (<a target="_blank" href="${esc(p.site_url)}">source</a>, ${esc(p.site_method || 'parsed')})` : ''}<br/>` : ''}
-      · <b>Photos</b> — Wikimedia Commons, if any exist nearby<br/>
       · <b>Position accuracy</b> — ${p.geo_precision === 'postcode' ? 'postcode area (approximate)' : 'mapped point'}
       </div>
+      ${debugHtml(p)}
     </div>
     <div style="height:20px"></div>
   </div>`;
+}
+
+function debugHtml(p) {
+  // Per-source match diagnostics for datamash debugging: which rows won,
+  // by what score/distance, from how many candidates. Renders only keys
+  // the build actually stored — never invented.
+  const rows = [];
+  const src = p.sources || [];
+  if (src.includes('fsa')) rows.push(['FSA', `FHRS ${p.fsa_id ?? '?'} · extract ${esc(state.meta.fsa_extract_date || '?')}`]);
+  if (src.includes('osm')) {
+    const m = p.osm_match || {};
+    rows.push(['OSM', `${esc(p.osm_type || '?')} ${p.osm_id ?? '?'}${p.osm_id ? ` (<a target="_blank" href="https://www.openstreetmap.org/${p.osm_type || 'node'}/${p.osm_id}">view</a>)` : ''}`
+      + (m.score != null ? ` · score ${m.score}, ${m.dist_m ?? '?'} m, ${m.candidates ?? '?'} candidates` : ' · base record, no merge decision')]);
+  }
+  if (src.includes('overture')) {
+    const m = p.overture_match || {};
+    rows.push(['Overture', `GERS ${esc(p.overture_id || '?')}${m.name ? ` · matched “${esc(m.name)}” at ${m.dist_m ?? '?'} m` : ''}`]);
+  }
+  if (src.includes('atp')) {
+    const m = p.atp_match || {};
+    rows.push(['AllThePlaces', `${esc(p.atp_spider || '?')} · method ${esc(p.atp_method || m.method || '?')}${p.atp_brand ? ` · brand ${esc(p.atp_brand)}` : ''}${p.atp_wikidata ? ` · <a target="_blank" href="https://www.wikidata.org/wiki/${esc(p.atp_wikidata)}">${esc(p.atp_wikidata)}</a>` : ''}`
+      + (m.score != null ? ` · score ${m.score}, ${m.candidates ?? '?'} candidates` : '')]);
+  }
+  if (src.includes('nhs')) {
+    const m = p.nhs_match || {};
+    rows.push(['NHS', `ODS ${esc(p.nhs_ods || '?')}${m.dist_m != null ? ` · ${m.dist_m} m` : ''}`]);
+  }
+  if (src.includes('site')) rows.push(['Website', `${esc(p.site_method || 'parsed')}${p.site_url ? ` · <a target="_blank" href="${esc(p.site_url)}">source page</a>` : ''}${p.site_raw ? ` · ${p.site_raw.length} snippets` : ''}${p.site_alt ? ' · disputed on-site' : ''}`]);
+  if (p.wikipedia || p.wikidata) rows.push(['Wikipedia', `mapper-asserted${p.wikipedia ? ` ${esc(p.wikipedia)}` : ''}${p.wikidata ? ` · <a target="_blank" href="https://www.wikidata.org/wiki/${esc(p.wikidata)}">${esc(p.wikidata)}</a>` : ''}`]);
+  if (!rows.length) return '';
+  return `<details style="margin-top:8px"><summary style="font-size:12.5px;cursor:pointer;color:#555">Source debug</summary>`
+    + `<div style="font-size:12px;color:#444;line-height:1.7;margin-top:4px;font-family:monospace">`
+    + rows.map(([s, d]) => `· <b>${s}</b> — ${d}<br/>`).join('') + `</div></details>`;
 }
 
 function hoursHtml(p) {
@@ -281,11 +314,6 @@ function hoursHtml(p) {
 const prettyUrl = u => u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
 
 function wireDetail(p) {
-  $('#share-btn').addEventListener('click', async () => {
-    const url = location.origin + location.pathname + '?poi=' + encodeURIComponent(p.id);
-    try { await navigator.clipboard.writeText(url); toast('Link copied ✓'); }
-    catch { prompt('Copy link:', url); }
-  });
   $('#rev-form').addEventListener('submit', async e => {
     e.preventDefault();
     const body = { author: $('#rev-name').value.trim(), rating: +$('#rev-rating').value, text: $('#rev-text').value.trim() };
@@ -308,7 +336,7 @@ function renderHero(p) {
   const hero = $('#hero');
   if (!hero) return;
   if (!heroPhotos.length) return; // keep honest placeholder
-  const credit = ph => ph.credit || `📷 ${esc((ph.title || '').slice(0, 50))} · <a target="_blank" href="${ph.url}">Wikimedia Commons</a>`;
+  const credit = ph => ph.credit || `📷 ${esc((ph.title || '').slice(0, 50))}`;
   hero.innerHTML = `
     <img id="hero-img" src="${heroPhotos[0].thumb}" alt="${esc(heroPhotos[0].title || p.name)}" onerror="this.closest('#hero').innerHTML='<div class=&quot;hero-empty&quot;><span>${CAT_ICON[p.category] || '📍'}</span><p>Photo unavailable.</p></div>'" />
     ${heroPhotos.length > 1 ? `<button class="hero-nav prev">‹</button><button class="hero-nav next">›</button><div class="hero-dots">${heroPhotos.map((_, i) => `<button data-i="${i}" class="${i === 0 ? 'on' : ''}"></button>`).join('')}</div>` : ''}
@@ -325,17 +353,23 @@ function renderHero(p) {
 }
 
 async function loadPhotos(p) {
-  // first-party image first (validated at build), Commons after
+  // Hero order: first-party image (validated at build), else chain brand
+  // logo (Wikidata P154 via /api/brand-logo), else honest placeholder.
   heroPhotos = p.site_image ? [{ thumb: p.site_image.url, url: p.site_image.url,
     title: p.name, credit: `📷 via the <a target="_blank" href="${esc(p.site_url || p.website || '#')}">business website</a>` }] : [];
   heroIdx = 0;
   if (state.selectedId === p.id) renderHero(p);
-  try {
-    const r = await fetch(`/api/photo?name=${encodeURIComponent(p.name)}&lat=${p.lat}&lng=${p.lng}`);
-    const j = await r.json();
-    heroPhotos = heroPhotos.concat(j.photos || []);
-    if (state.selectedId === p.id) renderHero(p);
-  } catch { /* placeholder stays */ }
+  const qid = p.atp_wikidata || p.brand_wikidata;
+  if (!heroPhotos.length && qid) {
+    try {
+      const r = await fetch(`/api/brand-logo?qid=${encodeURIComponent(qid)}`);
+      const j = await r.json();
+      if (j.thumb) heroPhotos = [{ thumb: j.thumb, url: j.file || j.thumb,
+        title: p.atp_brand || p.name,
+        credit: `ⓘ brand logo · <a target="_blank" href="${esc(j.file || j.thumb)}">Wikimedia Commons</a>` }];
+      if (state.selectedId === p.id) renderHero(p);
+    } catch { /* placeholder stays */ }
+  }
 }
 
 async function loadReviews(p) {
@@ -349,16 +383,25 @@ async function loadReviews(p) {
   } catch { /* keep skeleton */ }
 }
 
+function wikiFallback(p) {
+  return `<p style="font-size:13px;color:#666;margin:0">${esc(p.category_label || p.category)}${p.address ? ` · ${esc(p.address.split(',').slice(0, 2).join(','))}` : ''}.</p>`;
+}
+
 async function loadWiki(p) {
+  // OSM-asserted articles only: the record must carry a mapper-assigned
+  // wikipedia ('lang:Title') or wikidata ('Q…') tag. Bare names are never
+  // resolved (a café called "Tides" must not show the tidal article).
   const box = $('#wiki');
+  if (!p.wikipedia && !p.wikidata) { if (box) box.innerHTML = wikiFallback(p); return; }
   try {
-    const r = await fetch('/api/enrich?name=' + encodeURIComponent(p.name));
+    const q = p.wikipedia ? `wikipedia=${encodeURIComponent(p.wikipedia)}` : `wikidata=${encodeURIComponent(p.wikidata)}`;
+    const r = await fetch('/api/enrich?' + q);
     const j = await r.json();
     if (!box || state.selectedId !== p.id) return;
     box.innerHTML = j.extract
       ? `<p style="font-size:13.5px;line-height:1.55;margin:0">${esc(j.extract.slice(0, 420))}${j.extract.length > 420 ? '…' : ''} ${j.url ? `<a target="_blank" href="${j.url}">Wikipedia</a>` : ''}</p>`
-      : `<p style="font-size:13px;color:#666;margin:0">${esc(p.category_label || p.category)}${p.address ? ` · ${esc(p.address.split(',').slice(0, 2).join(','))}` : ''}.</p>`;
-  } catch { if (box) box.innerHTML = ''; }
+      : wikiFallback(p);
+  } catch { if (box) box.innerHTML = wikiFallback(p); }
 }
 
 // ---------- search ----------

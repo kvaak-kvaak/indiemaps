@@ -208,48 +208,31 @@ app.get('/api/search', async (req, res) => {
   res.json({ pois, places });
 });
 
-// Real photos from Wikimedia Commons (no key): geosearch near the POI, ranked by
-// name match. Most small businesses have none — the frontend says so honestly.
-const photoCache = new Map();
-app.get('/api/photo', async (req, res) => {
-  const { name = '', lat, lng } = req.query;
-  if (lat == null || lng == null) return res.json({ photos: [] });
-  const key = `${Number(lat).toFixed(4)},${Number(lng).toFixed(4)}|${name.slice(0, 40).toLowerCase()}`;
-  if (photoCache.has(key)) return res.json(photoCache.get(key));
-  const out = { photos: [] };
+// Chain brand logos (no key): brand QID → Wikidata P154 (logo image) →
+// Wikimedia Commons thumbnail. Runtime-resolved with cache so packs stay
+// free of third-party URLs. Logos are trademarked; shown for identification
+// with a file-page credit. No logo on file → {} (honest empty).
+const logoCache = new Map();
+app.get('/api/brand-logo', async (req, res) => {
+  const qid = (req.query.qid || '').trim();
+  if (!/^Q\d+$/i.test(qid)) return res.json({});
+  const key = qid.toUpperCase();
+  if (logoCache.has(key)) return res.json(logoCache.get(key));
+  const out = {};
   try {
-    const url = 'https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*'
-      + `&generator=geosearch&ggscoord=${lat}|${lng}&ggsradius=250&ggslimit=20&ggsnamespace=6`
-      + '&prop=imageinfo&iiprop=url|size|mediatype|extmetadata&iiurlwidth=900';
-    const ctrl = new AbortController();
-    const t = setTimeout(() => ctrl.abort(), 12000);
-    const r = await fetch(url, { headers: { 'User-Agent': 'yellowpages-map-prototype/0.1' }, signal: ctrl.signal });
-    clearTimeout(t);
-    if (!r.ok) return res.json(out);
-    const j = await r.json();
-    const pages = Object.values(j.query?.pages || {});
-    const nameTokens = new Set(name.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(' ').filter(w => w.length > 3));
-    const scored = [];
-    for (const p of pages) {
-      const info = p.imageinfo?.[0];
-      if (!info || info.mediatype !== 'BITMAP' || (info.width || 0) < 400) continue;
-      if (/\.svg|\.pdf$/i.test(p.title)) continue;
-      const titleTokens = new Set(p.title.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(' ').filter(w => w.length > 3));
-      let inter = 0;
-      for (const w of nameTokens) if (titleTokens.has(w)) inter++;
-      scored.push({ score: inter, info, title: p.title });
+    const wr = await fetch(`https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${encodeURIComponent(key)}&props=claims&format=json`, { headers: { 'User-Agent': 'yellowpages-map-prototype/0.1' } });
+    if (wr.ok) {
+      const wj = await wr.json();
+      const claims = wj.entities?.[key]?.claims?.P154 || [];
+      const file = claims.map(c => c.mainsnak?.datavalue?.value).find(v => typeof v === 'string' && !/[\\/:]/.test(v) && /\.(svg|png|jpg|jpeg|gif|webp)$/i.test(v));
+      if (file) {
+        out.thumb = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=300`;
+        out.file = `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file)}`;
+      }
     }
-    scored.sort((a, b) => b.score - a.score);
-    const stripHtml = s => (s || '').replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').slice(0, 90);
-    out.photos = scored.slice(0, 4).map(({ info, title }) => ({
-      thumb: info.thumburl || info.url,
-      url: info.descriptionurl || info.url,
-      title: title.replace(/^File:/, '').replace(/\.[a-z]+$/i, '').slice(0, 80),
-      author: stripHtml(info.extmetadata?.Artist?.value),
-    }));
-  } catch { /* no photos — honest empty */ }
-  if (photoCache.size > 2000) photoCache.clear();
-  photoCache.set(key, out);
+  } catch { /* honest empty */ }
+  if (logoCache.size > 500) logoCache.clear();
+  logoCache.set(key, out);
   res.json(out);
 });
 
@@ -272,17 +255,44 @@ app.post('/api/suggest', (req, res) => {
   } catch {}
   res.status(201).json({ ok: true });
 });
-// Wikipedia enrichment proxy (no key) — real editorial summaries for notable places
+// Wikipedia enrichment (no key) — OSM-asserted articles ONLY. The client
+// passes wikipedia ('lang:Title') or wikidata ('Q…') tags retained at build;
+// bare place names are never resolved (name search mismatches e.g. a café
+// called "Tides" to the tidal article). No asserted link → {} (honest empty).
+const enrichCache = new Map();
 app.get('/api/enrich', async (req, res) => {
-  const name = (req.query.name || '').trim();
-  if (!name) return res.json({});
+  const { wikipedia = '', wikidata = '' } = req.query;
+  const key = `${wikipedia}|${wikidata}`;
+  if (!wikipedia && !wikidata) return res.json({});
+  if (enrichCache.has(key)) return res.json(enrichCache.get(key));
+  const out = {};
   try {
-    const r = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(name)}`, { headers: { 'User-Agent': 'yellowpages-map-prototype/0.1' } });
-    if (!r.ok) return res.json({});
-    const j = await r.json();
-    if (j.type === 'disambiguation' || !j.extract) return res.json({});
-    res.json({ title: j.title, extract: j.extract, thumbnail: j.thumbnail?.source || '', url: j.content_urls?.desktop?.page || '' });
-  } catch { res.json({}); }
+    let title = null, lang = 'en';
+    const wm = wikipedia.match(/^([a-z-]+):(.+)$/i);
+    if (wm) { lang = wm[1]; title = wm[2]; }
+    else if (/^Q\d+$/i.test(wikidata)) {
+      const wr = await fetch(`https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${encodeURIComponent(wikidata)}&props=sitelinks&format=json`, { headers: { 'User-Agent': 'yellowpages-map-prototype/0.1' } });
+      if (wr.ok) {
+        const wj = await wr.json();
+        const site = wj.entities?.[Object.keys(wj.entities || {})[0]]?.sitelinks?.enwiki?.title;
+        if (site) title = site;
+      }
+    }
+    if (title) {
+      const r = await fetch(`https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`, { headers: { 'User-Agent': 'yellowpages-map-prototype/0.1' } });
+      if (r.ok) {
+        const j = await r.json();
+        if (j.type !== 'disambiguation' && j.extract) {
+          out.title = j.title; out.extract = j.extract;
+          out.thumbnail = j.thumbnail?.source || '';
+          out.url = j.content_urls?.desktop?.page || '';
+        }
+      }
+    }
+  } catch { /* honest empty */ }
+  if (enrichCache.size > 2000) enrichCache.clear();
+  enrichCache.set(key, out);
+  res.json(out);
 });
 
 // Build provenance: when the dataset was built and from which FSA extract
@@ -300,8 +310,8 @@ app.get('/api/config', (req, res) => {
       osm_overpass: { status: 'active', note: 'Live OpenStreetMap — real names/positions/hours/contact where mapped. No key.' },
       postcodes_io: { status: 'active', note: 'Real postcode coordinates for records missing a geocode. No key.' },
       nominatim: { status: 'active', note: 'Address search, no key' },
-      wikipedia: { status: 'active', note: 'Real editorial summaries for notable places, no key' },
-      wikimedia_commons: { status: 'active', note: 'Real nearby photos via /api/photo, no key' },
+      wikipedia: { status: 'active', note: 'OSM-asserted articles only (wikipedia/wikidata tags), no key' },
+      brand_logos: { status: 'active', note: 'Chain logos via Wikidata P154 + Commons FilePath, no key' },
       google_places: { status: process.env.GOOGLE_PLACES_KEY ? 'active' : 'not-configured', note: 'Set GOOGLE_PLACES_KEY to add real reviews, photos, hours' },
       foursquare: { status: process.env.FOURSQUARE_KEY ? 'active' : 'not-configured', note: 'Set FOURSQUARE_KEY for rich venue details' },
       yelp: { status: process.env.YELP_KEY ? 'active' : 'not-configured', note: 'Set YELP_KEY for reviews/photos' }
