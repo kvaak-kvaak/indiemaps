@@ -36,6 +36,11 @@ Read these three docs first, in order:
   run); `record_id`→`fsq_place_id` hypothesis unverified (needs Portal
   lookup); Gogi (2 Queens Rd) correctly absent — premises churned
   Nagawa→Gogi, FSA delisted 1426811, new occupant unregistered.
+- Helsinki pilot GREEN (gate exception): run 35029285720, 3,701 POIs /
+  2,068 with hours via new Servicemap municipal stage (1,663 units →
+  223 matched + 1,440 added, FI hours normalized). Oiva has no bulk
+  path — manual verification reference only. Open FI gaps: FI-specific
+  ATP spiders (UK list yielded 28 matches), Swedish day names in spider.
 
 ## Working conventions (non-negotiable, learned the hard way)
 
