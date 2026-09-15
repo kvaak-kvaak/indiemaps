@@ -110,7 +110,7 @@ async function queryOnce(q) {
       clearTimeout(t);
       if (!r.ok) continue;
       const j = await r.json();
-      return (j.elements || []).filter(el => el.tags?.name && el.lat != null && el.lon != null);
+      return (j.elements || []).filter(el => el.lat != null && el.lon != null);
     } catch { /* next endpoint */ }
   }
   return null;
@@ -123,18 +123,26 @@ function splitBbox(s, w, n, e) {
 
 async function fetchBox(s, w, n, e, depth) {
   for (let round = 0; round < 3; round++) {
-    const els = await queryOnce(osmQuery(s, w, n, e));
-    if (els) {
-      if (els.length >= 400 && depth < 2) {
+    const raw = await queryOnce(osmQuery(s, w, n, e));
+    if (raw) {
+      // Cap guard on the RAW count: 'out 400' truncates before name
+      // filtering, so a capped response with unnamed nodes slips past a
+      // named-only check and silently drops qualifying POIs (measured:
+      // Wendy's + Nagawa missing from a 388-named pull). Named filtering
+      // happens after the tiling decision.
+      if (raw.length >= 400 && depth < 2) {
         // silent truncation guard: 'out 400' caps dense bboxes (e.g.
         // Westminster keeps only 400 arbitrary OSM nodes). Sub-tile and merge.
         console.log(`OSM cap hit (${s},${w},${n},${e}) — sub-tiling`);
-        const seen = new Map();
-        for (const [ts, tw, tn, te] of splitBbox(s, w, n, e))
-          for (const el of await fetchBox(ts, tw, tn, te, depth + 1)) seen.set(el.id, el);
-        return [...seen.values()];
+        const seen = new Map(), sums = { raw: 0 };
+        for (const [ts, tw, tn, te] of splitBbox(s, w, n, e)) {
+          const sub = await fetchBox(ts, tw, tn, te, depth + 1);
+          for (const el of sub.list) seen.set(el.id, el);
+          sums.raw += sub.raw;
+        }
+        return { list: [...seen.values()], raw: sums.raw };
       }
-      return els;
+      return { list: raw.filter(el => el.tags?.name), raw: raw.length };
     }
     if (round < 2) await sleep(15000 * (round + 1)); // Overpass storms pass
   }
@@ -150,15 +158,18 @@ async function fetchOsm() {
     // Tiles go back through fetchBox so cap-splitting still applies at depth.
     console.log('full-bbox Overpass query failing — sub-tiling 2x2');
     const seen = new Map();
+    let raw = 0;
     for (const [ts, tw, tn, te] of splitBbox(s, w, n, e)) {
       try {
-        for (const el of await fetchBox(ts, tw, tn, te, 1)) seen.set(el.id, el);
+        const sub = await fetchBox(ts, tw, tn, te, 1);
+        for (const el of sub.list) seen.set(el.id, el);
+        raw += sub.raw;
       } catch (e2) {
         throw new Error(`Overpass tile failed: ${ts},${tw},${tn},${te}`);
       }
     }
     console.log(`tiled query: ${seen.size} unique nodes`);
-    return [...seen.values()];
+    return { list: [...seen.values()], raw };
   }
 }
 
@@ -226,25 +237,31 @@ await geocodeMissing(kept);
 const geoKept = kept.filter(k => k.lat != null);
 console.log(`with coordinates: ${geoKept.length} (dropped ${kept.length - geoKept.length} with no location)`);
 
-const osm = await fetchOsm();
-console.log(`OSM named nodes: ${osm.length}`);
+const { list: osm, raw: osmRaw } = await fetchOsm();
+console.log(`OSM named nodes: ${osm.length} (raw response: ${osmRaw})`);
 
 // Match FSA ↔ OSM
 let matched = 0;
 const usedOsm = new Set();
 for (const k of geoKept) {
-  let best = null, bestScore = 0;
+  let best = null, bestScore = 0, bestDist = null, candidates = 0;
   for (const el of osm) {
     if (usedOsm.has(el.id)) continue;
     const d = distM(k.lat, k.lng, el.lat, el.lon);
     if (d > 150) continue;
+    candidates++;
     const ns = nameScore(k.name, el.tags.name);
     const postcodeHit = k.postcode && el.tags['addr:postcode'] && el.tags['addr:postcode'].replace(/\s/g, '').toLowerCase() === k.postcode.replace(/\s/g, '').toLowerCase();
     const score = ns + (postcodeHit ? 0.3 : 0) + (d < 50 ? 0.1 : 0);
     const accept = ns >= 0.5 || (ns >= 0.34 && (d < 60 || postcodeHit));
-    if (accept && score > bestScore) { bestScore = score; best = el; }
+    if (accept && score > bestScore) { bestScore = score; best = el; bestDist = d; }
   }
   if (best) { k.osm = best; usedOsm.add(best.id); matched++; }
+  // Match diagnostics for the per-source debug UI: why this row did or
+  // did not merge (candidates = OSM nodes within 150m).
+  k.osm_match = best
+    ? { score: Math.round(bestScore * 100) / 100, dist_m: Math.round(bestDist), candidates }
+    : { score: null, dist_m: null, candidates };
 }
 console.log(`FSA↔OSM matched: ${matched}`);
 
@@ -289,10 +306,15 @@ for (const k of geoKept) {
     opening_hours: {},
     cuisine: tags.cuisine || '',
     brand_wikidata: tags['brand:wikidata'] || null,
+    // OSM-asserted article links only (never name-guessed downstream):
+    // wikipedia is 'lang:Title', wikidata is 'Q…'.
+    wikipedia: tags.wikipedia || null,
+    wikidata: tags.wikidata || null,
     amenities: [tags.cuisine && `Cuisine: ${tags.cuisine}`, tags.takeaway === 'yes' && 'Takeaway', tags.outdoor_seating === 'yes' && 'Outdoor seating', tags.wheelchair === 'yes' && 'Wheelchair accessible'].filter(Boolean),
     photos: [],
     description: '',
     sources: k.osm ? ['fsa', 'osm'] : ['fsa'],
+    osm_match: k.osm_match,
   });
 }
 // Unmatched OSM nodes (non-food + anything FSA missed) — real tags only
@@ -313,6 +335,8 @@ for (const el of osm) {
     opening_hours: {},
     cuisine: t.cuisine || '',
     brand_wikidata: t['brand:wikidata'] || null,
+    wikipedia: t.wikipedia || null,
+    wikidata: t.wikidata || null,
     amenities: [t.cuisine && `Cuisine: ${t.cuisine}`, t.takeaway === 'yes' && 'Takeaway', t.outdoor_seating === 'yes' && 'Outdoor seating', t.wheelchair === 'yes' && 'Wheelchair accessible'].filter(Boolean),
     photos: [],
     description: '',
@@ -334,6 +358,8 @@ fs.writeFileSync(META_OUT, JSON.stringify({
     fsa_only: pois.filter(p => p.sources.length === 1 && p.sources[0] === 'fsa').length,
     merged: pois.filter(p => p.sources.includes('fsa') && p.sources.includes('osm')).length,
     osm_only: pois.filter(p => p.sources.length === 1 && p.sources[0] === 'osm').length,
+    osm_nodes_pulled: osm.length,
+    osm_raw_response: osmRaw,
   },
   with_hours: pois.filter(p => p.opening_hours_osm).length,
   with_phone: pois.filter(p => p.phone).length,

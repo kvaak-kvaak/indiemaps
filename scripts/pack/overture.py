@@ -6,6 +6,12 @@ business usually exists in Overture (FSQ/Meta-sourced, Microsoft excluded).
 This stage fills ONLY empty website/phone fields, records overture_id, and
 appends 'overture' to sources. Never overwrites surveyed data, never invents.
 
+Identity note (recorded decision): overture_id is the Overture places-theme
+feature ID. Overture feature IDs are GERS IDs only where the entity
+participates in GERS (per Overture schema docs) — unverified per record, so
+the field keeps its provenance name; consumers alias to gers_id at their own
+boundary if their schema wants it.
+
   python3 overture.py --bbox=W,S,E,N --pois packs/<id>/pois.json --meta packs/<id>/meta.json
 
 Requires: pip install duckdb. Keyless (anonymous S3).
@@ -92,6 +98,7 @@ def main():
         if p.get('phone_source') == 'overture':
             del p['phone']; del p['phone_source']
         p.pop('overture_id', None)
+        p.pop('overture_match', None)
         p['sources'] = [s for s in p.get('sources', []) if s != 'overture']
         if p.get('website') and p.get('phone'):
             continue
@@ -124,6 +131,10 @@ def main():
             contributed = True
         if contributed:
             p['overture_id'] = best['id']
+            # Match diagnostics for the per-source debug UI: which Overture
+            # row won (the id alone doesn't say what name matched).
+            p['overture_match'] = {'name': best.get('name'),
+                                   'dist_m': round(dist_m(p['lat'], p['lng'], best['lat'], best['lon']))}
             if 'overture' not in p.get('sources', []):
                 p['sources'].append('overture')
     json.dump(pois, open(a.pois, 'w'), indent=1)

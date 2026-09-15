@@ -143,6 +143,10 @@ def merge(bbox, pois_path, meta_path):
             matched += 1
             used.add(id(best))
             best['nhs_ods'] = r['ods']
+            # Match diagnostics for the per-source debug UI (set-once,
+            # mirroring the non-clearing pattern of the keys below).
+            if 'nhs_match' not in best:
+                best['nhs_match'] = {'dist_m': round(dist_m(best['lat'], best['lng'], r['lat'], r['lng']))}
             if hours and not best.get('nhs_hours'):
                 best['nhs_hours'] = hours
             if 'nhs' not in best.get('sources', []):

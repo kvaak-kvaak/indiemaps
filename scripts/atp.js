@@ -28,7 +28,7 @@ pret_a_manger caffe_nero starbucks_eu costa_coffee_gg_gb_im_je itsu_gb leon_gb
 tortilla_gb boots_gb superdrug well_gb j_d_wetherspoon greene_king_pubs_gb
 hungry_horse_gb ember_inns_gb vintage_inns_gb toby_carvery_gb stonehouse_gb
 barclays_gb hsbc_uk_gb lloyds_bank_gb natwest_gb nationwide_gb halifax_gb tsb_gb
-halfords_gb kwik_fit_gb screwfix_gb pets_at_home_gb argos currys primark poundland
+wendys_gb halfords_gb kwik_fit_gb screwfix_gb pets_at_home_gb argos currys primark poundland
 home_bargains_gb b_and_m_gb ikea dunelm_gb wickes_gb card_factory_gb texaco_gb_ie
 shell bp_pulse_gb`.split(/\s+/);
 
@@ -153,14 +153,14 @@ let matched = 0, webMatched = 0, qidMatched = 0, hoursAdded = 0;
 const hoursBefore = pois.filter(p => p.opening_hours_osm).length;
 for (const p of pois) {
   delete p.hygiene; // hygiene scores retired
-  delete p.atp_hours; delete p.atp_brand; delete p.atp_spider; delete p.atp_method; delete p.atp_wikidata; delete p.atp_nsi; // re-merge from scratch
+  delete p.atp_hours; delete p.atp_brand; delete p.atp_spider; delete p.atp_method; delete p.atp_wikidata; delete p.atp_nsi; delete p.atp_match; // re-merge from scratch
   p.sources = (p.sources || []).filter(s => s !== 'atp');
   const ptoks = tokens(p.name);
   const ptoksAll = tokens(p.name, 1);
-  let best = null, bestScore = 0, bestMethod = '';
+  let best = null, bestScore = 0, bestMethod = '', candidates = 0;
   for (const f of feats) {
     const r = matchCandidate(p, f);
-    if (r && r.score > bestScore) { bestScore = r.score; best = f; bestMethod = r.method; }
+    if (r) { candidates++; if (r.score > bestScore) { bestScore = r.score; best = f; bestMethod = r.method; } }
   }
   if (best) {
     matched++;
@@ -169,6 +169,8 @@ for (const p of pois) {
     p.atp_spider = best.spider;
     p.atp_brand = best.brand;
     p.atp_method = bestMethod;
+    // Match diagnostics for the per-source debug UI.
+    p.atp_match = { score: Math.round(bestScore * 100) / 100, method: bestMethod, candidates };
     if (best.wikidata) p.atp_wikidata = best.wikidata;
     if (best.nsi) p.atp_nsi = best.nsi;
     if (best.opening_hours && !p.atp_hours) {
