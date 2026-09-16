@@ -36,6 +36,12 @@ Read these three docs first, in order:
   run); `record_id`→`fsq_place_id` hypothesis unverified (needs Portal
   lookup); Gogi (2 Queens Rd) correctly absent — premises churned
   Nagawa→Gogi, FSA delisted 1426811, new occupant unregistered.
+- Lambeth lesson (full-47 run): one malformed homepage href
+  (`http://[foo]` → `ValueError: Invalid IPv6 URL` in `links()`) killed
+  the area at 450/1501. Fixed by skip-and-count in `links()` plus a
+  per-POI parse guard (error records, resume-retried); single-area
+  re-dispatch green (5,140 POIs, poison link skipped ×1). Release union
+  proven live: 48/48 packs.
 - Helsinki pilot GREEN (gate exception): run 35029285720, 3,701 POIs /
   2,068 with hours via new Servicemap municipal stage (1,663 units →
   223 matched + 1,440 added, FI hours normalized). Oiva has no bulk
