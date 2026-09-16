@@ -31,6 +31,7 @@ _HOST_DELAY = {}  # host -> crawl-delay seconds (robots.txt)
 _ROBOTS = {}      # host -> (allowed_fn, delay) — fetched once per run
 _ROBOTS_LOCK = threading.Lock()
 _DEAD = {}  # set from --dead-cache in main(); {domain: {fails, last}}
+_MALFORMED_HREFS = 0  # page-author garbage hrefs skipped by links()
 HOUR_LINK_RE = re.compile(r'hour|opening|open-|/open|contact|visit|find[-\s]?us|location|about', re.I)
 DAY = r'(?:mon(?:day)?|tue(?:sday)?|wed(?:nesday)?|thu(?:rsday)?|fri(?:day)?|sat(?:urday)?|sun(?:day)?|ma(?:nantai)?|ti(?:istai)?|ke(?:skiviikko)?|to(?:rstai)?|pe(?:rjantai)?|la(?:uantai)?|su(?:nnuntai)?)s?'
 TIME = r'(\d{1,2})(?:(?::|\.)(\d{2}))?\s*(am|pm)?'  # '.' separator for FI-style 9.00–17.00
@@ -404,13 +405,23 @@ def jsonld_hours(html_text):
 
 
 def links(html_text, base):
+    """Same-host hour-ish link discovery. Malformed hrefs (page-author
+    garbage such as http://[foo], which makes urljoin raise ValueError:
+    Invalid IPv6 URL) are skipped and counted — one poison link must never
+    fail the POI, let alone the run. Measured: killed Lambeth (450/1501)."""
+    global _MALFORMED_HREFS
     out = []
     for m in re.finditer(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', html_text, flags=re.S | re.I):
         href, label = m.group(1), visible_text(m.group(2))
         if href.startswith(('mailto:', 'tel:', '#', 'javascript:')):
             continue
-        url = urllib.parse.urljoin(base, href)
-        if urllib.parse.urlparse(url).netloc != urllib.parse.urlparse(base).netloc:
+        try:
+            url = urllib.parse.urljoin(base, href)
+            same = urllib.parse.urlparse(url).netloc == urllib.parse.urlparse(base).netloc
+        except ValueError:
+            _MALFORMED_HREFS += 1
+            continue
+        if not same:
             continue
         if HOUR_LINK_RE.search(href) or HOUR_LINK_RE.search(label):
             out.append(url)
@@ -750,6 +761,21 @@ def process(poi):
     if not home.get('ok'):
         return res
     res['fetch_ok'] = True
+    try:
+        _parse(poi, res, home, t_start)
+    except Exception as e:
+        # One poison POI must never fail the run (measured: a malformed
+        # href killed Lambeth 450/1501 via links()). Error rows carry no
+        # hours so the merge ignores them; fetch_ok=False means resume
+        # retries them once next cycle (self-healing if transient).
+        res['fetch_ok'] = False
+        res['error'] = f'{type(e).__name__}: {e}'[:160]
+        res['ms_parse'] = int((time.time() - t_start) * 1000) - res['ms_fetch']
+    return res
+
+
+def _parse(poi, res, home, t_start):
+    """Post-fetch parsing: hours, identity, extras. May raise; caller guards."""
     html0 = home['html']
     res['name_on_page'] = name_on_page(poi['name'], visible_text(html0)[:20000], poi.get('postcode'), html0)
     ident = page_identity(html0)
@@ -796,7 +822,6 @@ def process(poi):
         res['js_required'] = js_hint(html0)
     res['ms_parse'] = int((time.time() - t_start) * 1000) - res['ms_fetch']
     note_dead(poi['website'], (res['pages'][0].get('error') if res['pages'] else ''), _DEAD)
-    return res
 
 
 def main():
@@ -880,6 +905,8 @@ def main():
                 break
     if sk:
         print(f'skipped pre-fetch: {sk}')
+    if _MALFORMED_HREFS:
+        print(f'malformed hrefs skipped: {_MALFORMED_HREFS}')
     mf = sorted([r.get('ms_fetch', 0) for r in out if r.get('fetch_ok')])
     mp = sorted([r.get('ms_parse', 0) for r in out if r.get('fetch_ok')])
     def pct(a, q):
