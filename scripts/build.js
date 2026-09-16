@@ -153,10 +153,13 @@ async function fetchOsm() {
   const { s, w, n, e } = BBOX;
   try {
     return await fetchBox(s, w, n, e, 0);
-  } catch (e) {
+  } catch (err) {
     // last resort for ultra-dense bboxes (e.g. City of London): tile blindly.
     // Tiles go back through fetchBox so cap-splitting still applies at depth.
-    console.log('full-bbox Overpass query failing — sub-tiling 2x2');
+    // NOTE: the binding must NOT be named `e` — it would shadow the east
+    // coordinate and poison every tile with NaN (measured: killed 40 areas
+    // when a 504 storm exhausted one subtile's retries).
+    console.log(`Overpass struggling (${err.message.slice(0, 80)}) — sub-tiling 2x2 blind`);
     const seen = new Map();
     let raw = 0;
     for (const [ts, tw, tn, te] of splitBbox(s, w, n, e)) {
