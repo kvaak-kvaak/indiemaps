@@ -240,7 +240,45 @@ for (const e of all) {
 }
 console.log(`kept ${kept.length} public-facing FSA rows (excluded ${all.length - kept.length})`);
 
+// FSA geocodes are occasionally wildly wrong (measured: Soho venues pinned
+// in Scotland/Wales, 200-600 km off). Cross-check against postcodes.io
+// centroids: beyond 10 km the postcode wins (real data, honest precision
+// downgrade to 'postcode'). Validated: 10/10 control rows under threshold,
+// all howlers above; unknown postcodes keep FSA coords (can't judge).
+// Runs before matching, so re-pinned rows can also merge with OSM.
+async function sanitizeFsaGeocodes(rows) {
+  const cands = rows.filter(r => r.lat != null && r.postcode);
+  const uniq = [...new Set(cands.map(r => r.postcode))];
+  const cent = new Map();
+  for (let i = 0; i < uniq.length; i += 100) {
+    try {
+      const r = await fetch('https://api.postcodes.io/postcodes', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ postcodes: uniq.slice(i, i + 100) }),
+      });
+      if (!r.ok) continue;
+      const j = await r.json();
+      j.result.forEach((res, k) => {
+        if (res.result) cent.set(uniq[i + k], res.result);
+      });
+    } catch { /* keep FSA coords on lookup failure */ }
+  }
+  let fixed = 0;
+  for (const r of cands) {
+    const c = cent.get(r.postcode);
+    if (!c) continue;
+    const d = Math.hypot((r.lat - c.latitude) * 111320, (r.lng - c.longitude) * 62500);
+    if (d > 10000) {
+      r.lat = c.latitude; r.lng = c.longitude; r.geo_precision = 'postcode';
+      fixed++;
+    }
+  }
+  console.log(`FSA geocode sanity: ${fixed} rows re-pinned to postcode centroids`);
+  return fixed;
+}
+
 await geocodeMissing(kept);
+const fsaRepinned = await sanitizeFsaGeocodes(kept);
 const geoKept = kept.filter(k => k.lat != null);
 console.log(`with coordinates: ${geoKept.length} (dropped ${kept.length - geoKept.length} with no location)`);
 
@@ -367,6 +405,7 @@ fs.writeFileSync(META_OUT, JSON.stringify({
     osm_only: pois.filter(p => p.sources.length === 1 && p.sources[0] === 'osm').length,
     osm_nodes_pulled: osm.length,
     osm_raw_response: osmRaw,
+    fsa_repinned: fsaRepinned,
   },
   with_hours: pois.filter(p => p.opening_hours_osm).length,
   with_phone: pois.filter(p => p.phone).length,

@@ -87,7 +87,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write   # gh release create needs this; default token is read-only
-    if: github.event_name == 'schedule' || github.event.inputs.spider == 'true'
+    # Publish-on-partial: green packs bank every run (union keeps the rest),
+    # so stormy cycles still move the release forward. Loudness is preserved:
+    # the build job still fails on incomplete areas. Cancelled runs publish
+    # nothing (a cancellation means "stop everything").
+    if: (github.event_name == 'schedule' || github.event.inputs.spider == 'true') && (needs.build.result == 'success' || needs.build.result == 'failure')
     steps:
       - uses: actions/checkout@v7
       - uses: actions/download-artifact@v8
@@ -98,6 +102,8 @@ jobs:
         with:
           python-version: '3.11'
       - name: Assemble release assets
+        env:
+          AREAS_INPUT: ${{ inputs.areas }}
         run: |
           TAG="pois-$(date +%Y)-Q$(( ( $(date +%-m) - 1 ) / 3 + 1 ))"
           echo "TAG=$TAG" >> $GITHUB_ENV
@@ -107,14 +113,32 @@ jobs:
           curl -sL -o /tmp/base-manifest.json "https://github.com/${{ github.repository }}/releases/download/$TAG/manifest.json" || true
           BASE=""; [ -s /tmp/base-manifest.json ] && BASE="--base-manifest /tmp/base-manifest.json"
           python3 scripts/pack/release.py --tag "$TAG" --out dist/ $BASE
+          # Failed-area transparency: dispatched areas missing from the fresh
+          # manifest keep their previous vintage; name them in the notes.
+          python3 - <<'EOF' > /tmp/failed-areas.txt
+          import json
+          import os
+          areas = json.load(open('scripts/pack/areas.json'))
+          filt = os.environ.get('AREAS_INPUT', '').split()
+          dispatched = filt or list(areas)
+          fresh = {p['id'] for p in json.load(open('dist/manifest.json'))['packs']}
+          missing = [a for a in dispatched if a not in fresh]
+          if missing:
+              print(' '.join(missing))
+          EOF
       - name: Create release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # Idempotent: a re-dispatch in the same quarter refreshes the tag's
         # assets instead of failing on the duplicate tag.
         run: |
+          NOTES="Quarterly POI packs. See manifest.json for provenance per pack (per-pack built_at = last verified)."
+          if [ -s /tmp/failed-areas.txt ]; then
+            NOTES="$NOTES Not yet refreshed this cycle (previous vintage stands): $(cat /tmp/failed-areas.txt)"
+          fi
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" dist/* --clobber
+            gh release edit "$TAG" --notes "$NOTES"
           else
-            gh release create "$TAG" dist/* --title "$TAG" --notes "Quarterly POI packs. See manifest.json for provenance per pack."
+            gh release create "$TAG" dist/* --title "$TAG" --notes "$NOTES"
           fi

@@ -130,8 +130,10 @@ def build(area_id, args):
     n = len(pois_data)
     hours = sum(1 for p in pois_data
                 if p.get('opening_hours_osm') or p.get('atp_hours')
-                or p.get('site_hours') or p.get('nhs_hours'))
+                or p.get('site_hours') or p.get('nhs_hours')
+                or p.get('sm_hours'))
     # refresh aggregate counts (later stages add POIs/hours after base wrote them)
+    prev = m.get('counts', {})
     m['counts'] = {
         'total': n,
         'fsa_only': sum(1 for p in pois_data if p.get('sources') == ['fsa']),
@@ -139,6 +141,10 @@ def build(area_id, args):
         'osm_only': sum(1 for p in pois_data if p.get('sources') == ['osm']),
         'nhs_added': sum(1 for p in pois_data if p.get('sources') == ['nhs']),
         'with_hours': hours,
+        # base-written diagnostics survive the recount:
+        'osm_nodes_pulled': prev.get('osm_nodes_pulled'),
+        'osm_raw_response': prev.get('osm_raw_response'),
+        'fsa_repinned': prev.get('fsa_repinned', 0),
     }
     json.dump(m, open(meta, 'w'), indent=1)
     log(packdir, f'DONE: {n} POIs, {hours} with hours')

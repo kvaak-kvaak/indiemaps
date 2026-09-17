@@ -49,6 +49,13 @@ Read these three docs first, in order:
   logging). Lesson for UK-wide: matrix sharding is mandatory (single job
   measured 305+ min at 48 areas), Geofabrik-extract base as fallback
   research. Local debugging turfs refreshed post-fix (Hackney 5,370).
+- Release rule fixed: publish-on-partial (success/failure, never on
+  cancel) with failed areas in the notes — every run banks progress,
+  staleness stays labeled per pack. FSA mis-geocoded tail handled:
+  coords >10 km from postcode centroid fall back to postcodes.io
+  (validated: 10/10 controls under, all howlers above); counts plumbing
+  carries osm_*/fsa_repinned through the recount, sm_hours counted.
+  Westminster fresh pack served locally (13,020 POIs).
 - Helsinki pilot GREEN (gate exception): run 35029285720, 3,701 POIs /
   2,068 with hours via new Servicemap municipal stage (1,663 units →
   223 matched + 1,440 added, FI hours normalized). Oiva has no bulk
