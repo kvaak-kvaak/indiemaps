@@ -98,9 +98,13 @@ const OSM_ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overp
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 function osmQuery(s, w, n, e) {
-  return `[out:json][timeout:25];(node["amenity"~"^(restaurant|cafe|pub|bar|fast_food|ice_cream|pharmacy|doctors|dentist|cinema|theatre|arts_centre|library|place_of_worship|clinic|optician)$"](${s},${w},${n},${e});node["shop"](${s},${w},${n},${e});node["tourism"~"^(hotel|guest_house|hostel|attraction|museum|gallery|viewpoint)$"](${s},${w},${n},${e});node["leisure"~"^(park|nature_reserve|miniature_golf|sports_centre)$"](${s},${w},${n},${e}););out 400;`;
+  return `[out:json][timeout:25];(node["amenity"~"^(restaurant|cafe|pub|bar|fast_food|ice_cream|pharmacy|doctors|dentist|cinema|theatre|arts_centre|library|place_of_worship|clinic|optician)$"](${s},${w},${n},${e});node["shop"](${s},${w},${n},${e});node["tourism"~"^(hotel|guest_house|hostel|attraction|museum|gallery|viewpoint)$"](${s},${w},${n},${e});node["leisure"~"^(park|nature_reserve|miniature_golf|sports_centre)$"](${s},${w},${n},${e}););out 2000;`;
 }
 
+// Fewer, bigger queries (Overpass etiquette + throttle resistance): one
+// 2000-element pull per bbox, tiling only when truly massive. The old
+// out-400 cap forced 4-16x query fan-out per area, multiplying exposure
+// to 504 storms (measured: Southend raw 844 fits one pull).
 async function queryOnce(q) {
   for (const ep of OSM_ENDPOINTS) {
     try {
@@ -108,10 +112,10 @@ async function queryOnce(q) {
       const t = setTimeout(() => ctrl.abort(), 30000);
       const r = await fetch(ep + '?data=' + encodeURIComponent(q), { headers: { 'User-Agent': 'yellowpages-map-prototype/0.1' }, signal: ctrl.signal });
       clearTimeout(t);
-      if (!r.ok) continue;
+      if (!r.ok) { console.log(`Overpass ${ep.split('/')[2]}: HTTP ${r.status}, next endpoint`); continue; }
       const j = await r.json();
       return (j.elements || []).filter(el => el.lat != null && el.lon != null);
-    } catch { /* next endpoint */ }
+    } catch (err) { console.log(`Overpass ${ep.split('/')[2]}: ${String(err && err.message || err).slice(0, 90)}, next endpoint`); }
   }
   return null;
 }
@@ -125,14 +129,14 @@ async function fetchBox(s, w, n, e, depth) {
   for (let round = 0; round < 3; round++) {
     const raw = await queryOnce(osmQuery(s, w, n, e));
     if (raw) {
-      // Cap guard on the RAW count: 'out 400' truncates before name
+      // Cap guard on the RAW count: 'out 2000' truncates before name
       // filtering, so a capped response with unnamed nodes slips past a
       // named-only check and silently drops qualifying POIs (measured:
       // Wendy's + Nagawa missing from a 388-named pull). Named filtering
       // happens after the tiling decision.
-      if (raw.length >= 400 && depth < 2) {
-        // silent truncation guard: 'out 400' caps dense bboxes (e.g.
-        // Westminster keeps only 400 arbitrary OSM nodes). Sub-tile and merge.
+      if (raw.length >= 2000 && depth < 2) {
+        // silent truncation guard: 'out 2000' caps ultra-dense bboxes.
+        // Sub-tile and merge.
         console.log(`OSM cap hit (${s},${w},${n},${e}) — sub-tiling`);
         const seen = new Map(), sums = { raw: 0 };
         for (const [ts, tw, tn, te] of splitBbox(s, w, n, e)) {
