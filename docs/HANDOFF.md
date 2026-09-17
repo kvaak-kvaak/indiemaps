@@ -42,6 +42,13 @@ Read these three docs first, in order:
   per-POI parse guard (error records, resume-retried); single-area
   re-dispatch green (5,140 POIs, poison link skipped ×1). Release union
   proven live: 48/48 packs.
+- Overpass storm saga (Sep 15–17): 504s across three runs; new raw-count
+  tiling multiplied query fan-out, and a latent `catch (e)` shadowing the
+  east coordinate turned the blind re-tile into NaN tiles (40 areas).
+  Fixed (renamed binding, out-2000 single pulls, per-attempt endpoint
+  logging). Lesson for UK-wide: matrix sharding is mandatory (single job
+  measured 305+ min at 48 areas), Geofabrik-extract base as fallback
+  research. Local debugging turfs refreshed post-fix (Hackney 5,370).
 - Helsinki pilot GREEN (gate exception): run 35029285720, 3,701 POIs /
   2,068 with hours via new Servicemap municipal stage (1,663 units →
   223 matched + 1,440 added, FI hours normalized). Oiva has no bulk
