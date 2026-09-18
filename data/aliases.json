@@ -14,6 +14,20 @@
    "registered_name": "Victory Mansion",
    "verified": "2026-09-18",
    "verified_by": "maintainer"
+  },
+  {
+   "id": "fsa-1317234",
+   "absorb": [
+    "fsa-1870321"
+   ],
+   "registered_name": "Fireaway",
+   "verified": "2026-09-18",
+   "verified_by": "maintainer",
+   "evidence": [
+    "FSA 1870321 (Fireaway Southend, 356 London Road, rated 2025-10-13) vs FSA 1317234 (Fireaway, 376-378 London Road, rated 2026-06-02): re-registration with address correction",
+    "ATP fireaway_gb Southend branch: housenumber 376-378, London Road, SS0 7HZ (chain-canonical address)",
+    "Same postcode SS0 7HZ + shared brand token; different housenumbers so auto-link refused (human verified instead)"
+   ]
   }
  ]
 }

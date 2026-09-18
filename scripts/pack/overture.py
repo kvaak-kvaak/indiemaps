@@ -160,6 +160,34 @@ def main():
     apply_aliases(a.pois, a.meta)
 
 
+def absorb_alias(pois, e):
+    """Verified-duplicate absorption: remove loser records into the
+    survivor's fsa_alias history. Guards: survivor exists; each loser exists,
+    shares the survivor's postcode, and isn't already gone. Anything else
+    skips loudly — the registry never force-fits a moved world."""
+    surv = next((x for x in pois if x.get('id') == e.get('id')), None)
+    if surv is None:
+        return False
+    spc = (surv.get('postcode') or '').replace(' ', '').lower()
+    changed = False
+    for lid in e.get('absorb', []):
+        loser = next((x for x in pois if x.get('id') == lid), None)
+        if loser is None:
+            continue
+        if (loser.get('postcode') or '').replace(' ', '').lower() != spc:
+            print(f"absorb SKIPPED (postcode drift): {lid} is {loser.get('postcode')!r}, survivor {spc!r}")
+            continue
+        surv.setdefault('fsa_alias', []).append({
+            'fsa_id': loser.get('fsa_id'), 'name': loser.get('name'),
+            'address': loser.get('address'), 'postcode': loser.get('postcode'),
+            'ratingDate': loser.get('fsa_rating_date'),
+            'absorbed_by_registry': True})
+        pois.remove(loser)
+        changed = True
+        print(f"absorb APPLIED: {lid} ({loser.get('name')!r}) into {surv['id']}")
+    return changed
+
+
 def apply_aliases(pois_path, meta_path):
     """Verified-alias registry (data/aliases.json): human-confirmed renames
     the name-anchored rules structurally cannot see (TA-KO pattern: zero
@@ -177,6 +205,10 @@ def apply_aliases(pois_path, meta_path):
     pois = json.load(open(pois_path))
     applied = 0
     for e in entries:
+        if e.get('absorb'):
+            if absorb_alias(pois, e):
+                applied += 1
+            continue
         p = next((x for x in pois if x.get('id') == e.get('id')), None)
         if p is None:
             continue  # different area: registry is global, packs are local
