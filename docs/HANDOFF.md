@@ -79,6 +79,14 @@ Read these three docs first, in order:
   veto refused 2,521 cross-category pairs. Locality stopwords are
   curated per geography (Leigh/Lea were dead capitalized entries —
   set now self-normalizes; extend with every new geography).
+- Spider hours fixes (TA-KO verdict): bare-small-hours guard kills
+  offer-like misfires ('TUESDAY 2-4') before they can outscore clean
+  JSON-LD; compatibility-union merges granularity differences (split
+  shifts) to one table with no false conflict flag; genuine
+  contradictions and bar-vs-kitchen piles keep both + warning. Bare
+  noon reads as noon ('12-5' → 12:00-17:00). Known open, separate
+  ticket: overnight close formatting ('Fr 18:00-02:00' renders close
+  as 14:00 — pre-existing, display-layer).
 - Prefer-Meta ranking live (product-call update): +0.15 freshness prior,
   FSQ fallback intact. Measured: Meta won 88%/86% unassisted; bonus
   flips ~1/area, zero lost (verified by per-POI diff). Per-record

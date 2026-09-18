@@ -334,6 +334,10 @@ def infer_range(h1, m1, ap1, h2, m2, ap2):
             pass  # explicit midnight ('00:30') = 24h clock, no inference
         elif int(h2 or 0) > 12:
             pass  # 24h clock evidence: bare '12:00-22:00' is noon-22, not 00-22
+        elif int(h1) == 12:
+            ap1, ap2 = 'pm', 'pm'  # bare noon ("12-5" = 12:00-17:00, never 00:00)
+        elif int(h2 or 0) == 12:
+            ap2 = 'pm'  # bare noon close ("11-12" = 11:00-12:00, never -00:00)
         elif int(h1) >= int(h2 or 0):
             ap1, ap2 = 'am', 'pm'
         else:
@@ -482,6 +486,16 @@ def parse_table(osm_str):
     return {d: sorted(v) for d, v in table.items()}
 
 
+def _bare_small_open(o, m1, has_markers):
+    """Ranges opening 00:00-05:00 qualify as venue hours only when written
+    deliberately: with meridiem markers ('12am-4am' keeps 00:00) or explicit
+    minutes ('00:30-10:00'). A bare small number ('TUESDAY 2-4', '0-4') is
+    an offer, count or date — measured on TA-KO, where the misfire
+    outscored clean JSON-LD into primary. Genuine late closes open in the
+    evening ('Fr 12:00-05:00' untouched — different rule, known-open)."""
+    return 0 <= o < 5 * 60 and not has_markers and not m1
+
+
 def regex_hours(text):
     # hyphen-times first ("2-30 pm" -> "2:30 pm", meridiem required — safe)
     text = re.sub(r'(\d{1,2})-(\d{2})(?=\s*(?:am|pm)\b)', r'\1:\2', text, flags=re.I)
@@ -501,7 +515,8 @@ def regex_hours(text):
             o, c = infer_range(h1, m1, ap1, h2, m2, ap2)
             if o == 0 and c > 12 * 60 and re.search(r'\b12\s*am\b', m.group(0), re.I):
                 o = 12 * 60  # "12am - 11pm" means noon; a real "12am-4am" keeps 00:00
-            if 0 <= o <= 24 * 60 and 0 <= c <= 24 * 60 and o != c:
+            if not _bare_small_open(o, m1, ap1 or ap2) and \
+                    0 <= o <= 24 * 60 and 0 <= c <= 24 * 60 and o != c:
                 ranges.append((o, c))
         except Exception:
             pass
@@ -511,7 +526,10 @@ def regex_hours(text):
         if m2 and not DAY_WORD_RE.match(tail.strip()[:3]):
             try:
                 o2, c2 = infer_range(*m2.groups())
-                if 0 <= o2 <= 24 * 60 and 0 <= c2 <= 24 * 60 and o2 != c2:
+                mk = m2.groups()
+                if _bare_small_open(o2, mk[1], mk[2] or mk[5]):
+                    pass  # same guard as primary
+                elif 0 <= o2 <= 24 * 60 and 0 <= c2 <= 24 * 60 and o2 != c2:
                     ranges.append((o2, c2))
             except Exception:
                 pass
@@ -705,10 +723,98 @@ def site_extras(html_text, base_url):
     return bool(noscriptish and spa)
 
 
+def _tomin(t):
+    h, m = t.split(':')
+    return int(h) * 60 + int(m)
+
+
+def _tomstr(m):
+    return f'{m // 60:02d}:{m % 60:02d}'
+
+
+def tables_compatible(jt, rt):
+    """Same schedule at different granularity (JSON-LD daily summary vs
+    visible lunch/dinner splits; regex adding a clean extra day) is NOT a
+    contradiction — only partially-overlapping hours (neither range
+    containing the other) on a shared day are. Containment is refinement:
+    a daily summary containing split shifts describes the same schedule.
+    Measured trigger: split-shift schedules flagged as conflicts
+    across southern-European-style timetables."""
+    shared = set(jt) & set(rt)
+    if not shared:
+        return False
+    for d in shared:
+        for a in jt[d]:
+            for b in rt[d]:
+                if a == b:
+                    continue
+                ao, ac, bo, bc = _tomin(a[0]), _tomin(a[1]), _tomin(b[0]), _tomin(b[1])
+                contains = (ao <= bo and bc <= ac) or (bo <= ao and ac <= bc)
+                if max(ao, bo) < min(ac, bc) and not contains:
+                    return False
+    return True
+
+
+WEEK_ORDER = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
+
+
+def union_tables(jt, rt):
+    """Day-wise union of two compatible tables: complete week AND finest
+    detail (lunch/dinner splits kept, missing days filled from either
+    side). Pure reformat of already-parsed inputs — every range below
+    appears verbatim in one of the sources. Linear day runs, no wraparound.
+    """
+    merged = {}
+    for d in WEEK_ORDER:
+        seen = []
+        for r in (jt.get(d, []) + rt.get(d, [])):
+            if r not in seen:
+                seen.append(r)
+        # Drop ranges strictly containing another: a daily summary next
+        # to its own lunch/dinner splits adds noise, not information. The
+        # finer splits are kept; overlapping-but-different ranges cannot
+        # reach here (compatibility gate); equal duplicates collapsed above.
+        kept = []
+        for r in seen:
+            ro, rc = _tomin(r[0]), _tomin(r[1])
+            if any((o, c) != (ro, rc) and ro <= o and c <= rc
+                   for o, c in [(_tomin(x[0]), _tomin(x[1])) for x in seen]):
+                continue
+            kept.append(r)
+        if kept:
+            merged[d] = sorted(kept)
+    parts = []
+    start, prev_ranges, prev_day = None, None, None
+    for d in WEEK_ORDER:
+        cur = merged.get(d)
+        if cur is not None and cur == prev_ranges:
+            prev_day = d
+            continue
+        if start is not None:
+            span = start if start == prev_day else f'{start}-{prev_day}'
+            # One group per range (never comma-joined): every consumer
+            # (parse_table, the app parser, validators) reads exactly one
+            # range per day-group. Slightly longer strings, zero ambiguity.
+            for a, b in prev_ranges:
+                parts.append(f'{span} {a}-{b}')
+        if cur is None:
+            start, prev_ranges, prev_day = None, None, None
+        else:
+            start, prev_ranges, prev_day = d, cur, d
+    if start is not None:
+        span = start if start == prev_day else f'{start}-{prev_day}'
+        for a, b in prev_ranges:
+            parts.append(f'{span} {a}-{b}')
+    return '; '.join(parts)
+
+
 def verdict(jsonld, regex_hits):
     """Cross-check structured vs visible hours from the SAME site.
     Returns (primary, alt, internal_conflict). Specificity wins ties broken
-    toward JSON-LD; delivery-only regex never becomes primary."""
+    toward JSON-LD; delivery-only regex never becomes primary. Compatible
+    tables (granularity differences, clean extra days) union to one complete
+    detailed table with no alt and no warning — raw snippets of both stay
+    stored, so nothing is lost."""
     jl_str = '; '.join(dict.fromkeys(h for _, h in jsonld))
     dine = [h['osm'] for h in regex_hits if h['kind'] == 'dine-in']
     rx_str = '; '.join(dict.fromkeys(dine))
@@ -719,6 +825,12 @@ def verdict(jsonld, regex_hits):
             abs(len(set(jt) ^ set(rt))) <= 1
         if agree:
             return ({'osm': jl_str, 'method': 'json-ld', 'kind': 'dine-in'},
+                    None, False)
+        if tables_compatible(jt, rt) and not self_contradicts(rx_str):
+            # Regex internally piled (bar-vs-kitchen double hours) stays a
+            # conflict even when each pile is containment-compatible.
+            merged = union_tables(jt, rt)
+            return ({'osm': merged, 'method': 'merged', 'kind': 'dine-in'},
                     None, False)
         rx_bad = self_contradicts(rx_str)
         sj, sr = specificity(jl_str), specificity(rx_str)
