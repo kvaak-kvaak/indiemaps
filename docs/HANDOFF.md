@@ -62,6 +62,12 @@ Read these three docs first, in order:
   their own key; contact rows now labeled via-Overture vs OSM-mapped.
   No. 61 London Road confirmed shared site (Pallavas + Kwik Fit) —
   evidence for the rename rule's category-agreement guard.
+- Prefer-Meta ranking live (product-call update): +0.15 freshness prior,
+  FSQ fallback intact. Measured: Meta won 88%/86% unassisted; bonus
+  flips ~1/area, zero lost (verified by per-POI diff). Per-record
+  `overture_datasets` stored (future staleness audits free). Known
+  ordering gap: NHS-added rows miss Overture contact (overture runs
+  before nhs) — 7 pharmacies gained it on a re-run.
 - Helsinki pilot GREEN (gate exception): run 35029285720, 3,701 POIs /
   2,068 with hours via new Servicemap municipal stage (1,663 units →
   223 matched + 1,440 added, FI hours normalized). Oiva has no bulk
