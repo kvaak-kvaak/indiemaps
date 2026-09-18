@@ -98,7 +98,7 @@ const DUP_STOP = new Set(['southend', 'Leigh', 'westcliff', 'chalkwell', 'shoebu
   'east', 'west', 'on', 'great', 'restaurant', 'cafe', 'coffee', 'pub', 'bar', 'takeaway', 'kitchen',
   'food', 'pizza', 'burger', 'kebab', 'sushi', 'bakery', 'sandwich', 'house', 'lounge']);
 function dupToks(e) {
-  return new Set([...brandToks(e)].filter(w => !DUP_STOP.has(stem(w))));
+  return new Set([...brandToks(e)].map(stem).filter(w => !DUP_STOP.has(w)));
 }
 // Duplicate paperwork, chain-agnostic: one branch re-registered (new FHRSID)
 // while the old row lingers — FSA delists with lag. AUTO-LINKED only on the
@@ -181,13 +181,13 @@ function nameScore(a, b) {
   // Brand-anchored: town/street/category words never qualify as shared
   // vocabulary (measured: 'Fireaway Southend' vs 'Swagger of Southend'
   // scored 0.6 on 'southend' alone and stole the node's position).
-  const spec = s => new Set([...tokens(s)].filter(w => !DUP_STOP.has(stem(w))));
+  const spec = s => new Set([...tokens(s)].map(stem).filter(w => !DUP_STOP.has(w)));
   const ta = spec(a), tb = spec(b);
   if (!ta.size || !tb.size) {
     // No specific vocabulary on a side: spaceless containment only
     // (exact names still match; town-word-only pairs score 0).
     const ca = concat(a), cb = concat(b);
-    if (Math.min(ca.length, cb.length) >= 8 && (ca.includes(cb) || cb.includes(ca))) return 0.9;
+    if (Math.min(ca.length, cb.length) >= 6 && (ca.includes(cb) || cb.includes(ca))) return 0.9;
     return 0;
   }
   let inter = 0;
@@ -195,7 +195,7 @@ function nameScore(a, b) {
   let score = inter / Math.max(ta.size, tb.size); // overlap coefficient vs longer name
   // spacing variants: "peterboat" vs "peter boat inn"
   const ca = concat(a), cb = concat(b);
-  if (Math.min(ca.length, cb.length) >= 8 && (ca.includes(cb) || cb.includes(ca))) score = Math.max(score, 0.9);
+  if (Math.min(ca.length, cb.length) >= 6 && (ca.includes(cb) || cb.includes(ca))) score = Math.max(score, 0.9);
   return score;
 }
 const distM = (a, b, c, d) => Math.hypot((a - c) * 111320, (b - d) * 62500);
@@ -394,49 +394,61 @@ console.log(`FSA duplicate linking: ${fsaDupes} absorbed rows, ${fsaQueued} pair
 const { list: osm, raw: osmRaw } = await fetchOsm();
 console.log(`OSM named nodes: ${osm.length} (raw response: ${osmRaw})`);
 
-// Category veto: an FSA food row must never merge a definitively non-food
-// OSM node, whatever the words say (measured: a restaurant stapled to a
-// clothes shop 46 m away on the shared word 'Southend'). Conservative by
-// design: unlisted combinations keep current behavior; fuel/pharmacy and
-// unlisted shops always pass (forecourt shops and lunch counters are real).
+// Category veto: an FSA *food-service* row must never merge a definitively
+// non-food OSM node, whatever the words say (measured: a takeaway stapled
+// to a clothes shop 46 m away on the shared word 'Southend'). Scoped to
+// food-service FSA types only — Retailers/Hotel rows legitimately match
+// shops of any kind (the veto blocked a mapper-confirmed New Look merge).
+// Conservative by design: unlisted combinations keep current behavior;
+// fuel/pharmacy and unlisted shops always pass.
+const FSA_FOOD_TYPES = new Set(['Restaurant/Cafe/Canteen', 'Takeaway/sandwich shop', 'Pub/bar/nightclub']);
 const VETO_AMENITY = new Set(['bank', 'cinema', 'theatre', 'arts_centre', 'library',
   'place_of_worship', 'doctors', 'dentist', 'clinic', 'hospital', 'optician']);
 const VETO_SHOP = new Set(['clothes', 'shoes', 'jewelry', 'watches', 'books', 'furniture',
   'electronics', 'bicycle', 'car', 'car_repair', 'car_parts', 'motorcycle', 'carpet',
   'paint', 'hairdresser', 'beauty', 'tattoo', 'laundry', 'dry_cleaning',
   'funeral_directors', 'estate_agent', 'travel_agency']);
-function categoryVeto(tags) {
+function categoryVeto(fsaType, tags) {
+  if (!FSA_FOOD_TYPES.has(fsaType)) return null;
   if (VETO_AMENITY.has(tags.amenity)) return `amenity=${tags.amenity}`;
   if (tags.shop && VETO_SHOP.has(tags.shop)) return `shop=${tags.shop}`;
   return null;
 }
 
 // Match FSA ↔ OSM
-let matched = 0, vetoed = 0;
+let matched = 0, idMatched = 0, vetoed = 0;
 const usedOsm = new Set();
 for (const k of deduped) {
-  let best = null, bestScore = 0, bestDist = null, candidates = 0;
+  let best = null, bestScore = 0, bestDist = null, candidates = 0, bestId = false;
   for (const el of osm) {
     if (usedOsm.has(el.id)) continue;
     const d = distM(k.lat, k.lng, el.lat, el.lon);
     if (d > 150) continue;
     candidates++;
-    const veto = categoryVeto(el.tags);
-    if (veto) { vetoed++; continue; }
-    const ns = nameScore(k.name, el.tags.name);
+    const veto = categoryVeto(k.type, el.tags);
+    // Mapper-linked identity: OSM fhrs:id is a first-class exact key
+    // (same family as website-URL and Wikidata-QID passes). 250 m sanity
+    // bounds mistyped ids; score beats every fuzzy outcome.
+    const idHit = el.tags['fhrs:id'] != null && String(el.tags['fhrs:id']) === String(k.fsa_id) && d < 250;
+    const ns = idHit ? 2.0 : nameScore(k.name, el.tags.name);
+    if (!idHit && veto) {
+      vetoed++;
+      if (ns >= 0.34) console.log(`vetoed: FSA ${k.name} [${k.fsa_id}] vs OSM ${el.tags.name} [node ${el.id}] (${veto}, ns=${ns.toFixed(2)})`);
+      continue;
+    }
     const postcodeHit = k.postcode && el.tags['addr:postcode'] && el.tags['addr:postcode'].replace(/\s/g, '').toLowerCase() === k.postcode.replace(/\s/g, '').toLowerCase();
     const score = ns + (postcodeHit ? 0.3 : 0) + (d < 50 ? 0.1 : 0);
-    const accept = ns >= 0.5 || (ns >= 0.34 && (d < 60 || postcodeHit));
-    if (accept && score > bestScore) { bestScore = score; best = el; bestDist = d; }
+    const accept = idHit || ns >= 0.5 || (ns >= 0.34 && (d < 60 || postcodeHit));
+    if (accept && score > bestScore) { bestScore = score; best = el; bestDist = d; bestId = idHit; }
   }
-  if (best) { k.osm = best; usedOsm.add(best.id); matched++; }
+  if (best) { k.osm = best; usedOsm.add(best.id); matched++; if (bestId) idMatched++; }
   // Match diagnostics for the per-source debug UI: why this row did or
   // did not merge (candidates = OSM nodes within 150m).
   k.osm_match = best
     ? { score: Math.round(bestScore * 100) / 100, dist_m: Math.round(bestDist), candidates }
     : { score: null, dist_m: null, candidates };
 }
-console.log(`FSA↔OSM matched: ${matched} (vetoed cross-category candidates: ${vetoed})`);
+console.log(`FSA↔OSM matched: ${matched} (fhrs:id exact: ${idMatched}; vetoed cross-category candidates: ${vetoed})`);
 
 function osmContact(tags) {
   return {
