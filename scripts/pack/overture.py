@@ -36,13 +36,14 @@ def pull(w, s, e, n):
             con.execute("SET s3_region='us-west-2'; SET http_timeout=30000;")
             rows = con.execute(f"""SELECT id, names.primary AS name,
               (bbox.xmin+bbox.xmax)/2 AS lon, (bbox.ymin+bbox.ymax)/2 AS lat,
-              addresses[1].postcode AS postcode, websites[1] AS website, phones[1] AS phone
+              addresses[1].postcode AS postcode, websites[1] AS website, phones[1] AS phone,
+              list_distinct([s2.dataset FOR s2 IN sources]) AS datasets
             FROM read_parquet('{S3BASE}')
             WHERE bbox.xmin <= {e} AND bbox.xmax >= {w} AND bbox.ymin <= {n} AND bbox.ymax >= {s}
               AND NOT list_contains(list_distinct([s2.dataset FOR s2 IN sources]), 'Microsoft')
               AND (len(websites) > 0 OR len(phones) > 0)
             """).fetchall()
-            cols = ['id', 'name', 'lon', 'lat', 'postcode', 'website', 'phone']
+            cols = ['id', 'name', 'lon', 'lat', 'postcode', 'website', 'phone', 'datasets']
             return [dict(zip(cols, r)) for r in rows]
         except Exception as ex:
             last = ex
@@ -53,6 +54,13 @@ def pull(w, s, e, n):
 def norm_pc(p):
     return (p or '').replace(' ', '').lower() or None
 
+
+# Prefer-Meta ranking (recorded product call): Meta rows carry a small score
+# bonus as a freshness prior (FSQ bulk skews stale). 0.15 wins ties and
+# near-ties but never overrides a clearly better FSQ match. FSQ stays as
+# fallback: zero lost matches by construction. Measured basis: Meta won
+# 88%/86% of current matches unassisted (Southend/Hackney).
+META_BONUS = 0.15
 
 STOP = {'and', 'of', 'de', 'la', 's'}
 GENERIC = {'southend', 'Leigh', 'westcliff', 'chalkwell', 'shoebury', 'shoeburyness',
@@ -99,6 +107,7 @@ def main():
             del p['phone']; del p['phone_source']
         p.pop('overture_id', None)
         p.pop('overture_match', None)
+        p.pop('overture_datasets', None)
         p['sources'] = [s for s in p.get('sources', []) if s != 'overture']
         if p.get('website') and p.get('phone'):
             continue
@@ -114,6 +123,8 @@ def main():
             ns = nscore(p['name'], o['name'] or '')
             if accept(p['name'], o['name'] or '', ns, d, pc):
                 sc = ns + (0.3 if pc else 0)
+                if 'meta' in (o.get('datasets') or []):
+                    sc += META_BONUS
                 if sc > bs:
                     bs, best = sc, o
         if best is None:
@@ -132,15 +143,18 @@ def main():
         if contributed:
             p['overture_id'] = best['id']
             # Match diagnostics for the per-source debug UI: which Overture
-            # row won (the id alone doesn't say what name matched).
+            # row won (the id alone doesn't say what name matched), and which
+            # dataset it came from (FSQ-vs-Meta freshness audits).
             p['overture_match'] = {'name': best.get('name'),
                                    'dist_m': round(dist_m(p['lat'], p['lng'], best['lat'], best['lon']))}
+            p['overture_datasets'] = sorted(x for x in (best.get('datasets') or []) if x != 'Overture')
             if 'overture' not in p.get('sources', []):
                 p['sources'].append('overture')
     json.dump(pois, open(a.pois, 'w'), indent=1)
     meta = json.load(open(a.meta))
     meta['overture'] = {'release': RELEASE, 'contact_rows_in_bbox': len(ov),
-                        'websites_filled': filled_web, 'phones_filled': filled_phone}
+                        'websites_filled': filled_web, 'phones_filled': filled_phone,
+                        'meta_bonus': META_BONUS}
     json.dump(meta, open(a.meta, 'w'), indent=1)
     print(f'backfilled websites={filled_web} phones={filled_phone}')
 
