@@ -157,6 +157,46 @@ def main():
                         'meta_bonus': META_BONUS}
     json.dump(meta, open(a.meta, 'w'), indent=1)
     print(f'backfilled websites={filled_web} phones={filled_phone}')
+    apply_aliases(a.pois, a.meta)
+
+
+def apply_aliases(pois_path, meta_path):
+    """Verified-alias registry (data/aliases.json): human-confirmed renames
+    the name-anchored rules structurally cannot see (TA-KO pattern: zero
+    shared vocabulary). Applies ONLY on exact id + registered-name match —
+    if the record's name drifted since verification, the world moved again
+    and the entry is skipped loudly, never force-fitted. Display name goes
+    to the operating name; the registered name, evidence and verifier stay
+    on the record (alias object) for audit."""
+    try:
+        entries = json.load(open(Path(__file__).resolve().parents[2] / 'data' / 'aliases.json')).get('aliases', [])
+    except Exception:
+        return
+    if not entries:
+        return
+    pois = json.load(open(pois_path))
+    applied = 0
+    for e in entries:
+        p = next((x for x in pois if x.get('id') == e.get('id')), None)
+        if p is None:
+            continue  # different area: registry is global, packs are local
+        if p.get('name') != e.get('registered_name'):
+            print(f"alias SKIPPED (drift): {e.get('id')} now reads {p.get('name')!r}, expected {e.get('registered_name')!r}")
+            continue
+        p['fsa_name'] = e['registered_name']
+        p['name'] = e['alias_name']
+        if e.get('alias_website') and p.get('website') != e['alias_website']:
+            p['website'] = e['alias_website']
+            p['website_source'] = 'overture'  # string provenance: Overture Meta row, human-verified live
+        p['alias'] = {'registered': e['registered_name'], 'verified': e.get('verified'),
+                      'verified_by': e.get('verified_by'), 'evidence': e.get('evidence', [])}
+        applied += 1
+        print(f"alias APPLIED: {e['id']} now reads {e['alias_name']!r} (was {e['registered_name']!r})")
+    if applied:
+        json.dump(pois, open(pois_path, 'w'), indent=1)
+        meta = json.load(open(meta_path))
+        meta['overture']['aliases_applied'] = applied
+        json.dump(meta, open(meta_path, 'w'), indent=1)
 
 
 if __name__ == '__main__':

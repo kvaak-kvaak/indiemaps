@@ -81,6 +81,99 @@ const normName = s => (s || '').toLowerCase()
   .trim();
 const tokens = s => new Set(normName(s).split(' ').filter(w => w.length > 2));
 const concat = s => normName(s).replace(/ /g, '');
+function houseNumber(e) {
+  const m = /^\s*(\d+[a-z]?)/i.exec(e.address_lines[0] || '');
+  return m ? m[1].toLowerCase() : null;
+}
+function brandToks(e) {
+  return new Set(normName(e.name).split(' ').filter(w => w.length >= 6));
+}
+// Duplicate-linking must ignore town words ('Southend' linked Cake Box to
+// Fireaway) and category words ('restaurant' linked Cyprus Turkish to La
+// Calebase) — same flaw class as the Swagger mis-merge. Only distinctive
+// long tokens count as shared brand vocabulary.
+const DUP_STOP = new Set(['southend', 'Leigh', 'westcliff', 'chalkwell', 'shoebury', 'shoeburyness',
+  'thorpe', 'essex', 'london', 'hackney', 'high', 'street', 'road', 'avenue', 'broadway', 'parade',
+  'town', 'centre', 'center', 'branch', 'store', 'station', 'sea', 'old', 'new', 'north', 'south',
+  'east', 'west', 'on', 'great', 'restaurant', 'cafe', 'coffee', 'pub', 'bar', 'takeaway', 'kitchen',
+  'food', 'pizza', 'burger', 'kebab', 'sushi', 'bakery', 'sandwich', 'house', 'lounge']);
+function dupToks(e) {
+  return new Set([...brandToks(e)].filter(w => !DUP_STOP.has(w)));
+}
+// Duplicate paperwork, chain-agnostic: one branch re-registered (new FHRSID)
+// while the old row lingers — FSA delists with lag. AUTO-LINKED only on the
+// safe core: same postcode + shared long token + SAME housenumber (Baba Tang
+// pattern). Same-brand-different-number pairs (Fireaway 356 vs 376-378:
+// address correction, or two genuine branches — indistinguishable in bulk)
+// go to a logged human-review queue, resolvable via the verified-alias
+// registry. Undated groups queue too. Runs before OSM matching so the
+// winner is the sole merge candidate.
+function linkFsaDuplicates(rows) {
+  const parent = new Map(rows.map(r => [r.fsa_id, r.fsa_id]));
+  const find = x => parent.get(x) === x ? x : parent.set(x, find(parent.get(x))).get(x);
+  const link = (a, b) => { parent.set(find(a.fsa_id), find(b.fsa_id)); };
+  const pc = r => (r.postcode || '').replace(/\s/g, '').toLowerCase() || null;
+  const sameBrand = (a, b) => {
+    if ([...dupToks(a)].some(w => dupToks(b).has(w))) return true;
+    // Short names never reach the 6-letter token floor ('Baba Tang',
+    // 'Tesco'): fall back to exact normalized equality, min 4 chars.
+    const ca = concat(a.name), cb = concat(b.name);
+    return Math.min(ca.length, cb.length) >= 4 && ca === cb;
+  };
+  const cand = (a, b) => {
+    if (!pc(a) || pc(a) !== pc(b)) return false;
+    return sameBrand(a, b);
+  };
+  for (let i = 0; i < rows.length; i++) {
+    for (let j = i + 1; j < rows.length; j++) {
+      const a = rows[i], b = rows[j];
+      if (!cand(a, b)) continue;
+      const ha = houseNumber(a), hb = houseNumber(b);
+      if (ha && hb && ha === hb) link(a, b);
+    }
+  }
+  const groups = new Map();
+  for (const r of rows) {
+    const g = find(r.fsa_id);
+    if (!groups.has(g)) groups.set(g, []);
+    groups.get(g).push(r);
+  }
+  // Queue: same-brand-postcode pairs the safe core wouldn't link (different
+  // housenumbers, or missing numbers). Human-readable, one line per pair.
+  const queuedPairs = new Set();
+  for (let i = 0; i < rows.length; i++) {
+    for (let j = i + 1; j < rows.length; j++) {
+      const a = rows[i], b = rows[j];
+      if (!cand(a, b) || find(a.fsa_id) === find(b.fsa_id)) continue;
+      const ha = houseNumber(a), hb = houseNumber(b);
+      if (ha && hb && ha === hb) continue; // linked above
+      const key = [a.fsa_id, b.fsa_id].sort().join(':');
+      if (queuedPairs.has(key)) continue;
+      queuedPairs.add(key);
+      console.log(`fsa-duplicate QUEUED (verify): ${a.name} [${a.fsa_id}, ${a.ratingDate || '?'}] vs ${b.name} [${b.fsa_id}, ${b.ratingDate || '?'}] (${a.postcode})`);
+    }
+  }
+  const linked = [];
+  let dupes = 0;
+  for (const [, g] of groups) {
+    if (g.length < 2) { linked.push(g[0]); continue; }
+    const dated = g.filter(r => r.ratingDate);
+    if (!dated.length) {
+      console.log(`fsa-duplicate QUEUED (no dates): ${g.map(r => `${r.name} [${r.fsa_id}]`).join(' vs ')}`);
+      linked.push(...g);
+      continue;
+    }
+    dated.sort((x, y) => y.ratingDate.localeCompare(x.ratingDate));
+    const [win, ...rest] = dated.concat(g.filter(r => !r.ratingDate));
+    win.fsa_rating_date = win.ratingDate;
+    win.fsa_alias = rest.map(r => ({ fsa_id: r.fsa_id, name: r.name,
+      address: r.address_lines.join(', '), postcode: r.postcode, ratingDate: r.ratingDate }));
+    dupes += rest.length;
+    console.log(`fsa-duplicate LINKED: ${win.name} [${win.fsa_id}] absorbs ${rest.map(r => `${r.name} [${r.fsa_id}]`).join(', ')}`);
+    linked.push(win);
+  }
+  return { linked, dupes, queued: queuedPairs.size };
+}
 function nameScore(a, b) {
   const ta = tokens(a), tb = tokens(b);
   if (!ta.size || !tb.size) return 0;
@@ -231,6 +324,7 @@ for (const e of all) {
     fsa_id: e.FHRSID,
     name: (e.BusinessName || '').trim(),
     type: e.BusinessType,
+    ratingDate: e.RatingDate || null, // recency arbiter for duplicate paperwork; audit only, never displayed
     address_lines: addr,
     postcode: (e.PostCode || '').trim() || null,
     lat: g.Latitude != null ? Number(g.Latitude) : null,
@@ -281,6 +375,8 @@ await geocodeMissing(kept);
 const fsaRepinned = await sanitizeFsaGeocodes(kept);
 const geoKept = kept.filter(k => k.lat != null);
 console.log(`with coordinates: ${geoKept.length} (dropped ${kept.length - geoKept.length} with no location)`);
+const { linked: deduped, dupes: fsaDupes, queued: fsaQueued } = linkFsaDuplicates(geoKept);
+console.log(`FSA duplicate linking: ${fsaDupes} absorbed rows, ${fsaQueued} pairs queued, ${deduped.length} candidacies`);
 
 const { list: osm, raw: osmRaw } = await fetchOsm();
 console.log(`OSM named nodes: ${osm.length} (raw response: ${osmRaw})`);
@@ -288,7 +384,7 @@ console.log(`OSM named nodes: ${osm.length} (raw response: ${osmRaw})`);
 // Match FSA ↔ OSM
 let matched = 0;
 const usedOsm = new Set();
-for (const k of geoKept) {
+for (const k of deduped) {
   let best = null, bestScore = 0, bestDist = null, candidates = 0;
   for (const el of osm) {
     if (usedOsm.has(el.id)) continue;
@@ -326,7 +422,7 @@ function osmAddress(tags) {
 }
 
 const pois = [];
-for (const k of geoKept) {
+for (const k of deduped) {
   const [cat, label] = fsaCategory(k.type);
   const tags = k.osm?.tags || {};
   const [osmCat, osmLabel] = k.osm ? mapOsmCategory(tags) : [null, null];
@@ -360,6 +456,11 @@ for (const k of geoKept) {
     description: '',
     sources: k.osm ? ['fsa', 'osm'] : ['fsa'],
     osm_match: k.osm_match,
+    // Duplicate-paperwork audit trail (linkFsaDuplicates): the absorbed
+    // FHRSIDs stay visible here, never silently dropped. Displayed only
+    // via the alias line in the app, when present.
+    ...(k.fsa_rating_date ? { fsa_rating_date: k.fsa_rating_date } : {}),
+    ...(k.fsa_alias ? { fsa_alias: k.fsa_alias } : {}),
   });
 }
 // Unmatched OSM nodes (non-food + anything FSA missed) — real tags only
@@ -406,6 +507,8 @@ fs.writeFileSync(META_OUT, JSON.stringify({
     osm_nodes_pulled: osm.length,
     osm_raw_response: osmRaw,
     fsa_repinned: fsaRepinned,
+    fsa_duplicates_linked: fsaDupes,
+    fsa_duplicates_queued: fsaQueued,
   },
   with_hours: pois.filter(p => p.opening_hours_osm).length,
   with_phone: pois.filter(p => p.phone).length,

@@ -201,6 +201,8 @@ function detailSkeleton(p) {
     <h2>${esc(p.name)}</h2>
     <div class="sub">${esc(p.category_label || p.category)}${(p.site_cuisine || [])[0] ? ` · ${esc(p.site_cuisine.join(', '))}` : p.cuisine ? ` · ${esc(p.cuisine)}` : ''}${p.site_price ? ` · ${esc(p.site_price)}` : ''}</div>
     <div class="drow">${sourceBadges(p)}${p.atp_hours ? '<span class="badge src-atp" title="Opening hours as published by the chain (AllThePlaces)">chain hours</span>' : ''}</div>
+    ${p.alias ? `<div class="drow" style="font-size:12.5px;color:#555">formerly <b>${esc(p.alias.registered)}</b> (registered name)${p.alias.verified ? ` · verified ${esc(p.alias.verified)}` : ''}</div>` : ''}
+    ${p.superseded_by ? `<div class="drow" style="font-size:12.5px;background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:6px 9px">⚠️ may have been replaced here by <b>${esc(p.superseded_by.name)}</b> — mapper data not yet updated</div>` : ''}
     <div class="drow open ${o.state === 'open' ? 'yes' : o.state === 'closed' ? 'no' : 'unk'}">● ${esc(o.label)}${o.state === 'unknown' ? ' — not mapped yet' : ''}</div>
     <div class="actions">
       <a class="act primary" style="text-decoration:none" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}"><span>🧭</span>Directions</a>
@@ -256,6 +258,8 @@ function detailSkeleton(p) {
       ${(p.sources || []).includes('atp') ? `· <b>Opening hours</b> — as published by ${esc(p.atp_brand || 'the chain')}, via AllThePlaces (CC0)<br/>` : ''}
       ${(p.sources || []).includes('nhs') ? `· <b>Listed pharmacy</b> — NHS England${p.nhs_ods ? ` (ODS ${esc(p.nhs_ods)})` : ''}<br/>` : ''}
       ${(p.sources || []).includes('servicemap') ? `· <b>Municipal listing</b> — City of Helsinki Service Map (CC BY 4.0)${p.sm_id ? ` (unit ${esc(String(p.sm_id))})` : ''}<br/>` : ''}
+      ${(p.fsa_alias || []).length ? `· <b>Also registered as</b> — ${p.fsa_alias.map(a => `${esc(a.name)} (FHRS ${a.fsa_id})`).join('; ')}<br/>` : ''}
+      ${(p.supersedes || []).length ? `· <b>Replaces at these premises</b> — ${p.supersedes.map(s => esc(s.name)).join('; ')}<br/>` : ''}
       ${(p.sources || []).includes('site') ? `· <b>Opening hours${p.site_image ? ', photo' : ''}${p.site_menu ? ', menu' : ''}${p.site_description ? ', description' : ''}</b> — from the business website${p.site_url ? ` (<a target="_blank" href="${esc(p.site_url)}">source</a>, ${esc(p.site_method || 'parsed')})` : ''}<br/>` : ''}
       · <b>Position accuracy</b> — ${p.geo_precision === 'postcode' ? 'postcode area (approximate)' : 'mapped point'}
       </div>

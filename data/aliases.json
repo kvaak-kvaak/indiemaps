@@ -1,0 +1,19 @@
+{
+ "aliases": [
+  {
+   "alias_website": "http://www.ta-ko.uk/",
+   "alias_name": "TA-KO Bar & Taqueria",
+   "evidence": [
+    "Overture Meta row 'TA-KO Bar & Taqueria', N16 7PL, website ta-ko.uk (bulk, current)",
+    "victorymansion.co.uk dead (DNS fail, 2026-09-18); ta-ko.uk alive (301, live server)",
+    "FSA 802627 still 'Victory Mansion', rated 2025-03-21 (registration fossil, same company)",
+    "OSM node 369983242 still 'Victory Mansion' (+old_name=Dem Cafe Bar: previous rebrand)",
+    "Maintainer ground truth: TA-KO trading at 18 Stoke Newington High St (2026-09)"
+   ],
+   "id": "fsa-802627",
+   "registered_name": "Victory Mansion",
+   "verified": "2026-09-18",
+   "verified_by": "maintainer"
+  }
+ ]
+}

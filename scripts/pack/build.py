@@ -19,7 +19,7 @@ Stages per pack (each cached; logs to packs/<id>/build.log):
 Areas: areas.json (id -> name, bbox [w,s,e,n], fsa FHRS id or null).
 Release layout (see docs/packs.md): packs/<id>/pois.json + manifest.json.
 """
-import argparse, json, subprocess, sys, time
+import argparse, json, re, subprocess, sys, time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -145,10 +145,121 @@ def build(area_id, args):
         'osm_nodes_pulled': prev.get('osm_nodes_pulled'),
         'osm_raw_response': prev.get('osm_raw_response'),
         'fsa_repinned': prev.get('fsa_repinned', 0),
+        'fsa_duplicates_linked': prev.get('fsa_duplicates_linked', 0),
+        'fsa_duplicates_queued': prev.get('fsa_duplicates_queued', 0),
     }
+    stale = flag_stale_occupants(pois_data, packdir)
+    m['counts']['stale_flagged'] = stale
+    json.dump(pois_data, open(pois, 'w'), indent=1)
     json.dump(m, open(meta, 'w'), indent=1)
     log(packdir, f'DONE: {n} POIs, {hours} with hours')
     return {'id': area_id, 'hours': hours, 'total': n}
+
+
+def _norm(s):
+    return re.sub(r'\s+', ' ', re.sub(r'[^a-z0-9åäö ]', ' ', (s or '').lower())).strip()
+
+
+def _hn(addr):
+    """Premises number: leading ('18, Stoke…', '66-68 High St') else first
+    post-comma ('The Slug And Lettuce, 6 - 8 Southchurch Road'). FSA lines
+    often lead with the premises name, so leading-only misses them."""
+    m = re.match(r'\s*(\d+[a-z]?)', addr or '', re.I)
+    if m:
+        return m.group(1).lower()
+    m = re.search(r',\s*(\d+[a-z]?)\b', addr or '')
+    return m.group(1).lower() if m else None
+
+
+def _same_brand(a, b):
+    ta = {w for w in _norm(a).split() if len(w) >= 6}
+    if any(w in {w for w in _norm(b).split() if len(w) >= 6} for w in ta):
+        return True
+    # Short distinctive tokens ('abi' in ABI Convenience Store vs ABI Foods):
+    # same-brand short names must count as agreement, or current occupants
+    # get flagged stale. Category/town words excluded (same flaw class as
+    # the Swagger mis-merge).
+    stop = {'and', 'the', 'of', 'pub', 'bar', 'inn', 'cafe', 'restaurant',
+            'hotel', 'shop', 'store', 'food', 'southend', 'Leigh', 'london',
+            'high', 'street', 'road', 'sea', 'old', 'new', 'north', 'south',
+            'east', 'west', 'hackney', 'essex'}
+    sa = {w for w in _norm(a).split() if len(w) >= 3 and w not in stop}
+    sb = {w for w in _norm(b).split() if len(w) >= 3 and w not in stop}
+    if sa & sb:
+        return True
+    # Exact equality short-circuits everything ('mu' vs 'MU' — base tokens
+    # drop ≤2-letter words, so short names can never merge; they still
+    # must not be flagged as different occupants).
+    na, nb = _norm(a), _norm(b)
+    if na and na == nb:
+        return True
+    # Brand-prefix with generic remainder ('Co-op Food' vs 'Co-op'):
+    # same brand, not a rename.
+    for x, y in ((na, nb), (nb, na)):
+        if len(y) >= 4 and x.startswith(y + ' ') and all(
+                w in stop or len(w) < 3 for w in x[len(y) + 1:].split()):
+            return True
+    ca, cb = na.replace(' ', ''), nb.replace(' ', '')
+    return min(len(ca), len(cb)) >= 4 and ca == cb
+
+
+def flag_stale_occupants(pois_data, packdir):
+    """Stale-occupant flags (Slug pattern): an OSM-only food/shop record at
+    the exact premises (same postcode + housenumber) of a current FSA or
+    Servicemap occupant under a dissimilar name is the previous tenant, not
+    a second business. Flagged, linked, de-emphasized downstream — never
+    deleted. Name-agreeing orphans are merge-misses (matcher phase), not
+    staleness: left alone. Re-run safe (clears first)."""
+    for p in pois_data:
+        p.pop('superseded_by', None)
+        if isinstance(p.get('supersedes'), list):
+            del p['supersedes']
+    ors = [p for p in pois_data if p.get('sources') == ['osm']
+           and p.get('category') in ('restaurant', 'cafe', 'pub', 'shopping', 'services')]
+    occ = [p for p in pois_data if 'fsa' in p.get('sources', []) or 'servicemap' in p.get('sources', [])]
+    # Exactly-one-occupant guard: food courts/markets host several current
+    # vendors at one address — flagging there would be wrong. Shared sites
+    # across use-classes (Kwik Fit + Pallavas) are excluded by the category
+    # agreement check below, not by deletion.
+    occ_count = {}
+    for q in occ:
+        qpc = (q.get('postcode') or '').replace(' ', '').lower()
+        qhn = _hn(q.get('address'))
+        if qpc and qhn:
+            occ_count[(qpc, qhn)] = occ_count.get((qpc, qhn), 0) + 1
+    # Category agreement is by trade family, not exact label: a pub becoming
+    # a restaurant (Slug and Lettuce -> Skylahs Bar) is the same hospitality
+    # trade and flags correctly; a car repair shop sharing the site with a
+    # restaurant (Kwik Fit + Pallavas) is a different use-class and skips.
+    FOOD = {'restaurant', 'cafe', 'pub'}
+    n = 0
+    for o in ors:
+        opc = (o.get('postcode') or '').replace(' ', '').lower()
+        ohn = _hn(o.get('address'))
+        if not opc or not ohn:
+            continue
+        if occ_count.get((opc, ohn), 0) != 1:
+            continue
+        for q in occ:
+            if q['id'] == o['id']:
+                continue
+            if (q.get('postcode') or '').replace(' ', '').lower() != opc:
+                continue
+            if _hn(q.get('address')) != ohn:
+                continue
+            oc, qc = o.get('category'), q.get('category')
+            if not (oc == qc or (oc in FOOD and qc in FOOD)):
+                continue  # different use-class, possibly shared site
+            if _same_brand(o.get('name'), q.get('name')):
+                continue  # agreement = possible merge-miss, not staleness
+            o['superseded_by'] = {'id': q['id'], 'name': q.get('name')}
+            q.setdefault('supersedes', [])
+            if not any(x.get('id') == o['id'] for x in q['supersedes']):
+                q['supersedes'].append({'id': o['id'], 'name': o.get('name')})
+            n += 1
+            log(packdir, f"stale occupant: {o.get('name')} [{o['id']}] previously at {q.get('name')} [{q['id']}] premises")
+            break
+    return n
 
 
 def manifest():
