@@ -75,6 +75,17 @@ Read these three docs first, in order:
   ATP spiders (UK list yielded 28 matches), Swedish day names in spider.
 - Demo serves three debugging turfs via pack selector (`/api/packs`):
   Southend demo data, Hackney (Stoke Newington), Helsinki.
+- Vela evaluation (Sep 2026, read-only — no code reused): same Overture S3
+  source and ATP run as us, no dataset filtering (confidence ≥0.4 gate
+  instead), ATP merged via world-PMTiles z15 extract with hash-join dedupe
+  (brand or first-two-words, ~150 m), OSM-coordinate-first with 30 m snap
+  floor, per-region PMTiles streamed by range requests (the instant feel).
+  Pins are open data; place sheets are Google fetch-on-tap. Decision: no
+  pipeline adoption (attribution/postcode loss, freshness coupling,
+  ~3% pack-time savings); PMTiles derivative reserved for the client
+  track. Queued, unscheduled: ATP-extract ingest, tenant flagging,
+  Overture confidence column, BrightQuery identification. Open: OSM
+  license boundary (#5), which Vela consumption would inherit, not settle.
 
 ## Working conventions (non-negotiable, learned the hard way)
 
