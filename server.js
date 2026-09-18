@@ -78,7 +78,7 @@ function inBbox(poi, bbox) {
 
 function richness(poi) {
   // Detail completeness: share of real fields actually present (never invented)
-  const fields = ['phone', 'email', 'website', 'opening_hours_osm', 'atp_hours', 'site_hours', 'nhs_hours', 'sm_hours', 'amenities', 'cuisine', 'facebook', 'instagram'];
+  const fields = ['phone', 'email', 'website', 'opening_hours_osm', 'atp_hours', 'site_hours', 'nhs_hours', 'sm_hours', 'ta_hours', 'amenities', 'cuisine', 'facebook', 'instagram'];
   let score = 0;
   for (const f of fields) {
     const v = poi[f];

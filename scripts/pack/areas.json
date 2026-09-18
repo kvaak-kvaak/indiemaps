@@ -1,14 +1,15 @@
 {
- "eu/gb/england/essex/southend-on-sea": {
-  "name": "Southend-on-Sea",
-  "bbox": [
-   0.615,
-   51.505,
-   0.825,
-   51.575
-  ],
-  "fsa": 893
- },
+  "eu/gb/england/essex/southend-on-sea": {
+    "name": "Southend-on-Sea",
+    "bbox": [
+      0.615,
+      51.505,
+      0.825,
+      51.575
+    ],
+    "fsa": 893,
+    "ta": true
+  },
  "eu/gb/england/greater-london/hackney": {
   "name": "Hackney",
   "bbox": [
@@ -498,6 +499,7 @@
     ],
     "fsa": null,
     "servicemap_muni": "helsinki",
+    "ta": true,
     "bbox_source": "nominatim-boundary"
   }
 }

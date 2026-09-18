@@ -85,14 +85,16 @@ function sourceBadges(p) {
     : s === 'site' ? '<span class="badge src-site" title="Hours stated on the business website">website</span>'
     : s === 'nhs' ? '<span class="badge src-nhs" title="NHS listed pharmacy (England)">NHS</span>'
     : s === 'overture' ? '<span class="badge src-overture" title="Phone/website backfilled from Overture Maps">Overture</span>'
+    : s === 'servicemap' ? '<span class="badge src-sm" title="City of Helsinki Service Map (CC BY 4.0)">HKI map</span>'
+    : s === 'ta' ? '<span class="badge src-ta" title="Archived research data, c.2021 (stale by design)">archive</span>'
     : s === 'osm' ? '<span class="badge src-osm" title="OpenStreetMap contributors">OSM</span>'
     // Unknown sources render under their own name — never borrowed. (A
     // fallthrough OSM label once masqueraded Overture contributions.)
     : `<span class="badge src-osm" title="Unrecognised source key">${esc(s)}</span>`).join('');
 }
-// Effective hours: OSM mapping first, then chain, site, NHS, municipal —
-// every differing source is shown, never merged.
-const effHours = p => p.opening_hours_osm || p.atp_hours || p.site_hours || p.nhs_hours || p.sm_hours || '';
+// Effective hours: OSM mapping first, then chain, site, NHS, municipal,
+// stale archive last — every differing source is shown, never merged.
+const effHours = p => p.opening_hours_osm || p.atp_hours || p.site_hours || p.nhs_hours || p.sm_hours || p.ta_hours || '';
 const tblKey = s => JSON.stringify(parseOsmHours(s || ''));
 function hourVariants(p) {
   const v = [];
@@ -101,6 +103,7 @@ function hourVariants(p) {
   if (p.site_hours) v.push(['On the business website', p.site_hours]);
   if (p.nhs_hours) v.push(['NHS listed hours', p.nhs_hours]);
   if (p.sm_hours) v.push(['Municipal listing (Helsinki Service Map)', p.sm_hours]);
+  if (p.ta_hours) v.push(['Archived research data (c.2021)', p.ta_hours]);
   if (p.site_alt) v.push(['Also stated on the business website', p.site_alt]);
   return v;
 }
@@ -211,7 +214,7 @@ function detailSkeleton(p) {
       ${p.site_menu ? `<a class="act" style="text-decoration:none;color:inherit" target="_blank" href="${esc(p.site_menu.url)}" title="Menu on the business website${p.site_menu.kind === 'pdf' ? ' (PDF)' : p.site_menu.kind === 'third-party' ? ' (third party)' : ''}"><span>📖</span>Menu</a>` : ''}
     </div>
     <div class="hr"></div>
-    <div class="sec"><h4>About</h4><div id="wiki"><p style="font-size:13px;color:#666;margin:0">Checking Wikipedia for this place…</p></div>${p.site_description ? `<div class="wiki" style="margin-top:10px;background:#fffdf4;border-color:#f0e6c8"><b>In their own words</b> <span style="color:#888;font-size:11px">from the business website</span><br/>${esc(p.site_description)}</div>` : ''}</div>
+    <div class="sec"><h4>About</h4><div id="wiki"><p style="font-size:13px;color:#666;margin:0">Checking Wikipedia for this place…</p></div>${ratingHtml(p)}${p.site_description ? `<div class="wiki" style="margin-top:10px;background:#fffdf4;border-color:#f0e6c8"><b>In their own words</b> <span style="color:#888;font-size:11px">from the business website</span><br/>${esc(p.site_description)}</div>` : ''}</div>
     <div class="hr"></div>
     <div class="sec"><h4>Opening hours</h4>${hoursHtml(p)}</div>
     <div class="hr"></div>
@@ -258,6 +261,7 @@ function detailSkeleton(p) {
       ${(p.sources || []).includes('atp') ? `· <b>Opening hours</b> — as published by ${esc(p.atp_brand || 'the chain')}, via AllThePlaces (CC0)<br/>` : ''}
       ${(p.sources || []).includes('nhs') ? `· <b>Listed pharmacy</b> — NHS England${p.nhs_ods ? ` (ODS ${esc(p.nhs_ods)})` : ''}<br/>` : ''}
       ${(p.sources || []).includes('servicemap') ? `· <b>Municipal listing</b> — City of Helsinki Service Map (CC BY 4.0)${p.sm_id ? ` (unit ${esc(String(p.sm_id))})` : ''}<br/>` : ''}
+      ${(p.sources || []).includes('ta') ? `· <b>Cuisines, dietary notes${p.ta_hours ? ', hours' : ''} & rating</b> — archived research data, c.2021 (stale by design)<br/>` : ''}
       ${(p.fsa_alias || []).length ? `· <b>Also registered as</b> — ${p.fsa_alias.map(a => `${esc(a.name)} (FHRS ${a.fsa_id})`).join('; ')}<br/>` : ''}
       ${(p.supersedes || []).length ? `· <b>Replaces at these premises</b> — ${p.supersedes.map(s => esc(s.name)).join('; ')}<br/>` : ''}
       ${(p.sources || []).includes('site') ? `· <b>Opening hours${p.site_image ? ', photo' : ''}${p.site_menu ? ', menu' : ''}${p.site_description ? ', description' : ''}</b> — from the business website${p.site_url ? ` (<a target="_blank" href="${esc(p.site_url)}">source</a>, ${esc(p.site_method || 'parsed')})` : ''}<br/>` : ''}
@@ -306,6 +310,25 @@ function debugHtml(p) {
     + rows.map(([s, d]) => `· <b>${s}</b> — ${d}<br/>`).join('') + `</div></details>`;
 }
 
+function ratingHtml(p) {
+  // Archived research ratings + dietary marks, derived at render from
+  // numeric pack data (never stored as emoji — thresholds stay adjustable
+  // and OSM-compatible consumers strip ta_* cleanly). Vintage always shown:
+  // a medal on stale data must read as stale.
+  const diet = [
+    p.ta_vegetarian ? '<span class="badge diet-veg">Vegetarian</span>' : '',
+    p.ta_vegan ? '<span class="badge diet-vegan">🌱 Vegan</span>' : '',
+    p.ta_gluten_free ? '<span class="badge diet-gf">Gluten-Free</span>' : '',
+  ].filter(Boolean).join(' ');
+  if (p.ta_rating == null && !diet) return '';
+  const emoji = p.ta_rating === 5 ? '🥇' : p.ta_rating === 4.5 ? '✨' : p.ta_rating === 4 ? '👍' : '';
+  const rate = p.ta_rating != null
+    ? `<span style="font-size:14px">${emoji ? emoji + ' ' : ''}★ ${p.ta_rating}${p.ta_reviews ? ` <span style="color:#888;font-size:11px">(${p.ta_reviews} reviews, c.2021)</span>` : ''}</span>`
+    : '';
+  if (!rate && !diet) return '';
+  return `<div style="margin-top:10px;font-size:13px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">${rate}${diet}</div>`;
+}
+
 function hoursHtml(p) {
   const variants = hourVariants(p);
   if (!variants.length) return `<p style="font-size:13px;color:#666">Opening hours aren't on record for this place yet. If you know them, <b>suggest a correction</b> below.</p>`;
@@ -314,6 +337,7 @@ function hoursHtml(p) {
     : primaryWho.startsWith('Published by') ? `As published by ${esc(p.atp_brand || 'the chain')} (via AllThePlaces) — may be out of date.`
     : primaryWho === 'NHS listed hours' ? 'As listed by NHS England — may be out of date.'
     : primaryWho.startsWith('Municipal listing') ? 'As listed by the City of Helsinki Service Map — may be out of date.'
+    : primaryWho.startsWith('Archived research') ? 'As listed c.2021 in archived research data — likely out of date.'
     : primaryWho.startsWith('Also stated') ? 'As also stated on the business website — may be out of date.'
     : `As stated on the business website — may be out of date.`;
   // table-compare so formatting-only differences don't flag as conflicts

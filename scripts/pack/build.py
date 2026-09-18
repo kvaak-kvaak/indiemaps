@@ -15,6 +15,8 @@ Stages per pack (each cached; logs to packs/<id>/build.log):
   atp      = AllThePlaces chain hours            -> merges into pois.json
   sites    = first-party site spider (opt-in)    -> site.json (+ merge if --sites)
   merge    = site-hours merge (runs when site.json exists)
+  ta       = stale-dump enrichment, match-only ("ta" areas only:
+             cuisines compare, gap hours, dietary flags, ratings)
 
 Areas: areas.json (id -> name, bbox [w,s,e,n], fsa FHRS id or null).
 Release layout (see docs/packs.md): packs/<id>/pois.json + manifest.json.
@@ -65,7 +67,7 @@ def build(area_id, args):
     packdir.mkdir(parents=True, exist_ok=True)
     bbox = ','.join(map(str, a['bbox']))
     pois, meta = str(packdir / 'pois.json'), str(packdir / 'meta.json')
-    stages = ['base', 'servicemap', 'overture', 'nhs', 'atp', 'sites', 'merge']
+    stages = ['base', 'servicemap', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta']
     if args.only:
         stages = [args.only]
     elif args.from_stage:
@@ -124,6 +126,10 @@ def build(area_id, args):
         run(['node', 'scripts/merge-site.js', '--in', str(packdir / 'site.json'),
              '--pois', pois, '--meta', meta], packdir)
         mark_stage(packdir, meta, 'merge')
+    if 'ta' in stages and a.get('ta'):
+        run(['python3', 'scripts/pack/ta.py', f'--bbox={bbox}',
+             '--pois', pois, '--meta', meta], packdir)
+        mark_stage(packdir, meta, 'ta')
 
     m = json.load(open(meta))
     pois_data = json.load(open(pois))
@@ -131,7 +137,7 @@ def build(area_id, args):
     hours = sum(1 for p in pois_data
                 if p.get('opening_hours_osm') or p.get('atp_hours')
                 or p.get('site_hours') or p.get('nhs_hours')
-                or p.get('sm_hours'))
+                or p.get('sm_hours') or p.get('ta_hours'))
     # refresh aggregate counts (later stages add POIs/hours after base wrote them)
     prev = m.get('counts', {})
     m['counts'] = {
@@ -214,7 +220,7 @@ def flag_stale_occupants(pois_data, packdir):
         p.pop('superseded_by', None)
         if isinstance(p.get('supersedes'), list):
             del p['supersedes']
-    ors = [p for p in pois_data if p.get('sources') == ['osm']
+    ors = [p for p in pois_data if set(p.get('sources', [])) <= {'osm', 'ta'}
            and p.get('category') in ('restaurant', 'cafe', 'pub', 'shopping', 'services')]
     occ = [p for p in pois_data if 'fsa' in p.get('sources', []) or 'servicemap' in p.get('sources', [])]
     # Exactly-one-occupant guard: food courts/markets host several current
@@ -280,7 +286,7 @@ def manifest():
             'complete': all(s in stages_ok for s in ('base', 'overture', 'nhs', 'atp')),
             'stages_ok': stages_ok,
             'sources': {k: v for k, v in m.items()
-                        if k in ('fsa_extract_date', 'overture', 'nhs', 'atp', 'site', 'servicemap')},
+                        if k in ('fsa_extract_date', 'overture', 'nhs', 'atp', 'site', 'servicemap', 'ta')},
         })
     man = {'generated_at': datetime.now(timezone.utc).isoformat(),
            'packs': sorted(packs, key=lambda p: p['id'])}
@@ -293,9 +299,9 @@ def main():
     ap.add_argument('--area')
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--from', dest='from_stage',
-                    choices=['base', 'servicemap', 'overture', 'nhs', 'atp', 'sites', 'merge'])
+                    choices=['base', 'servicemap', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
     ap.add_argument('--only',
-                    choices=['base', 'servicemap', 'overture', 'nhs', 'atp', 'sites', 'merge'])
+                    choices=['base', 'servicemap', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
     ap.add_argument('--sites', action='store_true',
                     help='site spider, residual only (POIs with no OSM/ATP hours)')
     ap.add_argument('--sites-all', action='store_true',
