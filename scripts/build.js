@@ -96,7 +96,27 @@ const DUP_STOP = new Set(['southend', 'Leigh', 'westcliff', 'chalkwell', 'shoebu
   'thorpe', 'essex', 'london', 'hackney', 'high', 'street', 'road', 'avenue', 'broadway', 'parade',
   'town', 'centre', 'center', 'branch', 'store', 'station', 'sea', 'old', 'new', 'north', 'south',
   'east', 'west', 'on', 'great', 'restaurant', 'cafe', 'coffee', 'pub', 'bar', 'takeaway', 'kitchen',
-  'food', 'pizza', 'burger', 'kebab', 'sushi', 'bakery', 'sandwich', 'house', 'lounge']);
+  'food', 'pizza', 'burger', 'kebab', 'sushi', 'bakery', 'sandwich', 'house', 'lounge',
+  // Locality words by geography (town-word merges are the Swagger flaw class).
+  // EXTEND WITH EVERY NEW GEOGRAPHY (and check the weak-merge audit after).
+  // Southend districts:
+  'prittlewell', 'eastwood', 'belfairs', 'milton', 'kursaal', 'victoria', 'lukes',
+  // Hackney districts:
+  'stoke', 'newington', 'dalston', 'clapton', 'homerton', 'haggerston', 'hackney',
+  // London boroughs:
+  'barking', 'dagenham', 'barnet', 'bexley', 'brent', 'bromley', 'camden', 'croydon',
+  'ealing', 'enfield', 'greenwich', 'hammersmith', 'fulham', 'haringey', 'harrow',
+  'havering', 'hillingdon', 'hounslow', 'islington', 'kensington', 'chelsea', 'kingston',
+  'thames', 'lambeth', 'lewisham', 'merton', 'newham', 'redbridge', 'richmond', 'southwark',
+  'sutton', 'tower', 'hamlets', 'waltham', 'forest', 'wandsworth', 'westminster',
+  // Essex LADs:
+  'chelmsford', 'colchester', 'basildon', 'brentwood', 'harlow', 'maldon', 'rochford',
+  'tendring', 'uttlesford', 'thurrock', 'braintree', 'castle', 'point', 'epping',
+  // Rivers/waterways used as names:
+  'Lea', 'thames',
+  // Helsinki districts (Servicemap turf):
+  'kallio', 'punavuori', 'kamppi', 'töölö', 'katajanokka', 'kruununhaka', 'kluuvi',
+  'pasila', 'vallila', 'sörnäinen', 'hakaniemi', 'kaivopuisto', 'eira', 'ullanlinna'].map(w => w.toLowerCase()));
 function dupToks(e) {
   return new Set([...brandToks(e)].map(stem).filter(w => !DUP_STOP.has(w)));
 }
