@@ -70,6 +70,15 @@ Read these three docs first, in order:
   (Slug→Skylahs proven). Known open: town-word base merges (Swagger
   class, phase 2), Fireaway ATP hours (spider pass), absorbed records
   orphan already-claimed OSM nodes until next base rebuild.
+- Base brand-anchoring live (phase 2): generic-word exclusion (with
+  plural stemming), food-scoped category veto, exact-6 gate, OSM fhrs:id
+  exact pass. Verified: 24-case battery green; 1.3+ floor 408/412 kept
+  with all 4 deltas upgraded to id-exact (Big News uncrossed, OKKO/Wing
+  resolved); JK/New Look/Bakery merges fixed; Swagger node correctly
+  freed to its own record. fhrs:id carried 68% of Southend merges;
+  veto refused 2,521 cross-category pairs. Locality stopwords are
+  curated per geography (Leigh/Lea were dead capitalized entries —
+  set now self-normalizes; extend with every new geography).
 - Prefer-Meta ranking live (product-call update): +0.15 freshness prior,
   FSQ fallback intact. Measured: Meta won 88%/86% unassisted; bonus
   flips ~1/area, zero lost (verified by per-POI diff). Per-record
