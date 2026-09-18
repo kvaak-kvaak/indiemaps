@@ -84,8 +84,11 @@ function sourceBadges(p) {
     : s === 'atp' ? '<span class="badge src-atp" title="Chain-published data via AllThePlaces">chains</span>'
     : s === 'site' ? '<span class="badge src-site" title="Hours stated on the business website">website</span>'
     : s === 'nhs' ? '<span class="badge src-nhs" title="NHS listed pharmacy (England)">NHS</span>'
-    : s === 'servicemap' ? '<span class="badge src-sm" title="City of Helsinki Service Map (CC BY 4.0)">HKI map</span>'
-    : '<span class="badge src-osm" title="OpenStreetMap contributors">OSM</span>').join('');
+    : s === 'overture' ? '<span class="badge src-overture" title="Phone/website backfilled from Overture Maps">Overture</span>'
+    : s === 'osm' ? '<span class="badge src-osm" title="OpenStreetMap contributors">OSM</span>'
+    // Unknown sources render under their own name — never borrowed. (A
+    // fallthrough OSM label once masqueraded Overture contributions.)
+    : `<span class="badge src-osm" title="Unrecognised source key">${esc(s)}</span>`).join('');
 }
 // Effective hours: OSM mapping first, then chain, site, NHS, municipal —
 // every differing source is shown, never merged.
@@ -212,9 +215,9 @@ function detailSkeleton(p) {
     <div class="hr"></div>
     <div class="sec"><h4>Contact & details</h4>
       ${p.address ? `<div class="kv"><span class="k">📍</span><span>${esc(p.address)}</span></div>` : `<div class="kv"><span class="k">📍</span><span style="color:#999">No address on record</span></div>`}
-      ${p.phone ? `<div class="kv"><span class="k">📞</span><a href="${tel}">${esc(p.phone)}</a></div>` : ''}
+      ${p.phone ? `<div class="kv"><span class="k">📞</span><a href="${tel}">${esc(p.phone)}</a> <span style="color:#888;font-size:11px">(${p.phone_source === 'overture' ? 'via Overture' : p.phone_source === 'servicemap' ? 'via Service Map' : 'as mapped on OSM'})</span></div>` : ''}
       ${p.email ? `<div class="kv"><span class="k">✉️</span><a href="mailto:${esc(p.email)}">${esc(p.email)}</a></div>` : ''}
-      ${p.website ? `<div class="kv"><span class="k">🌐</span><a target="_blank" href="${esc(p.website)}">${esc(prettyUrl(p.website))}</a></div>` : ''}
+      ${p.website ? `<div class="kv"><span class="k">🌐</span><a target="_blank" href="${esc(p.website)}">${esc(prettyUrl(p.website))}</a> <span style="color:#888;font-size:11px">(${p.website_source === 'overture' ? 'via Overture' : p.website_source === 'servicemap' ? 'via Service Map' : 'as mapped on OSM'})</span></div>` : ''}
       ${(p.facebook || p.instagram || p.twitter) ? `<div class="kv"><span class="k">📣</span><span>${p.facebook ? `<a target="_blank" href="${esc(p.facebook)}">Facebook</a> · ` : ''}${p.instagram ? `<a target="_blank" href="${esc(p.instagram)}">Instagram</a> · ` : ''}${p.twitter ? `<a target="_blank" href="${esc(p.twitter)}">X/Twitter</a>` : ''}</span></div>` : ''}
       ${p.opening_hours_osm ? `<div class="kv"><span class="k">🕒</span><span style="font-family:monospace;font-size:12px">${esc(p.opening_hours_osm)} <span style="color:#888">(as mapped on OSM)</span></span></div>` : ''}
     </div>
@@ -249,6 +252,7 @@ function detailSkeleton(p) {
       <div style="font-size:12.5px;color:#444;line-height:1.7">
       ${(p.sources || []).includes('fsa') ? `· <b>Name & address</b> — Food Standards Agency open data (extract ${esc(state.meta.fsa_extract_date || '?')})<br/>` : ''}
       ${(p.sources || []).includes('osm') ? `· <b>Position, hours & contact</b> — OpenStreetMap contributors${p.osm_id ? ` (node ${p.osm_id})` : ''}<br/>` : ''}
+      ${(p.sources || []).includes('overture') ? `· <b>Phone & website backfill</b> — Overture Maps${p.overture_id ? ` (GERS ${esc(p.overture_id.slice(0, 8))}…)` : ''}<br/>` : ''}
       ${(p.sources || []).includes('atp') ? `· <b>Opening hours</b> — as published by ${esc(p.atp_brand || 'the chain')}, via AllThePlaces (CC0)<br/>` : ''}
       ${(p.sources || []).includes('nhs') ? `· <b>Listed pharmacy</b> — NHS England${p.nhs_ods ? ` (ODS ${esc(p.nhs_ods)})` : ''}<br/>` : ''}
       ${(p.sources || []).includes('servicemap') ? `· <b>Municipal listing</b> — City of Helsinki Service Map (CC BY 4.0)${p.sm_id ? ` (unit ${esc(String(p.sm_id))})` : ''}<br/>` : ''}

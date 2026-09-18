@@ -56,6 +56,12 @@ Read these three docs first, in order:
   (validated: 10/10 controls under, all howlers above); counts plumbing
   carries osm_*/fsa_repinned through the recount, sm_hours counted.
   Westminster fresh pack served locally (13,020 POIs).
+- Phantom-badge postmortem: the badge map's OSM fallthrough rendered
+  Overture contributions as a second "OSM" chip (Victory Mansion read
+  FSA, OSM, OSM). Fixed with an overture branch + unknowns render under
+  their own key; contact rows now labeled via-Overture vs OSM-mapped.
+  No. 61 London Road confirmed shared site (Pallavas + Kwik Fit) —
+  evidence for the rename rule's category-agreement guard.
 - Helsinki pilot GREEN (gate exception): run 35029285720, 3,701 POIs /
   2,068 with hours via new Servicemap municipal stage (1,663 units →
   223 matched + 1,440 added, FI hours normalized). Oiva has no bulk
