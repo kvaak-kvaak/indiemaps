@@ -62,6 +62,14 @@ Read these three docs first, in order:
   their own key; contact rows now labeled via-Overture vs OSM-mapped.
   No. 61 London Road confirmed shared site (Pallavas + Kwik Fit) —
   evidence for the rename rule's category-agreement guard.
+- Duplicates doctrine live (verified Southend+Hackney rebuilds): FSA
+  duplicate linking (same postcode+housenumber+brand, newest ratingDate
+  wins, alias retained; different-number pairs queue for humans),
+  verified-alias registry with TA-KO #1 (display TA-KO, alias kept) and
+  Fireaway absorb #2 (single 376-378 record), stale-occupant flags
+  (Slug→Skylahs proven). Known open: town-word base merges (Swagger
+  class, phase 2), Fireaway ATP hours (spider pass), absorbed records
+  orphan already-claimed OSM nodes until next base rebuild.
 - Prefer-Meta ranking live (product-call update): +0.15 freshness prior,
   FSQ fallback intact. Measured: Meta won 88%/86% unassisted; bonus
   flips ~1/area, zero lost (verified by per-POI diff). Per-record
