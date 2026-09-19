@@ -65,5 +65,24 @@
   "matched": 430,
   "hours_added": 113,
   "conflicts": 14
+ },
+ "ta": {
+  "vintage": "c.2021 (maintainer-declared; file carries no timestamps)",
+  "rows_in_bbox": 622,
+  "matched": 307,
+  "hours_added": 171,
+  "diets_added": 176,
+  "cuisine_verdicts": {
+   "agree": 10,
+   "extend": 202,
+   "conflict": 68
+  },
+  "rating_bands": {
+   "5.0": 34,
+   "4.5": 96,
+   "4.0": 78,
+   "other": 95,
+   "none": 4
+  }
  }
 }

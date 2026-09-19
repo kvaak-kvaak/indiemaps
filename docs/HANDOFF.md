@@ -111,6 +111,23 @@ Read these three docs first, in order:
   track. Queued, unscheduled: ATP-extract ingest, tenant flagging,
   Overture confidence column, BrightQuery identification. Open: OSM
   license boundary (#5), which Vela consumption would inherit, not settle.
+- Stale-dump enrichment live (ta stage, local-only by decision): 1M-row
+  research parquet matched against pack POIs (Southend+Helsinki gated via
+  areas `"ta"` flag) — match-only, never creates; alias-aware keys;
+  cuisines compared (ta_cuisines+verdict), gap hours only (ta_hours),
+  Y-only dietary flags, numeric ratings + counts (emoji/chips derived at
+  render). Vintage c.2021 in meta; all review-derived keys under ta_* for
+  OSM-compatible stripping. Measured Southend: 622 rows → 307 matched,
+  +171 hours, +176 diets; Helsinki: 1919 rows → 832 matched. CI skips
+  green without the file (never committed).
+- TA RUNBOOK (manual, quarterly): download the CI artifact packs for
+  Southend + Helsinki → `python3 scripts/pack/ta.py
+  --bbox=<from areas.json> --pois <pack>/pois.json --meta <pack>/meta.json`
+  per area → review the printed audit (matched/hours/diets/verdicts/bands)
+  → Southend output replaces `data/pois.json` + `data/build-meta.json`
+  (committed demo data), Helsinki output replaces
+  `packs/eu/fi/uusimaa/helsinki/` (gitignored serving) → restart server,
+  smoke `/api/pois` counts → commit + push.
 
 ## Working conventions (non-negotiable, learned the hard way)
 

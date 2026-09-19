@@ -925,7 +925,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -941,7 +942,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Greek"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 17:00-00:00; Su 12:00-00:00",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 355
  },
  {
   "id": "fsa-1375945",
@@ -1489,8 +1498,20 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "Mediterranean",
+   "European",
+   "Portuguese"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Tu-Sa 17:30-22:00; Su 13:00-20:00",
+  "ta_vegetarian": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 339
  },
  {
   "id": "fsa-512845",
@@ -1816,7 +1837,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -1848,7 +1870,16 @@
    "url": "https://angelinnpub.co.uk/menus/",
    "label": "menus",
    "kind": "page"
-  }
+  },
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 369
  },
  {
   "id": "osm-node-12872726090",
@@ -2174,13 +2205,22 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 62
-  }
+  },
+  "ta_cuisines": [
+   "Italian",
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 3.0,
+  "ta_reviews": 2
  },
  {
   "id": "fsa-729023",
@@ -2212,7 +2252,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -2228,7 +2269,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Asian",
+   "Chinese"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Tu 17:00-23:00; Th-Su 17:00-23:00",
+  "ta_rating": 4.0,
+  "ta_reviews": 10
  },
  {
   "id": "fsa-957666",
@@ -2484,7 +2533,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -2500,7 +2550,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_rating": 3.0,
+  "ta_reviews": 7
  },
  {
   "id": "fsa-512855",
@@ -2710,13 +2762,17 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 21
-  }
+  },
+  "ta_hours": "Mo-Sa 08:30-16:30",
+  "ta_rating": 5.0,
+  "ta_reviews": 3
  },
  {
   "id": "osm-node-13710480750",
@@ -2747,8 +2803,19 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 5.0,
+  "ta_reviews": 80
  },
  {
   "id": "fsa-512908",
@@ -3347,7 +3414,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -3363,7 +3431,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 08:30-17:30; Su 11:00-15:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 91
  },
  {
   "id": "osm-node-12870279703",
@@ -3438,8 +3516,16 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "Italian"
+  ],
+  "ta_cuisine_match": "agree",
+  "ta_hours": "Tu-Su 18:00-21:02",
+  "ta_rating": 4.5,
+  "ta_reviews": 12
  },
  {
   "id": "fsa-513081",
@@ -3628,7 +3714,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -3644,7 +3731,13 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 3.0,
+  "ta_reviews": 6
  },
  {
   "id": "fsa-1779908",
@@ -3676,7 +3769,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -3691,7 +3785,13 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 4.0,
+  "ta_reviews": 4
  },
  {
   "id": "fsa-512878",
@@ -4152,7 +4252,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -4168,7 +4269,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "Fast food"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Su 10:00-21:30",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 25
  },
  {
   "id": "fsa-1393038",
@@ -4403,7 +4513,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -4419,7 +4530,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food",
+   "Turkish",
+   "Middle Eastern"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 12:00-23:30; Fr-Sa 11:00-01:00; Su 12:00-23:00",
+  "ta_rating": 4.0,
+  "ta_reviews": 28
  },
  {
   "id": "fsa-513259",
@@ -5215,7 +5335,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -5231,7 +5352,21 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Seafood",
+   "Mediterranean",
+   "European",
+   "Spanish",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo 09:00-22:00; We-Sa 09:00-22:00; Su 12:00-15:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 854
  },
  {
   "id": "osm-node-12872726075",
@@ -5923,7 +6058,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -5939,7 +6075,19 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "International"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu-Sa 12:00-22:00; Su 12:00-18:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 1675
  },
  {
   "id": "fsa-1848472",
@@ -6017,12 +6165,26 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "ta"
   ],
   "superseded_by": {
    "id": "fsa-1976325",
    "name": "Tide And Toast Coffee"
-  }
+  },
+  "ta_cuisines": [
+   "Steakhouse",
+   "American",
+   "Grill",
+   "Diner"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "We-Th 17:00-20:30; Fr 17:00-21:30; Sa 08:00-21:30; Su 08:00-14:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 351
  },
  {
   "id": "fsa-1386867",
@@ -6193,7 +6355,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -6224,7 +6387,15 @@
   "site_cuisine": [
    "Indian"
   ],
-  "site_price": "\u00a3\u00a3"
+  "site_price": "\u00a3\u00a3",
+  "ta_cuisines": [
+   "Indian",
+   "Balti"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 78
  },
  {
   "id": "fsa-534893",
@@ -6260,7 +6431,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -6287,7 +6459,14 @@
    "url": "https://deliveroo.co.uk/menu/london/leigh-on-sea/bombay-restaurant-southend-on-sea",
    "label": "deliveroo",
    "kind": "third-party"
-  }
+  },
+  "ta_cuisines": [
+   "Indian"
+  ],
+  "ta_cuisine_match": "agree",
+  "ta_vegetarian": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 113
  },
  {
   "id": "osm-node-12870939461",
@@ -6857,8 +7036,12 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_hours": "Mo-Su 04:00-23:00",
+  "ta_rating": 3.0,
+  "ta_reviews": 9
  },
  {
   "id": "fsa-534833",
@@ -7190,7 +7373,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -7206,7 +7390,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "Seafood",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 152
  },
  {
   "id": "fsa-1734878",
@@ -7286,8 +7479,17 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "Pub",
+   "Bar"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 17
  },
  {
   "id": "fsa-1931772",
@@ -7581,7 +7783,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
@@ -7597,7 +7800,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food",
+   "Grill"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 14:00-23:00; Su 13:00-23:00",
+  "ta_rating": 3.0,
+  "ta_reviews": 77
  },
  {
   "id": "fsa-516301",
@@ -7893,7 +8104,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -7909,7 +8121,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 12:30-17:30",
+  "ta_rating": 5.0,
+  "ta_reviews": 4
  },
  {
   "id": "fsa-1383995",
@@ -8273,7 +8492,8 @@
    "osm",
    "overture",
    "atp",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -8322,7 +8542,9 @@
    "label": "visit store website",
    "kind": "page"
   },
-  "site_description": "Visit your local Burger King at 205 High Street in Southend-on-sea, United Kingdom to get BK Your Way"
+  "site_description": "Visit your local Burger King at 205 High Street in Southend-on-sea, United Kingdom to get BK Your Way",
+  "ta_rating": 3.0,
+  "ta_reviews": 3
  },
  {
   "id": "fsa-1924121",
@@ -8708,7 +8930,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -8723,7 +8946,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 08:00-16:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 5.0,
+  "ta_reviews": 34
  },
  {
   "id": "fsa-512697",
@@ -8756,7 +8989,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -8782,7 +9016,17 @@
    "Thursday 10am-3pm",
    "Friday 10am-3pm",
    "Saturday 9:30am-4pm"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 114
  },
  {
   "id": "osm-node-596366536",
@@ -8847,7 +9091,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -8863,7 +9108,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British",
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 60
  },
  {
   "id": "fsa-534899",
@@ -8898,7 +9151,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -8914,7 +9168,20 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian",
+   "Asian",
+   "Bangladeshi",
+   "Balti"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-We 12:00-14:30; Mo-We 17:30-22:30; Th-Sa 12:00-14:30; Th-Sa 17:30-23:30; Su 12:00-14:30; Su 17:30-22:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 235
  },
  {
   "id": "fsa-513003",
@@ -8947,7 +9214,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -8963,7 +9231,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Fr 08:00-17:00; Sa 08:00-18:00; Su 09:00-16:00",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 56
  },
  {
   "id": "fsa-730827",
@@ -8996,7 +9273,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -9029,7 +9307,16 @@
    "url": "http://www.cafeoportugues.co.uk/img/23/bc5a531f-c442-43ac-b66a-2bbc63c662fc.png",
    "kind": "og:image"
   },
-  "site_description": "Authentic Portuguese caf\u00e9 on Hamlet Court Road, Westcliff-on-Sea. Fresh Portuguese coffee, past\u00e9is de nata, savoury bites and full English breakfast \u2014 plus an imported grocery section. Open early 'til"
+  "site_description": "Authentic Portuguese caf\u00e9 on Hamlet Court Road, Westcliff-on-Sea. Fresh Portuguese coffee, past\u00e9is de nata, savoury bites and full English breakfast \u2014 plus an imported grocery section. Open early 'til",
+  "ta_cuisines": [
+   "Cafe",
+   "European",
+   "British",
+   "Portuguese"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 4.5,
+  "ta_reviews": 11
  },
  {
   "id": "fsa-512543",
@@ -9062,7 +9349,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -9078,7 +9366,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "Seafood",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 152
  },
  {
   "id": "fsa-1531935",
@@ -9110,7 +9407,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -9125,7 +9423,22 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British",
+   "Healthy",
+   "Bar",
+   "Cafe",
+   "European",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 08:30-17:00; Fr-Sa 08:30-23:00; Su 09:00-15:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 221
  },
  {
   "id": "fsa-512620",
@@ -9161,7 +9474,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -9176,7 +9490,13 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_rating": 4.0,
+  "ta_reviews": 37
  },
  {
   "id": "fsa-1553276",
@@ -9580,7 +9900,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -9595,7 +9916,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 2.5,
+  "ta_reviews": 112
  },
  {
   "id": "fsa-957776",
@@ -10543,13 +10871,23 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 1
-  }
+  },
+  "ta_cuisines": [
+   "British",
+   "International"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 11:30-16:30",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 57
  },
  {
   "id": "osm-node-666348452",
@@ -10582,8 +10920,18 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "Chinese",
+   "Asian"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo 18:00-22:30; We 16:00-23:00; Th 18:00-22:00; Fr 12:00-14:00; Fr 18:00-23:00; Sa 12:30-14:00; Sa 18:00-23:00; Su 12:30-22:30",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 92
  },
  {
   "id": "osm-node-12748241226",
@@ -10869,7 +11217,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -10884,7 +11233,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_rating": 4.5,
+  "ta_reviews": 6
  },
  {
   "id": "fsa-513028",
@@ -11531,7 +11882,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -11547,7 +11899,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Chinese",
+   "Asian"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Su 17:00-23:00",
+  "ta_rating": 3.0,
+  "ta_reviews": 19
  },
  {
   "id": "fsa-956284",
@@ -11579,7 +11939,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -11595,7 +11956,19 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "ta_cuisines": [
+   "Chinese",
+   "Fast food",
+   "Asian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo 17:00-21:30; We-Su 17:00-21:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 83
  },
  {
   "id": "fsa-512621",
@@ -11793,7 +12166,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -11829,7 +12203,14 @@
    "label": "order now",
    "kind": "page"
   },
-  "site_description": "Welcome to Chris' Fish, Chicken & Ribs | We are a Fish, Chips, Chicken & Ribs specialist offering fresh and great tasting food. We cook our products to order to maintain the fresh taste. Order Online today to receive exclusive discounts and offers. Download our app on Google Play or the App store no"
+  "site_description": "Welcome to Chris' Fish, Chicken & Ribs | We are a Fish, Chips, Chicken & Ribs specialist offering fresh and great tasting food. We cook our products to order to maintain the fresh taste. Order Online today to receive exclusive discounts and offers. Download our app on Google Play or the App store no",
+  "ta_cuisines": [
+   "Fast food",
+   "Seafood"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 3.5,
+  "ta_reviews": 25
  },
  {
   "id": "fsa-513038",
@@ -12024,7 +12405,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -12040,7 +12422,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Fr 08:00-16:30; Sa 08:00-17:30; Su 08:30-16:00",
+  "ta_vegetarian": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 20
  },
  {
   "id": "fsa-512659",
@@ -12113,7 +12503,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -12129,7 +12520,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Seafood",
+   "Fast food",
+   "British"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_rating": 3.0,
+  "ta_reviews": 133
  },
  {
   "id": "osm-node-12870939440",
@@ -12278,7 +12677,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -12293,7 +12693,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 773
  },
  {
   "id": "osm-node-9167908341",
@@ -12482,7 +12891,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -12493,7 +12903,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Sa 11:30-20:00",
+  "ta_rating": 5.0,
+  "ta_reviews": 8
  },
  {
   "id": "fsa-513050",
@@ -13235,7 +13652,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -13278,7 +13696,17 @@
   "site_cuisine": [
    "British"
   ],
-  "site_price": "$"
+  "site_price": "$",
+  "ta_cuisines": [
+   "Cafe",
+   "British",
+   "European"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 30
  },
  {
   "id": "osm-node-13022969684",
@@ -13502,7 +13930,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -13518,7 +13947,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-We 08:00-17:00; Th-Fr 08:00-23:00; Sa 09:00-22:30; Su 09:00-17:00",
+  "ta_vegetarian": true,
+  "ta_rating": 3.0,
+  "ta_reviews": 57
  },
  {
   "id": "fsa-513054",
@@ -13551,7 +13989,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -13566,7 +14005,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British",
+   "Diner"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 09:30-15:30",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 148
  },
  {
   "id": "fsa-512829",
@@ -13747,7 +14196,8 @@
    "fsa",
    "osm",
    "atp",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -13774,7 +14224,13 @@
    "url": "https://store-pages.cdn.localistico.com/assets/locationimage/006a7b5d-90b3-4fb6-a107-493d57c9d02b/image/9156f54060a32e6e0ec621fd6d105494.png",
    "kind": "og:image"
   },
-  "site_description": "Get all the information about Southend: address, phone, opening hours"
+  "site_description": "Get all the information about Southend: address, phone, opening hours",
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_rating": 3.5,
+  "ta_reviews": 25
  },
  {
   "id": "fsa-799197",
@@ -13875,7 +14331,8 @@
    "osm",
    "overture",
    "atp",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -13911,7 +14368,13 @@
    "url": "https://store-pages.cdn.localistico.com/assets/locationimage/2e8075f9-5fd2-4c43-ad77-348df0f23cc8/image/44a152dec0a085b93a5d8959a41480dc.png",
    "kind": "og:image"
   },
-  "site_description": "Get all the information about Southend High Street: address, phone, opening hours"
+  "site_description": "Get all the information about Southend High Street: address, phone, opening hours",
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_rating": 3.5,
+  "ta_reviews": 43
  },
  {
   "id": "fsa-621084",
@@ -14289,8 +14752,12 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_hours": "Mo-Sa 08:30-16:30",
+  "ta_rating": 5.0,
+  "ta_reviews": 3
  },
  {
   "id": "fsa-1931764",
@@ -14598,8 +15065,17 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "American"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Th 11:00-23:00; Fr-Sa 11:00-00:00; Su 11:00-23:00",
+  "ta_vegetarian": true,
+  "ta_rating": 3.0,
+  "ta_reviews": 473
  },
  {
   "id": "fsa-1713652",
@@ -14787,7 +15263,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -14810,7 +15287,16 @@
   "site_raw": [
    "The Crooked Billet Leigh-on-sea | 51 High Street: Mo-Th 10:00-23:00; Fr-Sa 10:00-00:00; Su 10:00-22:00"
   ],
-  "site_description": "A unique, historic pub in Leigh-On-Sea. Enjoy classic pub food, real ales and exciting, premium gins. Book a table at The Crooked Billet."
+  "site_description": "A unique, historic pub in Leigh-On-Sea. Enjoy classic pub food, real ales and exciting, premium gins. Book a table at The Crooked Billet.",
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 315
  },
  {
   "id": "osm-node-1760043894",
@@ -15025,13 +15511,16 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "ta"
   ],
   "osm_match": {
    "score": 1.4,
    "dist_m": 5,
    "candidates": 41
-  }
+  },
+  "ta_rating": 5.0,
+  "ta_reviews": 1
  },
  {
   "id": "fsa-1110112",
@@ -15101,7 +15590,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -15134,7 +15624,18 @@
    "label": "menu",
    "kind": "page"
   },
-  "site_description": "Welcome to Cucina Leigh, we pride ourselves on delivering that authentic Italian dining experience in the heart of Leigh, Essex."
+  "site_description": "Welcome to Cucina Leigh, we pride ourselves on delivering that authentic Italian dining experience in the heart of Leigh, Essex.",
+  "ta_cuisines": [
+   "Italian",
+   "Mediterranean",
+   "European"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 990
  },
  {
   "id": "fsa-1501905",
@@ -15261,7 +15762,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -15277,7 +15779,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-We 17:00-22:30; Th-Su 17:00-23:00",
+  "ta_rating": 3.5,
+  "ta_reviews": 13
  },
  {
   "id": "fsa-1870325",
@@ -15624,13 +16133,27 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 24
-  }
+  },
+  "ta_cuisines": [
+   "Barbecue",
+   "Turkish",
+   "Mediterranean",
+   "Middle Eastern"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 13:00-00:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 88
  },
  {
   "id": "osm-node-1043889698",
@@ -16158,7 +16681,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -16194,7 +16718,16 @@
    "label": "coffee-fast-food(1)",
    "kind": "page"
   },
-  "site_description": "Order Takeaway Food Online or make reservation at your nearest Restaurant via ChefOnline. Order can be placed for popular Cuisines, Breakfast, Lunch, Snacks & Dinner."
+  "site_description": "Order Takeaway Food Online or make reservation at your nearest Restaurant via ChefOnline. Order can be placed for popular Cuisines, Breakfast, Lunch, Snacks & Dinner.",
+  "ta_cuisines": [
+   "Turkish"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 77
  },
  {
   "id": "osm-node-12588524161",
@@ -16589,7 +17122,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -16600,7 +17134,13 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 4.0,
+  "ta_reviews": 4
  },
  {
   "id": "fsa-512830",
@@ -16742,8 +17282,20 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British",
+   "Seafood"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 64
  },
  {
   "id": "fsa-1750870",
@@ -17042,7 +17594,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -17053,7 +17606,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Seafood",
+   "Fast food"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 12:00-23:00",
+  "ta_rating": 2.0,
+  "ta_reviews": 5
  },
  {
   "id": "fsa-852726",
@@ -17089,7 +17650,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1,
@@ -17105,7 +17667,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Pizza"
+  ],
+  "ta_cuisine_match": "agree",
+  "ta_hours": "Mo-Su 11:00-23:00",
+  "ta_rating": 3.0,
+  "ta_reviews": 3
  },
  {
   "id": "fsa-513201",
@@ -17141,7 +17710,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -17157,7 +17727,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Pizza",
+   "Fast food"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Th 11:00-23:00; Fr-Sa 11:00-00:00; Su 11:00-23:00",
+  "ta_rating": 2.0,
+  "ta_reviews": 44
  },
  {
   "id": "fsa-1771035",
@@ -18075,7 +18653,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 0.9,
@@ -18091,7 +18670,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Turkish"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 12:00-23:00; Fr-Sa 12:00-00:00; Su 15:00-23:00",
+  "ta_rating": 3.0,
+  "ta_reviews": 10
  },
  {
   "id": "fsa-1803358",
@@ -18427,13 +19013,23 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 3
-  }
+  },
+  "ta_cuisines": [
+   "Fast food",
+   "Turkish",
+   "Middle Eastern"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-We 00:00-00:30; Mo-We 15:00-00:30; Th 15:00-00:30; Fr 00:00-00:30; Fr 15:00-02:30; Sa 00:00-02:30; Sa 15:00-02:30; Su 00:00-02:30; Su 15:00-00:30",
+  "ta_rating": 4.0,
+  "ta_reviews": 25
  },
  {
   "id": "fsa-513456",
@@ -18704,7 +19300,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -18720,7 +19317,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Turkish",
+   "Mediterranean",
+   "Middle Eastern"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 12:00-23:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 50
  },
  {
   "id": "fsa-957781",
@@ -19141,7 +19749,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -19156,7 +19765,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_rating": 5.0,
+  "ta_reviews": 2
  },
  {
   "id": "osm-node-12870939482",
@@ -19787,7 +20398,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
@@ -19892,7 +20504,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -19908,7 +20521,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Steakhouse"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu 12:00-21:00; We-Th 12:00-22:00; Fr-Sa 12:00-00:00; Su 12:00-20:00",
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 69
  },
  {
   "id": "fsa-516262",
@@ -19941,7 +20562,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -19970,7 +20592,16 @@
    "url": "https://aurumsouthend.co.uk/menu/",
    "label": "menu",
    "kind": "page"
-  }
+  },
+  "ta_cuisines": [
+   "Contemporary"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 202
  },
  {
   "id": "fsa-1095823",
@@ -20003,7 +20634,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -20037,7 +20669,18 @@
    "label": "a la carte",
    "kind": "page"
   },
-  "site_description": "Fellinis Dolce Vita is an authentic Italian restaurant and lounge in Leigh on Sea, Essex, committed to bringing families and friends together to enjoy great food, wine and service. Something close to perfection - we welcome you to Fellinis Dolce Vita."
+  "site_description": "Fellinis Dolce Vita is an authentic Italian restaurant and lounge in Leigh on Sea, Essex, committed to bringing families and friends together to enjoy great food, wine and service. Something close to perfection - we welcome you to Fellinis Dolce Vita.",
+  "ta_cuisines": [
+   "Italian",
+   "Pizza",
+   "Mediterranean",
+   "European"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 172
  },
  {
   "id": "fsa-1806379",
@@ -20703,13 +21346,23 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
    "dist_m": 9,
    "candidates": 6
-  }
+  },
+  "ta_cuisines": [
+   "Fast food",
+   "British"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Sa 12:00-21:30",
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 161
  },
  {
   "id": "fsa-513247",
@@ -20817,7 +21470,8 @@
   "description": "",
   "sources": [
    "osm",
-   "atp"
+   "atp",
+   "ta"
   ],
   "atp_spider": "costa_coffee_gg_gb_im_je",
   "atp_brand": "Costa Express",
@@ -20829,7 +21483,14 @@
   },
   "atp_wikidata": "Q113556385",
   "atp_nsi": "costaexpress-3d5cac",
-  "atp_hours": "Mo-Su 06:00-23:00"
+  "atp_hours": "Mo-Su 06:00-23:00",
+  "ta_cuisines": [
+   "Fast food",
+   "Seafood"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_rating": 4.0,
+  "ta_reviews": 13
  },
  {
   "id": "fsa-512495",
@@ -20899,7 +21560,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
@@ -20914,7 +21576,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food",
+   "British",
+   "Seafood"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo 00:00-23:59; Tu-Su 12:00-22:00",
+  "ta_rating": 4.0,
+  "ta_reviews": 116
  },
  {
   "id": "fsa-513264",
@@ -21454,7 +22125,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -21470,7 +22142,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Chinese",
+   "Asian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 12:00-14:30; Mo-Sa 17:30-22:00; Su 17:30-22:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 185
  },
  {
   "id": "osm-node-596391249",
@@ -22147,13 +22829,22 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 4
-  }
+  },
+  "ta_cuisines": [
+   "Chinese",
+   "Asian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 17:00-22:00",
+  "ta_rating": 3.5,
+  "ta_reviews": 54
  },
  {
   "id": "osm-node-13237739916",
@@ -22284,7 +22975,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
@@ -22299,7 +22991,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-We 11:00-22:00; Th 11:00-22:30; Fr-Sa 09:00-01:30; Su 11:00-21:00",
+  "ta_vegetarian": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 164
  },
  {
   "id": "osm-node-1043516858",
@@ -22431,8 +23132,16 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 4.5,
+  "ta_reviews": 11
  },
  {
   "id": "fsa-1151761",
@@ -22501,7 +23210,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -22517,7 +23227,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Fr-Sa 17:00-22:00; Su 12:00-17:00",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 185
  },
  {
   "id": "fsa-1070495",
@@ -22554,7 +23272,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -22592,7 +23311,18 @@
    "label": "the menu the menu",
    "kind": "page"
   },
-  "site_description": "Find store hours and information about GDK"
+  "site_description": "Find store hours and information about GDK",
+  "ta_cuisines": [
+   "German",
+   "European",
+   "Grill",
+   "Fusion",
+   "Healthy"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 80
  },
  {
   "id": "fsa-1767249",
@@ -22700,8 +23430,17 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Su 04:00-20:00",
+  "ta_rating": 2.0,
+  "ta_reviews": 4
  },
  {
   "id": "fsa-944195",
@@ -22734,7 +23473,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -22761,7 +23501,13 @@
    "Thursday 8am-3pm",
    "Friday 8am-3pm",
    "Saturday 8am-3pm"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 5.0,
+  "ta_reviews": 1
  },
  {
   "id": "fsa-703910",
@@ -22885,7 +23631,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -22918,7 +23665,17 @@
    "label": "menus",
    "kind": "page"
   },
-  "site_description": "Welcome to Gold Coast\r\nWe are a family run restaurant, superbly situated on Southend sea front with wonderful views over the estuary.\r\nFor over thirty years we at the Gold Coast have been providing fantastic food with a passion second to none. Here you will find a"
+  "site_description": "Welcome to Gold Coast\r\nWe are a family run restaurant, superbly situated on Southend sea front with wonderful views over the estuary.\r\nFor over thirty years we at the Gold Coast have been providing fantastic food with a passion second to none. Here you will find a",
+  "ta_cuisines": [
+   "Chinese",
+   "Asian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 378
  },
  {
   "id": "fsa-513273",
@@ -24023,7 +24780,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -24039,7 +24797,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "American",
+   "Diner"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 09:00-21:00; Su 09:00-19:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 478
  },
  {
   "id": "fsa-512516",
@@ -24072,7 +24841,8 @@
   "sources": [
    "fsa",
    "overture",
-   "atp"
+   "atp",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -24099,7 +24869,16 @@
   },
   "atp_wikidata": "Q5564162",
   "atp_nsi": "greeneking-eaed91",
-  "atp_hours": "Mo-Th 11:00-23:00; Fr-Sa 11:00-24:00; Su 11:00-23:00"
+  "atp_hours": "Mo-Th 11:00-23:00; Fr-Sa 11:00-24:00; Su 11:00-23:00",
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 33
  },
  {
   "id": "osm-node-1046844481",
@@ -24564,7 +25343,8 @@
    "fsa",
    "overture",
    "atp",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -24607,7 +25387,18 @@
    "label": "all-you-can-eat breakfast",
    "kind": "page"
   },
-  "site_description": "Feast on a perfectly cooked carvery dinner every day of the week at your local home of the roast - Halfway House Toby Carvery! Book a table today."
+  "site_description": "Feast on a perfectly cooked carvery dinner every day of the week at your local home of the roast - Halfway House Toby Carvery! Book a table today.",
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 539
  },
  {
   "id": "fsa-513280",
@@ -24639,7 +25430,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -24654,7 +25446,15 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food",
+   "Turkish"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-We 15:00-00:00; Th-Fr 15:00-01:00; Sa-Su 15:00-00:00",
+  "ta_rating": 3.0,
+  "ta_reviews": 11
  },
  {
   "id": "fsa-1042434",
@@ -25445,7 +26245,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -25456,7 +26257,19 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "ta_cuisines": [
+   "American",
+   "Bar",
+   "British"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Th 12:00-21:00; Fr-Sa 12:00-22:00; Su 12:00-19:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 439
  },
  {
   "id": "fsa-748163",
@@ -25952,7 +26765,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -25968,7 +26782,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Spanish",
+   "Bar",
+   "Cafe",
+   "Wine Bar"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "We 12:00-20:00; Th 12:00-22:00; Fr-Sa 12:00-00:00; Su 12:00-20:00",
+  "ta_rating": 4.5,
+  "ta_reviews": 29
  },
  {
   "id": "fsa-554722",
@@ -26357,7 +27181,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
@@ -26373,7 +27198,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Chinese",
+   "Asian"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Sa 12:00-14:00; Mo-Sa 17:00-23:30; Su 17:00-23:30",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 26
  },
  {
   "id": "fsa-512630",
@@ -26405,13 +27239,22 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
    "dist_m": 77,
    "candidates": 10
-  }
+  },
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 5.0,
+  "ta_reviews": 29
  },
  {
   "id": "fsa-513250",
@@ -27291,8 +28134,17 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "British",
+   "Fast food"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu-Su 11:30-22:00",
+  "ta_rating": 3.5,
+  "ta_reviews": 65
  },
  {
   "id": "fsa-1151773",
@@ -27325,7 +28177,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -27357,7 +28210,22 @@
    "label": "our menu",
    "kind": "page"
   },
-  "site_description": "Il Mondo Southend - Italian Restaurant & Pizzeria. At Il Mondo Southend you'll experience authentic Italian food and a traditional dining experience."
+  "site_description": "Il Mondo Southend - Italian Restaurant & Pizzeria. At Il Mondo Southend you'll experience authentic Italian food and a traditional dining experience.",
+  "ta_cuisines": [
+   "Italian",
+   "Sicilian",
+   "Southern-Italian",
+   "Pizza",
+   "Mediterranean",
+   "European",
+   "Healthy"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 5.0,
+  "ta_reviews": 80
  },
  {
   "id": "fsa-829078",
@@ -27389,7 +28257,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -27405,7 +28274,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Seafood",
+   "Italian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu 16:30-22:30; We-Fr 10:30-14:30; We-Fr 16:30-22:30; Sa 12:00-22:30; Su 11:00-21:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 462
  },
  {
   "id": "fsa-538509",
@@ -27438,7 +28318,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -27454,7 +28335,22 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Italian",
+   "Pizza",
+   "Mediterranean",
+   "European",
+   "Sicilian",
+   "Southern-Italian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-We 10:30-23:00; Th 10:30-22:30; Fr-Su 10:30-23:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 1231
  },
  {
   "id": "fsa-513130",
@@ -27586,7 +28482,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
@@ -27609,7 +28506,15 @@
   "site_raw": [
    "Monday 5-9:30pm",
    "Sunday 5-9:45pm"
-  ]
+  ],
+  "ta_cuisines": [
+   "Chinese",
+   "Asian"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 56
  },
  {
   "id": "fsa-512961",
@@ -27729,7 +28634,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -27745,7 +28651,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian",
+   "Asian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu-Su 12:00-15:00; Tu-Su 17:00-22:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 71
  },
  {
   "id": "fsa-538510",
@@ -27777,7 +28693,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -27793,7 +28710,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian",
+   "Asian",
+   "Balti"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 12:00-14:00; Mo-Th 17:30-23:30; Fr-Sa 12:00-14:00; Fr-Sa 17:30-00:00; Su 12:00-14:00; Su 17:30-11:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 120
  },
  {
   "id": "fsa-949713",
@@ -27824,13 +28752,24 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 2
-  }
+  },
+  "ta_cuisines": [
+   "Indian",
+   "Asian",
+   "Balti"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 05:30-11:00",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 78
  },
  {
   "id": "fsa-1514750",
@@ -28134,13 +29073,28 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 2,
    "candidates": 43
-  }
+  },
+  "ta_cuisines": [
+   "Mediterranean",
+   "Barbecue",
+   "European",
+   "Turkish",
+   "Middle Eastern"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Th 13:00-00:00; Fr-Sa 13:00-01:00; Su 13:00-00:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 450
  },
  {
   "id": "fsa-1632584",
@@ -28471,7 +29425,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -28487,7 +29442,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 07:00-15:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 46
  },
  {
   "id": "osm-node-12569649342",
@@ -28954,7 +29919,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -28969,7 +29935,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 53
  },
  {
   "id": "osm-node-13980212021",
@@ -29046,7 +30020,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -29062,7 +30037,10 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_hours": "Mo-Su 17:30-00:00",
+  "ta_rating": 4.0,
+  "ta_reviews": 12
  },
  {
   "id": "osm-node-4116795147",
@@ -29603,7 +30581,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -29619,7 +30598,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food",
+   "Turkish"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-We 17:00-00:00; Th 17:00-01:00; Fr-Sa 17:00-02:00; Su 17:00-00:00",
+  "ta_rating": 3.5,
+  "ta_reviews": 17
  },
  {
   "id": "fsa-512745",
@@ -29650,13 +30637,22 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 4
-  }
+  },
+  "ta_cuisines": [
+   "Middle Eastern",
+   "Turkish"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 15:00-23:00; Fr-Sa 15:00-01:00; Su 15:00-23:00",
+  "ta_rating": 3.5,
+  "ta_reviews": 8
  },
  {
   "id": "fsa-699184",
@@ -29687,13 +30683,21 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 0
-  }
+  },
+  "ta_cuisines": [
+   "Turkish"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 15:00-23:00; Su 15:00-23:00",
+  "ta_rating": 3.5,
+  "ta_reviews": 8
  },
  {
   "id": "fsa-512788",
@@ -29725,7 +30729,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -29741,7 +30746,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 10:30-00:00; Su 11:00-00:00",
+  "ta_rating": 2.0,
+  "ta_reviews": 28
  },
  {
   "id": "fsa-536580",
@@ -29773,7 +30785,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -29789,7 +30802,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 11:00-22:00",
+  "ta_rating": 1.5,
+  "ta_reviews": 44
  },
  {
   "id": "fsa-1425437",
@@ -29922,7 +30942,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -29938,7 +30959,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian",
+   "Balti"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Su 12:00-14:30; Mo-Su 18:00-00:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 147
  },
  {
   "id": "fsa-534808",
@@ -30196,7 +31227,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -30212,7 +31244,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 12:00-21:00; Su 13:00-20:00",
+  "ta_rating": 5.0,
+  "ta_reviews": 1
  },
  {
   "id": "fsa-1496769",
@@ -30750,7 +31789,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -30766,7 +31806,19 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Italian",
+   "European",
+   "Mediterranean"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu 16:30-22:30; We-Fr 10:30-14:30; We-Fr 16:30-22:30; Sa 16:00-22:30; Su 11:00-21:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 98
  },
  {
   "id": "fsa-1780885",
@@ -30850,7 +31902,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -30866,7 +31919,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British",
+   "Contemporary"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Fr 09:00-17:00; Sa 09:00-18:00; Su 09:30-19:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 431
  },
  {
   "id": "fsa-1070493",
@@ -30899,7 +31963,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -30928,7 +31993,19 @@
    "label": "menus",
    "kind": "page"
   },
-  "site_description": "Call us to book a table or order takeaway"
+  "site_description": "Call us to book a table or order takeaway",
+  "ta_cuisines": [
+   "Italian",
+   "Pizza",
+   "Mediterranean",
+   "European"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 80
  },
  {
   "id": "fsa-513339",
@@ -30964,7 +32041,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -30996,7 +32074,17 @@
    "url": "https://lasirena.co.uk/menu/",
    "label": "menu",
    "kind": "page"
-  }
+  },
+  "ta_cuisines": [
+   "Italian",
+   "Mediterranean"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 527
  },
  {
   "id": "osm-node-1043912162",
@@ -31251,7 +32339,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -31267,7 +32356,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Seafood",
+   "Fast food",
+   "British",
+   "Diner"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 10:00-21:00",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 155
  },
  {
   "id": "fsa-513343",
@@ -31491,7 +32591,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -31507,7 +32608,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food",
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 07:30-16:00",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 38
  },
  {
   "id": "osm-node-666379428",
@@ -31577,7 +32688,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -31593,7 +32705,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Mediterranean"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 10:00-00:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 501
  },
  {
   "id": "fsa-513154",
@@ -31844,7 +32966,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -31855,7 +32978,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Mediterranean"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 10:00-00:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 501
  },
  {
   "id": "osm-node-1046844465",
@@ -32213,13 +33346,22 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 3
-  }
+  },
+  "ta_cuisines": [
+   "Indian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 17:30-22:30; Fr-Sa 17:30-23:00; Su 17:30-22:30",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 21
  },
  {
   "id": "fsa-538527",
@@ -32255,7 +33397,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -32292,7 +33435,16 @@
    "label": "menu",
    "kind": "page"
   },
-  "site_description": "Welcome to Leigh Tandoori \u2013 an award-winning Indian restaurant and takeaway. We have been established in Leigh-on-Sea, Essex, since 1996."
+  "site_description": "Welcome to Leigh Tandoori \u2013 an award-winning Indian restaurant and takeaway. We have been established in Leigh-on-Sea, Essex, since 1996.",
+  "ta_cuisines": [
+   "Indian",
+   "Asian",
+   "Balti"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 119
  },
  {
   "id": "fsa-512969",
@@ -32418,7 +33570,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -32434,7 +33587,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British",
+   "Cafe"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 60
  },
  {
   "id": "fsa-934261",
@@ -33299,7 +34460,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1.4,
@@ -33315,7 +34477,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British",
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 08:00-17:00; Su 09:00-16:00",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 43
  },
  {
   "id": "fsa-521353",
@@ -33571,7 +34742,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -33587,7 +34759,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu-We 09:00-18:00; Th-Sa 09:00-21:00; Su 09:00-17:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 5.0,
+  "ta_reviews": 49
  },
  {
   "id": "fsa-512797",
@@ -34380,7 +35562,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -34395,7 +35578,10 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_hours": "Tu-Sa 07:00-16:00; Su 09:00-16:00",
+  "ta_rating": 5.0,
+  "ta_reviews": 6
  },
  {
   "id": "fsa-512913",
@@ -34913,7 +36099,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -34948,7 +36135,16 @@
    "label": "Menu",
    "kind": "page"
   },
-  "site_description": "Mad Dogs and Englishmen serving exquisite afternoon teas and cocktails."
+  "site_description": "Mad Dogs and Englishmen serving exquisite afternoon teas and cocktails.",
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 202
  },
  {
   "id": "fsa-512634",
@@ -34981,7 +36177,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -34997,7 +36194,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_rating": 4.5,
+  "ta_reviews": 6
  },
  {
   "id": "fsa-1931761",
@@ -35311,7 +36510,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -35327,7 +36527,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Italian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 12:00-23:00; Fr-Sa 12:00-00:00; Su 12:00-23:00",
+  "ta_rating": 3.5,
+  "ta_reviews": 3
  },
  {
   "id": "fsa-512973",
@@ -35359,7 +36566,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -35375,7 +36583,19 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian",
+   "Balti",
+   "Asian",
+   "Eastern European",
+   "Bangladeshi"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 17:00-23:00",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 77
  },
  {
   "id": "fsa-1910869",
@@ -35455,7 +36675,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -35482,7 +36703,15 @@
    "Friday 5-10:30pm",
    "Saturday 5-10:30pm",
    "Sunday 5-10:30pm"
-  ]
+  ],
+  "ta_cuisines": [
+   "Chinese",
+   "Fast food"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 22
  },
  {
   "id": "fsa-512681",
@@ -35643,13 +36872,24 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 9,
    "candidates": 20
-  }
+  },
+  "ta_cuisines": [
+   "Asian",
+   "Thai"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 249
  },
  {
   "id": "fsa-516299",
@@ -35943,7 +37183,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -35959,7 +37200,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 11:00-00:00; Fr-Sa 11:00-01:00; Su 12:00-00:00",
+  "ta_vegetarian": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 73
  },
  {
   "id": "fsa-1623916",
@@ -36234,7 +37486,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -36250,7 +37503,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Asian",
+   "Indian"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo 12:00-14:30; Mo 17:30-23:00; Tu-Su 05:30-11:00",
+  "ta_vegetarian": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 99
  },
  {
   "id": "fsa-1048414",
@@ -36352,7 +37614,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -36386,7 +37649,18 @@
    "url": "https://www.maxwells-southend.com/menus/",
    "label": "menus",
    "kind": "page"
-  }
+  },
+  "ta_cuisines": [
+   "Cafe",
+   "British",
+   "Healthy"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 5.0,
+  "ta_reviews": 170
  },
  {
   "id": "fsa-512763",
@@ -36507,7 +37781,8 @@
   "sources": [
    "fsa",
    "osm",
-   "atp"
+   "atp",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -36524,7 +37799,13 @@
   },
   "atp_wikidata": "Q38076",
   "atp_nsi": "mcdonalds-c9aa1b",
-  "atp_hours": "Mo-Su 07:00-22:45"
+  "atp_hours": "Mo-Su 07:00-22:45",
+  "ta_cuisines": [
+   "Fast food"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_rating": 3.0,
+  "ta_reviews": 44
  },
  {
   "id": "fsa-512820",
@@ -36670,7 +37951,8 @@
   "sources": [
    "fsa",
    "overture",
-   "atp"
+   "atp",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -36697,7 +37979,13 @@
   },
   "atp_wikidata": "Q38076",
   "atp_nsi": "mcdonalds-c9aa1b",
-  "atp_hours": "Mo 00:00-04:59; Su 05:00-24:00"
+  "atp_hours": "Mo 00:00-04:59; Su 05:00-24:00",
+  "ta_cuisines": [
+   "Fast food"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 3.0,
+  "ta_reviews": 72
  },
  {
   "id": "fsa-1244991",
@@ -37008,7 +38296,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -37024,7 +38313,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "European"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 2.0,
+  "ta_reviews": 1
  },
  {
   "id": "fsa-1710497",
@@ -37163,8 +38459,21 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "British",
+   "Cafe",
+   "Seafood"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo 09:00-16:00; We-Fr 09:00-16:00; Sa 09:00-18:00; Su 09:00-16:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 115
  },
  {
   "id": "osm-node-1043912160",
@@ -37612,7 +38921,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -37628,7 +38938,20 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Italian",
+   "Pizza",
+   "Cafe",
+   "British",
+   "Fusion"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 08:00-14:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 5.0,
+  "ta_reviews": 70
  },
  {
   "id": "fsa-512978",
@@ -37740,7 +39063,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -37751,7 +39075,19 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian",
+   "Asian",
+   "Balti"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 12:00-14:00; Mo-Th 17:00-23:00; Fr 17:00-23:30; Sa 12:00-14:00; Sa 17:00-23:30; Su 12:00-23:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 89
  },
  {
   "id": "osm-node-13900186414",
@@ -38117,7 +39453,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -38149,7 +39486,17 @@
    "label": "menus",
    "kind": "page"
   },
-  "site_description": "Near the beach and cinema, Molo Lounge is a lively caf\u00e9 with floor-to-ceiling windows, bright murals, and a two-storey space for food and fun."
+  "site_description": "Near the beach and cinema, Molo Lounge is a lively caf\u00e9 with floor-to-ceiling windows, bright murals, and a two-storey space for food and fun.",
+  "ta_cuisines": [
+   "Bar",
+   "British"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 234
  },
  {
   "id": "fsa-1681320",
@@ -38219,7 +39566,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -38246,7 +39594,17 @@
    "Thursday 08:30 AM - 09:30 PM",
    "Friday 08:30 AM - 09:30 PM",
    "Saturday 08:30 AM - 09:30 PM"
-  ]
+  ],
+  "ta_cuisines": [
+   "Mediterranean",
+   "Portuguese",
+   "European"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 5.0,
+  "ta_reviews": 56
  },
  {
   "id": "fsa-1809205",
@@ -38278,7 +39636,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -38294,7 +39653,19 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Italian",
+   "Pizza",
+   "Mediterranean"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 12:00-22:00; Su 12:00-20:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 5.0,
+  "ta_reviews": 172
  },
  {
   "id": "fsa-1540312",
@@ -39010,7 +40381,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -39026,7 +40398,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Chinese",
+   "Asian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 3.5,
+  "ta_reviews": 20
  },
  {
   "id": "fsa-771821",
@@ -39058,7 +40437,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -39074,7 +40454,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Chinese",
+   "Japanese"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 17:00-23:00; Su 13:00-22:00",
+  "ta_vegetarian": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 57
  },
  {
   "id": "fsa-956285",
@@ -39234,7 +40623,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -39271,7 +40661,16 @@
    "label": "home of fresh food and great coffee",
    "kind": "page"
   },
-  "site_description": "Southend on Sea : High Street - Muffin Break UK store - View opening times, directions, and more details."
+  "site_description": "Southend on Sea : High Street - Muffin Break UK store - View opening times, directions, and more details.",
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 48
  },
  {
   "id": "fsa-516279",
@@ -39304,7 +40703,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
@@ -39320,7 +40720,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian",
+   "Asian",
+   "Balti"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 17:30-23:00",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 115
  },
  {
   "id": "osm-node-12569649360",
@@ -39472,7 +40882,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -39487,7 +40898,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_rating": 5.0,
+  "ta_reviews": 1
  },
  {
   "id": "fsa-513188",
@@ -39888,7 +41301,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -39904,7 +41318,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British",
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu-Fr 08:00-15:00; Sa 08:30-16:00; Su 08:30-15:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 35
  },
  {
   "id": "fsa-512736",
@@ -39983,7 +41407,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -39999,7 +41424,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian",
+   "Grill"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo 13:00-17:00; Tu-Su 13:00-22:00",
+  "ta_rating": 5.0,
+  "ta_reviews": 1
  },
  {
   "id": "osm-node-12012365386",
@@ -40118,13 +41551,23 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 0
-  }
+  },
+  "ta_cuisines": [
+   "Fast food",
+   "British",
+   "Seafood"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 12:00-21:00",
+  "ta_rating": 4.5,
+  "ta_reviews": 23
  },
  {
   "id": "osm-node-12875551542",
@@ -40909,7 +42352,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -40925,7 +42369,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food",
+   "Grill"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 14:00-23:00; Su 13:00-23:00",
+  "ta_rating": 3.0,
+  "ta_reviews": 77
  },
  {
   "id": "fsa-512850",
@@ -41093,7 +42545,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -41104,7 +42557,19 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Mediterranean",
+   "European",
+   "Portuguese"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Tu-Th 17:30-00:00; Fr 17:00-00:00; Sa 12:00-00:00; Su 12:00-23:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 524
  },
  {
   "id": "osm-node-12870939477",
@@ -41200,7 +42665,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -41216,7 +42682,19 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Contemporary"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu-Th 09:00-16:00; Fr-Sa 09:00-22:00; Su 09:00-19:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 1021
  },
  {
   "id": "fsa-1720667",
@@ -41370,7 +42848,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -41385,7 +42864,13 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Barbecue"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 5.0,
+  "ta_reviews": 17
  },
  {
   "id": "fsa-1628749",
@@ -41633,7 +43118,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "phone_source": "overture",
   "overture_id": "cef290ba-e9b0-41e2-b9f6-0742abc8449e",
@@ -41643,7 +43129,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 376
  },
  {
   "id": "fsa-513479",
@@ -41675,13 +43172,25 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 39,
    "candidates": 9
-  }
+  },
+  "ta_cuisines": [
+   "Seafood",
+   "Fast food",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 11:30-20:30; Fr 11:30-09:30; Sa-Su 11:30-20:30",
+  "ta_vegetarian": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 392
  },
  {
   "id": "fsa-812479",
@@ -42061,7 +43570,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1,
@@ -42077,7 +43587,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Chinese"
+  ],
+  "ta_cuisine_match": "agree",
+  "ta_hours": "Mo-Sa 17:00-22:30; Su 17:00-22:00",
+  "ta_rating": 3.5,
+  "ta_reviews": 8
  },
  {
   "id": "fsa-836478",
@@ -42147,7 +43664,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -42184,7 +43702,15 @@
    "label": "food hall",
    "kind": "page"
   },
-  "site_description": "Osborne\u2019s is a family run business located on the shores of the Thames Estuary in South East Essex."
+  "site_description": "Osborne\u2019s is a family run business located on the shores of the Thames Estuary in South East Essex.",
+  "ta_cuisines": [
+   "Seafood",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 366
  },
  {
   "id": "fsa-1603716",
@@ -42460,13 +43986,28 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "ta"
   ],
   "osm_match": {
    "score": 0.9,
    "dist_m": 65,
    "candidates": 14
-  }
+  },
+  "ta_cuisines": [
+   "Italian",
+   "Pizza",
+   "Mediterranean",
+   "European",
+   "Sicilian",
+   "Southern-Italian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 784
  },
  {
   "id": "fsa-513249",
@@ -42716,7 +44257,8 @@
    "osm",
    "overture",
    "atp",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -42764,7 +44306,13 @@
    "label": "hot, handcrafted pizzas",
    "kind": "page"
   },
-  "site_description": "Check out your Southend store to order a Papa Johns - our pizza is made with fresh dough and quality ingredients, available for delivery or collection."
+  "site_description": "Check out your Southend store to order a Papa Johns - our pizza is made with fresh dough and quality ingredients, available for delivery or collection.",
+  "ta_cuisines": [
+   "Pizza"
+  ],
+  "ta_cuisine_match": "agree",
+  "ta_rating": 3.0,
+  "ta_reviews": 7
  },
  {
   "id": "osm-node-664901750",
@@ -43135,7 +44683,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -43150,7 +44699,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Sa 07:30-18:00; Su 08:00-18:00",
+  "ta_vegetarian": true,
+  "ta_gluten_free": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 309
  },
  {
   "id": "fsa-534844",
@@ -43318,7 +44876,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -43351,7 +44910,17 @@
    "url": "https://pearldragon.co.uk/menu/",
    "label": "menu",
    "kind": "page"
-  }
+  },
+  "ta_cuisines": [
+   "Chinese",
+   "Asian"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 379
  },
  {
   "id": "osm-node-12244284154",
@@ -43383,7 +44952,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -43394,7 +44964,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British",
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 4.0,
+  "ta_reviews": 27
  },
  {
   "id": "fsa-513233",
@@ -43474,7 +45051,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -43490,7 +45068,13 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "ta_cuisines": [
+   "Seafood"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 3.0,
+  "ta_reviews": 26
  },
  {
   "id": "osm-node-1046844380",
@@ -43659,7 +45243,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -43674,7 +45259,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Su 11:00-22:00",
+  "ta_rating": 4.0,
+  "ta_reviews": 5
  },
  {
   "id": "fsa-512669",
@@ -43706,13 +45298,23 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
    "dist_m": 27,
    "candidates": 6
-  }
+  },
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Fr 06:30-14:30; Sa 07:00-14:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 5.0,
+  "ta_reviews": 19
  },
  {
   "id": "fsa-513119",
@@ -43931,7 +45533,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -43947,7 +45550,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Mexican"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo 16:00-22:30; We-Th 16:00-22:30; Fr 16:00-23:00; Sa 12:00-23:00; Su 12:00-21:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 5.0,
+  "ta_reviews": 323
  },
  {
   "id": "fsa-914069",
@@ -43980,7 +45593,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1,
@@ -43996,7 +45610,19 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "European",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 08:30-17:00; Fr-Sa 08:30-17:30; Su 10:00-17:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 74
  },
  {
   "id": "fsa-513235",
@@ -44065,7 +45691,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -44081,7 +45708,19 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Seafood",
+   "Contemporary",
+   "Gastropub",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu-Fr 12:00-16:00; Tu-Fr 18:00-22:00; Sa 12:00-22:00; Su 12:30-16:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 685
  },
  {
   "id": "osm-node-666346788",
@@ -44198,7 +45837,8 @@
    "osm",
    "overture",
    "atp",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -44241,7 +45881,17 @@
    "label": "Menu",
    "kind": "third-party"
   },
-  "site_description": "Enjoy fresh Italian pizza at PizzaExpress Southend on London Road. Perfect for family meals, dates, and iconic Dough Balls near the pier. Book now."
+  "site_description": "Enjoy fresh Italian pizza at PizzaExpress Southend on London Road. Perfect for family meals, dates, and iconic Dough Balls near the pier. Book now.",
+  "ta_cuisines": [
+   "Italian",
+   "Pizza"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 225
  },
  {
   "id": "fsa-512703",
@@ -44277,7 +45927,8 @@
   "sources": [
    "fsa",
    "osm",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -44300,7 +45951,13 @@
    "label": "menu",
    "kind": "page"
   },
-  "site_description": "Pizza GoGo Southend pizza delivery and takeaway - Order fresh and hot pizzas online. Fresh dough made daily!"
+  "site_description": "Pizza GoGo Southend pizza delivery and takeaway - Order fresh and hot pizzas online. Fresh dough made daily!",
+  "ta_cuisines": [
+   "Pizza"
+  ],
+  "ta_cuisine_match": "agree",
+  "ta_rating": 3.0,
+  "ta_reviews": 9
  },
  {
   "id": "fsa-513526",
@@ -44336,7 +45993,8 @@
   "sources": [
    "fsa",
    "osm",
-   "atp"
+   "atp",
+   "ta"
   ],
   "osm_match": {
    "score": 1,
@@ -44352,7 +46010,13 @@
    "candidates": 1
   },
   "atp_wikidata": "Q107293079",
-  "atp_nsi": "pizzahutdelivery-45095e"
+  "atp_nsi": "pizzahutdelivery-45095e",
+  "ta_cuisines": [
+   "Pizza"
+  ],
+  "ta_cuisine_match": "agree",
+  "ta_rating": 2.5,
+  "ta_reviews": 8
  },
  {
   "id": "fsa-512738",
@@ -44388,7 +46052,8 @@
   "sources": [
    "fsa",
    "osm",
-   "atp"
+   "atp",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -44404,7 +46069,9 @@
    "candidates": 1
   },
   "atp_wikidata": "Q107293079",
-  "atp_nsi": "pizzahutdelivery-45095e"
+  "atp_nsi": "pizzahutdelivery-45095e",
+  "ta_rating": 2.5,
+  "ta_reviews": 3
  },
  {
   "id": "fsa-513389",
@@ -44437,7 +46104,8 @@
   "sources": [
    "fsa",
    "overture",
-   "atp"
+   "atp",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -44463,7 +46131,14 @@
    "candidates": 1
   },
   "atp_wikidata": "Q107293079",
-  "atp_nsi": "pizzahutdelivery-45095e"
+  "atp_nsi": "pizzahutdelivery-45095e",
+  "ta_cuisines": [
+   "Pizza"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 11:00-22:40",
+  "ta_rating": 2.5,
+  "ta_reviews": 29
  },
  {
   "id": "fsa-1684846",
@@ -44543,7 +46218,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -44559,7 +46235,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Pizza"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 11:00-23:00",
+  "ta_rating": 3.0,
+  "ta_reviews": 7
  },
  {
   "id": "fsa-513290",
@@ -45006,13 +46689,20 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 1
-  }
+  },
+  "ta_cuisines": [
+   "Pizza"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 3.5,
+  "ta_reviews": 3
  },
  {
   "id": "fsa-513238",
@@ -46235,7 +47925,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -46251,7 +47942,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "Korean",
+   "Asian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 09:30-17:00",
+  "ta_vegetarian": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 23
  },
  {
   "id": "osm-node-12569255605",
@@ -46453,7 +48154,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -46469,7 +48171,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "Healthy",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 61
  },
  {
   "id": "osm-node-12163584078",
@@ -47661,7 +49374,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -47690,7 +49404,17 @@
    "label": "menu",
    "kind": "page"
   },
-  "site_description": "Home"
+  "site_description": "Home",
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 201
  },
  {
   "id": "osm-node-12871398324",
@@ -47908,13 +49632,24 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 16,
    "candidates": 11
-  }
+  },
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Fr 07:30-18:30; Sa 07:30-19:00; Su 07:30-18:30",
+  "ta_vegetarian": true,
+  "ta_gluten_free": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 177
  },
  {
   "id": "osm-node-596388381",
@@ -47945,8 +49680,17 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "British",
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 37
  },
  {
   "id": "fsa-536558",
@@ -48060,7 +49804,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -48076,7 +49821,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 11:00-18:00; Fr 11:00-19:00; Sa 11:00-20:00; Su 11:00-18:00",
+  "ta_rating": 4.5,
+  "ta_reviews": 3
  },
  {
   "id": "osm-node-13564512172",
@@ -48143,7 +49896,8 @@
   "sources": [
    "fsa",
    "osm",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -48170,7 +49924,13 @@
    "url": "http://www.robinspieandmash.com/ready-meals--1",
    "label": "catering |",
    "kind": "page"
-  }
+  },
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_rating": 4.0,
+  "ta_reviews": 67
  },
  {
   "id": "fsa-1786791",
@@ -48588,7 +50348,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -48604,7 +50365,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 12:00-21:00",
+  "ta_rating": 3.0,
+  "ta_reviews": 318
  },
  {
   "id": "fsa-512747",
@@ -48639,7 +50409,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -48655,7 +50426,13 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_rating": 3.5,
+  "ta_reviews": 44
  },
  {
   "id": "fsa-512925",
@@ -48826,7 +50603,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -48842,7 +50620,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 08:30-18:00",
+  "ta_vegetarian": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 310
  },
  {
   "id": "fsa-513025",
@@ -49081,7 +50868,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -49113,7 +50901,15 @@
   "site_image": {
    "url": "https://emayon.com/images/share.png",
    "kind": "og:image"
-  }
+  },
+  "ta_cuisines": [
+   "Fast food",
+   "British",
+   "Seafood"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_rating": 3.0,
+  "ta_reviews": 90
  },
  {
   "id": "fsa-907761",
@@ -49401,13 +51197,22 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 9
-  }
+  },
+  "ta_cuisines": [
+   "Chinese",
+   "Asian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 17:00-23:00",
+  "ta_rating": 3.0,
+  "ta_reviews": 21
  },
  {
   "id": "fsa-512874",
@@ -49518,7 +51323,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -49534,7 +51340,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 07:30-17:00; Su 07:30-12:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 51
  },
  {
   "id": "osm-node-1048635071",
@@ -49681,7 +51497,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -49697,7 +51514,18 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian",
+   "Asian",
+   "Balti"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Tu-Su 17:30-23:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 81
  },
  {
   "id": "osm-node-12865510756",
@@ -50279,13 +52107,26 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 17,
    "candidates": 28
-  }
+  },
+  "ta_cuisines": [
+   "Mediterranean",
+   "European",
+   "Spanish"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Fr-Sa 17:00-21:00; Su 16:00-20:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 386
  },
  {
   "id": "osm-node-12870246993",
@@ -50350,7 +52191,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -50388,7 +52230,19 @@
    "label": "our menu",
    "kind": "page"
   },
-  "site_description": "The Saltwater Beach Caf\u00e9 is warm and family friendly caf\u00e9 on Chalkwell Beach. Our caf\u00e9 provides delicious freshly made food and drinks using good quality ingredients."
+  "site_description": "The Saltwater Beach Caf\u00e9 is warm and family friendly caf\u00e9 on Chalkwell Beach. Our caf\u00e9 provides delicious freshly made food and drinks using good quality ingredients.",
+  "ta_cuisines": [
+   "Cafe",
+   "International",
+   "British",
+   "Healthy"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 97
  },
  {
   "id": "fsa-1749645",
@@ -50503,7 +52357,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -50519,7 +52374,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Italian"
+  ],
+  "ta_cuisine_match": "agree",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 46
  },
  {
   "id": "fsa-512865",
@@ -50553,7 +52415,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -50588,7 +52451,17 @@
    "label": "our menus",
    "kind": "page"
   },
-  "site_description": "San Fairie Ann Southend On Sea Restaurant Bar Pub Southend Essex Drinks Cocktails Food eat  Music Private Hire Events Parties Weddings Birthday Lunch Breakfast Dinner Meal Takeaway sanfairieannrestaurant.co.uk sanfairieann.co.uk .com single date"
+  "site_description": "San Fairie Ann Southend On Sea Restaurant Bar Pub Southend Essex Drinks Cocktails Food eat  Music Private Hire Events Parties Weddings Birthday Lunch Breakfast Dinner Meal Takeaway sanfairieannrestaurant.co.uk sanfairieann.co.uk .com single date",
+  "ta_cuisines": [
+   "European",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 79
  },
  {
   "id": "fsa-513308",
@@ -50670,7 +52543,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "phone_source": "overture",
   "overture_id": "5154453b-f0bb-4fd6-9f1e-d088e1bb992c",
@@ -50680,7 +52554,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British",
+   "Caucasian"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Fr 12:00-17:00; Sa 12:00-21:00; Su 12:00-18:00",
+  "ta_rating": 3.0,
+  "ta_reviews": 147
  },
  {
   "id": "fsa-513309",
@@ -50712,7 +52594,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -50728,7 +52611,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Contemporary"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-We 12:00-21:00; Th-Fr 12:00-21:00; Th-Fr 12:00-22:00; Sa 07:00-22:30; Sa 12:00-21:00; Sa 12:00-22:00; Su 07:00-22:30; Su 12:00-19:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 202
  },
  {
   "id": "fsa-1870313",
@@ -50809,7 +52702,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -50825,7 +52719,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 09:00-16:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 777
  },
  {
   "id": "fsa-1202768",
@@ -50857,7 +52761,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -50873,7 +52778,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British",
+   "Healthy"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Fr 10:00-15:00; Sa 09:00-13:00",
+  "ta_vegan": true,
+  "ta_rating": 5.0,
+  "ta_reviews": 39
  },
  {
   "id": "fsa-817672",
@@ -51337,7 +53252,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -51353,7 +53269,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food",
+   "Seafood",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 15:00-20:30; Fr 12:00-14:00; Fr 15:00-21:00; Sa 12:00-14:00; Sa 15:00-20:30",
+  "ta_rating": 5.0,
+  "ta_reviews": 23
  },
  {
   "id": "fsa-513501",
@@ -51610,7 +53535,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -51626,7 +53552,20 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian",
+   "Asian",
+   "Balti",
+   "Bangladeshi"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 12:00-00:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 155
  },
  {
   "id": "fsa-512740",
@@ -51984,7 +53923,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -52000,7 +53940,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Chinese",
+   "Thai"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu 17:00-22:00; We-Su 17:00-22:30",
+  "ta_rating": 5.0,
+  "ta_reviews": 3
  },
  {
   "id": "fsa-513514",
@@ -52031,13 +53979,22 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 0
-  }
+  },
+  "ta_cuisines": [
+   "Chinese",
+   "Thai"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu 17:00-22:00; We-Su 17:00-22:30",
+  "ta_rating": 5.0,
+  "ta_reviews": 3
  },
  {
   "id": "fsa-512989",
@@ -52070,7 +54027,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -52102,7 +54060,16 @@
   "site_image": {
    "url": "https://img1.wsimg.com/isteam/ip/ad77aefd-ab6d-4516-ae11-7a223c2c54e1/20231227_103920.jpg",
    "kind": "og:image"
-  }
+  },
+  "ta_cuisines": [
+   "British",
+   "Bar",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_rating": 5.0,
+  "ta_reviews": 38
  },
  {
   "id": "fsa-521371",
@@ -52273,7 +54240,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -52289,7 +54257,19 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 12:00-23:00; Fr-Sa 12:00-00:00; Su 12:00-22:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 412
  },
  {
   "id": "osm-node-12875551540",
@@ -52914,12 +54894,22 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "ta"
   ],
   "superseded_by": {
    "id": "fsa-1917924",
    "name": "Skylahs Bar"
-  }
+  },
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub",
+   "Brew Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 3.0,
+  "ta_reviews": 194
  },
  {
   "id": "fsa-512991",
@@ -53493,7 +55483,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1,
@@ -53509,7 +55500,20 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "ta_cuisines": [
+   "Thai",
+   "Asian",
+   "Healthy",
+   "Street Food"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Sa 16:00-22:00; Su 16:00-21:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 332
  },
  {
   "id": "fsa-1216325",
@@ -54332,8 +56336,18 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "Fast food",
+   "Turkish",
+   "Middle Eastern"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-We 00:00-00:30; Mo-We 15:00-00:30; Th 15:00-00:30; Fr 00:00-00:30; Fr 15:00-02:30; Sa 00:00-02:30; Sa 15:00-02:30; Su 00:00-02:30; Su 15:00-00:30",
+  "ta_rating": 4.0,
+  "ta_reviews": 25
  },
  {
   "id": "osm-node-12855333895",
@@ -55053,7 +57067,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -55069,7 +57084,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Italian",
+   "Pizza"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Fr-Sa 16:30-20:00",
+  "ta_vegetarian": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 162
  },
  {
   "id": "fsa-512764",
@@ -55918,7 +57943,8 @@
    "osm",
    "overture",
    "atp",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -55957,7 +57983,13 @@
    "Wednesday 6:30 AM \u2013 7:00 PM",
    "Thursday 6:30 AM \u2013 7:00 PM"
   ],
-  "site_description": "Find your nearest Starbucks. View store details and directions."
+  "site_description": "Find your nearest Starbucks. View store details and directions.",
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_rating": 3.5,
+  "ta_reviews": 36
  },
  {
   "id": "fsa-1048416",
@@ -56120,13 +58152,25 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 41,
    "candidates": 1
-  }
+  },
+  "ta_cuisines": [
+   "Italian",
+   "Pizza"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "We-Sa 12:00-22:30; Su 12:00-20:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 196
  },
  {
   "id": "fsa-528634",
@@ -56348,7 +58392,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -56377,7 +58422,17 @@
    "url": "http://static1.squarespace.com/static/618902ddb4b37561173f8374/t/6194abcd1982eb2daf3b26f7/1637133261054/STW+Logo+10+2017+CMYK.jpg?format=1500w",
    "kind": "og:image"
   },
-  "site_description": "Serving breakfast, brunch, lunch and afternoon tea on Leigh-On-Sea, Essex. Enjoy our range of cakes accompanied with artisan tea and coffee. Dish that are the freshest, finest and tastiest that local love."
+  "site_description": "Serving breakfast, brunch, lunch and afternoon tea on Leigh-On-Sea, Essex. Enjoy our range of cakes accompanied with artisan tea and coffee. Dish that are the freshest, finest and tastiest that local love.",
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 801
  },
  {
   "id": "fsa-534879",
@@ -56410,7 +58465,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -56426,7 +58482,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British",
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 3.5,
+  "ta_reviews": 59
  },
  {
   "id": "fsa-512469",
@@ -56544,7 +58607,8 @@
    "osm",
    "overture",
    "atp",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -56582,7 +58646,13 @@
    "Sat 08:00 - 23:30",
    "Sun 08:00 - 22:30"
   ],
-  "site_description": "Visit your local Subway at Unit 3 The Royals High Street in Southend-on-Sea, EN to find a restaurant near you that serves fresh subs, sandwiches, salads, & more.  View the abundant options on the SUBWAY\u00ae menu and discover better-for-you meals!"
+  "site_description": "Visit your local Subway at Unit 3 The Royals High Street in Southend-on-Sea, EN to find a restaurant near you that serves fresh subs, sandwiches, salads, & more.  View the abundant options on the SUBWAY\u00ae menu and discover better-for-you meals!",
+  "ta_cuisines": [
+   "Deli"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_rating": 1.0,
+  "ta_reviews": 2
  },
  {
   "id": "fsa-512643",
@@ -56619,7 +58689,8 @@
    "fsa",
    "osm",
    "atp",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -56648,7 +58719,14 @@
    "Sat 08:00 - 21:00",
    "Sun 08:00 - 20:00"
   ],
-  "site_description": "Visit your local Subway at 33 Southchurch Road in Southend-on-Sea, EN to find a restaurant near you that serves fresh subs, sandwiches, salads, & more.  View the abundant options on the SUBWAY\u00ae menu and discover better-for-you meals!"
+  "site_description": "Visit your local Subway at 33 Southchurch Road in Southend-on-Sea, EN to find a restaurant near you that serves fresh subs, sandwiches, salads, & more.  View the abundant options on the SUBWAY\u00ae menu and discover better-for-you meals!",
+  "ta_cuisines": [
+   "Fast food"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_rating": 3.0,
+  "ta_reviews": 21
  },
  {
   "id": "fsa-513376",
@@ -56686,7 +58764,8 @@
    "osm",
    "overture",
    "atp",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -56756,7 +58835,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "atp"
+   "atp",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -57133,7 +59213,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
@@ -57148,7 +59229,15 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "ta_cuisines": [
+   "Chinese",
+   "Fast food"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo 16:30-22:00; Tu 12:00-14:00; Tu 16:30-22:30; We-Sa 12:00-14:00; We-Sa 16:30-23:00",
+  "ta_rating": 4.0,
+  "ta_reviews": 23
  },
  {
   "id": "fsa-513379",
@@ -57180,7 +59269,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -57196,7 +59286,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu-Su 09:00-18:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 5.0,
+  "ta_reviews": 45
  },
  {
   "id": "fsa-512691",
@@ -57265,7 +59364,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "phone_source": "overture",
   "overture_id": "66ebc6c5-af0e-45bb-b240-22234d811ca3",
@@ -57275,7 +59375,13 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 4.0,
+  "ta_reviews": 4
  },
  {
   "id": "osm-node-12232175693",
@@ -57422,7 +59528,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -57438,7 +59545,13 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 4.5,
+  "ta_reviews": 15
  },
  {
   "id": "fsa-1904499",
@@ -57473,7 +59586,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 0.6,
@@ -57489,7 +59603,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Pizza"
+  ],
+  "ta_cuisine_match": "agree",
+  "ta_hours": "Mo-Su 12:00-01:00",
+  "ta_rating": 3.0,
+  "ta_reviews": 11
  },
  {
   "id": "osm-node-12872726099",
@@ -57553,7 +59674,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -57569,7 +59691,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Pizza"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 12:00-01:00",
+  "ta_rating": 3.0,
+  "ta_reviews": 11
  },
  {
   "id": "fsa-1870324",
@@ -57836,7 +59965,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1,
@@ -57852,7 +59982,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu-Su 09:30-15:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 43
  },
  {
   "id": "fsa-1284887",
@@ -58244,7 +60384,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "website_source": "overture",
   "overture_id": "3dcfc1dd-7aec-4f1b-888a-f5148041b839",
@@ -58254,7 +60395,10 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "ta_hours": "Mo-Th 12:30-22:30; Fr-Sa 12:30-23:00; Su 12:30-21:00",
+  "ta_rating": 4.5,
+  "ta_reviews": 215
  },
  {
   "id": "fsa-1803354",
@@ -58473,7 +60617,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
@@ -58489,7 +60634,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian",
+   "Balti",
+   "Asian"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Th 12:00-14:30; Mo-Th 18:00-23:30; Fr 18:00-23:30; Sa-Su 12:00-14:30; Sa-Su 18:00-23:30",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 159
  },
  {
   "id": "osm-node-666405218",
@@ -58556,7 +60711,8 @@
   "sources": [
    "fsa",
    "osm",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
@@ -58577,7 +60733,17 @@
    "url": "https://www.tarathai.co.uk/menu.html",
    "label": "our menu",
    "kind": "page"
-  }
+  },
+  "ta_cuisines": [
+   "Asian",
+   "Thai"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 331
  },
  {
   "id": "fsa-643353",
@@ -58610,7 +60776,8 @@
   "sources": [
    "fsa",
    "osm",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 1.4,
@@ -58635,7 +60802,16 @@
   "site_description": "TASTE OF CHINA Chinese Takeaway is your go-to for authentic Chinese takeaway in Leigh-On-Sea. Order online and enjoy delicious food delivered straight to your door.",
   "site_cuisine": [
    "Chinese, Chow Mein, Rice"
-  ]
+  ],
+  "ta_cuisines": [
+   "Chinese",
+   "Fast food",
+   "Asian",
+   "Thai"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_rating": 4.0,
+  "ta_reviews": 34
  },
  {
   "id": "fsa-1811382",
@@ -58883,7 +61059,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1,
@@ -58899,7 +61076,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Grill",
+   "Contemporary",
+   "Pub",
+   "Wine Bar"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 4.5,
+  "ta_reviews": 11
  },
  {
   "id": "osm-node-6603687753",
@@ -58932,8 +61120,10 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_hours": "Mo-Sa 11:00-23:00; Su 15:00-23:00"
  },
  {
   "id": "fsa-513125",
@@ -59774,7 +61964,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -59790,7 +61981,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Grill"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Tu 12:00-22:00; We 12:00-22:30; Th 12:00-23:00; Fr-Sa 12:00-00:00; Su 12:00-20:00",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 26
  },
  {
   "id": "osm-node-13447127811",
@@ -59869,8 +62070,21 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British",
+   "Healthy",
+   "International",
+   "Deli"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 43
  },
  {
   "id": "fsa-643348",
@@ -60281,8 +62495,16 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "Thai"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 13:00-23:00; Fr-Sa 13:00-23:45; Su 13:00-22:00",
+  "ta_rating": 4.5,
+  "ta_reviews": 11
  },
  {
   "id": "fsa-1553278",
@@ -60314,7 +62536,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -60330,7 +62553,20 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub",
+   "Gastropub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 12:00-22:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 1456
  },
  {
   "id": "fsa-1533075",
@@ -60433,7 +62669,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -60448,7 +62685,13 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 5.0,
+  "ta_reviews": 20
  },
  {
   "id": "fsa-1086313",
@@ -60483,7 +62726,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -60498,7 +62742,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_rating": 5.0,
+  "ta_reviews": 2
  },
  {
   "id": "osm-node-12163530595",
@@ -60658,7 +62904,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -60674,7 +62921,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food",
+   "British",
+   "Seafood",
+   "Caucasian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 3.5,
+  "ta_reviews": 25
  },
  {
   "id": "fsa-1086298",
@@ -60708,7 +62964,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -60735,7 +62992,13 @@
    "Wednesday: 11:00 AM - 11:00 PM",
    "Thursday: 11:00 AM - 11:00 PM"
   ],
-  "site_description": "Welcome to Broadway Leigh-On-Sea, your local Craft Union Pub in Leigh-on-Sea! We show live sport every day, so stop by for a pint."
+  "site_description": "Welcome to Broadway Leigh-On-Sea, your local Craft Union Pub in Leigh-on-Sea! We show live sport every day, so stop by for a pint.",
+  "ta_cuisines": [
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 4.0,
+  "ta_reviews": 10
  },
  {
   "id": "fsa-1609972",
@@ -60768,7 +63031,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -60800,7 +63064,19 @@
    "url": "https://www.thecafemasala.co.uk/webfiles/The-Cafe-Masala-Menu2026_3.pdf",
    "label": "our menu",
    "kind": "pdf"
-  }
+  },
+  "ta_cuisines": [
+   "Indian",
+   "Asian",
+   "Bangladeshi",
+   "Balti"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 235
  },
  {
   "id": "fsa-516289",
@@ -60903,7 +63179,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -60939,7 +63216,17 @@
    "label": "menu",
    "kind": "page"
   },
-  "site_description": "A BRUNCH, BREAKFAST, COFFEE AND COCKTAIL SPOT IN THE HEART OF LEIGH ON SEA   We\u2019re open 7 days a week serving up your brunch favourites, open late on Thursday & Fridays for cocktails and dinner, then we turn it up on Saturdays with our bottomless brunch and live DJs."
+  "site_description": "A BRUNCH, BREAKFAST, COFFEE AND COCKTAIL SPOT IN THE HEART OF LEIGH ON SEA   We\u2019re open 7 days a week serving up your brunch favourites, open late on Thursday & Fridays for cocktails and dinner, then we turn it up on Saturdays with our bottomless brunch and live DJs.",
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 150
  },
  {
   "id": "fsa-1288264",
@@ -61020,7 +63307,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -61049,7 +63337,9 @@
    "url": "https://img1.wsimg.com/isteam/ip/9b0c2467-3f03-4001-9c2d-be36ade81557/Burrito%2016X9%20Ratio.jpg",
    "kind": "og:image"
   },
-  "site_description": "Discover THE BURRITO, the best family restaurant for authentic Mexican flavors and a warm atmosphere. Perfect for your next family meal!"
+  "site_description": "Discover THE BURRITO, the best family restaurant for authentic Mexican flavors and a warm atmosphere. Perfect for your next family meal!",
+  "ta_rating": 2.5,
+  "ta_reviews": 2
  },
  {
   "id": "fsa-872123",
@@ -61080,13 +63370,21 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 0
-  }
+  },
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 20
  },
  {
   "id": "fsa-516305",
@@ -61118,7 +63416,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -61134,7 +63433,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 80
  },
  {
   "id": "fsa-1807639",
@@ -61659,7 +63969,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -61670,7 +63981,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "European",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu-Fr 12:00-22:00; Sa 18:00-22:00; Su 12:00-19:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 833
  },
  {
   "id": "fsa-1439485",
@@ -61830,7 +64152,8 @@
   "sources": [
    "fsa",
    "osm",
-   "atp"
+   "atp",
+   "ta"
   ],
   "osm_match": {
    "score": 1.3,
@@ -61846,7 +64169,17 @@
    "candidates": 1
   },
   "atp_wikidata": "Q6109362",
-  "atp_nsi": "wetherspoon-eaed91"
+  "atp_nsi": "wetherspoon-eaed91",
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 08:00-23:00; Fr-Sa 08:00-00:00; Su 08:00-23:00",
+  "ta_vegetarian": true,
+  "ta_rating": 3.0,
+  "ta_reviews": 364
  },
  {
   "id": "fsa-1086290",
@@ -61917,7 +64250,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -61950,7 +64284,14 @@
    "label": "menus",
    "kind": "page"
   },
-  "site_description": "The Estuary Broadway & The Estuary Arches Seafood & Grill are our two restaurants that pride themselves on their varied menu"
+  "site_description": "The Estuary Broadway & The Estuary Arches Seafood & Grill are our two restaurants that pride themselves on their varied menu",
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_rating": 3.0,
+  "ta_reviews": 625
  },
  {
   "id": "fsa-516290",
@@ -61984,7 +64325,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -62017,7 +64359,16 @@
    "label": "menus",
    "kind": "page"
   },
-  "site_description": "The Estuary Broadway & The Estuary Arches Seafood & Grill are our two restaurants that pride themselves on their varied menu"
+  "site_description": "The Estuary Broadway & The Estuary Arches Seafood & Grill are our two restaurants that pride themselves on their varied menu",
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_gluten_free": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 177
  },
  {
   "id": "fsa-1884876",
@@ -62288,7 +64639,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -62304,7 +64656,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food",
+   "British",
+   "Seafood"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 11:30-21:30; Fr 11:30-22:00; Sa 11:30-21:30; Su 12:00-20:00",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 72
  },
  {
   "id": "fsa-925860",
@@ -62384,7 +64746,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -62423,7 +64786,14 @@
    "label": "Menu",
    "kind": "page"
   },
-  "site_description": "Four Seasons Pizza & Kebab House, is a takeaway based in Southend On Sea, Offer great tasting Wraps, Burgers, Fish and Chips. Order online at The Four Seasons Kebab, Southend On Sea."
+  "site_description": "Four Seasons Pizza & Kebab House, is a takeaway based in Southend On Sea, Offer great tasting Wraps, Burgers, Fish and Chips. Order online at The Four Seasons Kebab, Southend On Sea.",
+  "ta_cuisines": [
+   "Fast food",
+   "Pizza"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 4.0,
+  "ta_reviews": 29
  },
  {
   "id": "osm-node-12866569685",
@@ -62490,7 +64860,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -62505,7 +64876,15 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food",
+   "British",
+   "Seafood"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_rating": 3.5,
+  "ta_reviews": 61
  },
  {
   "id": "fsa-1917933",
@@ -63062,7 +65441,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -63078,7 +65458,10 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_hours": "We-Fr 09:00-16:00; Sa-Su 09:30-17:00",
+  "ta_rating": 4.5,
+  "ta_reviews": 1057
  },
  {
   "id": "fsa-1553280",
@@ -63110,13 +65493,26 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 7,
    "candidates": 29
-  }
+  },
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 12:00-22:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 374
  },
  {
   "id": "fsa-1833256",
@@ -63242,7 +65638,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -63258,7 +65655,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian",
+   "Balti"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 12:00-14:00; Mo-Th 18:00-23:00; Fr 18:00-23:00; Sa-Su 12:00-14:00; Sa-Su 18:00-23:00",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 132
  },
  {
   "id": "fsa-1078203",
@@ -63290,7 +65696,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -63305,7 +65712,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "Contemporary"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 4.5,
+  "ta_reviews": 16
  },
  {
   "id": "osm-node-12860609133",
@@ -63419,7 +65833,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -63453,7 +65868,16 @@
    "label": "our menus",
    "kind": "page"
   },
-  "site_description": "The Inn At Belfairs is a Premium Pub Restaurant, nestled within the green picturesque Belfairs Park in Leigh on Sea, Essex with a menu to suit every taste."
+  "site_description": "The Inn At Belfairs is a Premium Pub Restaurant, nestled within the green picturesque Belfairs Park in Leigh on Sea, Essex with a menu to suit every taste.",
+  "ta_cuisines": [
+   "Gastropub",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 263
  },
  {
   "id": "fsa-1870318",
@@ -63680,7 +66104,8 @@
    "osm",
    "overture",
    "atp",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -63726,7 +66151,18 @@
    "url": "https://www.jdwetherspoon.com/food-drink/",
    "label": "food and drinks",
    "kind": "page"
-  }
+  },
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 270
  },
  {
   "id": "fsa-1086288",
@@ -63759,7 +66195,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -63787,7 +66224,15 @@
    "label": "menu",
    "kind": "page"
   },
-  "site_description": "Order #chipsonsea The FLUFFIEST Fish & Chips in Leigh on Sea Open for collection, takeaway and deliveries with Just Eat and Uber Eats. Leigh Chippy are proud to serve the Fluffiest Chips in Town! We also serve the finest fish, homemade pizzas, stone-baked in our very own wood-fired oven, authentic G"
+  "site_description": "Order #chipsonsea The FLUFFIEST Fish & Chips in Leigh on Sea Open for collection, takeaway and deliveries with Just Eat and Uber Eats. Leigh Chippy are proud to serve the Fluffiest Chips in Town! We also serve the finest fish, homemade pizzas, stone-baked in our very own wood-fired oven, authentic G",
+  "ta_cuisines": [
+   "Bar",
+   "Pub",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 3.5,
+  "ta_reviews": 101
  },
  {
   "id": "fsa-1025208",
@@ -63905,7 +66350,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -63938,7 +66384,9 @@
    "label": "restaurant menu",
    "kind": "page"
   },
-  "site_description": "Discover the services of The Mayflower, Leigh-on-Sea"
+  "site_description": "Discover the services of The Mayflower, Leigh-on-Sea",
+  "ta_rating": 3.5,
+  "ta_reviews": 246
  },
  {
   "id": "fsa-512417",
@@ -63971,7 +66419,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -64006,7 +66455,19 @@
    "label": "menus",
    "kind": "page"
   },
-  "site_description": "Whether you stand at the bar for a chat or prefer settling into a comfy chair with a pint, you\u2019ll find everything you need at The Meadowlark in Southend On Sea."
+  "site_description": "Whether you stand at the bar for a chat or prefer settling into a comfy chair with a pint, you\u2019ll find everything you need at The Meadowlark in Southend On Sea.",
+  "ta_cuisines": [
+   "Bar",
+   "Pizza",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 585
  },
  {
   "id": "fsa-512708",
@@ -64086,7 +66547,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -64102,7 +66564,20 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Fusion",
+   "Gastropub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "We-Th 12:00-22:30; Fr-Sa 12:00-01:00; Su 12:00-17:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 509
  },
  {
   "id": "fsa-513411",
@@ -64182,7 +66657,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -64193,7 +66669,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British",
+   "Pub",
+   "Bar"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 04:00-20:00; Fr 04:00-21:00; Sa 04:00-20:00; Su 04:00-21:00",
+  "ta_rating": 3.0,
+  "ta_reviews": 48
  },
  {
   "id": "fsa-1844116",
@@ -64225,7 +66710,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -64241,7 +66727,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Chinese",
+   "Asian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu-Sa 12:30-23:00; Su 12:00-21:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 379
  },
  {
   "id": "osm-node-664905396",
@@ -64341,7 +66838,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -64363,7 +66861,13 @@
   "site_raw": [
    "Monday-Saturday 9.30am-4pm"
   ],
-  "site_description": "Southend Mencap is a registered charity. The charity\u2019s main aim is to serve the interests and needs of children and adults with learning disabilities, as well as those of their parents and carers, in the south east of Essex."
+  "site_description": "Southend Mencap is a registered charity. The charity\u2019s main aim is to serve the interests and needs of children and adults with learning disabilities, as well as those of their parents and carers, in the south east of Essex.",
+  "ta_cuisines": [
+   "Cafe"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_rating": 5.0,
+  "ta_reviews": 17
  },
  {
   "id": "fsa-534892",
@@ -64395,7 +66899,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -64411,7 +66916,19 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British",
+   "Grill",
+   "Pub",
+   "Fusion",
+   "Wine Bar",
+   "Bar"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 12:00-22:00; Fr-Sa 12:00-23:00; Su 12:00-21:00",
+  "ta_rating": 3.5,
+  "ta_reviews": 60
  },
  {
   "id": "fsa-512441",
@@ -64480,7 +66997,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -64496,7 +67014,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Bar",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 4.5,
+  "ta_reviews": 15
  },
  {
   "id": "fsa-513412",
@@ -64531,7 +67056,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -64547,7 +67073,20 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food",
+   "Seafood",
+   "British",
+   "Grill",
+   "Healthy"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Tu-Th 12:00-20:30; Fr 13:00-19:30; Sa-Su 12:00-20:30",
+  "ta_vegetarian": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 218
  },
  {
   "id": "fsa-513223",
@@ -64754,13 +67293,22 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 1
-  }
+  },
+  "ta_cuisines": [
+   "British",
+   "Fast food"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo 11:30-14:30; Mo 16:30-21:00; Tu 11:30-14:30; Tu 16:30-22:00; We 11:30-14:30; We 16:00-22:00; Th 11:30-14:30; Fr-Sa 11:30-14:30; Fr-Sa 16:30-22:00",
+  "ta_rating": 5.0,
+  "ta_reviews": 13
  },
  {
   "id": "osm-node-12870939452",
@@ -64834,7 +67382,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -64850,7 +67399,19 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Seafood",
+   "British",
+   "Gastropub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 11:00-22:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 2061
  },
  {
   "id": "fsa-1319900",
@@ -64934,7 +67495,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
@@ -64972,7 +67534,14 @@
    "label": "order",
    "kind": "page"
   },
-  "site_description": "- Official website of Pizza Man Southend. Place online orders for our delicious Pizza & Fried Chicken food"
+  "site_description": "- Official website of Pizza Man Southend. Place online orders for our delicious Pizza & Fried Chicken food",
+  "ta_cuisines": [
+   "Pizza",
+   "Fast food"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_rating": 3.0,
+  "ta_reviews": 19
  },
  {
   "id": "fsa-512672",
@@ -65005,7 +67574,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -65038,7 +67608,13 @@
    "url": "https://ploughwestcliff.co.uk/wp-content/uploads/2023/04/Bacardi-logo.png",
    "kind": "og:image"
   },
-  "site_description": "Discover The Plough in Westcliff on Sea, near Southend. Enjoy a warm atmosphere, tasty food and great drinks. Join us for a memorable experience!"
+  "site_description": "Discover The Plough in Westcliff on Sea, near Southend. Enjoy a warm atmosphere, tasty food and great drinks. Join us for a memorable experience!",
+  "ta_cuisines": [
+   "Bar"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 3.0,
+  "ta_reviews": 20
  },
  {
   "id": "fsa-513117",
@@ -65070,7 +67646,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -65086,7 +67663,19 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian",
+   "Asian",
+   "Balti",
+   "Bangladeshi"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 05:00-23:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 152
  },
  {
   "id": "osm-node-666396628",
@@ -65330,7 +67919,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -65346,7 +67936,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian",
+   "Asian",
+   "Balti",
+   "Eastern European"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 17:00-23:00",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 35
  },
  {
   "id": "fsa-957684",
@@ -65524,7 +68125,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -65540,7 +68142,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "Healthy"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 08:00-15:00; Su 08:00-14:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 248
  },
  {
   "id": "fsa-1779909",
@@ -65619,7 +68231,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1,
@@ -65634,7 +68247,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Fr 07:00-15:00; Sa 08:00-15:00; Su 09:00-14:00",
+  "ta_vegetarian": true,
+  "ta_rating": 5.0,
+  "ta_reviews": 19
  },
  {
   "id": "osm-node-12870246988",
@@ -65810,13 +68432,23 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 5
-  }
+  },
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 12:00-21:00",
+  "ta_rating": 3.5,
+  "ta_reviews": 54
  },
  {
   "id": "fsa-679336",
@@ -65849,7 +68481,8 @@
   "sources": [
    "fsa",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -65884,7 +68517,17 @@
    "label": "menus",
    "kind": "page"
   },
-  "site_description": "The Saxon King in Southend offers a welcoming atmosphere, great company, and all the comforts of your favourite local pub experience."
+  "site_description": "The Saxon King in Southend offers a welcoming atmosphere, great company, and all the comforts of your favourite local pub experience.",
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_gluten_free": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 750
  },
  {
   "id": "fsa-1454510",
@@ -66355,7 +68998,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -66371,7 +69015,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Indian",
+   "Fast food",
+   "Asian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 15:00-23:00; Fr-Sa 15:00-00:00; Su 15:00-23:00",
+  "ta_rating": 3.0,
+  "ta_reviews": 17
  },
  {
   "id": "fsa-1089288",
@@ -66402,13 +69055,21 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 0
-  }
+  },
+  "ta_cuisines": [
+   "Chinese"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 16:00-23:00",
+  "ta_rating": 2.5,
+  "ta_reviews": 24
  },
  {
   "id": "osm-node-10759057385",
@@ -66652,7 +69313,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -66663,7 +69325,10 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_hours": "Mo 09:00-20:00; Tu-Su 10:00-00:00",
+  "ta_rating": 3.5,
+  "ta_reviews": 22
  },
  {
   "id": "fsa-1787647",
@@ -66780,7 +69445,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -66796,7 +69462,15 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "ta_cuisines": [
+   "British",
+   "Cafe"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 60
  },
  {
   "id": "fsa-576717",
@@ -67896,7 +70570,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -67912,7 +70587,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Italian",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Su 12:00-19:00",
+  "ta_vegetarian": true,
+  "ta_gluten_free": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 622
  },
  {
   "id": "osm-node-12866155164",
@@ -68097,7 +70782,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -68113,7 +70799,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 78
  },
  {
   "id": "fsa-975259",
@@ -68145,7 +70841,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -68160,7 +70857,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Sa 09:00-16:00; Su 10:00-15:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 90
  },
  {
   "id": "osm-node-1237306892",
@@ -68527,8 +71235,20 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Fr 09:30-16:00; Sa 09:30-17:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 228
  },
  {
   "id": "fsa-1531936",
@@ -68611,7 +71331,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1,
@@ -68627,7 +71348,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Asian",
+   "Thai"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo 18:00-23:00; Tu-Sa 12:00-15:00; Tu-Sa 18:00-23:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 112
  },
  {
   "id": "osm-node-12870246977",
@@ -69007,7 +71739,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -69023,7 +71756,18 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Asian",
+   "Thai"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Th 12:00-22:00; Fr-Sa 12:00-22:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 113
  },
  {
   "id": "fsa-512603",
@@ -69057,7 +71801,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
@@ -69091,7 +71836,13 @@
    "label": "sample menu",
    "kind": "page"
   },
-  "site_description": "Ugo\u2019s Pizza Bar is an authentic pizza restaurant serving wood fired pizza with the best ingredients offering dine in, pick up and delivery"
+  "site_description": "Ugo\u2019s Pizza Bar is an authentic pizza restaurant serving wood fired pizza with the best ingredients offering dine in, pick up and delivery",
+  "ta_cuisines": [
+   "Contemporary"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 3.5,
+  "ta_reviews": 186
  },
  {
   "id": "osm-node-12875269509",
@@ -69550,7 +72301,8 @@
    "fsa",
    "osm",
    "overture",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -69578,7 +72330,17 @@
    "label": "view our food menu",
    "kind": "pdf"
   },
-  "site_description": "Utopia is a quirky, cosy, independent, friendly coffee shop in Southend town centre & has been part of the community for over 15 years."
+  "site_description": "Utopia is a quirky, cosy, independent, friendly coffee shop in Southend town centre & has been part of the community for over 15 years.",
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 159
  },
  {
   "id": "osm-node-1046844473",
@@ -69742,7 +72504,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -69758,7 +72521,19 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Seafood",
+   "Fast food",
+   "British"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Sa 09:00-21:00; Su 09:00-20:30",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 191
  },
  {
   "id": "osm-node-12866155168",
@@ -70188,7 +72963,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -70204,7 +72980,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Cafe",
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Fr 08:00-17:00; Sa 08:00-18:00; Su 09:00-16:00",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 56
  },
  {
   "id": "fsa-512552",
@@ -70326,7 +73111,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -70342,7 +73128,10 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_hours": "Mo 09:00-20:00; Tu-Su 10:00-00:00",
+  "ta_rating": 3.5,
+  "ta_reviews": 22
  },
  {
   "id": "osm-node-1043516885",
@@ -70989,7 +73778,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -71005,7 +73795,20 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Polish",
+   "Cafe",
+   "European",
+   "International"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 09:00-16:00; Fr-Sa 09:00-17:00; Su 10:00-14:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 126
  },
  {
   "id": "osm-node-13926938307",
@@ -71369,7 +74172,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -71380,7 +74184,13 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_rating": 4.0,
+  "ta_reviews": 4
  },
  {
   "id": "fsa-804843",
@@ -71507,7 +74317,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -71523,7 +74334,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Fast food",
+   "British",
+   "Seafood"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-We 15:00-20:30; Th 11:30-20:30; Fr 11:30-21:00; Sa 11:30-20:30",
+  "ta_rating": 4.0,
+  "ta_reviews": 53
  },
  {
   "id": "fsa-1904498",
@@ -71555,7 +74375,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -71571,7 +74392,14 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Tu-Th 12:00-21:00; Fr-Sa 12:00-22:30; Su 12:00-19:00",
+  "ta_rating": 4.5,
+  "ta_reviews": 19
  },
  {
   "id": "fsa-534847",
@@ -72566,7 +75394,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -72582,7 +75411,10 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_hours": "Mo-Sa 08:00-17:30; Su 10:00-16:00",
+  "ta_rating": 4.0,
+  "ta_reviews": 1
  },
  {
   "id": "fsa-1439486",
@@ -72665,7 +75497,8 @@
   "sources": [
    "fsa",
    "osm",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -72687,7 +75520,14 @@
    "label": "deliveroo",
    "kind": "third-party"
   },
-  "site_description": "Visit Wimpy Westcliff-on-Sea for a wide range of burgers, breakfast and coffee. Discover our menu of burgers, mixed grills or fish"
+  "site_description": "Visit Wimpy Westcliff-on-Sea for a wide range of burgers, breakfast and coffee. Discover our menu of burgers, mixed grills or fish",
+  "ta_cuisines": [
+   "Fast food"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 39
  },
  {
   "id": "fsa-516288",
@@ -72723,7 +75563,8 @@
   "sources": [
    "fsa",
    "osm",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -72745,7 +75586,14 @@
    "label": "deliveroo",
    "kind": "third-party"
   },
-  "site_description": "Visit Wimpy Southend Churchill Square for a wide range of burgers, breakfast and coffee. Discover our menu of burgers, mixed grills or fish"
+  "site_description": "Visit Wimpy Southend Churchill Square for a wide range of burgers, breakfast and coffee. Discover our menu of burgers, mixed grills or fish",
+  "ta_cuisines": [
+   "British"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 82
  },
  {
   "id": "fsa-528648",
@@ -72781,7 +75629,8 @@
   "sources": [
    "fsa",
    "osm",
-   "site"
+   "site",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
@@ -72798,7 +75647,15 @@
    "url": "https://goreview-eb.s3.eu-west-1.amazonaws.com/uploads/platform-media/mediaSquare/d9b3097d8ae4721939662f905dcb1d32.png",
    "kind": "json-ld"
   },
-  "site_description": "Visit Wimpy Leigh-on-Sea for a wide range of burgers, breakfast and coffee. Discover our menu of burgers, mixed grills or fish"
+  "site_description": "Visit Wimpy Leigh-on-Sea for a wide range of burgers, breakfast and coffee. Discover our menu of burgers, mixed grills or fish",
+  "ta_cuisines": [
+   "British",
+   "Fast food"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 31
  },
  {
   "id": "fsa-555209",
@@ -73011,7 +75868,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 1.1,
@@ -73026,7 +75884,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_rating": 3.0,
+  "ta_reviews": 1
  },
  {
   "id": "fsa-534822",
@@ -73095,7 +75955,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -73111,7 +75972,17 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Chinese",
+   "Fast food",
+   "Asian"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "We-Su 16:30-22:30",
+  "ta_vegetarian": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 26
  },
  {
   "id": "fsa-512929",
@@ -73496,7 +76367,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -73512,7 +76384,20 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Tibetan",
+   "Nepalese",
+   "Indian",
+   "Balti"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-Th 17:30-23:00; Fr-Sa 12:00-15:00; Fr-Sa 17:30-23:00; Su 13:00-22:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 273
  },
  {
   "id": "fsa-534876",
@@ -73596,7 +76481,8 @@
   "sources": [
    "fsa",
    "overture",
-   "atp"
+   "atp",
+   "ta"
   ],
   "osm_match": {
    "score": null,
@@ -73623,7 +76509,16 @@
   },
   "atp_wikidata": "Q5564162",
   "atp_nsi": "greeneking-eaed91",
-  "atp_hours": "Mo-Th 11:00-23:00; Fr-Sa 11:00-24:00; Su 11:00-22:30"
+  "atp_hours": "Mo-Th 11:00-23:00; Fr-Sa 11:00-24:00; Su 11:00-22:30",
+  "ta_cuisines": [
+   "Bar",
+   "British",
+   "Pub"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_rating": 3.5,
+  "ta_reviews": 312
  },
  {
   "id": "fsa-1349789",
@@ -73654,13 +76549,26 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "ta"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 9
-  }
+  },
+  "ta_cuisines": [
+   "Mediterranean",
+   "British",
+   "Turkish",
+   "Cafe",
+   "European"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_rating": 4.5,
+  "ta_reviews": 39
  },
  {
   "id": "osm-node-596189192",
@@ -73693,8 +76601,15 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
-  ]
+   "osm",
+   "ta"
+  ],
+  "ta_cuisines": [
+   "Chinese"
+  ],
+  "ta_cuisine_match": "agree",
+  "ta_rating": 4.0,
+  "ta_reviews": 10
  },
  {
   "id": "osm-node-11946117575",
@@ -73876,7 +76791,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.3,
@@ -73892,7 +76808,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_rating": 4.5,
+  "ta_reviews": 28
  },
  {
   "id": "fsa-1798347",
@@ -74126,7 +77044,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
@@ -74142,7 +77061,16 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "ta_cuisines": [
+   "Chinese",
+   "Asian"
+  ],
+  "ta_cuisine_match": "conflict",
+  "ta_hours": "Mo-Th 17:30-23:00; Fr-Su 12:00-14:30; Fr-Su 17:30-23:00",
+  "ta_vegetarian": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 215
  },
  {
   "id": "fsa-1130312",
@@ -74222,13 +77150,24 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "ta"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 20,
    "candidates": 2
-  }
+  },
+  "ta_cuisines": [
+   "Contemporary"
+  ],
+  "ta_cuisine_match": "extend",
+  "ta_hours": "Mo-We 12:00-21:00; Th-Fr 12:00-21:00; Th-Fr 12:00-22:00; Sa 07:00-22:30; Sa 12:00-21:00; Sa 12:00-22:00; Su 07:00-22:30; Su 12:00-19:00",
+  "ta_vegetarian": true,
+  "ta_vegan": true,
+  "ta_gluten_free": true,
+  "ta_rating": 4.0,
+  "ta_reviews": 202
  },
  {
   "id": "osm-node-666397267",
