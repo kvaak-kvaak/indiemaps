@@ -87,6 +87,7 @@ function sourceBadges(p) {
     : s === 'overture' ? '<span class="badge src-overture" title="Phone/website backfilled from Overture Maps">Overture</span>'
     : s === 'servicemap' ? '<span class="badge src-sm" title="City of Helsinki Service Map (CC BY 4.0)">HKI map</span>'
     : s === 'ta' ? '<span class="badge src-ta" title="Archived research data, c.2021 (stale by design)">archive</span>'
+    : s === 'ch' ? '<span class="badge src-ch" title="Companies House: incorporated business, uninspected">companies</span>'
     : s === 'osm' ? '<span class="badge src-osm" title="OpenStreetMap contributors">OSM</span>'
     // Unknown sources render under their own name — never borrowed. (A
     // fallthrough OSM label once masqueraded Overture contributions.)
@@ -262,6 +263,7 @@ function detailSkeleton(p) {
       ${(p.sources || []).includes('nhs') ? `· <b>Listed pharmacy</b> — NHS England${p.nhs_ods ? ` (ODS ${esc(p.nhs_ods)})` : ''}<br/>` : ''}
       ${(p.sources || []).includes('servicemap') ? `· <b>Municipal listing</b> — City of Helsinki Service Map (CC BY 4.0)${p.sm_id ? ` (unit ${esc(String(p.sm_id))})` : ''}<br/>` : ''}
       ${(p.sources || []).includes('ta') ? `· <b>Cuisines, dietary notes${p.ta_hours ? ', hours' : ''} & rating</b> — archived research data, c.2021 (stale by design)<br/>` : ''}
+      ${(p.sources || []).includes('ch') ? `· <b>Registered business</b> — Companies House${p.ch_incorporated ? `, incorporated ${esc(p.ch_incorporated)}` : ''} (registered office, may differ from trading address; uninspected)<br/>` : ''}
       ${(p.fsa_alias || []).length ? `· <b>Also registered as</b> — ${p.fsa_alias.map(a => `${esc(a.name)} (FHRS ${a.fsa_id})`).join('; ')}<br/>` : ''}
       ${(p.supersedes || []).length ? `· <b>Replaces at these premises</b> — ${p.supersedes.map(s => esc(s.name)).join('; ')}<br/>` : ''}
       ${(p.sources || []).includes('site') ? `· <b>Opening hours${p.site_image ? ', photo' : ''}${p.site_menu ? ', menu' : ''}${p.site_description ? ', description' : ''}</b> — from the business website${p.site_url ? ` (<a target="_blank" href="${esc(p.site_url)}">source</a>, ${esc(p.site_method || 'parsed')})` : ''}<br/>` : ''}

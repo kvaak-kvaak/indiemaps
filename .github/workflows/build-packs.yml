@@ -34,6 +34,24 @@ jobs:
         with:
           node-version: '20'
       - run: pip install duckdb
+      - name: Fetch Companies House snapshot
+        # Monthly bulk product for the companies stage (new-Ltd tripwire).
+        # ~469 MB once per run (not per area); gitignored cache dir. Tries
+        # previous month first (published within 5 working days of month
+        # end), then the month before. Absent file = ch stage skips green.
+        run: |
+          mkdir -p data/ch
+          for OFF in 1 2 3; do
+            TAG=$(date -u -d "$OFF month ago" +%Y-%m-01)
+            URL="https://download.companieshouse.gov.uk/BasicCompanyDataAsOneFile-${TAG}.zip"
+            echo "trying $URL"
+            if curl -sSL --retry 2 --max-time 900 -o data/ch/snapshot.zip "$URL" && [ -s data/ch/snapshot.zip ]; then
+              unzip -o -q data/ch/snapshot.zip -d data/ch/ && rm -f data/ch/snapshot.zip
+              echo "companies snapshot: $(ls data/ch/*.csv 2>/dev/null | wc -l) CSV files"
+              break
+            fi
+          done
+          ls data/ch/ || true
       - name: Build packs
         # NOTE: GitHub runs each step with bash -e, so a bare failing command
         # would abort the remaining areas. Failures are collected to

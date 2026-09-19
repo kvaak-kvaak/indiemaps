@@ -111,6 +111,13 @@ Read these three docs first, in order:
   track. Queued, unscheduled: ATP-extract ingest, tenant flagging,
   Overture confidence column, BrightQuery identification. Open: OSM
   license boundary (#5), which Vela consumption would inherit, not settle.
+- Companies House tripwire live (ch stage, Southend pilot): monthly bulk
+  CSV (469 MB/run, gitignored cache + shared food extract + committed
+  postcode geocache) feeds new-Ltd detection — creation ONLY if ≤12 mo
+  old, FSA-absent, pack-absent, unshared address (formation-agent
+  suppression), and geocodable; otherwise corroboration (number, dates,
+  previous names) or discard. License unverified — release gate, not
+  build gate.
 - Stale-dump enrichment live (ta stage, local-only by decision): 1M-row
   research parquet matched against pack POIs (Southend+Helsinki gated via
   areas `"ta"` flag) — match-only, never creates; alias-aware keys;

@@ -67,7 +67,7 @@ def build(area_id, args):
     packdir.mkdir(parents=True, exist_ok=True)
     bbox = ','.join(map(str, a['bbox']))
     pois, meta = str(packdir / 'pois.json'), str(packdir / 'meta.json')
-    stages = ['base', 'servicemap', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta']
+    stages = ['base', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta']
     if args.only:
         stages = [args.only]
     elif args.from_stage:
@@ -84,6 +84,10 @@ def build(area_id, args):
              '--pois', pois, '--meta', meta,
              '--municipality', a['servicemap_muni']], packdir)
         mark_stage(packdir, meta, 'servicemap')
+    if 'ch' in stages:
+        run(['python3', 'scripts/pack/companies.py', f'--bbox={bbox}',
+             '--pois', pois, '--meta', meta], packdir)
+        mark_stage(packdir, meta, 'ch')
     if 'overture' in stages:
         # NOTE: bbox passed as --bbox=<v> (equals form): argparse treats a
         # space-separated negative longitude as a flag and aborts. Custom
@@ -146,6 +150,7 @@ def build(area_id, args):
         'merged': sum(1 for p in pois_data if 'fsa' in p.get('sources', []) and 'osm' in p.get('sources', [])),
         'osm_only': sum(1 for p in pois_data if p.get('sources') == ['osm']),
         'nhs_added': sum(1 for p in pois_data if p.get('sources') == ['nhs']),
+        'ch_added': sum(1 for p in pois_data if p.get('sources') == ['ch']),
         'with_hours': hours,
         # base-written diagnostics survive the recount:
         'osm_nodes_pulled': prev.get('osm_nodes_pulled'),
@@ -286,7 +291,7 @@ def manifest():
             'complete': all(s in stages_ok for s in ('base', 'overture', 'nhs', 'atp')),
             'stages_ok': stages_ok,
             'sources': {k: v for k, v in m.items()
-                        if k in ('fsa_extract_date', 'overture', 'nhs', 'atp', 'site', 'servicemap', 'ta')},
+                        if k in ('fsa_extract_date', 'overture', 'nhs', 'atp', 'site', 'servicemap', 'ta', 'ch')},
         })
     man = {'generated_at': datetime.now(timezone.utc).isoformat(),
            'packs': sorted(packs, key=lambda p: p['id'])}
@@ -299,9 +304,9 @@ def main():
     ap.add_argument('--area')
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--from', dest='from_stage',
-                    choices=['base', 'servicemap', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
+                    choices=['base', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
     ap.add_argument('--only',
-                    choices=['base', 'servicemap', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
+                    choices=['base', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
     ap.add_argument('--sites', action='store_true',
                     help='site spider, residual only (POIs with no OSM/ATP hours)')
     ap.add_argument('--sites-all', action='store_true',
