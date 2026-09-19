@@ -145,7 +145,16 @@ def main():
     ap.add_argument('--meta', required=True)
     a = ap.parse_args()
     if not PARQUET.exists():
-        sys.exit(f'stale dump missing: {PARQUET} (gitignored research file, not committed)')
+        # Research file, never committed: runs without it skip the stage
+        # green (nothing to enrich from). The file reaches builders only
+        # through an explicit distribution decision (release asset or
+        # committed filtered extract) — never silently, never by default.
+        print(f'stale dump absent ({PARQUET.name}), skipping ta stage')
+        meta = json.load(open(a.meta))
+        meta['ta'] = {'skipped': 'parquet absent', 'vintage': VINTAGE,
+                      'matched': 0}
+        json.dump(meta, open(a.meta, 'w'), indent=1)
+        return
     w, s, e, n = map(float, a.bbox.split(','))
     import duckdb
     t0 = time.time()
