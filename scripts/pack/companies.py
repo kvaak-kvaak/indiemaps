@@ -265,6 +265,7 @@ def main():
     gpois = [p for p in pois if p.get('lat') is not None]
     grid, cell = grid_index(gpois, 'lat', 'lng')
     matched = created = suppressed = 0
+    pois_touched = set()
     for r in recs:
         if r['lat'] is None or not (s <= r['lat'] <= n and w <= r['lng'] <= e):
             continue
@@ -288,6 +289,7 @@ def main():
                     bs, best = sc, p
         if best is not None:
             matched += 1
+            pois_touched.add(best['id'])
             best['ch_number'] = r['number']
             best['ch_incorporated'] = r['inc']
             best['ch_sic'] = r['sic']
@@ -327,8 +329,9 @@ def main():
     json.dump(pois, open(a.pois, 'w'), indent=1)
     meta = json.load(open(a.meta))
     meta['ch'] = {'snapshot_rows_food': len(recs), 'matched': matched,
-                  'created': created, 'formation_suppressed': suppressed,
-                  'threshold_days': NEW_THRESHOLD_DAYS}
+                    'pois_matched': len(pois_touched),
+                    'created': created, 'formation_suppressed': suppressed,
+                    'threshold_days': NEW_THRESHOLD_DAYS}
     json.dump(meta, open(a.meta, 'w'), indent=1)
     print(f'companies: {len(recs)} food rows -> {matched} corroborated, {created} created, {suppressed} formation-suppressed')
 

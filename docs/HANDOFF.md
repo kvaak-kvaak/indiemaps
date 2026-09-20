@@ -116,8 +116,11 @@ Read these three docs first, in order:
   postcode geocache) feeds new-Ltd detection — creation ONLY if ≤12 mo
   old, FSA-absent, pack-absent, unshared address (formation-agent
   suppression), and geocodable; otherwise corroboration (number, dates,
-  previous names) or discard. License unverified — release gate, not
-  build gate.
+   previous names) or discard. License unverified — release gate, not
+   build gate. Counting note: meta matched counts CH row-events,
+   pois_matched counts distinct POIs (Southend: 108 row-events → 94
+   POIs, 14 overwrites where 2 rows hit one POI; 45 created; 139 POIs
+   carry ch_number).
 - Stale-dump enrichment live (ta stage, local-only by decision): 1M-row
   research parquet matched against pack POIs (Southend+Helsinki gated via
   areas `"ta"` flag) — match-only, never creates; alias-aware keys;
