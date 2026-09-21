@@ -22,7 +22,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'overture-join'))
 from join import norm, nscore, dist_m, grid_index, nearby  # noqa
 
-RELEASE = '2026-07-22.0'
+RELEASE = '2026-08-19.0'
 S3BASE = f's3://overturemaps-us-west-2/release/{RELEASE}/theme=places/type=place/*.parquet'
 
 
