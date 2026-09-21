@@ -31,6 +31,12 @@ Read these three docs first, in order:
   defaults + verified:false). Auto OSM-hours rate is hours-trust only,
   never existence. Invariant: weights settle enrichment ties, never
   creation.
+- Demo promoted (2026-09-21): `data/pois.json` + `data/build-meta.json` =
+  CI Southend run 35596014273 (1748 POIs, 38 pure-ch, weights verified)
+  minus quarantined `fsa-1796273` (false ov_new creation: ATP sushi-counter
+  row name-matched the Belle Vue foodbank FSA record; held pending a gate
+  blocklist). Two legitimate base-FSA foodbank premises remain (1810340,
+  1785326), unaffected.
 - `scripts/pack/overture.py` — Overture contact backfill (needs `pip install duckdb`)
 - `scripts/pack/nhs.py` — NHS pharmacy layer (`--update-cache` quarterly)
 - `scripts/atp.js` — AllThePlaces chain-hours merge (61 UK spiders)

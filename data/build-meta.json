@@ -1,5 +1,5 @@
 {
- "built_at": "2026-09-18T19:08:21.728Z",
+ "built_at": "2026-09-21T11:49:19.811Z",
  "fsa_extract_date": "2026-09-15",
  "fsa_authority": "FHRS893",
  "bbox": {
@@ -9,43 +9,52 @@
   "e": 0.825
  },
  "counts": {
-  "total": 1703,
-  "fsa_only": 361,
-  "merged": 304,
-  "osm_only": 262,
-  "nhs_added": 12,
-  "with_hours": 269,
-  "osm_nodes_pulled": 813,
-  "osm_raw_response": 844,
+  "total": 1748,
+  "fsa_only": 347,
+  "merged": 306,
+  "osm_only": 261,
+  "nhs_added": 6,
+  "ch_added": 38,
+  "fsa_resweep_added": 0,
+  "ta_added": 0,
+  "ov_added": 1,
+  "fsq_added": 0,
+  "with_hours": 156,
+  "osm_nodes_pulled": 814,
+  "osm_raw_response": 845,
   "fsa_repinned": 0,
   "fsa_duplicates_linked": 0,
   "fsa_duplicates_queued": 11,
   "stale_flagged": 6
  },
  "with_hours": 57,
- "with_phone": 66,
- "with_website": 210,
+ "with_phone": 67,
+ "with_website": 211,
  "stages_ok": [
   "base",
   "overture",
   "nhs",
   "atp",
-  "sites",
-  "merge"
+  "fsa_resweep",
+  "fsq",
+  "ta",
+  "nhs_late",
+  "ch",
+  "overture_late"
  ],
  "overture": {
   "release": "2026-07-22.0",
   "contact_rows_in_bbox": 7031,
-  "websites_filled": 690,
-  "phones_filled": 892,
+  "websites_filled": 702,
+  "phones_filled": 904,
   "meta_bonus": 0.15,
-  "aliases_applied": 1
+  "created": 1
  },
  "nhs": {
   "cache_updated": "2026-09-13",
   "rows_in_bbox": 39,
-  "matched": 25,
-  "added": 14
+  "matched": 39,
+  "added": 0
  },
  "atp": {
   "run_id": "2026-09-05-13-32-25",
@@ -59,30 +68,327 @@
   "hours_before": 57,
   "hours_after": 122
  },
- "site": {
-  "input": "/home/runner/work/indiemaps/indiemaps/packs/eu/gb/england/essex/southend-on-sea/site.json",
-  "sites": 456,
-  "matched": 430,
-  "hours_added": 113,
-  "conflicts": 14
+ "fsa_resweep": {
+  "extract_date": "2026-09-15",
+  "base_extract_date": "2026-09-15",
+  "new_fhrs": [],
+  "created": 0,
+  "merged_osm": 0,
+  "second_pass_merges": 1,
+  "unlocatable": [
+   {
+    "fhrs_id": 1725620,
+    "name": "84 Bakes",
+    "postcode": null,
+    "type": "Restaurant/Cafe/Canteen",
+    "ratingDate": "2024-05-15"
+   },
+   {
+    "fhrs_id": 1966604,
+    "name": "Ann Cushion Beekeeper",
+    "postcode": null,
+    "type": "Hospitals/Childcare/Caring Premises",
+    "ratingDate": null
+   },
+   {
+    "fhrs_id": 1809183,
+    "name": "Bake From The Heart",
+    "postcode": null,
+    "type": "Farmers/growers",
+    "ratingDate": "2025-03-21"
+   },
+   {
+    "fhrs_id": 1861847,
+    "name": "Black And Red Turkish Bistro Grill",
+    "postcode": null,
+    "type": "Restaurant/Cafe/Canteen",
+    "ratingDate": "2025-08-14"
+   },
+   {
+    "fhrs_id": 1834486,
+    "name": "Bubble Resources Foods",
+    "postcode": null,
+    "type": "Farmers/growers",
+    "ratingDate": "2025-05-13"
+   },
+   {
+    "fhrs_id": 1726711,
+    "name": "Cafe Tico",
+    "postcode": null,
+    "type": "Retailers - other",
+    "ratingDate": "2024-04-17"
+   },
+   {
+    "fhrs_id": 1917923,
+    "name": "Caps&Gills Mushroom Farm",
+    "postcode": null,
+    "type": "Farmers/growers",
+    "ratingDate": null
+   },
+   {
+    "fhrs_id": 1789825,
+    "name": "Cheesecake By Keki Toni / Aka CKT",
+    "postcode": null,
+    "type": "Restaurant/Cafe/Canteen",
+    "ratingDate": "2025-01-22"
+   },
+   {
+    "fhrs_id": 1697642,
+    "name": "Davidson Vending",
+    "postcode": null,
+    "type": "Retailers - other",
+    "ratingDate": "2023-12-12"
+   },
+   {
+    "fhrs_id": 1809211,
+    "name": "Fitnessbuzz Protein Balls",
+    "postcode": null,
+    "type": "Farmers/growers",
+    "ratingDate": "2025-03-28"
+   },
+   {
+    "fhrs_id": 1870314,
+    "name": "Glorious Treats",
+    "postcode": null,
+    "type": "Retailers - other",
+    "ratingDate": "2026-01-09"
+   },
+   {
+    "fhrs_id": 1809218,
+    "name": "KazzasCakesnBakes",
+    "postcode": null,
+    "type": "Farmers/growers",
+    "ratingDate": "2025-04-03"
+   },
+   {
+    "fhrs_id": 1937823,
+    "name": "Londek",
+    "postcode": null,
+    "type": "Retailers - supermarkets/hypermarkets",
+    "ratingDate": "2026-04-23"
+   },
+   {
+    "fhrs_id": 1931754,
+    "name": "Love & Kisses Events",
+    "postcode": null,
+    "type": "Retailers - other",
+    "ratingDate": "2026-02-03"
+   },
+   {
+    "fhrs_id": 1696623,
+    "name": "Lucys Cakes And Bakes",
+    "postcode": null,
+    "type": "Restaurant/Cafe/Canteen",
+    "ratingDate": "2024-02-05"
+   },
+   {
+    "fhrs_id": 1870319,
+    "name": "Luv-LeighCheesecakes",
+    "postcode": null,
+    "type": "Retailers - other",
+    "ratingDate": "2025-10-22"
+   },
+   {
+    "fhrs_id": 1844114,
+    "name": "Mannering Cakes",
+    "postcode": null,
+    "type": "Farmers/growers",
+    "ratingDate": "2025-11-04"
+   },
+   {
+    "fhrs_id": 521343,
+    "name": "Ocean View Lodge",
+    "postcode": null,
+    "type": "Hospitals/Childcare/Caring Premises",
+    "ratingDate": "2024-03-14"
+   },
+   {
+    "fhrs_id": 1861851,
+    "name": "Penny Treats",
+    "postcode": null,
+    "type": "Retailers - other",
+    "ratingDate": "2025-10-01"
+   },
+   {
+    "fhrs_id": 1803352,
+    "name": "Porta Via Pizzeria",
+    "postcode": null,
+    "type": "Restaurant/Cafe/Canteen",
+    "ratingDate": "2025-02-25"
+   },
+   {
+    "fhrs_id": 1987430,
+    "name": "RECOVER LABS",
+    "postcode": null,
+    "type": "Restaurant/Cafe/Canteen",
+    "ratingDate": "2026-09-02"
+   },
+   {
+    "fhrs_id": 1931756,
+    "name": "RJM Homemade Food",
+    "postcode": null,
+    "type": "Farmers/growers",
+    "ratingDate": "2026-03-24"
+   },
+   {
+    "fhrs_id": 1861844,
+    "name": "Sally's Sweet Cakes",
+    "postcode": null,
+    "type": "Retailers - other",
+    "ratingDate": "2026-01-16"
+   },
+   {
+    "fhrs_id": 1771819,
+    "name": "Seeking Supplements",
+    "postcode": null,
+    "type": "Retailers - other",
+    "ratingDate": "2024-10-24"
+   },
+   {
+    "fhrs_id": 1767653,
+    "name": "Sizzling Greeks Limited",
+    "postcode": null,
+    "type": "Restaurant/Cafe/Canteen",
+    "ratingDate": "2026-05-20"
+   },
+   {
+    "fhrs_id": 1772630,
+    "name": "Slimming World",
+    "postcode": null,
+    "type": "Retailers - other",
+    "ratingDate": "2024-11-01"
+   },
+   {
+    "fhrs_id": 1931752,
+    "name": "SLIMMING WORLD",
+    "postcode": null,
+    "type": "Retailers - other",
+    "ratingDate": "2025-12-12"
+   },
+   {
+    "fhrs_id": 1796273,
+    "name": "Southend Foodbank Belle Vue Distribution Centre",
+    "postcode": null,
+    "type": "Restaurant/Cafe/Canteen",
+    "ratingDate": "2025-01-07"
+   },
+   {
+    "fhrs_id": 1810341,
+    "name": "Southend Foodbank Eastwood Distribution Centre",
+    "postcode": null,
+    "type": "Restaurant/Cafe/Canteen",
+    "ratingDate": null
+   },
+   {
+    "fhrs_id": 1796274,
+    "name": "Southend Foodbank Ferndale Distribution Centre",
+    "postcode": null,
+    "type": "Restaurant/Cafe/Canteen",
+    "ratingDate": "2025-01-06"
+   },
+   {
+    "fhrs_id": 1873674,
+    "name": "Southend Foodbank West Leigh Distribution Centre",
+    "postcode": null,
+    "type": "Restaurant/Cafe/Canteen",
+    "ratingDate": null
+   },
+   {
+    "fhrs_id": 1788725,
+    "name": "Southend Foodbank Westcliff",
+    "postcode": null,
+    "type": "Restaurant/Cafe/Canteen",
+    "ratingDate": "2024-12-11"
+   },
+   {
+    "fhrs_id": 1809188,
+    "name": "Sweets",
+    "postcode": null,
+    "type": "Farmers/growers",
+    "ratingDate": "2025-03-12"
+   },
+   {
+    "fhrs_id": 1845631,
+    "name": "The Beach House",
+    "postcode": null,
+    "type": "Restaurant/Cafe/Canteen",
+    "ratingDate": "2025-07-24"
+   },
+   {
+    "fhrs_id": 1769878,
+    "name": "The Brew Co",
+    "postcode": null,
+    "type": "Restaurant/Cafe/Canteen",
+    "ratingDate": "2024-08-27"
+   },
+   {
+    "fhrs_id": 512749,
+    "name": "The Cheese Man",
+    "postcode": null,
+    "type": "Retailers - other",
+    "ratingDate": "2022-10-11"
+   },
+   {
+    "fhrs_id": 1809210,
+    "name": "Tilly Maes Cakes",
+    "postcode": null,
+    "type": "Farmers/growers",
+    "ratingDate": "2025-04-08"
+   },
+   {
+    "fhrs_id": 1931763,
+    "name": "Twinklebellconfectionaries",
+    "postcode": null,
+    "type": "Retailers - other",
+    "ratingDate": "2026-01-29"
+   }
+  ]
+ },
+ "fsq": {
+  "skipped": "HF_TOKEN absent (repo secret, user-supplied)"
  },
  "ta": {
+  "skipped": "parquet absent",
   "vintage": "c.2021 (maintainer-declared; file carries no timestamps)",
-  "rows_in_bbox": 622,
-  "matched": 307,
-  "hours_added": 171,
-  "diets_added": 176,
-  "cuisine_verdicts": {
-   "agree": 10,
-   "extend": 202,
-   "conflict": 68
-  },
-  "rating_bands": {
-   "5.0": 34,
-   "4.5": 96,
-   "4.0": 78,
-   "other": 95,
-   "none": 4
+  "matched": 0
+ },
+ "ch": {
+  "snapshot_rows_food": 135478,
+  "matched": 108,
+  "pois_matched": 94,
+  "created": 45,
+  "formation_suppressed": 34,
+  "threshold_days": 365
+ },
+ "weights": {
+  "table_version": 1,
+  "country": "GB",
+  "verified": true,
+  "spot_checks": [
+   {
+    "area": "eu/gb/england/essex/southend-on-sea",
+    "box": "micro-centre",
+    "n_truth": 361,
+    "date": "2026-09-21"
+   }
+  ],
+  "osm_hours_rate": 0.07,
+  "hours_order": [
+   "site",
+   "atp",
+   "nhs",
+   "osm",
+   "ta"
+  ]
+ },
+ "quarantine": [
+  {
+   "id": "fsa-1796273",
+   "name": "Southend Foodbank Belle Vue Distribution Centre",
+   "reason": "false creation: ATP sushi-counter row name-matched FSA foodbank record; held from demo pending blocklist (2026-09-21)",
+   "sources": [
+    "overture"
+   ]
   }
- }
+ ]
 }
