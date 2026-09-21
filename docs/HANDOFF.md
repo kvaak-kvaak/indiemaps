@@ -12,7 +12,10 @@ Read these three docs first, in order:
 - `server.js` + `public/` — demo web map (Southend). `npm install && npm start`.
 - `scripts/build.js` — base pack builder (FSA + OSM + postcodes.io)
 - `scripts/pack/build.py` — pack orchestrator (`--area ID | --all | --manifest`,
-  stages: base → overture → nhs → atp → sites → merge)
+  stages: base → servicemap → overture → nhs → atp → sites → merge →
+  ta → fsa_resweep → nhs_late → ch → overture_late; CH runs LAST so its
+  FSA-absent gate sees final FSA verdicts; overture_late backfills contact
+  for ch/resweep-added records, skipped when they added nothing)
 - `scripts/pack/overture.py` — Overture contact backfill (needs `pip install duckdb`)
 - `scripts/pack/nhs.py` — NHS pharmacy layer (`--update-cache` quarterly)
 - `scripts/atp.js` — AllThePlaces chain-hours merge (61 UK spiders)
