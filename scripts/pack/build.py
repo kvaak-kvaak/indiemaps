@@ -225,6 +225,10 @@ def build(area_id, args):
     }
     stale = flag_stale_occupants(pois_data, packdir)
     m['counts']['stale_flagged'] = stale
+    unverified = flag_unverified(pois_data)
+    m['counts']['unverified'] = unverified
+    stacked = flag_position_stacks(pois_data, packdir)
+    m['counts']['position_stacked'] = stacked
     m['weights'] = area_weights(area_id, pois_data)
     json.dump(pois_data, open(pois, 'w'), indent=1)
     json.dump(m, open(meta, 'w'), indent=1)
@@ -374,8 +378,74 @@ def area_weights(area_id, pois_data):
     return out
 
 
+def flag_unverified(pois_data):
+    """FSA-unverifiable food records (England doctrine): a pure-OSM food POI
+    with no FSA/CH/Servicemap corroboration is presumed dead — OSM never
+    deletes, and every specimen audit says uncorroborated means closed.
+    Flagged, hidden from the map, never deleted. Exemptions: any verifier
+    in sources, or an OSM touch fresher than 91 days. Decade-junk grade:
+    touch older than 730 days (or none assessable) plus zero contact, hours
+    or postcode -> 'stale'. Contact/hours alone do NOT exempt."""
+    now = datetime.now(timezone.utc)
+    n = 0
+    for p in pois_data:
+        p.pop('unverified', None)
+        if p.get('category') not in ('restaurant', 'cafe', 'pub'):
+            continue
+        src = p.get('sources', []) or []
+        if 'osm' not in src:
+            continue
+        if any(s in src for s in ('fsa', 'ch', 'servicemap')):
+            continue
+        touched = None
+        try:
+            if p.get('osm_touched'):
+                touched = datetime.fromisoformat(
+                    p['osm_touched'].replace('Z', '+00:00'))
+        except (ValueError, TypeError):
+            touched = None
+        if touched is not None and (now - touched).days < 91:
+            continue
+        n += 1
+        old = touched is not None and (now - touched).days >= 730
+        bare = not (p.get('phone') or p.get('website')
+                    or p.get('opening_hours_osm') or p.get('postcode'))
+        p['unverified'] = 'stale' if (old and bare) else True
+    return n
+
+
+def flag_position_stacks(pois_data, packdir):
+    """Exact-coordinate stacks (measured: 11 Adventure Island kiosks on one
+    FSA batch-geocoded pin): >=5 POIs sharing rounded-5dp coords AND the same
+    geo_precision are a source-data artifact, not a crowd. Flagged with a
+    shared stack id for single-pin UI clustering; pins are never moved (no
+    truth to move them to). Mixed-precision stacks are independent surveys
+    agreeing — left alone."""
+    for p in pois_data:
+        p.pop('position_stacked', None)
+        p.pop('stack_id', None)
+    cells = {}
+    for p in pois_data:
+        if p.get('lat') is None or p.get('lng') is None:
+            continue
+        cells.setdefault((round(p['lat'], 5), round(p['lng'], 5),
+                          p.get('geo_precision')), []).append(p)
+    n = 0
+    for i, (key, members) in enumerate(
+            sorted(cells.items(), key=lambda kv: -len(kv[1]))):
+        if len(members) < 5:
+            break
+        sid = f'stack-{i + 1}'
+        for m in members:
+            m['position_stacked'] = True
+            m['stack_id'] = sid
+            n += 1
+        log(packdir, f"position stack {sid}: {len(members)}x {key} "
+                      f"({', '.join(x.get('name', '?')[:28] for x in members[:4])}…)")
+    return n
+
+
 def manifest():
-    packs = []
     for area_id, a in AREAS.items():
         packdir = PACKS / area_id
         meta_f, pois_f = packdir / 'meta.json', packdir / 'pois.json'

@@ -31,6 +31,17 @@ Read these three docs first, in order:
   defaults + verified:false). Auto OSM-hours rate is hours-trust only,
   never existence. Invariant: weights settle enrichment ties, never
   creation.
+- Dead-node purge (all verified on live data before coding): pure-OSM food
+  with no FSA/CH/SM corroboration gets `unverified` (flag, hidden from
+  map via /api/pois+combined unless ?include_unverified=1, never deleted;
+  fresh OSM touch <91d exempts; >730d bare touch grades `stale`).
+  `out meta` Overpass pull persists osm_touched/osm_version. Exact-coord
+  stacks ≥5 (same precision) get position_stacked + stack_id, clustered to
+  one UI pin (Adventure Island 11-stack et al). `nightclub` added to pull
+  + pub category (Fickle Pickle was invisible). FSA/OSM name disagreement
+  + fresh touch → display OSM name + turnover_watch (Zinnia→Mimosa fired
+  exactly once in Southend). FSA batch-geocoded kiosks are source-data
+  faults — flagged, pins never moved.
 - Demo promoted (2026-09-21): `data/pois.json` + `data/build-meta.json` =
   CI Southend run 35596014273 (1748 POIs, 38 pure-ch, weights verified)
   minus quarantined `fsa-1796273` (false ov_new creation: ATP sushi-counter

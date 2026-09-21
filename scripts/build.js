@@ -63,7 +63,7 @@ function mapOsmCategory(tags = {}) {
   const a = tags.amenity, s = tags.shop, t = tags.tourism, l = tags.leisure;
   if (['restaurant', 'fast_food', 'food_court'].includes(a)) return ['restaurant', 'Restaurant'];
   if (['cafe', 'ice_cream'].includes(a)) return ['cafe', 'Café'];
-  if (['pub', 'bar', 'biergarten'].includes(a)) return ['pub', 'Pub / Bar'];
+  if (['pub', 'bar', 'biergarten', 'nightclub'].includes(a)) return ['pub', 'Pub / Bar'];
   if (['pharmacy', 'doctors', 'dentist', 'clinic', 'hospital', 'optician'].includes(a)) return ['health', 'Health'];
   if (['theatre', 'cinema', 'arts_centre', 'library', 'place_of_worship'].includes(a) || t === 'museum' || t === 'gallery') return ['culture', 'Culture'];
   if (t === 'hotel' || t === 'guest_house' || t === 'hostel') return ['hotel', 'Hotel'];
@@ -224,7 +224,12 @@ const OSM_ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overp
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 function osmQuery(s, w, n, e) {
-  return `[out:json][timeout:25];(node["amenity"~"^(restaurant|cafe|pub|bar|fast_food|ice_cream|pharmacy|doctors|dentist|cinema|theatre|arts_centre|library|place_of_worship|clinic|optician)$"](${s},${w},${n},${e});node["shop"](${s},${w},${n},${e});node["tourism"~"^(hotel|guest_house|hostel|attraction|museum|gallery|viewpoint)$"](${s},${w},${n},${e});node["leisure"~"^(park|nature_reserve|miniature_golf|sports_centre)$"](${s},${w},${n},${e}););out 2000;`;
+  // out meta: version/timestamp per node (freshness signals for the
+  // unverified/turnover rules). Tiny overhead, no extra queries.
+  // nightclub included: FSA's Pub/bar/nightclub type exists, so excluding
+  // it made venues like clubs invisible on both sides (measured: Fickle
+  // Pickle Club absent from pack and unmergeable).
+  return `[out:json][timeout:25];(node["amenity"~"^(restaurant|cafe|pub|bar|nightclub|fast_food|ice_cream|pharmacy|doctors|dentist|cinema|theatre|arts_centre|library|place_of_worship|clinic|optician)$"](${s},${w},${n},${e});node["shop"](${s},${w},${n},${e});node["tourism"~"^(hotel|guest_house|hostel|attraction|museum|gallery|viewpoint)$"](${s},${w},${n},${e});node["leisure"~"^(park|nature_reserve|miniature_golf|sports_centre)$"](${s},${w},${n},${e}););out meta 2000;`;
 }
 
 // Fewer, bigger queries (Overpass etiquette + throttle resistance): one
@@ -486,6 +491,13 @@ function osmAddress(tags) {
 }
 
 const pois = [];
+// Turnover watch (measured: Zinnia→Mimosa→gone): an FSA-merged record whose
+// OSM node disagrees by name AND was touched recently is mid-turnover —
+// display the mapper-fresh name with uncertainty admitted, keep the FSA
+// name for cross-reference. Fresh touch is corroboration only (a rename
+// touch is not proof of open); disagreement with a stale touch keeps the
+// FSA name and lets the stale-occupant flags own the premises.
+const SIX_MO_MS = 182 * 864e5;
 for (const k of deduped) {
   const [cat, label] = fsaCategory(k.type);
   const tags = k.osm?.tags || {};
@@ -495,12 +507,20 @@ for (const k of deduped) {
   const category_label = (cat === 'restaurant' && osmCat && ['pub', 'cafe'].includes(osmCat)) ? osmLabel : label;
   const contact = osmContact(tags);
   const address = k.address_lines.join(', ') + (k.postcode ? `, ${k.postcode}` : '');
+  const osmTouched = k.osm?.timestamp || null;
+  const osmName = (tags.name || '').trim();
+  const disagree = k.osm && osmName && nameScore(k.name, osmName) < 0.5;
+  const freshTouch = !!(osmTouched && (Date.now() - Date.parse(osmTouched)) < SIX_MO_MS);
+  const turnover = disagree && freshTouch;
   pois.push({
     id: `fsa-${k.fsa_id}`,
     fsa_id: k.fsa_id,
     osm_type: k.osm ? 'node' : null,
     osm_id: k.osm ? k.osm.id : null,
-    name: k.name,
+    osm_touched: osmTouched,
+    osm_version: k.osm?.version ?? null,
+    name: turnover ? osmName : k.name,
+    ...(turnover ? { fsa_name: k.name, turnover_watch: true } : {}),
     category, category_label,
     lat: k.osm ? k.osm.lat : k.lat,   // OSM position is survey-accurate; FSA geocode otherwise
     lng: k.osm ? k.osm.lon : k.lng,
@@ -536,6 +556,8 @@ for (const el of osm) {
     id: `osm-node-${el.id}`,
     fsa_id: null,
     osm_type: 'node', osm_id: el.id,
+    osm_touched: el.timestamp || null,
+    osm_version: el.version ?? null,
     name: t.name,
     category, category_label: t.cuisine ? `${osmLabel} · ${t.cuisine.split(';')[0]}` : osmLabel,
     lat: el.lat, lng: el.lon, geo_precision: 'osm',

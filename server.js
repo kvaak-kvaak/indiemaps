@@ -180,7 +180,10 @@ async function fetchLiveOsm(bboxStr) {
 app.get('/api/pois', (req, res) => {
   const { bbox, category, q } = req.query;
   const SRC = poisFor(req);
-  let out = SRC.map(p => ({ ...p, richness: richness(p), community_reviews: (REVIEWS[p.id] || []).length }));
+  // Unverified records (presumed-dead pure-OSM food POIs) stay in data and
+  // reachable by id/search, but leave the map unless explicitly requested.
+  const hideUnverified = req.query.include_unverified !== '1';
+  let out = SRC.filter(p => !hideUnverified || !p.unverified).map(p => ({ ...p, richness: richness(p), community_reviews: (REVIEWS[p.id] || []).length }));
   if (bbox) out = out.filter(p => inBbox(p, bbox));
   if (category && category !== 'all') out = out.filter(p => p.category === category);
   if (q) {
@@ -204,7 +207,8 @@ app.get('/api/live-pois', async (req, res) => {
 app.get('/api/combined', async (req, res) => {
   const { bbox, category, q } = req.query;
   const SRC = poisFor(req);
-  let curated = SRC.map(p => ({ ...p, richness: richness(p) }));
+  const hideUnverified = req.query.include_unverified !== '1';
+  let curated = SRC.filter(p => !hideUnverified || !p.unverified).map(p => ({ ...p, richness: richness(p) }));
   if (bbox) curated = curated.filter(p => inBbox(p, bbox));
   if (category && category !== 'all') curated = curated.filter(p => p.category === category);
   let live = [];

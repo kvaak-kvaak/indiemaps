@@ -79,7 +79,9 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const fmtDate = iso => { try { return new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }); } catch { return iso; } };
 
 function sourceBadges(p) {
-  return (p.sources || [p.source]).map(s =>
+  const extra = (p.turnover_watch ? '<span class="badge turnover" title="Mapper renamed this venue recently while the foods register still lists the old name — turnover in progress, treat as uncertain">turnover watch</span>' : '')
+    + (p.position_stacked ? '<span class="badge stacked" title="Several venues share one source pin — positions are approximate">stacked pin</span>' : '');
+  return extra + (p.sources || [p.source]).map(s =>
     s === 'fsa' ? '<span class="badge src-fsa" title="Food Standards Agency open data">FSA</span>'
     : s === 'atp' ? '<span class="badge src-atp" title="Chain-published data via AllThePlaces">chains</span>'
     : s === 'site' ? '<span class="badge src-site" title="Hours stated on the business website">website</span>'
@@ -150,21 +152,50 @@ function filtered() {
 function renderAll() {
   clusters.clearLayers(); state.markers.clear();
   const list = filtered();
+  // Exact-coordinate stacks (flagged batch-geocoded pins) collapse into one
+  // marker + one list card — but never under a text search, where hiding a
+  // matching member would be wrong.
+  const singles = [], groups = new Map();
   for (const p of list) {
+    if (p.stack_id && !state.q) {
+      if (!groups.has(p.stack_id)) groups.set(p.stack_id, []);
+      groups.get(p.stack_id).push(p);
+    } else singles.push(p);
+  }
+  const renderOne = p => {
     const el = document.createElement('div');
     el.className = `pin cat-${p.category}${p.sources?.length === 1 && p.sources[0] === 'osm' ? ' osm' : ''}${p.id === state.selectedId ? ' selected' : ''}`;
     el.innerHTML = `<span>${CAT_ICON[p.category] || '📍'}</span>`;
     const m = L.marker([p.lat, p.lng], { icon: L.divIcon({ className: '', html: el.outerHTML, iconSize: [30, 30], iconAnchor: [15, 28] }), title: p.name });
     m.on('click', () => selectPoi(p.id, { pan: false }));
     clusters.addLayer(m); state.markers.set(p.id, m);
+  };
+  singles.forEach(renderOne);
+  const cards = new Map();
+  for (const [sid, members] of groups) {
+    const first = members[0];
+    const el = document.createElement('div');
+    el.className = 'pin stacked';
+    el.innerHTML = `<span>📌</span><b class="stack-n">${members.length}</b>`;
+    const m = L.marker([first.lat, first.lng], { icon: L.divIcon({ className: '', html: el.outerHTML, iconSize: [30, 30], iconAnchor: [15, 28] }), title: members.map(x => x.name).join('; ') });
+    m.on('click', () => map.flyTo([first.lat, first.lng], 18, { duration: 0.7 }));
+    clusters.addLayer(m); state.markers.set(sid, m);
+    cards.set(sid, { sid, members, first });
   }
   const fsaDate = state.meta.fsa_extract_date ? ` · FSA extract ${state.meta.fsa_extract_date}` : '';
   const built = state.meta.built_at ? ` · verified ${fmtDate(state.meta.built_at.slice(0, 10))}` : '';
   statsText.textContent = state.mode === 'curated'
     ? `${list.length} listings · ${packName()}${fsaDate}${built}`
     : `${list.length} shown (${state.curatedCount} listed + ${state.liveCount} live OSM) · ${packName()}`;
-  resultsEl.innerHTML = list.slice(0, 200).map(p => {
-    const o = openStatus(p);
+  const stackCards = [...cards.values()].map(({ sid, members, first }) =>
+    `<div class="card" data-stack="${sid}">
+      <div class="tile" style="background:#e3f2fd">📌</div>
+      <div><h3>${members.length} venues at this spot</h3>
+        <div class="meta">${members.slice(0, 4).map(x => esc(x.name)).join(' · ')}${members.length > 4 ? ' · …' : ''}</div>
+        <div class="meta">Source pins coincide — positions approximate</div>
+        <div class="badges"><span class="badge stacked">stacked pin</span></div>
+      </div></div>`).join('');
+  resultsEl.innerHTML = stackCards + list.slice(0, 200).map(p => {    const o = openStatus(p);
     return `<div class="card${p.id === state.selectedId ? ' selected' : ''}" data-id="${p.id}">
       <div class="tile" style="background:${CAT_TINT[p.category] || '#eee'}">${CAT_ICON[p.category] || '📍'}</div>
       <div><h3>${esc(p.name)}</h3>
@@ -174,7 +205,12 @@ function renderAll() {
         <div class="badges">${sourceBadges(p)}${p.atp_hours ? '<span class="badge src-atp">chain hours</span>' : ''}</div>
       </div></div>`;
   }).join('') || `<p style="padding:16px;color:#666">No matches. Try another category or zoom out.</p>`;
-  resultsEl.querySelectorAll('.card').forEach(c => c.addEventListener('click', () => selectPoi(c.dataset.id, { pan: true })));
+  resultsEl.querySelectorAll('.card').forEach(c => c.addEventListener('click', () => {
+    if (c.dataset.stack) {
+      const g = cards.get(c.dataset.stack);
+      if (g) map.flyTo([g.first.lat, g.first.lng], 18, { duration: 0.7 });
+    } else selectPoi(c.dataset.id, { pan: true });
+  }));
 }
 
 // ---------- detail panel ----------
