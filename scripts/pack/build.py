@@ -446,6 +446,7 @@ def flag_position_stacks(pois_data, packdir):
 
 
 def manifest():
+    packs = []
     for area_id, a in AREAS.items():
         packdir = PACKS / area_id
         meta_f, pois_f = packdir / 'meta.json', packdir / 'pois.json'
