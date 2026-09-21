@@ -79,7 +79,8 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const fmtDate = iso => { try { return new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }); } catch { return iso; } };
 
 function sourceBadges(p) {
-  const extra = (p.position_approx ? '<span class="badge stacked" title="Area-placed: position comes from an uncorroborated batch geocode — placed by postcode area, not surveyed">area-placed</span>' : '');
+  const extra = (p.position_approx ? '<span class="badge stacked" title="Area-placed: position comes from an uncorroborated batch geocode — placed by postcode area, not surveyed">area-placed</span>' : '')
+    + (p.position_hazard ? '<span class="badge stacked" title="Needs manual placement: on a road class where geocoders fail and no surveyed position exists">needs-manual-placement</span>' : '');
   return extra + (p.sources || [p.source]).map(s =>
     s === 'fsa' ? '<span class="badge src-fsa" title="Food Standards Agency open data">FSA</span>'
     : s === 'atp' ? '<span class="badge src-atp" title="Chain-published data via AllThePlaces">chains</span>'
@@ -153,7 +154,10 @@ function renderAll() {
   const list = filtered();
   for (const p of list) {
     const el = document.createElement('div');
-    el.className = `pin cat-${p.category}${p.sources?.length === 1 && p.sources[0] === 'osm' ? ' osm' : ''}${p.id === state.selectedId ? ' selected' : ''}`;
+    // Confidence-gated display: batch-placed pins (position_approx) render
+    // with an uncertainty halo instead of full-authority markers. Same
+    // class will cover the hazard tier (step 3) wherever reachable.
+    el.className = `pin cat-${p.category}${p.sources?.length === 1 && p.sources[0] === 'osm' ? ' osm' : ''}${p.position_approx ? ' approx' : ''}${p.id === state.selectedId ? ' selected' : ''}`;
     el.innerHTML = `<span>${CAT_ICON[p.category] || '📍'}</span>`;
     const m = L.marker([p.lat, p.lng], { icon: L.divIcon({ className: '', html: el.outerHTML, iconSize: [30, 30], iconAnchor: [15, 28] }), title: p.name });
     m.on('click', () => selectPoi(p.id, { pan: false }));

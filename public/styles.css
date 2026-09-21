@@ -65,6 +65,7 @@ html, body { height: 100%; margin: 0; font-family: -apple-system, BlinkMacSystem
 #map-hint { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); background: rgba(20,22,25,.85); color: #fff; font-size: 12px; padding: 7px 14px; border-radius: 20px; z-index: 500; pointer-events: none; white-space: nowrap; }
 .pin { width: 30px; height: 30px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); display: grid; place-items: center; border: 2px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,.35); font-size: 14px; }
 .pin span { transform: rotate(45deg); }
+.pin.approx { opacity: 0.72; border-style: dashed; box-shadow: 0 0 0 3px rgba(13,71,161,.28), 0 2px 6px rgba(0,0,0,.35); }
 .pin.cat-restaurant { background: #d93025; } .pin.cat-cafe { background: #8d6e00; }
 .pin.cat-pub { background: #5c3500; } .pin.cat-shopping { background: #1a73e8; }
 .pin.cat-hotel { background: #673ab7; } .pin.cat-attraction { background: #0b6e4f; }

@@ -180,7 +180,11 @@ async function fetchLiveOsm(bboxStr) {
 app.get('/api/pois', (req, res) => {
   const { bbox, category, q } = req.query;
   const SRC = poisFor(req);
-  let out = SRC.map(p => ({ ...p, richness: richness(p), community_reviews: (REVIEWS[p.id] || []).length }));
+  // Middle path: hazard-tier pins (interpolation-hostile roads, no surveyed
+  // position) leave browse payloads unless explicitly requested, but stay
+  // reachable via search (?q=) and by id. Records are never deleted.
+  const showHazard = q || req.query.include_hazard === '1';
+  let out = SRC.filter(p => showHazard || !p.position_hazard).map(p => ({ ...p, richness: richness(p), community_reviews: (REVIEWS[p.id] || []).length }));
   if (bbox) out = out.filter(p => inBbox(p, bbox));
   if (category && category !== 'all') out = out.filter(p => p.category === category);
   if (q) {
@@ -204,7 +208,8 @@ app.get('/api/live-pois', async (req, res) => {
 app.get('/api/combined', async (req, res) => {
   const { bbox, category, q } = req.query;
   const SRC = poisFor(req);
-  let curated = SRC.map(p => ({ ...p, richness: richness(p) }));
+  const showHazard = q || req.query.include_hazard === '1';
+  let curated = SRC.filter(p => showHazard || !p.position_hazard).map(p => ({ ...p, richness: richness(p) }));
   if (bbox) curated = curated.filter(p => inBbox(p, bbox));
   if (category && category !== 'all') curated = curated.filter(p => p.category === category);
   let live = [];

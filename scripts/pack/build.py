@@ -67,7 +67,7 @@ def build(area_id, args):
     packdir.mkdir(parents=True, exist_ok=True)
     bbox = ','.join(map(str, a['bbox']))
     pois, meta = str(packdir / 'pois.json'), str(packdir / 'meta.json')
-    stages = ['base', 'verify_positions', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta']
+    stages = ['base', 'verify_positions', 'hazard_roads', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta']
     if args.only:
         stages = [args.only]
     elif args.from_stage:
@@ -85,6 +85,13 @@ def build(area_id, args):
         run(['python3', 'scripts/pack/verify_positions.py',
              '--pois', pois, '--meta', meta], packdir)
         mark_stage(packdir, meta, 'verify_positions')
+    if 'hazard_roads' in stages:
+        # Coastal interpolation-hazard detector (cached coastline fetch).
+        # Runs after verify so merged (surveyed-position) records are
+        # exempt by construction.
+        run(['python3', 'scripts/pack/hazard_roads.py', f'--bbox={bbox}',
+             '--pois', pois, '--meta', meta], packdir)
+        mark_stage(packdir, meta, 'hazard_roads')
     if 'servicemap' in stages and a.get('servicemap_muni'):
         run(['python3', 'scripts/pack/servicemap.py', f'--bbox={bbox}',
              '--pois', pois, '--meta', meta,
@@ -169,6 +176,7 @@ def build(area_id, args):
     m['counts']['stale_flagged'] = stale
     approx = flag_position_approx(pois_data)
     m['counts']['position_approx'] = approx
+    assert_position_invariants(pois_data, m, packdir)
     json.dump(pois_data, open(pois, 'w'), indent=1)
     json.dump(m, open(meta, 'w'), indent=1)
     log(packdir, f'DONE: {n} POIs, {hours} with hours')
@@ -220,6 +228,46 @@ def _same_brand(a, b):
             return True
     ca, cb = na.replace(' ', ''), nb.replace(' ', '')
     return min(len(ca), len(cb)) >= 4 and ca == cb
+
+
+def assert_position_invariants(pois_data, m, packdir):
+    """Regression gate (must-improve-or-fail): position-honesty invariants
+    that fail the area build loudly. Stateless per pack — no baselines.
+    - Every batch-precision pin without OSM corroboration carries
+      position_approx (the flag repair class: silent precision claims).
+    - No provisional_creation records anywhere (creation rights are still
+      barred project-wide; any future creation path must update this gate
+      deliberately, never slip past it).
+    - Every verified_position merge has a matching meta.verify_positions
+      entry (auditable moves only).
+    - Every position_hazard record names its triggering road class."""
+    bad_approx = [p['id'] for p in pois_data
+                  if p.get('geo_precision') in ('fsa', 'postcode')
+                  and 'osm' not in (p.get('sources', []) or [])
+                  and not p.get('position_approx')]
+    if bad_approx:
+        raise SystemExit(f'POSITION GATE: {len(bad_approx)} batch pins lack '
+                         f'position_approx, e.g. {bad_approx[:5]}')
+    prov = [p['id'] for p in pois_data if p.get('provisional_creation')]
+    if prov:
+        raise SystemExit(f'POSITION GATE: {len(prov)} provisional creations '
+                         f'without an approved creation path, e.g. {prov[:5]}')
+    logged = {(e.get('fsa'), e.get('osm')) for e in
+              (m.get('verify_positions') or {}).get('attested_merges', [])
+              + (m.get('verify_positions') or {}).get('premises_merges', [])}
+    unlogged = [p['id'] for p in pois_data if p.get('verified_position')
+                and (p['id'], p.get('verified_from')) not in logged]
+    if unlogged:
+        raise SystemExit(f'POSITION GATE: {len(unlogged)} verified merges '
+                         f'without meta audit entries, e.g. {unlogged[:5]}')
+    haz = [p['id'] for p in pois_data if p.get('position_hazard')
+           and not (p.get('hazard_road') or {}).get('class')]
+    if haz:
+        raise SystemExit(f'POSITION GATE: {len(haz)} hazard records without '
+                         f'road class, e.g. {haz[:5]}')
+    log(packdir, f'position gate: OK '
+                  f'({m.get("counts", {}).get("position_approx", 0)} approx, '
+                  f'{sum(1 for p in pois_data if p.get("position_hazard"))} hazard)')
 
 
 def flag_position_approx(pois_data):
@@ -329,9 +377,9 @@ def main():
     ap.add_argument('--area')
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--from', dest='from_stage',
-                    choices=['base', 'verify_positions', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
+                    choices=['base', 'verify_positions', 'hazard_roads', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
     ap.add_argument('--only',
-                    choices=['base', 'verify_positions', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
+                    choices=['base', 'verify_positions', 'hazard_roads', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
     ap.add_argument('--sites', action='store_true',
                     help='site spider, residual only (POIs with no OSM/ATP hours)')
     ap.add_argument('--sites-all', action='store_true',
