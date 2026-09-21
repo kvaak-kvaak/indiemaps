@@ -42,12 +42,12 @@ Read these three docs first, in order:
   + fresh touch → display OSM name + turnover_watch (Zinnia→Mimosa fired
   exactly once in Southend). FSA batch-geocoded kiosks are source-data
   faults — flagged, pins never moved.
-- Demo promoted (2026-09-21): `data/pois.json` + `data/build-meta.json` =
-  CI Southend run 35596014273 (1748 POIs, 38 pure-ch, weights verified)
-  minus quarantined `fsa-1796273` (false ov_new creation: ATP sushi-counter
-  row name-matched the Belle Vue foodbank FSA record; held pending a gate
-  blocklist). Two legitimate base-FSA foodbank premises remain (1810340,
-  1785326), unaffected.
+- Demo promoted (2026-09-21, 2nd): `data/pois.json` + `data/build-meta.json`
+  = CI Southend run 35609339956 (1754 POIs: 128 unverified incl. the 6
+  dead specimens, 43 stacked, Mimosa turnover_watch, Fickle Pickle
+  imported-but-unverified) minus quarantined `fsa-1796273` (2nd firing of
+  the same ATP/foodbank false creation) → 1753 live, 1625 on-map default.
+  Map verified: hiding arithmetic exact, stack/turnover badges served.
 - `scripts/pack/overture.py` — Overture contact backfill (needs `pip install duckdb`)
 - `scripts/pack/nhs.py` — NHS pharmacy layer (`--update-cache` quarterly)
 - `scripts/atp.js` — AllThePlaces chain-hours merge (61 UK spiders)

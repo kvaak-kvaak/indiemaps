@@ -1,5 +1,5 @@
 {
- "built_at": "2026-09-21T11:49:19.811Z",
+ "built_at": "2026-09-21T14:02:56.805Z",
  "fsa_extract_date": "2026-09-15",
  "fsa_authority": "FHRS893",
  "bbox": {
@@ -9,10 +9,10 @@
   "e": 0.825
  },
  "counts": {
-  "total": 1748,
-  "fsa_only": 347,
-  "merged": 306,
-  "osm_only": 261,
+  "total": 1753,
+  "fsa_only": 346,
+  "merged": 307,
+  "osm_only": 265,
   "nhs_added": 6,
   "ch_added": 38,
   "fsa_resweep_added": 0,
@@ -20,16 +20,18 @@
   "ov_added": 1,
   "fsq_added": 0,
   "with_hours": 156,
-  "osm_nodes_pulled": 814,
-  "osm_raw_response": 845,
+  "osm_nodes_pulled": 820,
+  "osm_raw_response": 851,
   "fsa_repinned": 0,
   "fsa_duplicates_linked": 0,
   "fsa_duplicates_queued": 11,
-  "stale_flagged": 6
+  "stale_flagged": 6,
+  "unverified": 128,
+  "position_stacked": 43
  },
  "with_hours": 57,
  "with_phone": 67,
- "with_website": 211,
+ "with_website": 212,
  "stages_ok": [
   "base",
   "overture",
@@ -45,8 +47,8 @@
  "overture": {
   "release": "2026-07-22.0",
   "contact_rows_in_bbox": 7031,
-  "websites_filled": 702,
-  "phones_filled": 904,
+  "websites_filled": 703,
+  "phones_filled": 905,
   "meta_bonus": 0.15,
   "created": 1
  },
@@ -372,7 +374,7 @@
     "date": "2026-09-21"
    }
   ],
-  "osm_hours_rate": 0.07,
+  "osm_hours_rate": 0.069,
   "hours_order": [
    "site",
    "atp",
@@ -385,7 +387,7 @@
   {
    "id": "fsa-1796273",
    "name": "Southend Foodbank Belle Vue Distribution Centre",
-   "reason": "false creation: ATP sushi-counter row name-matched FSA foodbank record; held from demo pending blocklist (2026-09-21)",
+   "reason": "false creation (2nd firing): ATP sushi-counter row name-matched FSA foodbank record; held pending gate blocklist (2026-09-21)",
    "sources": [
     "overture"
    ]
