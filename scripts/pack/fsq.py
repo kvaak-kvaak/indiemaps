@@ -147,6 +147,7 @@ def main():
                 'amenities': [], 'photos': [], 'description': '',
                 'sources': ['fsq'], 'provisional_creation': 'fsq_new',
                 'fsq_id': o['id'],
+                'fsq_match': {'name': o.get('name'), 'gate_score': sc},
                 **({'fsa_rating_date': f['ratingDate']} if f.get('ratingDate') else {}),
             })
             print(f"fsq-created: {f['name']} [{f['fhrs_id']}] via {o.get('name')} (sc={sc})")

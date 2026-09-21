@@ -142,10 +142,6 @@ def build(area_id, args):
         run(['node', 'scripts/merge-site.js', '--in', str(packdir / 'site.json'),
              '--pois', pois, '--meta', meta], packdir)
         mark_stage(packdir, meta, 'merge')
-    if 'ta' in stages and a.get('ta'):
-        run(['python3', 'scripts/pack/ta.py', f'--bbox={bbox}',
-             '--pois', pois, '--meta', meta], packdir)
-        mark_stage(packdir, meta, 'ta')
     if 'fsa_resweep' in stages:
         run(['python3', 'scripts/pack/fsa_resweep.py', f'--bbox={bbox}',
              '--pois', pois, '--meta', meta,
@@ -157,6 +153,14 @@ def build(area_id, args):
         run(['python3', 'scripts/pack/fsq.py', f'--bbox={bbox}',
              '--pois', pois, '--meta', meta], packdir)
         mark_stage(packdir, meta, 'fsq')
+    if 'ta' in stages and a.get('ta'):
+        # AFTER fsq (not base-adjacent): the creation branch needs
+        # meta.fsa_resweep.unlocatable, which only exists post-resweep.
+        # Match-only enrichment of resweep/fsq-added POIs is harmless
+        # (fresh rows aren't in the 2021 dump).
+        run(['python3', 'scripts/pack/ta.py', f'--bbox={bbox}',
+             '--pois', pois, '--meta', meta], packdir)
+        mark_stage(packdir, meta, 'ta')
     if 'nhs_late' in stages and a.get('fsa'):
         # Second NHS merge (idempotent): pharmacies for resweep-added
         # records, before CH decides. England only, like nhs.

@@ -282,6 +282,7 @@ def main():
                 'brand_wikidata': None, 'wikipedia': None, 'wikidata': None,
                 'amenities': [], 'photos': [], 'description': '',
                 'sources': ['ta'], 'provisional_creation': 'ta_new',
+                'ta_match': {'name': o.get('name'), 'gate_score': sc},
                 **({'ta_cuisines': dc, 'ta_cuisine_match': 'extend'} if dc else {}),
                 **({'fsa_rating_date': f['ratingDate']} if f.get('ratingDate') else {}),
             })

@@ -225,6 +225,10 @@ def main():
                 'amenities': [], 'photos': [], 'description': '',
                 'sources': ['overture'], 'provisional_creation': 'ov_new',
                 'overture_id': o['id'],
+                # Audit trail for the creation gate: which row corroborated
+                # (coords are the row's own, so no distance is meaningful;
+                # the gate score is the load-bearing number).
+                'overture_match': {'name': o.get('name'), 'gate_score': sc},
                 'overture_datasets': sorted(x for x in (o.get('datasets') or []) if x != 'Overture'),
                 **({'fsa_rating_date': f['ratingDate']} if f.get('ratingDate') else {}),
             })
