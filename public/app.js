@@ -79,9 +79,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const fmtDate = iso => { try { return new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }); } catch { return iso; } };
 
 function sourceBadges(p) {
-  const extra = (p.turnover_watch ? '<span class="badge turnover" title="Mapper renamed this venue recently while the foods register still lists the old name — turnover in progress, treat as uncertain">turnover watch</span>' : '')
-    + (p.position_stacked ? '<span class="badge stacked" title="Area-placed: several venues share one source pin — placed by postcode area, not surveyed">area-placed</span>' : '');
-  return extra + (p.sources || [p.source]).map(s =>
+  return (p.sources || [p.source]).map(s =>
     s === 'fsa' ? '<span class="badge src-fsa" title="Food Standards Agency open data">FSA</span>'
     : s === 'atp' ? '<span class="badge src-atp" title="Chain-published data via AllThePlaces">chains</span>'
     : s === 'site' ? '<span class="badge src-site" title="Hours stated on the business website">website</span>'
@@ -149,10 +147,6 @@ function filtered() {
 }
 
 // ---------- rendering: markers + list ----------
-// NOTE (measured Sep-2026): FSA batch-geocodes same-postcode venues to one
-// pin, so coincident markers are usually distinct real venues, not one
-// place. They render individually (cluster spiderfy handles clicks); the
-// position_stacked flag documents the batching in data only.
 function renderAll() {
   clusters.clearLayers(); state.markers.clear();
   const list = filtered();
@@ -169,7 +163,8 @@ function renderAll() {
   statsText.textContent = state.mode === 'curated'
     ? `${list.length} listings · ${packName()}${fsaDate}${built}`
     : `${list.length} shown (${state.curatedCount} listed + ${state.liveCount} live OSM) · ${packName()}`;
-  resultsEl.innerHTML = list.slice(0, 200).map(p => {    const o = openStatus(p);
+  resultsEl.innerHTML = list.slice(0, 200).map(p => {
+    const o = openStatus(p);
     return `<div class="card${p.id === state.selectedId ? ' selected' : ''}" data-id="${p.id}">
       <div class="tile" style="background:${CAT_TINT[p.category] || '#eee'}">${CAT_ICON[p.category] || '📍'}</div>
       <div><h3>${esc(p.name)}</h3>

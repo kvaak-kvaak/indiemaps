@@ -22,28 +22,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'overture-join'))
 from join import norm, nscore, dist_m, grid_index, nearby  # noqa
 
-RELEASE_PIN = '2026-08-19.0'  # fallback; discovery prefers newest published
-S3BASE_TMPL = 's3://overturemaps-us-west-2/release/{rel}/theme=places/type=place/*.parquet'
-
-
-def discover_release():
-    """Newest published Overture release (Overture rotates old ones out;
-    a hardcoded pin silently rots — measured: 2026-07-22.0 vanished within
-    ~48h of a green run). Pure S3 listing, no credentials."""
-    import urllib.request
-    import re
-    try:
-        xml = urllib.request.urlopen(
-            'https://overturemaps-us-west-2.s3.us-west-2.amazonaws.com/'
-            '?list-type=2&prefix=release/&delimiter=%2F',
-            timeout=30).read().decode()
-        rels = sorted(set(re.findall(r'<Prefix>release/([^<]+)/</Prefix>', xml)))
-        rels = [r for r in rels if re.fullmatch(r'\d{4}-\d{2}-\d{2}\.\d+', r)]
-        if rels:
-            return rels[-1]
-    except Exception as e:
-        print(f'release discovery failed ({str(e)[:80]}), using pin {RELEASE_PIN}')
-    return RELEASE_PIN
+RELEASE = '2026-07-22.0'
+S3BASE = f's3://overturemaps-us-west-2/release/{RELEASE}/theme=places/type=place/*.parquet'
 
 
 def pull(w, s, e, n):
@@ -51,26 +31,20 @@ def pull(w, s, e, n):
     last = None
     for attempt in range(3):
         try:
-            rel = discover_release() if attempt == 0 else RELEASE_PIN
             con = duckdb.connect()
             con.execute("INSTALL httpfs; LOAD httpfs;")
             con.execute("SET s3_region='us-west-2'; SET http_timeout=30000;")
             rows = con.execute(f"""SELECT id, names.primary AS name,
               (bbox.xmin+bbox.xmax)/2 AS lon, (bbox.ymin+bbox.ymax)/2 AS lat,
-              addresses[1].postcode AS postcode, addresses[1].freeform AS freeform,
-              websites[1] AS website, phones[1] AS phone,
-              list_distinct([s2.dataset FOR s2 IN sources]) AS datasets,
-              categories.primary AS cat
-            FROM read_parquet('{S3BASE_TMPL.format(rel=rel)}')
+              addresses[1].postcode AS postcode, websites[1] AS website, phones[1] AS phone,
+              list_distinct([s2.dataset FOR s2 IN sources]) AS datasets
+            FROM read_parquet('{S3BASE}')
             WHERE bbox.xmin <= {e} AND bbox.xmax >= {w} AND bbox.ymin <= {n} AND bbox.ymax >= {s}
               AND NOT list_contains(list_distinct([s2.dataset FOR s2 IN sources]), 'Microsoft')
               AND (len(websites) > 0 OR len(phones) > 0)
             """).fetchall()
-            cols = ['id', 'name', 'lon', 'lat', 'postcode', 'freeform', 'website', 'phone', 'datasets', 'cat']
-            out = [dict(zip(cols, r)) for r in rows]
-            for o in out:
-                o['release'] = rel
-            return out
+            cols = ['id', 'name', 'lon', 'lat', 'postcode', 'website', 'phone', 'datasets']
+            return [dict(zip(cols, r)) for r in rows]
         except Exception as ex:
             last = ex
             time.sleep(15 * (attempt + 1))
@@ -89,14 +63,6 @@ def norm_pc(p):
 META_BONUS = 0.15
 
 STOP = {'and', 'of', 'de', 'la', 's'}
-# Food categories eligible for Phase-2 gated creation (overture --create):
-# an Overture row may only seed a POI for a food-service venue.
-FOOD_CATS = {'restaurant', 'cafe', 'fast_food_restaurant', 'pub', 'bar',
-             'bakery', 'coffee_shop', 'ice_cream_shop', 'tea_house',
-             'breakfast_restaurant', 'brunch_restaurant', 'buffet_restaurant',
-             'fine_dining_restaurant', 'family_restaurant', 'sandwich_shop',
-             'donut_shop', 'bagel_shop', 'juice_bar', 'dessert_shop',
-             'food_truck', 'brewpub', 'wine_bar', 'cocktail_bar'}
 GENERIC = {'southend', 'Leigh', 'westcliff', 'chalkwell', 'shoebury', 'shoeburyness',
            'thorpe', 'essex', 'london', 'high', 'street', 'road', 'avenue',
            'broadway', 'parade', 'town', 'centre', 'center', 'branch', 'store',
@@ -119,38 +85,11 @@ def accept(pname, oname, ns, d, pc):
     return ns >= 0.5 or (ns >= 0.34 and (d < 60 or pc))
 
 
-def match_unlocatable(name, pc, unloc):
-    """Phase-2 guarded-creation gate (shared by ta/overture/fsq stages).
-
-    A third-party row may create a POI ONLY when it matches a fresh-FSA
-    record that has no pack POI (resweep's unlocatable list): strict name
-    agreement (nscore>=0.8 or normalized equality), postcode corroboration
-    when the FSA side has one (it usually doesn't — no-location rows).
-    Returns (entry, score) or (None, 0). Never invents: no entry, no POI.
-    """
-    best, bs = None, 0.0
-    for u in unloc or []:
-        upc = norm_pc(u.get('postcode'))
-        if upc and pc and upc != pc:
-            continue
-        sc = nscore(name or '', u.get('name') or '')
-        if sc > bs:
-            bs, best = sc, u
-    if best is not None and (bs >= 0.8 or (norm(name or '') == norm(best.get('name') or '')
-                                           and len(norm(name or '')) >= 6)):
-        return best, round(bs, 3)
-    return None, 0
-
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--bbox', required=True)
     ap.add_argument('--pois', required=True)
     ap.add_argument('--meta', required=True)
-    ap.add_argument('--create', action='store_true',
-                    help='Phase-2 gated creation: unmatched food rows may create '
-                         'a POI only via match_unlocatable against fresh-FSA '
-                         'records with no pack POI. Used by overture_late only.')
     a = ap.parse_args()
     w, s, e, n = map(float, a.bbox.split(','))
     t0 = time.time()
@@ -160,7 +99,6 @@ def main():
 
     pois = json.load(open(a.pois))
     filled_web, filled_phone = 0, 0
-    consumed = set()
     for p in pois:
         # clear previous backfill (re-run safe); manual/ surveyed values stay
         if p.get('website_source') == 'overture':
@@ -191,7 +129,6 @@ def main():
                     bs, best = sc, o
         if best is None:
             continue
-        consumed.add(best['id'])
         contributed = False
         if not p.get('website') and best.get('website'):
             p['website'] = best['website']
@@ -213,55 +150,11 @@ def main():
             p['overture_datasets'] = sorted(x for x in (best.get('datasets') or []) if x != 'Overture')
             if 'overture' not in p.get('sources', []):
                 p['sources'].append('overture')
-    meta = json.load(open(a.meta))
-    created = 0
-    if a.create:
-        # Gated creation: food-category, non-Microsoft rows that matched no
-        # pack POI may still become one — only via a fresh-FSA record with
-        # no pack POI (match_unlocatable). Coordinates come from Overture;
-        # the name is the FSA-verified one. Provisional tag for audit.
-        unloc = (meta.get('fsa_resweep') or {}).get('unlocatable', [])
-        have_fsa = {p.get('fsa_id') for p in pois if p.get('fsa_id')}
-        for o in ov:
-            if o['id'] in consumed or o.get('lat') is None:
-                continue
-            if (o.get('cat') or '').lower() not in FOOD_CATS:
-                continue
-            if any('microsoft' in str(x).lower() for x in (o.get('datasets') or [])):
-                continue
-            f, sc = match_unlocatable(o.get('name'), norm_pc(o.get('postcode')), unloc)
-            if f is None or f.get('fhrs_id') in have_fsa:
-                continue
-            created += 1
-            have_fsa.add(f['fhrs_id'])
-            pois.append({
-                'id': f"fsa-{f['fhrs_id']}", 'fsa_id': f['fhrs_id'],
-                'osm_type': None, 'osm_id': None, 'name': f['name'],
-                'category': 'restaurant', 'category_label': 'Restaurant / Café',
-                'lat': o['lat'], 'lng': o['lon'], 'geo_precision': 'overture',
-                'address': (o.get('freeform') or '') +
-                           (f", {o.get('postcode')}" if o.get('postcode') else ''),
-                'postcode': o.get('postcode'),
-                'phone': o.get('phone') or '', 'email': '', 'website': o.get('website') or '',
-                'facebook': '', 'instagram': '', 'twitter': '',
-                'opening_hours_osm': '', 'opening_hours': {}, 'cuisine': '',
-                'brand_wikidata': None, 'wikipedia': None, 'wikidata': None,
-                'amenities': [], 'photos': [], 'description': '',
-                'sources': ['overture'], 'provisional_creation': 'ov_new',
-                'overture_id': o['id'],
-                # Audit trail for the creation gate: which row corroborated
-                # (coords are the row's own, so no distance is meaningful;
-                # the gate score is the load-bearing number).
-                'overture_match': {'name': o.get('name'), 'gate_score': sc},
-                'overture_datasets': sorted(x for x in (o.get('datasets') or []) if x != 'Overture'),
-                **({'fsa_rating_date': f['ratingDate']} if f.get('ratingDate') else {}),
-            })
-            print(f"ov-created: {f['name']} [{f['fhrs_id']}] via {o.get('name')} (sc={sc})")
     json.dump(pois, open(a.pois, 'w'), indent=1)
-    meta['overture'] = {'release': (ov[0].get('release') if ov else RELEASE_PIN),
-                        'contact_rows_in_bbox': len(ov),
+    meta = json.load(open(a.meta))
+    meta['overture'] = {'release': RELEASE, 'contact_rows_in_bbox': len(ov),
                         'websites_filled': filled_web, 'phones_filled': filled_phone,
-                        'meta_bonus': META_BONUS, 'created': created}
+                        'meta_bonus': META_BONUS}
     json.dump(meta, open(a.meta, 'w'), indent=1)
     print(f'backfilled websites={filled_web} phones={filled_phone}')
     apply_aliases(a.pois, a.meta)

@@ -63,7 +63,7 @@ function mapOsmCategory(tags = {}) {
   const a = tags.amenity, s = tags.shop, t = tags.tourism, l = tags.leisure;
   if (['restaurant', 'fast_food', 'food_court'].includes(a)) return ['restaurant', 'Restaurant'];
   if (['cafe', 'ice_cream'].includes(a)) return ['cafe', 'Café'];
-  if (['pub', 'bar', 'biergarten', 'nightclub'].includes(a)) return ['pub', 'Pub / Bar'];
+  if (['pub', 'bar', 'biergarten'].includes(a)) return ['pub', 'Pub / Bar'];
   if (['pharmacy', 'doctors', 'dentist', 'clinic', 'hospital', 'optician'].includes(a)) return ['health', 'Health'];
   if (['theatre', 'cinema', 'arts_centre', 'library', 'place_of_worship'].includes(a) || t === 'museum' || t === 'gallery') return ['culture', 'Culture'];
   if (t === 'hotel' || t === 'guest_house' || t === 'hostel') return ['hotel', 'Hotel'];
@@ -224,20 +224,7 @@ const OSM_ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overp
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 function osmQuery(s, w, n, e) {
-  // out meta: version/timestamp per element (freshness signals for the
-  // unverified/turnover rules). Tiny overhead, no extra queries.
-  // nightclub included: FSA's Pub/bar/nightclub type exists, so excluding
-  // it made venues like clubs invisible on both sides (measured: Fickle
-  // Pickle Club absent from pack and unmergeable).
-  // Ways included (out center): food venues mapped as buildings (measured:
-  // Beach Hut cafe, Medusa restaurant) are invisible to a nodes-only pull.
-  // Leisure ways excluded deliberately: park/reserve polygons' centers
-  // mislead; nodes suffice there.
-  const amen = `"amenity"~"^(restaurant|cafe|pub|bar|nightclub|fast_food|ice_cream|pharmacy|doctors|dentist|cinema|theatre|arts_centre|library|place_of_worship|clinic|optician)$"`;
-  const shop = `"shop"`;
-  const tour = `"tourism"~"^(hotel|guest_house|hostel|attraction|museum|gallery|viewpoint)$"`;
-  const leis = `"leisure"~"^(park|nature_reserve|miniature_golf|sports_centre)$"`;
-  return `[out:json][timeout:25];(node[${amen}](${s},${w},${n},${e});node[${shop}](${s},${w},${n},${e});node[${tour}](${s},${w},${n},${e});node[${leis}](${s},${w},${n},${e});way[${amen}](${s},${w},${n},${e});way[${shop}](${s},${w},${n},${e});way[${tour}](${s},${w},${n},${e}););out center meta 2000;`;
+  return `[out:json][timeout:25];(node["amenity"~"^(restaurant|cafe|pub|bar|fast_food|ice_cream|pharmacy|doctors|dentist|cinema|theatre|arts_centre|library|place_of_worship|clinic|optician)$"](${s},${w},${n},${e});node["shop"](${s},${w},${n},${e});node["tourism"~"^(hotel|guest_house|hostel|attraction|museum|gallery|viewpoint)$"](${s},${w},${n},${e});node["leisure"~"^(park|nature_reserve|miniature_golf|sports_centre)$"](${s},${w},${n},${e}););out 2000;`;
 }
 
 // Fewer, bigger queries (Overpass etiquette + throttle resistance): one
@@ -253,19 +240,7 @@ async function queryOnce(q) {
       clearTimeout(t);
       if (!r.ok) { console.log(`Overpass ${ep.split('/')[2]}: HTTP ${r.status}, next endpoint`); continue; }
       const j = await r.json();
-      // Ways arrive with center (no direct lat/lon): normalize so all
-      // downstream logic (distance, merge, POI shape) is type-agnostic.
-      // Identity is type-qualified everywhere: a node and a way can share
-      // a numeric id without colliding.
-      const els = [];
-      for (const el of (j.elements || [])) {
-        if (el.type === 'way') {
-          if (el.center?.lat == null || el.center?.lon == null) continue;
-          el.lat = el.center.lat; el.lon = el.center.lon;
-        }
-        if (el.lat != null && el.lon != null) els.push(el);
-      }
-      return els;
+      return (j.elements || []).filter(el => el.lat != null && el.lon != null);
     } catch (err) { console.log(`Overpass ${ep.split('/')[2]}: ${String(err && err.message || err).slice(0, 90)}, next endpoint`); }
   }
   return null;
@@ -292,7 +267,7 @@ async function fetchBox(s, w, n, e, depth) {
         const seen = new Map(), sums = { raw: 0 };
         for (const [ts, tw, tn, te] of splitBbox(s, w, n, e)) {
           const sub = await fetchBox(ts, tw, tn, te, depth + 1);
-          for (const el of sub.list) seen.set(el.type + el.id, el);
+          for (const el of sub.list) seen.set(el.id, el);
           sums.raw += sub.raw;
         }
         return { list: [...seen.values()], raw: sums.raw };
@@ -320,7 +295,7 @@ async function fetchOsm() {
     for (const [ts, tw, tn, te] of splitBbox(s, w, n, e)) {
       try {
         const sub = await fetchBox(ts, tw, tn, te, 1);
-        for (const el of sub.list) seen.set(el.type + el.id, el);
+        for (const el of sub.list) seen.set(el.id, el);
         raw += sub.raw;
       } catch (e2) {
         throw new Error(`Overpass tile failed: ${ts},${tw},${tn},${te}`);
@@ -466,7 +441,7 @@ const usedOsm = new Set();
 for (const k of deduped) {
   let best = null, bestScore = 0, bestDist = null, candidates = 0, bestId = false;
   for (const el of osm) {
-    if (usedOsm.has(el.type + el.id)) continue;
+    if (usedOsm.has(el.id)) continue;
     const d = distM(k.lat, k.lng, el.lat, el.lon);
     if (d > 150) continue;
     candidates++;
@@ -486,7 +461,7 @@ for (const k of deduped) {
     const accept = idHit || ns >= 0.5 || (ns >= 0.34 && (d < 60 || postcodeHit));
     if (accept && score > bestScore) { bestScore = score; best = el; bestDist = d; bestId = idHit; }
   }
-  if (best) { k.osm = best; usedOsm.add(best.type + best.id); matched++; if (bestId) idMatched++; }
+  if (best) { k.osm = best; usedOsm.add(best.id); matched++; if (bestId) idMatched++; }
   // Match diagnostics for the per-source debug UI: why this row did or
   // did not merge (candidates = OSM nodes within 150m).
   k.osm_match = best
@@ -511,13 +486,6 @@ function osmAddress(tags) {
 }
 
 const pois = [];
-// Turnover watch (measured: Zinnia→Mimosa→gone): an FSA-merged record whose
-// OSM node disagrees by name AND was touched recently is mid-turnover —
-// display the mapper-fresh name with uncertainty admitted, keep the FSA
-// name for cross-reference. Fresh touch is corroboration only (a rename
-// touch is not proof of open); disagreement with a stale touch keeps the
-// FSA name and lets the stale-occupant flags own the premises.
-const SIX_MO_MS = 182 * 864e5;
 for (const k of deduped) {
   const [cat, label] = fsaCategory(k.type);
   const tags = k.osm?.tags || {};
@@ -527,21 +495,12 @@ for (const k of deduped) {
   const category_label = (cat === 'restaurant' && osmCat && ['pub', 'cafe'].includes(osmCat)) ? osmLabel : label;
   const contact = osmContact(tags);
   const address = k.address_lines.join(', ') + (k.postcode ? `, ${k.postcode}` : '');
-  const osmTouched = k.osm?.timestamp || null;
-  const osmName = (tags.name || '').trim();
-  const disagree = k.osm && osmName && nameScore(k.name, osmName) < 0.5;
-  const freshTouch = !!(osmTouched && (Date.now() - Date.parse(osmTouched)) < SIX_MO_MS);
-  const turnover = disagree && freshTouch;
   pois.push({
     id: `fsa-${k.fsa_id}`,
     fsa_id: k.fsa_id,
-    osm_type: k.osm ? k.osm.type : null,
+    osm_type: k.osm ? 'node' : null,
     osm_id: k.osm ? k.osm.id : null,
-    osm_touched: osmTouched,
-    osm_version: k.osm?.version ?? null,
-    osm_fhrs_id: k.osm?.tags?.['fhrs:id'] != null ? String(k.osm.tags['fhrs:id']) : null,
-    name: turnover ? osmName : k.name,
-    ...(turnover ? { fsa_name: k.name, turnover_watch: true } : {}),
+    name: k.name,
     category, category_label,
     lat: k.osm ? k.osm.lat : k.lat,   // OSM position is survey-accurate; FSA geocode otherwise
     lng: k.osm ? k.osm.lon : k.lng,
@@ -570,20 +529,13 @@ for (const k of deduped) {
 }
 // Unmatched OSM nodes (non-food + anything FSA missed) — real tags only
 for (const el of osm) {
-  if (usedOsm.has(el.type + el.id)) continue;
+  if (usedOsm.has(el.id)) continue;
   const t = el.tags;
   const [category, osmLabel] = mapOsmCategory(t);
   pois.push({
-    id: `osm-${el.type}-${el.id}`,
+    id: `osm-node-${el.id}`,
     fsa_id: null,
-    osm_type: el.type, osm_id: el.id,
-    osm_touched: el.timestamp || null,
-    osm_version: el.version ?? null,
-    // Mapper-attested FSA identity (e.g. source:addr=FHRS Open Data).
-    // Base matching still applies its distance sanity live; the resweep
-    // third pass trusts it together with exact-name agreement (measured:
-    // Beach Hut way carries fhrs:id 551634 at 1.7km from the FSA pin).
-    osm_fhrs_id: t['fhrs:id'] != null ? String(t['fhrs:id']) : null,
+    osm_type: 'node', osm_id: el.id,
     name: t.name,
     category, category_label: t.cuisine ? `${osmLabel} · ${t.cuisine.split(';')[0]}` : osmLabel,
     lat: el.lat, lng: el.lon, geo_precision: 'osm',

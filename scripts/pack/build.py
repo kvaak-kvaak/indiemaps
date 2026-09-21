@@ -15,23 +15,8 @@ Stages per pack (each cached; logs to packs/<id>/build.log):
   atp      = AllThePlaces chain hours            -> merges into pois.json
   sites    = first-party site spider (opt-in)    -> site.json (+ merge if --sites)
   merge    = site-hours merge (runs when site.json exists)
-  ta       = stale-dump enrichment ("ta" areas only: cuisines compare,
-             gap hours, dietary flags, ratings) + Phase-2 gated creation
-             (fresh-FSA gate only; created records carry cuisines, never
-             hours/ratings)
-  fsa_resweep = late FSA second pass (England only): new FHRSIDs since the
-             base extract + retried unlocatable rows + a premises-exact,
-             name-agreeing, distance-blind second matching pass over base
-             merge-misses. Must run before CH so FSA verdicts are final.
-  fsq      = Foursquare OS direct layer (match + guarded creation;
-             needs HF_TOKEN repo secret, skips green without)
-  nhs_late = second NHS merge (idempotent): catches pharmacies for
-             resweep-added records before CH decides.
-  ch       = Companies House tripwire, LAST: creation gate checks against
-             the fullest corroboration set (registered-office weakness).
-  overture_late = second Overture backfill (idempotent, re-run safe) with
-             gated creation (--create): contact for ch/resweep/fsq/ta-added
-             records. Skipped when no stage added anything (meta-gated).
+  ta       = stale-dump enrichment, match-only ("ta" areas only:
+             cuisines compare, gap hours, dietary flags, ratings)
 
 Areas: areas.json (id -> name, bbox [w,s,e,n], fsa FHRS id or null).
 Release layout (see docs/packs.md): packs/<id>/pois.json + manifest.json.
@@ -82,8 +67,7 @@ def build(area_id, args):
     packdir.mkdir(parents=True, exist_ok=True)
     bbox = ','.join(map(str, a['bbox']))
     pois, meta = str(packdir / 'pois.json'), str(packdir / 'meta.json')
-    stages = ['base', 'servicemap', 'overture', 'nhs', 'atp', 'sites', 'merge',
-              'fsa_resweep', 'fsq', 'ta', 'nhs_late', 'ch', 'overture_late']
+    stages = ['base', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta']
     if args.only:
         stages = [args.only]
     elif args.from_stage:
@@ -100,6 +84,10 @@ def build(area_id, args):
              '--pois', pois, '--meta', meta,
              '--municipality', a['servicemap_muni']], packdir)
         mark_stage(packdir, meta, 'servicemap')
+    if 'ch' in stages:
+        run(['python3', 'scripts/pack/companies.py', f'--bbox={bbox}',
+             '--pois', pois, '--meta', meta], packdir)
+        mark_stage(packdir, meta, 'ch')
     if 'overture' in stages:
         # NOTE: bbox passed as --bbox=<v> (equals form): argparse treats a
         # space-separated negative longitude as a flag and aborts. Custom
@@ -142,58 +130,10 @@ def build(area_id, args):
         run(['node', 'scripts/merge-site.js', '--in', str(packdir / 'site.json'),
              '--pois', pois, '--meta', meta], packdir)
         mark_stage(packdir, meta, 'merge')
-    if 'fsa_resweep' in stages:
-        run(['python3', 'scripts/pack/fsa_resweep.py', f'--bbox={bbox}',
-             '--pois', pois, '--meta', meta,
-             '--fsa', str(a['fsa']) if a.get('fsa') else 'none'], packdir)
-        mark_stage(packdir, meta, 'fsa_resweep')
-    if 'fsq' in stages:
-        # FSQ-OS direct layer (match + guarded creation). Needs HF_TOKEN
-        # (repo secret, user-supplied); skips green without it.
-        run(['python3', 'scripts/pack/fsq.py', f'--bbox={bbox}',
-             '--pois', pois, '--meta', meta], packdir)
-        mark_stage(packdir, meta, 'fsq')
     if 'ta' in stages and a.get('ta'):
-        # AFTER fsq (not base-adjacent): the creation branch needs
-        # meta.fsa_resweep.unlocatable, which only exists post-resweep.
-        # Match-only enrichment of resweep/fsq-added POIs is harmless
-        # (fresh rows aren't in the 2021 dump).
         run(['python3', 'scripts/pack/ta.py', f'--bbox={bbox}',
              '--pois', pois, '--meta', meta], packdir)
         mark_stage(packdir, meta, 'ta')
-    if 'nhs_late' in stages and a.get('fsa'):
-        # Second NHS merge (idempotent): pharmacies for resweep-added
-        # records, before CH decides. England only, like nhs.
-        run(['python3', 'scripts/pack/nhs.py', f'--bbox={bbox}',
-             '--pois', pois, '--meta', meta], packdir)
-        mark_stage(packdir, meta, 'nhs_late')
-    if 'ch' in stages:
-        # LAST creation gate: FSA verdicts are final by now (base +
-        # resweep), so FSA-absent means genuinely new, not merely missed.
-        run(['python3', 'scripts/pack/companies.py', f'--bbox={bbox}',
-             '--pois', pois, '--meta', meta], packdir)
-        mark_stage(packdir, meta, 'ch')
-    if 'overture_late' in stages:
-        # Explicit final backfill (was accidental when CH ran 3rd):
-        # contact for ch-created + resweep/fsq/ta-created records, plus
-        # Overture's own gated creation (--create: fresh-FSA gate, same as
-        # the early run never had). Overture is re-run safe (clears its own
-        # backfill first); skip the S3 pull entirely when no stage added
-        # anything since the early run.
-        m_pre = json.load(open(meta))
-        new_counts = [
-            (m_pre.get('ch') or {}).get('created', 0),
-            (m_pre.get('fsa_resweep') or {}).get('created', 0),
-            (m_pre.get('fsa_resweep') or {}).get('merged_osm', 0),
-            (m_pre.get('fsq') or {}).get('created', 0),
-            (m_pre.get('ta') or {}).get('created', 0),
-        ]
-        if any(new_counts):
-            run(['python3', 'scripts/pack/overture.py', f'--bbox={bbox}',
-                 '--pois', pois, '--meta', meta, '--create'], packdir)
-        else:
-            log(packdir, 'overture_late: skipped (no stage added records)')
-        mark_stage(packdir, meta, 'overture_late')
 
     m = json.load(open(meta))
     pois_data = json.load(open(pois))
@@ -211,10 +151,6 @@ def build(area_id, args):
         'osm_only': sum(1 for p in pois_data if p.get('sources') == ['osm']),
         'nhs_added': sum(1 for p in pois_data if p.get('sources') == ['nhs']),
         'ch_added': sum(1 for p in pois_data if p.get('sources') == ['ch']),
-        'fsa_resweep_added': sum(1 for p in pois_data if p.get('fsa_resweep')),
-        'ta_added': sum(1 for p in pois_data if p.get('sources') == ['ta']),
-        'ov_added': sum(1 for p in pois_data if p.get('sources') == ['overture']),
-        'fsq_added': sum(1 for p in pois_data if p.get('sources') == ['fsq']),
         'with_hours': hours,
         # base-written diagnostics survive the recount:
         'osm_nodes_pulled': prev.get('osm_nodes_pulled'),
@@ -225,11 +161,6 @@ def build(area_id, args):
     }
     stale = flag_stale_occupants(pois_data, packdir)
     m['counts']['stale_flagged'] = stale
-    unverified = flag_unverified(pois_data)
-    m['counts']['unverified'] = unverified
-    stacked = flag_position_stacks(pois_data, packdir)
-    m['counts']['position_stacked'] = stacked
-    m['weights'] = area_weights(area_id, pois_data)
     json.dump(pois_data, open(pois, 'w'), indent=1)
     json.dump(m, open(meta, 'w'), indent=1)
     log(packdir, f'DONE: {n} POIs, {hours} with hours')
@@ -342,116 +273,6 @@ def flag_stale_occupants(pois_data, packdir):
     return n
 
 
-def area_weights(area_id, pois_data):
-    """Weighting v1 (lean): per-pack honesty flag + auto OSM-hours signal.
-
-    The OSM hours-tagging rate (fraction of OSM-sourced records carrying
-    opening_hours_osm) is computable everywhere with no ground truth, and
-    measures hours-trust ONLY — never existence/recall. Country preferences
-    come from data/source-weights.yaml (hand table, n=2 measured); missing
-    PyYAML or missing country degrades to defaults + verified:false, loudly.
-    Weights settle enrichment ties only, never creation (see YAML invariant).
-    """
-    osm_sourced = [p for p in pois_data if 'osm' in p.get('sources', [])]
-    rate = (sum(1 for p in osm_sourced if p.get('opening_hours_osm'))
-            / len(osm_sourced)) if osm_sourced else 0.0
-    seg = (area_id.split('/') + ['', ''])[1]
-    country = {'gb': 'GB', 'fi': 'FI'}.get(seg.lower(), seg.upper() or '??')
-    table, version, entry = {}, 0, None
-    try:
-        import yaml
-        table = yaml.safe_load(open(ROOT / 'data' / 'source-weights.yaml')) or {}
-        version = table.get('version', 0)
-        entry = (table.get('countries') or {}).get(country)
-    except Exception as e:
-        print(f'weights: YAML unreadable ({str(e)[:60]}), defaults + verified:false')
-    out = {'table_version': version, 'country': country,
-           'verified': bool(entry and entry.get('verified')),
-           # YAML dates deserialize to date objects — stringify so meta.json
-           # stays plain-JSON serializable.
-           'spot_checks': json.loads(json.dumps((entry or {}).get('spot_checks', []),
-                                                default=str)),
-           'osm_hours_rate': round(rate, 3),
-           'hours_order': ((entry or {}).get('hours')
-                           or (table.get('defaults') or {}).get('hours', []))}
-    print(f"weights: {country} verified={out['verified']} osm_hours_rate={out['osm_hours_rate']}")
-    return out
-
-
-def flag_unverified(pois_data):
-    """FSA-unverifiable food records (England doctrine): a pure-OSM food POI
-    with no FSA/CH/Servicemap corroboration is presumed dead — OSM never
-    deletes, and every specimen audit says uncorroborated means closed.
-    Flagged, hidden from the map, never deleted. Exemptions: any verifier
-    in sources, or an OSM touch fresher than 91 days. Decade-junk grade:
-    touch older than 730 days (or none assessable) plus zero contact, hours
-    or postcode -> 'stale'. Contact/hours alone do NOT exempt."""
-    now = datetime.now(timezone.utc)
-    n = 0
-    for p in pois_data:
-        p.pop('unverified', None)
-        if p.get('category') not in ('restaurant', 'cafe', 'pub'):
-            continue
-        src = p.get('sources', []) or []
-        if 'osm' not in src:
-            continue
-        if any(s in src for s in ('fsa', 'ch', 'servicemap')):
-            continue
-        touched = None
-        try:
-            if p.get('osm_touched'):
-                touched = datetime.fromisoformat(
-                    p['osm_touched'].replace('Z', '+00:00'))
-        except (ValueError, TypeError):
-            touched = None
-        if touched is not None and (now - touched).days < 91:
-            continue
-        n += 1
-        old = touched is not None and (now - touched).days >= 730
-        bare = not (p.get('phone') or p.get('website')
-                    or p.get('opening_hours_osm') or p.get('postcode'))
-        p['unverified'] = 'stale' if (old and bare) else True
-    return n
-
-
-def flag_position_stacks(pois_data, packdir):
-    """Exact-coordinate stacks (measured: 11 Adventure Island kiosks on one
-    FSA batch-geocoded pin): >=5 POIs sharing rounded-5dp coords AND the same
-    geo_precision are a source-data artifact, not a crowd. Flagged with a
-    shared stack id for single-pin UI clustering; pins are never moved (no
-    truth to move them to). Mixed-precision stacks are independent surveys
-    agreeing — left alone."""
-    for p in pois_data:
-        p.pop('position_stacked', None)
-        p.pop('stack_id', None)
-        p.pop('position_approx', None)
-    cells = {}
-    for p in pois_data:
-        if p.get('lat') is None or p.get('lng') is None:
-            continue
-        cells.setdefault((round(p['lat'], 5), round(p['lng'], 5),
-                          p.get('geo_precision')), []).append(p)
-    n = 0
-    for i, (key, members) in enumerate(
-            sorted(cells.items(), key=lambda kv: -len(kv[1]))):
-        if len(members) < 5:
-            break
-        sid = f'stack-{i + 1}'
-        for m in members:
-            # Honest precision (measured: same-postcode FSA rows share one
-            # batch pin, members up to ~1km off): the stored coordinates
-            # stay exactly as sourced, but the pin is only postcode-area
-            # accurate — never premises-accurate. Display badges this;
-            # nothing is moved, nothing invented.
-            m['position_stacked'] = True
-            m['stack_id'] = sid
-            m['position_approx'] = True
-            n += 1
-        log(packdir, f"position stack {sid}: {len(members)}x {key} "
-                      f"({', '.join(x.get('name', '?')[:28] for x in members[:4])}…)")
-    return n
-
-
 def manifest():
     packs = []
     for area_id, a in AREAS.items():
@@ -468,10 +289,9 @@ def manifest():
             'bytes': pois_f.stat().st_size,
             'total': counts.get('total'), 'built_at': m.get('built_at'),
             'complete': all(s in stages_ok for s in ('base', 'overture', 'nhs', 'atp')),
-            'verified': (m.get('weights') or {}).get('verified', False),
             'stages_ok': stages_ok,
             'sources': {k: v for k, v in m.items()
-                        if k in ('fsa_extract_date', 'overture', 'nhs', 'atp', 'site', 'servicemap', 'ta', 'ch', 'fsa_resweep', 'fsq')},
+                        if k in ('fsa_extract_date', 'overture', 'nhs', 'atp', 'site', 'servicemap', 'ta', 'ch')},
         })
     man = {'generated_at': datetime.now(timezone.utc).isoformat(),
            'packs': sorted(packs, key=lambda p: p['id'])}
@@ -484,11 +304,9 @@ def main():
     ap.add_argument('--area')
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--from', dest='from_stage',
-                    choices=['base', 'servicemap', 'overture', 'nhs', 'atp', 'sites',
-                             'merge', 'fsa_resweep', 'fsq', 'ta', 'nhs_late', 'ch', 'overture_late'])
+                    choices=['base', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
     ap.add_argument('--only',
-                    choices=['base', 'servicemap', 'overture', 'nhs', 'atp', 'sites',
-                             'merge', 'fsa_resweep', 'fsq', 'ta', 'nhs_late', 'ch', 'overture_late'])
+                    choices=['base', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
     ap.add_argument('--sites', action='store_true',
                     help='site spider, residual only (POIs with no OSM/ATP hours)')
     ap.add_argument('--sites-all', action='store_true',
