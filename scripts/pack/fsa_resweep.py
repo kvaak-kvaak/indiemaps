@@ -310,6 +310,86 @@ def main():
           f'{merged_osm} merged into osm-only, {second_merges} second-pass merges, '
           f'{len(unlocatable)} unlocatable kept for the Phase-2 gate')
 
+    third = third_pass_exact_name(pois)
+    if third:
+        json.dump(pois, open(a.pois, 'w'), indent=1)
+        meta = json.load(open(a.meta))
+        meta['fsa_resweep']['third_pass_merges'] = third
+        json.dump(meta, open(a.meta, 'w'), indent=1)
+
+
+def third_pass_exact_name(pois):
+    """Distance-blind exact-name merge (measured: Beach Hut FSA pin sits
+    ~1.7km from its surveyed OSM way — no distance gate can ever merge
+    that). An fsa-only POI merges an osm-only record iff ALL hold:
+
+    - normalized names agree EXACTLY (min 6 chars — no fuzzy, no chains
+      by accident),
+    - same postcode, or same housenumber with a shared street word,
+    - area-unique: exactly one FSA row and one OSM record share the name
+      across the whole pack (chains structurally excluded).
+
+    Overture rows never qualify as position donors (not surveyed). Merges
+    adopt the OSM position/precision and log loudly with the distance, so
+    every long jump is reviewable. Returns the merge list."""
+    fsa_only = [p for p in pois if p.get('sources') == ['fsa']
+                and not p.get('fsa_resweep_merged')]
+    orphans = [p for p in pois if p.get('sources') == ['osm']
+               and not p.get('superseded_by')]
+    by_name_f, by_name_o = {}, {}
+    for p in fsa_only:
+        k = norm(p.get('name') or '')
+        if len(k) >= 6:
+            by_name_f.setdefault(k, []).append(p)
+    for p in orphans:
+        k = norm(p.get('name') or '')
+        if len(k) >= 6:
+            by_name_o.setdefault(k, []).append(p)
+    merged = []
+    for k in sorted(set(by_name_f) & set(by_name_o)):
+        fs, os_ = by_name_f[k], by_name_o[k]
+        if len(fs) != 1 or len(os_) != 1:
+            continue  # not area-unique: chains, doublings, human queue
+        f, o = fs[0], os_[0]
+        # Rule 0 — mapper attestation beats geometry: the OSM record
+        # carries this exact FHRSID (sourced from FHRS Open Data by the
+        # mapper) and names agree exactly. No distance or postcode
+        # sanity applies: the mapper already did the hard verification.
+        attested = (str(o.get('osm_fhrs_id') or '') == str(f.get('fsa_id')))
+        fpc, opc = npc(f.get('postcode')), npc(o.get('postcode'))
+        same_pc = bool(fpc and opc and fpc == opc)
+        fhn, ohn = hn(f.get('address')), hn(o.get('address'))
+        fw = {w for w in norm(f.get('address') or '').split() if len(w) >= 5}
+        ow = {w for w in norm(o.get('address') or '').split() if len(w) >= 5}
+        same_street = bool(fhn and ohn and fhn == ohn and (fw & ow))
+        if not (attested or same_pc or same_street):
+            continue
+        d = dist_m(f['lat'], f['lng'], o['lat'], o['lng'])
+        if o.get('phone') and not f.get('phone'):
+            f['phone'] = o['phone']
+        if o.get('website') and not f.get('website'):
+            f['website'] = o['website']
+            f['website_source'] = 'osm'
+        if o.get('opening_hours_osm') and not f.get('opening_hours_osm'):
+            f['opening_hours_osm'] = o['opening_hours_osm']
+        if o.get('cuisine') and not f.get('cuisine'):
+            f['cuisine'] = o['cuisine']
+        for key in ('osm_type', 'osm_id', 'osm_touched', 'osm_version', 'osm_fhrs_id'):
+            if o.get(key) and not f.get(key):
+                f[key] = o[key]
+        if 'osm' not in f.get('sources', []):
+            f['sources'].append('osm')
+        f['lat'], f['lng'] = o['lat'], o['lng']
+        f['geo_precision'] = 'osm'
+        f['fsa_resweep_merged'] = o['id']
+        o['superseded_by'] = {'id': f['id'], 'name': f.get('name'),
+                              'via': 'fsa_resweep third pass'}
+        merged.append({'fsa': f['id'], 'osm': o['id'], 'name': f.get('name'),
+                       'moved_m': round(d)})
+        print(f"third-pass MERGED: {f.get('name')} [{f['id']}] <- {o['id']} "
+              f"(moved {round(d)}m)")
+    return merged
+
 
 if __name__ == '__main__':
     main()

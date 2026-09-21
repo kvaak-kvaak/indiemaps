@@ -424,6 +424,7 @@ def flag_position_stacks(pois_data, packdir):
     for p in pois_data:
         p.pop('position_stacked', None)
         p.pop('stack_id', None)
+        p.pop('position_approx', None)
     cells = {}
     for p in pois_data:
         if p.get('lat') is None or p.get('lng') is None:
@@ -437,8 +438,14 @@ def flag_position_stacks(pois_data, packdir):
             break
         sid = f'stack-{i + 1}'
         for m in members:
+            # Honest precision (measured: same-postcode FSA rows share one
+            # batch pin, members up to ~1km off): the stored coordinates
+            # stay exactly as sourced, but the pin is only postcode-area
+            # accurate — never premises-accurate. Display badges this;
+            # nothing is moved, nothing invented.
             m['position_stacked'] = True
             m['stack_id'] = sid
+            m['position_approx'] = True
             n += 1
         log(packdir, f"position stack {sid}: {len(members)}x {key} "
                       f"({', '.join(x.get('name', '?')[:28] for x in members[:4])}…)")

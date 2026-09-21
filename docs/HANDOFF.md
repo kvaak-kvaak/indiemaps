@@ -36,12 +36,20 @@ Read these three docs first, in order:
   map via /api/pois+combined unless ?include_unverified=1, never deleted;
   fresh OSM touch <91d exempts; >730d bare touch grades `stale`).
   `out meta` Overpass pull persists osm_touched/osm_version. Exact-coord
-  stacks ≥5 (same precision) get position_stacked + stack_id, clustered to
-  one UI pin (Adventure Island 11-stack et al). `nightclub` added to pull
-  + pub category (Fickle Pickle was invisible). FSA/OSM name disagreement
-  + fresh touch → display OSM name + turnover_watch (Zinnia→Mimosa fired
-  exactly once in Southend). FSA batch-geocoded kiosks are source-data
-  faults — flagged, pins never moved.
+  stacks ≥5 (same precision) get position_stacked + stack_id +
+  position_approx (area-placed badge); pins render individually, never
+  moved, nothing invented. `nightclub` added to pull + pub category
+  (Fickle Pickle was invisible). FSA/OSM name disagreement + fresh touch
+  → display OSM name + turnover_watch (Zinnia→Mimosa fired exactly once
+  in Southend). FSA batch-geocoded kiosks are source-data faults.
+- Ways ingestion (base pulls nodes + food/shop/tourism ways via out
+  center; type-qualified identity; +231 net POIs Southend, +92 merges).
+  Resweep third pass: distance-blind exact-name + area-unique + postcode
+  or street agreement merges far-flung pairs adopting surveyed OSM
+  position (Beach Hut moved 1532m); mapper-attested fhrs:id tags stored
+  as osm_fhrs_id and beat geometry (Rule 0). Overture release discovery
+  (bucket listing → newest, pin fallback) after 2026-07-22.0 rotated out
+  from under a green run.
 - Demo promoted (2026-09-21, 2nd): `data/pois.json` + `data/build-meta.json`
   = CI Southend run 35609339956 (1754 POIs: 128 unverified incl. the 6
   dead specimens, 43 stacked, Mimosa turnover_watch, Fickle Pickle
