@@ -35,7 +35,7 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: '20'
-      - run: pip install duckdb
+      - run: pip install duckdb pyyaml
       - name: Fetch Companies House snapshot
         # Monthly bulk product for the companies stage (new-Ltd tripwire).
         # ~469 MB once per run (not per area); gitignored cache dir. Tries

@@ -1,0 +1,38 @@
+# Source weights v1 — enrichment-tie preferences, NOT creation rights.
+#
+# INVARIANT (load-bearing, do not blur): this table settles disagreements
+# between enrichment fields only (which hours/name/contact to prefer when
+# several sources disagree). It NEVER grants creation rights — those stay
+# exclusively with verification-gated logic (FSA/Servicemap base,
+# CH-guardrail, Phase-2 fresh-FSA gate). A weight in an unverified area is
+# a guess dressed up as a number.
+#
+# Evidence: n=2 spot-checks (Southend FSA-box, Hakaniemi 00530 Servicemap
+# box, 2026-09-21). Everything else runs defaults + verified:false until
+# measured. OSM-hours scope note: the auto osm_hours_rate signal (fraction
+# of OSM-sourced pack records carrying opening_hours_osm) measures
+# hours-trust only — a prolific mapper can tag a town without improving
+# existence coverage one bit.
+
+version: 1
+
+defaults:
+  # Current-source order; ta gap-only is enforced in code (ta.py), not here.
+  hours: [site, osm, atp, nhs, servicemap, ta]
+  contact: [overture, fsq, osm]
+  # Pack names are current-verified; dump names are never written (code rule).
+  name: [fsa, servicemap, osm, overture]
+
+countries:
+  GB:
+    verified: true
+    spot_checks:
+      - {area: eu/gb/england/essex/southend-on-sea, box: micro-centre, n_truth: 361, date: 2026-09-21}
+    notes: RP recall .50 (best), OSM precision .62 but hours coverage .08 (thin community)
+    hours: [site, atp, nhs, osm, ta]
+  FI:
+    verified: true
+    spot_checks:
+      - {area: eu/fi/uusimaa/helsinki, box: hakaniemi-00530, n_truth: 188, date: 2026-09-21}
+    notes: OSM recall .69 + hours .73 (strong community); RP names fossilized (currency .26); FSQ-OS direct beats Overture-FSQ everywhere
+    hours: [site, osm, servicemap, atp, ta]

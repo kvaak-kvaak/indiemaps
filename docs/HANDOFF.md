@@ -26,6 +26,11 @@ Read these three docs first, in order:
   dump/overture/fsq (honest downgrade). FSQ-OS needs HF_TOKEN repo
   secret (skips green without); legacy anon S3 bucket is emptied, Portal
   Iceberg shows no pruning (CI-only).
+- Weighting v1 (data/source-weights.yaml + meta.weights + manifest
+  verified flag): hand table, n=2 measured (GB/FI verified, rest
+  defaults + verified:false). Auto OSM-hours rate is hours-trust only,
+  never existence. Invariant: weights settle enrichment ties, never
+  creation.
 - `scripts/pack/overture.py` — Overture contact backfill (needs `pip install duckdb`)
 - `scripts/pack/nhs.py` — NHS pharmacy layer (`--update-cache` quarterly)
 - `scripts/atp.js` — AllThePlaces chain-hours merge (61 UK spiders)
