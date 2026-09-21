@@ -121,6 +121,16 @@ Read these three docs first, in order:
    pois_matched counts distinct POIs (Southend: 108 row-events → 94
    POIs, 14 overwrites where 2 rows hit one POI; 45 created; 139 POIs
    carry ch_number).
+- Position verification (narrowed scope, all measured first): base pulls
+  food/shop/tourism ways via out center (type-qualified identity) +
+  nightclub amenity + osm_touched/version + osm_fhrs_id persist; new
+  verify_positions stage (after base, before ch) merges attested
+  (live FHRSID + exact name, distance-blind) and premises (exact +
+  area-unique + postcode/street) pairs, adopting surveyed OSM positions
+  with logged move distances (Beach Hut 1532 m; 13 merges Southend).
+  Single-source FSA/postcode-precision pins get position_approx
+  (area-placed badge) — shown, never moved, never hidden. No reorder, no
+  creation rights, no weights, no deletion anywhere.
 - Stale-dump enrichment live (ta stage, local-only by decision): 1M-row
   research parquet matched against pack POIs (Southend+Helsinki gated via
   areas `"ta"` flag) — match-only, never creates; alias-aware keys;

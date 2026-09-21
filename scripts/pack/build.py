@@ -67,7 +67,7 @@ def build(area_id, args):
     packdir.mkdir(parents=True, exist_ok=True)
     bbox = ','.join(map(str, a['bbox']))
     pois, meta = str(packdir / 'pois.json'), str(packdir / 'meta.json')
-    stages = ['base', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta']
+    stages = ['base', 'verify_positions', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta']
     if args.only:
         stages = [args.only]
     elif args.from_stage:
@@ -79,6 +79,12 @@ def build(area_id, args):
         cmd += ['--fsa', str(a['fsa']) if a.get('fsa') else 'none']
         run(cmd, packdir)
         mark_stage(packdir, meta, 'base')
+    if 'verify_positions' in stages:
+        # No network: attested + premises merges on pack data only.
+        # Runs before ch so Companies House matching sees true positions.
+        run(['python3', 'scripts/pack/verify_positions.py',
+             '--pois', pois, '--meta', meta], packdir)
+        mark_stage(packdir, meta, 'verify_positions')
     if 'servicemap' in stages and a.get('servicemap_muni'):
         run(['python3', 'scripts/pack/servicemap.py', f'--bbox={bbox}',
              '--pois', pois, '--meta', meta,
@@ -161,6 +167,8 @@ def build(area_id, args):
     }
     stale = flag_stale_occupants(pois_data, packdir)
     m['counts']['stale_flagged'] = stale
+    approx = flag_position_approx(pois_data)
+    m['counts']['position_approx'] = approx
     json.dump(pois_data, open(pois, 'w'), indent=1)
     json.dump(m, open(meta, 'w'), indent=1)
     log(packdir, f'DONE: {n} POIs, {hours} with hours')
@@ -212,6 +220,23 @@ def _same_brand(a, b):
             return True
     ca, cb = na.replace(' ', ''), nb.replace(' ', '')
     return min(len(ca), len(cb)) >= 4 and ca == cb
+
+
+def flag_position_approx(pois_data):
+    """Honest precision for single-source FSA pins (measured: same-postcode
+    rows share one batch geocode, members up to ~1km off). A record whose
+    only position source is FSA is postcode-area accurate, never
+    premises-accurate — flagged for display, never moved, never hidden.
+    Verified/proximity-merged records (OSM position) are untouched.
+    Re-run safe (clears first)."""
+    n = 0
+    for p in pois_data:
+        p.pop('position_approx', None)
+        if p.get('geo_precision') in ('fsa', 'postcode') \
+                and 'osm' not in (p.get('sources', []) or []):
+            p['position_approx'] = True
+            n += 1
+    return n
 
 
 def flag_stale_occupants(pois_data, packdir):
@@ -304,9 +329,9 @@ def main():
     ap.add_argument('--area')
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--from', dest='from_stage',
-                    choices=['base', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
+                    choices=['base', 'verify_positions', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
     ap.add_argument('--only',
-                    choices=['base', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
+                    choices=['base', 'verify_positions', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
     ap.add_argument('--sites', action='store_true',
                     help='site spider, residual only (POIs with no OSM/ATP hours)')
     ap.add_argument('--sites-all', action='store_true',

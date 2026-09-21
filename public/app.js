@@ -79,7 +79,8 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const fmtDate = iso => { try { return new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }); } catch { return iso; } };
 
 function sourceBadges(p) {
-  return (p.sources || [p.source]).map(s =>
+  const extra = (p.position_approx ? '<span class="badge stacked" title="Area-placed: position comes from an uncorroborated batch geocode — placed by postcode area, not surveyed">area-placed</span>' : '');
+  return extra + (p.sources || [p.source]).map(s =>
     s === 'fsa' ? '<span class="badge src-fsa" title="Food Standards Agency open data">FSA</span>'
     : s === 'atp' ? '<span class="badge src-atp" title="Chain-published data via AllThePlaces">chains</span>'
     : s === 'site' ? '<span class="badge src-site" title="Hours stated on the business website">website</span>'
