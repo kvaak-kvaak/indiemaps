@@ -14,8 +14,18 @@ Read these three docs first, in order:
 - `scripts/pack/build.py` — pack orchestrator (`--area ID | --all | --manifest`,
   stages: base → servicemap → overture → nhs → atp → sites → merge →
   ta → fsa_resweep → nhs_late → ch → overture_late; CH runs LAST so its
-  FSA-absent gate sees final FSA verdicts; overture_late backfills contact
+  FSA-absent gate sees final FSA verdicts;   overture_late backfills contact
   for ch/resweep-added records, skipped when they added nothing)
+- Phase-2 guarded creation (overture.match_unlocatable gate, shared by
+  ta/overture --create/fsq stages): a third-party row may seed a POI only
+  via a fresh-FSA resweep-unlocatable record (strict name agreement;
+  postcode when present), id fsa-{FHRSID} + provisional_creation tag
+  (ta_new/ov_new/fsq_new) so the next resweep recognizes it. FSQ-OS
+  date_closed vetoes creation (venue-level truth). TA creations carry
+  cuisines only, never hours/ratings; coords graded geo_precision
+  dump/overture/fsq (honest downgrade). FSQ-OS needs HF_TOKEN repo
+  secret (skips green without); legacy anon S3 bucket is emptied, Portal
+  Iceberg shows no pruning (CI-only).
 - `scripts/pack/overture.py` — Overture contact backfill (needs `pip install duckdb`)
 - `scripts/pack/nhs.py` — NHS pharmacy layer (`--update-cache` quarterly)
 - `scripts/atp.js` — AllThePlaces chain-hours merge (61 UK spiders)

@@ -3,9 +3,14 @@
 
 A 4-5 year old restaurant dump (~1M rows, 139 MB) is matched against pack
 POIs to recover cuisines, hours, dietary flags and ratings for venues that
-predate current sources. MATCH ONLY: rows that match nothing are discarded,
-and no POI is ever created — resurrecting closures from stale data is
-exactly what this stage must not do.
+predate current sources. MATCH-FIRST: rows that match a pack POI enrich it;
+unmatched rows are discarded — UNLESS Phase-2 gated creation applies (a
+fresh-FSA record with no pack POI corroborates the row via
+match_unlocatable). Created records carry provisional_creation:'ta_new',
+FSA-verified names, dump coordinates (geo_precision 'dump', honest
+downgrade), and cuisines only — never hours or ratings (both time-sensitive;
+hours arrive via spider/backfill later). Resurrecting closures from stale
+data stays forbidden: no FSA corroboration, no POI.
 
 Staleness doctrine (the file carries no timestamps; vintage is
 maintainer-declared c.2021):
@@ -28,7 +33,7 @@ import argparse, json, re, sys, time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from overture import toks, accept, nscore, dist_m, grid_index, nearby, norm_pc  # noqa
+from overture import toks, accept, nscore, dist_m, grid_index, nearby, norm_pc, match_unlocatable  # noqa
 
 ROOT = Path(__file__).resolve().parents[2]
 PARQUET = ROOT / 'restaurants.parquet'
@@ -177,7 +182,8 @@ def main():
         p['sources'] = [s for s in p.get('sources', []) if s != 'ta']
 
     grid, cell = grid_index(rows, 'lat', 'lng') if rows else ({}, None)
-    matched = hours_added = diets_added = 0
+    matched = hours_added = diets_added = created = 0
+    used_rows = set()
     cuisine_v = {'agree': 0, 'extend': 0, 'conflict': 0}
     rating_bands = {'5.0': 0, '4.5': 0, '4.0': 0, 'other': 0, 'none': 0}
     for p in pois:
@@ -187,7 +193,7 @@ def main():
         if not names:
             continue
         ppc = norm_pc(p.get('postcode'))
-        best, bs = None, 0
+        best, bs, best_j = None, 0, None
         if rows:
             for j in nearby(grid, cell, p['lat'], p['lng']):
                 o = rows[j]
@@ -201,9 +207,10 @@ def main():
                     if accept(nm, o['name'] or '', ns, d, pc):
                         sc = ns + (0.3 if pc else 0)
                         if sc > bs:
-                            bs, best = sc, o
+                            bs, best, best_j = sc, o, j
         if best is None:
             continue
+        used_rows.add(best_j)
         matched += 1
         pack_cuis = ([p.get('cuisine')] if p.get('cuisine') else []) + (p.get('site_cuisine') or [])
         dc = norm_cuisines(best.get('cuisines'))
@@ -247,11 +254,44 @@ def main():
                          '4.0' if rating == 4.0 else 'other'] += 1
         if 'ta' not in p.get('sources', []):
             p['sources'].append('ta')
+    if rows:
+        # Gated creation (Phase 2): rows that enriched nothing may still
+        # seed a POI — only via a fresh-FSA record with no pack POI.
+        meta_pre = json.load(open(a.meta))
+        unloc = (meta_pre.get('fsa_resweep') or {}).get('unlocatable', [])
+        have_fsa = {p.get('fsa_id') for p in pois if p.get('fsa_id')}
+        for j, o in enumerate(rows):
+            if j in used_rows or o.get('lat') is None or o.get('lng') is None:
+                continue
+            f, sc = match_unlocatable(o.get('name'), norm_pc(dump_postcode(o.get('address'))), unloc)
+            if f is None or f.get('fhrs_id') in have_fsa:
+                continue
+            created += 1
+            have_fsa.add(f['fhrs_id'])
+            dc = norm_cuisines(o.get('cuisines'))
+            pois.append({
+                'id': f"fsa-{f['fhrs_id']}", 'fsa_id': f['fhrs_id'],
+                'osm_type': None, 'osm_id': None, 'name': f['name'],
+                'category': 'restaurant', 'category_label': 'Restaurant / Café',
+                'lat': o['lat'], 'lng': o['lng'], 'geo_precision': 'dump',
+                'address': o.get('address') or '',
+                'postcode': dump_postcode(o.get('address')),
+                'phone': '', 'email': '', 'website': '',
+                'facebook': '', 'instagram': '', 'twitter': '',
+                'opening_hours_osm': '', 'opening_hours': {}, 'cuisine': '',
+                'brand_wikidata': None, 'wikipedia': None, 'wikidata': None,
+                'amenities': [], 'photos': [], 'description': '',
+                'sources': ['ta'], 'provisional_creation': 'ta_new',
+                **({'ta_cuisines': dc, 'ta_cuisine_match': 'extend'} if dc else {}),
+                **({'fsa_rating_date': f['ratingDate']} if f.get('ratingDate') else {}),
+            })
+            print(f"ta-created: {f['name']} [{f['fhrs_id']}] via {o.get('name')} (sc={sc})")
     json.dump(pois, open(a.pois, 'w'), indent=1)
     meta = json.load(open(a.meta))
     meta['ta'] = {'vintage': VINTAGE, 'rows_in_bbox': len(rows), 'matched': matched,
                   'hours_added': hours_added, 'diets_added': diets_added,
-                  'cuisine_verdicts': cuisine_v, 'rating_bands': rating_bands}
+                  'cuisine_verdicts': cuisine_v, 'rating_bands': rating_bands,
+                  'created': created}
     json.dump(meta, open(a.meta, 'w'), indent=1)
     print(f'stale dump: {len(rows)} rows -> {matched} matched, +{hours_added} hours, +{diets_added} diets, cuisines {cuisine_v}, ratings {rating_bands}')
 

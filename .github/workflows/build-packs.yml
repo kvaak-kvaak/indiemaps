@@ -1,7 +1,9 @@
 # Quarterly POI pack build. Single sequential job: all 47 phase-1 areas fit
 # comfortably in the 6h cap (measured: Southend end-to-end ~20s; borough
 # site-stages single-digit minutes). Split into a matrix only if this
-# ever approaches the cap. All sources are keyless: no secrets needed.
+# ever approaches the cap. All sources are keyless except the FSQ-OS layer,
+# which needs the user-supplied HF_TOKEN repo secret (stage skips green
+# without it; nothing else reads the secret).
 name: build-packs
 
 on:
@@ -56,6 +58,8 @@ jobs:
         # NOTE: GitHub runs each step with bash -e, so a bare failing command
         # would abort the remaining areas. Failures are collected to
         # failed.txt instead; the completeness check at the end fails loudly.
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}   # FSQ-OS layer only; empty = stage skips green
         run: |
           rm -f failed.txt
           run_area() {

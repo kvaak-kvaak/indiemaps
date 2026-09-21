@@ -15,19 +15,23 @@ Stages per pack (each cached; logs to packs/<id>/build.log):
   atp      = AllThePlaces chain hours            -> merges into pois.json
   sites    = first-party site spider (opt-in)    -> site.json (+ merge if --sites)
   merge    = site-hours merge (runs when site.json exists)
-  ta       = stale-dump enrichment, match-only ("ta" areas only:
-             cuisines compare, gap hours, dietary flags, ratings)
+  ta       = stale-dump enrichment ("ta" areas only: cuisines compare,
+             gap hours, dietary flags, ratings) + Phase-2 gated creation
+             (fresh-FSA gate only; created records carry cuisines, never
+             hours/ratings)
   fsa_resweep = late FSA second pass (England only): new FHRSIDs since the
              base extract + retried unlocatable rows + a premises-exact,
              name-agreeing, distance-blind second matching pass over base
              merge-misses. Must run before CH so FSA verdicts are final.
+  fsq      = Foursquare OS direct layer (match + guarded creation;
+             needs HF_TOKEN repo secret, skips green without)
   nhs_late = second NHS merge (idempotent): catches pharmacies for
              resweep-added records before CH decides.
   ch       = Companies House tripwire, LAST: creation gate checks against
              the fullest corroboration set (registered-office weakness).
-  overture_late = second Overture backfill (idempotent, re-run safe):
-             contact for ch-created + resweep-added records. Skipped when
-             neither stage added anything (meta-gated, no wasted S3 pull).
+  overture_late = second Overture backfill (idempotent, re-run safe) with
+             gated creation (--create): contact for ch/resweep/fsq/ta-added
+             records. Skipped when no stage added anything (meta-gated).
 
 Areas: areas.json (id -> name, bbox [w,s,e,n], fsa FHRS id or null).
 Release layout (see docs/packs.md): packs/<id>/pois.json + manifest.json.
@@ -79,7 +83,7 @@ def build(area_id, args):
     bbox = ','.join(map(str, a['bbox']))
     pois, meta = str(packdir / 'pois.json'), str(packdir / 'meta.json')
     stages = ['base', 'servicemap', 'overture', 'nhs', 'atp', 'sites', 'merge',
-              'ta', 'fsa_resweep', 'nhs_late', 'ch', 'overture_late']
+              'fsa_resweep', 'fsq', 'ta', 'nhs_late', 'ch', 'overture_late']
     if args.only:
         stages = [args.only]
     elif args.from_stage:
@@ -147,6 +151,12 @@ def build(area_id, args):
              '--pois', pois, '--meta', meta,
              '--fsa', str(a['fsa']) if a.get('fsa') else 'none'], packdir)
         mark_stage(packdir, meta, 'fsa_resweep')
+    if 'fsq' in stages:
+        # FSQ-OS direct layer (match + guarded creation). Needs HF_TOKEN
+        # (repo secret, user-supplied); skips green without it.
+        run(['python3', 'scripts/pack/fsq.py', f'--bbox={bbox}',
+             '--pois', pois, '--meta', meta], packdir)
+        mark_stage(packdir, meta, 'fsq')
     if 'nhs_late' in stages and a.get('fsa'):
         # Second NHS merge (idempotent): pharmacies for resweep-added
         # records, before CH decides. England only, like nhs.
@@ -161,18 +171,24 @@ def build(area_id, args):
         mark_stage(packdir, meta, 'ch')
     if 'overture_late' in stages:
         # Explicit final backfill (was accidental when CH ran 3rd):
-        # contact for ch-created + resweep-added records. Overture is
-        # re-run safe (clears its own backfill first); skip the S3 pull
-        # entirely when neither stage added anything.
+        # contact for ch-created + resweep/fsq/ta-created records, plus
+        # Overture's own gated creation (--create: fresh-FSA gate, same as
+        # the early run never had). Overture is re-run safe (clears its own
+        # backfill first); skip the S3 pull entirely when no stage added
+        # anything since the early run.
         m_pre = json.load(open(meta))
-        ch_new = (m_pre.get('ch') or {}).get('created', 0)
-        rs_new = (m_pre.get('fsa_resweep') or {}).get('created', 0) + \
-            (m_pre.get('fsa_resweep') or {}).get('merged_osm', 0)
-        if ch_new or rs_new:
+        new_counts = [
+            (m_pre.get('ch') or {}).get('created', 0),
+            (m_pre.get('fsa_resweep') or {}).get('created', 0),
+            (m_pre.get('fsa_resweep') or {}).get('merged_osm', 0),
+            (m_pre.get('fsq') or {}).get('created', 0),
+            (m_pre.get('ta') or {}).get('created', 0),
+        ]
+        if any(new_counts):
             run(['python3', 'scripts/pack/overture.py', f'--bbox={bbox}',
-                 '--pois', pois, '--meta', meta], packdir)
+                 '--pois', pois, '--meta', meta, '--create'], packdir)
         else:
-            log(packdir, 'overture_late: skipped (ch + resweep added nothing)')
+            log(packdir, 'overture_late: skipped (no stage added records)')
         mark_stage(packdir, meta, 'overture_late')
 
     m = json.load(open(meta))
@@ -192,6 +208,9 @@ def build(area_id, args):
         'nhs_added': sum(1 for p in pois_data if p.get('sources') == ['nhs']),
         'ch_added': sum(1 for p in pois_data if p.get('sources') == ['ch']),
         'fsa_resweep_added': sum(1 for p in pois_data if p.get('fsa_resweep')),
+        'ta_added': sum(1 for p in pois_data if p.get('sources') == ['ta']),
+        'ov_added': sum(1 for p in pois_data if p.get('sources') == ['overture']),
+        'fsq_added': sum(1 for p in pois_data if p.get('sources') == ['fsq']),
         'with_hours': hours,
         # base-written diagnostics survive the recount:
         'osm_nodes_pulled': prev.get('osm_nodes_pulled'),
@@ -332,7 +351,7 @@ def manifest():
             'complete': all(s in stages_ok for s in ('base', 'overture', 'nhs', 'atp')),
             'stages_ok': stages_ok,
             'sources': {k: v for k, v in m.items()
-                        if k in ('fsa_extract_date', 'overture', 'nhs', 'atp', 'site', 'servicemap', 'ta', 'ch', 'fsa_resweep')},
+                        if k in ('fsa_extract_date', 'overture', 'nhs', 'atp', 'site', 'servicemap', 'ta', 'ch', 'fsa_resweep', 'fsq')},
         })
     man = {'generated_at': datetime.now(timezone.utc).isoformat(),
            'packs': sorted(packs, key=lambda p: p['id'])}
@@ -346,10 +365,10 @@ def main():
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--from', dest='from_stage',
                     choices=['base', 'servicemap', 'overture', 'nhs', 'atp', 'sites',
-                             'merge', 'ta', 'fsa_resweep', 'nhs_late', 'ch', 'overture_late'])
+                             'merge', 'fsa_resweep', 'fsq', 'ta', 'nhs_late', 'ch', 'overture_late'])
     ap.add_argument('--only',
                     choices=['base', 'servicemap', 'overture', 'nhs', 'atp', 'sites',
-                             'merge', 'ta', 'fsa_resweep', 'nhs_late', 'ch', 'overture_late'])
+                             'merge', 'fsa_resweep', 'fsq', 'ta', 'nhs_late', 'ch', 'overture_late'])
     ap.add_argument('--sites', action='store_true',
                     help='site spider, residual only (POIs with no OSM/ATP hours)')
     ap.add_argument('--sites-all', action='store_true',

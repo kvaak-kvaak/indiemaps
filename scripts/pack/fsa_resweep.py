@@ -302,7 +302,8 @@ def main():
         'merged_osm': merged_osm, 'second_pass_merges': second_merges,
         'unlocatable': [{'fhrs_id': r['fsa_id'], 'name': r['name'],
                          'postcode': r['postcode'],
-                         'type': r['type']} for r in unlocatable],
+                         'type': r['type'],
+                         'ratingDate': r['ratingDate']} for r in unlocatable],
     }
     json.dump(meta, open(a.meta, 'w'), indent=1)
     print(f'fsa_resweep: {len(new_ids)} new FHRSIDs -> {created} created, '
