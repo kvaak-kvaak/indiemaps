@@ -258,8 +258,16 @@ def main():
     # Second matching pass: fsa-only x osm-only, premises-exact + name-agree,
     # distance-blind (deliberately different from base). Turnover pairs
     # (same premises, dissimilar name) must NOT merge — flags own them.
-    fsa_only = [p for p in pois if p.get('sources') == ['fsa'] and not p.get('fsa_resweep')]
-    orphans2 = [p for p in pois if p.get('sources') == ['osm'] and id(p) not in used]
+    # Eligibility is corroboration-based, not exact-sources-based: later
+    # enrichment appends (overture/ta/atp) must not disqualify either side.
+    # Measured: the Beach Hut way gained 'overture' from backfill and went
+    # invisible to an exact-equality pass.
+    fsa_only = [p for p in pois if 'fsa' in (p.get('sources') or [])
+                and 'osm' not in (p.get('sources') or [])
+                and not p.get('fsa_resweep_merged')]
+    orphans2 = [p for p in pois if 'osm' in (p.get('sources') or [])
+                and not any(s in (p.get('sources') or []) for s in ('fsa', 'ch', 'servicemap'))
+                and id(p) not in used]
     second_merges = 0
     for f in fsa_only:
         fpc, fhn = npc(f.get('postcode')), hn(f.get('address'))
@@ -332,9 +340,11 @@ def third_pass_exact_name(pois):
     Overture rows never qualify as position donors (not surveyed). Merges
     adopt the OSM position/precision and log loudly with the distance, so
     every long jump is reviewable. Returns the merge list."""
-    fsa_only = [p for p in pois if p.get('sources') == ['fsa']
+    fsa_only = [p for p in pois if 'fsa' in (p.get('sources') or [])
+                and 'osm' not in (p.get('sources') or [])
                 and not p.get('fsa_resweep_merged')]
-    orphans = [p for p in pois if p.get('sources') == ['osm']
+    orphans = [p for p in pois if 'osm' in (p.get('sources') or [])
+               and not any(s in (p.get('sources') or []) for s in ('fsa', 'ch', 'servicemap'))
                and not p.get('superseded_by')]
     by_name_f, by_name_o = {}, {}
     for p in fsa_only:
