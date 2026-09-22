@@ -145,6 +145,11 @@ Read these three docs first, in order:
    position_approx. Verified by audit: zero batch-precision pins render
    unflagged (recount asserts 890/890 Southend). Servicemap precision is
    trusted municipal data, exempt by decision.
+ - Demo promoted (2026-09-21, 3rd): `data/pois.json` + `data/build-meta.json`
+   = CI Southend run 35668293079 (1980 POIs, 0 provisional) → 1954 on-map
+   default (26 hazard-tier hidden, reachable via search + by-id +
+   ?include_hazard=1). Beach Hut at surveyed spot, Essex Seafood live,
+   approx halo markers throughout. Map verified arithmetically.
 - Stale-dump enrichment live (ta stage, local-only by decision): 1M-row
   research parquet matched against pack POIs (Southend+Helsinki gated via
   areas `"ta"` flag) — match-only, never creates; alias-aware keys;
