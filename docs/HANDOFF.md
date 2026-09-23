@@ -128,15 +128,12 @@ Read these three docs first, in order:
   (live FHRSID + exact name, distance-blind) and premises (exact +
   area-unique + postcode/street) pairs, adopting surveyed OSM positions
   with logged move distances (Beach Hut 1532 m; 13 merges Southend).
-  Single-source FSA/postcode-precision pins get position_approx
-  (area-placed badge + halo marker) — shown, never moved, never hidden.
-  Hazard roads (coastal interpolation failure): hazard_roads stage flags
-  no-survey food POIs within 100 m of coastline on sparse streets
-  (middle path: out of default map/list, kept in search + by-id as
-  needs-manual-placement); regression group = measured seafront
-  specimens. Regression gate in build(): batch pins must carry approx,
-  no provisional creations, verified merges must match meta audit,
-  hazard records must name road class — fails the area loudly.
+- Address-resolution gate (branch exp/address-resolution): addr_index
+  stage pulls OSM address points; resolve_positions places batch pins by
+  exact housenumber+street (or named unit) equality — lookup, never
+  estimation; unresolvable pins flagged position_unresolved (hidden from
+  default map, searchable). Hazard/approx/suppression scaffolding purged;
+  gate asserts rendered == resolved-or-flagged. No creation, no deletion.
  - POSITION INVARIANT (load-bearing): FSA is existence authority only
    (names, ratings, inspections, delistings) — never position authority.
    Position sourcing order: OSM survey > (interpolation: BARRED pending

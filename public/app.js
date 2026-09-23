@@ -79,8 +79,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const fmtDate = iso => { try { return new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }); } catch { return iso; } };
 
 function sourceBadges(p) {
-  const extra = (p.position_approx ? '<span class="badge stacked" title="Area-placed: position comes from an uncorroborated batch geocode — placed by postcode area, not surveyed">area-placed</span>' : '')
-    + (p.position_hazard ? '<span class="badge stacked" title="Needs manual placement: on a road class where geocoders fail and no surveyed position exists">needs-manual-placement</span>' : '');
+  const extra = (p.position_unresolved ? '<span class="badge stacked" title="Unplaced: address resolves to no surveyed position — hidden from the map, findable here by search">unplaced</span>' : '');
   return extra + (p.sources || [p.source]).map(s =>
     s === 'fsa' ? '<span class="badge src-fsa" title="Food Standards Agency open data">FSA</span>'
     : s === 'atp' ? '<span class="badge src-atp" title="Chain-published data via AllThePlaces">chains</span>'
@@ -117,9 +116,9 @@ function bboxStr() { const b = map.getBounds(); return `${b.getSouth().toFixed(4
 async function loadPois() {
   statsText.textContent = 'Loading…';
   try {
-    // Audit mode needs the hazard-hidden kiosks too — same endpoints,
+    // Audit mode needs the unplaced kiosks too — same endpoints,
     // just with the include flag (server change already supports it).
-    const hz = state.auditFsaOnly ? 'include_hazard=1' : '';
+    const hz = state.auditFsaOnly ? 'include_unresolved=1' : '';
     const withHz = url => url + (hz ? (url.includes('?') ? '&' : '?') + hz : '');
     const [metaR, poisR] = await Promise.all([
       fetch('/api/meta' + (packQ() ? '?' + packQ() : '')).then(r => r.json()).catch(() => ({})),
@@ -161,10 +160,7 @@ function renderAll() {
   const list = filtered();
   for (const p of list) {
     const el = document.createElement('div');
-    // Confidence-gated display: batch-placed pins (position_approx) render
-    // with an uncertainty halo instead of full-authority markers. Same
-    // class will cover the hazard tier (step 3) wherever reachable.
-    el.className = `pin cat-${p.category}${p.sources?.length === 1 && p.sources[0] === 'osm' ? ' osm' : ''}${p.position_approx ? ' approx' : ''}${p.id === state.selectedId ? ' selected' : ''}`;
+    el.className = `pin cat-${p.category}${p.sources?.length === 1 && p.sources[0] === 'osm' ? ' osm' : ''}${p.id === state.selectedId ? ' selected' : ''}`;
     el.innerHTML = `<span>${CAT_ICON[p.category] || '📍'}</span>`;
     const m = L.marker([p.lat, p.lng], { icon: L.divIcon({ className: '', html: el.outerHTML, iconSize: [30, 30], iconAnchor: [15, 28] }), title: p.name });
     m.on('click', () => selectPoi(p.id, { pan: false }));
@@ -524,8 +520,8 @@ async function initPacks() {
   // A/B labels: built date + distinguishing stages so competing vintages
   // tell themselves apart (all fields already in the payload — display
   // only). New-pipeline markers shown when present, absent when not.
-  const mark = p => ['verify_positions', 'hazard_roads'].filter(s => (p.stages_ok || []).includes(s))
-    .map(s => s === 'verify_positions' ? '+verify' : '+hazard').join(' ');
+  const mark = p => ['verify_positions', 'resolve_positions'].filter(s => (p.stages_ok || []).includes(s))
+    .map(s => s === 'verify_positions' ? '+verify' : '+resolve').join(' ');
   const when = p => { try { return fmtDate((p.built_at || '').slice(0, 10)); } catch { return '?'; } };
   sel.innerHTML = state.packs.map(p =>
     `<option value="${esc(p.id)}">${esc(p.name)}${p.total != null ? ` (${p.total})` : ''} · ${when(p)}${mark(p) ? ' ' + mark(p) : ''}</option>`).join('')
