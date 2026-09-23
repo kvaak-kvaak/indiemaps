@@ -181,6 +181,18 @@ def build(area_id, args):
     }
     stale = flag_stale_occupants(pois_data, packdir)
     m['counts']['stale_flagged'] = stale
+    # Placement gate lives here (not only in resolve_positions) because
+    # later stages create postcode-placed records too (ch/nhs creations
+    # run after resolve): anything still batch-positioned without OSM
+    # corroboration and without a resolution is flagged unresolved.
+    # Resolved records (osm-addr precision) are untouched.
+    for p in pois_data:
+        if p.get('geo_precision') in ('fsa', 'postcode') \
+                and 'osm' not in (p.get('sources', []) or []) \
+                and not p.get('position_resolved'):
+            p['position_unresolved'] = True
+        else:
+            p.pop('position_unresolved', None)
     m['counts']['position_unresolved'] = sum(
         1 for p in pois_data if p.get('position_unresolved'))
     m['counts']['position_resolved'] = sum(
