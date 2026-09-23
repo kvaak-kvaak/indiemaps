@@ -3,7 +3,7 @@
  * business websites / visitor contributions). Anything unverified renders
  * as "unknown" — never invented. */
 const SOUTHEND = [51.5414, 0.7120];
-const state = { pois: [], meta: {}, curatedCount: 0, liveCount: 0, cat: 'all', mode: 'curated', openOnly: false, q: '', selectedId: null, markers: new Map(), pack: '', packs: [] };
+const state = { pois: [], meta: {}, curatedCount: 0, liveCount: 0, cat: 'all', mode: 'curated', openOnly: false, q: '', selectedId: null, markers: new Map(), pack: '', packs: [], auditFsaOnly: false };
 const packQ = () => state.pack ? `pack=${encodeURIComponent(state.pack)}` : '';
 const packName = () => (state.packs.find(p => p.id === state.pack) || {}).name || 'Listings';
 
@@ -117,11 +117,15 @@ function bboxStr() { const b = map.getBounds(); return `${b.getSouth().toFixed(4
 async function loadPois() {
   statsText.textContent = 'Loading…';
   try {
+    // Audit mode needs the hazard-hidden kiosks too — same endpoints,
+    // just with the include flag (server change already supports it).
+    const hz = state.auditFsaOnly ? 'include_hazard=1' : '';
+    const withHz = url => url + (hz ? (url.includes('?') ? '&' : '?') + hz : '');
     const [metaR, poisR] = await Promise.all([
       fetch('/api/meta' + (packQ() ? '?' + packQ() : '')).then(r => r.json()).catch(() => ({})),
       state.mode === 'curated'
-        ? fetch('/api/pois' + (packQ() ? '?' + packQ() : '')).then(r => r.json())
-        : fetch('/api/combined?bbox=' + encodeURIComponent(bboxStr()) + (packQ() ? '&' + packQ() : '')).then(r => r.json()),
+        ? fetch(withHz('/api/pois' + (packQ() ? '?' + packQ() : ''))).then(r => r.json())
+        : fetch(withHz('/api/combined?bbox=' + encodeURIComponent(bboxStr()) + (packQ() ? '&' + packQ() : ''))).then(r => r.json()),
     ]);
     state.meta = metaR;
     state.pois = poisR.pois || [];
@@ -138,6 +142,9 @@ map.on('moveend', () => { clearTimeout(moveT); moveT = setTimeout(() => { if (st
 
 function filtered() {
   return state.pois.filter(p => {
+    // FSA-only audit view: exactly the register-positioned population —
+    // FSA in sources, no OSM corroboration — nothing else.
+    if (state.auditFsaOnly && (!(p.sources || []).includes('fsa') || (p.sources || []).includes('osm'))) return false;
     if (state.cat !== 'all' && p.category !== state.cat) return false;
     if (state.q && !(p.name + ' ' + (p.category_label || '') + ' ' + (p.address || '')).toLowerCase().includes(state.q)) return false;
     if (state.openOnly && openStatus(p).state !== 'open') return false;
@@ -166,7 +173,7 @@ function renderAll() {
   const fsaDate = state.meta.fsa_extract_date ? ` · FSA extract ${state.meta.fsa_extract_date}` : '';
   const built = state.meta.built_at ? ` · verified ${fmtDate(state.meta.built_at.slice(0, 10))}` : '';
   statsText.textContent = state.mode === 'curated'
-    ? `${list.length} listings · ${packName()}${fsaDate}${built}`
+    ? `${state.auditFsaOnly ? 'AUDIT — register-positioned pins only (postcode-grade, not surveyed) · ' : ''}${list.length} listings · ${packName()}${fsaDate}${built}`
     : `${list.length} shown (${state.curatedCount} listed + ${state.liveCount} live OSM) · ${packName()}`;
   resultsEl.innerHTML = list.slice(0, 200).map(p => {
     const o = openStatus(p);
@@ -497,6 +504,7 @@ document.querySelectorAll('#chips .chip').forEach(c => c.addEventListener('click
 $('#mode-curated').addEventListener('click', () => { state.mode = 'curated'; $('#mode-curated').classList.add('active'); $('#mode-all').classList.remove('active'); loadPois(); });
 $('#mode-all').addEventListener('click', () => { state.mode = 'all'; $('#mode-all').classList.add('active'); $('#mode-curated').classList.remove('active'); toast('Live OSM added — unlisted extras may lack addresses/hours'); loadPois(); });
 $('#open-now-only').addEventListener('change', e => { state.openOnly = e.target.checked; renderAll(); });
+$('#audit-fsa-only').addEventListener('change', e => { state.auditFsaOnly = e.target.checked; loadPois(); });
 $('#recenter').addEventListener('click', () => map.flyTo(SOUTHEND, 13, { duration: 0.8 }));
 $('#detail-close').addEventListener('click', () => { $('#detail').classList.add('hidden'); state.selectedId = null; history.replaceState(null, '', location.pathname); renderAll(); });
 $('#cfg-link').addEventListener('click', async () => {
@@ -513,8 +521,14 @@ async function initPacks() {
     state.packs = (await r.json()).packs || [];
   } catch { state.packs = []; }
   const sel = $('#pack-sel');
+  // A/B labels: built date + distinguishing stages so competing vintages
+  // tell themselves apart (all fields already in the payload — display
+  // only). New-pipeline markers shown when present, absent when not.
+  const mark = p => ['verify_positions', 'hazard_roads'].filter(s => (p.stages_ok || []).includes(s))
+    .map(s => s === 'verify_positions' ? '+verify' : '+hazard').join(' ');
+  const when = p => { try { return fmtDate((p.built_at || '').slice(0, 10)); } catch { return '?'; } };
   sel.innerHTML = state.packs.map(p =>
-    `<option value="${esc(p.id)}">${esc(p.name)}${p.total != null ? ` (${p.total})` : ''}</option>`).join('')
+    `<option value="${esc(p.id)}">${esc(p.name)}${p.total != null ? ` (${p.total})` : ''} · ${when(p)}${mark(p) ? ' ' + mark(p) : ''}</option>`).join('')
     || `<option value="">Southend-on-Sea</option>`;
   sel.addEventListener('change', () => {
     state.pack = sel.value;

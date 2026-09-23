@@ -21,7 +21,8 @@ const BASE_META = (() => { try { return JSON.parse(fs.readFileSync(path.join(__d
 // artifacts). Entries carry bbox for map fly-to.
 app.get('/api/packs', (req, res) => {
   const out = [{ id: '', name: 'Southend-on-Sea (demo data)', total: POIS.length,
-    built_at: BASE_META.built_at || null, bbox: BASE_META.bbox || null }];
+    built_at: BASE_META.built_at || null, bbox: BASE_META.bbox || null,
+    stages_ok: BASE_META.stages_ok || [] }];
   let areas = {};
   try { areas = JSON.parse(fs.readFileSync(path.join(__dirname, 'scripts', 'pack', 'areas.json'), 'utf8')); } catch {}
   const walk = dir => {
