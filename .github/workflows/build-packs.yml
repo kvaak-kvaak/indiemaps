@@ -56,10 +56,17 @@ jobs:
         # NOTE: GitHub runs each step with bash -e, so a bare failing command
         # would abort the remaining areas. Failures are collected to
         # failed.txt instead; the completeness check at the end fails loudly.
+        env:
+          AREAS_INPUT: ${{ inputs.areas }}
         run: |
           rm -f failed.txt
+          # Previous release manifest feeds the position regression gate
+          # (hidden-share comparison); absent on first adoption by design.
+          TAG="pois-$(date +%Y)-Q$(( ( $(date +%-m) - 1 ) / 3 + 1 ))"
+          curl -sL -o /tmp/base-manifest.json "https://github.com/${{ github.repository }}/releases/download/$TAG/manifest.json" || true
+          PREV=""; [ -s /tmp/base-manifest.json ] && PREV="--prev-manifest /tmp/base-manifest.json"
           run_area() {
-            python3 scripts/pack/build.py --area "$1" $2 || echo "$1" >> failed.txt
+            python3 scripts/pack/build.py --area "$1" $PREV $2 || echo "$1" >> failed.txt
           }
           # Phase 1b scope (agreed): full spider incl. OSM/ATP-covered POIs
           # (--sites-all) for conflict/specificity signals, not residual-only.
@@ -68,7 +75,7 @@ jobs:
               run_area "$a" "${{ inputs.spider && '--sites-all' || '' }}"
             done
           else
-            python3 scripts/pack/build.py --all ${{ inputs.spider && '--sites-all' || '' }}
+            python3 scripts/pack/build.py --all $PREV ${{ inputs.spider && '--sites-all' || '' }}
           fi
           if [ -s failed.txt ]; then echo "FAILED AREAS:"; cat failed.txt; fi
           true

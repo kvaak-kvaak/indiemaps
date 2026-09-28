@@ -195,9 +195,20 @@ def build(area_id, args):
             p.pop('position_unresolved', None)
     m['counts']['position_unresolved'] = sum(
         1 for p in pois_data if p.get('position_unresolved'))
+    # Orphan freshness rule (user decision): OSM-sourced records with no
+    # FSA/CH/Servicemap corroboration stay visible iff touched within 6
+    # months; older or untimestamped hide (fail closed — unassessable
+    # freshness is not freshness). Same middle-path flag, distinct reason
+    # so audits separate stale orphans from unresolvable batch pins.
+    # Runs AFTER the placement loop so nothing re-pops these flags.
+    now = datetime.now(timezone.utc)
+    m['counts']['orphan_hidden'] = flag_stale_orphans(pois_data, now)
+    m['counts']['position_marked'] = flag_position_marked(pois_data)
     m['counts']['position_resolved'] = sum(
         1 for p in pois_data if p.get('position_resolved'))
+    m['verdict_shares'] = verdict_shares(pois_data, n)
     assert_position_invariants(pois_data, m, packdir)
+    compare_previous_manifest(area_id, m, args, packdir)
     json.dump(pois_data, open(pois, 'w'), indent=1)
     json.dump(m, open(meta, 'w'), indent=1)
     log(packdir, f'DONE: {n} POIs, {hours} with hours')
@@ -249,6 +260,126 @@ def _same_brand(a, b):
             return True
     ca, cb = na.replace(' ', ''), nb.replace(' ', '')
     return min(len(ca), len(cb)) >= 4 and ca == cb
+
+
+def flag_stale_orphans(pois_data, now):
+    """User-decided orphan rule: an OSM-sourced record with no FSA/CH/
+    Servicemap corroboration renders iff its OSM object was touched within
+    182 days; older or untimestamped records hide (fail closed). Same
+    middle-path flag as batch misses, reason 'stale-orphan' so audits
+    separate the two populations. Re-run safe (clears first)."""
+    n = 0
+    for p in pois_data:
+        if p.pop('unresolved_why', None) == 'stale-orphan':
+            pass
+        s = p.get('sources', []) or []
+        if 'osm' not in s or any(x in s for x in ('fsa', 'ch', 'servicemap')):
+            continue
+        fresh = False
+        try:
+            if p.get('osm_touched'):
+                touched = datetime.fromisoformat(
+                    p['osm_touched'].replace('Z', '+00:00'))
+                fresh = (now - touched).days < 182
+        except (ValueError, TypeError):
+            fresh = False
+        if fresh:
+            continue
+        n += 1
+        p['position_unresolved'] = True
+        p['unresolved_why'] = 'stale-orphan'
+    return n
+
+
+def flag_position_marked(pois_data):
+    """Marked tier (user decision): rendered but visibly qualified. Covers
+    lookup-resolved pins (single string match, never human-attested) and
+    proximity/fuzzy-merged FSA records (name+distance, score below the
+    fhrs:id-exact band at 2.0). Attested merges, fhrs:id-exact merges,
+    pure survey records and Servicemap-corroborated records stay
+    unmarked (full authority). Re-run safe (clears first)."""
+    n = 0
+    for p in pois_data:
+        p.pop('position_marked', None)
+        if p.get('position_unresolved'):
+            continue
+        s = p.get('sources', []) or []
+        if p.get('position_resolved'):
+            p['position_marked'] = True
+            n += 1
+        elif 'fsa' in s and 'osm' in s and not p.get('verified_position') \
+                and 'servicemap' not in s:
+            try:
+                score = float((p.get('osm_match') or {}).get('score') or 0)
+            except (TypeError, ValueError):
+                score = 0
+            if score < 2.0:
+                p['position_marked'] = True
+                n += 1
+    return n
+
+
+def verdict_shares(pois_data, n):
+    """Per-area verdict shares for cross-area and cross-build comparison
+    (Helsinki included: municipal-precision records count trusted). Buckets
+    overlap by design except hidden total; shares are diagnostic, and the
+    regression comparison below reads only hidden + verified."""
+    if not n:
+        return {}
+    s = lambda pred: sum(1 for p in pois_data if pred(p))
+    return {
+        'surveyed_osm': s(lambda p: 'osm' in (p.get('sources', []) or [])),
+        'resolved_lookup': s(lambda p: p.get('position_resolved')),
+        'marked': s(lambda p: p.get('position_marked')),
+        'hidden_unresolved': s(lambda p: p.get('position_unresolved')
+                               and p.get('unresolved_why') != 'stale-orphan'),
+        'hidden_orphan': s(lambda p: p.get('unresolved_why') == 'stale-orphan'),
+        'trusted_municipal': s(lambda p: p.get('geo_precision') == 'servicemap'),
+        'hidden_total': s(lambda p: p.get('position_unresolved')),
+    }
+
+
+def compare_previous_manifest(area_id, m, args, packdir):
+    """Regression gate: hidden share must not rise / verified share must not
+    fall vs the previous published manifest entry, past 5 pts tolerance.
+    Entries from the old pipeline (no verdict keys) grandfather the check
+    with a loud log — first adoption must not false-red. Needs
+    --prev-manifest (workflow downloads the release union base); absent file
+    skips green (local runs)."""
+    if not getattr(args, 'prev_manifest', None):
+        return
+    try:
+        prev = {p['id']: p for p in
+                json.load(open(args.prev_manifest)).get('packs', [])}
+    except Exception as e:
+        log(packdir, f'prev-manifest unreadable ({str(e)[:60]}), gate skipped')
+        return
+    entry = prev.get(area_id)
+    if not entry:
+        log(packdir, 'prev-manifest: no entry for area, gate skipped')
+        return
+    shares = m.get('verdict_shares', {}) or {}
+    n = m.get('counts', {}).get('total') or 0
+    if not n:
+        return
+    prev_verdict = entry.get('verdict')
+    if not prev_verdict:
+        # Old-pipeline entries carry no verdict data (manifest gained the
+        # block with this change) — grandfather loudly, compare next cycle.
+        log(packdir, 'prev-manifest: no verdict block, gate grandfathered')
+        return
+    TOL = 0.05
+    prev_n = entry.get('total') or n
+    for key, direction in (('hidden_total', 1), ('marked', 0)):
+        # direction 1: must not rise; 0: informational only for now.
+        now_v = shares.get(key, 0) / n
+        was_v = prev_verdict.get(key, 0) / prev_n if prev_n else 0
+        if direction == 1 and now_v - was_v > TOL:
+            raise SystemExit(
+                f'POSITION GATE: {key} share rose {was_v:.3f} -> {now_v:.3f} '
+                f'(>{TOL} tolerance) vs previous manifest')
+    log(packdir, f"prev-manifest: gate OK "
+                  f"(hidden {shares.get('hidden_total', 0) / n:.3f})")
 
 
 def assert_position_invariants(pois_data, m, packdir):
@@ -361,6 +492,7 @@ def manifest():
             'total': counts.get('total'), 'built_at': m.get('built_at'),
             'complete': all(s in stages_ok for s in ('base', 'overture', 'nhs', 'atp')),
             'stages_ok': stages_ok,
+            'verdict': m.get('verdict_shares', {}),
             'sources': {k: v for k, v in m.items()
                         if k in ('fsa_extract_date', 'overture', 'nhs', 'atp', 'site', 'servicemap', 'ta', 'ch', 'verify_positions', 'resolve_positions')},
         })
@@ -384,6 +516,8 @@ def main():
                     help='site spider over all food sites incl. covered ones (conflict monitoring)')
     ap.add_argument('--skip-sites', action='store_true')
     ap.add_argument('--manifest', action='store_true')
+    ap.add_argument('--prev-manifest', default='',
+                    help='previous release manifest for the regression gate')
     args = ap.parse_args()
     if args.manifest:
         return manifest()

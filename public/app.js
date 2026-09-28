@@ -79,7 +79,8 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const fmtDate = iso => { try { return new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }); } catch { return iso; } };
 
 function sourceBadges(p) {
-  const extra = (p.position_unresolved ? '<span class="badge stacked" title="Unplaced: address resolves to no surveyed position — hidden from the map, findable here by search">unplaced</span>' : '');
+  const extra = (p.position_unresolved ? '<span class="badge stacked" title="Unplaced: address resolves to no surveyed position — hidden from the map, findable here by search">unplaced</span>' : '')
+    + (p.position_marked ? '<span class="badge stacked" title="Single-check position: one string match or proximity merge, never human-attested — treat as qualified">single-check</span>' : '');
   return extra + (p.sources || [p.source]).map(s =>
     s === 'fsa' ? '<span class="badge src-fsa" title="Food Standards Agency open data">FSA</span>'
     : s === 'atp' ? '<span class="badge src-atp" title="Chain-published data via AllThePlaces">chains</span>'
@@ -160,7 +161,7 @@ function renderAll() {
   const list = filtered();
   for (const p of list) {
     const el = document.createElement('div');
-    el.className = `pin cat-${p.category}${p.sources?.length === 1 && p.sources[0] === 'osm' ? ' osm' : ''}${p.id === state.selectedId ? ' selected' : ''}`;
+    el.className = `pin cat-${p.category}${p.sources?.length === 1 && p.sources[0] === 'osm' ? ' osm' : ''}${p.position_marked ? ' marked' : ''}${p.id === state.selectedId ? ' selected' : ''}`;
     el.innerHTML = `<span>${CAT_ICON[p.category] || '📍'}</span>`;
     const m = L.marker([p.lat, p.lng], { icon: L.divIcon({ className: '', html: el.outerHTML, iconSize: [30, 30], iconAnchor: [15, 28] }), title: p.name });
     m.on('click', () => selectPoi(p.id, { pan: false }));
