@@ -9,8 +9,13 @@ const packName = () => (state.packs.find(p => p.id === state.pack) || {}).name |
 
 const map = L.map('map', { zoomControl: false }).setView(SOUTHEND, 13);
 L.control.zoom({ position: 'bottomright' }).addTo(map);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>', subdomains: 'abcd', maxZoom: 20
+// Basemap: OSM standard raster (keyless). Kept as a named constant so the
+// provider can switch without a software update (OSMF tile policy asks for
+// exactly this). Fallback candidate if ever blocked: humanitarian layer
+// at tile.openstreetmap.fr/hot. Attribution must stay visible (policy).
+const TILE_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+L.tileLayer(TILE_URL, {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>', subdomains: 'abc', maxZoom: 19
 }).addTo(map);
 const clusters = L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 46 });
 map.addLayer(clusters);
