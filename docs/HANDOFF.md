@@ -180,3 +180,11 @@ Read these three docs first, in order:
 - Verify empirically before claiming (run it, diff outputs, spot-check).
   Overpass 504s are weather — retries + tiling exist for a reason.
 - No standing infrastructure, no secrets, no keyed APIs without explicit go.
+
+## Open reminders
+
+- Re-pull FSQ OS Southend to check parcel services (DPD / DHL / UPS /
+  Post Offices): HF `hf://` box pull, category filter swapped from the
+  Restaurants family to the shipping/post family, count + eyeball sample
+  (~5 min). Needs a live HF token first (previous one revoked; accept +
+  fresh token). Prior FSQ box files lived in /tmp only and are gone.
