@@ -176,6 +176,14 @@ def build(area_id, args):
     m['counts']['stale_flagged'] = stale
     approx = flag_position_approx(pois_data)
     m['counts']['position_approx'] = approx
+    # Orphan freshness rule (user decision): OSM-sourced records with no
+    # FSA/CH/Servicemap corroboration stay visible iff touched within 6
+    # months; older or untimestamped hide (fail closed — unassessable
+    # freshness is not freshness). Same middle-path flag, distinct reason
+    # so audits separate stale orphans from batch misses. Runs AFTER all
+    # other flaggers so nothing re-pops these flags.
+    now = datetime.now(timezone.utc)
+    m['counts']['orphan_hidden'] = flag_stale_orphans(pois_data, now)
     assert_position_invariants(pois_data, m, packdir)
     json.dump(pois_data, open(pois, 'w'), indent=1)
     json.dump(m, open(meta, 'w'), indent=1)
@@ -268,6 +276,34 @@ def assert_position_invariants(pois_data, m, packdir):
     log(packdir, f'position gate: OK '
                   f'({m.get("counts", {}).get("position_approx", 0)} approx, '
                   f'{sum(1 for p in pois_data if p.get("position_hazard"))} hazard)')
+
+
+def flag_stale_orphans(pois_data, now):
+    """User-decided orphan rule: an OSM-sourced record with no FSA/CH/
+    Servicemap corroboration renders iff its OSM object was touched within
+    182 days; older or untimestamped records hide (fail closed).
+    Same middle-path flag as batch misses, reason 'stale-orphan' so audits
+    separate the two populations. Re-run safe (clears first)."""
+    n = 0
+    for p in pois_data:
+        p.pop('unresolved_why', None)
+        s = p.get('sources', []) or []
+        if 'osm' not in s or any(x in s for x in ('fsa', 'ch', 'servicemap')):
+            continue
+        fresh = False
+        try:
+            if p.get('osm_touched'):
+                touched = datetime.fromisoformat(
+                    p['osm_touched'].replace('Z', '+00:00'))
+                fresh = (now - touched).days < 182
+        except (ValueError, TypeError):
+            fresh = False
+        if fresh:
+            continue
+        n += 1
+        p['position_unresolved'] = True
+        p['unresolved_why'] = 'stale-orphan'
+    return n
 
 
 def flag_position_approx(pois_data):

@@ -3,7 +3,7 @@
  * business websites / visitor contributions). Anything unverified renders
  * as "unknown" — never invented. */
 const SOUTHEND = [51.5414, 0.7120];
-const state = { pois: [], meta: {}, curatedCount: 0, liveCount: 0, cat: 'all', mode: 'curated', openOnly: false, q: '', selectedId: null, markers: new Map(), pack: '', packs: [], auditFsaOnly: false };
+const state = { pois: [], meta: {}, curatedCount: 0, liveCount: 0, cat: 'all', mode: 'curated', openOnly: false, q: '', selectedId: null, markers: new Map(), pack: '', packs: [], auditFsaOnly: false, showHidden: false, diff: null };
 const packQ = () => state.pack ? `pack=${encodeURIComponent(state.pack)}` : '';
 const packName = () => (state.packs.find(p => p.id === state.pack) || {}).name || 'Listings';
 
@@ -19,6 +19,8 @@ L.tileLayer(TILE_URL, {
 }).addTo(map);
 const clusters = L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 46 });
 map.addLayer(clusters);
+const diffLayers = L.layerGroup();
+map.addLayer(diffLayers);
 
 const $ = s => document.querySelector(s);
 const resultsEl = $('#results'), statsText = $('#stats-text');
@@ -85,7 +87,8 @@ const fmtDate = iso => { try { return new Date(iso + 'T00:00:00').toLocaleDateSt
 
 function sourceBadges(p) {
   const extra = (p.position_approx ? '<span class="badge stacked" title="Area-placed: position comes from an uncorroborated batch geocode — placed by postcode area, not surveyed">area-placed</span>' : '')
-    + (p.position_hazard ? '<span class="badge stacked" title="Needs manual placement: on a road class where geocoders fail and no surveyed position exists">needs-manual-placement</span>' : '');
+    + (p.position_hazard ? '<span class="badge stacked" title="Needs manual placement: on a road class where geocoders fail and no surveyed position exists">needs-manual-placement</span>' : '')
+    + (p.unresolved_why === 'stale-orphan' ? `<span class="badge stacked" title="Hidden: map record with no corroboration, untouched since ${esc((p.osm_touched || '').slice(0, 10)) || 'unknown date'}">stale orphan</span>` : '');
   return extra + (p.sources || [p.source]).map(s =>
     s === 'fsa' ? '<span class="badge src-fsa" title="Food Standards Agency open data">FSA</span>'
     : s === 'atp' ? '<span class="badge src-atp" title="Chain-published data via AllThePlaces">chains</span>'
@@ -120,11 +123,12 @@ function hourVariants(p) {
 function bboxStr() { const b = map.getBounds(); return `${b.getSouth().toFixed(4)},${b.getWest().toFixed(4)},${b.getNorth().toFixed(4)},${b.getEast().toFixed(4)}`; }
 
 async function loadPois() {
+  if (state.diff) { renderDiff(); return; }
   statsText.textContent = 'Loading…';
   try {
-    // Audit mode needs the hazard-hidden kiosks too — same endpoints,
-    // just with the include flag (server change already supports it).
-    const hz = state.auditFsaOnly ? 'include_hazard=1' : '';
+    // Audit + hidden modes need the server-hidden records too — same
+    // endpoints, just with the include flag (server supports it).
+    const hz = (state.auditFsaOnly || state.showHidden) ? 'include_hazard=1' : '';
     const withHz = url => url + (hz ? (url.includes('?') ? '&' : '?') + hz : '');
     const [metaR, poisR] = await Promise.all([
       fetch('/api/meta' + (packQ() ? '?' + packQ() : '')).then(r => r.json()).catch(() => ({})),
@@ -150,6 +154,9 @@ function filtered() {
     // FSA-only audit view: exactly the register-positioned population —
     // FSA in sources, no OSM corroboration — nothing else.
     if (state.auditFsaOnly && (!(p.sources || []).includes('fsa') || (p.sources || []).includes('osm'))) return false;
+    // Hidden view: exactly the server-hidden population (hazard tier +
+    // stale orphans) — each card shows its reason. Nothing else.
+    if (state.showHidden && !(p.position_hazard || p.unresolved_why === 'stale-orphan')) return false;
     if (state.cat !== 'all' && p.category !== state.cat) return false;
     if (state.q && !(p.name + ' ' + (p.category_label || '') + ' ' + (p.address || '')).toLowerCase().includes(state.q)) return false;
     if (state.openOnly && openStatus(p).state !== 'open') return false;
@@ -163,6 +170,8 @@ function filtered() {
 // ---------- rendering: markers + list ----------
 function renderAll() {
   clusters.clearLayers(); state.markers.clear();
+  if (state.diff) { renderDiff(); return; }
+  diffLayers.clearLayers();
   const list = filtered();
   for (const p of list) {
     const el = document.createElement('div');
@@ -178,7 +187,7 @@ function renderAll() {
   const fsaDate = state.meta.fsa_extract_date ? ` · FSA extract ${state.meta.fsa_extract_date}` : '';
   const built = state.meta.built_at ? ` · verified ${fmtDate(state.meta.built_at.slice(0, 10))}` : '';
   statsText.textContent = state.mode === 'curated'
-    ? `${state.auditFsaOnly ? 'AUDIT — register-positioned pins only (postcode-grade, not surveyed) · ' : ''}${list.length} listings · ${packName()}${fsaDate}${built}`
+    ? `${state.auditFsaOnly ? 'AUDIT — register-positioned pins only (postcode-grade, not surveyed) · ' : ''}${state.showHidden ? 'HIDDEN — pins held off the map with reasons · ' : ''}${list.length} listings · ${packName()}${fsaDate}${built}`
     : `${list.length} shown (${state.curatedCount} listed + ${state.liveCount} live OSM) · ${packName()}`;
   resultsEl.innerHTML = list.slice(0, 200).map(p => {
     const o = openStatus(p);
@@ -510,6 +519,7 @@ $('#mode-curated').addEventListener('click', () => { state.mode = 'curated'; $('
 $('#mode-all').addEventListener('click', () => { state.mode = 'all'; $('#mode-all').classList.add('active'); $('#mode-curated').classList.remove('active'); toast('Live OSM added — unlisted extras may lack addresses/hours'); loadPois(); });
 $('#open-now-only').addEventListener('change', e => { state.openOnly = e.target.checked; renderAll(); });
 $('#audit-fsa-only').addEventListener('change', e => { state.auditFsaOnly = e.target.checked; loadPois(); });
+$('#show-hidden').addEventListener('change', e => { state.showHidden = e.target.checked; loadPois(); });
 $('#recenter').addEventListener('click', () => map.flyTo(SOUTHEND, 13, { duration: 0.8 }));
 $('#detail-close').addEventListener('click', () => { $('#detail').classList.add('hidden'); state.selectedId = null; history.replaceState(null, '', location.pathname); renderAll(); });
 $('#cfg-link').addEventListener('click', async () => {
@@ -518,6 +528,106 @@ $('#cfg-link').addEventListener('click', async () => {
 });
 
 function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2600); }
+
+// ---------- pack diff (old vs new pins) ----------
+// Client-side A/B: joins two packs on stable ids (fsa-{FHRSID},
+// osm-node-{id}, ch-{number} — identical across vintages). Moved = same
+// id, coords differ beyond DIFF_MOVE_M; added/removed = single-sided ids.
+// Same-area pairs only (bbox-overlap guard). App-only: no API, pipeline
+// or CI changes; exiting restores normal rendering byte-for-byte.
+const DIFF_OLD = 'eu/gb/england/essex/southend-old-pipeline';
+const DIFF_MOVE_M = 25;
+const havM = (a, b, c, d) => {
+  const r = 6371000, p = Math.PI / 180;
+  const h = Math.sin((c - a) * p / 2) ** 2 + Math.cos(a * p) * Math.cos(c * p) * Math.sin((d - b) * p / 2) ** 2;
+  return 2 * r * Math.asin(Math.sqrt(h));
+};
+function bboxOf(rows) {
+  let s = 90, w = 180, n = -90, e = -180;
+  for (const p of rows) {
+    if (p.lat == null || p.lng == null) continue;
+    if (p.lat < s) s = p.lat; if (p.lat > n) n = p.lat;
+    if (p.lng < w) w = p.lng; if (p.lng > e) e = p.lng;
+  }
+  return { s, w, n, e };
+}
+function bboxOverlap(a, b) {
+  const ix = Math.max(0, Math.min(a.e, b.e) - Math.max(a.w, b.w));
+  const iy = Math.max(0, Math.min(a.n, b.n) - Math.max(a.s, b.s));
+  const ua = (a.e - a.w) * (a.n - a.s), ub = (b.e - b.w) * (b.n - b.s);
+  return ua > 0 && ub > 0 ? (ix * iy) / (ua + ub - ix * iy) : 0;
+}
+async function enterDiffMode() {
+  statsText.textContent = 'Loading diff…';
+  try {
+    const [oldR, newR] = await Promise.all([
+      fetch('/api/pois?pack=' + encodeURIComponent(DIFF_OLD) + '&include_hazard=1').then(r => r.json()),
+      fetch('/api/pois?include_hazard=1').then(r => r.json()),
+    ]);
+    const oldRows = oldR.pois || [], newRows = newR.pois || [];
+    if (bboxOverlap(bboxOf(oldRows), bboxOf(newRows)) < 0.5) {
+      toast('Diff refused: pack areas do not overlap');
+      $('#pack-sel').value = state.pack;
+      return;
+    }
+    const byId = new Map(newRows.map(p => [p.id, p]));
+    const oldById = new Map(oldRows.map(p => [p.id, p]));
+    const moved = [], added = [], removed = [];
+    for (const p of newRows) {
+      const o = oldById.get(p.id);
+      if (!o) { added.push(p); continue; }
+      if (o.lat == null || p.lat == null) continue;
+      const d = Math.round(havM(o.lat, o.lng, p.lat, p.lng));
+      if (d > DIFF_MOVE_M) moved.push({ cur: p, old: o, d });
+    }
+    for (const o of oldRows) if (!byId.has(o.id)) removed.push(o);
+    moved.sort((a, b) => b.d - a.d);
+    state.pois = newRows;
+    state.diff = { moved, added, removed, nOld: oldRows.length, nNew: newRows.length };
+    state.selectedId = null;
+    $('#detail').classList.add('hidden');
+    renderAll();
+  } catch { toast('Diff failed to load'); $('#pack-sel').value = state.pack; }
+}
+function exitDiffMode() {
+  state.diff = null;
+  diffLayers.clearLayers();
+}
+function renderDiff() {
+  diffLayers.clearLayers();
+  const { moved, added, removed, nOld, nNew } = state.diff;
+  for (const m of moved) {
+    L.polyline([[m.old.lat, m.old.lng], [m.cur.lat, m.cur.lng]], { color: '#d93025', weight: 2, dashArray: '5 4' }).addTo(diffLayers);
+    const el = document.createElement('div');
+    el.className = `pin cat-${m.cur.category}`;
+    el.innerHTML = `<span>${CAT_ICON[m.cur.category] || '📍'}</span>`;
+    const mk = L.marker([m.cur.lat, m.cur.lng], { icon: L.divIcon({ className: '', html: el.outerHTML, iconSize: [30, 30], iconAnchor: [15, 28] }), title: `${m.cur.name} (moved ${m.d}m)` });
+    mk.bindPopup(`<b>${esc(m.cur.name)}</b><br>moved ${m.d}m<br>was: ${m.old.lat.toFixed(5)}, ${m.old.lng.toFixed(5)}<br>now: ${m.cur.lat.toFixed(5)}, ${m.cur.lng.toFixed(5)}<br>${esc(m.cur.verified_from ? 'via ' + m.cur.verified_from : (m.cur.verified_position ? m.cur.verified_position : 'unattributed move'))}`);
+    mk.on('click', () => selectPoi(m.cur.id, { pan: false }));
+    diffLayers.addLayer(mk);
+  }
+  for (const p of added) {
+    const mk = L.marker([p.lat, p.lng], { title: `${p.name} (added)` });
+    mk.on('click', () => selectPoi(p.id, { pan: false }));
+    diffLayers.addLayer(mk);
+  }
+  for (const o of removed) {
+    if (o.lat == null) continue;
+    const mk = L.circleMarker([o.lat, o.lng], { radius: 6, color: '#9e9e9e', fillOpacity: 0.4, title: `${o.name} (removed)` });
+    mk.bindPopup(`<b>${esc(o.name)}</b><br>removed in demo<br>was: ${o.lat.toFixed(5)}, ${o.lng.toFixed(5)}`);
+    diffLayers.addLayer(mk);
+  }
+  statsText.textContent = `Diff old → demo: ${moved.length} moved · ${added.length} added · ${removed.length} removed (of ${nOld} → ${nNew})`;
+  resultsEl.innerHTML = moved.slice(0, 200).map(m =>
+    `<div class="card" data-id="${m.cur.id}">
+      <div class="tile" style="background:#fdecea">↔</div>
+      <div><h3>${esc(m.cur.name)}</h3>
+        <div class="meta">moved ${m.d}m</div>
+        <div class="meta">${esc((m.cur.address || '').split(',').slice(0, 2).join(','))}</div>
+      </div></div>`).join('')
+    || `<p style="padding:16px;color:#666">No moved pins.</p>`;
+  resultsEl.querySelectorAll('.card').forEach(c => c.addEventListener('click', () => selectPoi(c.dataset.id, { pan: true })));
+}
 
 // ---------- pack selector (debugging across built packs) ----------
 async function initPacks() {
@@ -534,11 +644,15 @@ async function initPacks() {
   const when = p => { try { return fmtDate((p.built_at || '').slice(0, 10)); } catch { return '?'; } };
   sel.innerHTML = state.packs.map(p =>
     `<option value="${esc(p.id)}">${esc(p.name)}${p.total != null ? ` (${p.total})` : ''} · ${when(p)}${mark(p) ? ' ' + mark(p) : ''}</option>`).join('')
+    + `<option value="diff:old-demo">Diff: old → demo (moved pins)</option>`
     || `<option value="">Southend-on-Sea</option>`;
   sel.addEventListener('change', () => {
+    if (sel.value === 'diff:old-demo') { enterDiffMode(); return; }
+    const wasDiff = !!state.diff;
     state.pack = sel.value;
     state.selectedId = null;
     $('#detail').classList.add('hidden');
+    if (wasDiff) { exitDiffMode(); state.pack = sel.value; }
     const b = (state.packs.find(p => p.id === state.pack) || {}).bbox;
     if (b && [b.s, b.w, b.n, b.e].every(Number.isFinite)) map.flyToBounds([[b.s, b.w], [b.n, b.e]], { duration: 0.7 });
     loadPois();
