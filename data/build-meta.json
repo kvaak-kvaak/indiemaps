@@ -1,6 +1,6 @@
 {
- "built_at": "2026-09-21T23:37:43.946Z",
- "fsa_extract_date": "2026-09-15",
+ "built_at": "2026-10-01T09:56:08.038Z",
+ "fsa_extract_date": "2026-10-01",
  "fsa_authority": "FHRS893",
  "bbox": {
   "s": 51.505,
@@ -9,20 +9,21 @@
   "e": 0.825
  },
  "counts": {
-  "total": 1980,
+  "total": 1981,
   "fsa_only": 316,
-  "merged": 410,
-  "osm_only": 352,
+  "merged": 407,
+  "osm_only": 354,
   "nhs_added": 11,
-  "ch_added": 38,
-  "with_hours": 318,
+  "ch_added": 40,
+  "with_hours": 311,
   "osm_nodes_pulled": 1139,
   "osm_raw_response": 1203,
   "fsa_repinned": 0,
   "fsa_duplicates_linked": 0,
   "fsa_duplicates_queued": 11,
   "stale_flagged": 8,
-  "position_approx": 828
+  "position_approx": 829,
+  "orphan_hidden": 659
  },
  "with_hours": 102,
  "with_phone": 106,
@@ -127,7 +128,7 @@
   "coast_m": 100,
   "sparse_n": 5,
   "segments": 2547,
-  "flagged": 26,
+  "flagged": 27,
   "members": [
    {
     "id": "fsa-764431",
@@ -148,6 +149,10 @@
    {
     "id": "fsa-513253",
     "name": "Dining-Saurs"
+   },
+   {
+    "id": "fsa-1993212",
+    "name": "Drift Caf\u00e9"
    },
    {
     "id": "fsa-513076",
@@ -236,18 +241,18 @@
   ]
  },
  "ch": {
-  "snapshot_rows_food": 135478,
-  "matched": 109,
+  "snapshot_rows_food": 135552,
+  "matched": 110,
   "pois_matched": 96,
-  "created": 45,
-  "formation_suppressed": 34,
+  "created": 47,
+  "formation_suppressed": 36,
   "threshold_days": 365
  },
  "overture": {
   "release": "2026-08-19.0",
   "contact_rows_in_bbox": 6973,
-  "websites_filled": 756,
-  "phones_filled": 1002,
+  "websites_filled": 754,
+  "phones_filled": 1000,
   "meta_bonus": 0.15,
   "aliases_applied": 1
  },
@@ -271,9 +276,9 @@
  },
  "site": {
   "input": "/home/runner/work/indiemaps/indiemaps/packs/eu/gb/england/essex/southend-on-sea/site.json",
-  "sites": 497,
-  "matched": 459,
-  "hours_added": 118,
+  "sites": 495,
+  "matched": 461,
+  "hours_added": 111,
   "conflicts": 21
  },
  "ta": {

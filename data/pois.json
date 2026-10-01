@@ -182,7 +182,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512776",
@@ -304,7 +306,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1043779026",
@@ -339,7 +343,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12366313645",
@@ -374,7 +380,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512780",
@@ -903,7 +911,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-146641818",
@@ -938,7 +948,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-5276091523",
@@ -973,7 +985,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512836",
@@ -1242,7 +1256,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-854678",
@@ -1328,7 +1344,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-145202844",
@@ -1373,7 +1391,9 @@
   },
   "overture_datasets": [
    "AllThePlaces"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-89502547",
@@ -1419,7 +1439,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-151179219",
@@ -1454,7 +1476,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-144626811",
@@ -1499,7 +1523,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1048635144",
@@ -1534,7 +1560,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512843",
@@ -1628,7 +1656,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1665149",
@@ -1766,7 +1796,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512845",
@@ -1926,7 +1958,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1833251",
@@ -1999,7 +2033,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1809182",
@@ -2072,7 +2108,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512846",
@@ -2184,7 +2222,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1097029000",
@@ -2219,7 +2259,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1151736",
@@ -2333,7 +2375,9 @@
   },
   "atp_wikidata": "Q5943510",
   "atp_nsi": "hungryhorse-eaed91",
-  "atp_hours": "Mo-Fr 11:00-23:00; Sa-Su 09:00-23:00"
+  "atp_hours": "Mo-Fr 11:00-23:00; Sa-Su 09:00-23:00",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1496763",
@@ -2565,7 +2609,9 @@
   },
   "atp_wikidata": "Q4789707",
   "atp_nsi": "argos-3930ea",
-  "atp_hours": "Mo-Fr 09:00-20:00; Sa 09:00-18:30; Su 10:00-16:00"
+  "atp_hours": "Mo-Fr 09:00-20:00; Sa 09:00-18:30; Su 10:00-16:00",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13660234543",
@@ -2610,7 +2656,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870939454",
@@ -2645,7 +2693,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513261",
@@ -2809,7 +2859,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-550678",
@@ -2936,7 +2988,9 @@
    "Saturday 8:30 AM - 5:00 PM",
    "Sunday 10:00 AM - 4:00 PM"
   ],
-  "site_description": "Welcome to your Asda Caf\u00e9, the perfect pit stop when completing your shop. Great food at low prices. Just what you\u2019d expect from Asda"
+  "site_description": "Welcome to your Asda Caf\u00e9, the perfect pit stop when completing your shop. Great food at low prices. Just what you\u2019d expect from Asda",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512449",
@@ -3225,7 +3279,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12569255607",
@@ -3260,7 +3316,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-545850",
@@ -3406,7 +3464,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-954757",
@@ -3490,7 +3550,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512859",
@@ -3611,7 +3673,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-103894984",
@@ -3657,7 +3721,9 @@
    "candidates": 1
   },
   "atp_wikidata": "Q4836931",
-  "atp_hours": "Mo-Sa 08:00-21:00; Su 10:00-16:00"
+  "atp_hours": "Mo-Sa 08:00-21:00; Su 10:00-16:00",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1808618",
@@ -3751,7 +3817,9 @@
   },
   "overture_datasets": [
    "DAC"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1046844388",
@@ -3797,7 +3865,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1891234",
@@ -3946,7 +4016,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512868",
@@ -4019,7 +4091,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512870",
@@ -4161,7 +4235,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-664911542",
@@ -4198,7 +4274,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513081",
@@ -4334,7 +4412,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12012365391",
@@ -4462,9 +4542,9 @@
    "dist_m": null,
    "candidates": 45
   },
-  "ch_number": "15356002",
-  "ch_incorporated": "2023-12-16",
-  "ch_sic": "56102",
+  "ch_number": "16969190",
+  "ch_incorporated": "2026-01-16",
+  "ch_sic": "56101",
   "ch_prev_names": [
    "14/04/2026",
    "MARK'S ALB RESTAURANT LTD"
@@ -4605,7 +4685,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1808617",
@@ -4766,7 +4848,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12748149721",
@@ -4801,7 +4885,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512882",
@@ -5007,7 +5093,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-948714",
@@ -5093,7 +5181,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1393038",
@@ -5177,7 +5267,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870963875",
@@ -5223,7 +5315,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-10012199492",
@@ -5269,7 +5363,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1910870",
@@ -5565,7 +5661,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12163530596",
@@ -5600,7 +5698,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12863367337",
@@ -5646,7 +5746,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870279711",
@@ -5681,7 +5783,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1043889720",
@@ -5716,7 +5820,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1785328",
@@ -6113,7 +6219,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-6472883906",
@@ -6148,7 +6256,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512826",
@@ -6235,7 +6345,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1617114",
@@ -6387,7 +6499,9 @@
    "label": "menu",
    "kind": "page"
   },
-  "site_description": "In the heart of Southend-on-Sea High Street, we cater to every craving. Start your day right with our delicious breakfasts, or unwind after work with a refreshing drink from our extensive cocktail and spirits menu. Whether it\u2019s lunch with friends or a memorable dinner, our all-day dining experience "
+  "site_description": "In the heart of Southend-on-Sea High Street, we cater to every craving. Start your day right with our delicious breakfasts, or unwind after work with a refreshing drink from our extensive cocktail and spirits menu. Whether it\u2019s lunch with friends or a memorable dinner, our all-day dining experience ",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-6278495920",
@@ -6422,7 +6536,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12872693004",
@@ -6468,7 +6584,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1861839",
@@ -6702,7 +6820,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-6088776740",
@@ -6748,7 +6868,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1739519",
@@ -6843,7 +6965,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1971855",
@@ -6926,7 +7050,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512904",
@@ -7062,7 +7188,9 @@
   "superseded_by": {
    "id": "fsa-1976325",
    "name": "Tide And Toast Coffee"
-  }
+  },
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1386867",
@@ -7164,21 +7292,26 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
-  "id": "fsa-1632044",
-  "fsa_id": 1632044,
+  "id": "osm-way-176557472",
+  "fsa_id": null,
   "osm_type": "way",
   "osm_id": 176557472,
-  "name": "Bogaz Kitchen",
+  "osm_touched": "2024-06-27T14:40:25Z",
+  "osm_version": 3,
+  "osm_fhrs_id": null,
+  "name": "Bogaz Kitchen Kebab",
   "category": "restaurant",
-  "category_label": "Takeaway",
+  "category_label": "Restaurant \u00b7 kebab",
   "lat": 51.5701223,
   "lng": 0.6486103,
   "geo_precision": "osm",
-  "address": "382A Rayleigh Road, Eastwood, Essex, SS9 5PT",
-  "postcode": "SS9 5PT",
+  "address": "",
+  "postcode": null,
   "phone": "",
   "email": "",
   "website": "",
@@ -7198,14 +7331,10 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa",
    "osm"
   ],
-  "osm_match": {
-   "score": 1.1,
-   "dist_m": 8,
-   "candidates": 30
-  }
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512517",
@@ -7240,8 +7369,7 @@
   "sources": [
    "fsa",
    "osm",
-   "overture",
-   "site"
+   "overture"
   ],
   "osm_match": {
    "score": 2.4,
@@ -7257,22 +7385,7 @@
   },
   "overture_datasets": [
    "meta"
-  ],
-  "site_hours": "We-Mo 16:00-22:00",
-  "site_method": "regex",
-  "site_url": "http://www.bombaybluesrestaurant.co.uk/",
-  "site_raw": [
-   "Wednesday - Monday : 04.00 PM - 10.00 PM"
-  ],
-  "site_image": {
-   "url": "https://www.bombaybluesrestaurant.co.uk/assets/img/main-logo.png",
-   "kind": "json-ld"
-  },
-  "site_description": "Savour the finest Indian cuisine at Bombay Blues, Westcliff-on-Sea, Southend-on-Sea. Authentic dishes and unforgettable flavours await on London Road. Visit us or order now!",
-  "site_cuisine": [
-   "Indian"
-  ],
-  "site_price": "\u00a3\u00a3"
+  ]
  },
  {
   "id": "fsa-534893",
@@ -7332,9 +7445,9 @@
    "Tuesday \u2013 Sunday: 5pm \u2013 11pm"
   ],
   "site_menu": {
-   "url": "https://deliveroo.co.uk/menu/london/leigh-on-sea/bombay-restaurant-southend-on-sea",
-   "label": "deliveroo",
-   "kind": "third-party"
+   "url": "https://bombayleigh.co.uk/#view-our-menu",
+   "label": "takeaway menu",
+   "kind": "page"
   }
  },
  {
@@ -7370,7 +7483,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-579520853",
@@ -7452,7 +7567,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1690260",
@@ -7538,7 +7655,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-11237897513",
@@ -7600,7 +7719,9 @@
    "candidates": 1
   },
   "atp_wikidata": "Q6123139",
-  "atp_nsi": "boots-3d082e"
+  "atp_nsi": "boots-3d082e",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870246997",
@@ -7646,7 +7767,9 @@
    "candidates": 1
   },
   "atp_wikidata": "Q4944037",
-  "atp_nsi": "bootsopticians-610826"
+  "atp_nsi": "bootsopticians-610826",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-957695",
@@ -7964,7 +8087,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-534833",
@@ -8318,7 +8443,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-596388375",
@@ -8456,7 +8583,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1734878",
@@ -8541,7 +8670,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1931772",
@@ -8668,7 +8799,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512728",
@@ -8762,7 +8895,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512943",
@@ -8996,7 +9131,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1944214",
@@ -9033,7 +9170,7 @@
   "osm_match": {
    "score": 0.8,
    "dist_m": 86,
-   "candidates": 29
+   "candidates": 30
   }
  },
  {
@@ -9298,17 +9435,20 @@
   "position_approx": true
  },
  {
-  "id": "fsa-1540313",
-  "fsa_id": 1540313,
+  "id": "osm-node-11475844541",
+  "fsa_id": null,
   "osm_type": "node",
   "osm_id": 11475844541,
+  "osm_touched": "2024-01-01T09:33:25Z",
+  "osm_version": 1,
+  "osm_fhrs_id": "1540313",
   "name": "Buddha Belly Thai",
   "category": "restaurant",
-  "category_label": "Restaurant / Caf\u00e9",
+  "category_label": "Restaurant \u00b7 thai",
   "lat": 51.5396023,
   "lng": 0.7106499,
   "geo_precision": "osm",
-  "address": "20 Queens Road, Southend-on-sea, Essex, SS1 1LU",
+  "address": "20, Queens Road, SS1 1LU",
   "postcode": "SS1 1LU",
   "phone": "",
   "email": "",
@@ -9328,15 +9468,9 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa",
    "osm",
    "ch"
   ],
-  "osm_match": {
-   "score": 2.4,
-   "dist_m": 4,
-   "candidates": 54
-  },
   "ch_number": "16184073",
   "ch_incorporated": "2025-01-14",
   "ch_sic": "56102"
@@ -9435,7 +9569,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1809197",
@@ -9591,7 +9727,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 22,
-   "candidates": 74
+   "candidates": 75
   },
   "phone_source": "overture",
   "overture_id": "a51b6f3f-6ab1-42cd-bba9-502713dcd276",
@@ -9710,7 +9846,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1426814",
@@ -9783,7 +9921,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12865510750",
@@ -9828,7 +9968,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1426810",
@@ -9950,7 +10092,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512946",
@@ -10039,7 +10183,7 @@
   "osm_match": {
    "score": 2.3,
    "dist_m": 56,
-   "candidates": 52
+   "candidates": 53
   },
   "site_hours": "Tu 16:00-22:00; We 16:00-22:00; Th 16:00-22:00; Fr 12:00-22:00; Sa 11:00-22:00; Su 11:00-18:00",
   "site_method": "regex",
@@ -10194,7 +10338,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512824",
@@ -10332,7 +10478,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 29,
-   "candidates": 55
+   "candidates": 56
   },
   "website_source": "overture",
   "phone_source": "overture",
@@ -10393,10 +10539,11 @@
   "overture_datasets": [
    "meta"
   ],
-  "site_hours": "Mo 06:00-21:00; Tu 06:00-21:00; We 06:00-21:00; Th 06:00-21:00; Fr 06:00-21:00; Sa 06:00-21:00; Su 07:00-21:00",
-  "site_method": "regex",
+  "site_hours": "Mo-Sa 06:00-21:00; Su 07:00-21:00",
+  "site_method": "json-ld",
   "site_url": "http://www.cafeoportugues.co.uk",
   "site_raw": [
+   "CAFE O PORTUGU\u00caS | 57 Hamlet Court Road, Westcliff-On-Sea, Essex: Mo-Sa 06:00-21:00; Su 07:00-21:00",
    "Monday 06:00 \u2013 21:00",
    "Tuesday 06:00 \u2013 21:00",
    "Wednesday 06:00 \u2013 21:00",
@@ -10552,7 +10699,7 @@
   "osm_match": {
    "score": 2.3,
    "dist_m": 88,
-   "candidates": 76
+   "candidates": 77
   },
   "phone_source": "overture",
   "overture_id": "c838a000-cd8a-40a1-985e-3ab05a27f2d7",
@@ -10819,7 +10966,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12872726094",
@@ -10854,7 +11003,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-764430",
@@ -10932,7 +11083,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513463",
@@ -11123,7 +11276,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-957776",
@@ -11163,7 +11318,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 32,
-   "candidates": 75
+   "candidates": 76
   },
   "atp_spider": "card_factory_gb",
   "atp_brand": "Card Factory",
@@ -11222,7 +11377,9 @@
   },
   "atp_wikidata": "Q5038192",
   "atp_nsi": "cardfactory-d8c200",
-  "atp_hours": "Mo-Sa 09:00-17:30; Su 10:30-16:30"
+  "atp_hours": "Mo-Sa 09:00-17:30; Su 10:30-16:30",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12163555968",
@@ -11257,7 +11414,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1296649894",
@@ -11292,7 +11451,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-621459",
@@ -11415,7 +11576,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1046844456",
@@ -11450,7 +11613,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1169648872",
@@ -11585,7 +11750,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1147372324",
@@ -11631,7 +11798,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-924353",
@@ -12114,7 +12283,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12872733907",
@@ -12149,7 +12320,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1549127",
@@ -12273,7 +12446,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12748241226",
@@ -12318,7 +12493,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-146643258",
@@ -12355,7 +12532,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1873680",
@@ -12428,7 +12607,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12036031555",
@@ -12463,7 +12644,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12865510751",
@@ -12508,7 +12691,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12875551552",
@@ -12543,7 +12728,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513026",
@@ -12741,7 +12928,9 @@
    "label": "submit an event",
    "kind": "page"
   },
-  "site_description": "Chester's Bar is situated along Eastern Esplanade on the corner of Chester Avenue along Southend-on-Sea Seafront. The Club is only 2 mins away from Southchurch Park and only 20 steps from the Thames Estuary Beach. It is also only 20 steps from the main Bus Route into the town centre..."
+  "site_description": "Chester's Bar is situated along Eastern Esplanade on the corner of Chester Avenue along Southend-on-Sea Seafront. The Club is only 2 mins away from Southchurch Park and only 20 steps from the Thames Estuary Beach. It is also only 20 steps from the main Bus Route into the town centre...",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513033",
@@ -13213,7 +13402,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1045266631",
@@ -13248,7 +13439,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1700135",
@@ -13442,7 +13635,9 @@
   "superseded_by": {
    "id": "fsa-1958109",
    "name": "Agir"
-  }
+  },
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-764433",
@@ -13527,7 +13722,7 @@
   "osm_match": {
    "score": 1.4,
    "dist_m": 15,
-   "candidates": 80
+   "candidates": 81
   }
  },
  {
@@ -13644,7 +13839,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513038",
@@ -13803,7 +14000,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1523498",
@@ -13898,7 +14097,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512659",
@@ -13971,7 +14172,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "site"
   ],
   "osm_match": {
    "score": 2.3,
@@ -13987,7 +14189,21 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "site_hours": "Mo 12:00-15:00; Mo 18:00-23:00; Tu 12:00-15:00; Tu 18:00-23:00; We 12:00-15:00; We 18:00-23:00; Th 12:00-15:00; Th 18:00-23:00; Fr 12:00-15:00; Fr 18:00-23:00",
+  "site_method": "regex",
+  "site_url": "https://www.bigreddirectory.com/clarkes-southend-on-sea",
+  "site_raw": [
+   "Monday 12:00 \u2013 3:00 PM, 6:00 \u2013 11:00 PM",
+   "Monday 12:00 \u2013 3:00 PM, 6:00 \u2013 11:00 PM",
+   "Tuesday 12:00 \u2013 3:00 PM, 6:00 \u2013 11:00 PM",
+   "Tuesday 12:00 \u2013 3:00 PM, 6:00 \u2013 11:00 PM",
+   "Wednesday 12:00 \u2013 3:00 PM, 6:00 \u2013 11:00 PM",
+   "Wednesday 12:00 \u2013 3:00 PM, 6:00 \u2013 11:00 PM",
+   "Thursday 12:00 \u2013 3:00 PM, 6:00 \u2013 11:00 PM",
+   "Thursday 12:00 \u2013 3:00 PM, 6:00 \u2013 11:00 PM"
+  ],
+  "site_description": "Clarkes, 9 Marine Parade, Southend on Sea Restaurant - Opening times, reviews, address, phone number, pictures, postcode, directions and map"
  },
  {
   "id": "osm-node-12870939440",
@@ -14032,7 +14248,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1038708649",
@@ -14067,7 +14285,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1046844340",
@@ -14113,7 +14333,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513041",
@@ -14196,7 +14418,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-9167908341",
@@ -14397,7 +14621,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513050",
@@ -14482,7 +14708,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-3707000815",
@@ -14527,7 +14755,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-4363803035",
@@ -14573,7 +14803,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1157193711",
@@ -14608,7 +14840,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513052",
@@ -14971,7 +15205,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-90439494",
@@ -15006,7 +15242,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513047",
@@ -15204,7 +15442,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1023205",
@@ -15320,7 +15560,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12862851871",
@@ -15355,7 +15597,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1045266596",
@@ -15390,7 +15634,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12163555966",
@@ -15425,7 +15671,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12862851872",
@@ -15460,7 +15708,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1043934004",
@@ -15495,7 +15745,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1761383",
@@ -15745,7 +15997,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-6557625821",
@@ -15783,7 +16037,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-538544",
@@ -15954,7 +16210,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 20,
-   "candidates": 73
+   "candidates": 74
   },
   "ch_number": "09687019",
   "ch_incorporated": "2015-07-15",
@@ -16219,7 +16475,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513058",
@@ -16379,7 +16637,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12871398320",
@@ -16414,7 +16674,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1931764",
@@ -16487,7 +16749,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1931769",
@@ -16626,7 +16890,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1809209",
@@ -16739,7 +17005,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1713652",
@@ -16861,7 +17129,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1375953",
@@ -16944,7 +17214,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513059",
@@ -17039,7 +17311,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1043516823",
@@ -17074,7 +17348,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12589988623",
@@ -17109,7 +17385,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1518911",
@@ -17242,7 +17520,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1931765",
@@ -17661,7 +17941,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12872726064",
@@ -17696,7 +17978,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12872726098",
@@ -17731,7 +18015,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1043779133",
@@ -17766,7 +18052,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1387300414",
@@ -17801,7 +18089,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-809771886",
@@ -17836,7 +18126,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513507",
@@ -17947,7 +18239,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1043889698",
@@ -17982,7 +18276,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13233574687",
@@ -18017,7 +18313,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1046844418",
@@ -18052,7 +18350,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1665148",
@@ -18089,7 +18389,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 4,
-   "candidates": 67
+   "candidates": 68
   }
  },
  {
@@ -18136,7 +18436,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-771819",
@@ -18525,76 +18827,6 @@
   "position_approx": true
  },
  {
-  "id": "fsa-1914034",
-  "fsa_id": 1914034,
-  "osm_type": null,
-  "osm_id": null,
-  "name": "Defne Restaurant",
-  "category": "restaurant",
-  "category_label": "Restaurant / Caf\u00e9",
-  "lat": 51.5458165,
-  "lng": 0.6809033,
-  "geo_precision": "fsa",
-  "address": "719 London Road, Westcliff-on-sea, Essex, SS0 9ST",
-  "postcode": "SS0 9ST",
-  "phone": "01702 330004",
-  "email": "",
-  "website": "https://www.chefonline.co.uk/shish-mediterranean-meze-grill-westcliff-on-sea-southend-on-sea-ss0/menu",
-  "facebook": "",
-  "instagram": "",
-  "twitter": "",
-  "opening_hours_osm": "",
-  "opening_hours": {},
-  "cuisine": "",
-  "brand_wikidata": null,
-  "wikipedia": null,
-  "wikidata": null,
-  "amenities": [],
-  "photos": [],
-  "description": "",
-  "sources": [
-   "fsa",
-   "overture",
-   "site"
-  ],
-  "osm_match": {
-   "score": null,
-   "dist_m": null,
-   "candidates": 4
-  },
-  "website_source": "overture",
-  "phone_source": "overture",
-  "overture_id": "06e56cf8-fedd-463e-93af-c44e8c64375e",
-  "overture_match": {
-   "name": "Shish Restaurant",
-   "dist_m": 10
-  },
-  "overture_datasets": [
-   "Foursquare"
-  ],
-  "site_hours": "Mo-Fr 09:30-23:00; Sa 10:00-23:00; Su 14:00-23:00; Mo-Fr 09:30-20:00; Sa-Su 10:00-20:00",
-  "site_method": "regex",
-  "site_url": "https://www.chefonline.co.uk/shish-mediterranean-meze-grill-westcliff-on-sea-southend-on-sea-ss0/menu",
-  "site_raw": [
-   "Mon - Fri: 9:30 am - 11:00 pm",
-   "Sat : 10:00 am - 11:00 pm",
-   "Sun: 2:00 pm - 11:00 pm",
-   "Mon - Fri: 9:30 am - 8:00 pm",
-   "Sat - Sun: 10:00 am - 8:00 pm"
-  ],
-  "site_image": {
-   "url": "https://www.chefonline.co.uk/images/ChefOnline_og.jpg",
-   "kind": "og:image"
-  },
-  "site_menu": {
-   "url": "https://www.chefonline.co.uk/coffee-fast-food-takeaways",
-   "label": "coffee-fast-food(1)",
-   "kind": "page"
-  },
-  "site_description": "Order Takeaway Food Online or make reservation at your nearest Restaurant via ChefOnline. Order can be placed for popular Cuisines, Breakfast, Lunch, Snacks & Dinner.",
-  "position_approx": true
- },
- {
   "id": "osm-node-12588524161",
   "fsa_id": null,
   "osm_type": "node",
@@ -18637,7 +18869,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13447127808",
@@ -18672,7 +18906,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1763328",
@@ -18756,7 +18992,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513066",
@@ -18845,7 +19083,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1710496",
@@ -18928,7 +19168,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1356586887",
@@ -18974,7 +19216,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-666292492",
@@ -19224,7 +19468,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1396300",
@@ -19840,7 +20086,54 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
+ },
+ {
+  "id": "fsa-1993212",
+  "fsa_id": 1993212,
+  "osm_type": null,
+  "osm_id": null,
+  "name": "Drift Caf\u00e9",
+  "category": "restaurant",
+  "category_label": "Restaurant / Caf\u00e9",
+  "lat": 51.5408954,
+  "lng": 0.6417301,
+  "geo_precision": "fsa",
+  "address": "Lower Thames Marine, High Street, Leigh-on-sea, Essex, SS9 2ES",
+  "postcode": "SS9 2ES",
+  "phone": "",
+  "email": "",
+  "website": "",
+  "facebook": "",
+  "instagram": "",
+  "twitter": "",
+  "opening_hours_osm": "",
+  "opening_hours": {},
+  "cuisine": "",
+  "brand_wikidata": null,
+  "wikipedia": null,
+  "wikidata": null,
+  "amenities": [],
+  "photos": [],
+  "description": "",
+  "sources": [
+   "fsa"
+  ],
+  "osm_match": {
+   "score": null,
+   "dist_m": null,
+   "candidates": 0
+  },
+  "position_hazard": true,
+  "hazard_road": {
+   "class": "coastal",
+   "street": "lower thames marine",
+   "coast_m": 13,
+   "street_numbers": 0
+  },
+  "position_approx": true
  },
  {
   "id": "osm-node-12861527050",
@@ -19916,7 +20209,7 @@
   "osm_match": {
    "score": 0.7,
    "dist_m": 3,
-   "candidates": 71
+   "candidates": 72
   }
  },
  {
@@ -19990,7 +20283,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1284889",
@@ -20027,7 +20322,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 26
+   "candidates": 27
   },
   "website_source": "overture",
   "phone_source": "overture",
@@ -20074,7 +20369,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1962624",
@@ -20211,7 +20508,9 @@
   "nhs_match": {
    "dist_m": 8
   },
-  "nhs_hours": "Mo 09:00-13:00,14:00-18:30; Tu 09:00-13:00,14:00-18:30; We 09:00-13:00,14:00-18:30; Th 09:00-13:00,14:00-18:30; Fr 09:00-13:00,14:00-18:30"
+  "nhs_hours": "Mo 09:00-13:00,14:00-18:30; Tu 09:00-13:00,14:00-18:30; We 09:00-13:00,14:00-18:30; Th 09:00-13:00,14:00-18:30; Fr 09:00-13:00,14:00-18:30",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12748202839",
@@ -20256,7 +20555,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1833254",
@@ -20388,7 +20689,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513204",
@@ -20598,7 +20901,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-146643081",
@@ -20644,7 +20949,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13564570754",
@@ -20679,7 +20986,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-145593332",
@@ -20725,7 +21034,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513423",
@@ -20819,7 +21130,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513206",
@@ -21058,7 +21371,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513248",
@@ -21141,7 +21456,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-891058547",
@@ -21176,7 +21493,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870939451",
@@ -21211,7 +21530,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513208",
@@ -21480,7 +21801,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-720095",
@@ -21716,7 +22039,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13023011803",
@@ -21751,7 +22076,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-144633930",
@@ -21786,7 +22113,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1623915",
@@ -21823,7 +22152,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 72
+   "candidates": 73
   },
   "website_source": "overture",
   "phone_source": "overture",
@@ -21880,7 +22209,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12872733905",
@@ -21915,7 +22246,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-813949",
@@ -22085,7 +22418,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1649745",
@@ -22179,7 +22514,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870939482",
@@ -22214,7 +22551,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-304155455",
@@ -22272,7 +22611,7 @@
    "label": "menu",
    "kind": "page"
   },
-  "site_description": "ESSEX SEAFOOD & GRILL - Seafood & Steak Restaurant Make Reservation ESSEX SEAFOOD & GRILL - Seafood & Steak Restaurant Our Seafood Story - a"
+  "site_description": "ESSEX SEAFOOD & GRILL - Seafood & Steak Restaurant Make Reservation ESSEX SEAFOOD & GRILL - Southend-On-Sea Restaurant Our Seafood Story - a fishy"
  },
  {
   "id": "fsa-513076",
@@ -22431,7 +22770,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513078",
@@ -22514,7 +22855,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1045266639",
@@ -22549,7 +22892,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1046844253",
@@ -22584,7 +22929,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-145593339",
@@ -22629,7 +22976,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1043934034",
@@ -22675,7 +23024,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1217693",
@@ -22846,7 +23197,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1498883",
@@ -22960,7 +23313,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-334616654",
@@ -23005,7 +23360,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1861840",
@@ -23208,7 +23565,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-516262",
@@ -23240,8 +23599,7 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture",
-   "site"
+   "overture"
   ],
   "osm_match": {
    "score": null,
@@ -23265,19 +23623,6 @@
   "overture_datasets": [
    "meta"
   ],
-  "site_hours": "Mo-Th 12:00-22:30; Fr,Sa 12:00-23:00; Su 12:00-21:00",
-  "site_method": "regex",
-  "site_url": "http://www.aurumsouthend.co.uk/",
-  "site_raw": [
-   "Monday to Thursday 12pm \u2013 10.30pm",
-   "Friday and Saturday 12pm \u2013 11pm",
-   "Sunday 12pm \u2013 9pm"
-  ],
-  "site_menu": {
-   "url": "https://aurumsouthend.co.uk/menu/",
-   "label": "menu",
-   "kind": "page"
-  },
   "position_approx": true
  },
  {
@@ -23578,7 +23923,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513215",
@@ -23662,7 +24009,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1763331",
@@ -23804,7 +24153,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-4116795163",
@@ -23843,7 +24194,9 @@
   "superseded_by": {
    "id": "fsa-1439485",
    "name": "The Dog Cafe"
-  }
+  },
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-176557478",
@@ -23888,7 +24241,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1048635030",
@@ -23934,7 +24289,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12860609130",
@@ -23982,7 +24339,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1046916839",
@@ -24017,7 +24376,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-873531480",
@@ -24064,7 +24425,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-739517",
@@ -24252,7 +24615,9 @@
   },
   "atp_wikidata": "Q113556385",
   "atp_nsi": "costaexpress-3d5cac",
-  "atp_hours": "Mo-Su 06:00-23:00"
+  "atp_hours": "Mo-Su 06:00-23:00",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512495",
@@ -24422,7 +24787,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1791590",
@@ -24661,7 +25028,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870939494",
@@ -24706,7 +25075,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870246986",
@@ -24751,7 +25122,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1809208",
@@ -24921,7 +25294,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-145593329",
@@ -24956,7 +25331,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513089",
@@ -25044,7 +25421,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513090",
@@ -25511,7 +25890,7 @@
    "label": "daytime menu",
    "kind": "page"
   },
-  "site_description": "Steak, Seafood & Soul!\r\nFriday 25th September Book a table  View Menu    \r\nEvening Menus\r\nRead More  \r\nAfternoon Tea\r\nRead More  \r\nSunday Lunch\r\nRead More  \r\nBreakfast & Brunch\r\nRead More  \r\nCocktail Bar"
+  "site_description": "New Autumn Menu Out Now! Book a table  View Menu    \r\nEvening Menus\r\nRead More  \r\nAfternoon Tea\r\nRead More  \r\nSunday Lunch\r\nRead More  \r\nBreakfast & Brunch\r\nRead More  \r\nCocktail Bar\r\nRead"
  },
  {
   "id": "fsa-1809214",
@@ -25691,7 +26070,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1537090",
@@ -25787,7 +26168,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13023011802",
@@ -25822,7 +26205,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870939458",
@@ -25857,7 +26242,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1106579",
@@ -25946,7 +26333,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-702919812",
@@ -25981,7 +26370,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1895968",
@@ -26054,7 +26445,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12866569682",
@@ -26089,7 +26482,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-145593328",
@@ -26135,7 +26530,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-666409061",
@@ -26170,7 +26567,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1151761",
@@ -26341,7 +26740,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 4,
-   "candidates": 69
+   "candidates": 70
   },
   "phone_source": "overture",
   "overture_id": "b844f7c1-65c0-4f2e-bf4e-1142a8d1e59d",
@@ -26370,7 +26769,7 @@
    "kind": "og:image"
   },
   "site_menu": {
-   "url": "https://www.gdk.com/gb/menu",
+   "url": "https://gdk.com/gb/menu",
    "label": "the menu the menu",
    "kind": "page"
   },
@@ -26488,7 +26887,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-944195",
@@ -26526,7 +26927,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 73
+   "candidates": 74
   },
   "website_source": "overture",
   "phone_source": "overture",
@@ -26644,7 +27045,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513272",
@@ -26898,7 +27301,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1396298",
@@ -27045,7 +27450,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1609970",
@@ -27268,7 +27675,9 @@
   "nhs_match": {
    "dist_m": 7
   },
-  "nhs_hours": "Mo 09:00-13:00,14:00-18:00; Tu 09:00-13:00,14:00-18:00; We 09:00-13:00,14:00-18:00; Th 09:00-13:00,14:00-18:00; Fr 09:00-13:00,14:00-18:00"
+  "nhs_hours": "Mo 09:00-13:00,14:00-18:00; Tu 09:00-13:00,14:00-18:00; We 09:00-13:00,14:00-18:00; Th 09:00-13:00,14:00-18:00; Fr 09:00-13:00,14:00-18:00",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-93402590",
@@ -27313,7 +27722,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-90439475",
@@ -27358,7 +27769,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513100",
@@ -27687,7 +28100,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 68
+   "candidates": 69
   },
   "website_source": "overture",
   "phone_source": "overture",
@@ -27889,7 +28302,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513221",
@@ -28212,7 +28627,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513279",
@@ -28431,7 +28848,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12859374760",
@@ -28521,7 +28940,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1914035",
@@ -28615,7 +29036,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-743242",
@@ -28886,7 +29309,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1000873",
@@ -28970,7 +29395,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1048533081",
@@ -29005,7 +29432,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513109",
@@ -29042,7 +29471,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 1,
-   "candidates": 53
+   "candidates": 54
   }
  },
  {
@@ -29131,7 +29560,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513111",
@@ -29375,7 +29806,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12866155162",
@@ -29410,7 +29843,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870246995",
@@ -29445,7 +29880,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1844111",
@@ -29518,7 +29955,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870246996",
@@ -29553,7 +29992,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-666372540",
@@ -29601,7 +30042,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-748163",
@@ -29684,7 +30127,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-941263",
@@ -29859,7 +30304,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-4081351082",
@@ -29905,7 +30352,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512486",
@@ -29978,7 +30427,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512629",
@@ -30061,7 +30512,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1619000",
@@ -30243,7 +30696,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513124",
@@ -30281,7 +30736,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 23,
-   "candidates": 66
+   "candidates": 67
   },
   "phone_source": "overture",
   "overture_id": "74504f68-015a-4355-9619-c4eee4f93c8d",
@@ -30336,7 +30791,9 @@
   },
   "overture_datasets": [
    "AllThePlaces"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-103894987",
@@ -30395,7 +30852,9 @@
   },
   "atp_wikidata": "Q5888229",
   "atp_nsi": "homebargains-622078",
-  "atp_hours": "Mo-Sa 08:00-20:00; Su 10:00-16:00"
+  "atp_hours": "Mo-Sa 08:00-20:00; Su 10:00-16:00",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13564512174",
@@ -30430,7 +30889,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513315",
@@ -30573,7 +31034,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-146641819",
@@ -30608,7 +31071,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513126",
@@ -30888,44 +31353,6 @@
   "position_approx": true
  },
  {
-  "id": "fsa-580694",
-  "fsa_id": 580694,
-  "osm_type": "way",
-  "osm_id": 1390040641,
-  "name": "Hot Dogz Diner",
-  "category": "restaurant",
-  "category_label": "Takeaway",
-  "lat": 51.5328573,
-  "lng": 0.7169915,
-  "geo_precision": "osm",
-  "address": "Hot Dog Bar, Adventure Island, Western Esplanade, Southend-on-sea, SS1 1EE",
-  "postcode": "SS1 1EE",
-  "phone": "",
-  "email": "",
-  "website": "",
-  "facebook": "",
-  "instagram": "",
-  "twitter": "",
-  "opening_hours_osm": "",
-  "opening_hours": {},
-  "cuisine": "",
-  "brand_wikidata": null,
-  "wikipedia": null,
-  "wikidata": null,
-  "amenities": [],
-  "photos": [],
-  "description": "",
-  "sources": [
-   "fsa",
-   "osm"
-  ],
-  "osm_match": {
-   "score": 2.3,
-   "dist_m": 85,
-   "candidates": 25
-  }
- },
- {
   "id": "fsa-1924433",
   "fsa_id": 1924433,
   "osm_type": null,
@@ -30961,7 +31388,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 28
+   "candidates": 29
   },
   "website_source": "overture",
   "phone_source": "overture",
@@ -30980,7 +31407,7 @@
    "SUNDAY: 5pm-9pm"
   ],
   "site_image": {
-   "url": "https://sites.google.com/sitesv-images-rt/AMxu72vZoikaZX3nzR-MrVzSwWCaDd4RfXw9tuTI3PI41p2DOjlGQwDW8uHhW656hcDt2gLGiC8sBkO9mCki7mRbYbh9Yqw5XcZZz_yhsvoshVETkTjDAR4AM_ZA9r8CmT5rQh3Q9o7ujboWgmyxwP466ukkXuRoL5SpXzsnjC4gtzGCbJhTz7ZzFLoGco3bKs2TMjOidt3Y5T1w1sW2QQ5j",
+   "url": "https://sites.google.com/sitesv-images-rt/AMxu72sB6X3FWbDlOeKQ9r_5KG4Z26K0u-ROnIZCsg3E4IEhHJU5n7lOxjWJ7tD0gHf-37wqY1tEA3OtyHm2iCbj4sRHRfMt4L9Y0kQh9TGn1DDYxtOk-qap5JKZ32MigWpMFOzdCzCd4fRl987vD4492oTbq0WV1wBZwW9ixbMNyDKzAbVwpt0q_irv88LicsA1UrnS3z1cQUDkBZ2CP2VD",
    "kind": "og:image"
   },
   "site_menu": {
@@ -31035,7 +31462,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13022999903",
@@ -31080,7 +31509,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513128",
@@ -31284,7 +31715,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1454286260",
@@ -31322,7 +31755,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870246987",
@@ -31357,7 +31792,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512452",
@@ -31444,7 +31881,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-4862219925",
@@ -31490,7 +31929,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1806380",
@@ -31748,7 +32189,7 @@
   "osm_match": {
    "score": 1.1,
    "dist_m": 17,
-   "candidates": 28
+   "candidates": 29
   },
   "phone_source": "overture",
   "overture_id": "e46dce2d-5cf4-493a-b5da-a9bff1c4a77f",
@@ -31793,7 +32234,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1151773",
@@ -31946,7 +32389,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 36,
-   "candidates": 45
+   "candidates": 46
   },
   "website_source": "overture",
   "phone_source": "overture",
@@ -32478,7 +32921,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1639563",
@@ -32562,7 +33007,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512631",
@@ -32597,8 +33044,7 @@
   "sources": [
    "fsa",
    "osm",
-   "overture",
-   "site"
+   "overture"
   ],
   "osm_match": {
    "score": 2.4,
@@ -32614,38 +33060,7 @@
   },
   "overture_datasets": [
    "meta"
-  ],
-  "site_hours": "Tue 12:00 - 21:30; Wed 12:00 - 21:30; Thu 12:00 - 21:30; Fri 12:00 - 22:00; Sat 12:00 - 22:00; Sun 12:00 - 21:30; Mon 12:00 - 21:30",
-  "site_method": "json-ld (disputed on-site)",
-  "site_url": "https://www.quandoo.co.uk/place/irmas-108379/about?aid=63&rwg_token=ACgRB3dW3Ds2Fy6WFTrjdvASPu5nclMIvKv81-P024IcUCKfB66g9yM7sgpfMTgBzh-zOVQg0QGYcu5zTtgxO6aVjD8EhHblIg%3D%3D",
-  "site_alt": "Tu 12:00-21:30; We 12:00-21:30; Th 12:00-21:30; Fr 12:00-22:00; Sa 12:00-22:00; Su 12:00-21:30; Mo 12:00-21:30; Tu 12:00-14:00; We 12:00-14:00; Th 12:00-14:00",
-  "site_raw": [
-   "Irmas | 9 Elm Road: Tue 12:00 - 21:30",
-   "Irmas | 9 Elm Road: Wed 12:00 - 21:30",
-   "Irmas | 9 Elm Road: Thu 12:00 - 21:30",
-   "Irmas | 9 Elm Road: Fri 12:00 - 22:00",
-   "Irmas | 9 Elm Road: Sat 12:00 - 22:00",
-   "Irmas | 9 Elm Road: Sun 12:00 - 21:30",
-   "Irmas | 9 Elm Road: Mon 12:00 - 21:30",
-   "Tuesday 12:00 pm - 9:30 pm"
-  ],
-  "site_image": {
-   "url": "https://qul.imgix.net/38279d12-986e-4889-8680-0d021b22090a/757180_sld.jpg",
-   "kind": "og:image"
-  },
-  "site_menu": {
-   "url": "https://www.quandoo.co.uk/place/the-waeccer-great-wakering-103155/about",
-   "label": "the waeccer great wakering",
-   "kind": "page"
-  },
-  "site_description": "Don't miss the opportunity to book a table at Irmas in Southend-on-Sea. Irmas is one of the Leigh-on-Sea restaurants that everyone talks about. Make a reservation now if you are searching for a place to eat out.",
-  "site_cuisine": [
-   "Pizza",
-   "Italian",
-   "Mediterranean",
-   "Pasta"
-  ],
-  "site_price": "\u00a3\u00a3\u00a3"
+  ]
  },
  {
   "id": "fsa-740435",
@@ -32835,7 +33250,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12231714155",
@@ -32870,7 +33287,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1177110645",
@@ -32916,7 +33335,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-148855229",
@@ -32953,7 +33374,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12865525787",
@@ -32988,7 +33411,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-666378447",
@@ -33034,7 +33459,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1772632",
@@ -33179,7 +33606,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513320",
@@ -33416,7 +33845,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12872733918",
@@ -33451,7 +33882,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1785330",
@@ -33611,7 +34044,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513321",
@@ -33801,7 +34236,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-4116795147",
@@ -33836,7 +34273,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1151732",
@@ -33877,7 +34316,7 @@
   "osm_match": {
    "score": 1.3,
    "dist_m": 78,
-   "candidates": 27
+   "candidates": 28
   },
   "phone_source": "overture",
   "overture_id": "42a24a38-0777-42cd-85c9-cbd29f1f772c",
@@ -34064,7 +34503,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1830813",
@@ -34510,7 +34951,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-93231894",
@@ -34558,7 +35001,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512788",
@@ -34708,7 +35153,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1425437",
@@ -35133,7 +35580,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512667",
@@ -35220,7 +35669,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 13
+   "candidates": 14
   },
   "position_hazard": true,
   "hazard_road": {
@@ -35306,7 +35755,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-729022",
@@ -35585,7 +36036,7 @@
   "osm_match": {
    "score": 1.1,
    "dist_m": 19,
-   "candidates": 65
+   "candidates": 66
   }
  },
  {
@@ -35671,7 +36122,9 @@
   },
   "atp_wikidata": "Q958053",
   "atp_nsi": "kwikfit-b75a4b",
-  "atp_hours": "Mo-Fr 08:30-18:00; Sa 08:30-17:00"
+  "atp_hours": "Mo-Fr 08:30-18:00; Sa 08:30-17:00",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1375937",
@@ -35895,8 +36348,7 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture",
-   "site"
+   "overture"
   ],
   "osm_match": {
    "score": null,
@@ -35913,19 +36365,6 @@
   "overture_datasets": [
    "meta"
   ],
-  "site_hours": "Tu-Sa 17:00-22:00; Su 12:00-21:00",
-  "site_method": "regex",
-  "site_url": "http://lapiazzettarestaurant.co.uk",
-  "site_raw": [
-   "Tuesday-Saturday: 5pm-10pm",
-   "Sunday: 12pm-9pm"
-  ],
-  "site_menu": {
-   "url": "https://terramiarestaurant.co.uk/menus/",
-   "label": "menus",
-   "kind": "page"
-  },
-  "site_description": "Call us to book a table or order takeaway",
   "position_approx": true
  },
  {
@@ -36033,7 +36472,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-145593340",
@@ -36068,7 +36509,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512968",
@@ -36610,7 +37053,9 @@
   "superseded_by": {
    "id": "fsa-1375945",
    "name": "Alchemy"
-  }
+  },
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-921900",
@@ -36643,7 +37088,8 @@
   "sources": [
    "fsa",
    "ch",
-   "overture"
+   "overture",
+   "site"
   ],
   "osm_match": {
    "score": null,
@@ -36663,6 +37109,17 @@
   "overture_datasets": [
    "meta"
   ],
+  "site_hours": "Mo 17:00-22:00; Tu-Sa 12:00-23:45; Su 12:00-21:30",
+  "site_method": "json-ld",
+  "site_url": "http://leighbistro.co.uk/",
+  "site_raw": [
+   "Leigh Bistro | 123 Broadway: Mo 17:00-22:00; Tu-Sa 12:00-23:45; Su 12:00-21:30"
+  ],
+  "site_image": {
+   "url": "https://img1.wsimg.com/isteam/stock/3779",
+   "kind": "og:image"
+  },
+  "site_description": "Delight in exquisite dishes at our restaurant in Leigh-on-Sea, perfect for family meals or special occasions. Book your table today!",
   "position_approx": true
  },
  {
@@ -36746,7 +37203,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513141",
@@ -36832,22 +37291,26 @@
   "overture_datasets": [
    "meta"
   ],
-  "site_hours": ", , , , Fr 18:00-23:00, Sa 18:00-23:00, Su 13:00-19:00",
-  "site_method": "json-ld",
+  "site_hours": "Sa 12:00-15:00",
+  "site_method": "regex (disputed on-site)",
   "site_url": "http://www.foodleighonsea.com/",
+  "site_alt": ", , , , Fr 18:00-23:00, Sa 18:00-23:00, Su 13:00-19:00",
   "site_raw": [
-   "Food Leigh-on-Sea: , , , , Fr 18:00-23:00, Sa 18:00-23:00, Su 13:00-19:00"
+   "Food Leigh-on-Sea: , , , , Fr 18:00-23:00, Sa 18:00-23:00, Su 13:00-19:00",
+   "Saturday 12-3pm"
   ],
   "site_image": {
    "url": "http://static1.squarespace.com/static/5b0dab271aef1d8436be631e/t/6090094d4157082fd05e2c1e/1620052302143/Untitled+design+%2875%29.png?format=1500w",
    "kind": "og:image"
   },
   "site_menu": {
-   "url": "https://foodleighonsea.com/s/Tasting-Menu-January-1.pdf",
+   "url": "https://foodleighonsea.com/s/Tasting-Menu-September.pdf",
    "label": "sample tasting menu",
    "kind": "pdf"
   },
-  "site_description": "Michelin guide restaurant serving locally sourced seasonal food with a focus on health, wellbeing, creativity and flavour. Inspired by the seasons, our menu uses only the best produce, grown as close to the restaurant in Leigh-on-sea, Essex, as possible."
+  "site_description": "Michelin guide restaurant serving locally sourced seasonal food with a focus on health, wellbeing, creativity and flavour. Inspired by the seasons, our menu uses only the best produce, grown as close to the restaurant in Leigh-on-sea, Essex, as possible.",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-4537520201",
@@ -36893,7 +37356,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-4701264956",
@@ -36938,7 +37403,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-666381683",
@@ -36984,7 +37451,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-93231898",
@@ -37080,7 +37549,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-699867493",
@@ -37126,7 +37597,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-4701264954",
@@ -37172,7 +37645,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513027",
@@ -37272,7 +37747,9 @@
   "nhs_match": {
    "dist_m": 33
   },
-  "nhs_hours": "Mo 09:00-18:30; Tu 09:00-18:30; We 09:00-18:30; Th 09:00-18:30; Fr 09:00-18:30"
+  "nhs_hours": "Mo 09:00-18:30; Tu 09:00-18:30; We 09:00-18:30; Th 09:00-18:30; Fr 09:00-18:30",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-316782553",
@@ -37318,7 +37795,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-929602",
@@ -37453,7 +37932,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512422",
@@ -37663,7 +38144,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-744342",
@@ -37704,7 +38187,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 6,
-   "candidates": 29
+   "candidates": 30
   },
   "ch_number": "14641364",
   "ch_incorporated": "2023-02-06",
@@ -37845,7 +38328,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 39
+   "candidates": 40
   },
   "position_approx": true
  },
@@ -37931,7 +38414,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1043912159",
@@ -37977,7 +38462,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512972",
@@ -38271,7 +38758,9 @@
   },
   "atp_wikidata": "Q151954",
   "atp_nsi": "lidl-5866c3",
-  "atp_hours": "Mo-Sa 08:00-22:00; Su 10:00-16:00"
+  "atp_hours": "Mo-Sa 08:00-22:00; Su 10:00-16:00",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1680081",
@@ -38638,7 +39127,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1928086",
@@ -38771,7 +39262,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-521369",
@@ -39104,7 +39597,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1669622",
@@ -39531,7 +40026,9 @@
    "candidates": 1
   },
   "atp_wikidata": "Q21008564",
-  "atp_nsi": "londis-232829"
+  "atp_nsi": "londis-232829",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-664905763",
@@ -39566,7 +40063,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-9063085662",
@@ -39612,7 +40111,9 @@
    "candidates": 2
   },
   "atp_wikidata": "Q21008564",
-  "atp_nsi": "londis-232829"
+  "atp_nsi": "londis-232829",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12366292892",
@@ -39658,7 +40159,9 @@
    "candidates": 1
   },
   "atp_wikidata": "Q21008564",
-  "atp_nsi": "londis-232829"
+  "atp_nsi": "londis-232829",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512485",
@@ -40054,7 +40557,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512735",
@@ -40231,7 +40736,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-4701264982",
@@ -40277,7 +40784,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-198966971",
@@ -40312,7 +40821,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1210369",
@@ -40684,7 +41195,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-623690",
@@ -40768,7 +41281,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1278820",
@@ -40946,8 +41461,7 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture",
-   "site"
+   "overture"
   ],
   "osm_match": {
    "score": null,
@@ -40963,17 +41477,6 @@
   },
   "overture_datasets": [
    "meta"
-  ],
-  "site_hours": "Tu 17:00-22:30; We 17:00-22:30; Th 17:00-22:30; Fr 17:00-22:30; Sa 17:00-22:30; Su 17:00-22:30",
-  "site_method": "regex",
-  "site_url": "https://vezro.top/man-fung",
-  "site_raw": [
-   "Tuesday 5-10:30pm",
-   "Wednesday 5-10:30pm",
-   "Thursday 5-10:30pm",
-   "Friday 5-10:30pm",
-   "Saturday 5-10:30pm",
-   "Sunday 5-10:30pm"
   ],
   "position_approx": true
  },
@@ -41290,7 +41793,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1043516866",
@@ -41336,7 +41841,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1045266593",
@@ -41371,7 +41878,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1151757",
@@ -41639,7 +42148,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12866605188",
@@ -41674,7 +42185,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-664902079",
@@ -41720,7 +42233,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-538529",
@@ -41923,7 +42438,7 @@
   "osm_match": {
    "score": 2.3,
    "dist_m": 71,
-   "candidates": 21
+   "candidates": 22
   },
   "phone_source": "overture",
   "overture_id": "57db20db-ffad-4168-8451-fed7825554ba",
@@ -41990,55 +42505,6 @@
    "dist_m": null,
    "candidates": 1
   },
-  "position_approx": true
- },
- {
-  "id": "fsa-512688",
-  "fsa_id": 512688,
-  "osm_type": null,
-  "osm_id": null,
-  "name": "McCoys Fish And Chips",
-  "category": "restaurant",
-  "category_label": "Takeaway",
-  "lat": 51.540298,
-  "lng": 0.781769,
-  "geo_precision": "fsa",
-  "address": "6 Asda Centre, Frobisher Way, Shoeburyness, Southend-On-Sea, SS3 8UE",
-  "postcode": "SS3 8UE",
-  "phone": "+441702902301",
-  "email": "",
-  "website": "http://www.mccoysfishbars.co.uk",
-  "facebook": "",
-  "instagram": "",
-  "twitter": "",
-  "opening_hours_osm": "",
-  "opening_hours": {},
-  "cuisine": "",
-  "brand_wikidata": null,
-  "wikipedia": null,
-  "wikidata": null,
-  "amenities": [],
-  "photos": [],
-  "description": "",
-  "sources": [
-   "fsa",
-   "overture"
-  ],
-  "osm_match": {
-   "score": null,
-   "dist_m": null,
-   "candidates": 5
-  },
-  "website_source": "overture",
-  "phone_source": "overture",
-  "overture_id": "db2bb0be-ee7f-4d3f-8393-f70cbfe95034",
-  "overture_match": {
-   "name": "McCoys Fish Bar",
-   "dist_m": 21
-  },
-  "overture_datasets": [
-   "meta"
-  ],
   "position_approx": true
  },
  {
@@ -42188,7 +42654,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 26,
-   "candidates": 72
+   "candidates": 73
   },
   "atp_spider": "mcdonalds",
   "atp_brand": "McDonald's",
@@ -42337,7 +42803,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1743657",
@@ -42501,7 +42969,9 @@
    "url": "https://www.themedrestaurant.co.uk/s/Last-version-lunch-menu.pdf",
    "label": "lunch",
    "kind": "pdf"
-  }
+  },
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1861845",
@@ -42590,7 +43060,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 23
+   "candidates": 24
   },
   "position_hazard": true,
   "hazard_road": {
@@ -42753,7 +43223,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-516300",
@@ -42905,7 +43377,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1760727",
@@ -43272,7 +43746,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12748149723",
@@ -43318,7 +43794,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13900186414",
@@ -43388,7 +43866,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1847789",
@@ -43431,6 +43911,44 @@
   "ch_incorporated": "2025-02-06",
   "ch_sic": "56102",
   "position_approx": true
+ },
+ {
+  "id": "fsa-580694",
+  "fsa_id": 580694,
+  "osm_type": "way",
+  "osm_id": 1390040641,
+  "name": "Mini Donut",
+  "category": "restaurant",
+  "category_label": "Takeaway",
+  "lat": 51.5328573,
+  "lng": 0.7169915,
+  "geo_precision": "osm",
+  "address": "Hot Dog Bar, Adventure Island, Western Esplanade, Southend-on-sea, SS1 1EE",
+  "postcode": "SS1 1EE",
+  "phone": "",
+  "email": "",
+  "website": "",
+  "facebook": "",
+  "instagram": "",
+  "twitter": "",
+  "opening_hours_osm": "",
+  "opening_hours": {},
+  "cuisine": "",
+  "brand_wikidata": null,
+  "wikipedia": null,
+  "wikidata": null,
+  "amenities": [],
+  "photos": [],
+  "description": "",
+  "sources": [
+   "fsa",
+   "osm"
+  ],
+  "osm_match": {
+   "score": 2.3,
+   "dist_m": 85,
+   "candidates": 24
+  }
  },
  {
   "id": "fsa-764432",
@@ -43510,7 +44028,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-516269",
@@ -43632,7 +44152,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1390433415",
@@ -43677,7 +44199,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12866155163",
@@ -43723,7 +44247,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1002140",
@@ -43764,7 +44290,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 38,
-   "candidates": 61
+   "candidates": 62
   },
   "phone_source": "overture",
   "overture_id": "db7f7bdb-0893-46b1-a946-25476c517cba",
@@ -44067,7 +44593,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-10759064385",
@@ -44113,7 +44641,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1151738",
@@ -44471,7 +45001,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-538534",
@@ -44614,7 +45146,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1958111",
@@ -44785,7 +45319,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-956285",
@@ -44952,7 +45488,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 23,
-   "candidates": 60
+   "candidates": 61
   },
   "phone_source": "overture",
   "overture_id": "f943e0a5-8b12-4604-8c2c-e6040dbaa82d",
@@ -45078,7 +45614,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-836484",
@@ -45331,7 +45869,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12872726068",
@@ -45376,7 +45916,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12866155171",
@@ -45422,7 +45964,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1945926",
@@ -45459,7 +46003,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 41
+   "candidates": 42
   },
   "ch_number": "15030300",
   "ch_incorporated": "2023-07-26",
@@ -45499,7 +46043,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512754",
@@ -45540,7 +46086,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 20,
-   "candidates": 36
+   "candidates": 37
   },
   "atp_spider": "nandos_gb_ie",
   "atp_brand": "Nando's",
@@ -45567,8 +46113,8 @@
    "Sunday 12pm - 10pm"
   ],
   "site_image": {
-   "url": "https://www.nandos.co.uk/logo-512x512.png",
-   "kind": "json-ld"
+   "url": "https://www.nandos.ie/replatform/og/default.jpg",
+   "kind": "og:image"
   },
   "site_menu": {
    "url": "https://www.nandos.co.uk/food/menu",
@@ -45627,7 +46173,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-975257",
@@ -45829,7 +46377,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12269766604",
@@ -45877,7 +46427,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513512",
@@ -45972,7 +46524,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-144174912",
@@ -46041,7 +46595,9 @@
   "site_description": "New Cod On The Block is your go-to for authentic Fish and Chips takeaway in Sheffield. Order online and enjoy delicious food delivered straight to your door.",
   "site_cuisine": [
    "Fish And Chips, Pies, Kebab"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-538535",
@@ -46237,7 +46793,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1749647",
@@ -46456,7 +47014,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1299835486",
@@ -46491,7 +47051,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-765719577",
@@ -46526,7 +47088,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1870317",
@@ -46823,17 +47387,16 @@
   "overture_datasets": [
    "meta"
   ],
-  "site_hours": "Mo 12:00-16:00; Tu 12:00-16:00; We 12:00-16:00; Th 12:00-20:00; Fr 12:00-21:00; Sa 09:30-21:00; Su 09:30-18:00",
+  "site_hours": "Tu 12:00-16:00; We 12:00-16:00; Th 12:00-16:00; Fr 12:00-21:00; Sa 09:30-21:00; Su 09:30-17:00",
   "site_method": "regex",
   "site_url": "http://www.no1cockleshed.co.uk/",
   "site_raw": [
-   "Monday 12-4pm",
    "Tuesday 12-4pm",
    "Wednesday 12-4pm",
-   "Thursday 12-8pm",
+   "Thursday 12-4pm",
    "Friday 12-9pm",
    "Saturday 9.30-9pm",
-   "Sunday 9.30-6pm"
+   "Sunday 9.30-5pm"
   ],
   "site_image": {
    "url": "https://no1cockleshed.co.uk/wp-content/themes/cockleshed/icons/apple-touch-icon.png?1764348503",
@@ -46986,7 +47549,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512850",
@@ -47072,7 +47637,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1717362",
@@ -47155,7 +47722,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1710519",
@@ -47264,7 +47833,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870939477",
@@ -47299,7 +47870,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-50706264",
@@ -47334,7 +47907,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-9949825074",
@@ -47369,7 +47944,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-545852",
@@ -47531,7 +48108,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 7,
-   "candidates": 35
+   "candidates": 36
   },
   "phone_source": "overture",
   "overture_id": "f0d73104-7f5a-4067-968f-769489858e82",
@@ -47772,7 +48349,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-4701264961",
@@ -47807,7 +48386,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-699188",
@@ -47905,7 +48486,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513479",
@@ -47988,7 +48571,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-812479",
@@ -48120,7 +48705,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-739514",
@@ -48589,7 +49176,9 @@
   "nhs_match": {
    "dist_m": 43
   },
-  "nhs_hours": "Mo 09:00-18:30; Tu 09:00-18:30; We 09:00-18:30; Th 09:00-18:30; Fr 09:00-18:30; Sa 09:00-14:00"
+  "nhs_hours": "Mo 09:00-18:30; Tu 09:00-18:30; We 09:00-18:30; Th 09:00-18:30; Fr 09:00-18:30; Sa 09:00-14:00",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-218118216",
@@ -48670,7 +49259,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-88417461",
@@ -48742,7 +49333,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1045266661",
@@ -48885,7 +49478,9 @@
    "url": "https://www.oystercreek.org/menu",
    "label": "menu",
    "kind": "page"
-  }
+  },
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1485909",
@@ -48980,7 +49575,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12862851873",
@@ -49025,7 +49622,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1865465",
@@ -49207,7 +49806,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1785324",
@@ -49377,7 +49978,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513232",
@@ -49498,7 +50101,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1861838",
@@ -49679,7 +50284,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13233574682",
@@ -49714,7 +50321,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1446935260",
@@ -49760,7 +50369,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-643338",
@@ -49920,7 +50531,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-767544",
@@ -50261,7 +50874,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513233",
@@ -50394,7 +51009,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-957703",
@@ -50499,7 +51116,9 @@
    "label": "menu",
    "kind": "page"
   },
-  "site_description": "Discover PeggyS Music Bar Ltd at 1063A London Rd: Your go-to spot for thrilling live music and vibrant atmosphere in Leigh-on-Sea!"
+  "site_description": "Discover PeggyS Music Bar Ltd at 1063A London Rd: Your go-to spot for thrilling live music and vibrant atmosphere in Leigh-on-Sea!",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1080718",
@@ -50682,7 +51301,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-103895001",
@@ -50739,7 +51360,9 @@
   },
   "atp_wikidata": "Q7179258",
   "atp_nsi": "petsathome-8ec028",
-  "atp_hours": "Mo-Fr 09:00-20:00; Sa 09:00-19:00; Su 10:00-16:00"
+  "atp_hours": "Mo-Fr 09:00-20:00; Sa 09:00-19:00; Su 10:00-16:00",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512772",
@@ -51100,7 +51723,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1202773",
@@ -51191,7 +51816,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 17,
-   "candidates": 20
+   "candidates": 21
   },
   "phone_source": "overture",
   "overture_id": "2e10d364-5859-4567-a9a2-91fb68db9678",
@@ -51727,7 +52352,9 @@
   "superseded_by": {
    "id": "fsa-1779909",
    "name": "The Salad Lab"
-  }
+  },
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1847788",
@@ -51849,7 +52476,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "site"
   ],
   "osm_match": {
    "score": null,
@@ -51866,6 +52494,26 @@
   "overture_datasets": [
    "meta"
   ],
+  "site_hours": "We 18:00-21:00; Th 21:00-03:00; Fr 21:00-04:00; Sa 21:00-04:00",
+  "site_method": "regex",
+  "site_url": "https://www.popworldparty.co.uk/southend?utm_source=facebook&utm_medium=organicsocial&utm_campaign=homepage",
+  "site_raw": [
+   "Wednesday 6 pm - 9 pm",
+   "Thursday 9 pm - 3 am",
+   "Friday 9 pm - 4 am",
+   "Saturday 9 pm - 4 am"
+  ],
+  "site_image": {
+   "url": "https://24-social.com/cdn-cgi/image/width=1200,height=630,fit=cover,format=auto/images/preview-stonegate-0VzKJgPbwtrMiQJ8zPdj-sg-venue-asset-4352-primary-12cddaaaafbd43e096fdbfa5daf5cfcb.jpg/public",
+   "kind": "og:image"
+  },
+  "site_menu": {
+   "url": "https://www.popworldparty.co.uk/clubs/southend/menus",
+   "label": "view menus",
+   "kind": "page"
+  },
+  "site_description": "Popworld Southend in Southend-on-Sea.",
+  "site_price": "\u00a3 - \u00a3\u00a3",
   "position_approx": true
  },
  {
@@ -52242,8 +52890,7 @@
   "sources": [
    "fsa",
    "osm",
-   "overture",
-   "site"
+   "overture"
   ],
   "osm_match": {
    "score": 2.4,
@@ -52258,20 +52905,7 @@
   },
   "overture_datasets": [
    "meta"
-  ],
-  "site_hours": "Mo 09:00-18:00; Tu 09:00-18:00; We 09:00-18:00; Th 09:00-18:00; Fr 09:00-18:00; Sa 09:00-18:00; Su 10:00-16:00",
-  "site_method": "regex",
-  "site_url": "https://poundstretcher.co.uk/pages/southend-on-sea-365",
-  "site_raw": [
-   "Monday: 09:00 - 18:00",
-   "Tuesday: 09:00 - 18:00",
-   "Wednesday: 09:00 - 18:00",
-   "Thursday: 09:00 - 18:00",
-   "Friday: 09:00 - 18:00",
-   "Saturday: 09:00 - 18:00",
-   "Sunday: 10:00 - 16:00"
-  ],
-  "site_description": "Find the location, phone number, email address and opening hours for Poundstretcher on the High Street in Southend-On-Sea."
+  ]
  },
  {
   "id": "fsa-1929891",
@@ -52348,44 +52982,6 @@
    "candidates": 3
   },
   "position_approx": true
- },
- {
-  "id": "fsa-578237",
-  "fsa_id": 578237,
-  "osm_type": "node",
-  "osm_id": 11757465862,
-  "name": "Premier",
-  "category": "shopping",
-  "category_label": "Food shop",
-  "lat": 51.5355213,
-  "lng": 0.7315041,
-  "geo_precision": "osm",
-  "address": "Spar, 151 Woodgrange Drive, Southend-On-Sea, Essex, SS1 2SF",
-  "postcode": "SS1 2SF",
-  "phone": "",
-  "email": "",
-  "website": "https://www.premier-stores.co.uk/our-stores/woodgrange-convenience",
-  "facebook": "",
-  "instagram": "",
-  "twitter": "",
-  "opening_hours_osm": "Mo-Sa 07:00-22:00; Su 08:00-22:00",
-  "opening_hours": {},
-  "cuisine": "",
-  "brand_wikidata": "Q7240340",
-  "wikipedia": null,
-  "wikidata": null,
-  "amenities": [],
-  "photos": [],
-  "description": "",
-  "sources": [
-   "fsa",
-   "osm"
-  ],
-  "osm_match": {
-   "score": 2.4,
-   "dist_m": 8,
-   "candidates": 13
-  }
  },
  {
   "id": "osm-node-727795470",
@@ -52533,7 +53129,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-852721",
@@ -52742,7 +53340,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-964657",
@@ -52993,6 +53593,43 @@
   ]
  },
  {
+  "id": "osm-node-11757465862",
+  "fsa_id": null,
+  "osm_type": "node",
+  "osm_id": 11757465862,
+  "osm_touched": "2025-05-20T14:59:20Z",
+  "osm_version": 2,
+  "osm_fhrs_id": "578237",
+  "name": "Premier Woodgrange Convenience",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.5355213,
+  "lng": 0.7315041,
+  "geo_precision": "osm",
+  "address": "153, Woodgrange Drive, Southend-on-Sea, SS1 2SF",
+  "postcode": "SS1 2SF",
+  "phone": "",
+  "email": "",
+  "website": "https://www.premier-stores.co.uk/our-stores/woodgrange-convenience",
+  "facebook": "",
+  "instagram": "",
+  "twitter": "",
+  "opening_hours_osm": "Mo-Sa 07:00-22:00; Su 08:00-22:00",
+  "opening_hours": {},
+  "cuisine": "",
+  "brand_wikidata": "Q7240340",
+  "wikipedia": null,
+  "wikidata": null,
+  "amenities": [],
+  "photos": [],
+  "description": "",
+  "sources": [
+   "osm"
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
+ },
+ {
   "id": "osm-node-13519546578",
   "fsa_id": null,
   "osm_type": "node",
@@ -53035,7 +53672,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12865151123",
@@ -53094,7 +53733,9 @@
   },
   "atp_wikidata": "Q137023",
   "atp_nsi": "primark-5d2556",
-  "atp_hours": "Mo-Sa 09:00-18:00; Su 10:00-16:30"
+  "atp_hours": "Mo-Sa 09:00-18:00; Su 10:00-16:30",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1237307020",
@@ -53142,7 +53783,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512425",
@@ -53232,7 +53875,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512482",
@@ -53329,7 +53974,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-212452014",
@@ -53374,7 +54021,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-144174913",
@@ -53419,7 +54068,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-146652980",
@@ -53500,7 +54151,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-50857393",
@@ -53546,7 +54199,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1709499",
@@ -53642,7 +54297,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513242",
@@ -53764,7 +54421,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-9949825124",
@@ -53799,7 +54458,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13023011806",
@@ -53845,7 +54506,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12866605184",
@@ -53880,7 +54543,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513282",
@@ -53953,7 +54618,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1665717",
@@ -54091,7 +54758,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-664907353",
@@ -54128,7 +54797,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1917928",
@@ -54222,7 +54893,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1038708615",
@@ -54267,7 +54940,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513286",
@@ -54361,7 +55036,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 10,
-   "candidates": 13
+   "candidates": 14
   },
   "website_source": "overture",
   "overture_id": "07bc62e8-d166-4259-abda-b4a1867f5c3d",
@@ -54434,7 +55109,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1375933",
@@ -54545,7 +55222,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-5818752516",
@@ -54580,7 +55259,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-147496229",
@@ -54626,7 +55307,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12854399863",
@@ -54661,7 +55344,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1771036",
@@ -54837,7 +55522,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-643340",
@@ -54869,8 +55556,7 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture",
-   "site"
+   "overture"
   ],
   "osm_match": {
    "score": null,
@@ -54887,17 +55573,6 @@
   "overture_datasets": [
    "meta"
   ],
-  "site_hours": "Mo 12:00-14:30; Mo 17:30-22:30; Tu 09:00-17:00; We-Su 12:00-14:30; We-Su 17:30-22:30",
-  "site_method": "merged",
-  "site_url": "http://www.redchilliezs.co.uk/",
-  "site_raw": [
-   "Red Chilliezs | 629 London Road: Mo,Tu,We,Th,Fr,Sa,Su 09:00-17:00",
-   "Wed to Mon : 12 pm to 2:30 pm , 5:30 pm to 10:30 pm",
-   "Wed to Mon : 12 pm to 2:30 pm , 5:30 pm to 10:30 pm",
-   "Mon : 12 pm to 2:30 pm",
-   "Wed to Sun : 5:30 pm to 10:30 pm"
-  ],
-  "site_description": "Ready to experience the best Indian restaurant in Southend? Visit us at redchilliezs.co.uk or call us at 01702 333323 to make a reservation. Follow us on facebook, instagram for updates and special offers.",
   "position_approx": true
  },
  {
@@ -54943,7 +55618,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1043779074",
@@ -54978,7 +55655,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-643358",
@@ -55076,7 +55755,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870939495",
@@ -55111,7 +55792,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-146643259",
@@ -55146,7 +55829,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-11475844544",
@@ -55181,7 +55866,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1914033",
@@ -55275,7 +55962,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870246979",
@@ -55310,7 +55999,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-538545",
@@ -55553,7 +56244,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513199",
@@ -55699,7 +56392,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1926393",
@@ -55939,7 +56634,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-542619",
@@ -56208,7 +56905,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512548",
@@ -56292,7 +56991,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512821",
@@ -56547,7 +57248,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-542620",
@@ -56748,7 +57451,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1045455136",
@@ -56783,7 +57488,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1704699",
@@ -57003,7 +57710,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512874",
@@ -57086,7 +57795,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1807641",
@@ -57181,7 +57892,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1048635023",
@@ -57216,7 +57929,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512769",
@@ -57299,7 +58014,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-121175237",
@@ -57345,7 +58062,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512807",
@@ -57445,7 +58164,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-855984",
@@ -57832,7 +58553,9 @@
   },
   "overture_datasets": [
    "AllThePlaces"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-150856409",
@@ -57877,7 +58600,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-150937274",
@@ -57947,7 +58672,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-538549",
@@ -58031,7 +58758,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870247000",
@@ -58077,7 +58806,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12163691288",
@@ -58123,7 +58854,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512529",
@@ -58162,7 +58895,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 17,
-   "candidates": 31
+   "candidates": 32
   }
  },
  {
@@ -58198,7 +58931,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-964666",
@@ -58354,7 +59089,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512986",
@@ -58570,7 +59307,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513309",
@@ -58859,7 +59598,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 33,
-   "candidates": 54
+   "candidates": 55
   }
  },
  {
@@ -58897,7 +59636,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 55
+   "candidates": 56
   },
   "website_source": "overture",
   "phone_source": "overture",
@@ -58944,7 +59683,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1785325",
@@ -59028,7 +59769,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1631661",
@@ -59174,7 +59917,9 @@
   },
   "overture_datasets": [
    "AllThePlaces"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-155305659",
@@ -59229,7 +59974,9 @@
    "method": "wikidata",
    "candidates": 1
   },
-  "atp_wikidata": "Q7439115"
+  "atp_wikidata": "Q7439115",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-596388377",
@@ -59320,7 +60067,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1891236",
@@ -59518,7 +60267,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-11236367788",
@@ -59553,12 +60304,8 @@
   "description": "",
   "sources": [
    "osm",
-   "ch",
    "overture"
   ],
-  "ch_number": "16241443",
-  "ch_incorporated": "2025-02-10",
-  "ch_sic": "56102",
   "website_source": "overture",
   "phone_source": "overture",
   "overture_id": "5e6c4d05-eb8a-426a-99c1-cf8bbde1d44b",
@@ -59568,7 +60315,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1549132",
@@ -59850,7 +60599,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-144633923",
@@ -59896,7 +60647,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13447127801",
@@ -59931,7 +60684,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513334",
@@ -60004,7 +60759,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1054902",
@@ -60077,7 +60834,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512988",
@@ -60288,7 +61047,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-521371",
@@ -60475,7 +61236,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512658",
@@ -60570,7 +61333,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1553275",
@@ -60683,7 +61448,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-4116795146",
@@ -60718,7 +61485,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513459",
@@ -60801,7 +61570,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-447310835",
@@ -60836,7 +61607,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13022969685",
@@ -60871,7 +61644,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1649746",
@@ -60955,7 +61730,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513337",
@@ -61032,7 +61809,9 @@
   "superseded_by": {
    "id": "fsa-585551",
    "name": "Spar"
-  }
+  },
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513442",
@@ -61222,7 +62001,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-664901596",
@@ -61257,7 +62038,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-11236367790",
@@ -61296,7 +62079,9 @@
   "superseded_by": {
    "id": "fsa-1917924",
    "name": "Skylahs Bar"
-  }
+  },
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512991",
@@ -61380,7 +62165,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1375927",
@@ -61548,7 +62335,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1045266636",
@@ -61583,7 +62372,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1917936",
@@ -61656,7 +62447,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12862851869",
@@ -61701,7 +62494,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-516271",
@@ -62061,7 +62856,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-161482615",
@@ -62106,7 +62903,9 @@
   },
   "overture_datasets": [
    "AllThePlaces"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-538533",
@@ -62189,7 +62988,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-90651048",
@@ -62224,7 +63025,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-93231885",
@@ -62507,7 +63310,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1686412454",
@@ -62553,7 +63358,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1050176057",
@@ -62599,7 +63406,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1023203",
@@ -62635,7 +63444,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 29
+   "candidates": 30
   },
   "position_approx": true
  },
@@ -62682,7 +63491,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-84037928",
@@ -62717,7 +63528,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870246984",
@@ -62763,7 +63576,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1450771",
@@ -63001,7 +63816,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12269730697",
@@ -63047,7 +63864,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-666403104",
@@ -63082,7 +63901,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12855333895",
@@ -63127,7 +63948,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-521364",
@@ -63206,7 +64029,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1325660877",
@@ -63254,7 +64079,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1151779",
@@ -63353,7 +64180,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1045455152",
@@ -63398,7 +64227,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-847712664",
@@ -63443,7 +64274,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-28813775",
@@ -63986,7 +64819,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513503",
@@ -64070,7 +64905,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13123627807",
@@ -64105,7 +64942,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-90439468",
@@ -64151,7 +64990,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-90439473",
@@ -64186,7 +65027,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1809196",
@@ -64308,7 +65151,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513474",
@@ -64642,7 +65487,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12872726066",
@@ -64687,7 +65534,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1864725",
@@ -64861,7 +65710,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 29,
-   "candidates": 62
+   "candidates": 63
   },
   "phone_source": "overture",
   "overture_id": "3b54c2fc-490a-41e7-9946-464f43178ba2",
@@ -64906,7 +65755,51 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
+ },
+ {
+  "id": "fsa-1985684",
+  "fsa_id": 1985684,
+  "osm_type": null,
+  "osm_id": null,
+  "name": "Sreepur Spice",
+  "category": "restaurant",
+  "category_label": "Restaurant / Caf\u00e9",
+  "lat": 51.5459885,
+  "lng": 0.6769179,
+  "geo_precision": "fsa",
+  "address": "809 London Road, Westcliff-on-sea, Essex, SS0 9SY",
+  "postcode": "SS0 9SY",
+  "phone": "",
+  "email": "",
+  "website": "",
+  "facebook": "",
+  "instagram": "",
+  "twitter": "",
+  "opening_hours_osm": "",
+  "opening_hours": {},
+  "cuisine": "",
+  "brand_wikidata": null,
+  "wikipedia": null,
+  "wikidata": null,
+  "amenities": [],
+  "photos": [],
+  "description": "",
+  "sources": [
+   "fsa",
+   "ch"
+  ],
+  "osm_match": {
+   "score": null,
+   "dist_m": null,
+   "candidates": 0
+  },
+  "ch_number": "12093177",
+  "ch_incorporated": "2019-07-09",
+  "ch_sic": "56101",
+  "position_approx": true
  },
  {
   "id": "fsa-679338",
@@ -64979,7 +65872,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1966608",
@@ -65081,7 +65976,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-90175638",
@@ -65116,7 +66013,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-150429033",
@@ -65251,7 +66150,9 @@
   },
   "overture_datasets": [
    "AllThePlaces"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-150994824",
@@ -65286,7 +66187,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513182",
@@ -65359,7 +66262,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512993",
@@ -65488,7 +66393,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-89507510",
@@ -65534,7 +66441,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-89502541",
@@ -65580,7 +66489,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-103894210",
@@ -65625,7 +66536,9 @@
   },
   "overture_datasets": [
    "AllThePlaces"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-150935299",
@@ -65720,7 +66633,9 @@
   },
   "overture_datasets": [
    "AllThePlaces"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512994",
@@ -65814,7 +66729,9 @@
   },
   "overture_datasets": [
    "AllThePlaces"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-49613619",
@@ -65860,7 +66777,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-884746072",
@@ -65895,7 +66814,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-50706261",
@@ -65930,7 +66851,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-150997743",
@@ -66021,7 +66944,9 @@
   },
   "overture_datasets": [
    "AllThePlaces"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-146724926",
@@ -66067,7 +66992,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-123740278",
@@ -66113,7 +67040,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-148269353",
@@ -66148,7 +67077,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-89605672",
@@ -66194,7 +67125,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-150938782",
@@ -66229,7 +67162,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1351224",
@@ -66325,7 +67260,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512511",
@@ -66390,17 +67327,17 @@
   "atp_wikidata": "Q37158",
   "atp_nsi": "starbucks-795f60",
   "atp_hours": "Mo-Th 06:30-19:00; Fr-Su 06:30-19:30",
-  "site_hours": "Mo 06:30-19:00; Tu 06:30-19:00; We 06:30-19:00; Th 06:30-19:00; Fr 06:30-19:30; Sa 06:30-19:30; Su 06:30-19:30",
+  "site_hours": "Th 06:30-19:00; Fr 06:30-19:30; Sa 06:30-19:30; Su 06:30-19:30; Mo 06:30-19:00; Tu 06:30-19:00; We 06:30-19:00",
   "site_method": "regex",
   "site_url": "https://www.starbucks.co.uk/store-locator/27645-248280",
   "site_raw": [
-   "Monday 6:30 AM \u2013 7:00 PM",
-   "Tuesday 6:30 AM \u2013 7:00 PM",
-   "Wednesday 6:30 AM \u2013 7:00 PM",
    "Thursday 6:30 AM \u2013 7:00 PM",
    "Friday 6:30 AM \u2013 7:30 PM",
    "Saturday 6:30 AM \u2013 7:30 PM",
-   "Sunday 6:30 AM \u2013 7:30 PM"
+   "Sunday 6:30 AM \u2013 7:30 PM",
+   "Monday 6:30 AM \u2013 7:00 PM",
+   "Tuesday 6:30 AM \u2013 7:00 PM",
+   "Wednesday 6:30 AM \u2013 7:00 PM"
   ],
   "site_description": "Find your nearest Starbucks. View store details and directions."
  },
@@ -66538,7 +67475,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-593745",
@@ -66672,7 +67611,9 @@
   },
   "overture_datasets": [
    "PinMeTo"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1713653",
@@ -66970,7 +67911,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512660",
@@ -67284,7 +68227,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-666367211",
@@ -67319,7 +68264,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12012365392",
@@ -67354,7 +68301,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512674",
@@ -67759,7 +68708,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12232175693",
@@ -67794,7 +68745,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1510447515",
@@ -68013,7 +68966,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512705",
@@ -68150,7 +69105,7 @@
   "osm_match": {
    "score": 2.3,
    "dist_m": 56,
-   "candidates": 59
+   "candidates": 60
   },
   "phone_source": "overture",
   "overture_id": "f8a6da07-167d-46b6-aaf9-c61fa38845cd",
@@ -68457,7 +69412,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-643332",
@@ -68568,7 +69525,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1318511",
@@ -68702,7 +69661,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 27
+   "candidates": 28
   },
   "website_source": "overture",
   "phone_source": "overture",
@@ -68774,7 +69733,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1803354",
@@ -69057,7 +70018,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-666405218",
@@ -69092,7 +70055,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-103894976",
@@ -69127,7 +70092,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512808",
@@ -69418,7 +70385,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512559",
@@ -69552,7 +70521,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513125",
@@ -69832,7 +70803,7 @@
   "osm_match": {
    "score": 0.8,
    "dist_m": 81,
-   "candidates": 26
+   "candidates": 27
   },
   "atp_spider": "tesco_gb",
   "atp_brand": "Tesco Express",
@@ -70365,7 +71336,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 47
+   "candidates": 48
   },
   "position_approx": true
  },
@@ -70462,7 +71433,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-6761732375",
@@ -70502,7 +71475,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1389893602",
@@ -70547,7 +71522,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-643348",
@@ -70620,7 +71597,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1313489",
@@ -70731,7 +71710,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 11
+   "candidates": 12
   },
   "position_approx": true
  },
@@ -70768,7 +71747,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1809219",
@@ -70960,7 +71941,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-748161",
@@ -71044,7 +72027,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1553278",
@@ -71128,8 +72113,7 @@
   "sources": [
    "fsa",
    "ch",
-   "overture",
-   "site"
+   "overture"
   ],
   "osm_match": {
    "score": null,
@@ -71149,27 +72133,6 @@
   "overture_datasets": [
    "meta"
   ],
-  "site_hours": "Mo 10:00-17:00; Tu 17:00-22:00; We 10:00-22:00; Th 17:00-22:00; Fr-Sa 10:00-23:00; Su 10:00-22:00",
-  "site_method": "regex",
-  "site_url": "https://www.TheBoardGameHut.co.uk/",
-  "site_raw": [
-   "Monday 10am to 5pm",
-   "Tuesday 5pm to 10pm",
-   "Wednesday 10am to 10pm",
-   "Thursday 5pm to 10pm",
-   "Friday & Saturday 10am to 11pm",
-   "Sunday 10am to 10pm"
-  ],
-  "site_image": {
-   "url": "https://theboardgamehut.co.uk/cdn/shop/files/newheader_04f0e042-73f7-4206-b253-315bdaafe88c.png?v=1774016156",
-   "kind": "og:image"
-  },
-  "site_menu": {
-   "url": "https://theboardgamehut.co.uk/collections/star-wars-unlimited?filter.v.availability=1&sort_by=created-descending",
-   "label": "star wars unlimited",
-   "kind": "page"
-  },
-  "site_description": "Great Games supported by Great Service",
   "position_approx": true
  },
  {
@@ -71313,7 +72276,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512450",
@@ -71435,7 +72400,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1199896",
@@ -71534,16 +72501,16 @@
   "overture_datasets": [
    "meta"
   ],
-  "site_hours": "We 11:00-23:00; Th 11:00-23:00; Fr 11:00-23:00; Sa 11:00-23:00; Su 12:00-22:00; Mo 11:00-23:00",
+  "site_hours": "Fr 11:00-23:00; Sa 11:00-23:00; Su 12:00-22:00; Mo 11:00-23:00; Tu 11:00-23:00; We 11:00-23:00",
   "site_method": "regex",
   "site_url": "https://www.craftunionpubs.com/the-broadway-pub-leigh-on-sea",
   "site_raw": [
-   "Wednesday: 11:00 AM - 11:00 PM",
-   "Thursday: 11:00 AM - 11:00 PM",
    "Friday: 11:00 AM - 11:00 PM",
    "Saturday: 11:00 AM - 11:00 PM",
    "Sunday: 12:00 PM - 10:00 PM",
-   "Monday: 11:00 AM - 11:00 PM"
+   "Monday: 11:00 AM - 11:00 PM",
+   "Tuesday: 11:00 AM - 11:00 PM",
+   "Wednesday: 11:00 AM - 11:00 PM"
   ],
   "site_description": "Welcome to Broadway Leigh-On-Sea, your local Craft Union Pub in Leigh-on-Sea! We show live sport every day, so stop by for a pint."
  },
@@ -71684,7 +72651,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1846637",
@@ -71744,10 +72713,6 @@
    "Saturday 8 \u2013 11",
    "Sunday 8 - 3"
   ],
-  "site_image": {
-   "url": "http://static1.squarespace.com/static/683f07ffd90e8e68545f80c2/t/6842b7299b3314417b92e7fe/1749202729890/Brunch_Logo_White+Roundel.png?format=1500w",
-   "kind": "og:image"
-  },
   "site_menu": {
    "url": "https://www.thebrunchcompany.co.uk/menu",
    "label": "menu",
@@ -71906,7 +72871,7 @@
   "osm_match": {
    "score": 0.9,
    "dist_m": 81,
-   "candidates": 25
+   "candidates": 26
   }
  },
  {
@@ -72029,7 +72994,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513403",
@@ -72521,7 +73488,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-978788",
@@ -72616,7 +73585,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1439485",
@@ -73258,7 +74229,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512628",
@@ -73687,7 +74660,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-709274",
@@ -73808,7 +74783,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12207763345",
@@ -73854,7 +74831,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-447424216",
@@ -73900,7 +74879,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1048635062",
@@ -73935,7 +74916,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1966606",
@@ -74008,7 +74991,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513460",
@@ -74199,7 +75184,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513405",
@@ -74294,7 +75281,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1553280",
@@ -74430,7 +75419,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-536587",
@@ -74467,7 +75458,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 15
+   "candidates": 16
   },
   "website_source": "overture",
   "phone_source": "overture",
@@ -74611,7 +75602,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1844115",
@@ -74790,45 +75783,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
- },
- {
-  "id": "fsa-1800513",
-  "fsa_id": 1800513,
-  "osm_type": null,
-  "osm_id": null,
-  "name": "The Kb Kitchen",
-  "category": "restaurant",
-  "category_label": "Restaurant / Caf\u00e9",
-  "lat": 51.5397043,
-  "lng": 0.7007354,
-  "geo_precision": "fsa",
-  "address": "228 London Road, Westcliff-on-sea, Essex, SS0 7JG",
-  "postcode": "SS0 7JG",
-  "phone": "",
-  "email": "",
-  "website": "",
-  "facebook": "",
-  "instagram": "",
-  "twitter": "",
-  "opening_hours_osm": "",
-  "opening_hours": {},
-  "cuisine": "",
-  "brand_wikidata": null,
-  "wikipedia": null,
-  "wikidata": null,
-  "amenities": [],
-  "photos": [],
-  "description": "",
-  "sources": [
-   "fsa"
   ],
-  "osm_match": {
-   "score": null,
-   "dist_m": null,
-   "candidates": 23
-  },
-  "position_approx": true
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513408",
@@ -75149,7 +76106,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512633",
@@ -75261,10 +76220,6 @@
    "Mon-Thu 12am - 8pm",
    "Fri-Sat 12am - 6pm"
   ],
-  "site_image": {
-   "url": "https://www.mayfloweroldleigh.co.uk/s/img/emotionheader.jpg",
-   "kind": "og:image"
-  },
   "site_menu": {
    "url": "https://www.mayfloweroldleigh.co.uk/restaurant-menu/",
    "label": "restaurant menu",
@@ -75521,7 +76476,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1844116",
@@ -75605,7 +76562,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-666366202",
@@ -75640,7 +76599,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1048415",
@@ -75754,8 +76715,8 @@
   "fsa_id": null,
   "osm_type": "way",
   "osm_id": 144174914,
-  "osm_touched": "2026-06-02T11:32:41Z",
-  "osm_version": 4,
+  "osm_touched": "2026-09-25T17:09:44Z",
+  "osm_version": 5,
   "osm_fhrs_id": null,
   "name": "The Oakwood",
   "category": "pub",
@@ -75763,11 +76724,11 @@
   "lat": 51.5731511,
   "lng": 0.6392372,
   "geo_precision": "osm",
-  "address": "",
-  "postcode": null,
+  "address": "562, Rayleigh Road, Leigh-On-Sea, SS9 5HX",
+  "postcode": "SS9 5HX",
   "phone": "+441702512819",
   "email": "",
-  "website": "https://www.greatukpubs.co.uk/oakwood-eastwood",
+  "website": "https://oakwoodpub.com/",
   "facebook": "",
   "instagram": "",
   "twitter": "",
@@ -75926,7 +76887,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 12,
-   "candidates": 8
+   "candidates": 9
   },
   "website_source": "overture",
   "phone_source": "overture",
@@ -76162,7 +77123,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512471",
@@ -76245,7 +77208,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512442",
@@ -76568,7 +77533,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1809202",
@@ -76887,7 +77854,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1103913",
@@ -77000,7 +77969,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513443",
@@ -77248,7 +78219,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-616156285",
@@ -77320,7 +78293,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1534690444",
@@ -77390,7 +78365,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1690691",
@@ -77431,9 +78408,9 @@
    "dist_m": 13,
    "candidates": 8
   },
-  "ch_number": "15755337",
-  "ch_incorporated": "2024-06-02",
-  "ch_sic": "56101",
+  "ch_number": "14974773",
+  "ch_incorporated": "2023-07-03",
+  "ch_sic": "56102",
   "website_source": "overture",
   "phone_source": "overture",
   "overture_id": "c20fd1e0-8130-47b6-bc40-b111c8c63ce3",
@@ -77668,7 +78645,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1966607",
@@ -77858,9 +78837,9 @@
   "site_method": "regex",
   "site_url": "http://www.thesqueezecafe.co.uk/",
   "site_raw": [
-   "monday \u2013 friday 8:30am \u2013 4pm",
-   "saturday 8:30am \u2013 5pm",
-   "sunday 9am \u2013 4pm"
+   "Monday \u2013 Friday 8:30am \u2013 4pm",
+   "Saturday 8:30am \u2013 5pm",
+   "Sunday 9am \u2013 4pm"
   ],
   "site_menu": {
    "url": "https://thesqueezecafe.co.uk/menu",
@@ -78048,7 +79027,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1962625",
@@ -78170,7 +79151,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-516309",
@@ -78319,7 +79302,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512613",
@@ -78403,7 +79388,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-7609033047",
@@ -78488,7 +79475,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 57
+   "candidates": 58
   },
   "website_source": "overture",
   "overture_id": "769f280f-5a94-4157-924a-c9a845a9cc14",
@@ -78562,7 +79549,9 @@
    "url": "https://thewaeccer.co.uk/wp-content/uploads/2025/08/Waeceer-16-768x1024.jpg",
    "kind": "og:image"
   },
-  "site_description": "Traditional pub with restaurant in Great Wakering, Essex. For a friendly welcome and top-quality dining, visit The Waeccer."
+  "site_description": "Traditional pub with restaurant in Great Wakering, Essex. For a friendly welcome and top-quality dining, visit The Waeccer.",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513063",
@@ -78779,7 +79768,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1199894",
@@ -78829,16 +79820,16 @@
   "overture_datasets": [
    "meta"
   ],
-  "site_hours": "We 12:00-23:30; Th 12:00-23:30; Fr 12:00-00:00; Sa 11:00-00:00; Su 11:00-22:00; Mo 12:00-23:00",
+  "site_hours": "Fr 12:00-00:00; Sa 11:00-00:00; Su 11:00-22:00; Mo 12:00-23:00; Tu 12:00-23:00; We 12:00-23:30",
   "site_method": "regex",
   "site_url": "https://www.craftunionpubs.com/woodcutters-arms-leigh-on-sea",
   "site_raw": [
-   "Wednesday: 12:00 PM - 11:30 PM",
-   "Thursday: 12:00 PM - 11:30 PM",
    "Friday: 12:00 PM - 12:00 AM",
    "Saturday: 11:00 AM - 12:00 AM",
    "Sunday: 11:00 AM - 10:00 PM",
-   "Monday: 12:00 PM - 11:00 PM"
+   "Monday: 12:00 PM - 11:00 PM",
+   "Tuesday: 12:00 PM - 11:00 PM",
+   "Wednesday: 12:00 PM - 11:30 PM"
   ],
   "site_description": "Welcome to Woodcutter Leigh On Sea, your local Craft Union Pub in Leigh-on-Sea! We show live sport every day, so stop by for a pint."
  },
@@ -78885,7 +79876,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13022969687",
@@ -78931,7 +79924,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1806375",
@@ -79067,7 +80062,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1919048",
@@ -79140,7 +80137,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1827677",
@@ -79223,7 +80222,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-521339",
@@ -79307,7 +80308,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-93231884",
@@ -79342,7 +80345,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-556558543",
@@ -79390,7 +80395,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870939479",
@@ -79435,7 +80442,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1442681503",
@@ -79480,7 +80489,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1847340",
@@ -79677,7 +80688,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13022969688",
@@ -79723,7 +80736,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1809191",
@@ -79796,7 +80811,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1791591",
@@ -79956,7 +80973,9 @@
    "label": "all-you-can-eat breakfast",
    "kind": "page"
   },
-  "site_description": "Feast on a perfectly cooked carvery dinner every day of the week at your local home of the roast - Toby Carvery Southend A127! Book a table today."
+  "site_description": "Feast on a perfectly cooked carvery dinner every day of the week at your local home of the roast - Toby Carvery Southend A127! Book a table today.",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-715710",
@@ -80029,7 +81048,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1449477280",
@@ -80075,7 +81096,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512483",
@@ -80169,7 +81192,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-687290",
@@ -80252,7 +81277,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12163537048",
@@ -80287,7 +81314,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1833253",
@@ -80419,7 +81448,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12875551541",
@@ -80465,7 +81496,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1680079",
@@ -80538,7 +81571,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1377221",
@@ -80578,7 +81613,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 11,
-   "candidates": 41
+   "candidates": 42
   },
   "website_source": "overture",
   "phone_source": "overture",
@@ -80634,7 +81669,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-1181161240",
@@ -80725,7 +81762,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12569649352",
@@ -80771,7 +81810,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1958108",
@@ -80916,7 +81957,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1531936",
@@ -81044,7 +82087,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12865510752",
@@ -81081,7 +82126,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-695926",
@@ -81165,7 +82212,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1588125",
@@ -81287,7 +82336,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512932",
@@ -81371,7 +82422,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-934254",
@@ -81540,7 +82593,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1046844265",
@@ -81586,7 +82641,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-162599528",
@@ -81632,7 +82689,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1562989",
@@ -81761,7 +82820,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-543990615",
@@ -81879,7 +82940,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1606180",
@@ -82048,7 +83111,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513520",
@@ -82158,7 +83223,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-516303",
@@ -82248,7 +83315,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512496",
@@ -82349,7 +83418,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12872726083",
@@ -82384,7 +83455,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-13123627808",
@@ -82430,7 +83503,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12872726076",
@@ -82465,7 +83540,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1761380",
@@ -82611,8 +83688,7 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture",
-   "site"
+   "overture"
   ],
   "osm_match": {
    "score": null,
@@ -82629,25 +83705,6 @@
   "overture_datasets": [
    "meta"
   ],
-  "site_hours": "Mo-Sa 10:00-18:00; Su 10:30-16:30; Mo-Sa 10:00-18:00; Su 10:00-16:00",
-  "site_method": "json-ld",
-  "site_url": "http://www.vapourcentral.co.uk",
-  "site_raw": [
-   "Vapour Central - Westcliff | 73 Hamlet Court Road: Mo-Sa 10:00-18:00; Su 10:30-16:30",
-   "Vapour Central - Leigh-on-Sea | 1101 London Road: Mo-Sa 10:00-18:00; Su 10:30-16:30",
-   "Vapour Central - Rayleigh | 3 Hambro Parade: Mo-Sa 10:00-18:00; Su 10:00-16:00"
-  ],
-  "site_image": {
-   "url": "https://cdn.shopify.com/s/files/1/0857/7800/6340/files/siteheader_b2608a50-9998-4815-9632-a59b8b60f66a.jpg?v=1747950148",
-   "kind": "og:image"
-  },
-  "site_menu": {
-   "url": "https://www.vapourcentral.co.uk/collections/nootropic-cbd-food-drinks",
-   "label": "nootropic / cbd food & drinks",
-   "kind": "page"
-  },
-  "site_description": "Discover Vapour Central in Southend and Rayleigh for an unparalleled in-store vape experience. Enjoy expert advice, a vast selection of e-liquids, CBD, Nootropics and premium vape kits. Smarter choices, healthier habits.",
-  "site_price": "\u00a3",
   "position_approx": true
  },
  {
@@ -82732,7 +83789,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-528650",
@@ -82877,7 +83936,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-669168",
@@ -82961,7 +84022,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-643350",
@@ -83161,7 +84224,9 @@
   },
   "atp_wikidata": "Q98456772",
   "atp_nsi": "tescoexpress-fe5937",
-  "atp_hours": "Mo-Su 07:00-22:00"
+  "atp_hours": "Mo-Su 07:00-22:00",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1725622",
@@ -83294,7 +84359,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-199729603",
@@ -83340,7 +84407,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-812478",
@@ -83420,7 +84489,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 4,
-   "candidates": 29
+   "candidates": 30
   },
   "phone_source": "overture",
   "overture_id": "0a174b61-6619-49e8-8775-bee232339b8b",
@@ -83813,7 +84882,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12870939484",
@@ -83858,7 +84929,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12865151122",
@@ -83903,7 +84976,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1761378",
@@ -84006,7 +85081,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-664906225",
@@ -84052,7 +85129,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-804843",
@@ -84250,7 +85329,9 @@
   "nhs_match": {
    "dist_m": 50
   },
-  "nhs_hours": "Mo 09:00-18:00; Tu 09:00-18:00; We 09:00-18:00; Th 09:00-18:00; Fr 09:00-18:00"
+  "nhs_hours": "Mo 09:00-18:00; Tu 09:00-18:00; We 09:00-18:00; Th 09:00-18:00; Fr 09:00-18:00",
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1904498",
@@ -84393,7 +85474,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-855981",
@@ -84487,7 +85570,9 @@
   },
   "overture_datasets": [
    "Foursquare"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-1043889697",
@@ -84533,7 +85618,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-914066",
@@ -84628,7 +85715,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-513462",
@@ -84712,7 +85801,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-528633",
@@ -85105,7 +86196,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-5767772878",
@@ -85151,7 +86244,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-6557625822",
@@ -85197,7 +86292,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-528624",
@@ -85280,7 +86377,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12875551546",
@@ -85865,7 +86964,7 @@
   "osm_match": {
    "score": 2.4,
    "dist_m": 15,
-   "candidates": 25
+   "candidates": 26
   }
  },
  {
@@ -86130,7 +87229,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 12
+   "candidates": 13
   },
   "position_approx": true
  },
@@ -86168,7 +87267,7 @@
   "osm_match": {
    "score": null,
    "dist_m": null,
-   "candidates": 24
+   "candidates": 25
   },
   "position_approx": true
  },
@@ -86216,7 +87315,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-528608",
@@ -86299,7 +87400,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1830812",
@@ -86384,7 +87487,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-12866569675",
@@ -86421,7 +87526,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-780540",
@@ -86652,7 +87759,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-node-11946117575",
@@ -86687,7 +87796,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-807685",
@@ -86771,7 +87882,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-1677006",
@@ -86941,7 +88054,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "osm-way-151082777",
@@ -86983,7 +88098,9 @@
   "superseded_by": {
    "id": "fsa-1112867",
    "name": "Lucky Bamboo"
-  }
+  },
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-905314",
@@ -87060,7 +88177,7 @@
   "osm_match": {
    "score": 1.2,
    "dist_m": 98,
-   "candidates": 24
+   "candidates": 25
   }
  },
  {
@@ -87106,7 +88223,9 @@
   },
   "overture_datasets": [
    "meta"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-917708",
@@ -87290,7 +88409,9 @@
   "description": "",
   "sources": [
    "osm"
-  ]
+  ],
+  "position_unresolved": true,
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "ch-17232800",
@@ -87376,6 +88497,44 @@
   },
   "overture_datasets": [
    "meta"
+  ],
+  "position_approx": true
+ },
+ {
+  "id": "ch-17418615",
+  "ch_number": "17418615",
+  "ch_legal_name": "BREW & CO GROUP LTD",
+  "ch_incorporated": "2026-08-25",
+  "ch_sic": "56102",
+  "ch_prev_names": [],
+  "fsa_id": null,
+  "osm_type": null,
+  "osm_id": null,
+  "name": "BREW & CO GROUP",
+  "category": "restaurant",
+  "category_label": "Restaurant",
+  "lat": 51.545568,
+  "lng": 0.660997,
+  "geo_precision": "postcode",
+  "address": "71 LEIGHAM COURT DRIVE, LEIGH-ON-SEA, SS9 1PT",
+  "postcode": "SS9 1PT",
+  "phone": "",
+  "email": "",
+  "website": "",
+  "facebook": "",
+  "instagram": "",
+  "twitter": "",
+  "opening_hours_osm": "",
+  "opening_hours": {},
+  "cuisine": "",
+  "brand_wikidata": null,
+  "wikipedia": null,
+  "wikidata": null,
+  "amenities": [],
+  "photos": [],
+  "description": "",
+  "sources": [
+   "ch"
   ],
   "position_approx": true
  },
@@ -87646,44 +88805,6 @@
   "position_approx": true
  },
  {
-  "id": "ch-16744232",
-  "ch_number": "16744232",
-  "ch_legal_name": "FLAVOURS RESTAURANT GROUP LIMITED",
-  "ch_incorporated": "2025-09-25",
-  "ch_sic": "56101",
-  "ch_prev_names": [],
-  "fsa_id": null,
-  "osm_type": null,
-  "osm_id": null,
-  "name": "FLAVOURS RESTAURANT GROUP",
-  "category": "restaurant",
-  "category_label": "Restaurant",
-  "lat": 51.56138,
-  "lng": 0.666928,
-  "geo_precision": "postcode",
-  "address": "321 BRIDGWATER DRIVE, WESTCLIFF-ON-SEA, SS0 0HA",
-  "postcode": "SS0 0HA",
-  "phone": "",
-  "email": "",
-  "website": "",
-  "facebook": "",
-  "instagram": "",
-  "twitter": "",
-  "opening_hours_osm": "",
-  "opening_hours": {},
-  "cuisine": "",
-  "brand_wikidata": null,
-  "wikipedia": null,
-  "wikidata": null,
-  "amenities": [],
-  "photos": [],
-  "description": "",
-  "sources": [
-   "ch"
-  ],
-  "position_approx": true
- },
- {
   "id": "ch-17292320",
   "ch_number": "17292320",
   "ch_legal_name": "FOOD ROOTS LTD",
@@ -87896,6 +89017,44 @@
   "position_approx": true
  },
  {
+  "id": "ch-17392127",
+  "ch_number": "17392127",
+  "ch_legal_name": "INVORA INV LTD",
+  "ch_incorporated": "2026-08-10",
+  "ch_sic": "56102",
+  "ch_prev_names": [],
+  "fsa_id": null,
+  "osm_type": null,
+  "osm_id": null,
+  "name": "INVORA INV",
+  "category": "restaurant",
+  "category_label": "Restaurant",
+  "lat": 51.547446,
+  "lng": 0.661497,
+  "geo_precision": "postcode",
+  "address": "952 LONDON ROAD, LEIGH-ON-SEA, SS9 3NF",
+  "postcode": "SS9 3NF",
+  "phone": "",
+  "email": "",
+  "website": "",
+  "facebook": "",
+  "instagram": "",
+  "twitter": "",
+  "opening_hours_osm": "",
+  "opening_hours": {},
+  "cuisine": "",
+  "brand_wikidata": null,
+  "wikipedia": null,
+  "wikidata": null,
+  "amenities": [],
+  "photos": [],
+  "description": "",
+  "sources": [
+   "ch"
+  ],
+  "position_approx": true
+ },
+ {
   "id": "ch-16839367",
   "ch_number": "16839367",
   "ch_legal_name": "INVORA INVEST LTD",
@@ -88027,6 +89186,44 @@
   "geo_precision": "postcode",
   "address": "TRUGYM BOURNE'S GREEN CHASE, SOUTHEND-ON-SEA, SS1 3RB",
   "postcode": "SS1 3RB",
+  "phone": "",
+  "email": "",
+  "website": "",
+  "facebook": "",
+  "instagram": "",
+  "twitter": "",
+  "opening_hours_osm": "",
+  "opening_hours": {},
+  "cuisine": "",
+  "brand_wikidata": null,
+  "wikipedia": null,
+  "wikidata": null,
+  "amenities": [],
+  "photos": [],
+  "description": "",
+  "sources": [
+   "ch"
+  ],
+  "position_approx": true
+ },
+ {
+  "id": "ch-17415422",
+  "ch_number": "17415422",
+  "ch_legal_name": "LONDON ROAD TAP LTD",
+  "ch_incorporated": "2026-08-23",
+  "ch_sic": "56101",
+  "ch_prev_names": [],
+  "fsa_id": null,
+  "osm_type": null,
+  "osm_id": null,
+  "name": "LONDON ROAD TAP",
+  "category": "restaurant",
+  "category_label": "Restaurant",
+  "lat": 51.548091,
+  "lng": 0.632122,
+  "geo_precision": "postcode",
+  "address": "1512 LONDON ROAD, LEIGH-ON-SEA, SS9 2UR",
+  "postcode": "SS9 2UR",
   "phone": "",
   "email": "",
   "website": "",
@@ -88667,23 +89864,23 @@
   "position_approx": true
  },
  {
-  "id": "ch-16753552",
-  "ch_number": "16753552",
-  "ch_legal_name": "SANDOS ON SEA LTD",
-  "ch_incorporated": "2025-09-30",
+  "id": "ch-17409509",
+  "ch_number": "17409509",
+  "ch_legal_name": "SALT AND LEMON LTD",
+  "ch_incorporated": "2026-08-19",
   "ch_sic": "56102",
   "ch_prev_names": [],
   "fsa_id": null,
   "osm_type": null,
   "osm_id": null,
-  "name": "SANDOS ON SEA",
+  "name": "SALT AND LEMON",
   "category": "restaurant",
   "category_label": "Restaurant",
-  "lat": 51.543637,
-  "lng": 0.666813,
+  "lat": 51.536859,
+  "lng": 0.730795,
   "geo_precision": "postcode",
-  "address": "117 LEIGH ROAD, LEIGH ON SEA, SS9 1JH",
-  "postcode": "SS9 1JH",
+  "address": "157 VICTORIA ROAD, SOUTHEND-ON-SEA, SS1 2TD",
+  "postcode": "SS1 2TD",
   "phone": "",
   "email": "",
   "website": "",

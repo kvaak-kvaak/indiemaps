@@ -150,6 +150,11 @@ Read these three docs first, in order:
    default (26 hazard-tier hidden, reachable via search + by-id +
    ?include_hazard=1). Beach Hut at surveyed spot, Essex Seafood live,
    approx halo markers throughout. Map verified arithmetically.
+ - Demo promoted (2026-10-01, 4th): `data/pois.json` + `data/build-meta.json`
+   = CI Southend run 36845825117 (1981 POIs, spider=true, 311 with hours,
+   0 provisional) → 1295 on-map default (27 hazard + 659 stale-orphan
+   hidden, all reachable via search + by-id). Dead specimens hide with
+   reasons; 40 pure-ch pins live. Map verified arithmetically.
 - Stale-dump enrichment live (ta stage, local-only by decision): 1M-row
   research parquet matched against pack POIs (Southend+Helsinki gated via
   areas `"ta"` flag) — match-only, never creates; alias-aware keys;
