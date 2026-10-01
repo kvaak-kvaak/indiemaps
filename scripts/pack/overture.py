@@ -37,13 +37,14 @@ def pull(w, s, e, n):
             rows = con.execute(f"""SELECT id, names.primary AS name,
               (bbox.xmin+bbox.xmax)/2 AS lon, (bbox.ymin+bbox.ymax)/2 AS lat,
               addresses[1].postcode AS postcode, websites[1] AS website, phones[1] AS phone,
+              socials AS socials,
               list_distinct([s2.dataset FOR s2 IN sources]) AS datasets
             FROM read_parquet('{S3BASE}')
             WHERE bbox.xmin <= {e} AND bbox.xmax >= {w} AND bbox.ymin <= {n} AND bbox.ymax >= {s}
               AND NOT list_contains(list_distinct([s2.dataset FOR s2 IN sources]), 'Microsoft')
               AND (len(websites) > 0 OR len(phones) > 0)
             """).fetchall()
-            cols = ['id', 'name', 'lon', 'lat', 'postcode', 'website', 'phone', 'datasets']
+            cols = ['id', 'name', 'lon', 'lat', 'postcode', 'website', 'phone', 'socials', 'datasets']
             return [dict(zip(cols, r)) for r in rows]
         except Exception as ex:
             last = ex
@@ -53,6 +54,26 @@ def pull(w, s, e, n):
 
 def norm_pc(p):
     return (p or '').replace(' ', '').lower() or None
+
+
+# Social networks mapped from Overture socials[] URLs by domain. Bare
+# mapper-entered handles (no URL) upgrade to full URLs; surveyed full URLs
+# are never overwritten (bulk snapshots rot, mapper edits don't).
+SOCIAL_DOMAINS = (('facebook', ('facebook.com',)),
+                   ('instagram', ('instagram.com',)),
+                   ('twitter', ('twitter.com', 'x.com')))
+
+
+def pick_social(socials, domain_frag):
+    for u in socials or []:
+        if domain_frag in (u or '').lower():
+            return u
+    return None
+
+
+def is_bare(v):
+    v = (v or '').strip()
+    return bool(v) and not v.lower().startswith('http')
 
 
 # Prefer-Meta ranking (recorded product call): Meta rows carry a small score
@@ -99,17 +120,23 @@ def main():
 
     pois = json.load(open(a.pois))
     filled_web, filled_phone = 0, 0
+    filled_soc = {'facebook': 0, 'instagram': 0, 'twitter': 0}
+    upgraded_soc = {'facebook': 0, 'instagram': 0, 'twitter': 0}
     for p in pois:
         # clear previous backfill (re-run safe); manual/ surveyed values stay
         if p.get('website_source') == 'overture':
             del p['website']; del p['website_source']
         if p.get('phone_source') == 'overture':
             del p['phone']; del p['phone_source']
+        for net, _ in SOCIAL_DOMAINS:
+            if p.get(f'{net}_source') == 'overture':
+                del p[net]; del p[f'{net}_source']
         p.pop('overture_id', None)
         p.pop('overture_match', None)
         p.pop('overture_datasets', None)
         p['sources'] = [s for s in p.get('sources', []) if s != 'overture']
-        if p.get('website') and p.get('phone'):
+        if p.get('website') and p.get('phone') and p.get('facebook') \
+                and p.get('instagram') and p.get('twitter'):
             continue
         ppc = norm_pc(p.get('postcode'))
         best, bs = None, 0
@@ -140,6 +167,26 @@ def main():
             p['phone_source'] = 'overture'
             filled_phone += 1
             contributed = True
+        for net, frags in SOCIAL_DOMAINS:
+            url = None
+            for frag in frags:
+                url = pick_social(best.get('socials'), frag)
+                if url:
+                    break
+            if not url:
+                continue
+            if not p.get(net):
+                p[net] = url
+                p[f'{net}_source'] = 'overture'
+                filled_soc[net] += 1
+                contributed = True
+            elif is_bare(p.get(net)):
+                # Bare mapper handle -> full Overture URL. Surveyed full
+                # URLs are never overwritten (bulk snapshots rot).
+                p[net] = url
+                p[f'{net}_source'] = 'overture'
+                upgraded_soc[net] += 1
+                contributed = True
         if contributed:
             p['overture_id'] = best['id']
             # Match diagnostics for the per-source debug UI: which Overture
@@ -154,9 +201,10 @@ def main():
     meta = json.load(open(a.meta))
     meta['overture'] = {'release': RELEASE, 'contact_rows_in_bbox': len(ov),
                         'websites_filled': filled_web, 'phones_filled': filled_phone,
+                        'socials_filled': filled_soc, 'socials_upgraded': upgraded_soc,
                         'meta_bonus': META_BONUS}
     json.dump(meta, open(a.meta, 'w'), indent=1)
-    print(f'backfilled websites={filled_web} phones={filled_phone}')
+    print(f'backfilled websites={filled_web} phones={filled_phone} socials={filled_soc} upgraded={upgraded_soc}')
     apply_aliases(a.pois, a.meta)
 
 
