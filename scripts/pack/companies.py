@@ -183,7 +183,7 @@ def main():
           c{C['addr1']}, c{C['town']}, c{C['postcode']}, c{C['inc']},
           {', '.join(f'c{i}' for i in C['sics'])}{prev_sel}
         FROM read_csv([{files}], header=false, skip=1, columns={{{coltypes}}},
-                        strict_mode=false, null_padding=true)
+                        strict_mode=false, null_padding=true, parallel=false)
         WHERE ({sic_cond}) {status_cond}""").fetchall()
         raw = []
         for r in rows:
