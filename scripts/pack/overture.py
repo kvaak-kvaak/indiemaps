@@ -22,8 +22,28 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'overture-join'))
 from join import norm, nscore, dist_m, grid_index, nearby  # noqa
 
-RELEASE = '2026-08-19.0'
-S3BASE = f's3://overturemaps-us-west-2/release/{RELEASE}/theme=places/type=place/*.parquet'
+RELEASE_PIN = '2026-08-19.0'  # fallback; discovery prefers newest published
+S3BASE_TMPL = 's3://overturemaps-us-west-2/release/{rel}/theme=places/type=place/*.parquet'
+
+
+def discover_release():
+    """Newest published Overture release (Overture rotates old ones out;
+    a hardcoded pin silently rots — measured: 2026-07-22.0 vanished within
+    ~48h of a green run). Pure S3 listing, no credentials."""
+    import urllib.request
+    import re
+    try:
+        xml = urllib.request.urlopen(
+            'https://overturemaps-us-west-2.s3.us-west-2.amazonaws.com/'
+            '?list-type=2&prefix=release/&delimiter=%2F',
+            timeout=30).read().decode()
+        rels = sorted(set(re.findall(r'<Prefix>release/([^<]+)/</Prefix>', xml)))
+        rels = [r for r in rels if re.fullmatch(r'\d{4}-\d{2}-\d{2}\.\d+', r)]
+        if rels:
+            return rels[-1]
+    except Exception as e:
+        print(f'release discovery failed ({str(e)[:80]}), using pin {RELEASE_PIN}')
+    return RELEASE_PIN
 
 
 def pull(w, s, e, n):
@@ -31,6 +51,7 @@ def pull(w, s, e, n):
     last = None
     for attempt in range(3):
         try:
+            rel = discover_release() if attempt == 0 else RELEASE_PIN
             con = duckdb.connect()
             con.execute("INSTALL httpfs; LOAD httpfs;")
             con.execute("SET s3_region='us-west-2'; SET http_timeout=30000;")
@@ -39,13 +60,16 @@ def pull(w, s, e, n):
               addresses[1].postcode AS postcode, websites[1] AS website, phones[1] AS phone,
               socials AS socials,
               list_distinct([s2.dataset FOR s2 IN sources]) AS datasets
-            FROM read_parquet('{S3BASE}')
+            FROM read_parquet('{S3BASE_TMPL.format(rel=rel)}')
             WHERE bbox.xmin <= {e} AND bbox.xmax >= {w} AND bbox.ymin <= {n} AND bbox.ymax >= {s}
               AND NOT list_contains(list_distinct([s2.dataset FOR s2 IN sources]), 'Microsoft')
               AND (len(websites) > 0 OR len(phones) > 0)
             """).fetchall()
             cols = ['id', 'name', 'lon', 'lat', 'postcode', 'website', 'phone', 'socials', 'datasets']
-            return [dict(zip(cols, r)) for r in rows]
+            out = [dict(zip(cols, r)) for r in rows]
+            for o in out:
+                o['release'] = rel
+            return out
         except Exception as ex:
             last = ex
             time.sleep(15 * (attempt + 1))
@@ -199,7 +223,7 @@ def main():
                 p['sources'].append('overture')
     json.dump(pois, open(a.pois, 'w'), indent=1)
     meta = json.load(open(a.meta))
-    meta['overture'] = {'release': RELEASE, 'contact_rows_in_bbox': len(ov),
+    meta['overture'] = {'release': (ov[0].get('release') if ov else RELEASE_PIN), 'contact_rows_in_bbox': len(ov),
                         'websites_filled': filled_web, 'phones_filled': filled_phone,
                         'socials_filled': filled_soc, 'socials_upgraded': upgraded_soc,
                         'meta_bonus': META_BONUS}
