@@ -193,3 +193,22 @@ Read these three docs first, in order:
   Restaurants family to the shipping/post family, count + eyeball sample
   (~5 min). Needs a live HF token first (previous one revoked; accept +
   fresh token). Prior FSQ box files lived in /tmp only and are gone.
+
+## Part 2 notes (UK-general rules, 2026-10-04)
+
+- `scripts/pack/rules_uk.py` + tests (21 green): country configs GB/FI,
+  turnover/same-premises/station/facility/service-host/CH-evidence rules,
+  ordered `decide_pair`, descriptor-based `locality_from_area` replacing
+  hand town lists for new geographies (building `build.js` DUP_STOP stays
+  for the current estate; rewiring the matcher is a separate, measured job).
+- Turnover guard corrected by measurement: postcode-only dissimilarity
+  false-fires at 39% (Basildon neighbours) — guard requires same
+  housenumber; numberless cases stay with fhrs:id + turnover_watch.
+- Validated on release packs Basildon (992) + Chelmsford (1285): ~2700
+  same-postcode pairs, zero false merges, 25/40 premises-level turnover
+  holds. No exact-name same-premises merges fired (chains differ by
+  branch text, as designed — conservative, review owns the rest).
+- Estate is England-only (47 areas Essex/London + Helsinki); no Scottish
+  areas exist, so FHIS needs no adapter until one is added (then: adapter,
+  not silent reuse of FHRS parsing). ATP spiders: 42 `_gb` + 3 `_gb_ie`
+  + 1 `_fi`; GB inventory extension is data, not code.

@@ -132,6 +132,27 @@ def locality_words(area, cfg=GB):
     return set(prov(area, cfg))
 
 
+def locality_from_area(area_id='', area_name='', cfg=GB):
+    """Boundary-free fallback provider: distinctive tokens of the area's
+    own id segments + display name (country/region generics excluded).
+    Covers new towns with zero hand lists; boundary-derived providers
+    plug in via cfg['locality_provider'] for richer vocab. Example:
+    Basildon (unlisted in any hand list) -> {'basildon'} blocks
+    'Basildon'-only name collisions the same way DUP_STOP blocks
+    'Southend'-only ones."""
+    GENERIC_GEO = {'england', 'scotland', 'wales', 'ireland', 'uk',
+                   'north', 'south', 'east', 'west', 'greater', 'new', 'old',
+                   'upon', 'on', 'sea', 'city', 'town', 'london', 'essex',
+                   'finland', 'suomi'}
+    toks = set()
+    for chunk in (area_id.replace('/', ' ').replace('-', ' ').split()
+                  + area_name.replace('-', ' ').split()):
+        w = chunk.strip().lower()
+        if len(w) >= 4 and w not in GENERIC_GEO:
+            toks.add(w)
+    return toks
+
+
 def brand_tokens(name, cfg=GB, locality=frozenset()):
     toks = {w for w in norm_name(name, cfg).split() if len(w) >= 6}
     toks = {w[:-1] if w.endswith('s') and not w.endswith('ss') else w
@@ -160,8 +181,13 @@ def rule_turnover_guard(a, b, cfg=GB, locality=frozenset()):
     if not (same_postcode(a, b)):
         return None
     ha, hb = house_number(a.get('address'), cfg), house_number(b.get('address'), cfg)
-    if ha and hb and ha != hb:
-        return None  # distinct numbered premises: other rules own it
+    if not (ha and hb and ha == hb):
+        # Postcode-only dissimilarity proves nothing: a postcode covers a
+        # whole parade (measured: 39% false-fire rate in Basildon when this
+        # required postcode alone). Turnover needs premises-level evidence;
+        # numberless addresses (Zinnia/Mimosa) stay with other machinery
+        # (fhrs:id merge + turnover_watch display), never this guard.
+        return None
     if same_brand(a, b, cfg, locality):
         return None
     na, nb = norm_name(a.get('name'), cfg), norm_name(b.get('name'), cfg)

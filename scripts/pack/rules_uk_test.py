@@ -16,6 +16,7 @@ from rules_uk import (
     GB, FI, decide_pair, norm_name, distinctive, house_number,
     rule_same_premises_exact_name, rule_station_guard, rule_facility_protect,
     rule_service_host_attach, rule_ch_evidence_attach, rule_turnover_guard,
+    locality_from_area, same_brand,
 )
 
 
@@ -78,11 +79,20 @@ class TestSamePremisesExactName(unittest.TestCase):
 
 
 class TestTurnoverGuard(unittest.TestCase):
-    def test_zinnia_mimosa_never_merges(self):
-        a = rec('fsa-1', 'fsa', 'Zinnia Restaurant', 'Clifftown Shore', 'SS1 1FU')
-        b = rec('osm-1', 'osm', 'Mimosa', 'Clifftown Shore', 'SS1 1FU')
+    def test_numbered_premises_turnover(self):
+        # Slug pattern: same housenumber + dissimilar names -> separate.
+        a = rec('fsa-1', 'fsa', 'Slug and Lettuce', '6 Southchurch Road', 'SS1 2XX')
+        b = rec('osm-1', 'osm', 'Skylahs Bar', '6 Southchurch Road', 'SS1 2XX')
         d = rule_turnover_guard(a, b)
         self.assertEqual(d[0], 'separate')
+
+    def test_numberless_premises_unhandled(self):
+        # Zinnia/Mimosa have no housenumbers; postcode-only dissimilarity
+        # is neighbours, not turnover (39% false-fire measured). This guard
+        # stays silent; fhrs:id merge + turnover_watch own the pattern.
+        a = rec('fsa-1', 'fsa', 'Zinnia Restaurant', 'Clifftown Shore', 'SS1 1FU')
+        b = rec('osm-1', 'osm', 'Mimosa', 'Clifftown Shore', 'SS1 1FU')
+        self.assertIsNone(rule_turnover_guard(a, b))
 
     def test_agreeing_names_not_turnover(self):
         a = rec('x', 'fsa', 'Alvaros', '32 Road', 'SS0 7LB')
@@ -150,6 +160,24 @@ class TestDecidePair(unittest.TestCase):
         b = rec('y', 'osm', 'Happy Vets', '1 Road', 'SS1 1AA', category='shop')
         d = decide_pair(a, b)
         self.assertEqual(d[1], 'facility_protect')
+
+
+class TestLocalityProvider(unittest.TestCase):
+    def test_unlisted_town_covered(self):
+        # Basildon appears in no hand list; the descriptor provider still
+        # blocks town-word-only collisions there.
+        loc = locality_from_area('eu/gb/england/essex/basildon', 'Basildon')
+        self.assertIn('basildon', loc)
+        a = {'name': 'Basildon Bakery'}
+        b = {'name': 'Basildon Cafe'}
+        self.assertFalse(same_brand(a, b, locality=loc))
+
+    def test_distinct_brands_unaffected(self):
+        loc = locality_from_area('eu/gb/england/essex/basildon', 'Basildon')
+        a = {'name': "Greggs Basildon"}
+        b = {'name': "Greggs"}
+        # shared distinctive brand token survives locality filtering
+        self.assertTrue(same_brand(a, b, locality=loc))
 
 
 if __name__ == '__main__':
