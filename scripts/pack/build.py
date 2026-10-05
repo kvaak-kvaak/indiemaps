@@ -171,6 +171,8 @@ def build(area_id, args):
         'fsa_repinned': prev.get('fsa_repinned', 0),
         'fsa_duplicates_linked': prev.get('fsa_duplicates_linked', 0),
         'fsa_duplicates_queued': prev.get('fsa_duplicates_queued', 0),
+        'osm_duplicates_merged': sum(
+            1 for p in pois_data if p.get('osm_absorbed')),
     }
     stale = flag_stale_occupants(pois_data, packdir)
     m['counts']['stale_flagged'] = stale
