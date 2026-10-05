@@ -1,15 +1,15 @@
 {
-  "eu/gb/england/essex/southend-on-sea": {
-    "name": "Southend-on-Sea",
-    "bbox": [
-      0.615,
-      51.505,
-      0.825,
-      51.575
-    ],
-    "fsa": 893,
-    "ta": true
-  },
+ "eu/gb/england/essex/southend-on-sea": {
+  "name": "Southend-on-Sea",
+  "bbox": [
+   0.615,
+   51.505,
+   0.825,
+   51.575
+  ],
+  "fsa": 893,
+  "ta": true
+ },
  "eu/gb/england/greater-london/hackney": {
   "name": "Hackney",
   "bbox": [
@@ -478,28 +478,236 @@
   "fsa": 532,
   "bbox_source": "nominatim-boundary"
  },
-  "eu/gb/england/greater-london/westminster": {
-    "name": "Westminster",
-    "bbox": [
-      -0.21609,
-      51.48381,
-      -0.11108,
-      51.53981
-    ],
-    "fsa": 533,
-    "bbox_source": "nominatim-boundary"
-  },
-  "eu/fi/uusimaa/helsinki": {
-    "name": "Helsinki",
-    "bbox": [
-      24.7828,
-      59.92249,
-      25.25451,
-      60.29785
-    ],
-    "fsa": null,
-    "servicemap_muni": "helsinki",
-    "ta": true,
-    "bbox_source": "nominatim-boundary"
-  }
+ "eu/gb/england/greater-london/westminster": {
+  "name": "Westminster",
+  "bbox": [
+   -0.21609,
+   51.48381,
+   -0.11108,
+   51.53981
+  ],
+  "fsa": 533,
+  "bbox_source": "nominatim-boundary"
+ },
+ "eu/fi/uusimaa/helsinki": {
+  "name": "Helsinki",
+  "bbox": [
+   24.7828,
+   59.92249,
+   25.25451,
+   60.29785
+  ],
+  "fsa": null,
+  "servicemap_muni": "helsinki",
+  "ta": true,
+  "bbox_source": "nominatim-boundary"
+ },
+ "eu/fi/varsinais-suomi/turku": {
+  "name": "Turku",
+  "bbox": [
+   22.217,
+   60.4066,
+   22.317,
+   60.4966
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-centre-0.1x0.09"
+ },
+ "eu/fi/pirkanmaa/tampere": {
+  "name": "Tampere",
+  "bbox": [
+   23.7116,
+   61.4528,
+   23.8116,
+   61.5428
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-centre-0.1x0.09"
+ },
+ "eu/fi/keski-suomi/jyvaskyla": {
+  "name": "Jyväskylä",
+  "bbox": [
+   25.6996,
+   62.1967,
+   25.7996,
+   62.2867
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-centre-0.1x0.09"
+ },
+ "eu/fi/pohjois-pohjanmaa/oulu": {
+  "name": "Oulu",
+  "bbox": [
+   25.4202,
+   64.9668,
+   25.5202,
+   65.0568
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-centre-0.1x0.09"
+ },
+ "eu/fi/uusimaa/vantaa": {
+  "name": "Vantaa",
+  "bbox": [
+   24.9937,
+   60.248,
+   25.0937,
+   60.338
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-centre-0.1x0.09"
+ },
+ "eu/fi/uusimaa/porvoo": {
+  "name": "Porvoo",
+  "bbox": [
+   25.612,
+   60.3494,
+   25.712,
+   60.4394
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-centre-0.1x0.09"
+ },
+ "eu/fi/satakunta/pori": {
+  "name": "Pori",
+  "bbox": [
+   21.7472,
+   61.4416,
+   21.8472,
+   61.5316
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-centre-0.1x0.09"
+ },
+ "eu/fi/pohjanmaa/vaasa": {
+  "name": "Vaasa",
+  "bbox": [
+   21.5659,
+   63.0508,
+   21.6659,
+   63.1408
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-centre-0.1x0.09"
+ },
+ "eu/fi/pohjois-savo/kuopio": {
+  "name": "Kuopio",
+  "bbox": [
+   27.6284,
+   62.8475,
+   27.7284,
+   62.9375
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-centre-0.1x0.09"
+ },
+ "eu/fi/pohjois-karjala/joensuu": {
+  "name": "Joensuu",
+  "bbox": [
+   29.712,
+   62.5556,
+   29.812,
+   62.6456
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-centre-0.1x0.09"
+ },
+ "eu/fi/päijät-häme/lahti": {
+  "name": "Lahti",
+  "bbox": [
+   25.6113,
+   60.9376,
+   25.7113,
+   61.0276
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-centre-0.1x0.09"
+ },
+ "eu/fi/etelä-karjala/lappeenranta": {
+  "name": "Lappeenranta",
+  "bbox": [
+   28.1362,
+   61.0133,
+   28.2362,
+   61.1033
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-centre-0.1x0.09"
+ },
+ "eu/fi/lappi/rovaniemi": {
+  "name": "Rovaniemi",
+  "bbox": [
+   25.6804,
+   66.4576,
+   25.7804,
+   66.5476
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-centre-0.1x0.09"
+ },
+ "eu/fi/uusimaa/espoo-tapiola": {
+  "name": "Espoo (Tapiola)",
+  "bbox": [
+   24.7632,
+   60.1416,
+   24.8432,
+   60.2116
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-district-centre"
+ },
+ "eu/fi/uusimaa/espoo-matinkyla": {
+  "name": "Espoo (Matinkyla)",
+  "bbox": [
+   24.6991,
+   60.1247,
+   24.7791,
+   60.1947
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-district-centre"
+ },
+ "eu/fi/uusimaa/espoo-leppavaara": {
+  "name": "Espoo (Leppavaara)",
+  "bbox": [
+   24.7741,
+   60.1847,
+   24.8541,
+   60.2547
+  ],
+  "fsa": null,
+  "servicemap_muni": null,
+  "ta": false,
+  "bbox_source": "nominatim-district-centre"
+ }
 }

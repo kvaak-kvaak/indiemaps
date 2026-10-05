@@ -225,3 +225,16 @@ Read these three docs first, in order:
   Verdict: Servicemap stays the existence layer; no PTV code, no key
   needed. PTV useful only if non-food categories ever need a national
   layer. v12 redesign coming 2026 — recheck then only if scope changes.
+
+## Step 3 notes (14 FI cities, 2026-10-05)
+
+- 16 new areas (13 cities + Espoo as Tapiola/Matinkylä/Leppävaara
+  sub-boxes; Helsinki entry untouched): centre bboxes, `fsa: null`,
+  no servicemap outside Helsinki, `ta: false` pending pilot validation.
+- RP coverage per city (centre/municipal): Tampere 412/529, Turku
+  349/435, Helsinki 1347/1919, Lahti 142/158, others 65–222; Espoo
+  centre box alone catches 24 of 1145 municipal (polycentric — hence
+  sub-boxes). ta stays off until Tampere/Turku pilots validate it.
+- Municipal fallback documented, not implemented: centre boxes keep
+  pulls cheap; escalate to municipal boundary only where centre
+  coverage proves thin (Rovaniemi/Porvoo pattern).
