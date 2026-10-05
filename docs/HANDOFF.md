@@ -306,3 +306,12 @@ Read these three docs first, in order:
 - Parmar Dental verdict corrected: node vs way are 5.3 km apart —
   different branches or a misplaced node, NOT a duplicate. Rule
   correctly refused. Needs ground truth, not code.
+
+## Session log (2026-10-05, fresh demo promotion)
+
+- Demo promoted: CI Southend run 37370366037 (1978 POIs, spider=true,
+  311 with hours, 0 provisional) → 1294 on-map default. Release job
+  was cancelled on that run (Q4 keeps Oct-4 Southend asset — same
+  vintage family, no action needed).
+- First dispatch sat queued ~25 min (runner backlog), then the run
+  completed normally; no code or infra implications.
