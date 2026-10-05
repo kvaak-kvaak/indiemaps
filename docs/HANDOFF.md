@@ -212,3 +212,16 @@ Read these three docs first, in order:
   areas exist, so FHIS needs no adapter until one is added (then: adapter,
   not silent reuse of FHRS parsing). ATP spiders: 42 `_gb` + 3 `_gb_ie`
   + 1 `_fi`; GB inventory extension is data, not code.
+
+## Finland pilot-prep (2026-10-05)
+
+- Servicemap live (1765 food units probed); `areas.json` entry, stage and
+  FI country config all present — nothing blocks a Helsinki run today.
+- PTV (Palvelutietovaranto) investigated and REJECTED for food: open
+  REST/JSON v11, CC0, keyless GETs proven (Helsinki: 80 pages, 7988
+  channels, 7037 ServiceLocations) — but the restaurant hits are student/
+  staff canteens (institutional catering, out of scope like FSA_EXCLUDE).
+  Zero exact-name overlap with 190 Hakaniemi-box Servicemap food units.
+  Verdict: Servicemap stays the existence layer; no PTV code, no key
+  needed. PTV useful only if non-food categories ever need a national
+  layer. v12 redesign coming 2026 — recheck then only if scope changes.
