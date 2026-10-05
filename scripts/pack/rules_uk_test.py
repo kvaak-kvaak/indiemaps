@@ -16,6 +16,7 @@ from rules_uk import (
     GB, FI, decide_pair, norm_name, distinctive, house_number,
     rule_same_premises_exact_name, rule_station_guard, rule_facility_protect,
     rule_service_host_attach, rule_ch_evidence_attach, rule_turnover_guard,
+    rule_fi_evidence_attach,
     locality_from_area, same_brand,
 )
 
@@ -160,6 +161,44 @@ class TestDecidePair(unittest.TestCase):
         b = rec('y', 'osm', 'Happy Vets', '1 Road', 'SS1 1AA', category='shop')
         d = decide_pair(a, b)
         self.assertEqual(d[1], 'facility_protect')
+
+
+class TestFIEvidence(unittest.TestCase):
+    # Synthetic fixtures (not real companies) exercising the FI rule shape.
+
+    def test_premises_attach(self):
+        place = rec('osm:node/1', 'osm', 'Ravintola Testi', 'Hämeentie 62', '00500')
+        co = {'company_number': '9999999-9', 'company_name': 'Ravintola Testi Oy',
+              'status': 'registered', 'registered_address': 'Hämeentie 62',
+              'postcode': '00500'}
+        d = rule_fi_evidence_attach(place, co, FI)
+        self.assertEqual(d[0], 'attach')
+        self.assertEqual(d[2]['strength'], 'premises')
+
+    def test_name_only_attach(self):
+        place = rec('x', 'osm', 'Ravintola Testi', 'Hämeentie', '00500')
+        co = {'company_number': '9999999-9', 'company_name': 'Ravintola Testi Oy',
+              'status': 'registered', 'registered_address': '',
+              'postcode': '00500'}
+        d = rule_fi_evidence_attach(place, co, FI)
+        self.assertEqual(d[0], 'attach')
+        self.assertEqual(d[2]['strength'], 'name-only')
+
+    def test_ceased_rejected(self):
+        place = rec('x', 'osm', 'Ravintola Testi', 'Hämeentie 62', '00500')
+        co = {'company_number': '9999999-9', 'company_name': 'Ravintola Testi Oy',
+              'status': 'ceased', 'registered_address': 'Hämeentie 62',
+              'postcode': '00500'}
+        self.assertIsNone(rule_fi_evidence_attach(place, co, FI))
+        d = rule_fi_evidence_attach(place, co, FI, exceptions=('9999999-9',))
+        self.assertEqual(d[0], 'attach')
+
+    def test_postcode_mismatch_rejected(self):
+        place = rec('x', 'osm', 'Ravintola Testi', 'Hämeentie 62', '00500')
+        co = {'company_number': '9999999-9', 'company_name': 'Ravintola Testi Oy',
+              'status': 'registered', 'registered_address': 'Hämeentie 62',
+              'postcode': '00100'}
+        self.assertIsNone(rule_fi_evidence_attach(place, co, FI))
 
 
 class TestLocalityProvider(unittest.TestCase):

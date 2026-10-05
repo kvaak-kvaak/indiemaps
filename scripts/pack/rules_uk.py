@@ -303,6 +303,40 @@ def rule_ch_evidence_attach(place, company, cfg=GB, active_statuses=('Active',),
              'place': place.get('id')})
 
 
+def rule_fi_evidence_attach(place, company, cfg=FI, exceptions=()):
+    """PRH/YTJ evidence attachment (FI mirror of the CH rule): exact
+    trading-descriptor-stripped name (Oy/Ab/ky suffixes) + same 5-digit
+    postcode + numbered street (Finnish trailing numbers, e.g. Hämeentie
+    62). Status must be canonical 'registered' (or explicit exception).
+    Two strengths, returned in evidence (callers must treat them
+    differently): 'premises' (full: position-grade corroboration) vs
+    'name-only' (either side lacks a housenumber: existence corroboration
+    only, never positional). Proximity alone attaches nothing. Evidence
+    only — never moves pins, never creates."""
+    cname = company.get('company_name') or ''
+    if norm_name(cname, cfg) != norm_name(place.get('name'), cfg):
+        core_c = distinctive(cname, cfg)
+        core_p = distinctive(place.get('name'), cfg)
+        if not (core_c and core_c == core_p and len(core_c) >= 4):
+            return None
+    if not same_postcode({'postcode': company.get('postcode')},
+                         {'postcode': place.get('postcode')}):
+        return None
+    hp = house_number(place.get('address'), cfg)
+    hc = house_number(company.get('registered_address'), cfg)
+    status = company.get('status') or ''
+    if not (status == 'registered'
+            or company.get('company_number') in exceptions):
+        return None
+    if hp and hc:
+        strength = 'premises'
+    else:
+        strength = 'name-only'
+    return ('attach', 'fi_name_and_premises',
+            {'company': company.get('company_number'),
+             'place': place.get('id'), 'strength': strength})
+
+
 def decide_pair(a, b, cfg=GB, locality=frozenset(), **kw):
     """Ordered evaluation: protections and vetoes first, merges/attachments
     after. First non-None decision wins; None means human review."""
