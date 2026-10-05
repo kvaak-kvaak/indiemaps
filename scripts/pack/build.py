@@ -186,6 +186,8 @@ def build(area_id, args):
     # other flaggers so nothing re-pops these flags.
     now = datetime.now(timezone.utc)
     m['counts']['orphan_hidden'] = flag_stale_orphans(pois_data, now)
+    kept = flag_keep_evidence(pois_data, now)
+    m['counts']['kept_by_rule'] = kept
     assert_position_invariants(pois_data, m, packdir)
     json.dump(pois_data, open(pois, 'w'), indent=1)
     json.dump(m, open(meta, 'w'), indent=1)
@@ -240,6 +242,66 @@ def _same_brand(a, b):
     return min(len(ca), len(cb)) >= 4 and ca == cb
 
 
+def osm_touch_fresh(p, now, days=182):
+    """Shared freshness helper (single threshold site — orphan rule and
+    keep-evidence both read this, never separate constants). True iff the
+    record carries a parseable OSM touch timestamp within `days`."""
+    try:
+        if p.get('osm_touched'):
+            touched = datetime.fromisoformat(
+                p['osm_touched'].replace('Z', '+00:00'))
+            return (now - touched).days < days
+    except (ValueError, TypeError):
+        pass
+    return False
+
+
+def flag_keep_evidence(pois_data, now):
+    """Keep-evidence composition (ported from the verified sibling build):
+    every rendered pin must carry at least one leg, each recorded with rule
+    + human meaning and rendered in the detail panel. Legs: ATP contributor,
+    FSA-linked, CH-corroborated, recent OSM touch, NHS-listed, Servicemap
+    record. Hidden-tier pins (hazard, stale-orphan) keep whatever evidence
+    they have — evidence explains, hiding decides. Re-run safe."""
+    kept = {'atp': 0, 'fsa': 0, 'ch': 0, 'recent_osm': 0, 'nhs': 0,
+            'servicemap': 0}
+    for p in pois_data:
+        s = p.get('sources', []) or []
+        ev = []
+        if 'atp' in s:
+            ev.append({'rule': 'atp-contributor',
+                       'meaning': 'Chain-published data via AllThePlaces'})
+        if 'fsa' in s:
+            ev.append({'rule': 'fsa-linked',
+                       'meaning': 'Food Standards Agency open data — '
+                                  'registration evidence, not proof of opening'})
+        if 'ch' in s or p.get('ch_number'):
+            ev.append({'rule': 'ch-corroborated',
+                       'meaning': 'Companies House: incorporated business, '
+                                  'uninspected'})
+        if 'osm' in s and osm_touch_fresh(p, now):
+            ev.append({'rule': 'recent-osm-touch',
+                       'meaning': 'Map record touched within six months — '
+                                  'retention, not proof of opening'})
+        if 'nhs' in s:
+            ev.append({'rule': 'nhs-listed',
+                       'meaning': 'NHS listed pharmacy (England)'})
+        if 'servicemap' in s:
+            ev.append({'rule': 'servicemap-record',
+                       'meaning': 'City of Helsinki Service Map (CC BY 4.0)'})
+        if ev:
+            p['keep_evidence'] = ev
+            for e in ev:
+                key = {'atp-contributor': 'atp', 'fsa-linked': 'fsa',
+                       'ch-corroborated': 'ch', 'recent-osm-touch': 'recent_osm',
+                       'nhs-listed': 'nhs',
+                       'servicemap-record': 'servicemap'}[e['rule']]
+                kept[key] += 1
+        else:
+            p.pop('keep_evidence', None)
+    return kept
+
+
 def assert_position_invariants(pois_data, m, packdir):
     """Regression gate (must-improve-or-fail): position-honesty invariants
     that fail the area build loudly. Stateless per pack — no baselines.
@@ -275,6 +337,16 @@ def assert_position_invariants(pois_data, m, packdir):
     if haz:
         raise SystemExit(f'POSITION GATE: {len(haz)} hazard records without '
                          f'road class, e.g. {haz[:5]}')
+    # Every SHOWN pin carries keep evidence (shown = neither hazard-hidden
+    # nor stale-orphan-hidden, mirroring the server predicate). A shown
+    # pin with no leg is an explainability bug: fail loudly, never ship it.
+    bare = [p['id'] for p in pois_data
+            if not p.get('position_hazard')
+            and p.get('unresolved_why') != 'stale-orphan'
+            and not p.get('keep_evidence')]
+    if bare:
+        raise SystemExit(f'POSITION GATE: {len(bare)} shown pins without '
+                         f'keep evidence, e.g. {bare[:5]}')
     log(packdir, f'position gate: OK '
                   f'({m.get("counts", {}).get("position_approx", 0)} approx, '
                   f'{sum(1 for p in pois_data if p.get("position_hazard"))} hazard)')
@@ -292,15 +364,7 @@ def flag_stale_orphans(pois_data, now):
         s = p.get('sources', []) or []
         if 'osm' not in s or any(x in s for x in ('fsa', 'ch', 'servicemap')):
             continue
-        fresh = False
-        try:
-            if p.get('osm_touched'):
-                touched = datetime.fromisoformat(
-                    p['osm_touched'].replace('Z', '+00:00'))
-                fresh = (now - touched).days < 182
-        except (ValueError, TypeError):
-            fresh = False
-        if fresh:
+        if osm_touch_fresh(p, now):
             continue
         n += 1
         p['position_unresolved'] = True

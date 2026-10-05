@@ -86,10 +86,13 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const fmtDate = iso => { try { return new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }); } catch { return iso; } };
 
 function sourceBadges(p) {
+  const keep = (p.keep_evidence || []).map(e =>
+    `<span class="badge src-fsa" title="Kept on the map by: ${esc(e.meaning)}">keeper · ${esc(e.rule)}</span>`).join('');
   const extra = (p.position_approx ? '<span class="badge stacked" title="Area-placed: position comes from an uncorroborated batch geocode — placed by postcode area, not surveyed">area-placed</span>' : '')
     + (p.position_hazard ? '<span class="badge stacked" title="Needs manual placement: on a road class where geocoders fail and no surveyed position exists">needs-manual-placement</span>' : '')
-    + (p.unresolved_why === 'stale-orphan' ? `<span class="badge stacked" title="Hidden: map record with no corroboration, untouched since ${esc((p.osm_touched || '').slice(0, 10)) || 'unknown date'}">stale orphan</span>` : '');
-  return extra + (p.sources || [p.source]).map(s =>
+    + (p.unresolved_why === 'stale-orphan' ? `<span class="badge stacked" title="Hidden: map record with no corroboration, untouched since ${esc((p.osm_touched || '').slice(0, 10)) || 'unknown date'}">stale orphan</span>` : '')
+    + (p.search_only ? '<span class="badge stacked" title="Search-only record: no standalone map marker">search-only</span>' : '');
+  return keep + extra + (p.sources || [p.source]).map(s =>
     s === 'fsa' ? '<span class="badge src-fsa" title="Food Standards Agency open data">FSA</span>'
     : s === 'atp' ? '<span class="badge src-atp" title="Chain-published data via AllThePlaces">chains</span>'
     : s === 'site' ? '<span class="badge src-site" title="Hours stated on the business website">website</span>'
@@ -187,7 +190,7 @@ function renderAll() {
   const fsaDate = state.meta.fsa_extract_date ? ` · FSA extract ${state.meta.fsa_extract_date}` : '';
   const built = state.meta.built_at ? ` · verified ${fmtDate(state.meta.built_at.slice(0, 10))}` : '';
   statsText.textContent = state.mode === 'curated'
-    ? `${state.auditFsaOnly ? 'AUDIT — register-positioned pins only (postcode-grade, not surveyed) · ' : ''}${state.showHidden ? 'HIDDEN — pins held off the map with reasons · ' : ''}${list.length} listings · ${packName()}${fsaDate}${built}`
+    ? `${state.auditFsaOnly ? 'AUDIT — register-positioned pins only (postcode-grade, not surveyed) · ' : ''}${state.showHidden ? 'SHOWING UNRESOLVED — pins held off the map with reasons · ' : ''}${list.length} listings · ${packName()}${fsaDate}${built}`
     : `${list.length} shown (${state.curatedCount} listed + ${state.liveCount} live OSM) · ${packName()}`;
   resultsEl.innerHTML = list.slice(0, 200).map(p => {
     const o = openStatus(p);

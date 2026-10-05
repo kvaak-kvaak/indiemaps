@@ -181,12 +181,14 @@ async function fetchLiveOsm(bboxStr) {
 app.get('/api/pois', (req, res) => {
   const { bbox, category, q } = req.query;
   const SRC = poisFor(req);
-  // Middle path: hazard-tier pins (interpolation-hostile roads, no surveyed
-  // position) leave browse payloads unless explicitly requested, but stay
-  // reachable via search (?q=) and by id. Records are never deleted.
+  // Middle path: hazard-tier pins and stale orphans leave browse payloads
+  // unless explicitly requested, but stay reachable via search (?q=) and
+  // by id. Search-only records (services/parcels with host links) never
+  // render as map pins but are always searchable. Records are never deleted.
   const showHazard = q || req.query.include_hazard === '1';
   const hidden = p => p.position_hazard || p.unresolved_why === 'stale-orphan';
-  let out = SRC.filter(p => showHazard || !hidden(p)).map(p => ({ ...p, richness: richness(p), community_reviews: (REVIEWS[p.id] || []).length }));
+  const pool = q ? SRC : SRC.filter(p => (showHazard || !hidden(p)) && !p.search_only);
+  let out = pool.map(p => ({ ...p, richness: richness(p), community_reviews: (REVIEWS[p.id] || []).length }));
   if (bbox) out = out.filter(p => inBbox(p, bbox));
   if (category && category !== 'all') out = out.filter(p => p.category === category);
   if (q) {
@@ -212,7 +214,8 @@ app.get('/api/combined', async (req, res) => {
   const SRC = poisFor(req);
   const showHazard = q || req.query.include_hazard === '1';
   const hidden = p => p.position_hazard || p.unresolved_why === 'stale-orphan';
-  let curated = SRC.filter(p => showHazard || !hidden(p)).map(p => ({ ...p, richness: richness(p) }));
+  const pool = q ? SRC : SRC.filter(p => (showHazard || !hidden(p)) && !p.search_only);
+  let curated = pool.map(p => ({ ...p, richness: richness(p) }));
   if (bbox) curated = curated.filter(p => inBbox(p, bbox));
   if (category && category !== 'all') curated = curated.filter(p => p.category === category);
   let live = [];
