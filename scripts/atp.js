@@ -71,6 +71,9 @@ for (const spider of SPIDERS) {
       branch: p.branch || '', lat, lng: lon,
       opening_hours: p.opening_hours || '',
       website: p.website || '',
+      phone: p.phone || p['contact:phone'] || '',
+      amenity: p.amenity || '', shop: p.shop || '', cuisine: p.cuisine || '',
+      housenumber: p['addr:housenumber'] || '', street: p['addr:street'] || '',
       wikidata: p['brand:wikidata'] || null,
       nsi: p['nsi_id'] || null,
       postcode: (p['addr:postcode'] || '').replace(/\s/g, '').toLowerCase() || null,
@@ -164,6 +167,7 @@ for (const p of pois) {
   }
   if (best) {
     matched++;
+    best._matched = true;
     if (bestMethod === 'website') webMatched++;
     if (bestMethod === 'wikidata') qidMatched++;
     p.atp_spider = best.spider;
@@ -181,8 +185,93 @@ for (const p of pois) {
   }
 }
 const hoursAfter = pois.filter(p => p.opening_hours_osm || p.atp_hours).length;
+
+// ---- creation pass: unmatched chain features become pins ----
+// User-approved 2026-10-06: every spider may create. The creation gate is
+// chain-spider provenance (first-party published positions, same trust
+// class as ATP hours) + the anti-duplicate check below — NOT proximity
+// alone. A feature any existing POI would match is a same-store naming
+// variant and is skipped, never created. Re-run safe: stable ids
+// (nsi preferred, content hash otherwise) make creation idempotent —
+// second runs match the created pin via the normal matcher and skip.
+function djb2(s) {
+  let h = 5381;
+  for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0;
+  return h.toString(36);
+}
+// Mirror of mapOsmCategory in scripts/build.js — keep in sync. Parking is
+// classified here so the parking-off-by-default UI rule catches ATP-created
+// car parks too.
+function atpCategory(f) {
+  const a = f.amenity, s = f.shop;
+  if (['restaurant', 'fast_food', 'food_court'].includes(a)) return ['restaurant', 'Restaurant'];
+  if (['cafe', 'ice_cream'].includes(a)) return ['cafe', 'Café'];
+  if (['pub', 'bar', 'biergarten', 'nightclub'].includes(a)) return ['pub', 'Pub / Bar'];
+  if (['pharmacy', 'doctors', 'dentist', 'clinic', 'hospital', 'optician'].includes(a)) return ['health', 'Health'];
+  if (['parking', 'parking_space', 'bicycle_parking', 'motorcycle_parking'].includes(a)) return ['parking', 'Parking'];
+  if (['fuel'].includes(a)) return ['transport', 'Transport'];
+  if (s) return ['shopping', 'Shop'];
+  if (a) return ['services', 'Services'];
+  // Tagless chain features: food/drink spiders default to their trade.
+  if (/greggs|mcdonalds|burger_king|subway|pizza|nandos|wagamama|itsu|leon|tortilla|wendys|five_guys|pret|gails|wetherspoon|greene_king|hungry_horse|ember_inns|vintage_inns|toby_carvery|stonehouse/.test(f.spider)) return ['restaurant', 'Restaurant'];
+  if (/costa|starbucks|caffe_nero/.test(f.spider)) return ['cafe', 'Café'];
+  if (/tesco|sainsburys|asda|morrisons|aldi|lidl|spar|londis/.test(f.spider)) return ['shopping', 'Shop'];
+  return ['services', 'Services'];
+}
+const normPc = pc => (pc || '').replace(/\s/g, '').toLowerCase() || null;
+let created = 0, skippedDupe = 0, hosted = 0;
+const createdIds = [];
+const knownIds = new Set(pois.map(p => p.id));
+for (const f of feats) {
+  if (f._matched || !normName(f.name)) continue;
+  // Anti-duplicate: if ANY existing record matches this feature under the
+  // same matcher, it is the same store under a variant name — skip.
+  if (pois.some(p => matchCandidate(p, f))) { skippedDupe++; continue; }
+  const ref = (f.nsi || '').replace(/[^a-z0-9_-]/gi, '').slice(0, 24)
+    || djb2(`${f.spider}|${normName(f.name)}|${f.lat.toFixed(5)}|${f.lng.toFixed(5)}`);
+  const id = `atp-${f.spider}-${ref}`;
+  if (knownIds.has(id)) continue; // already created by an earlier run
+  const [category, category_label] = atpCategory(f);
+  const addr = [f.housenumber, f.street].filter(Boolean).join(' ');
+  const rec = {
+    id, name: f.name, brand: f.brand,
+    ...(f.wikidata ? { brand_wikidata: f.wikidata } : {}),
+    category, category_label,
+    lat: f.lat, lng: f.lng, geo_precision: 'atp',
+    address: addr + (f.postcode ? `${addr ? ', ' : ''}${f.postcode}` : ''),
+    postcode: f.postcode,
+    ...(f.website ? { website: f.website, website_source: 'atp' } : {}),
+    ...(f.phone ? { phone: f.phone, phone_source: 'atp' } : {}),
+    ...(f.opening_hours ? { atp_hours: f.opening_hours } : {}),
+    ...(f.cuisine ? { cuisine: f.cuisine } : {}),
+    photos: [], description: '',
+    sources: ['atp'],
+    atp_spider: f.spider, atp_brand: f.brand, atp_method: 'created-chain',
+    ...(f.wikidata ? { atp_wikidata: f.wikidata } : {}),
+    ...(f.nsi ? { atp_nsi: f.nsi } : {}),
+    provisional_creation: 'atp-chain',
+  };
+  // Concession attach: same postcode + housenumber as exactly one
+  // store-class record → lives on the host card, no standalone pin.
+  // Zero or multiple hosts → standalone pin (ambiguity never attaches).
+  if (rec.postcode && f.housenumber) {
+    const hn = f.housenumber.trim().toLowerCase();
+    const hosts = pois.filter(p => p.category === 'shopping' && !p.hosted_in
+      && normPc(p.postcode) === rec.postcode
+      && /^\s*(\d+[a-z]?)/i.exec(p.address || '')?.[1]?.toLowerCase() === hn);
+    if (hosts.length === 1) {
+      rec.hosted_in = hosts[0].id;
+      rec.search_only = true;
+      hosted++;
+    }
+  }
+  pois.push(rec);
+  knownIds.add(id);
+  created++;
+  createdIds.push(id);
+}
 fs.writeFileSync(POIS_PATH, JSON.stringify(pois, null, 2));
 
-meta.atp = { run_id: RUN_ID, spiders: SPIDERS.length, feats_in_bbox: feats.length, feats_with_hours: feats.filter(f => f.opening_hours).length, matched, web_matched: webMatched, wikidata_matched: qidMatched, hours_added: hoursAdded, hours_before: hoursBefore, hours_after: hoursAfter };
+meta.atp = { run_id: RUN_ID, spiders: SPIDERS.length, feats_in_bbox: feats.length, feats_with_hours: feats.filter(f => f.opening_hours).length, matched, web_matched: webMatched, wikidata_matched: qidMatched, hours_added: hoursAdded, hours_before: hoursBefore, hours_after: hoursAfter, created, hosted, skipped_dupe: skippedDupe, created_ids: createdIds };
 fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2));
-console.log(`matched ${matched} listings (${webMatched} via website, ${qidMatched} via wikidata) | hours ${hoursBefore} → ${hoursAfter} (+${hoursAdded} from chains)`);
+console.log(`matched ${matched} listings (${webMatched} via website, ${qidMatched} via wikidata) | hours ${hoursBefore} → ${hoursAfter} (+${hoursAdded} from chains) | created ${created} (${hosted} hosted), skipped ${skippedDupe} same-store variants`);

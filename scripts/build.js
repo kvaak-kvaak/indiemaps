@@ -65,6 +65,10 @@ function mapOsmCategory(tags = {}) {
   if (['cafe', 'ice_cream'].includes(a)) return ['cafe', 'Café'];
   if (['pub', 'bar', 'biergarten', 'nightclub'].includes(a)) return ['pub', 'Pub / Bar'];
   if (['pharmacy', 'doctors', 'dentist', 'clinic', 'hospital', 'optician'].includes(a)) return ['health', 'Health'];
+  // Parking is its own category (user-approved 2026-10-06): too numerous to
+  // show by default — the frontend hides it under All. Mirror in server.js
+  // (live layer) and atpCategory in scripts/atp.js.
+  if (['parking', 'parking_space', 'bicycle_parking', 'motorcycle_parking'].includes(a)) return ['parking', 'Parking'];
   if (['theatre', 'cinema', 'arts_centre', 'library', 'place_of_worship'].includes(a) || t === 'museum' || t === 'gallery') return ['culture', 'Culture'];
   if (t === 'hotel' || t === 'guest_house' || t === 'hostel') return ['hotel', 'Hotel'];
   if (t === 'attraction' || t === 'viewpoint' || l === 'park' || l === 'nature_reserve' || l === 'miniature_golf') return ['attraction', 'Attraction'];

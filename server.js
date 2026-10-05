@@ -94,6 +94,7 @@ function mapOsmCategory(tags = {}) {
   if (['cafe', 'ice_cream'].includes(a)) return { category: 'cafe', label: 'Café' };
   if (['pub', 'bar', 'biergarten'].includes(a)) return { category: 'pub', label: 'Pub / Bar' };
   if (['pharmacy', 'doctors', 'dentist', 'clinic', 'hospital', 'optician'].includes(a)) return { category: 'health', label: 'Health' };
+  if (['parking', 'parking_space', 'bicycle_parking', 'motorcycle_parking'].includes(a)) return { category: 'parking', label: 'Parking' };
   if (['theatre', 'cinema', 'arts_centre', 'library', 'place_of_worship'].includes(a) || t === 'museum' || t === 'gallery') return { category: 'culture', label: 'Culture' };
   if (t === 'hotel' || t === 'guest_house' || t === 'hostel') return { category: 'hotel', label: 'Hotel' };
   if (t === 'attraction' || t === 'viewpoint' || l === 'park' || l === 'nature_reserve' || l === 'miniature_golf') return { category: 'attraction', label: 'Attraction' };
@@ -237,9 +238,14 @@ app.get('/api/combined', async (req, res) => {
 });
 
 app.get('/api/pois/:id', (req, res) => {
-  const poi = poisFor(req).find(p => p.id === req.params.id);
+  const SRC = poisFor(req);
+  const poi = SRC.find(p => p.id === req.params.id);
   if (!poi) return res.status(404).json({ error: 'Not found. IDs rebuild from real sources — search /api/pois instead.' });
-  res.json({ ...poi, richness: richness(poi), reviews: REVIEWS[poi.id] || [] });
+  const hosted = SRC.filter(p => p.hosted_in === poi.id).map(p => ({ id: p.id, name: p.name, category_label: p.category_label }));
+  const host = poi.hosted_in ? SRC.find(p => p.id === poi.hosted_in) : null;
+  res.json({ ...poi, richness: richness(poi), reviews: REVIEWS[poi.id] || [],
+    ...(hosted.length ? { hosted } : {}),
+    ...(host ? { host: { id: host.id, name: host.name } } : {}) });
 });
 
 app.get('/api/reviews/:id', (req, res) => {

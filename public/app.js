@@ -24,9 +24,9 @@ map.addLayer(diffLayers);
 
 const $ = s => document.querySelector(s);
 const resultsEl = $('#results'), statsText = $('#stats-text');
+const CAT_ICON = { restaurant: '🍽️', cafe: '☕', pub: '🍺', shopping: '🛍️', hotel: '🛏️', attraction: '🎡', culture: '🎭', health: '⚕️', services: '✂️', parking: '🅿️', transport: '🚌' };
 
-const CAT_ICON = { restaurant: '🍽️', cafe: '☕', pub: '🍺', shopping: '🛍️', hotel: '🛏️', attraction: '🎡', culture: '🎭', health: '⚕️', services: '✂️' };
-const CAT_TINT = { restaurant: '#fdecea', cafe: '#fef6e0', pub: '#f3e8dc', shopping: '#e8f0fe', hotel: '#ede7f6', attraction: '#e6f4ea', culture: '#feefe3', health: '#e0f7fa', services: '#eceff1' };
+const CAT_TINT = { restaurant: '#fdecea', cafe: '#fef6e0', pub: '#f3e8dc', shopping: '#e8f0fe', hotel: '#ede7f6', attraction: '#e6f4ea', culture: '#feefe3', health: '#e0f7fa', services: '#eceff1', parking: '#e3f2fd', transport: '#e8eaf6' };
 
 // ---------- opening-hours / open-now (parsed from REAL OSM opening_hours strings only) ----------
 const DAY_ORDER = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
@@ -161,6 +161,7 @@ function filtered() {
     // stale orphans) — each card shows its reason. Nothing else.
     if (state.showHidden && !(p.position_hazard || p.unresolved_why === 'stale-orphan')) return false;
     if (state.cat !== 'all' && p.category !== state.cat) return false;
+    if (state.cat === 'all' && p.category === 'parking') return false; // parking off by default — opt in via the 🅿️ chip
     if (state.q && !(p.name + ' ' + (p.category_label || '') + ' ' + (p.address || '')).toLowerCase().includes(state.q)) return false;
     if (state.openOnly && openStatus(p).state !== 'open') return false;
     return true;
@@ -190,7 +191,7 @@ function renderAll() {
   const fsaDate = state.meta.fsa_extract_date ? ` · FSA extract ${state.meta.fsa_extract_date}` : '';
   const built = state.meta.built_at ? ` · verified ${fmtDate(state.meta.built_at.slice(0, 10))}` : '';
   statsText.textContent = state.mode === 'curated'
-    ? `${state.auditFsaOnly ? 'AUDIT — register-positioned pins only (postcode-grade, not surveyed) · ' : ''}${state.showHidden ? 'SHOWING UNRESOLVED — pins held off the map with reasons · ' : ''}${list.length} listings · ${packName()}${fsaDate}${built}`
+    ? `${state.auditFsaOnly ? 'AUDIT — register-positioned pins only (postcode-grade, not surveyed) · ' : ''}${state.showHidden ? 'SHOWING UNRESOLVED — pins held off the map with reasons · ' : ''}${list.length} listings${state.cat === 'all' ? ' (parking hidden — 🅿️ to show)' : ''} · ${packName()}${fsaDate}${built}`
     : `${list.length} shown (${state.curatedCount} listed + ${state.liveCount} live OSM) · ${packName()}`;
   resultsEl.innerHTML = list.slice(0, 200).map(p => {
     const o = openStatus(p);
@@ -210,8 +211,15 @@ function renderAll() {
 let heroPhotos = [], heroIdx = 0;
 async function selectPoi(id, { pan } = {}) {
   state.selectedId = id;
-  const p = state.pois.find(x => x.id === id);
-  if (!p) return;
+  let p = state.pois.find(x => x.id === id);
+  if (!p) {
+    // Search-only / hosted records are not in the browse payload — fetch by id.
+    try {
+      const r = await fetch(`api/pois/${encodeURIComponent(id)}${state.pack ? `?pack=${encodeURIComponent(state.pack)}` : ''}`);
+      if (!r.ok) return;
+      p = await r.json();
+    } catch { return; }
+  }
   if (pan) map.flyTo([p.lat, p.lng], Math.max(map.getZoom(), 15), { duration: 0.7 });
   history.replaceState(null, '', `?poi=${encodeURIComponent(id)}`);
   renderAll();
@@ -236,6 +244,8 @@ function detailSkeleton(p) {
     <div class="drow">${sourceBadges(p)}${p.atp_hours ? '<span class="badge src-atp" title="Opening hours as published by the chain (AllThePlaces)">chain hours</span>' : ''}</div>
     ${p.alias ? `<div class="drow" style="font-size:12.5px;color:#555">formerly <b>${esc(p.alias.registered)}</b> (registered name)${p.alias.verified ? ` · verified ${esc(p.alias.verified)}` : ''}</div>` : ''}
     ${p.superseded_by ? `<div class="drow" style="font-size:12.5px;background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:6px 9px">⚠️ may have been replaced here by <b>${esc(p.superseded_by.name)}</b> — mapper data not yet updated</div>` : ''}
+    ${p.host ? `<div class="drow" style="font-size:12.5px">🏬 concession inside <a href="#" data-poi="${esc(p.host.id)}"><b>${esc(p.host.name)}</b></a> (same address, chain-published)</div>` : ''}
+    ${p.hosted?.length ? `<div class="drow" style="font-size:12.5px">🏬 also here: ${p.hosted.map(h => `<a href="#" data-poi="${esc(h.id)}">${esc(h.name)}</a>`).join(' · ')}</div>` : ''}
     <div class="drow open ${o.state === 'open' ? 'yes' : o.state === 'closed' ? 'no' : 'unk'}">● ${esc(o.label)}${o.state === 'unknown' ? ' — not mapped yet' : ''}</div>
     <div class="actions">
       <a class="act primary" style="text-decoration:none" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}"><span>🧭</span>Directions</a>
@@ -250,9 +260,9 @@ function detailSkeleton(p) {
     <div class="hr"></div>
     <div class="sec"><h4>Contact & details</h4>
       ${p.address ? `<div class="kv"><span class="k">📍</span><span>${esc(p.address)}</span></div>` : `<div class="kv"><span class="k">📍</span><span style="color:#999">No address on record</span></div>`}
-      ${p.phone ? `<div class="kv"><span class="k">📞</span><a href="${tel}">${esc(p.phone)}</a> <span style="color:#888;font-size:11px">(${p.phone_source === 'overture' ? 'via Overture' : p.phone_source === 'servicemap' ? 'via Service Map' : 'as mapped on OSM'})</span></div>` : ''}
+      ${p.phone ? `<div class="kv"><span class="k">📞</span><a href="${tel}">${esc(p.phone)}</a> <span style="color:#888;font-size:11px">(${p.phone_source === 'overture' ? 'via Overture' : p.phone_source === 'atp' ? 'via AllThePlaces' : p.phone_source === 'servicemap' ? 'via Service Map' : 'as mapped on OSM'})</span></div>` : ''}
       ${p.email ? `<div class="kv"><span class="k">✉️</span><a href="mailto:${esc(p.email)}">${esc(p.email)}</a></div>` : ''}
-      ${p.website ? `<div class="kv"><span class="k">🌐</span><a target="_blank" href="${esc(p.website)}">${esc(prettyUrl(p.website))}</a> <span style="color:#888;font-size:11px">(${p.website_source === 'overture' ? 'via Overture' : p.website_source === 'servicemap' ? 'via Service Map' : 'as mapped on OSM'})</span></div>` : ''}
+      ${p.website ? `<div class="kv"><span class="k">🌐</span><a target="_blank" href="${esc(p.website)}">${esc(prettyUrl(p.website))}</a> <span style="color:#888;font-size:11px">(${p.website_source === 'overture' ? 'via Overture' : p.website_source === 'atp' ? 'via AllThePlaces' : p.website_source === 'servicemap' ? 'via Service Map' : 'as mapped on OSM'})</span></div>` : ''}
       ${(p.facebook || p.instagram || p.twitter) ? `<div class="kv"><span class="k">📣</span><span>${p.facebook ? `<a target="_blank" href="${esc(p.facebook)}">Facebook</a> · ` : ''}${p.instagram ? `<a target="_blank" href="${esc(p.instagram)}">Instagram</a> · ` : ''}${p.twitter ? `<a target="_blank" href="${esc(p.twitter)}">X/Twitter</a>` : ''}</span></div>` : ''}
       ${p.opening_hours_osm ? `<div class="kv"><span class="k">🕒</span><span style="font-family:monospace;font-size:12px">${esc(p.opening_hours_osm)} <span style="color:#888">(as mapped on OSM)</span></span></div>` : ''}
     </div>
@@ -288,7 +298,7 @@ function detailSkeleton(p) {
       ${(p.sources || []).includes('fsa') ? `· <b>Name & address</b> — Food Standards Agency open data (extract ${esc(state.meta.fsa_extract_date || '?')})<br/>` : ''}
       ${(p.sources || []).includes('osm') ? `· <b>Position, hours & contact</b> — OpenStreetMap contributors${p.osm_id ? ` (node ${p.osm_id})` : ''}<br/>` : ''}
       ${(p.sources || []).includes('overture') ? `· <b>Phone & website backfill</b> — Overture Maps${p.overture_id ? ` (GERS ${esc(p.overture_id.slice(0, 8))}…)` : ''}<br/>` : ''}
-      ${(p.sources || []).includes('atp') ? `· <b>Opening hours</b> — as published by ${esc(p.atp_brand || 'the chain')}, via AllThePlaces (CC0)<br/>` : ''}
+      ${(p.sources || []).includes('atp') ? (p.atp_method === 'created-chain' ? `· <b>New pin</b> — store record as published by ${esc(p.atp_brand || 'the chain')}, via AllThePlaces (CC0); position from the chain, not surveyed<br/>` : `· <b>Opening hours</b> — as published by ${esc(p.atp_brand || 'the chain')}, via AllThePlaces (CC0)<br/>`) : ''}
       ${(p.sources || []).includes('nhs') ? `· <b>Listed pharmacy</b> — NHS England${p.nhs_ods ? ` (ODS ${esc(p.nhs_ods)})` : ''}<br/>` : ''}
       ${(p.sources || []).includes('servicemap') ? `· <b>Municipal listing</b> — City of Helsinki Service Map (CC BY 4.0)${p.sm_id ? ` (unit ${esc(String(p.sm_id))})` : ''}<br/>` : ''}
       ${(p.sources || []).includes('ta') ? `· <b>Cuisines, dietary notes${p.ta_hours ? ', hours' : ''} & rating</b> — archived research data, c.2021 (stale by design)<br/>` : ''}
@@ -512,6 +522,13 @@ async function suggest(v) {
   }));
 }
 document.addEventListener('click', e => { if (!e.target.closest('#search-wrap')) $('#suggest').style.display = 'none'; });
+// Hosted-concession links inside the detail panel (host card ↔ concession).
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[data-poi]');
+  if (!a || !a.closest('#detail')) return;
+  e.preventDefault();
+  selectPoi(a.dataset.poi, { pan: true });
+});
 
 // ---------- filters ----------
 document.querySelectorAll('#chips .chip').forEach(c => c.addEventListener('click', () => {

@@ -309,7 +309,9 @@ def assert_position_invariants(pois_data, m, packdir):
       position_approx (the flag repair class: silent precision claims).
     - No provisional_creation records anywhere (creation rights are still
       barred project-wide; any future creation path must update this gate
-      deliberately, never slip past it).
+      deliberately, never slip past it). APPROVED PATH: 'atp-chain'
+      (chain-spider provenance + same-matcher anti-duplicate, user-approved
+      2026-10-06) — anything else still fails.
     - Every verified_position merge has a matching meta.verify_positions
       entry (auditable moves only).
     - Every position_hazard record names its triggering road class."""
@@ -320,7 +322,9 @@ def assert_position_invariants(pois_data, m, packdir):
     if bad_approx:
         raise SystemExit(f'POSITION GATE: {len(bad_approx)} batch pins lack '
                          f'position_approx, e.g. {bad_approx[:5]}')
-    prov = [p['id'] for p in pois_data if p.get('provisional_creation')]
+    prov = [p['id'] for p in pois_data
+            if p.get('provisional_creation')
+            and p.get('provisional_creation') != 'atp-chain']
     if prov:
         raise SystemExit(f'POSITION GATE: {len(prov)} provisional creations '
                          f'without an approved creation path, e.g. {prov[:5]}')
