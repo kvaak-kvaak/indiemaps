@@ -456,9 +456,61 @@ function categoryVeto(fsaType, tags) {
   return null;
 }
 
+// OSM↔OSM duplicates (measured: Parmar Dental node+way coexist unmerged;
+// base only ever merged FSA↔OSM). Identity comes from exact normalized
+// names (min 6 chars) + area-uniqueness (exactly two same-named elements
+// area-wide: chains structurally excluded). Distance is a tiebreak only,
+// never identity: veto on conflicting postcodes or housenumbers, then
+// require <250 m (same-parade sanity for address-bare records like the
+// Parmar node, which carries no addr tags at all). Same mapped category
+// required; turnover impossible (names must agree exactly); every merge
+// logged loudly for review (a wrongly-merged distinctive-name pair would
+// show here first).
+function osmHouse(tags) {
+  const h = (tags['addr:housenumber'] || '').trim().toLowerCase();
+  return h || null;
+}
+function osmPc(tags) {
+  return (tags['addr:postcode'] || '').replace(/\s/g, '').toLowerCase() || null;
+}
+function linkOsmDuplicates(list) {
+  const groups = new Map();
+  for (const el of list) {
+    const nm = normName(el.tags?.name || '');
+    if (nm.length < 6) continue;
+    if (!groups.has(nm)) groups.set(nm, []);
+    groups.get(nm).push(el);
+  }
+  let merges = 0;
+  const absorbedKeys = [];
+  for (const [, g] of groups) {
+    if (g.length !== 2) continue;
+    const [a, b] = g;
+    const pa = osmPc(a.tags), pb = osmPc(b.tags);
+    if (pa && pb && pa !== pb) continue; // conflicting postcodes veto
+    const ha = osmHouse(a.tags), hb = osmHouse(b.tags);
+    if (ha && hb && ha !== hb) continue; // conflicting numbers veto (Fireaway pattern)
+    if (distM(a.lat, a.lon, b.lat, b.lon) >= 250) continue;
+    const ca = mapOsmCategory(a.tags)[0], cb = mapOsmCategory(b.tags)[0];
+    if (ca !== cb) continue;
+    // Survivor: node over way. Absorbed element recorded, never deleted
+    // from the audit trail (its id rides on the survivor POI).
+    const surv = a.type === 'node' ? a : (b.type === 'node' ? b : a);
+    const loser = surv === a ? b : a;
+    (surv._absorbed ||= []).push({ osm_type: loser.type, osm_id: loser.id, name: loser.tags.name });
+    absorbedKeys.push(loser.type + loser.id);
+    merges++;
+    console.log(`osm-duplicate LINKED: ${surv.tags.name} [${surv.type} ${surv.id}] absorbs [${loser.type} ${loser.id}] (${pa} ${ha})`);
+  }
+  return { merges, absorbedKeys };
+}
+
 // Match FSA ↔ OSM
 let matched = 0, idMatched = 0, vetoed = 0;
 const usedOsm = new Set();
+const osmDedup = linkOsmDuplicates(osm);
+for (const k of osmDedup.absorbedKeys) usedOsm.add(k);
+console.log(`OSM duplicate linking: ${osmDedup.merges} absorbed records`);
 for (const k of deduped) {
   let best = null, bestScore = 0, bestDist = null, candidates = 0, bestId = false;
   for (const el of osm) {
@@ -541,6 +593,9 @@ for (const k of deduped) {
     description: '',
     sources: k.osm ? ['fsa', 'osm'] : ['fsa'],
     osm_match: k.osm_match,
+    // OSM↔OSM duplicate audit trail (linkOsmDuplicates): absorbed element
+    // ids ride on the survivor, never silently dropped.
+    ...(k.osm?._absorbed?.length ? { osm_absorbed: k.osm._absorbed } : {}),
     // Duplicate-paperwork audit trail (linkFsaDuplicates): the absorbed
     // FHRSIDs stay visible here, never silently dropped. Displayed only
     // via the alias line in the app, when present.
@@ -576,6 +631,7 @@ for (const el of osm) {
     photos: [],
     description: '',
     sources: ['osm'],
+    ...(el._absorbed?.length ? { osm_absorbed: el._absorbed } : {}),
   });
 }
 
@@ -598,6 +654,7 @@ fs.writeFileSync(META_OUT, JSON.stringify({
     fsa_repinned: fsaRepinned,
     fsa_duplicates_linked: fsaDupes,
     fsa_duplicates_queued: fsaQueued,
+    osm_duplicates_merged: osmDedup.merges,
   },
   with_hours: pois.filter(p => p.opening_hours_osm).length,
   with_phone: pois.filter(p => p.phone).length,

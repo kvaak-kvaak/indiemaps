@@ -272,3 +272,37 @@ Read these three docs first, in order:
 - Municipal fallback documented, not implemented: centre boxes keep
   pulls cheap; escalate to municipal boundary only where centre
   coverage proves thin (Rovaniemi/Porvoo pattern).
+
+## Session log (2026-10-05, agenda round)
+
+- ATP scope settled: 62 GB chain spiders (Sep-05 run), 180 feats in
+  Southend bbox, 109 matched (+64 hours); unmatched features discarded
+  by design (merge-only, no creation — creation rights still barred).
+  Rules: brand-anchored, website-URL + Wikidata-QID exact passes first.
+- NHS pharmacies live with hours (39 NHS-sourced: 26 matched + 11
+  standalone + 2 chain); non-NHS dentists via OSM (Conservation,
+  Parkhouse, Parmar ×2…); orphan rule has no category exemption.
+- Structural gap found: base merges FSA↔OSM only, never OSM↔OSM —
+  Parmar Dental node+way coexist unmerged. OSM↔OSM duplicate rule
+  approved for build (same exact name + same premises, node position
+  wins, chains excluded).
+- Micro-box audit (Hamlet Court): 42/42 live named OSM objects already
+  in pack — pull layer complete; misses are hiding-rule outcomes
+  (reviewable) or category-filter boundaries, never silent drops.
+  Standing diagnostic: one Overpass query + id-set diff per thin street.
+- Open: FSQ parcel re-pull (blocked on HF token); branch decision
+  (exp/address-resolution: merge/park/delete); Helsinki refresh; Vela
+  backfill (post-debug); SFOS spike follow-up; FI spider wiring +
+  12 more cities; France deferred.
+
+## Session log (2026-10-05, OSM-OSM rule)
+
+- Base merged FSA↔OSM only, never OSM↔OSM: new element-level pre-pass
+  `linkOsmDuplicates` (exact normalized name min-6 + area-unique pair +
+  no conflicting postcode/housenumber + <250 m tiebreak + same mapped
+  category; node position wins; absorbed ids ride as `osm_absorbed`).
+  Measured Southend: 3 merges (Pier Museum, Bakers Box, Havens Hospices),
+  zero chain merges (Londis ×16, Spar ×4 intact).
+- Parmar Dental verdict corrected: node vs way are 5.3 km apart —
+  different branches or a misplaced node, NOT a duplicate. Rule
+  correctly refused. Needs ground truth, not code.
