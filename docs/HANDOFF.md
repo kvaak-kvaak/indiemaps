@@ -238,3 +238,37 @@ Read these three docs first, in order:
 - Municipal fallback documented, not implemented: centre boxes keep
   pulls cheap; escalate to municipal boundary only where centre
   coverage proves thin (Rovaniemi/Porvoo pattern).
+
+## Step 4 notes (ATP FI + drop decisions, 2026-10-05)
+
+- ATP `_fi` inventory (Sep-05 run): 8 exact spiders — food-relevant are
+  `hesburger` (482, no country suffix), `burger_king_fi` (75),
+  `pizza_hut_fi` (22), `taco_bell_fi` (19), `k_market_fi` (1057),
+  `r_kioski_fi` (269), `st1` (1143). No Kotipizza/S-group spiders.
+  `burger_king_fi` output verified compatible (OSM-style props, 3 in
+  Tampere box). Wiring FI spiders into `atp.js` per-area config still open.
+- MyHelsinki API: all known endpoints return empty (service retired?) —
+  DROPPED with reason. HRI: new hri.fi serves HTML on all API paths,
+  `data.hri.fi` empty — DROPPED with reason (re-verify if Espoo/Vantaa
+  regional needs arise).
+
+## Step 5 notes (Tampere + Turku pilots, 2026-10-05)
+
+- Both green first try (run 37337592449, spider=true): Tampere 1474
+  (912 with hours), Turku 1770 (1037 with hours); merged 0 (no FSA —
+  correct); 0 provisional; verify merges empty by design (no FSA rows).
+  Spot checks pass (Ravinteli Huber, Blanko — OSM+overture+site).
+- Q4 release now carries 3 packs (union growing as designed).
+- Remaining: FI spider wiring, 12 more cities in population order,
+  Espoo sub-boxes untested.
+
+- 16 new areas (13 cities + Espoo as Tapiola/Matinkylä/Leppävaara
+  sub-boxes; Helsinki entry untouched): centre bboxes, `fsa: null`,
+  no servicemap outside Helsinki, `ta: false` pending pilot validation.
+- RP coverage per city (centre/municipal): Tampere 412/529, Turku
+  349/435, Helsinki 1347/1919, Lahti 142/158, others 65–222; Espoo
+  centre box alone catches 24 of 1145 municipal (polycentric — hence
+  sub-boxes). ta stays off until Tampere/Turku pilots validate it.
+- Municipal fallback documented, not implemented: centre boxes keep
+  pulls cheap; escalate to municipal boundary only where centre
+  coverage proves thin (Rovaniemi/Porvoo pattern).
