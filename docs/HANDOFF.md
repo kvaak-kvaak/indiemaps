@@ -354,3 +354,34 @@ Read these three docs first, in order:
 - New pins verified live: search + by-id (atp-subway-subway-6a374d)
   with atp-contributor keep evidence; 🅿️ chip present, stats note
   honest.
+
+## Session log (2026-10-06, index-driven ATP import)
+
+- Commit fc8883f, CI 37436175451 green (spider=false,
+  release-safe). Demo NOT promoted (still 1998).
+- Fetch rewritten to sibling importer semantics: merge set from
+  Sep-5 _results.json (394 spiders = all _gb minus 46 infra +
+  17 bare GB names), country-count pruning, empty_export never
+  backfilled, 22 failed spiders supplemented from Sep-19 with
+  per-spider provenance, 9 failed in BOTH runs recorded
+  (big_yellow, cef, coop_food, gsf, heart_of_england, jollyes,
+  odeon, soletrader, entertainer) with complete=false.
+  Snapshot sha in meta.atp.
+- Results Southend: 425 feats (was 180), matched 211 (173 via
+  wikidata), created 65, total 1978 -> 2043. All six High-Street
+  brands wikidata-matched and un-hidden (Primark, Specsavers,
+  Yours, Coral, Waterstones, Shoe Zone). Orphan-hidden 657 -> 589.
+- Bugs caught locally: created pins stripped to sources=[] on
+  rerun (merge-loop clearing vs matcher gap — Costa Express);
+  fixed by keeping created-chain provenance unless re-matched.
+  Bare-shown audit 0, gate green.
+- WHSmith/Prezzo/Vodafone: NO spider in either run — honestly
+  absent, nothing to import. KFC/Domino's/John Lewis recovered
+  via supplement. Costa Express + 3 ATM records remain thin-but-
+  honest; new Trussell Trust foodbank pin (services) is real
+  chain data, flagged for awareness.
+- PMTiles tile-extract cross-check skipped: pmtiles/
+  tippecanoe-decode absent locally. Ledger shows no unexplained
+  gaps (350 ok + 13 empty + 9 failed-both); cross-check remains
+  optional. CI refetches ~400 files per build (no actions-cache
+  yet — follow-up if build time bites).
