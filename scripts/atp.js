@@ -1,36 +1,47 @@
-/* Merge AllThePlaces chain hours (CC0, first-party data) into the built listings.
+/* Merge AllThePlaces chain data (CC0, first-party data) into the built listings.
+ *
+ * Fetch layer (ported from the verified sibling build's importer):
+ * spider set derived from the run's published stats/_results.json (no hand
+ * list to rot); per-spider country counts skip fully-accounted non-UK
+ * exports; zero-feature exports are used as-is and NEVER backfilled from
+ * older runs (an older pull can resurrect genuinely closed branches);
+ * failed/missing exports take ONE targeted supplement from a second run,
+ * with per-spider provenance. Every skip/failure is recorded in the
+ * ledger; downloads are stream-verified (feature count must match the
+ * published figure). Never invents: only chain-published strings are stored.
  *
  * Usage:
  *   node scripts/atp.js                                   # Southend bbox from build-meta
  *   node scripts/atp.js --bbox=-0.10,51.52,0.00,51.59     # custom bbox (no pois merge)
  *   node scripts/atp.js --refresh                         # re-download spider files
  *
- * Downloads per-spider GeoJSON (cached in data/atp/raw/, git-ignored),
+ * Downloads per-spider GeoJSON (cached in data/atp/raw/<run>/, git-ignored),
  * keeps features inside the bbox, matches them to listings by name +
- * proximity + postcode, and adds atp_hours/atp_brand (OSM hours keep priority
- * in the frontend). Never invents: only chain-published strings are stored.
+ * proximity + postcode, adds atp_hours/atp_brand (OSM hours keep priority
+ * in the frontend), and creates pins for unmatched chain features.
  */
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA = path.join(__dirname, '..', 'data');
 const RAW = path.join(DATA, 'atp', 'raw');
 
-const RUN_ID = '2026-09-05-13-32-25';
-const RUN_BASE = `https://alltheplaces-data.openaddresses.io/runs/${RUN_ID}/output`;
+const RUN_PRIMARY = '2026-09-05-13-32-25';
+const RUN_SUPPLEMENT = '2026-09-19-13-32-18'; // targeted supplements ONLY for failed/missing primary exports
+const runBase = run => `https://alltheplaces-data.openaddresses.io/runs/${run}`;
+const UA = { 'User-Agent': 'Indiemaps-atp/1.0 (chain-hours merge; contact via repo)' };
 
-const SPIDERS = `tesco_gb sainsburys asda_gb morrisons_gb aldi_sud_gb lidl spar_gb
-londis_gb greggs_gb mcdonalds burger_king subway pizza_hut_gb papa_johns_gb
-five_guys_gb nandos_gb_ie wagamama_gb pizza_express_gb zizzi_gb_ie gails_bakery_gb
-pret_a_manger caffe_nero starbucks_eu costa_coffee_gg_gb_im_je itsu_gb leon_gb
-tortilla_gb boots_gb superdrug well_gb j_d_wetherspoon greene_king_pubs_gb
-hungry_horse_gb ember_inns_gb vintage_inns_gb toby_carvery_gb stonehouse_gb
-barclays_gb hsbc_uk_gb lloyds_bank_gb natwest_gb nationwide_gb halifax_gb tsb_gb
-wendys_gb halfords_gb kwik_fit_gb screwfix_gb pets_at_home_gb argos currys primark poundland
-home_bargains_gb b_and_m_gb ikea dunelm_gb wickes_gb card_factory_gb texaco_gb_ie
-shell bp_pulse_gb`.split(/\s+/);
+// Merge-time exclusion: the fetch covers every UK-relevant spider, but these
+// are not destinations and never become pins or matches. Everything else
+// commercial (incl. charity shops, bookmakers, opticians, NCP car parks)
+// merges. Deliberately explicit: auditability over cleverness.
+const EXCLUDE_SPIDERS = new Set(`glasgow_city_council_kerb_grates_gb glasgow_city_council_street_lamps_gb glasgow_city_council_waste_baskets_gb sheffield_city_council_air_quality_gb sheffield_city_council_benches_gb sheffield_city_council_community_forestry_trees_gb sheffield_city_council_drain_nodes_gb sheffield_city_council_grit_bins_gb sheffield_city_council_litter_bins_gb sheffield_city_council_street_lights_gb sheffield_city_council_street_trees_gb naptan_gb national_rail_gb northern_powergrid_lv_supports_gb northern_railway_gb southeastern_railway_gb southern_railway_gb scotrail_gb transport_for_wales_gb traffic_england_gb traffic_scotland_gb church_of_england_gb church_of_scotland_gb gov_cma_fuel_gb gov_dfe_gias_gb gov_fuel_finder_gb gov_mot_gb nhs_england_gb nhs_scotland_gb changing_places_gb falco_bicycle_parking_gb connected_kerb_gb gridserve_gb insta_volt_gb osprey_gb esb_energy_gb evyve_gb genie_point_gb mer_gb smart_charge_gb believ_gb beev_gb chargy_gb charge_place_scotland_gb justpark_gb cashzone_gb`.split(/\s+/));
+// Bare (non-_gb) spiders with known GB coverage, kept from the original
+// hand list plus the High-Street additions. Everything else enters via _gb.
+const BARE_KEEP = new Set(`sainsburys lidl mcdonalds burger_king subway pret_a_manger caffe_nero starbucks_eu superdrug argos currys primark poundland ikea shell specsavers waterstones`.split(/\s+/));
 
 const rawArgs = process.argv.slice(2);
 const args = {};
@@ -51,40 +62,153 @@ const inBbox = (lon, lat) => lon >= W && lon <= E && lat >= S && lat <= N;
 fs.mkdirSync(ATP_CACHE, { recursive: true });
 fs.writeFileSync(path.join(ATP_CACHE, '.gitignore'), '*\n');
 
-const feats = [];
-for (const spider of SPIDERS) {
-  const file = path.join(ATP_CACHE, `${spider}.geojson`);
-  if (!fs.existsSync(file) || args.refresh) {
-    const r = await fetch(`${RUN_BASE}/${spider}.geojson`);
-    if (!r.ok) { console.log(`${spider}: HTTP ${r.status}, skipped`); continue; }
-    fs.writeFileSync(file, Buffer.from(await r.arrayBuffer()));
+async function fetchOk(url, timeoutMs = 60000) {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), timeoutMs);
+      const r = await fetch(url, { headers: UA, signal: ctrl.signal });
+      clearTimeout(t);
+      return r;
+    } catch (e) {
+      if (attempt === 2) throw e;
+      await new Promise(r => setTimeout(r, 1000 * (attempt + 1)));
+    }
   }
-  let fc;
-  try { fc = JSON.parse(fs.readFileSync(file, 'utf8')); } catch { continue; }
-  for (const ft of fc.features || []) {
+}
+async function poolAll(items, limit, fn) {
+  const out = [];
+  for (let i = 0; i < items.length; i += limit) {
+    out.push(...await Promise.all(items.slice(i, i + limit).map(fn)));
+  }
+  return out;
+}
+
+// ---- index-driven fetch (sibling-build importer semantics) ----
+const primaryIdx = await (await fetchOk(`${runBase(RUN_PRIMARY)}/stats/_results.json`, 120000)).json();
+const primaryRows = new Map(primaryIdx.results.map(r => [r.spider, r]));
+// Merge set: every _gb spider minus infrastructure, plus curated bare names.
+const mergeSpiders = [...new Set([
+  ...[...primaryRows.keys()].filter(s => s.endsWith('_gb') && !EXCLUDE_SPIDERS.has(s)),
+  ...[...BARE_KEEP].filter(s => primaryRows.has(s)),
+])].sort();
+console.log(`merge set: ${mergeSpiders.length} spiders (excluded ${EXCLUDE_SPIDERS.size} infra)`);
+let supplementRows = null; // lazy: fetched only if a supplement is actually needed
+async function supplementRow(spider) {
+  if (!supplementRows) {
+    try {
+      const j = await (await fetchOk(`${runBase(RUN_SUPPLEMENT)}/stats/_results.json`, 120000)).json();
+      supplementRows = new Map(j.results.map(r => [r.spider, r]));
+    } catch { supplementRows = new Map(); }
+  }
+  return supplementRows.get(spider);
+}
+function countriesOf(stats) {
+  const c = {};
+  for (const [k, v] of Object.entries(stats || {})) {
+    if (k.startsWith('atp/country/')) c[k.slice('atp/country/'.length)] = v;
+  }
+  return c;
+}
+async function fetchSpider(spider, row, run) {
+  // Returns {status, feats} — feats carry .run provenance. Statuses:
+  // ok | empty_export | outside_uk | failed_* (all recorded in the ledger).
+  if (!row) return { status: 'missing_in_primary', feats: [] };
+  // errors>0 with zero features = the spider FAILED (supplement case);
+  // errors==0 with zero features = genuinely empty (used as-is, never
+  // backfilled — an older pull could resurrect closed branches).
+  if (!row.features) {
+    return row.errors
+      ? { status: `failed_spider_errors_${row.errors}`, feats: [], reported: 0 }
+      : { status: 'empty_export', feats: [], reported: 0 };
+  }
+  try {
+    let countries = {};
+    try {
+      const r = await fetchOk(`${runBase(run)}/stats/${spider}.json`, 30000);
+      if (r.ok) countries = countriesOf(await r.json());
+    } catch { /* stats best-effort: unknown coverage still fetches */ }
+    const knownNonUk = Object.keys(countries).length > 0
+      && Object.keys(countries).every(c => !['GB', 'UK', 'unknown', 'Unknown', 'None', ''].includes(c))
+      && Object.values(countries).reduce((a, b) => a + b, 0) === row.features;
+    if (knownNonUk) return { status: 'outside_uk_by_country_counts', feats: [], countries };
+    const file = path.join(ATP_CACHE, run, `${spider}.geojson`);
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    if (!fs.existsSync(file) || args.refresh) {
+      const r = await fetchOk(`${runBase(run)}/output/${spider}.geojson`);
+      if (!r.ok) return { status: `failed_http_${r.status}`, feats: [], countries };
+      fs.writeFileSync(file, Buffer.from(await r.arrayBuffer()));
+    }
+    const fc = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const all = fc.features || [];
+    if (all.length !== row.features) {
+      // Incomplete/truncated export: retry once fresh, then fail loudly.
+      try { fs.unlinkSync(file); } catch {}
+      const r2 = await fetchOk(`${runBase(run)}/output/${spider}.geojson`);
+      if (r2.ok) fs.writeFileSync(file, Buffer.from(await r2.arrayBuffer()));
+      const fc2 = JSON.parse(fs.readFileSync(file, 'utf8'));
+      if ((fc2.features || []).length !== row.features) {
+        return { status: `failed_incomplete_export_got_${(fc2.features || []).length}_expected_${row.features}`, feats: [], countries };
+      }
+      return collectFeats(spider, fc2.features, run, row, countries);
+    }
+    return collectFeats(spider, all, run, row, countries);
+  } catch (e) {
+    return { status: `failed_${String(e.cause || e.message || e).slice(0, 80)}`, feats: [] };
+  }
+}
+function collectFeats(spider, all, run, row, countries) {
+  const feats = [];
+  for (const ft of all) {
     if (ft.geometry?.type !== 'Point') continue;
     const [lon, lat] = ft.geometry.coordinates;
     if (!inBbox(lon, lat)) continue;
     const p = ft.properties || {};
     feats.push({
-      spider, brand: p.brand || p.name || spider, name: p.name || p.branch || '',
+      spider, run, brand: p.brand || p.name || spider, name: p.name || p.branch || '',
       branch: p.branch || '', lat, lng: lon,
       opening_hours: p.opening_hours || '',
       website: p.website || '',
       phone: p.phone || p['contact:phone'] || '',
-      amenity: p.amenity || '', shop: p.shop || '', cuisine: p.cuisine || '',
+      amenity: p.amenity || '', shop: p.shop || '', tourism: p.tourism || '', cuisine: p.cuisine || '',
       housenumber: p['addr:housenumber'] || '', street: p['addr:street'] || '',
       wikidata: p['brand:wikidata'] || null,
       nsi: p['nsi_id'] || null,
       postcode: (p['addr:postcode'] || '').replace(/\s/g, '').toLowerCase() || null,
     });
   }
+  return { status: 'ok', feats, reported: row.features, countries };
 }
-console.log(`${feats.length} ATP features in bbox ${bbox.join(',')}`);
-console.log(`with hours: ${feats.filter(f => f.opening_hours).length}`);
+
+const feats = [];
+const ledger = [];
+await poolAll(mergeSpiders, 8, async spider => {
+  const row = primaryRows.get(spider);
+  let res = await fetchSpider(spider, row, RUN_PRIMARY);
+  let run = RUN_PRIMARY;
+  // Targeted supplement: failed/missing primary exports ONLY. Empty and
+  // outside-UK verdicts are used as-is — never backfilled from history.
+  if (res.status === 'missing_in_primary' || res.status.startsWith('failed_')) {
+    const srow = await supplementRow(spider);
+    if (srow && srow.features) {
+      const sres = await fetchSpider(spider, srow, RUN_SUPPLEMENT);
+      if (sres.status === 'ok') { res = sres; run = RUN_SUPPLEMENT; }
+      else ledger.push({ spider, run: RUN_SUPPLEMENT, status: `supplement_${sres.status}`, reported: srow.features, bbox_feats: 0 });
+    }
+  }
+  feats.push(...res.feats);
+  ledger.push({ spider, run, status: res.status, reported: res.reported ?? row?.features ?? 0, bbox_feats: res.feats.length });
+});
+ledger.sort((a, b) => a.spider < b.spider ? -1 : 1);
+const failed = ledger.filter(l => l.status.startsWith('failed_') || l.status === 'missing_in_primary');
+console.log(`${feats.length} ATP features in bbox ${bbox.join(',')} from ${mergeSpiders.length} spiders`);
+console.log(`with hours: ${feats.filter(f => f.opening_hours).length} | ledger: ${ledger.filter(l => l.status === 'ok').length} ok, ${ledger.filter(l => l.status === 'empty_export').length} empty, ${ledger.filter(l => l.status === 'outside_uk_by_country_counts').length} non-uk, ${ledger.filter(l => l.run === RUN_SUPPLEMENT && l.status === 'ok').length} supplemented, ${failed.length} failed`);
 
 fs.mkdirSync(path.dirname(EXTRACT_PATH), { recursive: true });
-fs.writeFileSync(EXTRACT_PATH, JSON.stringify({ run_id: RUN_ID, bbox, count: feats.length, feats }, null, 2));
+const extractObj = { runs: { primary: RUN_PRIMARY, supplement: RUN_SUPPLEMENT }, bbox, count: feats.length, feats };
+const extractStr = JSON.stringify(extractObj);
+fs.writeFileSync(EXTRACT_PATH, extractStr);
+const snapshotSha = crypto.createHash('sha256').update(extractStr).digest('hex');
 
 // ---- match to built listings ----
 const normName = s => (s || '').toLowerCase().replace(/\bltd\b|\blimited\b|\bplc\b|\bthe\b/g, '').replace(/&/g, 'and').replace(/[^a-z0-9åäö ]/g, ' ').replace(/\s+/g, ' ').trim(); // åäö retained (FI/SE names)
@@ -156,8 +280,15 @@ let matched = 0, webMatched = 0, qidMatched = 0, hoursAdded = 0;
 const hoursBefore = pois.filter(p => p.opening_hours_osm).length;
 for (const p of pois) {
   delete p.hygiene; // hygiene scores retired
-  delete p.atp_hours; delete p.atp_brand; delete p.atp_spider; delete p.atp_method; delete p.atp_wikidata; delete p.atp_nsi; delete p.atp_match; // re-merge from scratch
-  p.sources = (p.sources || []).filter(s => s !== 'atp');
+  // Created chain pins keep their provenance unless re-matched below: their
+  // atp_* fields ARE the record (stripping them on a matcher-gap rerun left
+  // sourceless pins — measured with Costa Express). A re-match refreshes
+  // everything, upgrading provenance.
+  const createdPin = p.atp_method === 'created-chain';
+  if (!createdPin) {
+    delete p.atp_hours; delete p.atp_brand; delete p.atp_spider; delete p.atp_method; delete p.atp_wikidata; delete p.atp_nsi; delete p.atp_match; // re-merge from scratch
+    p.sources = (p.sources || []).filter(s => s !== 'atp');
+  }
   const ptoks = tokens(p.name);
   const ptoksAll = tokens(p.name, 1);
   let best = null, bestScore = 0, bestMethod = '', candidates = 0;
@@ -199,23 +330,32 @@ function djb2(s) {
   for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0;
   return h.toString(36);
 }
-// Mirror of mapOsmCategory in scripts/build.js — keep in sync. Parking is
-// classified here so the parking-off-by-default UI rule catches ATP-created
-// car parks too.
+// Mirror of mapOsmCategory in scripts/build.js — keep in sync. Tags decide
+// first (chain features carry real OSM-style tags); spider keywords cover
+// tagless features only; everything else lands honestly in services.
 function atpCategory(f) {
-  const a = f.amenity, s = f.shop;
+  const a = f.amenity, s = f.shop, t = f.tourism;
   if (['restaurant', 'fast_food', 'food_court'].includes(a)) return ['restaurant', 'Restaurant'];
   if (['cafe', 'ice_cream'].includes(a)) return ['cafe', 'Café'];
   if (['pub', 'bar', 'biergarten', 'nightclub'].includes(a)) return ['pub', 'Pub / Bar'];
-  if (['pharmacy', 'doctors', 'dentist', 'clinic', 'hospital', 'optician'].includes(a)) return ['health', 'Health'];
+  if (['pharmacy', 'doctors', 'dentist', 'clinic', 'hospital', 'optician', 'veterinary'].includes(a)) return ['health', 'Health'];
+  if (['charity_shop'].includes(a)) return ['shopping', 'Charity shop'];
+  if (['theatre', 'cinema', 'arts_centre', 'library', 'place_of_worship'].includes(a) || t === 'museum' || t === 'gallery') return ['culture', 'Culture'];
+  if (t === 'hotel' || t === 'guest_house' || t === 'hostel') return ['hotel', 'Hotel'];
+  if (t === 'attraction' || t === 'viewpoint') return ['attraction', 'Attraction'];
   if (['parking', 'parking_space', 'bicycle_parking', 'motorcycle_parking'].includes(a)) return ['parking', 'Parking'];
   if (['fuel'].includes(a)) return ['transport', 'Transport'];
+  if (['bank', 'bureau_de_change', 'money_transfer'].includes(a)) return ['services', 'Services'];
   if (s) return ['shopping', 'Shop'];
-  if (a) return ['services', 'Services'];
-  // Tagless chain features: food/drink spiders default to their trade.
-  if (/greggs|mcdonalds|burger_king|subway|pizza|nandos|wagamama|itsu|leon|tortilla|wendys|five_guys|pret|gails|wetherspoon|greene_king|hungry_horse|ember_inns|vintage_inns|toby_carvery|stonehouse/.test(f.spider)) return ['restaurant', 'Restaurant'];
-  if (/costa|starbucks|caffe_nero/.test(f.spider)) return ['cafe', 'Café'];
-  if (/tesco|sainsburys|asda|morrisons|aldi|lidl|spar|londis/.test(f.spider)) return ['shopping', 'Shop'];
+  if (a || t) return ['services', 'Services'];
+  const sp = f.spider;
+  if (/greggs|mcdonalds|burger_king|subway|pizza|kfc|nandos|wagamama|itsu|leon|tortilla|wendys|five_guys|pret|gails|wetherspoon|frankie|harvester|beefeater|toby_carvery|stonehouse|tgi_fridays|ask_italian|wildwood|fireaway|bella_italia|las_iguanas|chiquito|popeyes|taco_bell|creams|kaspa|wimpy|morleys|pepes|sams_chicken|chicken_cottage|kokoro|zambrero|banana_tree|giggling_squid|franco_manca|pho|wildwood|cafe_rouge|chef_and_brewer|farmhouse_inns|nicholsons|vintage_inns|ember_inns|hungry_horse|greene_king|youngs|fullers|marstons|sizzling|fayre|flaming_grill|table_table|bar_and_block|miller_and_carter|lounges|belhaven|robinsons|hall_and_woodhouse|stneg|pubs|inns|tavern|brewery|taproom/.test(sp)) return ['restaurant', 'Restaurant'];
+  if (/costa|starbucks|caffe_nero|nero|coffee|cafe|tea|bird_blend|coffee_1|cornish_bakery|patisserie_valerie|paul_gb|benugo/.test(sp)) return ['cafe', 'Café'];
+  if (/premier_inn|travelodge|village_hotels|holiday_inn|yha/.test(sp)) return ['hotel', 'Hotel'];
+  if (/specsavers|vision_express|leightons|optical_express|my_dentist|damira|bupa|cvs_vets|vets4pets|medivet|dentist|dental|audika|amplifon|scrivens|boots_opticians|opticians/.test(sp)) return ['health', 'Health'];
+  // Tagless retail: the shop tag is usually present, but a missing tag must
+  // not dump Tesco into services. Bounded keyword list, services otherwise.
+  if (/tesco|sainsburys|asda|morrisons|aldi|lidl|spar|londis|budgens|costcutter|nisalocal|keystore|scotmid|coop_food|booker|family_shopper|iceland|heron_foods|farmfoods|argos|currys|primark|poundland|poundstretcher|home_bargains|b_and_m|qd_stores|ikea|dunelm|wickes|halfords|screwfix|pets_at_home|jollyes|card_factory|cardzone|cards_direct|scribbler|boots|superdrug|savers|rowlands|weldricks|day_lewis|matalan|peacocks|new_look|river_island|jd_sports|footasylum|decathlon|go_outdoors|millets|cotswold|cex|ryman|timpson|john_lewis|frasers|fenwick|house_of_fraser|marks_and_spencer|next|clarks|waterstones|the_works|entertainer|smythstoys|toys_r_us|yoursclothing|bonmarche|roman_originals|mint_velvet|whistles|reiss|moss|saltrock|white_stuff|fatface|crew_clothing|weird_fish|shoe_zone|schuh|soletrader|pavers|wynsors|charles_clinkard|hotter|deichmann|jigsaw|h_samuel|fraser_hart|beaverbrooks|warren_james|f_hinds|goldsmiths|oxfam|bhf|cancer_research|sue_ryder|salvation_army|shelter|marie_curie|debra|barnardos|hobbycraft|dfs|scs|oak_furnitureland|furniture_village|bensons|dreams|tapi|topps_tiles|wren_kitchens|magnet|toolstation|travis_perkins|jewson|huws_gray|leyland|dulux|crown_decorating|o2_gb|three_gb|ee_gb|fonehouse|ismash|max_spielmann|richer_sounds|sevenoaks|phone|mobile|book|stationery|fashion|clothes|boutique|jewell|furniture|florist|garden_centre|pets|toy|charity|shopping|retail|store|market|outlet|mall|supermarket|convenience|grocery|department/.test(sp)) return ['shopping', 'Shop'];
   return ['services', 'Services'];
 }
 const normPc = pc => (pc || '').replace(/\s/g, '').toLowerCase() || null;
@@ -272,6 +412,6 @@ for (const f of feats) {
 }
 fs.writeFileSync(POIS_PATH, JSON.stringify(pois, null, 2));
 
-meta.atp = { run_id: RUN_ID, spiders: SPIDERS.length, feats_in_bbox: feats.length, feats_with_hours: feats.filter(f => f.opening_hours).length, matched, web_matched: webMatched, wikidata_matched: qidMatched, hours_added: hoursAdded, hours_before: hoursBefore, hours_after: hoursAfter, created, hosted, skipped_dupe: skippedDupe, created_ids: createdIds };
+meta.atp = { runs: { primary: RUN_PRIMARY, supplement: RUN_SUPPLEMENT }, spiders: mergeSpiders.length, feats_in_bbox: feats.length, feats_with_hours: feats.filter(f => f.opening_hours).length, matched, web_matched: webMatched, wikidata_matched: qidMatched, hours_added: hoursAdded, hours_before: hoursBefore, hours_after: hoursAfter, created, hosted, skipped_dupe: skippedDupe, created_ids: createdIds, snapshot_sha: snapshotSha, complete: failed.length === 0, failed_spiders: failed.map(f => `${f.spider}:${f.status}`), supplemented: Object.fromEntries(ledger.filter(l => l.run === RUN_SUPPLEMENT && l.status === 'ok').map(l => [l.spider, RUN_SUPPLEMENT])), spider_runs: Object.fromEntries(ledger.filter(l => l.status === 'ok').map(l => [l.spider, l.run])) };
 fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2));
 console.log(`matched ${matched} listings (${webMatched} via website, ${qidMatched} via wikidata) | hours ${hoursBefore} → ${hoursAfter} (+${hoursAdded} from chains) | created ${created} (${hosted} hosted), skipped ${skippedDupe} same-store variants`);

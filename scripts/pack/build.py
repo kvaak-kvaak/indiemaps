@@ -361,12 +361,14 @@ def flag_stale_orphans(pois_data, now):
     Servicemap corroboration renders iff its OSM object was touched within
     182 days; older or untimestamped records hide (fail closed).
     Same middle-path flag as batch misses, reason 'stale-orphan' so audits
-    separate the two populations. Re-run safe (clears first)."""
+    separate the two populations. User-approved 2026-10-06: ANY
+    chain-published (ATP) match exempts — the chain confirms the store,
+    regardless of match method. Re-run safe (clears first)."""
     n = 0
     for p in pois_data:
         p.pop('unresolved_why', None)
         s = p.get('sources', []) or []
-        if 'osm' not in s or any(x in s for x in ('fsa', 'ch', 'servicemap')):
+        if 'osm' not in s or any(x in s for x in ('fsa', 'ch', 'servicemap', 'atp')):
             continue
         if osm_touch_fresh(p, now):
             continue

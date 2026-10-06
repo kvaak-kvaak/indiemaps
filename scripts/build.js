@@ -64,7 +64,8 @@ function mapOsmCategory(tags = {}) {
   if (['restaurant', 'fast_food', 'food_court'].includes(a)) return ['restaurant', 'Restaurant'];
   if (['cafe', 'ice_cream'].includes(a)) return ['cafe', 'Café'];
   if (['pub', 'bar', 'biergarten', 'nightclub'].includes(a)) return ['pub', 'Pub / Bar'];
-  if (['pharmacy', 'doctors', 'dentist', 'clinic', 'hospital', 'optician'].includes(a)) return ['health', 'Health'];
+  if (['pharmacy', 'doctors', 'dentist', 'clinic', 'hospital', 'optician', 'veterinary'].includes(a)) return ['health', 'Health'];
+  if (['charity_shop'].includes(a)) return ['shopping', 'Charity shop'];
   // Parking is its own category (user-approved 2026-10-06): too numerous to
   // show by default — the frontend hides it under All. Mirror in server.js
   // (live layer) and atpCategory in scripts/atp.js.
