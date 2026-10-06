@@ -30,7 +30,13 @@ const DATA = path.join(__dirname, '..', 'data');
 const RAW = path.join(DATA, 'atp', 'raw');
 
 const RUN_PRIMARY = '2026-09-05-13-32-25';
-const RUN_SUPPLEMENT = '2026-09-19-13-32-18'; // targeted supplements ONLY for failed/missing primary exports
+// Targeted supplements ONLY for failed/missing primary exports, newest
+// first. Sep-19 stays ahead of the August runs: its 22 fills are
+// verified-working (CI-green, audited) and must not silently re-resolve.
+// Older runs fill remaining gaps only (measured 2026-10-06: jollyes_gb
+// healthy in Aug-29, cef_gb in Aug-22; the rest fail in all 5 runs
+// checked, Aug-15 through Sep-26).
+const SUPPLEMENT_RUNS = ['2026-09-19-13-32-18', '2026-08-29-13-32-18', '2026-08-22-13-32-16'];
 const runBase = run => `https://alltheplaces-data.openaddresses.io/runs/${run}`;
 const UA = { 'User-Agent': 'Indiemaps-atp/1.0 (chain-hours merge; contact via repo)' };
 
@@ -93,15 +99,23 @@ const mergeSpiders = [...new Set([
   ...[...BARE_KEEP].filter(s => primaryRows.has(s)),
 ])].sort();
 console.log(`merge set: ${mergeSpiders.length} spiders (excluded ${EXCLUDE_SPIDERS.size} infra)`);
-let supplementRows = null; // lazy: fetched only if a supplement is actually needed
+let supplementIdx = null; // lazy: fetched only if a supplement is actually needed
 async function supplementRow(spider) {
-  if (!supplementRows) {
-    try {
-      const j = await (await fetchOk(`${runBase(RUN_SUPPLEMENT)}/stats/_results.json`, 120000)).json();
-      supplementRows = new Map(j.results.map(r => [r.spider, r]));
-    } catch { supplementRows = new Map(); }
+  // Returns {row, run} from the newest supplement run with a healthy
+  // export (features>0 — an errors>0/zero-feature row is a failure, not
+  // data, and is skipped, never used).
+  if (!supplementIdx) {
+    supplementIdx = new Map();
+    for (const run of SUPPLEMENT_RUNS) {
+      try {
+        const j = await (await fetchOk(`${runBase(run)}/stats/_results.json`, 120000)).json();
+        for (const r of j.results) {
+          if (r.features && !supplementIdx.has(r.spider)) supplementIdx.set(r.spider, { row: r, run });
+        }
+      } catch { /* unreachable run: remaining runs still tried */ }
+    }
   }
-  return supplementRows.get(spider);
+  return supplementIdx.get(spider);
 }
 function countriesOf(stats) {
   const c = {};
@@ -189,11 +203,11 @@ await poolAll(mergeSpiders, 8, async spider => {
   // Targeted supplement: failed/missing primary exports ONLY. Empty and
   // outside-UK verdicts are used as-is — never backfilled from history.
   if (res.status === 'missing_in_primary' || res.status.startsWith('failed_')) {
-    const srow = await supplementRow(spider);
-    if (srow && srow.features) {
-      const sres = await fetchSpider(spider, srow, RUN_SUPPLEMENT);
-      if (sres.status === 'ok') { res = sres; run = RUN_SUPPLEMENT; }
-      else ledger.push({ spider, run: RUN_SUPPLEMENT, status: `supplement_${sres.status}`, reported: srow.features, bbox_feats: 0 });
+    const sup = await supplementRow(spider);
+    if (sup) {
+      const sres = await fetchSpider(spider, sup.row, sup.run);
+      if (sres.status === 'ok') { res = sres; run = sup.run; }
+      else ledger.push({ spider, run: sup.run, status: `supplement_${sres.status}`, reported: sup.row.features, bbox_feats: 0 });
     }
   }
   feats.push(...res.feats);
@@ -202,10 +216,10 @@ await poolAll(mergeSpiders, 8, async spider => {
 ledger.sort((a, b) => a.spider < b.spider ? -1 : 1);
 const failed = ledger.filter(l => l.status.startsWith('failed_') || l.status === 'missing_in_primary');
 console.log(`${feats.length} ATP features in bbox ${bbox.join(',')} from ${mergeSpiders.length} spiders`);
-console.log(`with hours: ${feats.filter(f => f.opening_hours).length} | ledger: ${ledger.filter(l => l.status === 'ok').length} ok, ${ledger.filter(l => l.status === 'empty_export').length} empty, ${ledger.filter(l => l.status === 'outside_uk_by_country_counts').length} non-uk, ${ledger.filter(l => l.run === RUN_SUPPLEMENT && l.status === 'ok').length} supplemented, ${failed.length} failed`);
+console.log(`with hours: ${feats.filter(f => f.opening_hours).length} | ledger: ${ledger.filter(l => l.status === 'ok').length} ok, ${ledger.filter(l => l.status === 'empty_export').length} empty, ${ledger.filter(l => l.status === 'outside_uk_by_country_counts').length} non-uk, ${ledger.filter(l => l.run !== RUN_PRIMARY && l.status === 'ok').length} supplemented, ${failed.length} failed`);
 
 fs.mkdirSync(path.dirname(EXTRACT_PATH), { recursive: true });
-const extractObj = { runs: { primary: RUN_PRIMARY, supplement: RUN_SUPPLEMENT }, bbox, count: feats.length, feats };
+const extractObj = { runs: { primary: RUN_PRIMARY, supplements: SUPPLEMENT_RUNS }, bbox, count: feats.length, feats };
 const extractStr = JSON.stringify(extractObj);
 fs.writeFileSync(EXTRACT_PATH, extractStr);
 const snapshotSha = crypto.createHash('sha256').update(extractStr).digest('hex');
@@ -412,6 +426,6 @@ for (const f of feats) {
 }
 fs.writeFileSync(POIS_PATH, JSON.stringify(pois, null, 2));
 
-meta.atp = { runs: { primary: RUN_PRIMARY, supplement: RUN_SUPPLEMENT }, spiders: mergeSpiders.length, feats_in_bbox: feats.length, feats_with_hours: feats.filter(f => f.opening_hours).length, matched, web_matched: webMatched, wikidata_matched: qidMatched, hours_added: hoursAdded, hours_before: hoursBefore, hours_after: hoursAfter, created, hosted, skipped_dupe: skippedDupe, created_ids: createdIds, snapshot_sha: snapshotSha, complete: failed.length === 0, failed_spiders: failed.map(f => `${f.spider}:${f.status}`), supplemented: Object.fromEntries(ledger.filter(l => l.run === RUN_SUPPLEMENT && l.status === 'ok').map(l => [l.spider, RUN_SUPPLEMENT])), spider_runs: Object.fromEntries(ledger.filter(l => l.status === 'ok').map(l => [l.spider, l.run])) };
+meta.atp = { runs: { primary: RUN_PRIMARY, supplements: SUPPLEMENT_RUNS }, spiders: mergeSpiders.length, feats_in_bbox: feats.length, feats_with_hours: feats.filter(f => f.opening_hours).length, matched, web_matched: webMatched, wikidata_matched: qidMatched, hours_added: hoursAdded, hours_before: hoursBefore, hours_after: hoursAfter, created, hosted, skipped_dupe: skippedDupe, created_ids: createdIds, snapshot_sha: snapshotSha, complete: failed.length === 0, failed_spiders: failed.map(f => `${f.spider}:${f.status}`), supplemented: Object.fromEntries(ledger.filter(l => l.run !== RUN_PRIMARY && l.status === 'ok').map(l => [l.spider, l.run])), spider_runs: Object.fromEntries(ledger.filter(l => l.status === 'ok').map(l => [l.spider, l.run])) };
 fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2));
 console.log(`matched ${matched} listings (${webMatched} via website, ${qidMatched} via wikidata) | hours ${hoursBefore} → ${hoursAfter} (+${hoursAdded} from chains) | created ${created} (${hosted} hosted), skipped ${skippedDupe} same-store variants`);
