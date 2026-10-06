@@ -1,0 +1,478 @@
+{
+ "v2|91 1|helsinki": null,
+ "v2|amica|helsinki": null,
+ "v2|antin kaffeliiteri|helsinki": null,
+ "v2|arnolds|helsinki": null,
+ "v2|arvo|helsinki": null,
+ "v2|asia palace|helsinki": null,
+ "v2|auri coffee|helsinki": null,
+ "v2|backaksen kartano kesäravintola|helsinki": null,
+ "v2|bar bumerang|helsinki": null,
+ "v2|bar hippu|helsinki": null,
+ "v2|bar jisto|helsinki": null,
+ "v2|bar keskari|helsinki": null,
+ "v2|bear chicken|helsinki": null,
+ "v2|bella marina|helsinki": null,
+ "v2|brändö seglares restaurang|helsinki": null,
+ "v2|burger king|helsinki": null,
+ "v2|cafe 7|helsinki": null,
+ "v2|caf ateriax|helsinki": null,
+ "v2|cafe carr|helsinki": null,
+ "v2|cafe zockeria weegee|helsinki": null,
+ "v2|cambo thai|helsinki": null,
+ "v2|checkpoint caf|helsinki": null,
+ "v2|chez francois afro bar|helsinki": null,
+ "v2|china wall|helsinki": null,
+ "v2|ciao caff|helsinki": null,
+ "v2|coffee house|helsinki": null,
+ "v2|curry palace|helsinki": null,
+ "v2|deli chef|helsinki": null,
+ "v2|deli kahvibaari|helsinki": null,
+ "v2|dif döner dizza|helsinki": null,
+ "v2|dilber|helsinki": null,
+ "v2|ducky bubble tea more|helsinki": null,
+ "v2|espoon aurora|helsinki": null,
+ "v2|espresso house|helsinki": null,
+ "v2|fazer caf|helsinki": null,
+ "v2|fins|helsinki": null,
+ "v2|food chef|helsinki": null,
+ "v2|fry day|helsinki": null,
+ "v2|fufu cafe|helsinki": null,
+ "v2|grilli hakupala|helsinki": null,
+ "v2|haaga inn|helsinki": null,
+ "v2|hämeenkylän kartano|helsinki": null,
+ "v2|hanko sushi|helsinki": null,
+ "v2|hav a java|helsinki": null,
+ "v2|helmisimpukka|helsinki": null,
+ "v2|helmisimpukka express|helsinki": null,
+ "v2|helmisimpukka express helsinki myllypuro|helsinki": null,
+ "v2|helmisimpukka helsinki ala tikkurila|helsinki": null,
+ "v2|hertsikan pizzataxih|helsinki": null,
+ "v2|hesburger|helsinki": null,
+ "v2|huivi|helsinki": null,
+ "v2|hungry hub|helsinki": null,
+ "v2|ingman jäätelökioski|helsinki": null,
+ "v2|interpizza|helsinki": null,
+ "v2|jäähallin kahvila|helsinki": null,
+ "v2|jäätelökioski|helsinki": null,
+ "v2|jufu|helsinki": null,
+ "v2|julian pitopalvelu|helsinki": null,
+ "v2|juttutuvan ruokasali|helsinki": null,
+ "v2|k raudan kahvio|helsinki": null,
+ "v2|kahvila hile|helsinki": null,
+ "v2|kahvila kilikuppila|helsinki": null,
+ "v2|kahvila palomaja|helsinki": null,
+ "v2|kahvila pikku karhu|helsinki": null,
+ "v2|kahvila pokkari|helsinki": null,
+ "v2|karaokepub kulmapotku|helsinki": null,
+ "v2|karkelon tähti|helsinki": null,
+ "v2|kimchi bbq tapiola|helsinki": null,
+ "v2|king kebab|helsinki": null,
+ "v2|king s corner|helsinki": null,
+ "v2|kioski kahvila sokeritoppa|helsinki": null,
+ "v2|kipsari|helsinki": null,
+ "v2|kivikko pizza pub|helsinki": null,
+ "v2|kivimäen kebab pizza|helsinki": null,
+ "v2|konditoria kahvila ehali|helsinki": null,
+ "v2|kot|helsinki": null,
+ "v2|kot menu|helsinki": null,
+ "v2|kotipizza|helsinki": null,
+ "v2|kp lunch|helsinki": null,
+ "v2|kulma|helsinki": null,
+ "v2|kultaleopardi|helsinki": null,
+ "v2|kuningas pizza kebab|helsinki": null,
+ "v2|kuparinkulma karaoke bar|helsinki": null,
+ "v2|laiska kissa|helsinki": null,
+ "v2|lentävä lautanen|helsinki": null,
+ "v2|leppävaaran kuningas|helsinki": null,
+ "v2|letona kahvila pizzeria|helsinki": null,
+ "v2|lezzet anatolia|helsinki": null,
+ "v2|lily of the valley|helsinki": null,
+ "v2|linnanhenki|helsinki": null,
+ "v2|lounas kastetaimi|helsinki": null,
+ "v2|lounaskahvila|helsinki": null,
+ "v2|lounaskahvila sorvis|helsinki": null,
+ "v2|lounasravintola antell allergiatalo|helsinki": null,
+ "v2|lounasravintola taimi|helsinki": null,
+ "v2|luckiefun s sushibuffet|helsinki": null,
+ "v2|madam roza bistro cafe|helsinki": null,
+ "v2|malmin hautausmaan lounasravintola|helsinki": null,
+ "v2|manaatti|helsinki": null,
+ "v2|market kitchen|helsinki": null,
+ "v2|mau kas|helsinki": null,
+ "v2|maunulan pizza kebab palvelu|helsinki": null,
+ "v2|meelomhouse|helsinki": null,
+ "v2|megas pizza|helsinki": null,
+ "v2|meilahden kartanon kahvila|helsinki": null,
+ "v2|mesikahvi|helsinki": null,
+ "v2|metso|helsinki": null,
+ "v2|mian|helsinki": null,
+ "v2|milan nepal|helsinki": null,
+ "v2|miran pizza ja kebab|helsinki": null,
+ "v2|mo de|helsinki": null,
+ "v2|moe s|helsinki": null,
+ "v2|nova bistro|helsinki": null,
+ "v2|nova mau kas|helsinki": null,
+ "v2|nur pizza kebab|helsinki": null,
+ "v2|olivo|helsinki": null,
+ "v2|oluttupa viva maria|helsinki": null,
+ "v2|om pu|helsinki": null,
+ "v2|osaka sushi|helsinki": null,
+ "v2|paasiravintola|helsinki": null,
+ "v2|papan lounas pizza|helsinki": null,
+ "v2|park pub|helsinki": null,
+ "v2|pho viet|helsinki": null,
+ "v2|picnic|helsinki": null,
+ "v2|pizza express|helsinki": null,
+ "v2|pizza house|helsinki": null,
+ "v2|pizza roosa|helsinki": null,
+ "v2|pizza taikurit|helsinki": null,
+ "v2|pizzeria online|helsinki": null,
+ "v2|pohjanpoika|helsinki": null,
+ "v2|pub jakkis|helsinki": null,
+ "v2|pub josafat|helsinki": null,
+ "v2|pueblo|helsinki": null,
+ "v2|puotilan pizza kebab|helsinki": null,
+ "v2|ravintola base camp|helsinki": null,
+ "v2|ravintola dhaka grilli|helsinki": null,
+ "v2|ravintola future|helsinki": null,
+ "v2|ravintola hangout|helsinki": null,
+ "v2|ravintola hao shi|helsinki": null,
+ "v2|ravintola kampung|helsinki": null,
+ "v2|ravintola kapusta|helsinki": null,
+ "v2|ravintola links|helsinki": null,
+ "v2|ravintola luossa|helsinki": null,
+ "v2|ravintola päättäri|helsinki": null,
+ "v2|ravintola rosmariini|helsinki": null,
+ "v2|ravintola rumpu|helsinki": null,
+ "v2|ravintola terra|helsinki": null,
+ "v2|ravintola ulappasilta|helsinki": null,
+ "v2|ravintola vega|helsinki": null,
+ "v2|rax buffet|helsinki": null,
+ "v2|red ox|helsinki": null,
+ "v2|restaurant bar fusion|helsinki": null,
+ "v2|rolls|helsinki": null,
+ "v2|salaattisiskot|helsinki": {
+  "company_number": "1850495-2",
+  "company_name": "Salaattisiskot Ky",
+  "names_all": [
+   "Salaattisiskot Ky"
+  ],
+  "status": "registered",
+  "registered_address": "Rapakiventie 2, 00710 HELSINGFORS",
+  "postcode": "00710",
+  "municipality": "HELSINGFORS",
+  "business_lines": [
+   "56111"
+  ],
+  "registration_date": "2003-09-10"
+ },
+ "v2|salama pizza|helsinki": null,
+ "v2|santorini|helsinki": {
+  "company_number": "3389198-9",
+  "company_name": "Ravintola Santorini Oy",
+  "names_all": [
+   "Ravintola Santorini Oy"
+  ],
+  "status": "registered",
+  "registered_address": "Saarijärventie 20, 70460 KUOPIO",
+  "postcode": "70460",
+  "municipality": "KUOPIO",
+  "business_lines": [
+   "56111"
+  ],
+  "registration_date": "2023-09-11"
+ },
+ "v2|seurahuone pub|helsinki": null,
+ "v2|shamrock|helsinki": {
+  "company_number": "0762264-6",
+  "company_name": "Shamrock Ab",
+  "names_all": [
+   "Shamrock Ab"
+  ],
+  "status": "registered",
+  "registered_address": "Mannerheimvägen 18, 00100 HELSINGFORS",
+  "postcode": "00100",
+  "municipality": "HELSINGFORS",
+  "business_lines": [
+   "64990"
+  ],
+  "registration_date": "1989-10-15"
+ },
+ "v2|silinteri|helsinki": {
+  "company_number": "2302342-4",
+  "company_name": "Kirpputori Silinteri",
+  "names_all": [
+   "Silinteri-yhtiöt Oy",
+   "Primos Oy",
+   "Kirpputori Silinteri"
+  ],
+  "status": "registered",
+  "registered_address": "Kirrinkuja 1, 40270 PALOKKA",
+  "postcode": "40270",
+  "municipality": "PALOKKA",
+  "business_lines": [
+   "47799"
+  ],
+  "registration_date": "2009-11-30"
+ },
+ "v2|silta pub|helsinki": null,
+ "v2|six pot coffee company|helsinki": null,
+ "v2|skaba bar|helsinki": null,
+ "v2|smarteat|helsinki": {
+  "company_number": "2497844-1",
+  "company_name": "Smarteat Oy",
+  "names_all": [
+   "Smarteat Oy"
+  ],
+  "status": "ceased",
+  "registered_address": "",
+  "postcode": "",
+  "municipality": "",
+  "business_lines": [
+   "56290"
+  ],
+  "registration_date": "2012-09-11"
+ },
+ "v2|sodexo|helsinki": {
+  "company_number": "0907890-4",
+  "company_name": "Sodexo Traffic",
+  "names_all": [
+   "Sodexo Oy",
+   "Sodexho Oy",
+   "Pohjan Kesti",
+   "Cafe Mezzo",
+   "Tammerkesti",
+   "Polarkesti",
+   "Polarrest",
+   "Erikois-Eines",
+   "Ravintola Kapelli",
+   "Abra Nordic Vending",
+   "Abra",
+   "Sodexo Traffic"
+  ],
+  "status": "registered",
+  "registered_address": "Atomitie 5, 00370 HELSINGFORS",
+  "postcode": "00370",
+  "municipality": "HELSINGFORS",
+  "business_lines": [
+   "56220"
+  ],
+  "registration_date": "1992-11-13"
+ },
+ "v2|sodexo metropolia leiritie|helsinki": null,
+ "v2|soitin|helsinki": {
+  "company_number": "0546112-1",
+  "company_name": "Salpausselän Soitin Ky",
+  "names_all": [
+   "Salpausselän Soitin Ky"
+  ],
+  "status": "ceased",
+  "registered_address": "",
+  "postcode": "",
+  "municipality": "",
+  "business_lines": [
+   "47595"
+  ],
+  "registration_date": "1984-02-22"
+ },
+ "v2|sotilaskoti|helsinki": null,
+ "v2|southland|helsinki": null,
+ "v2|spice ice|helsinki": null,
+ "v2|sport cafe|helsinki": null,
+ "v2|st1 helmisimpukka helsinki pukinmäki|helsinki": null,
+ "v2|st1 n kahvila|helsinki": null,
+ "v2|star pizza|helsinki": null,
+ "v2|starkin kahvila|helsinki": null,
+ "v2|street canteen ainoa|helsinki": null,
+ "v2|sushi panda|helsinki": {
+  "company_number": "2708914-8",
+  "company_name": "Sushi Panda Oy",
+  "names_all": [
+   "Sushi Panda Oy"
+  ],
+  "status": "registered",
+  "registered_address": "Linnankatu 13, 20100 TURKU",
+  "postcode": "20100",
+  "municipality": "TURKU",
+  "business_lines": [
+   "56111"
+  ],
+  "registration_date": "2015-09-03"
+ },
+ "v2|tacoya|helsinki": {
+  "company_number": "3273750-9",
+  "company_name": "BeanLink Clinical",
+  "names_all": [
+   "Tacoya Oy",
+   "Heltaco",
+   "BeanLink Clinical"
+  ],
+  "status": "registered",
+  "registered_address": "Itämerenkatu 12, 00180 HELSINGFORS",
+  "postcode": "00180",
+  "municipality": "HELSINGFORS",
+  "business_lines": [
+   "56111"
+  ],
+  "registration_date": "2022-03-11"
+ },
+ "v2|tal barahi|helsinki": {
+  "company_number": "3519090-8",
+  "company_name": "Ravintola Tal Barahi",
+  "names_all": [
+   "TAL BARAHI Oy",
+   "Ravintola Tal Barahi"
+  ],
+  "status": "registered",
+  "registered_address": "Meri-Rastilan tie 15, 00980 HELSINGFORS",
+  "postcode": "00980",
+  "municipality": "HELSINGFORS",
+  "business_lines": [
+   "56111"
+  ],
+  "registration_date": "2025-03-17"
+ },
+ "v2|tali caf|helsinki": null,
+ "v2|tandoori villa|helsinki": {
+  "company_number": "3571754-6",
+  "company_name": "Tandoori Villa Oy",
+  "names_all": [
+   "Tandoori Villa Oy"
+  ],
+  "status": "registered",
+  "registered_address": "Postiljooninkatu 4, 00240 HELSINGFORS",
+  "postcode": "00240",
+  "municipality": "HELSINGFORS",
+  "business_lines": [
+   "56111"
+  ],
+  "registration_date": "2025-10-13"
+ },
+ "v2|tattarihovi|helsinki": null,
+ "v2|taverna pohjan akka|helsinki": null,
+ "v2|tenhola|helsinki": null,
+ "v2|the bro s burger|helsinki": {
+  "company_number": "3171494-6",
+  "company_name": "The Bro's Burger OY",
+  "names_all": [
+   "Smoky Burgers Oy",
+   "The Bro's Burger OY"
+  ],
+  "status": "ceased",
+  "registered_address": "Hiihtäjäntie 6, 00810 HELSINGFORS",
+  "postcode": "00810",
+  "municipality": "HELSINGFORS",
+  "business_lines": [
+   "56111"
+  ],
+  "registration_date": "2020-11-17"
+ },
+ "v2|tintin juurilla|helsinki": {
+  "company_number": "3199912-8",
+  "company_name": "Tintin Juurilla Oy",
+  "names_all": [
+   "Tintin Juurilla Oy"
+  ],
+  "status": "registered",
+  "registered_address": "Lönnrotinkatu 33-35, 00180 HELSINGFORS",
+  "postcode": "00180",
+  "municipality": "HELSINGFORS",
+  "business_lines": [
+   "10710"
+  ],
+  "registration_date": "2021-03-24"
+ },
+ "v2|tiny food s|helsinki": null,
+ "v2|tokumaru|helsinki": null,
+ "v2|tokyo55 sushi academy|helsinki": null,
+ "v2|torikahvio|helsinki": null,
+ "v2|trattorio casa mia|helsinki": null,
+ "v2|ugari|helsinki": {
+  "company_number": "1960223-9",
+  "company_name": "Ugari",
+  "names_all": [
+   "MR.JJ Ravintolat Oy",
+   "Puistotien Catering",
+   "Ukko-Munkki",
+   "Ugari"
+  ],
+  "status": "registered",
+  "registered_address": "Laajalahdentie 19, 00330 HELSINGFORS",
+  "postcode": "00330",
+  "municipality": "HELSINGFORS",
+  "business_lines": [
+   "56111"
+  ],
+  "registration_date": "2005-04-15"
+ },
+ "v2|unicafe biokeskus|helsinki": null,
+ "v2|unicafe chemicum|helsinki": null,
+ "v2|unicafe exactum|helsinki": null,
+ "v2|unicafe infokeskus|helsinki": null,
+ "v2|unicafe physicum|helsinki": null,
+ "v2|unicafe tähkä|helsinki": null,
+ "v2|unicafe viikuna|helsinki": null,
+ "v2|vagabonda|helsinki": null,
+ "v2|vanha munkki|helsinki": null,
+ "v2|vanhan porvoon jäätelötehdas|helsinki": {
+  "company_number": "2816272-2",
+  "company_name": "Local Artisans Ab",
+  "names_all": [
+   "Local Artisans Oy",
+   "Vanhan Porvoon Jäätelötehdas",
+   "Vanhan Porvoon Hillotehdas",
+   "Vanhan Porvoon Glassikko",
+   "Gamla Borgås Glassfabrik",
+   "VPJT Local Artisans",
+   "Local Artisans Ltd",
+   "Local Artisans Ab"
+  ],
+  "status": "registered",
+  "registered_address": "Timpurinkuja 4, 06150 BORGÅ",
+  "postcode": "06150",
+  "municipality": "BORGÅ",
+  "business_lines": [
+   "10520"
+  ],
+  "registration_date": "2017-02-16"
+ },
+ "v2|venesataman kahvila|helsinki": null,
+ "v2|vietnamilainen kotikeittiö c m vi t|helsinki": null,
+ "v2|vihreä vuohi|helsinki": {
+  "company_number": "2898371-5",
+  "company_name": "Vihreä Vuohi Oy",
+  "names_all": [
+   "Vihreä Vuohi Oy",
+   "Tech-Fab Oy"
+  ],
+  "status": "registered",
+  "registered_address": "Jukolankatu 23, 33560 TAMPERE",
+  "postcode": "33560",
+  "municipality": "TAMPERE",
+  "business_lines": [
+   "56302"
+  ],
+  "registration_date": "2018-02-26"
+ },
+ "v2|west side story|helsinki": null,
+ "v2|william k|helsinki": null,
+ "v2|yemeni restaurant|helsinki": {
+  "company_number": "3219552-7",
+  "company_name": "Yemeni Restaurant",
+  "names_all": [
+   "FINYEMEN Oy",
+   "Mandi Hadhramaut",
+   "Yemeni Restaurant"
+  ],
+  "status": "registered",
+  "registered_address": "Abraham Wetterin tie 6, 00880 HELSINGFORS",
+  "postcode": "00880",
+  "municipality": "HELSINGFORS",
+  "business_lines": [
+   "56111"
+  ],
+  "registration_date": "2021-06-21"
+ },
+ "v2|yu zi|helsinki": null
+}

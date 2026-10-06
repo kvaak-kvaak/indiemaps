@@ -100,6 +100,8 @@ function sourceBadges(p) {
     : s === 'overture' ? '<span class="badge src-overture" title="Phone/website backfilled from Overture Maps">Overture</span>'
     : s === 'servicemap' ? '<span class="badge src-sm" title="City of Helsinki Service Map (CC BY 4.0)">HKI map</span>'
     : s === 'ta' ? '<span class="badge src-ta" title="Archived research data, c.2021 (stale by design)">archive</span>'
+    : s === 'chain' ? '<span class="badge src-atp" title="Chain-published data (Restel/Raflaamo, first-party)">chains</span>'
+    : s === 'prh' ? '<span class="badge src-ch" title="Finnish Trade Register: registered business, uninspected">PRH</span>'
     : s === 'ch' ? '<span class="badge src-ch" title="Companies House: incorporated business, uninspected">companies</span>'
     : s === 'osm' ? '<span class="badge src-osm" title="OpenStreetMap contributors">OSM</span>'
     // Unknown sources render under their own name — never borrowed. (A
@@ -108,7 +110,7 @@ function sourceBadges(p) {
 }
 // Effective hours: OSM mapping first, then chain, site, NHS, municipal,
 // stale archive last — every differing source is shown, never merged.
-const effHours = p => p.opening_hours_osm || p.atp_hours || p.site_hours || p.nhs_hours || p.sm_hours || p.ta_hours || '';
+const effHours = p => p.opening_hours_osm || p.atp_hours || p.site_hours || p.nhs_hours || p.sm_hours || p.chain_hours || p.ta_hours || '';
 const tblKey = s => JSON.stringify(parseOsmHours(s || ''));
 function hourVariants(p) {
   const v = [];
@@ -117,6 +119,7 @@ function hourVariants(p) {
   if (p.site_hours) v.push(['On the business website', p.site_hours]);
   if (p.nhs_hours) v.push(['NHS listed hours', p.nhs_hours]);
   if (p.sm_hours) v.push(['Municipal listing (Helsinki Service Map)', p.sm_hours]);
+  if (p.chain_hours) v.push([`Published by ${p.chain_brand || 'the chain'} (chain site)`, p.chain_hours]);
   if (p.ta_hours) v.push(['Archived research data (c.2021)', p.ta_hours]);
   if (p.site_alt) v.push(['Also stated on the business website', p.site_alt]);
   return v;
@@ -260,7 +263,7 @@ function detailSkeleton(p) {
     <div class="hr"></div>
     <div class="sec"><h4>Contact & details</h4>
       ${p.address ? `<div class="kv"><span class="k">📍</span><span>${esc(p.address)}</span></div>` : `<div class="kv"><span class="k">📍</span><span style="color:#999">No address on record</span></div>`}
-      ${p.phone ? `<div class="kv"><span class="k">📞</span><a href="${tel}">${esc(p.phone)}</a> <span style="color:#888;font-size:11px">(${p.phone_source === 'overture' ? 'via Overture' : p.phone_source === 'atp' ? 'via AllThePlaces' : p.phone_source === 'servicemap' ? 'via Service Map' : 'as mapped on OSM'})</span></div>` : ''}
+      ${p.phone ? `<div class="kv"><span class="k">📞</span><a href="${tel}">${esc(p.phone)}</a> <span style="color:#888;font-size:11px">(${p.phone_source === 'overture' ? 'via Overture' : p.phone_source === 'atp' ? 'via AllThePlaces' : p.phone_source === 'chain' ? 'via Finnish chain data' : p.phone_source === 'servicemap' ? 'via Service Map' : 'as mapped on OSM'})</span></div>` : ''}
       ${p.email ? `<div class="kv"><span class="k">✉️</span><a href="mailto:${esc(p.email)}">${esc(p.email)}</a></div>` : ''}
       ${p.website ? `<div class="kv"><span class="k">🌐</span><a target="_blank" href="${esc(p.website)}">${esc(prettyUrl(p.website))}</a> <span style="color:#888;font-size:11px">(${p.website_source === 'overture' ? 'via Overture' : p.website_source === 'atp' ? 'via AllThePlaces' : p.website_source === 'servicemap' ? 'via Service Map' : 'as mapped on OSM'})</span></div>` : ''}
       ${(p.facebook || p.instagram || p.twitter) ? `<div class="kv"><span class="k">📣</span><span>${p.facebook ? `<a target="_blank" href="${esc(p.facebook)}">Facebook</a> · ` : ''}${p.instagram ? `<a target="_blank" href="${esc(p.instagram)}">Instagram</a> · ` : ''}${p.twitter ? `<a target="_blank" href="${esc(p.twitter)}">X/Twitter</a>` : ''}</span></div>` : ''}
@@ -302,6 +305,8 @@ function detailSkeleton(p) {
       ${(p.sources || []).includes('nhs') ? `· <b>Listed pharmacy</b> — NHS England${p.nhs_ods ? ` (ODS ${esc(p.nhs_ods)})` : ''}<br/>` : ''}
       ${(p.sources || []).includes('servicemap') ? `· <b>Municipal listing</b> — City of Helsinki Service Map (CC BY 4.0)${p.sm_id ? ` (unit ${esc(String(p.sm_id))})` : ''}<br/>` : ''}
       ${(p.sources || []).includes('ta') ? `· <b>Cuisines, dietary notes${p.ta_hours ? ', hours' : ''}${p.ta_rec_n != null ? ', recommend score' : ''}</b> — archived research data (stale by design)<br/>` : ''}
+      ${(p.sources || []).includes('chain') ? `· <b>Chain record</b> — as published by ${esc(p.chain_brand || 'the chain')} (${esc(p.chain_source || 'chain site')})<br/>` : ''}
+      ${(p.sources || []).includes('prh') ? `· <b>Registered business</b> — Finnish Trade Register${p.prh_number ? ` (${esc(p.prh_number)})` : ''}<br/>` : ''}
       ${(p.sources || []).includes('ch') ? `· <b>Registered business</b> — Companies House${p.ch_incorporated ? `, incorporated ${esc(p.ch_incorporated)}` : ''} (registered office, may differ from trading address; uninspected)<br/>` : ''}
       ${(p.fsa_alias || []).length ? `· <b>Also registered as</b> — ${p.fsa_alias.map(a => `${esc(a.name)} (FHRS ${a.fsa_id})`).join('; ')}<br/>` : ''}
       ${(p.supersedes || []).length ? `· <b>Replaces at these premises</b> — ${p.supersedes.map(s => esc(s.name)).join('; ')}<br/>` : ''}

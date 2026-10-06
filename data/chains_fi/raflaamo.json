@@ -1,0 +1,6095 @@
+[
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-abc-toijala-akaa",
+  "name": "Pizza & Buffa ABC Toijala, Akaa",
+  "lat": 61.1810609,
+  "lng": 23.8863126,
+  "city": "akaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/akaa/pizza-buffa-abc-toijala-akaa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bistro-ranta",
+  "name": "Bistro Ranta",
+  "lat": 60.182418,
+  "lng": 24.834394,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/bistro-ranta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coffee-house-iso-omena-espoo",
+  "name": "Coffee House Iso Omena, Espoo",
+  "lat": 60.161633,
+  "lng": 24.738297,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/coffee-house-iso-omena-espoo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:deli-pohjois-tapiola-espoo",
+  "name": "Deli Pohjois-Tapiola, Espoo",
+  "lat": 60.185698,
+  "lng": 24.807261,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/deli-pohjois-tapiola-espoo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhla-ja-kokoustilat",
+  "name": "Trattoria Garden",
+  "lat": 60.1773078,
+  "lng": 24.806663,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/grill-it-tapiola-garden-espoo/sivu/juhla-ja-kokoustilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hype-catering",
+  "name": "Hype Catering",
+  "lat": 60.156918,
+  "lng": 24.630711,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/hype-catering"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hypen-ravintolat",
+  "name": "Hypen ravintolat",
+  "lat": 60.156918,
+  "lng": 24.630711,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/hype-catering/sivu/hypen-ravintolat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:yritystapahtumat",
+  "name": "Yritystapahtumat",
+  "lat": 60.156918,
+  "lng": 24.630711,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/hype-catering/sivu/yritystapahtumat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hype-sun-deck",
+  "name": "Hype Sun Deck",
+  "lat": 60.156918,
+  "lng": 24.630711,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/hype-sun-deck"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:lilla-sten-all-day-bistro-cafe",
+  "name": "Lilla Sten, All Day Bistro & Cafe",
+  "lat": 60.156918,
+  "lng": 24.630711,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/lilla-sten-all-day-bistro-cafe"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:radisson-blu-espoo-kokous-ja-juhlatilat",
+  "name": "Radisson Blu Espoo kokous- ja juhlatilat",
+  "lat": 60.182418,
+  "lng": 24.834412,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/radisson-blu-espoo-kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-iso-omena-espoo",
+  "name": "Rosso Iso Omena, Espoo",
+  "lat": 60.161633,
+  "lng": 24.738297,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/rosso-iso-omena-espoo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:sports-academy-iso-omena",
+  "name": "Sports Academy Iso Omena",
+  "lat": 60.162389,
+  "lng": 24.738407,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/sports-academy-iso-omena"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:stensvik-kitchen-rooftop-kivenlahti",
+  "name": "Stensvik, Kitchen & Rooftop, Kivenlahti",
+  "lat": 60.156918,
+  "lng": 24.630711,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/stensvik-kitchen-rooftop-kivenlahti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:swing-deli",
+  "name": "Swing Deli",
+  "lat": 60.178988,
+  "lng": 24.830224,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/swing-deli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:trattoria-garden",
+  "name": "Trattoria Garden",
+  "lat": 60.1773078,
+  "lng": 24.806663,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/trattoria-garden"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:william-k-sello",
+  "name": "William K. Sello",
+  "lat": 60.218264,
+  "lng": 24.812737,
+  "city": "espoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/espoo/william-k-sello"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-forssa-prisma",
+  "name": "Hesburger Forssa, Prisma",
+  "lat": 60.811429,
+  "lng": 23.633255,
+  "city": "forssa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/forssa/hesburger-forssa-prisma"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-forssa",
+  "name": "Pizza & Buffa Prisma, Forssa",
+  "lat": 60.811429,
+  "lng": 23.633255,
+  "city": "forssa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/forssa/pizza-buffa-prisma-forssa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:prisma-cafe-forssa",
+  "name": "Prisma Café Forssa",
+  "lat": 60.811429,
+  "lng": 23.633255,
+  "city": "forssa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/forssa/prisma-cafe-forssa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-hameenkyro-s-market-tippavaara",
+  "name": "Hesburger Hämeenkyrö, S-market Tippavaara",
+  "lat": 61.6577619,
+  "lng": 23.182516,
+  "city": "hameenkyro",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hameenkyro/hesburger-hameenkyro-s-market-tippavaara"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-hameenlinna-prisma",
+  "name": "Hesburger Hämeenlinna, Prisma",
+  "lat": 61.009881,
+  "lng": 24.416039,
+  "city": "hameenlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hameenlinna/hesburger-hameenlinna-prisma"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:las-palmas-hameenlinna",
+  "name": "Las Palmas Hämeenlinna",
+  "lat": 60.996009,
+  "lng": 24.463851,
+  "city": "hameenlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hameenlinna/las-palmas-hameenlinna"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:las-palmasin-yo",
+  "name": "Las Palmasin Yö",
+  "lat": 60.996009,
+  "lng": 24.463851,
+  "city": "hameenlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hameenlinna/las-palmas-hameenlinna/sivu/las-palmasin-yo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:le-blason",
+  "name": "Le Blason",
+  "lat": 61.000572,
+  "lng": 24.474934,
+  "city": "hameenlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hameenlinna/le-blason"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-le-blasonissa",
+  "name": "Juhlat Le Blasonissa",
+  "lat": 61.000572,
+  "lng": 24.474934,
+  "city": "hameenlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hameenlinna/le-blason/sivu/juhlat-le-blasonissa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-hameenlinna",
+  "name": "Pizza & Buffa Prisma, Hämeenlinna",
+  "lat": 61.009881,
+  "lng": 24.416039,
+  "city": "hameenlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hameenlinna/pizza-buffa-prisma-hameenlinna"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:prisma-cafe-hameenlinna",
+  "name": "Prisma Café Hämeenlinna",
+  "lat": 61.009881,
+  "lng": 24.416039,
+  "city": "hameenlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hameenlinna/prisma-cafe-hameenlinna"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:svenni-eatery",
+  "name": "Svenni eatery",
+  "lat": 60.996009,
+  "lng": 24.463851,
+  "city": "hameenlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hameenlinna/svenni-eatery"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:vaakuna-hameenlinna-kokous-ja-juhlatilat",
+  "name": "Vaakuna Hämeenlinna kokous- ja juhlatilat",
+  "lat": 61.000572,
+  "lng": 24.474934,
+  "city": "hameenlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hameenlinna/vaakuna-hameenlinna-kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhla-ja-kokoustilat",
+  "name": "Juhla- ja kokoustilat",
+  "lat": 61.000572,
+  "lng": 24.474934,
+  "city": "hameenlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hameenlinna/vaakuna-hameenlinna-kokous-ja-juhlatilat/sivu/juhla-ja-kokoustilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:voudin-kellari",
+  "name": "Voudin Kellari",
+  "lat": 60.995225,
+  "lng": 24.464654,
+  "city": "hameenlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hameenlinna/voudin-kellari"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-hamina",
+  "name": "Hesburger Hamina",
+  "lat": 60.568921,
+  "lng": 27.194227,
+  "city": "hamina",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hamina/hesburger-hamina"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-hanko",
+  "name": "Hesburger Hanko",
+  "lat": 59.8274128,
+  "lng": 22.9668195,
+  "city": "hanko",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hanko/hesburger-hanko"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:iloinen-kulkija-heinola",
+  "name": "Iloinen Kulkija Heinola",
+  "lat": 61.203137,
+  "lng": 26.031278,
+  "city": "heinola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/heinola/iloinen-kulkija-heinola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:10-kerros",
+  "name": "10. Kerros",
+  "lat": 60.170542,
+  "lng": 24.938701000000002,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/10-kerros"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-helsinki",
+  "name": "Amarillo, Helsinki",
+  "lat": 60.16881,
+  "lng": 24.945116,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/amarillo-helsinki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:american-bar",
+  "name": "American Bar",
+  "lat": 60.167833,
+  "lng": 24.938853,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/american-bar"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amsterdam",
+  "name": "Amsterdam",
+  "lat": 60.162625,
+  "lng": 24.914174,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/amsterdam"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:angleterre",
+  "name": "Angleterre",
+  "lat": 60.16632,
+  "lng": 24.934497,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/angleterre"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ateljee-bar",
+  "name": "Ateljee Bar",
+  "lat": 60.167833,
+  "lng": 24.938853,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/ateljee-bar"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bar-hki",
+  "name": "Bar Hki",
+  "lat": 60.1695598,
+  "lng": 24.9472343,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/bar-hki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesarin-kirjasto",
+  "name": "Hesarin kirjasto -kabinetti",
+  "lat": 60.1695598,
+  "lng": 24.9472343,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/bar-hki/sivu/hesarin-kirjasto"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bar-pino",
+  "name": "Bar Pino",
+  "lat": 60.169952,
+  "lng": 24.940576,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/bar-pino"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:belge",
+  "name": "Belge",
+  "lat": 60.169087,
+  "lng": 24.94272,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/belge"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bryssel-kabinetti",
+  "name": "Bryssel-kabinetti",
+  "lat": 60.169087,
+  "lng": 24.94272,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/belge/sivu/bryssel-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:biorex-lasipalatsi",
+  "name": "BioRex Lasipalatsi",
+  "lat": 60.1701252,
+  "lng": 24.9400469,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/biorex-lasipalatsi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:teatterisali-ja-lampiot",
+  "name": "Teatterisali ja lämpiöt",
+  "lat": 60.1701252,
+  "lng": 24.9400469,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/biorex-lasipalatsi/sivu/teatterisali-ja-lampiot"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bistro-gimis",
+  "name": "Bistro Gimis",
+  "lat": 60.161961,
+  "lng": 24.924484,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/bistro-gimis"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bistro-manu",
+  "name": "Bistro Manu",
+  "lat": 60.170602,
+  "lng": 24.932751,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/bistro-manu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bistro-vilho",
+  "name": "Bistro Vilho",
+  "lat": 60.172546,
+  "lng": 24.945153,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/bistro-vilho"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:cafe-helli",
+  "name": "Café Helli",
+  "lat": 60.1662433,
+  "lng": 24.9613712,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/cafe-helli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:cafe-lasipalatsi",
+  "name": "Café Lasipalatsi",
+  "lat": 60.1703146,
+  "lng": 24.936827,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/cafe-lasipalatsi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:terassi",
+  "name": "Lasipalatsin terassi",
+  "lat": 60.1703146,
+  "lng": 24.936827,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/cafe-lasipalatsi/sivu/terassi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:casa-largo",
+  "name": "Casa Largo",
+  "lat": 60.170342,
+  "lng": 24.93911,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/casa-largo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlatilat",
+  "name": "Varaa kokous- tai juhlatila",
+  "lat": 60.170342,
+  "lng": 24.93911,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/casa-largo/sivu/juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:chicos-viikki",
+  "name": "Chico&#x27;s Viikki",
+  "lat": 60.227554,
+  "lng": 25.008605,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/chicos-viikki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coffee-house-asema-aukio-helsinki",
+  "name": "Coffee House Asema-aukio, Helsinki",
+  "lat": 60.170745,
+  "lng": 24.939049,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/coffee-house-asema-aukio-helsinki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coffee-house-kannelmaki-helsinki",
+  "name": "Coffee House Kannelmäki, Helsinki",
+  "lat": 60.236541,
+  "lng": 24.891816,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/coffee-house-kannelmaki-helsinki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:freddes",
+  "name": "Fredde&#x27;s",
+  "lat": 60.197914,
+  "lng": 24.930455,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/freddes"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat",
+  "name": "Juhlat",
+  "lat": 60.197914,
+  "lng": 24.930455,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/freddes/sivu/juhlat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:harbore",
+  "name": "Harbore",
+  "lat": 60.1662433,
+  "lng": 24.9613712,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/harbore"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-helsinki-asema-aukio",
+  "name": "Hesburger Helsinki Asema-aukio",
+  "lat": 60.170745,
+  "lng": 24.939049,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/hesburger-helsinki-asema-aukio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kaffepuoti",
+  "name": "Kaffepuoti",
+  "lat": 60.236956,
+  "lng": 24.890832,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/kaffepuoti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kaisla",
+  "name": "Kaisla",
+  "lat": 60.171927,
+  "lng": 24.946922,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/kaisla"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kappeli",
+  "name": "Kappeli",
+  "lat": 60.167383,
+  "lng": 24.95034,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/kappeli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:historia-ja-taide",
+  "name": "Historia ja taide",
+  "lat": 60.167383,
+  "lng": 24.95034,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/kappeli/sivu/historia-ja-taide"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Juhlat ja kokoukset",
+  "lat": 60.167383,
+  "lng": 24.95034,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/kappeli/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kittys-public-house",
+  "name": "Kitty&#x27;s Public House",
+  "lat": 60.169818,
+  "lng": 24.941792,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/kittys-public-house"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:varaa-lounge",
+  "name": "Kitty&#x27;s Lounge",
+  "lat": 60.169818,
+  "lng": 24.941792,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/kittys-public-house/sivu/varaa-lounge"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:korttelikonttori-myllypuro",
+  "name": "Korttelikonttori Myllypuro",
+  "lat": 60.2241625,
+  "lng": 25.0751254,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/korttelikonttori-myllypuro"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kyla-baari-kahvila",
+  "name": "Kylä Baari & Kahvila",
+  "lat": 60.198066,
+  "lng": 24.931582,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/kyla-baari-kahvila"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:yksityiskaytto",
+  "name": "Kylä Baari yksityistilana",
+  "lat": 60.198066,
+  "lng": 24.931582,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/kyla-baari-kahvila/sivu/yksityiskaytto"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:la-famiglia-helsinki",
+  "name": "La Famiglia Helsinki",
+  "lat": 60.168413,
+  "lng": 24.943231,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/la-famiglia-helsinki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:varaa-kabinetti",
+  "name": "La Famiglian varattavat tilat",
+  "lat": 60.168413,
+  "lng": 24.943231,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/la-famiglia-helsinki/sivu/varaa-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:malt-wine",
+  "name": "Malt & Wine",
+  "lat": 60.181813,
+  "lng": 24.926836,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/malt-wine"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:memphis-hakaniemi",
+  "name": "Memphis Hakaniemi",
+  "lat": 60.180343,
+  "lng": 24.948919,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/memphis-hakaniemi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:terassi",
+  "name": "Memphis Hakaniemen terassi",
+  "lat": 60.180343,
+  "lng": 24.948919,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/memphis-hakaniemi/sivu/terassi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:varaa-kabinetti",
+  "name": "Memphis Hakaniemen kabinetti",
+  "lat": 60.180343,
+  "lng": 24.948919,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/memphis-hakaniemi/sivu/varaa-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:mummotunneli",
+  "name": "Mummotunneli",
+  "lat": 60.168721,
+  "lng": 24.945122,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/mummotunneli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kesan-2026-keikat",
+  "name": "Kesän 2026 keikat",
+  "lat": 60.168721,
+  "lng": 24.945122,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/mummotunneli/sivu/kesan-2026-keikat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:olhus-kobenhavn",
+  "name": "Ølhus København",
+  "lat": 60.168013,
+  "lng": 24.939454,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/olhus-kobenhavn"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:oluthuone-konepaja",
+  "name": "Oluthuone Konepaja",
+  "lat": 60.191829,
+  "lng": 24.949665,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/oluthuone-konepaja"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:oluthuone-ratamo",
+  "name": "Oluthuone Ratamo",
+  "lat": 60.198204,
+  "lng": 24.933485,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/oluthuone-ratamo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:or-restaurant-bar",
+  "name": "OR Restaurant & Bar",
+  "lat": 60.16777,
+  "lng": 24.93858,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/or-restaurant-bar"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:yksityistilaisuudet",
+  "name": "Hotelli Tornin ravintolat yksityistilaisuuksiin",
+  "lat": 60.16777,
+  "lng": 24.93858,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/or-restaurant-bar/sivu/yksityistilaisuudet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:original-sokos-hotel-albertin-aamiainen",
+  "name": "Original Sokos Hotel Albertin aamiainen",
+  "lat": 60.162994,
+  "lng": 24.93485,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/original-sokos-hotel-albertin-aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:original-sokos-hotel-triplan-aamiainen",
+  "name": "Original Sokos Hotel Triplan aamiainen",
+  "lat": 60.198066,
+  "lng": 24.931564,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/original-sokos-hotel-triplan-aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:papa-giovanni-prisma-kaari",
+  "name": "Papà Giovanni, Prisma Kaari",
+  "lat": 60.236541,
+  "lng": 24.891816,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/papa-giovanni-prisma-kaari"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:paulis-pizza-grill",
+  "name": "Pauli&#x27;s Pizza & Grill",
+  "lat": 60.1695598,
+  "lng": 24.9472343,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/paulis-pizza-grill"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:praha",
+  "name": "Praha",
+  "lat": 60.169384,
+  "lng": 24.940449,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/praha"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pub-omalleys-torni",
+  "name": "Pub O&#x27;Malley&#x27;s Torni",
+  "lat": 60.167833,
+  "lng": 24.938853,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/pub-omalleys-torni"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:public-corner-mikonkatu-helsinki",
+  "name": "Public Corner Mikonkatu, Helsinki",
+  "lat": 60.171187,
+  "lng": 24.945544,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/public-corner-mikonkatu-helsinki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:radisson-blu-aleksanteri-kokous-ja-juhlatilat",
+  "name": "Radisson Blu Aleksanteri kokous- ja juhlatilat",
+  "lat": 60.164198,
+  "lng": 24.933189,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/radisson-blu-aleksanteri-kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:radisson-blu-plaza-kokous-ja-juhlatilat",
+  "name": "Radisson Blu Plaza kokous- ja juhlatilat",
+  "lat": 60.172546,
+  "lng": 24.945153,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/radisson-blu-plaza-kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:haat-plazassa",
+  "name": "S-Card",
+  "lat": 60.172546,
+  "lng": 24.945153,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/radisson-blu-plaza-kokous-ja-juhlatilat/sivu/haat-plazassa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:radisson-blu-royal-kokous-ja-juhlatilat",
+  "name": "Radisson Blu Royal kokous- ja juhlatilat",
+  "lat": 60.167728,
+  "lng": 24.929796,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/radisson-blu-royal-kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:radisson-blu-seaside-kokous-ja-juhlatilat",
+  "name": "Radisson Blu Seaside kokous- ja juhlatilat",
+  "lat": 60.161961,
+  "lng": 24.924484,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/radisson-blu-seaside-kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ravintola-lasipalatsi",
+  "name": "Ravintola Lasipalatsi",
+  "lat": 60.170348,
+  "lng": 24.9369628,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/ravintola-lasipalatsi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokoustilat",
+  "name": "Juhla- ja kokoustilat Helsinki",
+  "lat": 60.170348,
+  "lng": 24.9369628,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/ravintola-lasipalatsi/sivu/kokoustilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:lasipalatsi-lounge",
+  "name": "Lasipalatsi Lounge",
+  "lat": 60.170348,
+  "lng": 24.9369628,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/ravintola-lasipalatsi/sivu/lasipalatsi-lounge"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ravintola-nord",
+  "name": "Ravintola NORD",
+  "lat": 60.1678871,
+  "lng": 24.9289817,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/ravintola-nord"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:red-bar-kitchen",
+  "name": "RED Bar & Kitchen",
+  "lat": 60.1732401,
+  "lng": 24.9468928,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/red-bar-kitchen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ro-ro-bar",
+  "name": "RO-RO Bar",
+  "lat": 60.1619949,
+  "lng": 24.9245415,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/ro-ro-bar"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rooftop-bar-humu",
+  "name": "Rooftop Bar Humu",
+  "lat": 60.1662433,
+  "lng": 24.9613712,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/rooftop-bar-humu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rotterdam",
+  "name": "Rotterdam",
+  "lat": 60.169172,
+  "lng": 24.932606,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/rotterdam"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:sailors",
+  "name": "Sailor&#x27;s",
+  "lat": 60.186976,
+  "lng": 25.031022,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/sailors"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:salve",
+  "name": "Salve",
+  "lat": 60.161194,
+  "lng": 24.929955,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/salve"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:sing-and-pore",
+  "name": "Sing and Pore",
+  "lat": 60.170323,
+  "lng": 24.945296,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/sing-and-pore"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:varaa-karaokehuone",
+  "name": "Varaa karaokehuone tai juhlatila",
+  "lat": 60.170323,
+  "lng": 24.945296,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/sing-and-pore/sivu/varaa-karaokehuone"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:sir-eino-mummotunneli",
+  "name": "Sir Eino Mummotunneli",
+  "lat": 60.168721,
+  "lng": 24.945122,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/sir-eino-mummotunneli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:einon-keikat",
+  "name": "Einon keikat",
+  "lat": 60.168721,
+  "lng": 24.945122,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/sir-eino-mummotunneli/sivu/einon-keikat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-tilaisuudet",
+  "name": "Juhlat ja yksityistilaisuudet",
+  "lat": 60.168721,
+  "lng": 24.945122,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/sir-eino-mummotunneli/sivu/juhlat-ja-tilaisuudet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:spaghetteria-kaari",
+  "name": "Spaghetteria Kaari",
+  "lat": 60.236541,
+  "lng": 24.891816,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/spaghetteria-kaari"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:sparakoff",
+  "name": "SpåraKOFF",
+  "lat": 60.169246,
+  "lng": 24.9408,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/sparakoff"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:aikataulut-2026",
+  "name": "Kiertoajeluiden päiväkohtaiset aikataulut 2026",
+  "lat": 60.169246,
+  "lng": 24.9408,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/sparakoff/sivu/aikataulut-2026"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:varaa-sparakoff",
+  "name": "Yksityistilaisuudet",
+  "lat": 60.169246,
+  "lng": 24.9408,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/sparakoff/sivu/varaa-sparakoff"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tapas-barcelona",
+  "name": "Tapas BarCelona",
+  "lat": 60.168297,
+  "lng": 24.945022,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/tapas-barcelona"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:terassi-lasipalatsi",
+  "name": "Terassi Lasipalatsi",
+  "lat": 60.1701252,
+  "lng": 24.9400469,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/terassi-lasipalatsi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tilausravintola-presidentti",
+  "name": "Tilausravintola Presidentti",
+  "lat": 60.170602,
+  "lng": 24.932751,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/tilausravintola-presidentti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:urban-rabbit",
+  "name": "Urban Rabbit",
+  "lat": 60.197914,
+  "lng": 24.930455,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/urban-rabbit"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:venn-helsinki",
+  "name": "VENN Helsinki",
+  "lat": 60.168608,
+  "lng": 24.945399,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/venn-helsinki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:vennsday",
+  "name": "VENNSDAY",
+  "lat": 60.168608,
+  "lng": 24.945399,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/venn-helsinki/sivu/vennsday"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:vltava",
+  "name": "Vltava",
+  "lat": 60.171396,
+  "lng": 24.939891,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/vltava"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:oktoberfest",
+  "name": "Oktoberfest 18.9.–4.10.",
+  "lat": 60.171396,
+  "lng": 24.939891,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/vltava/sivu/oktoberfest"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:varaa-kabinetti",
+  "name": "Vltavan kabinetti",
+  "lat": 60.171396,
+  "lng": 24.939891,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/vltava/sivu/varaa-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:william-k-kurvi",
+  "name": "William K. Kurvi",
+  "lat": 60.187409,
+  "lng": 24.960522,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/william-k-kurvi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:william-k-mannerheimintie",
+  "name": "William K. Mannerheimintie",
+  "lat": 60.183568,
+  "lng": 24.923643,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/william-k-mannerheimintie"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:zetor",
+  "name": "Zetor",
+  "lat": 60.169246,
+  "lng": 24.9408,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/zetor"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:varaa-kabinetti",
+  "name": "Zetorin kabinetit",
+  "lat": 60.169246,
+  "lng": 24.9408,
+  "city": "helsinki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/helsinki/zetor/sivu/varaa-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:abc-hyvinkaa-ravintola",
+  "name": "ABC Hyvinkää ravintola",
+  "lat": 60.618318,
+  "lng": 24.806392,
+  "city": "hyvinkaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hyvinkaa/abc-hyvinkaa-ravintola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ale-pub-hyvinkaa",
+  "name": "Ale Pub Hyvinkää",
+  "lat": 60.629016,
+  "lng": 24.857658999999998,
+  "city": "hyvinkaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hyvinkaa/ale-pub-hyvinkaa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:oluthuone-joutsen",
+  "name": "Oluthuone Joutsen",
+  "lat": 60.630898,
+  "lng": 24.860258,
+  "city": "hyvinkaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hyvinkaa/oluthuone-joutsen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-hyvinkaa",
+  "name": "Presso Hyvinkää",
+  "lat": 60.630328,
+  "lng": 24.866162,
+  "city": "hyvinkaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hyvinkaa/presso-hyvinkaa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-hyvinkaa",
+  "name": "Rosso, Hyvinkää",
+  "lat": 60.630328,
+  "lng": 24.866162,
+  "city": "hyvinkaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hyvinkaa/rosso-hyvinkaa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:varaa-kabinetti",
+  "name": "Kabinetti",
+  "lat": 60.630328,
+  "lng": 24.866162,
+  "city": "hyvinkaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/hyvinkaa/rosso-hyvinkaa/sivu/varaa-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-iisalmi",
+  "name": "Hesburger Iisalmi",
+  "lat": 63.558436,
+  "lng": 27.189476,
+  "city": "iisalmi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/iisalmi/hesburger-iisalmi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:onellys-irish-bar",
+  "name": "O&#x27;Nelly&#x27;s Irish Bar",
+  "lat": 63.558625,
+  "lng": 27.189437,
+  "city": "iisalmi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/iisalmi/onellys-irish-bar"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-iisalmi",
+  "name": "Pizza & Buffa Prisma, Iisalmi",
+  "lat": 63.575001,
+  "lng": 27.179017,
+  "city": "iisalmi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/iisalmi/pizza-buffa-prisma-iisalmi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-iisalmi",
+  "name": "Presso Prisma, Iisalmi",
+  "lat": 63.575001,
+  "lng": 27.179017,
+  "city": "iisalmi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/iisalmi/presso-prisma-iisalmi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-iisalmi",
+  "name": "Rosso, Iisalmi",
+  "lat": 63.558499,
+  "lng": 27.189416,
+  "city": "iisalmi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/iisalmi/rosso-iisalmi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:aino-kahvila-ravintola",
+  "name": "Aino kahvila & ravintola",
+  "lat": 61.188228,
+  "lng": 28.763683,
+  "city": "imatra",
+  "url": "https://www.raflaamo.fi/fi/ravintola/imatra/aino-kahvila-ravintola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-imatra",
+  "name": "Hesburger Prisma Imatra",
+  "lat": 61.188228,
+  "lng": 28.763683,
+  "city": "imatra",
+  "url": "https://www.raflaamo.fi/fi/ravintola/imatra/hesburger-prisma-imatra"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pub-vahti",
+  "name": "Pub Vahti",
+  "lat": 61.171538,
+  "lng": 28.769423,
+  "city": "imatra",
+  "url": "https://www.raflaamo.fi/fi/ravintola/imatra/pub-vahti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tapahtumat",
+  "name": "Tapahtumat",
+  "lat": 61.171538,
+  "lng": 28.769423,
+  "city": "imatra",
+  "url": "https://www.raflaamo.fi/fi/ravintola/imatra/pub-vahti/sivu/tapahtumat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-imatra",
+  "name": "Rosso, Imatra",
+  "lat": 61.170816,
+  "lng": 28.771167,
+  "city": "imatra",
+  "url": "https://www.raflaamo.fi/fi/ravintola/imatra/rosso-imatra"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tapahtumat",
+  "name": "Tapahtumat",
+  "lat": 61.170816,
+  "lng": 28.771167,
+  "city": "imatra",
+  "url": "https://www.raflaamo.fi/fi/ravintola/imatra/rosso-imatra/sivu/tapahtumat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:laaksoravintola-loiva",
+  "name": "Laaksoravintola Loiva",
+  "lat": 61.8787919,
+  "lng": 25.2970009,
+  "city": "jamsa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jamsa/laaksoravintola-loiva"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-jarvenpaa",
+  "name": "Pizza & Buffa, Järvenpää",
+  "lat": 60.4702526,
+  "lng": 25.0842243,
+  "city": "jarvenpaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jarvenpaa/pizza-buffa-jarvenpaa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-jarvenpaa",
+  "name": "Presso, Järvenpää",
+  "lat": 60.4705673,
+  "lng": 25.0841242,
+  "city": "jarvenpaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jarvenpaa/presso-jarvenpaa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-joensuu",
+  "name": "Amarillo, Joensuu",
+  "lat": 62.601296,
+  "lng": 29.764302,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/amarillo-joensuu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ticorillo",
+  "name": "Ticorillo",
+  "lat": 62.601296,
+  "lng": 29.764302,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/amarillo-joensuu/sivu/ticorillo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bar-cafe-vispilakauppa",
+  "name": "Bar & Cafe Vispiläkauppa",
+  "lat": 62.601273,
+  "lng": 29.7622561,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/bar-cafe-vispilakauppa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:vispilakaupan-tapahtumat",
+  "name": "Vispiläkaupan tapahtumat",
+  "lat": 62.601273,
+  "lng": 29.7622561,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/bar-cafe-vispilakauppa/sivu/vispilakaupan-tapahtumat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bar-play-joensuu",
+  "name": "Bar Play Joensuu",
+  "lat": 62.600485,
+  "lng": 28.760369,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/bar-play-joensuu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokoustilat",
+  "name": "Kokoustilat ja juhlat",
+  "lat": 62.600485,
+  "lng": 28.760369,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/bar-play-joensuu/sivu/kokoustilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bepop-joensuu",
+  "name": "Bepop Joensuu",
+  "lat": 62.601296,
+  "lng": 29.764302,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/bepop-joensuu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:vip-paketit",
+  "name": "VIP-PAKETIT",
+  "lat": 62.601296,
+  "lng": 29.764302,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/bepop-joensuu/sivu/vip-paketit"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bepop-street",
+  "name": "Bepop Street",
+  "lat": 62.600956,
+  "lng": 29.764496,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/bepop-street"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coffee-house-vaakuna-joensuu",
+  "name": "Coffee House Vaakuna, Joensuu",
+  "lat": 62.601296,
+  "lng": 29.764302,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/coffee-house-vaakuna-joensuu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:vaakuna-kabinetti",
+  "name": "Kokoukset Coffee Housesta",
+  "lat": 62.601296,
+  "lng": 29.764302,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/coffee-house-vaakuna-joensuu/sivu/vaakuna-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:frans-ellie-joensuu",
+  "name": "Frans & Ellie, Joensuu",
+  "lat": 62.601262,
+  "lng": 29.774176,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/frans-ellie-joensuu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-joensuu",
+  "name": "Hesburger Prisma Joensuu",
+  "lat": 62.618297,
+  "lng": 29.774481,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/hesburger-prisma-joensuu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-repokallio",
+  "name": "Hesburger Repokallio",
+  "lat": 62.5889354,
+  "lng": 29.8076224,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/hesburger-repokallio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-sokos-joensuu",
+  "name": "Hesburger Sokos Joensuu",
+  "lat": 62.600804,
+  "lng": 29.765113,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/hesburger-sokos-joensuu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesekebab",
+  "name": "Hesekebab",
+  "lat": 62.600804,
+  "lng": 29.765113,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/hesburger-sokos-joensuu/sivu/hesekebab"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hodarivankkuri",
+  "name": "Hodarivankkuri",
+  "lat": 62.6168068,
+  "lng": 29.7781412,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/hodarivankkuri"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:jaatelobaari-joensuu-prisma",
+  "name": "Jäätelöbaari Joensuu, Prisma",
+  "lat": 62.618297,
+  "lng": 29.774481,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/jaatelobaari-joensuu-prisma"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kauppahalli-joensuun-pehmojatski-kioski",
+  "name": "Kauppahalli Joensuun pehmojätski-kioski",
+  "lat": 62.600969,
+  "lng": 29.7620449,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/kauppahalli-joensuun-pehmojatski-kioski"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kimmelin-kokous-ja-juhlatilat",
+  "name": "Kimmelin kokous- ja juhlatilat",
+  "lat": 62.601262,
+  "lng": 29.774176,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/kimmelin-kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-ja-juhlatilat",
+  "name": "Kokous- ja juhlatilat",
+  "lat": 62.601262,
+  "lng": 29.774176,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/kimmelin-kokous-ja-juhlatilat/sivu/kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kolumbus-joensuu",
+  "name": "Kolumbus Joensuu",
+  "lat": 62.589504,
+  "lng": 29.790256,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/kolumbus-joensuu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:las-palmas-kimmel",
+  "name": "Las Palmas Kimmel",
+  "lat": 62.601262,
+  "lng": 29.774176,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/las-palmas-kimmel"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:vip-paketit",
+  "name": "VIP-PAKETIT",
+  "lat": 62.601262,
+  "lng": 29.774176,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/las-palmas-kimmel/sivu/vip-paketit"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:leiketupa-joensuu",
+  "name": "Leiketupa, Joensuu",
+  "lat": 62.617252,
+  "lng": 29.7776,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/leiketupa-joensuu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-joensuu",
+  "name": "Pizza & Buffa Prisma, Joensuu",
+  "lat": 62.618297,
+  "lng": 29.774481,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/pizza-buffa-prisma-joensuu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-joensuu",
+  "name": "Presso Prisma, Joensuu",
+  "lat": 62.618297,
+  "lng": 29.774481,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/presso-prisma-joensuu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ravintola-aittaranta",
+  "name": "Ravintola Aittaranta",
+  "lat": 62.595193,
+  "lng": 29.767825,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/ravintola-aittaranta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhla-ja-kokoustilat",
+  "name": "Juhla- ja kokoustilat",
+  "lat": 62.595193,
+  "lng": 29.767825,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/ravintola-aittaranta/sivu/juhla-ja-kokoustilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:romeo-jokilaiva",
+  "name": "Romeo Jokilaiva",
+  "lat": 62.59673,
+  "lng": 29.761851,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/romeo-jokilaiva"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-joensuu",
+  "name": "Rosso, Joensuu",
+  "lat": 62.601296,
+  "lng": 29.764302,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/rosso-joensuu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlatila-rosita",
+  "name": "Juhlatila Rosita",
+  "lat": 62.601296,
+  "lng": 29.764302,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/rosso-joensuu/sivu/juhlatila-rosita"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:lapsille",
+  "name": "Lapsille",
+  "lat": 62.601296,
+  "lng": 29.764302,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/rosso-joensuu/sivu/lapsille"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:takatasku-joensuu",
+  "name": "Takatasku Joensuu",
+  "lat": 62.600302,
+  "lng": 29.760079,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/takatasku-joensuu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:torero-joensuu",
+  "name": "Torero Joensuu",
+  "lat": 62.601296,
+  "lng": 29.764302,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/torero-joensuu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:taverna",
+  "name": "Taverna",
+  "lat": 62.601296,
+  "lng": 29.764302,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/torero-joensuu/sivu/taverna"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tilaisuudet",
+  "name": "Tilaisuudet",
+  "lat": 62.601296,
+  "lng": 29.764302,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/torero-joensuu/sivu/tilaisuudet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:venn-joensuu",
+  "name": "VENN Joensuu",
+  "lat": 62.601273,
+  "lng": 29.7622561,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/venn-joensuu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:vennsdayt",
+  "name": "VENNsdayt",
+  "lat": 62.601273,
+  "lng": 29.7622561,
+  "city": "joensuu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/joensuu/venn-joensuu/sivu/vennsdayt"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:frans-sandra-jyvaskyla",
+  "name": "Frans & Sandra, Jyväskylä",
+  "lat": 62.241317,
+  "lng": 25.752861,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/frans-sandra-jyvaskyla"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kabinetti",
+  "name": "Frans & Sandran Kabinetti",
+  "lat": 62.241317,
+  "lng": 25.752861,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/frans-sandra-jyvaskyla/sivu/kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:franseska-jyvaskyla",
+  "name": "Franseska Jyväskylä",
+  "lat": 62.241046,
+  "lng": 25.751778,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/franseska-jyvaskyla"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:alexandran-aamiainen",
+  "name": "Original Sokos Hotel Alexandran aamiainen",
+  "lat": 62.241046,
+  "lng": 25.751778,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/franseska-jyvaskyla/sivu/alexandran-aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-ja-juhlatilat",
+  "name": "KOKOUS- JA JUHLATILAT",
+  "lat": 62.241046,
+  "lng": 25.751778,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/franseska-jyvaskyla/sivu/kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:freetime",
+  "name": "Freetime",
+  "lat": 62.243546,
+  "lng": 25.749365,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/freetime"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:loytotavarat",
+  "name": "Löytötavarat",
+  "lat": 62.243546,
+  "lng": 25.749365,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/freetime/sivu/loytotavarat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:yksityistilaisuudet",
+  "name": "Yksityistilaisuudet Timessä",
+  "lat": 62.243546,
+  "lng": 25.749365,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/freetime/sivu/yksityistilaisuudet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:green-egg",
+  "name": "Green Egg",
+  "lat": 62.242065,
+  "lng": 25.745794,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/green-egg"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:yksityistilaisuudet",
+  "name": "Yksityistilaisuudet Green Eggissä",
+  "lat": 62.242065,
+  "lng": 25.745794,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/green-egg/sivu/yksityistilaisuudet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-seppala-jyvaskyla",
+  "name": "Hesburger Prisma Seppälä Jyväskylä",
+  "lat": 62.25824,
+  "lng": 25.778055,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/hesburger-prisma-seppala-jyvaskyla"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-sokos-jyvaskyla",
+  "name": "Hesburger Sokos Jyväskylä",
+  "lat": 62.242778,
+  "lng": 25.747762,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/hesburger-sokos-jyvaskyla"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:jalo-kitchen-lounge",
+  "name": "Jalo kitchen & lounge",
+  "lat": 62.241004,
+  "lng": 25.75141,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/jalo-kitchen-lounge"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:jalo-kitchenlounge-klubi",
+  "name": "Juhlat Jalo Kitchen & Loungen Jalo klubilla",
+  "lat": 62.241004,
+  "lng": 25.75141,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/jalo-kitchen-lounge/sivu/jalo-kitchenlounge-klubi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:mestarin-keittio-kahvila",
+  "name": "Mestarin Keittiö & Kahvila",
+  "lat": 62.242674,
+  "lng": 25.748928,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/mestarin-keittio-kahvila"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-seppala-jyvaskyla",
+  "name": "Pizza & Buffa Seppälä, Jyväskylä",
+  "lat": 62.25824,
+  "lng": 25.778055,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/pizza-buffa-seppala-jyvaskyla"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-seppala-jyvaskyla",
+  "name": "Presso Seppälä, Jyväskylä",
+  "lat": 62.25824,
+  "lng": 25.778055,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/presso-seppala-jyvaskyla"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:revolution",
+  "name": "Revolution",
+  "lat": 62.243322,
+  "lng": 25.749413,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/revolution"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-jyvaskyla",
+  "name": "Rosso, Jyväskylä",
+  "lat": 62.241632,
+  "lng": 25.75008,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/rosso-jyvaskyla"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:sataman-viilu",
+  "name": "Sataman Viilu",
+  "lat": 62.235253,
+  "lng": 25.759528,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/sataman-viilu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:saunat",
+  "name": "Viilun saunat",
+  "lat": 62.235253,
+  "lng": 25.759528,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/sataman-viilu/sivu/saunat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:trattoria-aukio-jyvaskyla",
+  "name": "Trattoria Aukio, Jyväskylä",
+  "lat": 62.239526,
+  "lng": 25.756381,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/trattoria-aukio-jyvaskyla"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:aamiainenbrunssi",
+  "name": "Aamiainen/Brunssi",
+  "lat": 62.239526,
+  "lng": 25.756381,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/trattoria-aukio-jyvaskyla/sivu/aamiainenbrunssi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhla-ja-kokoustilat",
+  "name": "Juhla -ja kokoustilat",
+  "lat": 62.239526,
+  "lng": 25.756381,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/trattoria-aukio-jyvaskyla/sivu/juhla-ja-kokoustilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:urban-bistro",
+  "name": "Urban Bistro",
+  "lat": 62.243322,
+  "lng": 25.749413,
+  "city": "jyvaskyla",
+  "url": "https://www.raflaamo.fi/fi/ravintola/jyvaskyla/urban-bistro"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-piispanristi-kaarina",
+  "name": "Presso Piispanristi, Kaarina",
+  "lat": 60.415111,
+  "lng": 22.326264,
+  "city": "kaarina",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kaarina/presso-piispanristi-kaarina"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bar-tuttu",
+  "name": "Bar Tuttu",
+  "lat": 64.227102,
+  "lng": 27.729311,
+  "city": "kajaani",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kajaani/bar-tuttu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Kokous- ja juhlatilat",
+  "lat": 64.227102,
+  "lng": 27.729311,
+  "city": "kajaani",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kajaani/bar-tuttu/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-kajaani-prisma",
+  "name": "Hesburger Kajaani, Prisma",
+  "lat": 64.221012,
+  "lng": 27.748721,
+  "city": "kajaani",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kajaani/hesburger-kajaani-prisma"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kaema-cafe",
+  "name": "Kaema Cafe",
+  "lat": 64.221012,
+  "lng": 27.748721,
+  "city": "kajaani",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kajaani/kaema-cafe"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:lyni-dancebar",
+  "name": "Lyni Dancebar",
+  "lat": 64.225988,
+  "lng": 27.731425,
+  "city": "kajaani",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kajaani/lyni-dancebar"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-kajaani",
+  "name": "Pizza & Buffa Kajaani",
+  "lat": 64.221012,
+  "lng": 27.748721,
+  "city": "kajaani",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kajaani/pizza-buffa-kajaani"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-kajaani",
+  "name": "Rosso, Kajaani",
+  "lat": 64.227102,
+  "lng": 27.729311,
+  "city": "kajaani",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kajaani/rosso-kajaani"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:sulo",
+  "name": "Sulo",
+  "lat": 64.225312,
+  "lng": 27.732169,
+  "city": "kajaani",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kajaani/sulo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-kangasala-prisma",
+  "name": "Hesburger Kangasala, Prisma",
+  "lat": 61.475337,
+  "lng": 23.977995,
+  "city": "kangasala",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kangasala/hesburger-kangasala-prisma"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-masuuni",
+  "name": "Hesburger Masuuni",
+  "lat": 60.518142,
+  "lng": 24.246194,
+  "city": "karkkila",
+  "url": "https://www.raflaamo.fi/fi/ravintola/karkkila/hesburger-masuuni"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-kemi",
+  "name": "Pizza & Buffa, Kemi",
+  "lat": 65.7429145,
+  "lng": 24.5794575,
+  "city": "kemi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kemi/pizza-buffa-kemi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-kemi",
+  "name": "Presso, Kemi",
+  "lat": 65.7429145,
+  "lng": 24.5794575,
+  "city": "kemi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kemi/presso-kemi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-zeppelin-kempele",
+  "name": "Rosso Zeppelin, Kempele",
+  "lat": 64.902139,
+  "lng": 25.537661,
+  "city": "kempele",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kempele/rosso-zeppelin-kempele"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Rosso Zeppelinin juhlatila",
+  "lat": 64.902139,
+  "lng": 25.537661,
+  "city": "kempele",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kempele/rosso-zeppelin-kempele/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-kerava",
+  "name": "Pizza & Buffa, Kerava",
+  "lat": 60.401834,
+  "lng": 25.103885,
+  "city": "kerava",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kerava/pizza-buffa-kerava"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-kerava",
+  "name": "Presso, Kerava",
+  "lat": 60.401833,
+  "lng": 25.103866,
+  "city": "kerava",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kerava/presso-kerava"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-kirkkonummi",
+  "name": "Hesburger Prisma Kirkkonummi",
+  "lat": 60.11846,
+  "lng": 24.447016,
+  "city": "kirkkonummi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kirkkonummi/hesburger-prisma-kirkkonummi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-kirkkonummi",
+  "name": "Pizza & Buffa Prisma Kirkkonummi",
+  "lat": 60.1178256,
+  "lng": 24.4474539,
+  "city": "kirkkonummi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kirkkonummi/pizza-buffa-prisma-kirkkonummi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-kirkkonummi",
+  "name": "Presso Prisma Kirkkonummi",
+  "lat": 60.1178363,
+  "lng": 24.44741,
+  "city": "kirkkonummi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kirkkonummi/presso-prisma-kirkkonummi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coffee-house-levi",
+  "name": "Coffee House, Levi",
+  "lat": 67.805577,
+  "lng": 24.806717,
+  "city": "kittila",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kittila/coffee-house-levi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:grill-it-levi",
+  "name": "Grill it! Levi",
+  "lat": 67.805627,
+  "lng": 24.806404,
+  "city": "kittila",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kittila/grill-it-levi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kiisa-levi",
+  "name": "Kiisa, Levi",
+  "lat": 67.80572,
+  "lng": 24.806656,
+  "city": "kittila",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kittila/kiisa-levi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:yksityistilaisuudet",
+  "name": "Juhlat ja yksityistilaisuudet",
+  "lat": 67.80572,
+  "lng": 24.806656,
+  "city": "kittila",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kittila/kiisa-levi/sivu/yksityistilaisuudet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-kokkola",
+  "name": "Amarillo, Kokkola",
+  "lat": 63.839496,
+  "lng": 23.134689,
+  "city": "kokkola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kokkola/amarillo-kokkola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:calle-nightclub",
+  "name": "Calle Nightclub",
+  "lat": 63.839496,
+  "lng": 23.134689,
+  "city": "kokkola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kokkola/calle-nightclub"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:mustakari",
+  "name": "Mustakari",
+  "lat": 63.864237,
+  "lng": 23.118313,
+  "city": "kokkola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kokkola/mustakari"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:original-sokos-hotel-kaarle-aamiainen",
+  "name": "Original Sokos Hotel Kaarle, aamiainen",
+  "lat": 63.839467,
+  "lng": 23.1362,
+  "city": "kokkola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kokkola/original-sokos-hotel-kaarle-aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-kokkola",
+  "name": "Pizza & Buffa Prisma, Kokkola",
+  "lat": 63.832087,
+  "lng": 23.124701,
+  "city": "kokkola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kokkola/pizza-buffa-prisma-kokkola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-kokkola",
+  "name": "Rosso, Kokkola",
+  "lat": 63.836068,
+  "lng": 23.131437,
+  "city": "kokkola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kokkola/rosso-kokkola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:vastaranta",
+  "name": "Vastaranta",
+  "lat": 63.839509,
+  "lng": 23.13483,
+  "city": "kokkola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kokkola/vastaranta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-kotka",
+  "name": "Amarillo, Kotka",
+  "lat": 60.464676,
+  "lng": 26.942252,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/amarillo-kotka"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:frans-rosalie-kotka",
+  "name": "Frans & Rosalie, Kotka",
+  "lat": 60.464653,
+  "lng": 26.942024,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/frans-rosalie-kotka"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kabinetti",
+  "name": "Frans & Rosalie Bistron Kabinetti",
+  "lat": 60.464653,
+  "lng": 26.942024,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/frans-rosalie-kotka/sivu/kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-karhula",
+  "name": "Hesburger Karhula",
+  "lat": 60.513625,
+  "lng": 26.933343999999998,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/hesburger-karhula"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-pasaati-kotka",
+  "name": "Hesburger Pasaati Kotka",
+  "lat": 60.466625,
+  "lng": 26.944218,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/hesburger-pasaati-kotka"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-kotka",
+  "name": "Hesburger Prisma Kotka",
+  "lat": 60.500985,
+  "lng": 26.86908,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/hesburger-prisma-kotka"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:las-palmas-kotka",
+  "name": "Las Palmas Kotka",
+  "lat": 60.464778,
+  "lng": 26.942369,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/las-palmas-kotka"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tapahtumat",
+  "name": "Kotkan Las Palmasissa tapahtuu",
+  "lat": 60.464778,
+  "lng": 26.942369,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/las-palmas-kotka/sivu/tapahtumat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:mestari-kotka",
+  "name": "Mestari Kotka",
+  "lat": 60.5013971,
+  "lng": 26.8703713,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/mestari-kotka"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-kotka",
+  "name": "Pizza & Buffa Prisma, Kotka",
+  "lat": 60.500985,
+  "lng": 26.86908,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/pizza-buffa-prisma-kotka"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-pasaati-kotka",
+  "name": "Presso Pasaati, Kotka",
+  "lat": 60.467256,
+  "lng": 26.944801,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/presso-pasaati-kotka"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-kotka",
+  "name": "Presso Prisma, Kotka",
+  "lat": 60.501154,
+  "lng": 26.867515,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/presso-prisma-kotka"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:public-corner-pasaati-kotka",
+  "name": "Public Corner Pasaati, Kotka",
+  "lat": 60.467041,
+  "lng": 26.945219,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/public-corner-pasaati-kotka"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-pizza-pasaati-kotka",
+  "name": "Rosso Pizza Pasaati, Kotka",
+  "lat": 60.467256,
+  "lng": 26.944801,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/rosso-pizza-pasaati-kotka"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:soittoruokala-karoliina",
+  "name": "Soittoruokala Karoliina",
+  "lat": 60.462939,
+  "lng": 26.94399,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/soittoruokala-karoliina"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:karoliinan-kabinetti",
+  "name": "Karoliinan Kabinetti",
+  "lat": 60.462939,
+  "lng": 26.94399,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/soittoruokala-karoliina/sivu/karoliinan-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tapahtumat",
+  "name": "S-Card",
+  "lat": 60.462939,
+  "lng": 26.94399,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/soittoruokala-karoliina/sivu/tapahtumat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:venn-kotka",
+  "name": "VENN Kotka",
+  "lat": 60.464726,
+  "lng": 26.942588,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/venn-kotka"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:venn-tapahtumat",
+  "name": "VENN Kotka Tapahtumat",
+  "lat": 60.464726,
+  "lng": 26.942588,
+  "city": "kotka",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kotka/venn-kotka/sivu/venn-tapahtumat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-kouvola",
+  "name": "Amarillo, Kouvola",
+  "lat": 60.869949,
+  "lng": 26.70364,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/amarillo-kouvola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coffee-house-kouvola",
+  "name": "Coffee House, Kouvola",
+  "lat": 60.868093,
+  "lng": 26.70421,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/coffee-house-kouvola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:frans-rose-kouvola",
+  "name": "Frans & Rose, Kouvola",
+  "lat": 60.868878,
+  "lng": 26.694042,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/frans-rose-kouvola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokousja-juhlatilat",
+  "name": "S-Card",
+  "lat": 60.868878,
+  "lng": 26.694042,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/frans-rose-kouvola/sivu/kokousja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-kouvola",
+  "name": "Hesburger Prisma Kouvola",
+  "lat": 60.872132,
+  "lng": 26.659073,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/hesburger-prisma-kouvola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-tornionmaki",
+  "name": "Hesburger Tornionmäki",
+  "lat": 60.869568,
+  "lng": 26.728908,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/hesburger-tornionmaki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hospoda-papirna-kouvola",
+  "name": "Hospoda Papirna, Kouvola",
+  "lat": 60.906937,
+  "lng": 26.625937,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/hospoda-papirna-kouvola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:irish-pub-old-tom-kouvola",
+  "name": "Irish Pub Old Tom, Kouvola",
+  "lat": 60.869386,
+  "lng": 26.704879,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/irish-pub-old-tom-kouvola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tapahtumat",
+  "name": "Kouvolan Pub Old Tomissa tapahtuu",
+  "lat": 60.869386,
+  "lng": 26.704879,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/irish-pub-old-tom-kouvola/sivu/tapahtumat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kukkopoika",
+  "name": "Kukkopoika",
+  "lat": 60.906937,
+  "lng": 26.625937,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/kukkopoika"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:lammenranta-kitchen-bar",
+  "name": "Lammenranta Kitchen & Bar",
+  "lat": 60.887585,
+  "lng": 26.773552,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/lammenranta-kitchen-bar"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:las-palmas-kouvola",
+  "name": "Las Palmas Kouvola",
+  "lat": 60.8710776,
+  "lng": 26.7033872,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/las-palmas-kouvola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:mestari-kouvola",
+  "name": "Mestari Kouvola",
+  "lat": 60.8717652,
+  "lng": 26.6574099,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/mestari-kouvola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-kouvola",
+  "name": "Pizza & Buffa Prisma, Kouvola",
+  "lat": 60.872132,
+  "lng": 26.659073,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/pizza-buffa-prisma-kouvola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-kouvola",
+  "name": "Presso Prisma, Kouvola",
+  "lat": 60.872132,
+  "lng": 26.659073,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/presso-prisma-kouvola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ravintola-raveliini",
+  "name": "Ravintola Raveliini",
+  "lat": 60.88423,
+  "lng": 26.774128,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/ravintola-raveliini"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-kouvola",
+  "name": "Rosso, Kouvola",
+  "lat": 60.86829,
+  "lng": 26.704006,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/rosso-kouvola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:wokki-buffet-kouvola",
+  "name": "WOKKI Buffet Kouvola",
+  "lat": 60.8717652,
+  "lng": 26.6574099,
+  "city": "kouvola",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kouvola/wokki-buffet-kouvola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-kuopio",
+  "name": "Amarillo, Kuopio",
+  "lat": 62.892596,
+  "lng": 27.681319,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/amarillo-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillon-kisakatsomo",
+  "name": "Amarillon Kisakatsomo",
+  "lat": 62.892596,
+  "lng": 27.681319,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/amarillo-kuopio/sivu/amarillon-kisakatsomo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:yksityistilaisuudet",
+  "name": "Yksityistilaisuudet Amarillossa",
+  "lat": 62.892596,
+  "lng": 27.681319,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/amarillo-kuopio/sivu/yksityistilaisuudet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:apteekkari-kuopio",
+  "name": "Apteekkari Kuopio",
+  "lat": 62.89244,
+  "lng": 27.682141,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/apteekkari-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:vip-poydat",
+  "name": "VIP -pöydät",
+  "lat": 62.89244,
+  "lng": 27.682141,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/apteekkari-kuopio/sivu/vip-poydat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:yksityisilaisuudet",
+  "name": "Yksityistilaisuudet",
+  "lat": 62.89244,
+  "lng": 27.682141,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/apteekkari-kuopio/sivu/yksityisilaisuudet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bona-bbq",
+  "name": "Bona BBQ",
+  "lat": 62.895503,
+  "lng": 27.6946752,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/bona-bbq"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coffee-house-kuopio",
+  "name": "Coffee House, Kuopio",
+  "lat": 62.892178,
+  "lng": 27.676826,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/coffee-house-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:brunssit",
+  "name": "Brunssit",
+  "lat": 62.892178,
+  "lng": 27.676826,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/coffee-house-kuopio/sivu/brunssit"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ehta",
+  "name": "Ehta",
+  "lat": 62.89078,
+  "lng": 27.687765,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/ehta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:frans-sophie-kuopio",
+  "name": "Frans & Sophie, Kuopio",
+  "lat": 62.89078,
+  "lng": 27.687765,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/frans-sophie-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kabinetit-sauna",
+  "name": "Frans & Sophien kabinetit",
+  "lat": 62.89078,
+  "lng": 27.687765,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/frans-sophie-kuopio/sivu/kabinetit-sauna"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-kuopio",
+  "name": "Hesburger Prisma Kuopio",
+  "lat": 62.887491,
+  "lng": 27.631285,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/hesburger-prisma-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-sokos-kuopio",
+  "name": "Hesburger Sokos Kuopio",
+  "lat": 62.892178,
+  "lng": 27.676826,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/hesburger-sokos-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-ykkosrasti",
+  "name": "Hesburger Ykkösrasti",
+  "lat": 62.881762,
+  "lng": 27.665383,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/hesburger-ykkosrasti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hillside-tahko",
+  "name": "Hillside, Tahko",
+  "lat": 63.289008,
+  "lng": 28.040059,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/hillside-tahko"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hophaus-kuopio",
+  "name": "Hophaus, Kuopio",
+  "lat": 62.891887,
+  "lng": 27.681381000000002,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/hophaus-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hophaus-tahko",
+  "name": "Hophaus, Tahko",
+  "lat": 63.289008,
+  "lng": 28.040059,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/hophaus-tahko"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tahkon-tislaamo",
+  "name": "Tahkon tislaamo",
+  "lat": 63.289008,
+  "lng": 28.040059,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/hophaus-tahko/sivu/tahkon-tislaamo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-ja-juhlapalvelut-puijonsarvi",
+  "name": "Kokous- ja Juhlapalvelut, Puijonsarvi",
+  "lat": 62.890894,
+  "lng": 27.68822,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/kokous-ja-juhlapalvelut-puijonsarvi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:puijonsarven-kokoustilat",
+  "name": "Kokous- ja tapahtumatilat",
+  "lat": 62.890894,
+  "lng": 27.68822,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/kokous-ja-juhlapalvelut-puijonsarvi/sivu/puijonsarven-kokoustilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:puijonsarvi-juhlat",
+  "name": "Juhlat",
+  "lat": 62.890894,
+  "lng": 27.68822,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/kokous-ja-juhlapalvelut-puijonsarvi/sivu/puijonsarvi-juhlat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:las-palmas-kuopio",
+  "name": "Las Palmas Kuopio",
+  "lat": 62.8919229,
+  "lng": 27.6787197,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/las-palmas-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:las-palmas-vip",
+  "name": "Las Palmas VIP",
+  "lat": 62.8919229,
+  "lng": 27.6787197,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/las-palmas-kuopio/sivu/las-palmas-vip"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-breikki-tahko",
+  "name": "Pizza Breikki, Tahko",
+  "lat": 63.289008,
+  "lng": 28.040059,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/pizza-breikki-tahko"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-kuopio",
+  "name": "Pizza & Buffa Prisma, Kuopio",
+  "lat": 62.887491,
+  "lng": 27.631285,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/pizza-buffa-prisma-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Varaa oma tila käyttöösi",
+  "lat": 62.887491,
+  "lng": 27.631285,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/pizza-buffa-prisma-kuopio/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-kuopio",
+  "name": "Presso Prisma, Kuopio",
+  "lat": 62.887491,
+  "lng": 27.631285,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/presso-prisma-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Varaa oma tila käyttöösi",
+  "lat": 62.887491,
+  "lng": 27.631285,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/presso-prisma-kuopio/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-sokos-kuopio",
+  "name": "Presso Sokos, Kuopio",
+  "lat": 62.891776,
+  "lng": 27.676561,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/presso-sokos-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-ykkosrasti-kuopio",
+  "name": "Presso Ykkösrasti, Kuopio",
+  "lat": 62.881762,
+  "lng": 27.665383,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/presso-ykkosrasti-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-kuopio",
+  "name": "Rosso, Kuopio",
+  "lat": 62.892178,
+  "lng": 27.676826,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/rosso-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokoukset-ja-juhlat",
+  "name": "Rosson kabinetti",
+  "lat": 62.892178,
+  "lng": 27.676826,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/rosso-kuopio/sivu/kokoukset-ja-juhlat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-pizza-ykkosrasti-kuopio",
+  "name": "Rosso Pizza Ykkösrasti, Kuopio",
+  "lat": 62.881762,
+  "lng": 27.665383,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/rosso-pizza-ykkosrasti-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:utu-kuopio",
+  "name": "Utu, Kuopio",
+  "lat": 62.890918,
+  "lng": 27.688791,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/utu-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kabinetit",
+  "name": "Utun Kabinetit",
+  "lat": 62.890918,
+  "lng": 27.688791,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/utu-kuopio/sivu/kabinetit"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:wanha-satama-kuopio",
+  "name": "Wanha Satama Kuopio",
+  "lat": 62.892459,
+  "lng": 27.696555,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/wanha-satama-kuopio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kabinetit",
+  "name": "Wanhan Sataman kabinetit",
+  "lat": 62.892459,
+  "lng": 27.696555,
+  "city": "kuopio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/kuopio/wanha-satama-kuopio/sivu/kabinetit"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:alex-ines",
+  "name": "Alex & Ines",
+  "lat": 60.982757,
+  "lng": 25.659046,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/alex-ines"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-lahti",
+  "name": "Amarillo, Lahti",
+  "lat": 60.9831,
+  "lng": 25.657443,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/amarillo-lahti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bar-bistro-lahti",
+  "name": "Bar & Bistro Lahti",
+  "lat": 60.982935,
+  "lng": 25.659796,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/bar-bistro-lahti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bar-kohde",
+  "name": "Bar Kohde",
+  "lat": 60.9831,
+  "lng": 25.657443,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/bar-kohde"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:varaa-tila",
+  "name": "Varaa tila yksityiskäyttöön",
+  "lat": 60.9831,
+  "lng": 25.657443,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/bar-kohde/sivu/varaa-tila"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:beat-kitchen-cafe",
+  "name": "Beat Kitchen & café",
+  "lat": 60.986254,
+  "lng": 25.665938,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/beat-kitchen-cafe"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coppa-eatery",
+  "name": "Coppa eatery",
+  "lat": 60.982894,
+  "lng": 25.661091,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/coppa-eatery"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:el-toro",
+  "name": "El Toro",
+  "lat": 60.981914,
+  "lng": 25.655553,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/el-toro"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-lahti-prisma-holma",
+  "name": "Hesburger Lahti, Prisma Holma",
+  "lat": 61.008109,
+  "lng": 25.681439,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/hesburger-lahti-prisma-holma"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-lahti-sokos",
+  "name": "Hesburger Lahti, Sokos",
+  "lat": 60.982731,
+  "lng": 25.659158,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/hesburger-lahti-sokos"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-laune",
+  "name": "Hesburger Prisma Laune",
+  "lat": 60.96119,
+  "lng": 25.658311,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/hesburger-prisma-laune"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-syke-lahti",
+  "name": "Hesburger Syke, Lahti",
+  "lat": 60.9875605,
+  "lng": 25.6644351,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/hesburger-syke-lahti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:holma-kitchen-cafe",
+  "name": "Holma kitchen & café",
+  "lat": 61.008173,
+  "lng": 25.678811,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/holma-kitchen-cafe"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:iloinen-kulkija-lahti",
+  "name": "Iloinen Kulkija Lahti",
+  "lat": 60.984185,
+  "lng": 25.649287,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/iloinen-kulkija-lahti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kuja-street-food-lahti",
+  "name": "Kuja Street Food Lahti",
+  "lat": 60.98272,
+  "lng": 25.660784,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/kuja-street-food-lahti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tapahtumatila",
+  "name": "Tapahtumatila",
+  "lat": 60.98272,
+  "lng": 25.660784,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/kuja-street-food-lahti/sivu/tapahtumatila"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:lahden-seurahuoneen-kokous-ja-juhlatilat",
+  "name": "Lahden Seurahuoneen kokous- ja juhlatilat",
+  "lat": 60.982856,
+  "lng": 25.660003,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/lahden-seurahuoneen-kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tilojen-esittely",
+  "name": "Tilojen esittely",
+  "lat": 60.982856,
+  "lng": 25.660003,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/lahden-seurahuoneen-kokous-ja-juhlatilat/sivu/tilojen-esittely"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:las-palmas-lahti",
+  "name": "Las Palmas Lahti",
+  "lat": 60.982053,
+  "lng": 25.658614,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/las-palmas-lahti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizzabuffa-prisma-laune-lahti",
+  "name": "PizzaBuffa Prisma Laune, Lahti",
+  "lat": 60.96119,
+  "lng": 25.658311,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/pizzabuffa-prisma-laune-lahti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:prisma-cafe-laune",
+  "name": "Prisma Café Laune",
+  "lat": 60.96119,
+  "lng": 25.658311,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/prisma-cafe-laune"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:trattoria-seurahuone-lahti",
+  "name": "Trattoria Seurahuone, Lahti",
+  "lat": 60.982935,
+  "lng": 25.659796,
+  "city": "lahti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lahti/trattoria-seurahuone-lahti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-laitila",
+  "name": "Hesburger Laitila",
+  "lat": 60.875858,
+  "lng": 21.696527,
+  "city": "laitila",
+  "url": "https://www.raflaamo.fi/fi/ravintola/laitila/hesburger-laitila"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:aino-kahvila-ravintola-lappeenranta",
+  "name": "Aino kahvila & ravintola Lappeenranta",
+  "lat": 61.047046,
+  "lng": 28.209276,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/aino-kahvila-ravintola-lappeenranta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-lappeenranta",
+  "name": "Amarillo, Lappeenranta",
+  "lat": 61.058195,
+  "lng": 28.185813,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/amarillo-lappeenranta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:angus-steak-wine",
+  "name": "Angus Steak & Wine",
+  "lat": 61.058195,
+  "lng": 28.185813,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/angus-steak-wine"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Juhlat ja kokoukset",
+  "lat": 61.058195,
+  "lng": 28.185813,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/angus-steak-wine/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:birra",
+  "name": "Birra",
+  "lat": 61.059933,
+  "lng": 28.185137,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/birra"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:antti-kabinetti",
+  "name": "Antti-kabinetti",
+  "lat": 61.059933,
+  "lng": 28.185137,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/birra/sivu/antti-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coffee-house-isokristiina-lappeenranta",
+  "name": "Coffee House IsoKristiina, Lappeenranta",
+  "lat": 61.05643,
+  "lng": 28.190599,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/coffee-house-isokristiina-lappeenranta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-isokristiina",
+  "name": "Hesburger IsoKristiina",
+  "lat": 61.056538,
+  "lng": 28.193223,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/hesburger-isokristiina"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-myllykeskus",
+  "name": "Hesburger Myllykeskus",
+  "lat": 61.047046,
+  "lng": 28.209276,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/hesburger-myllykeskus"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-lappeenranta",
+  "name": "Hesburger Prisma Lappeenranta",
+  "lat": 61.051038,
+  "lng": 28.178048,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/hesburger-prisma-lappeenranta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kasinoterassi",
+  "name": "Kasinoterassi",
+  "lat": 61.06115,
+  "lng": 28.188591,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/kasinoterassi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kehruuhuone",
+  "name": "Kehruuhuone",
+  "lat": 61.06685,
+  "lng": 28.182414,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/kehruuhuone"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokoukset-ja-juhlat",
+  "name": "Kokoukset ja Juhlat",
+  "lat": 61.06685,
+  "lng": 28.182414,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/kehruuhuone/sivu/kokoukset-ja-juhlat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tapahtumat",
+  "name": "Tapahtumat",
+  "lat": 61.06685,
+  "lng": 28.182414,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/kehruuhuone/sivu/tapahtumat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kyllikki",
+  "name": "Kyllikki",
+  "lat": 61.058195,
+  "lng": 28.185813,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/kyllikki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:lamppu",
+  "name": "Lamppu",
+  "lat": 61.059933,
+  "lng": 28.185137,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/lamppu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tapahtumaillat",
+  "name": "Tapahtumaillat",
+  "lat": 61.059933,
+  "lng": 28.185137,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/lamppu/sivu/tapahtumaillat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:las-palmas-lappeenranta",
+  "name": "Las Palmas Lappeenranta",
+  "lat": 61.058195,
+  "lng": 28.185813,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/las-palmas-lappeenranta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-tapahtumat",
+  "name": "Juhlat ja tapahtumat",
+  "lat": 61.058195,
+  "lng": 28.185813,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/las-palmas-lappeenranta/sivu/juhlat-ja-tapahtumat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-lappeenranta",
+  "name": "Pizza & Buffa Prisma, Lappeenranta",
+  "lat": 61.050301,
+  "lng": 28.17504,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/pizza-buffa-prisma-lappeenranta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-lappeenranta",
+  "name": "Presso Prisma, Lappeenranta",
+  "lat": 61.050301,
+  "lng": 28.17504,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/presso-prisma-lappeenranta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-isokristiina-lappeenranta",
+  "name": "Rosso IsoKristiina, Lappeenranta",
+  "lat": 61.05643,
+  "lng": 28.190599,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/rosso-isokristiina-lappeenranta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:saga-event-venue",
+  "name": "Saga Event Venue",
+  "lat": 61.05643,
+  "lng": 28.190599,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/saga-event-venue"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:aamiainen",
+  "name": "Aamiainen",
+  "lat": 61.05643,
+  "lng": 28.190599,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/saga-event-venue/sivu/aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-tapahtumat",
+  "name": "Kokoukset, juhlat ja tapahtumat",
+  "lat": 61.05643,
+  "lng": 28.190599,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/saga-event-venue/sivu/juhlat-ja-tapahtumat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:venn-lappeenranta",
+  "name": "VENN Lappeenranta",
+  "lat": 61.05643,
+  "lng": 28.190599,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/venn-lappeenranta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tapahtumat",
+  "name": "Tapahtumat",
+  "lat": 61.05643,
+  "lng": 28.190599,
+  "city": "lappeenranta",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lappeenranta/venn-lappeenranta/sivu/tapahtumat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:cafe-latva-koli",
+  "name": "Café Latva, Koli",
+  "lat": 63.095887,
+  "lng": 29.80602,
+  "city": "lieksa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lieksa/cafe-latva-koli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:grill-it-koli",
+  "name": "Grill it! Koli",
+  "lat": 63.095887,
+  "lng": 29.80602,
+  "city": "lieksa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lieksa/grill-it-koli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kolin-kokoukset-ja-juhlat",
+  "name": "Kolin kokous- ja juhlatilat",
+  "lat": 63.095887,
+  "lng": 29.80602,
+  "city": "lieksa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lieksa/grill-it-koli/sivu/kolin-kokoukset-ja-juhlat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kaski-bar-koli",
+  "name": "Kaski Bar, Koli",
+  "lat": 63.095887,
+  "lng": 29.80602,
+  "city": "lieksa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lieksa/kaski-bar-koli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:puronmutka-bar-cafe-koli",
+  "name": "Puronmutka Bar & Cafe, Koli",
+  "lat": 63.095887,
+  "lng": 29.80604,
+  "city": "lieksa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lieksa/puronmutka-bar-cafe-koli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ravintola-tervaskanto",
+  "name": "Ravintola Tervaskanto",
+  "lat": 63.095887,
+  "lng": 29.80604,
+  "city": "lieksa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lieksa/ravintola-tervaskanto"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokoustila-naava",
+  "name": "Kokous- ja juhlatila Naava",
+  "lat": 63.095887,
+  "lng": 29.80604,
+  "city": "lieksa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lieksa/ravintola-tervaskanto/sivu/kokoustila-naava"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kylan-takkahuone",
+  "name": "Kylän takkahuone",
+  "lat": 63.095887,
+  "lng": 29.80604,
+  "city": "lieksa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lieksa/ravintola-tervaskanto/sivu/kylan-takkahuone"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ski-bistro-rinnetupa-koli",
+  "name": "Ski Bistro Rinnetupa, Koli",
+  "lat": 63.100285,
+  "lng": 29.819882,
+  "city": "lieksa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lieksa/ski-bistro-rinnetupa-koli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:antonio-lohja",
+  "name": "Antonio Lohja",
+  "lat": 60.251018,
+  "lng": 24.069326,
+  "city": "lohja",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lohja/antonio-lohja"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokoukset-ja-juhlat",
+  "name": "Kokoukset ja juhlat",
+  "lat": 60.251018,
+  "lng": 24.069326,
+  "city": "lohja",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lohja/antonio-lohja/sivu/kokoukset-ja-juhlat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-lohja",
+  "name": "Hesburger Prisma Lohja",
+  "lat": 60.248263,
+  "lng": 24.06211,
+  "city": "lohja",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lohja/hesburger-prisma-lohja"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kahvila-kuulas",
+  "name": "Kahvila Kuulas",
+  "lat": 60.248263,
+  "lng": 24.062128,
+  "city": "lohja",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lohja/kahvila-kuulas"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:sinun-keittio-puoti",
+  "name": "Sinun Keittiö Puoti",
+  "lat": 60.2597637,
+  "lng": 24.0637289,
+  "city": "lohja",
+  "url": "https://www.raflaamo.fi/fi/ravintola/lohja/sinun-keittio-puoti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kanuuna",
+  "name": "Kanuuna",
+  "lat": 60.921998,
+  "lng": 27.567147,
+  "city": "luumaki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/luumaki/kanuuna"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:abc-pitkajarvi-mikkeli-hesburger",
+  "name": "ABC Pitkäjärvi Mikkeli Hesburger",
+  "lat": 61.6761822,
+  "lng": 27.242159,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/abc-pitkajarvi-mikkeli-hesburger"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-mikkeli",
+  "name": "Amarillo, Mikkeli",
+  "lat": 61.688542,
+  "lng": 27.272377,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/amarillo-mikkeli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillon-kabinetti",
+  "name": "Amarillon kabinetti",
+  "lat": 61.688542,
+  "lng": 27.272377,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/amarillo-mikkeli/sivu/amarillon-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bistro-sisu",
+  "name": "Bistro Sisu",
+  "lat": 61.70339,
+  "lng": 27.245707,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/bistro-sisu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokouspalvelut",
+  "name": "Kokoukset ja tapahtumat",
+  "lat": 61.70339,
+  "lng": 27.245707,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/bistro-sisu/sivu/kokouspalvelut"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:frans-michelle-mikkeli",
+  "name": "Frans & Michelle, Mikkeli",
+  "lat": 61.68556,
+  "lng": 27.27354,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/frans-michelle-mikkeli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Juhlat ja kokoukset",
+  "lat": 61.68556,
+  "lng": 27.27354,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/frans-michelle-mikkeli/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ohjelmatarjonta",
+  "name": "Ohjelmaa kokouksiin ja juhliin",
+  "lat": 61.68556,
+  "lng": 27.27354,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/frans-michelle-mikkeli/sivu/ohjelmatarjonta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:gastropub-eino",
+  "name": "Gastropub Eino",
+  "lat": 61.688495,
+  "lng": 27.273529,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/gastropub-eino"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Juhla- ja kokoustilat",
+  "lat": 61.688495,
+  "lng": 27.273529,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/gastropub-eino/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-mikkeli",
+  "name": "Hesburger Prisma Mikkeli",
+  "lat": 61.686592,
+  "lng": 27.299392,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/hesburger-prisma-mikkeli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kattaa-savon-tapahtumaravintolat",
+  "name": "Kattaa Savon - Tapahtumaravintolat",
+  "lat": 61.688495,
+  "lng": 27.273529,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/kattaa-savon-tapahtumaravintolat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-mikkeli",
+  "name": "Pizza & Buffa Prisma, Mikkeli",
+  "lat": 61.68653,
+  "lng": 27.299165,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/pizza-buffa-prisma-mikkeli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-mikkeli",
+  "name": "Presso Prisma, Mikkeli",
+  "lat": 61.686592,
+  "lng": 27.299392,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/presso-prisma-mikkeli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ravintola-greeneri",
+  "name": "Ravintola Greeneri",
+  "lat": 61.675962,
+  "lng": 27.285466,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/ravintola-greeneri"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Juhlat ja kokoukset",
+  "lat": 61.675962,
+  "lng": 27.285466,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/ravintola-greeneri/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pikkujoulut-2026",
+  "name": "Pikkujoulut 2026 Greenerissä",
+  "lat": 61.675962,
+  "lng": 27.285466,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/ravintola-greeneri/sivu/pikkujoulut-2026"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-pizza-mikkeli",
+  "name": "Rosso Pizza, Mikkeli",
+  "lat": 61.68556,
+  "lng": 27.27354,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/rosso-pizza-mikkeli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:saunaravintola-kaihu",
+  "name": "Saunaravintola Kaihu",
+  "lat": 61.6762242,
+  "lng": 27.2815561,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/saunaravintola-kaihu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pikkujoulut-2026",
+  "name": "Pikkujoulut 2026",
+  "lat": 61.6762242,
+  "lng": 27.2815561,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/saunaravintola-kaihu/sivu/pikkujoulut-2026"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:suunnitteletko-juhlia",
+  "name": "KAIHU yksityiskäyttöön",
+  "lat": 61.6762242,
+  "lng": 27.2815561,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/saunaravintola-kaihu/sivu/suunnitteletko-juhlia"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:suur-savon-leipomo-lounaskahvila",
+  "name": "Suur-Savon Leipomo Lounaskahvila",
+  "lat": 61.6885022,
+  "lng": 27.2732373,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/suur-savon-leipomo-lounaskahvila"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:historiaa",
+  "name": "Leipomon historia",
+  "lat": 61.6885022,
+  "lng": 27.2732373,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/suur-savon-leipomo-lounaskahvila/sivu/historiaa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kahvileivat",
+  "name": "Kahvileivät",
+  "lat": 61.6885022,
+  "lng": 27.2732373,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/suur-savon-leipomo-lounaskahvila/sivu/kahvileivat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tilausravintola-mikkelin-klubi",
+  "name": "Tilausravintola Mikkelin Klubi",
+  "lat": 61.688513,
+  "lng": 27.273378,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/tilausravintola-mikkelin-klubi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Juhlat ja kokoukset",
+  "lat": 61.688513,
+  "lng": 27.273378,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/tilausravintola-mikkelin-klubi/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:mikkelin-klubin-historiaa",
+  "name": "Mikkelin Klubin historiaa",
+  "lat": 61.688513,
+  "lng": 27.273378,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/tilausravintola-mikkelin-klubi/sivu/mikkelin-klubin-historiaa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:wilhelm-public-house",
+  "name": "Wilhelm Public House",
+  "lat": 61.685588,
+  "lng": 27.273144,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/wilhelm-public-house"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:wilhelmin-keikat",
+  "name": "Wilhelmin keikat",
+  "lat": 61.685588,
+  "lng": 27.273144,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/wilhelm-public-house/sivu/wilhelmin-keikat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:wilhelmin-vip",
+  "name": "Wilhelmin VIP",
+  "lat": 61.685588,
+  "lng": 27.273144,
+  "city": "mikkeli",
+  "url": "https://www.raflaamo.fi/fi/ravintola/mikkeli/wilhelm-public-house/sivu/wilhelmin-vip"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-muhos",
+  "name": "Hesburger Muhos",
+  "lat": 64.808187,
+  "lng": 25.989685,
+  "city": "muhos",
+  "url": "https://www.raflaamo.fi/fi/ravintola/muhos/hesburger-muhos"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:osuusravintola-oksa-prisma-nokia",
+  "name": "Osuusravintola Oksa, Prisma Nokia",
+  "lat": 61.478548,
+  "lng": 23.524853,
+  "city": "nokia",
+  "url": "https://www.raflaamo.fi/fi/ravintola/nokia/osuusravintola-oksa-prisma-nokia"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-abc-kolmenkulma-nokia",
+  "name": "Pizza & Buffa ABC Kolmenkulma, Nokia",
+  "lat": 61.502258,
+  "lng": 23.567563,
+  "city": "nokia",
+  "url": "https://www.raflaamo.fi/fi/ravintola/nokia/pizza-buffa-abc-kolmenkulma-nokia"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:buolu-cafe-ristorante",
+  "name": "Buolu Cafe & Ristorante",
+  "lat": 63.534847,
+  "lng": 29.171871,
+  "city": "nurmes",
+  "url": "https://www.raflaamo.fi/fi/ravintola/nurmes/buolu-cafe-ristorante"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:frans-emma-nurmes",
+  "name": "Frans & Emma, Nurmes",
+  "lat": 63.534848,
+  "lng": 29.171865,
+  "city": "nurmes",
+  "url": "https://www.raflaamo.fi/fi/ravintola/nurmes/frans-emma-nurmes"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ravintola-bomba",
+  "name": "Ravintola Bomba",
+  "lat": 63.533966,
+  "lng": 29.170155,
+  "city": "nurmes",
+  "url": "https://www.raflaamo.fi/fi/ravintola/nurmes/ravintola-bomba"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bomban-esiintyjat",
+  "name": "Bomban esiintyjät",
+  "lat": 63.533966,
+  "lng": 29.170155,
+  "city": "nurmes",
+  "url": "https://www.raflaamo.fi/fi/ravintola/nurmes/ravintola-bomba/sivu/bomban-esiintyjat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tekemista-bomban-talolla",
+  "name": "Tekemistä Bomban talolla",
+  "lat": 63.533966,
+  "lng": 29.170155,
+  "city": "nurmes",
+  "url": "https://www.raflaamo.fi/fi/ravintola/nurmes/ravintola-bomba/sivu/tekemista-bomban-talolla"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:abc-oulu-hesburger-tuira",
+  "name": "ABC Oulu Hesburger Tuira",
+  "lat": 65.025999,
+  "lng": 25.472711,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/abc-oulu-hesburger-tuira"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-oulu",
+  "name": "Amarillo, Oulu",
+  "lat": 65.012249,
+  "lng": 25.472118,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/amarillo-oulu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillon-juhlatila",
+  "name": "Oulun Amarillon juhlatila",
+  "lat": 65.012249,
+  "lng": 25.472118,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/amarillo-oulu/sivu/amarillon-juhlatila"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:sound-lounge-karaokehuone",
+  "name": "Oulun himotuin yksityinen karaokehuone jopa 25 hengelle",
+  "lat": 65.012249,
+  "lng": 25.472118,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/amarillo-oulu/sivu/sound-lounge-karaokehuone"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:arinan-kokous-ja-juhlatilat-oulu",
+  "name": "Arinan kokous- ja juhlatilat Oulu",
+  "lat": 65.011412,
+  "lng": 25.472654,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/arinan-kokous-ja-juhlatilat-oulu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bacaro-doppio-oulu",
+  "name": "Bacaro Doppio Oulu",
+  "lat": 65.011266,
+  "lng": 25.47245,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/bacaro-doppio-oulu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coffee-house-oulu",
+  "name": "Coffee House, Oulu",
+  "lat": 65.012249,
+  "lng": 25.472118,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/coffee-house-oulu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:frans-camille-oulu",
+  "name": "Frans & Camille, Oulu",
+  "lat": 65.012061,
+  "lng": 25.473041,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/frans-camille-oulu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Frans & Camille Bistron kabinetit",
+  "lat": 65.012061,
+  "lng": 25.473041,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/frans-camille-oulu/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:grill-it-oulu",
+  "name": "Grill it! Oulu",
+  "lat": 65.0114598,
+  "lng": 25.4718767,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/grill-it-oulu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:grill-it-kabinetti",
+  "name": "Grill it! kabinetti",
+  "lat": 65.0114598,
+  "lng": 25.4718767,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/grill-it-oulu/sivu/grill-it-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-limingantulli",
+  "name": "Hesburger Limingantulli",
+  "lat": 64.9943,
+  "lng": 25.461867,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/hesburger-limingantulli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-oulu-kastelli",
+  "name": "Hesburger Oulu Kastelli",
+  "lat": 65.007326,
+  "lng": 25.527731,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/hesburger-oulu-kastelli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-oulu-linnanmaa",
+  "name": "Hesburger Oulu Linnanmaa",
+  "lat": 65.054173,
+  "lng": 25.456503,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/hesburger-oulu-linnanmaa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-limingantulli-oulu",
+  "name": "Pizza & Buffa Limingantulli, Oulu",
+  "lat": 64.9943,
+  "lng": 25.461867,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/pizza-buffa-limingantulli-oulu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-linnanmaa-oulu",
+  "name": "Pizza & Buffa Linnanmaa, Oulu",
+  "lat": 65.054173,
+  "lng": 25.456503,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/pizza-buffa-linnanmaa-oulu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-limingantulli-oulu",
+  "name": "Presso Limingantulli, Oulu",
+  "lat": 64.9943,
+  "lng": 25.461867,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/presso-limingantulli-oulu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-linnanmaa-oulu",
+  "name": "Presso Linnanmaa, Oulu",
+  "lat": 65.054173,
+  "lng": 25.456503,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/presso-linnanmaa-oulu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:puistokahvila-makia",
+  "name": "Puistokahvila Makia",
+  "lat": 65.0121,
+  "lng": 25.474206,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/puistokahvila-makia"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:yksityistilaisuudet",
+  "name": "S-Card",
+  "lat": 65.0121,
+  "lng": 25.474206,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/puistokahvila-makia/sivu/yksityistilaisuudet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:radisson-blu-oulu-kokous-ja-juhlatilat",
+  "name": "Radisson Blu Oulu kokous- ja juhlatilat",
+  "lat": 65.015317,
+  "lng": 25.465939,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/radisson-blu-oulu-kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:haat-radisson-blu-oulussa",
+  "name": "Häät Radisson Blu Hotel Oulussa",
+  "lat": 65.015317,
+  "lng": 25.465939,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/radisson-blu-oulu-kokous-ja-juhlatilat/sivu/haat-radisson-blu-oulussa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ravintola-robsons",
+  "name": "Ravintola Robson´s",
+  "lat": 64.994159,
+  "lng": 25.457829,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/ravintola-robsons"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:supermeeting",
+  "name": "SuperMeeting – kokoukset ja seminaarit",
+  "lat": 64.994159,
+  "lng": 25.457829,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/ravintola-robsons/sivu/supermeeting"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:restaurant-ule",
+  "name": "Restaurant Ule",
+  "lat": 65.0155249,
+  "lng": 25.4672287,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/restaurant-ule"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-oulu",
+  "name": "Rosso, Oulu",
+  "lat": 65.011532,
+  "lng": 25.472181,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/rosso-oulu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tilausravintola-veranta",
+  "name": "Tilausravintola Veranta",
+  "lat": 65.012005,
+  "lng": 25.4738,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/tilausravintola-veranta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:asiakaspalautteet",
+  "name": "Asiakaspalautteet",
+  "lat": 65.012005,
+  "lng": 25.4738,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/tilausravintola-veranta/sivu/asiakaspalautteet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:venn-oulu",
+  "name": "VENN Oulu",
+  "lat": 65.0123114,
+  "lng": 25.4725692,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/venn-oulu"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:yksityistilaisuudet",
+  "name": "Yksityistilaisuudet",
+  "lat": 65.0123114,
+  "lng": 25.4725692,
+  "city": "oulu",
+  "url": "https://www.raflaamo.fi/fi/ravintola/oulu/venn-oulu/sivu/yksityistilaisuudet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ukko-bistro-deli",
+  "name": "UKKO Bistro & Deli",
+  "lat": 62.299145,
+  "lng": 27.164043,
+  "city": "pieksamaki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pieksamaki/ukko-bistro-deli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokoukset-ja-juhlat",
+  "name": "UKKO Bistro & Delin kokous- ja juhlatilat",
+  "lat": 62.299145,
+  "lng": 27.164043,
+  "city": "pieksamaki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pieksamaki/ukko-bistro-deli/sivu/kokoukset-ja-juhlat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-pori",
+  "name": "Amarillo, Pori",
+  "lat": 61.487197,
+  "lng": 21.794302,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/amarillo-pori"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coffee-house-pori",
+  "name": "Coffee House, Pori",
+  "lat": 61.483796,
+  "lng": 21.798258,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/coffee-house-pori"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-mikkola",
+  "name": "Hesburger Prisma Mikkola",
+  "lat": 61.455681,
+  "lng": 21.840016,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/hesburger-prisma-mikkola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-mikkola-pori",
+  "name": "Pizza & Buffa Prisma Mikkola, Pori",
+  "lat": 61.45372,
+  "lng": 21.83825,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/pizza-buffa-prisma-mikkola-pori"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:lasten-synttarit",
+  "name": "S-Card",
+  "lat": 61.45372,
+  "lng": 21.83825,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/pizza-buffa-prisma-mikkola-pori/sivu/lasten-synttarit"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ryhmaruokailut",
+  "name": "S-Card",
+  "lat": 61.45372,
+  "lng": 21.83825,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/pizza-buffa-prisma-mikkola-pori/sivu/ryhmaruokailut"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:porin-vaakunan-kokous-ja-juhlapalvelut",
+  "name": "Porin Vaakunan kokous- ja juhlapalvelut",
+  "lat": 61.487197,
+  "lng": 21.794302,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/porin-vaakunan-kokous-ja-juhlapalvelut"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:aamiainen",
+  "name": "Aamiainen",
+  "lat": 61.487197,
+  "lng": 21.794302,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/porin-vaakunan-kokous-ja-juhlapalvelut/sivu/aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-ja-juhlatilat",
+  "name": "S-Card",
+  "lat": 61.487197,
+  "lng": 21.794302,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/porin-vaakunan-kokous-ja-juhlapalvelut/sivu/kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-mikkola-pori",
+  "name": "Presso Prisma Mikkola, Pori",
+  "lat": 61.455681,
+  "lng": 21.840016,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/presso-prisma-mikkola-pori"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-pori",
+  "name": "Rosso, Pori",
+  "lat": 61.487393,
+  "lng": 21.796132,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/rosso-pori"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:torero-pori",
+  "name": "Torero Pori",
+  "lat": 61.486027,
+  "lng": 21.798035,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/torero-pori"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:porin-toreron-kabinetti",
+  "name": "Porin Toreron viihtyisä kabinetti",
+  "lat": 61.486027,
+  "lng": 21.798035,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/torero-pori/sivu/porin-toreron-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:winston-live",
+  "name": "Winston Live",
+  "lat": 61.486811,
+  "lng": 21.794329,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/winston-live"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:keikat",
+  "name": "Keikat",
+  "lat": 61.486811,
+  "lng": 21.794329,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/winston-live/sivu/keikat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:winston-pori",
+  "name": "Winston, Pori",
+  "lat": 61.486811,
+  "lng": 21.794329,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/winston-pori"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:winston-sauna",
+  "name": "Winston sauna",
+  "lat": 61.486811,
+  "lng": 21.794329,
+  "city": "pori",
+  "url": "https://www.raflaamo.fi/fi/ravintola/pori/winston-pori/sivu/winston-sauna"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-porvoo",
+  "name": "Amarillo, Porvoo",
+  "lat": 60.3942202,
+  "lng": 25.6595974,
+  "city": "porvoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/porvoo/amarillo-porvoo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bacaro-doppio-porvoo",
+  "name": "Bacaro Doppio Porvoo",
+  "lat": 60.388149,
+  "lng": 25.659491,
+  "city": "porvoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/porvoo/bacaro-doppio-porvoo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-porvoo",
+  "name": "Rosso, Porvoo",
+  "lat": 60.392679,
+  "lng": 25.660067,
+  "city": "porvoo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/porvoo/rosso-porvoo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-raahe",
+  "name": "Pizza & Buffa, Raahe",
+  "lat": 64.6679293,
+  "lng": 24.4861094,
+  "city": "raahe",
+  "url": "https://www.raflaamo.fi/fi/ravintola/raahe/pizza-buffa-raahe"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-raahe",
+  "name": "Presso, Raahe",
+  "lat": 64.6679293,
+  "lng": 24.4861094,
+  "city": "raahe",
+  "url": "https://www.raflaamo.fi/fi/ravintola/raahe/presso-raahe"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-mylly-raisio",
+  "name": "Amarillo Mylly, Raisio",
+  "lat": 60.491516,
+  "lng": 22.198817,
+  "city": "raisio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/raisio/amarillo-mylly-raisio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coffee-house-mylly-raisio",
+  "name": "Coffee House Mylly, Raisio",
+  "lat": 60.491516,
+  "lng": 22.198817,
+  "city": "raisio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/raisio/coffee-house-mylly-raisio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-mylly-raisio",
+  "name": "Hesburger Mylly, Raisio",
+  "lat": 60.490925,
+  "lng": 22.196152,
+  "city": "raisio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/raisio/hesburger-mylly-raisio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kulman-kuppila",
+  "name": "Kulman Kuppila",
+  "lat": 60.490907,
+  "lng": 22.196629,
+  "city": "raisio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/raisio/kulman-kuppila"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-mylly-raisio",
+  "name": "Rosso Mylly, Raisio",
+  "lat": 60.491516,
+  "lng": 22.198817,
+  "city": "raisio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/raisio/rosso-mylly-raisio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tsiken-mylly-raisio",
+  "name": "Tsiken Mylly, Raisio",
+  "lat": 60.491516,
+  "lng": 22.198817,
+  "city": "raisio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/raisio/tsiken-mylly-raisio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-rauma",
+  "name": "Amarillo, Rauma",
+  "lat": 61.128544,
+  "lng": 21.507552,
+  "city": "rauma",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rauma/amarillo-rauma"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "AMARILLON KABINETTI",
+  "lat": 61.128544,
+  "lng": 21.507552,
+  "city": "rauma",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rauma/amarillo-rauma/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-rauma",
+  "name": "Hesburger Prisma Rauma",
+  "lat": 61.132145,
+  "lng": 21.515558,
+  "city": "rauma",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rauma/hesburger-prisma-rauma"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-rauma-prisma",
+  "name": "Pizza & Buffa Rauma, Prisma",
+  "lat": 61.132145,
+  "lng": 21.515558,
+  "city": "rauma",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rauma/pizza-buffa-rauma-prisma"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-ayho-rauma",
+  "name": "Presso Äyhö, Rauma",
+  "lat": 61.132325,
+  "lng": 21.540847,
+  "city": "rauma",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rauma/presso-ayho-rauma"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-rauma",
+  "name": "Presso Prisma, Rauma",
+  "lat": 61.132145,
+  "lng": 21.515558,
+  "city": "rauma",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rauma/presso-prisma-rauma"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-rauma",
+  "name": "Rosso Rauma",
+  "lat": 61.1284281,
+  "lng": 21.5070751,
+  "city": "rauma",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rauma/rosso-rauma"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-riihimaki",
+  "name": "Hesburger Prisma, Riihimäki",
+  "lat": 60.731166,
+  "lng": 24.776565,
+  "city": "riihimaki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/riihimaki/hesburger-prisma-riihimaki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-riihimaki",
+  "name": "Pizza & Buffa Prisma, Riihimäki",
+  "lat": 60.729979,
+  "lng": 24.775859,
+  "city": "riihimaki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/riihimaki/pizza-buffa-prisma-riihimaki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:prisma-cafe-riihimaki",
+  "name": "Prisma Café Riihimäki",
+  "lat": 60.729979,
+  "lng": 24.775859,
+  "city": "riihimaki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/riihimaki/prisma-cafe-riihimaki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-rovaniemi",
+  "name": "Amarillo, Rovaniemi",
+  "lat": 66.502031,
+  "lng": 25.735606,
+  "city": "rovaniemi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rovaniemi/amarillo-rovaniemi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coffee-house-rovaniemi",
+  "name": "Coffee House, Rovaniemi",
+  "lat": 66.502216,
+  "lng": 25.730788,
+  "city": "rovaniemi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rovaniemi/coffee-house-rovaniemi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:frans-cherie-rovaniemi",
+  "name": "Frans & Chérie, Rovaniemi",
+  "lat": 66.501964,
+  "lng": 25.736284,
+  "city": "rovaniemi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rovaniemi/frans-cherie-rovaniemi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "S-Card",
+  "lat": 66.501964,
+  "lng": 25.736284,
+  "city": "rovaniemi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rovaniemi/frans-cherie-rovaniemi/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-rovaniemi",
+  "name": "Hesburger Rovaniemi",
+  "lat": 66.492037,
+  "lng": 25.689618,
+  "city": "rovaniemi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rovaniemi/hesburger-rovaniemi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-rovaniemi",
+  "name": "Pizza & Buffa, Rovaniemi",
+  "lat": 66.492037,
+  "lng": 25.689618,
+  "city": "rovaniemi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rovaniemi/pizza-buffa-rovaniemi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-rovaniemi",
+  "name": "Presso, Rovaniemi",
+  "lat": 66.492037,
+  "lng": 25.689618,
+  "city": "rovaniemi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rovaniemi/presso-rovaniemi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-rovaniemi",
+  "name": "Rosso, Rovaniemi",
+  "lat": 66.502216,
+  "lng": 25.730788,
+  "city": "rovaniemi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rovaniemi/rosso-rovaniemi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:uitto-pub-rovaniemi",
+  "name": "Uitto Pub, Rovaniemi",
+  "lat": 66.502071,
+  "lng": 25.730683,
+  "city": "rovaniemi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rovaniemi/uitto-pub-rovaniemi"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:yksityistilaisuudet",
+  "name": "Rohki hyvät juhlat ja palaverit Uitossa!",
+  "lat": 66.502071,
+  "lng": 25.730683,
+  "city": "rovaniemi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/rovaniemi/uitto-pub-rovaniemi/sivu/yksityistilaisuudet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:antonio-salo",
+  "name": "Antonio Salo",
+  "lat": 60.386449,
+  "lng": 23.124851,
+  "city": "salo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/salo/antonio-salo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:figaro",
+  "name": "Figaro",
+  "lat": 60.386289,
+  "lng": 23.125233,
+  "city": "salo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/salo/figaro"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-halikko",
+  "name": "Hesburger Prisma Halikko",
+  "lat": 60.393708,
+  "lng": 23.085545,
+  "city": "salo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/salo/hesburger-prisma-halikko"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-halikko",
+  "name": "Pizza & Buffa Prisma, Halikko",
+  "lat": 60.393708,
+  "lng": 23.085545,
+  "city": "salo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/salo/pizza-buffa-prisma-halikko"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-halikko",
+  "name": "Presso Prisma, Halikko",
+  "lat": 60.393708,
+  "lng": 23.085545,
+  "city": "salo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/salo/presso-prisma-halikko"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ravintola-rikala",
+  "name": "Ravintola Rikala",
+  "lat": 60.387497,
+  "lng": 23.127522,
+  "city": "salo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/salo/ravintola-rikala"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Juhlat ja kokoukset",
+  "lat": 60.387497,
+  "lng": 23.127522,
+  "city": "salo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/salo/ravintola-rikala/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rikalan-aamiainen",
+  "name": "Original Sokos Hotel Rikalan hotelliaamiainen",
+  "lat": 60.387497,
+  "lng": 23.127522,
+  "city": "salo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/salo/ravintola-rikala/sivu/rikalan-aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:liikenneasema-haijaa-sastamala-ravintola",
+  "name": "Liikenneasema Häijää Sastamala ravintola",
+  "lat": 61.500973,
+  "lng": 23.090807,
+  "city": "sastamala",
+  "url": "https://www.raflaamo.fi/fi/ravintola/sastamala/liikenneasema-haijaa-sastamala-ravintola"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:cafe-mertala",
+  "name": "Cafe Mertala",
+  "lat": 61.865944,
+  "lng": 28.941552,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/cafe-mertala"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ryhmaruokailut",
+  "name": "Ryhmäruokailut",
+  "lat": 61.865944,
+  "lng": 28.941552,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/cafe-mertala/sivu/ryhmaruokailut"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:seniorilounas",
+  "name": "Seniorilounas",
+  "lat": 61.865944,
+  "lng": 28.941552,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/cafe-mertala/sivu/seniorilounas"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-ja-tapahtumatila-luoto",
+  "name": "Kokous- ja tapahtumatila Luoto",
+  "lat": 61.868,
+  "lng": 28.885969,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/kokous-ja-tapahtumatila-luoto"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:joululounas",
+  "name": "Luodon joululounas on katettu sinua varten!",
+  "lat": 61.868,
+  "lng": 28.885969,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/kokous-ja-tapahtumatila-luoto/sivu/joululounas"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pikkuiset-joulut-26",
+  "name": "Tervetuloa tonttuilemaan!",
+  "lat": 61.868,
+  "lng": 28.885969,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/kokous-ja-tapahtumatila-luoto/sivu/pikkuiset-joulut-26"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:muikkuterassi-savonlinna",
+  "name": "Muikkuterassi Savonlinna",
+  "lat": 61.867811,
+  "lng": 28.886661,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/muikkuterassi-savonlinna"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:terassin-kabinetti",
+  "name": "Varattavissa pienille ryhmille",
+  "lat": 61.867811,
+  "lng": 28.886661,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/muikkuterassi-savonlinna/sivu/terassin-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:yksityistilaisuudet",
+  "name": "Kesän herkullisin juhlapaikka!",
+  "lat": 61.867811,
+  "lng": 28.886661,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/muikkuterassi-savonlinna/sivu/yksityistilaisuudet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:olavinlinna-ravintolat",
+  "name": "Olavinlinna ravintolat",
+  "lat": 61.863908,
+  "lng": 28.900903,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/olavinlinna-ravintolat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlatilat-haat",
+  "name": "Juhlatilat",
+  "lat": 61.863908,
+  "lng": 28.900903,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/olavinlinna-ravintolat/sivu/juhlatilat-haat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:perlina-di-castello",
+  "name": "Perlina di Castello",
+  "lat": 61.867811,
+  "lng": 28.886661,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/perlina-di-castello"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Juhlat ja kokoukset",
+  "lat": 61.867811,
+  "lng": 28.886661,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/perlina-di-castello/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:yksityistilaisuudet",
+  "name": "Sinun juhlat, meidän ravintolassamme.",
+  "lat": 61.867811,
+  "lng": 28.886661,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/perlina-di-castello/sivu/yksityistilaisuudet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-savonlinna",
+  "name": "Presso Prisma, Savonlinna",
+  "lat": 61.87528,
+  "lng": 28.94973,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/presso-prisma-savonlinna"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ravintola-majakka",
+  "name": "Ravintola Majakka",
+  "lat": 61.867379,
+  "lng": 28.886102,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/ravintola-majakka"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:majakan-historia",
+  "name": "Majakan historia",
+  "lat": 61.867379,
+  "lng": 28.886102,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/ravintola-majakka/sivu/majakan-historia"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-pizza-savonlinna",
+  "name": "Rosso Pizza, Savonlinna",
+  "lat": 61.87528,
+  "lng": 28.94973,
+  "city": "savonlinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/savonlinna/rosso-pizza-savonlinna"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-seinajoki",
+  "name": "Amarillo, Seinäjoki",
+  "lat": 62.788479,
+  "lng": 22.839326,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/amarillo-seinajoki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-ja-saunatilat",
+  "name": "Kokous- ja saunatilat",
+  "lat": 62.788479,
+  "lng": 22.839326,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/amarillo-seinajoki/sivu/kokous-ja-saunatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-seinajoki",
+  "name": "Hesburger Prisma, Seinäjoki",
+  "lat": 62.806041,
+  "lng": 22.877545,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/hesburger-prisma-seinajoki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:karma",
+  "name": "Karma",
+  "lat": 62.7886,
+  "lng": 22.839761,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/karma"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Karma",
+  "lat": 62.7886,
+  "lng": 22.839761,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/karma/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-original-sokos-hotel-lakeus",
+  "name": "Kokous, Original Sokos Hotel Lakeus",
+  "lat": 62.7884721,
+  "lng": 22.8473955,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/kokous-original-sokos-hotel-lakeus"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:aamiainen",
+  "name": "Lakeuden aamiainen",
+  "lat": 62.7884721,
+  "lng": 22.8473955,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/kokous-original-sokos-hotel-lakeus/sivu/aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-ja-saunatilat",
+  "name": "Kokous- ja saunatilat",
+  "lat": 62.7884721,
+  "lng": 22.8473955,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/kokous-original-sokos-hotel-lakeus/sivu/kokous-ja-saunatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-original-sokos-hotel-vaakuna-seinajoki",
+  "name": "Kokous, Original Sokos Hotel Vaakuna Seinäjoki",
+  "lat": 62.788254,
+  "lng": 22.839299,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/kokous-original-sokos-hotel-vaakuna-seinajoki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:aamiainen",
+  "name": "Vaakunan aamiainen",
+  "lat": 62.788254,
+  "lng": 22.839299,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/kokous-original-sokos-hotel-vaakuna-seinajoki/sivu/aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-ja-saunatilat",
+  "name": "Kokous- ja saunatilat",
+  "lat": 62.788254,
+  "lng": 22.839299,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/kokous-original-sokos-hotel-vaakuna-seinajoki/sivu/kokous-ja-saunatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:lakeus-matador-seinajoki",
+  "name": "Lakeus Matador Seinäjoki",
+  "lat": 62.78881,
+  "lng": 22.847149,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/lakeus-matador-seinajoki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Perhe- tai yritysjuhlat",
+  "lat": 62.78881,
+  "lng": 22.847149,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/lakeus-matador-seinajoki/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:lakeuden-aamiainen",
+  "name": "Lakeuden aamiainen",
+  "lat": 62.78881,
+  "lng": 22.847149,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/lakeus-matador-seinajoki/sivu/lakeuden-aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:mestari-seinajoki",
+  "name": "Mestari Seinäjoki",
+  "lat": 62.805505600000004,
+  "lng": 22.8749602,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/mestari-seinajoki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-seinajoki",
+  "name": "Pizza & Buffa Prisma, Seinäjoki",
+  "lat": 62.806041,
+  "lng": 22.877545,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/pizza-buffa-prisma-seinajoki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ryhmaedut",
+  "name": "Ryhmäedut",
+  "lat": 62.806041,
+  "lng": 22.877545,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/pizza-buffa-prisma-seinajoki/sivu/ryhmaedut"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-seinajoki",
+  "name": "Presso Prisma, Seinäjoki",
+  "lat": 62.806041,
+  "lng": 22.877545,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/presso-prisma-seinajoki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-pizza-seinajoki",
+  "name": "Rosso Pizza, Seinäjoki",
+  "lat": 62.7756447,
+  "lng": 22.851721,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/rosso-pizza-seinajoki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-seinajoki",
+  "name": "Rosso, Seinäjoki",
+  "lat": 62.789856,
+  "lng": 22.840584,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/rosso-seinajoki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Juhlat ja kokoukset",
+  "lat": 62.789856,
+  "lng": 22.840584,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/rosso-seinajoki/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:talriikki-seinajoki",
+  "name": "Talriikki, Seinäjoki",
+  "lat": 62.7886,
+  "lng": 22.839761,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/talriikki-seinajoki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-ja-saunatilat",
+  "name": "Kokous- ja saunatilat",
+  "lat": 62.7886,
+  "lng": 22.839761,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/talriikki-seinajoki/sivu/kokous-ja-saunatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:vaakunan-aamiainen",
+  "name": "Vaakunan aamiainen",
+  "lat": 62.7886,
+  "lng": 22.839761,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/talriikki-seinajoki/sivu/vaakunan-aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:wilson-pub-seinajoki",
+  "name": "Wilson Pub Seinäjoki",
+  "lat": 62.788627,
+  "lng": 22.847351,
+  "city": "seinajoki",
+  "url": "https://www.raflaamo.fi/fi/ravintola/seinajoki/wilson-pub-seinajoki"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-vuokatti",
+  "name": "Amarillo, Vuokatti",
+  "lat": 64.140778,
+  "lng": 28.293328,
+  "city": "sotkamo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/sotkamo/amarillo-vuokatti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ravintola-kippo",
+  "name": "Ravintola Kippo",
+  "lat": 64.140778,
+  "lng": 28.293328,
+  "city": "sotkamo",
+  "url": "https://www.raflaamo.fi/fi/ravintola/sotkamo/ravintola-kippo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-viru-tallinna",
+  "name": "Amarillo Viru, Tallinna",
+  "lat": 59.43681,
+  "lng": 24.75386,
+  "city": "tallinna",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tallinna/amarillo-viru-tallinna"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-ilves-tampere",
+  "name": "Amarillo Ilves, Tampere",
+  "lat": 61.495745,
+  "lng": 23.76842,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/amarillo-ilves-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bacaro-doppio-tampere",
+  "name": "Bacaro Doppio Tampere",
+  "lat": 61.497417,
+  "lng": 23.757534,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/bacaro-doppio-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:baonami",
+  "name": "Baonami",
+  "lat": 61.497417,
+  "lng": 23.757534,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/baonami"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ryhmat",
+  "name": "Ryhmävaraukset ja yksityistilaisuudet",
+  "lat": 61.497417,
+  "lng": 23.757534,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/baonami/sivu/ryhmat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coffee-house-tampere",
+  "name": "Coffee House, Tampere",
+  "lat": 61.498084,
+  "lng": 23.768235,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/coffee-house-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:grill-it-paja-tampere",
+  "name": "Grill it! Paja, Tampere",
+  "lat": 61.49714,
+  "lng": 23.774965,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/grill-it-paja-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-tampere-prisma-kaleva",
+  "name": "Hesburger Tampere, Prisma Kaleva",
+  "lat": 61.492225,
+  "lng": 23.819196,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/hesburger-tampere-prisma-kaleva"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-tampere-prisma-koivistonkyla",
+  "name": "Hesburger Tampere, Prisma Koivistonkylä",
+  "lat": 61.469307,
+  "lng": 23.778428,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/hesburger-tampere-prisma-koivistonkyla"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-tampere-prisma-lielahti",
+  "name": "Hesburger Tampere, Prisma Lielahti",
+  "lat": 61.520115,
+  "lng": 23.664539,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/hesburger-tampere-prisma-lielahti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-tampere-prisma-linnainmaa",
+  "name": "Hesburger Tampere, Prisma Linnainmaa",
+  "lat": 61.495689,
+  "lng": 23.882015,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/hesburger-tampere-prisma-linnainmaa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hovipoika",
+  "name": "Hovipoika",
+  "lat": 61.497137,
+  "lng": 23.761209,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/hovipoika"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ilves-bar-night",
+  "name": "Ilves Bar & Night",
+  "lat": 61.495745,
+  "lng": 23.76842,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/ilves-bar-night"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:jaatelokahvila-prisma-kaleva-tampere",
+  "name": "Jäätelökahvila, Prisma Kaleva, Tampere",
+  "lat": 61.491537,
+  "lng": 23.821013,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/jaatelokahvila-prisma-kaleva-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:jaatelokahvila-prisma-lielahti-tampere",
+  "name": "Jäätelökahvila, Prisma Lielahti, Tampere",
+  "lat": 61.520307,
+  "lng": 23.666034,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/jaatelokahvila-prisma-lielahti-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhla-ja-kokoustila-ball-room",
+  "name": "Juhla- ja kokoustila Ball Room",
+  "lat": 61.4962768,
+  "lng": 23.7665479,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/juhla-ja-kokoustila-ball-room"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kortteliravintola-kalevan-hertta-tampere",
+  "name": "Kortteliravintola Kalevan Hertta Tampere",
+  "lat": 61.4994552,
+  "lng": 23.7877491,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/kortteliravintola-kalevan-hertta-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:las-palmas-tampere",
+  "name": "Las Palmas Tampere",
+  "lat": 61.497143,
+  "lng": 23.761472,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/las-palmas-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:moro-sky-bar",
+  "name": "Moro Sky Bar",
+  "lat": 61.49714,
+  "lng": 23.774965,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/moro-sky-bar"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:original-sokos-hotel-ilveksen-aamiainen",
+  "name": "Original Sokos Hotel Ilveksen aamiainen",
+  "lat": 61.4963481,
+  "lng": 23.7665904,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/original-sokos-hotel-ilveksen-aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kabinetti",
+  "name": "Varaa kabinetti aamiaiselle",
+  "lat": 61.4963481,
+  "lng": 23.7665904,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/original-sokos-hotel-ilveksen-aamiainen/sivu/kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:osuusravintola-oksa-koivistonkyla-tampere",
+  "name": "Osuusravintola Oksa Koivistonkylä, Tampere",
+  "lat": 61.469298,
+  "lng": 23.77841,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/osuusravintola-oksa-koivistonkyla-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:osuusravintola-oksa-linnainmaa-tampere",
+  "name": "Osuusravintola Oksa Linnainmaa, Tampere",
+  "lat": 61.495355,
+  "lng": 23.881402,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/osuusravintola-oksa-linnainmaa-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:paja-bar",
+  "name": "Paja Bar",
+  "lat": 61.49714,
+  "lng": 23.774965,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/paja-bar"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-abc-lahdesjarvi-tampere",
+  "name": "Pizza & Buffa ABC Lahdesjärvi, Tampere",
+  "lat": 61.4595983,
+  "lng": 23.787754,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/pizza-buffa-abc-lahdesjarvi-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-kaleva-tampere",
+  "name": "Pizza & Buffa Prisma Kaleva, Tampere",
+  "lat": 61.491657000000004,
+  "lng": 23.820644,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/pizza-buffa-prisma-kaleva-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-linnainmaa-tampere",
+  "name": "Pizza & Buffa Prisma Linnainmaa, Tampere",
+  "lat": 61.495355,
+  "lng": 23.881402,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/pizza-buffa-prisma-linnainmaa-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-kaleva-tampere",
+  "name": "Presso Prisma Kaleva, Tampere",
+  "lat": 61.491676,
+  "lng": 23.82068,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/presso-prisma-kaleva-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pub-ukko-nooa",
+  "name": "Pub Ukko Nooa",
+  "lat": 61.495745,
+  "lng": 23.76842,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/pub-ukko-nooa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:puisto",
+  "name": "Puisto",
+  "lat": 61.498151,
+  "lng": 23.764599,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/puisto"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kahvila",
+  "name": "Kahvila",
+  "lat": 61.498151,
+  "lng": 23.764599,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/puisto/sivu/kahvila"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-kabinetti",
+  "name": "Kokoukset ja juhlat",
+  "lat": 61.498151,
+  "lng": 23.764599,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/puisto/sivu/kokous-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:radisson-blu-tammer-kokous-ja-juhlatilat",
+  "name": "Radisson Blu Tammer kokous- ja juhlatilat",
+  "lat": 61.50126,
+  "lng": 23.765779,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/radisson-blu-tammer-kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:haat-tammerissa",
+  "name": "S-Card",
+  "lat": 61.50126,
+  "lng": 23.765779,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/radisson-blu-tammer-kokous-ja-juhlatilat/sivu/haat-tammerissa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-ilves-tampere",
+  "name": "Rosso Ilves, Tampere",
+  "lat": 61.495745,
+  "lng": 23.76842,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/rosso-ilves-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-kabinetti",
+  "name": "Rosso-kabinetti",
+  "lat": 61.495745,
+  "lng": 23.76842,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/rosso-ilves-tampere/sivu/rosso-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:siipiweikot-mini-prisma-lielahti-tampere",
+  "name": "Siipiweikot Mini, Prisma Lielahti, Tampere",
+  "lat": 61.51911,
+  "lng": 23.665286000000002,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/siipiweikot-mini-prisma-lielahti-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:sokos4-ravintolamaailma",
+  "name": "Sokos4 Ravintolamaailma",
+  "lat": 61.497417,
+  "lng": 23.757534,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/sokos4-ravintolamaailma"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokoustilatkabinetit",
+  "name": "Sokos4 Kabinetit - Tilat kokouksiin ja juhliin!",
+  "lat": 61.497417,
+  "lng": 23.757534,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/sokos4-ravintolamaailma/sivu/kokoustilatkabinetit"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:viikon-salaatit",
+  "name": "Viikon salaatit",
+  "lat": 61.497417,
+  "lng": 23.757534,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/sokos4-ravintolamaailma/sivu/viikon-salaatit"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tammerin-kellari",
+  "name": "Tammerin Kellari",
+  "lat": 61.50126,
+  "lng": 23.765779,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/tammerin-kellari"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tiikerihai-tampere",
+  "name": "Tiikerihai Tampere",
+  "lat": 61.4982248,
+  "lng": 23.7696709,
+  "city": "tampere",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tampere/tiikerihai-tampere"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-tornio",
+  "name": "Pizza & Buffa, Tornio",
+  "lat": 65.843032,
+  "lng": 24.195901,
+  "city": "tornio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tornio/pizza-buffa-tornio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-tornio",
+  "name": "Presso, Tornio",
+  "lat": 65.843032,
+  "lng": 24.195901,
+  "city": "tornio",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tornio/presso-tornio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bar-edison-turku",
+  "name": "Bar Edison Turku",
+  "lat": 60.450655,
+  "lng": 22.269713,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/bar-edison-turku"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:varaa-tila",
+  "name": "Varaa tila Bar Edisonista",
+  "lat": 60.450655,
+  "lng": 22.269713,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/bar-edison-turku/sivu/varaa-tila"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bistro-elli",
+  "name": "Bistro Elli",
+  "lat": 60.450792,
+  "lng": 22.295863,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/bistro-elli"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:deli-kuppis-kupittaa",
+  "name": "Deli & Kuppis Rooftop Bar",
+  "lat": 60.450792,
+  "lng": 22.295863,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/bistro-elli/sivu/deli-kuppis-kupittaa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Juhlat ja kokoukset",
+  "lat": 60.450792,
+  "lng": 22.295863,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/bistro-elli/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coffee-house-wiklund-turku",
+  "name": "Coffee House Wiklund, Turku",
+  "lat": 60.451612,
+  "lng": 22.269064,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/coffee-house-wiklund-turku"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:grill-it-marina-turku",
+  "name": "Grill it! Marina, Turku",
+  "lat": 60.446772,
+  "lng": 22.259633,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/grill-it-marina-turku"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "Juhlat ja kokoukset",
+  "lat": 60.446772,
+  "lng": 22.259633,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/grill-it-marina-turku/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-itaharju-prisma-turku",
+  "name": "Hesburger, Itäharju, Prisma (Turku)",
+  "lat": 60.446045,
+  "lng": 22.323349,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/hesburger-itaharju-prisma-turku"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-tampereentie-prisma-turku",
+  "name": "Hesburger Tampereentie Prisma Turku",
+  "lat": 60.474374,
+  "lng": 22.286471,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/hesburger-tampereentie-prisma-turku"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-wiklund-turku",
+  "name": "Hesburger Wiklund, Turku",
+  "lat": 60.4516274,
+  "lng": 22.2683968,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/hesburger-wiklund-turku"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-wiklundin-wirta-turku",
+  "name": "Kokous, Wiklundin Wirta, Turku",
+  "lat": 60.451612,
+  "lng": 22.269064,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/kokous-wiklundin-wirta-turku"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:wauditorio",
+  "name": "Wauditorio",
+  "lat": 60.451612,
+  "lng": 22.269064,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/kokous-wiklundin-wirta-turku/sivu/wauditorio"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kuppis-rooftop-bar",
+  "name": "Kuppis Rooftop Bar",
+  "lat": 60.450297,
+  "lng": 22.295846,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/kuppis-rooftop-bar"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:original-sokos-hotel-kupittaa-aamiainen",
+  "name": "Original Sokos Hotel Kupittaa, aamiainen",
+  "lat": 60.4506812,
+  "lng": 22.2961049,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/original-sokos-hotel-kupittaa-aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:original-sokos-hotel-wiklund-aamiainen",
+  "name": "Original Sokos Hotel Wiklund, aamiainen",
+  "lat": 60.451612,
+  "lng": 22.269064,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/original-sokos-hotel-wiklund-aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:radisson-blu-marina-palace-hotel-turku-aamiainen",
+  "name": "Radisson Blu Marina Palace Hotel, Turku aamiainen",
+  "lat": 60.446772,
+  "lng": 22.259633,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/radisson-blu-marina-palace-hotel-turku-aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:radisson-blu-marina-palace-turku-kokous-ja-juhlatilat",
+  "name": "Radisson Blu Marina Palace, Turku kokous- ja juhlatilat",
+  "lat": 60.446772,
+  "lng": 22.259633,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/radisson-blu-marina-palace-turku-kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-kokoukset",
+  "name": "S-Card",
+  "lat": 60.446772,
+  "lng": 22.259633,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/radisson-blu-marina-palace-turku-kokous-ja-juhlatilat/sivu/juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:submarina",
+  "name": "Submarina",
+  "lat": 60.446772,
+  "lng": 22.259633,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/radisson-blu-marina-palace-turku-kokous-ja-juhlatilat/sivu/submarina"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ravintola-gunnar",
+  "name": "Ravintola Gunnar",
+  "lat": 60.448941,
+  "lng": 22.260954,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/ravintola-gunnar"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:bar-gunnar-ja-backyard",
+  "name": "Bar & Backyard",
+  "lat": 60.448941,
+  "lng": 22.260954,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/ravintola-gunnar/sivu/bar-gunnar-ja-backyard"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:gunnar-juhlat-kokoukset",
+  "name": "Juhlat ja kokoukset",
+  "lat": 60.448941,
+  "lng": 22.260954,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/ravintola-gunnar/sivu/gunnar-juhlat-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:runostuoppi-turku",
+  "name": "Runostuoppi, Turku",
+  "lat": 60.48918,
+  "lng": 22.260592,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/runostuoppi-turku"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:solo-sokos-hotel-turun-seurahuone-aamiainen",
+  "name": "Solo Sokos Hotel Turun Seurahuone, aamiainen",
+  "lat": 60.448871,
+  "lng": 22.261001,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/solo-sokos-hotel-turun-seurahuone-aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:trattoria-wiklund-turku",
+  "name": "Trattoria Wiklund, Turku",
+  "lat": 60.451612,
+  "lng": 22.269064,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/trattoria-wiklund-turku"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:walo-rooftop-bar",
+  "name": "Walo Rooftop Bar",
+  "lat": 60.451612,
+  "lng": 22.269064,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/walo-rooftop-bar"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:yksityistilaisuudet",
+  "name": "Yksityistilaisuudet",
+  "lat": 60.451612,
+  "lng": 22.269064,
+  "city": "turku",
+  "url": "https://www.raflaamo.fi/fi/ravintola/turku/walo-rooftop-bar/sivu/yksityistilaisuudet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-tuusula",
+  "name": "Presso Tuusula",
+  "lat": 60.4023703,
+  "lng": 25.0263395,
+  "city": "tuusula",
+  "url": "https://www.raflaamo.fi/fi/ravintola/tuusula/presso-tuusula"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:abc-hesburger-ulvila-drive-in",
+  "name": "ABC Hesburger Ulvila Drive-In",
+  "lat": 61.426561,
+  "lng": 21.869489,
+  "city": "ulvila",
+  "url": "https://www.raflaamo.fi/fi/ravintola/ulvila/abc-hesburger-ulvila-drive-in"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-vaasa",
+  "name": "Amarillo, Vaasa",
+  "lat": 63.095145,
+  "lng": 21.617488,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/amarillo-vaasa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-liisanlehto-vaasa",
+  "name": "Hesburger Prisma Liisanlehto, Vaasa",
+  "lat": 63.072657,
+  "lng": 21.699545,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/hesburger-prisma-liisanlehto-vaasa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-vaasa-prisma-kotiranta",
+  "name": "Hesburger Vaasa, Prisma Kotiranta",
+  "lat": 63.103185,
+  "lng": 21.646336,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/hesburger-vaasa-prisma-kotiranta"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:irish-pub-omalleys-vaasa",
+  "name": "Irish Pub O&#x27;Malley&#x27;s, Vaasa",
+  "lat": 63.09728,
+  "lng": 21.618978,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/irish-pub-omalleys-vaasa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-original-sokos-hotel-vaakuna-vaasa",
+  "name": "Kokous, Original Sokos Hotel Vaakuna Vaasa",
+  "lat": 63.095317,
+  "lng": 21.614915,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/kokous-original-sokos-hotel-vaakuna-vaasa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlatilat",
+  "name": "Juhlatilat",
+  "lat": 63.095317,
+  "lng": 21.614915,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/kokous-original-sokos-hotel-vaakuna-vaasa/sivu/juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-ja-saunatilat",
+  "name": "Kokous- ja saunatilat",
+  "lat": 63.095317,
+  "lng": 21.614915,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/kokous-original-sokos-hotel-vaakuna-vaasa/sivu/kokous-ja-saunatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:original-sokos-hotel-royal-aamiainen",
+  "name": "Original Sokos Hotel Royal, aamiainen",
+  "lat": 63.096888,
+  "lng": 21.619309,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/original-sokos-hotel-royal-aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:original-sokos-hotel-vaakuna-vaasa-aamiainen",
+  "name": "Original Sokos Hotel Vaakuna Vaasa, aamiainen",
+  "lat": 63.095317,
+  "lng": 21.614915,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/original-sokos-hotel-vaakuna-vaasa-aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-liisanlehto-vaasa",
+  "name": "Pizza & Buffa Prisma Liisanlehto, Vaasa",
+  "lat": 63.072657,
+  "lng": 21.699545,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/pizza-buffa-prisma-liisanlehto-vaasa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-liisanlehto-vaasa",
+  "name": "Presso Prisma Liisanlehto, Vaasa",
+  "lat": 63.072657,
+  "lng": 21.699545,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/presso-prisma-liisanlehto-vaasa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ravintola-royal-kokous-ja-juhlatilat",
+  "name": "Ravintola Royal, kokous- ja juhlatilat",
+  "lat": 63.09682,
+  "lng": 21.61834,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/ravintola-royal-kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:huippu-sauna-pool",
+  "name": "HUIPPU - Panoramic Sauna & Pool",
+  "lat": 63.09682,
+  "lng": 21.61834,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/ravintola-royal-kokous-ja-juhlatilat/sivu/huippu-sauna-pool"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:kokous-ja-juhlatilat",
+  "name": "Kokous- ja juhlatilat",
+  "lat": 63.09682,
+  "lng": 21.61834,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/ravintola-royal-kokous-ja-juhlatilat/sivu/kokous-ja-juhlatilat"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-pizza-prisma-kotiranta-vaasa",
+  "name": "Rosso Pizza Prisma Kotiranta, Vaasa",
+  "lat": 63.103185,
+  "lng": 21.646336,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/rosso-pizza-prisma-kotiranta-vaasa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-vaasa",
+  "name": "Rosso, Vaasa",
+  "lat": 63.095317,
+  "lng": 21.614915,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/rosso-vaasa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:sky-bar-terrace",
+  "name": "Sky Bar & Terrace",
+  "lat": 63.095317,
+  "lng": 21.614915,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/sky-bar-terrace"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:sky-tilaussauna",
+  "name": "SKY tilaussauna",
+  "lat": 63.095317,
+  "lng": 21.614915,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/sky-bar-terrace/sivu/sky-tilaussauna"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:trattoria-puistikko-vaasa",
+  "name": "Trattoria Puistikko, Vaasa",
+  "lat": 63.096816,
+  "lng": 21.619302,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/trattoria-puistikko-vaasa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:trattorian-kabinetti",
+  "name": "Trattorian kabinetti",
+  "lat": 63.096816,
+  "lng": 21.619302,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/trattoria-puistikko-vaasa/sivu/trattorian-kabinetti"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:venn-vaasa",
+  "name": "VENN Vaasa",
+  "lat": 63.095317,
+  "lng": 21.614915,
+  "city": "vaasa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vaasa/venn-vaasa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-flamingo-vantaa",
+  "name": "Amarillo Flamingo, Vantaa",
+  "lat": 60.28992,
+  "lng": 24.966272,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/amarillo-flamingo-vantaa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:amarillo-tikkurila",
+  "name": "Amarillo, Tikkurila",
+  "lat": 60.290431,
+  "lng": 25.04209,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/amarillo-tikkurila"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:break-sokos-hotel-flamingon-aamiainen",
+  "name": "Break Sokos Hotel Flamingon aamiainen",
+  "lat": 60.290413,
+  "lng": 24.969714,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/break-sokos-hotel-flamingon-aamiainen"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:chicos-jumbo",
+  "name": "Chico&#x27;s Jumbo",
+  "lat": 60.290871,
+  "lng": 24.963319,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/chicos-jumbo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:coffee-house-jumbo-vantaa",
+  "name": "Coffee House Jumbo, Vantaa",
+  "lat": 60.290871,
+  "lng": 24.963319,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/coffee-house-jumbo-vantaa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-jumbo",
+  "name": "Hesburger Jumbo",
+  "lat": 60.290871,
+  "lng": 24.963319,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/hesburger-jumbo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:la-famiglia-flamingo",
+  "name": "La Famiglia Flamingo",
+  "lat": 60.290627,
+  "lng": 24.969031,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/la-famiglia-flamingo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:night-vantaa",
+  "name": "Night Vantaa",
+  "lat": 60.290431,
+  "lng": 25.04209,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/night-vantaa"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:original-sokos-hotel-vantaa-juhlat-ja-kokoukset",
+  "name": "Original Sokos Hotel Vantaa juhlat ja kokoukset",
+  "lat": 60.2903992,
+  "lng": 25.0405353,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/original-sokos-hotel-vantaa-juhlat-ja-kokoukset"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:haat-vantaalla",
+  "name": "Häät Vantaalla",
+  "lat": 60.2903992,
+  "lng": 25.0405353,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/original-sokos-hotel-vantaa-juhlat-ja-kokoukset/sivu/haat-vantaalla"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pretty-boy-jumbo",
+  "name": "Pretty Boy Jumbo",
+  "lat": 60.2910249,
+  "lng": 24.9664817,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/pretty-boy-jumbo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pub-hertas",
+  "name": "Pub Hertas",
+  "lat": 60.290431,
+  "lng": 25.04209,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/pub-hertas"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:rosso-pizza-tikkurila",
+  "name": "Rosso Pizza, Tikkurila",
+  "lat": 60.29076,
+  "lng": 25.041646,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/rosso-pizza-tikkurila"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:sir-eino-flamingo",
+  "name": "Sir Eino Flamingo",
+  "lat": 60.290627,
+  "lng": 24.969031,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/sir-eino-flamingo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:spaghetteria-jumbo",
+  "name": "Spaghetteria Jumbo",
+  "lat": 60.290871,
+  "lng": 24.963319,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/spaghetteria-jumbo"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:tulisuudelma",
+  "name": "Tulisuudelma",
+  "lat": 60.290431,
+  "lng": 25.04209,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/tulisuudelma"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:juhlat-ja-tilaisuudet",
+  "name": "Järjestä juhlat Tulisuudelmassa",
+  "lat": 60.290431,
+  "lng": 25.04209,
+  "city": "vantaa",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vantaa/tulisuudelma/sivu/juhlat-ja-tilaisuudet"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-varkaus",
+  "name": "Pizza & Buffa Prisma, Varkaus",
+  "lat": 62.313288,
+  "lng": 27.856216,
+  "city": "varkaus",
+  "url": "https://www.raflaamo.fi/fi/ravintola/varkaus/pizza-buffa-prisma-varkaus"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-prisma-varkaus",
+  "name": "Presso Prisma, Varkaus",
+  "lat": 62.313288,
+  "lng": 27.856216,
+  "city": "varkaus",
+  "url": "https://www.raflaamo.fi/fi/ravintola/varkaus/presso-prisma-varkaus"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-nummela",
+  "name": "Hesburger Prisma Nummela",
+  "lat": 60.330971,
+  "lng": 24.321301,
+  "city": "vihti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vihti/hesburger-prisma-nummela"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:presso-nummela",
+  "name": "Presso, Nummela",
+  "lat": 60.330971,
+  "lng": 24.321301,
+  "city": "vihti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vihti/presso-nummela"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:ristorante-invar",
+  "name": "Ristorante Invar",
+  "lat": 60.331842,
+  "lng": 24.322171,
+  "city": "vihti",
+  "url": "https://www.raflaamo.fi/fi/ravintola/vihti/ristorante-invar"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-prisma-ylivieska",
+  "name": "Hesburger Prisma, Ylivieska",
+  "lat": 64.062992,
+  "lng": 24.552987,
+  "city": "ylivieska",
+  "url": "https://www.raflaamo.fi/fi/ravintola/ylivieska/hesburger-prisma-ylivieska"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:pizza-buffa-prisma-ylivieska",
+  "name": "Pizza & Buffa Prisma, Ylivieska",
+  "lat": 64.062992,
+  "lng": 24.552987,
+  "city": "ylivieska",
+  "url": "https://www.raflaamo.fi/fi/ravintola/ylivieska/pizza-buffa-prisma-ylivieska"
+ },
+ {
+  "source": "raflaamo",
+  "id": "raflaamo:hesburger-ylojarvi-prisma-ylojarvi",
+  "name": "Hesburger Ylöjärvi, Prisma Ylöjärvi",
+  "lat": 61.5638703,
+  "lng": 23.5938246,
+  "city": "ylojarvi",
+  "url": "https://www.raflaamo.fi/fi/ravintola/ylojarvi/hesburger-ylojarvi-prisma-ylojarvi"
+ }
+]

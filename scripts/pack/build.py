@@ -67,7 +67,7 @@ def build(area_id, args):
     packdir.mkdir(parents=True, exist_ok=True)
     bbox = ','.join(map(str, a['bbox']))
     pois, meta = str(packdir / 'pois.json'), str(packdir / 'meta.json')
-    stages = ['base', 'verify_positions', 'hazard_roads', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta']
+    stages = ['base', 'verify_positions', 'hazard_roads', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'chains_fi', 'prh', 'ta']
     if args.only:
         stages = [args.only]
     elif args.from_stage:
@@ -147,6 +147,16 @@ def build(area_id, args):
         run(['python3', 'scripts/pack/ta.py', f'--bbox={bbox}',
              '--pois', pois, '--meta', meta], packdir)
         mark_stage(packdir, meta, 'ta')
+    is_fi = area_id.split('/')[1] == 'fi' if '/' in area_id else False
+    if 'chains_fi' in stages and is_fi:
+        run(['python3', 'scripts/pack/chains_fi.py', f'--bbox={bbox}',
+             '--pois', pois, '--meta', meta], packdir)
+        mark_stage(packdir, meta, 'chains_fi')
+    if 'prh' in stages and is_fi:
+        muni = a.get('prh_municipality') or area_id.split('/')[-1].split('-')[0]
+        run(['python3', 'scripts/pack/prh.py', f'--bbox={bbox}',
+             '--pois', pois, '--meta', meta, f'--municipality={muni}'], packdir)
+        mark_stage(packdir, meta, 'prh')
 
     m = json.load(open(meta))
     pois_data = json.load(open(pois))
@@ -283,7 +293,7 @@ def flag_keep_evidence(pois_data, now):
     record. Hidden-tier pins (hazard, stale-orphan) keep whatever evidence
     they have — evidence explains, hiding decides. Re-run safe."""
     kept = {'atp': 0, 'fsa': 0, 'ch': 0, 'recent_osm': 0, 'nhs': 0,
-            'servicemap': 0}
+            'servicemap': 0, 'chain': 0, 'prh': 0}
     for p in pois_data:
         s = p.get('sources', []) or []
         ev = []
@@ -308,6 +318,12 @@ def flag_keep_evidence(pois_data, now):
         if 'servicemap' in s:
             ev.append({'rule': 'servicemap-record',
                        'meaning': 'City of Helsinki Service Map (CC BY 4.0)'})
+        if 'chain' in s:
+            ev.append({'rule': 'chain-record',
+                       'meaning': 'Chain-published data (Restel/Raflaamo, first-party)'})
+        if 'prh' in s:
+            ev.append({'rule': 'prh-listed',
+                       'meaning': 'Finnish Trade Register: registered business, uninspected'})
         if ev:
             p['keep_evidence'] = ev
             # Tier (coarse, capped): corroborating-leg count, never a
@@ -315,9 +331,10 @@ def flag_keep_evidence(pois_data, now):
             p['tier'] = min(len(ev), 3)
             for e in ev:
                 key = {'atp-contributor': 'atp', 'fsa-linked': 'fsa',
-                       'ch-corroborated': 'ch', 'recent-osm-touch': 'recent_osm',
-                       'nhs-listed': 'nhs',
-                       'servicemap-record': 'servicemap'}[e['rule']]
+                        'ch-corroborated': 'ch', 'recent-osm-touch': 'recent_osm',
+                        'nhs-listed': 'nhs', 'chain-record': 'chain',
+                        'prh-listed': 'prh',
+                        'servicemap-record': 'servicemap'}[e['rule']]
                 kept[key] += 1
         else:
             p.pop('keep_evidence', None)
@@ -422,8 +439,8 @@ def assert_position_invariants(pois_data, m, packdir):
 
 def flag_stale_orphans(pois_data, now):
     """User-decided orphan rule: an OSM-sourced record with no FSA/CH/
-    Servicemap corroboration renders iff its OSM object was touched within
-    182 days; older or untimestamped records hide (fail closed).
+    Servicemap/ATP/chain/PRH corroboration renders iff its OSM object was
+    touched within 182 days; older or untimestamped records hide (fail closed).
     Same middle-path flag as batch misses, reason 'stale-orphan' so audits
     separate the two populations. User-approved 2026-10-06: ANY
     chain-published (ATP) match exempts — the chain confirms the store,
@@ -432,7 +449,7 @@ def flag_stale_orphans(pois_data, now):
     for p in pois_data:
         p.pop('unresolved_why', None)
         s = p.get('sources', []) or []
-        if 'osm' not in s or any(x in s for x in ('fsa', 'ch', 'servicemap', 'atp')):
+        if 'osm' not in s or any(x in s for x in ('fsa', 'ch', 'servicemap', 'atp', 'chain', 'prh')):
             continue
         if osm_touch_fresh(p, now):
             continue
@@ -550,9 +567,9 @@ def main():
     ap.add_argument('--area')
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--from', dest='from_stage',
-                    choices=['base', 'verify_positions', 'hazard_roads', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
+                    choices=['base', 'verify_positions', 'hazard_roads', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'chains_fi', 'prh', 'ta'])
     ap.add_argument('--only',
-                    choices=['base', 'verify_positions', 'hazard_roads', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'ta'])
+                    choices=['base', 'verify_positions', 'hazard_roads', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'chains_fi', 'prh', 'ta'])
     ap.add_argument('--sites', action='store_true',
                     help='site spider, residual only (POIs with no OSM/ATP hours)')
     ap.add_argument('--sites-all', action='store_true',

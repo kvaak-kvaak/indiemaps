@@ -1,0 +1,29 @@
+{
+  "source": "raflaamo",
+  "fetched_at": "2026-10-05T14:13:42.870255+00:00",
+  "sha256": "3302368561bf23cc655c8b632fa4dd9dfe93ea4d6c3db9fc4123034bed27d33e",
+  "rows": 677,
+  "dead_or_unparseable": 21,
+  "dead_sample": [
+    "https://www.raflaamo.fi/fi/ravintola/helsinki/dubliner/sivu/varaa-yksityistila",
+    "https://www.raflaamo.fi/fi/ravintola/helsinki/stones/sivu/varaa-kabinetti",
+    "https://www.raflaamo.fi/fi/ravintola/kotka/players-sports-bar/sivu/juhlat-ja-kokoukset",
+    "https://www.raflaamo.fi/fi/ravintola/kuopio/leiketupa-kuopio/sivu/kokoukset-ja-juhlat",
+    "https://www.raflaamo.fi/fi/ravintola/kuopio/raisu/sivu/juhlat-ja-kokoukset",
+    "https://www.raflaamo.fi/fi/ravintola/mikkeli/babista-mikkeli/sivu/babistan-tarina",
+    "https://www.raflaamo.fi/fi/ravintola/mikkeli/cafe-stella/sivu/juhlat-kokoukset",
+    "https://www.raflaamo.fi/fi/ravintola/mikkeli/las-palmas-mikkeli/sivu/karaoke",
+    "https://www.raflaamo.fi/fi/ravintola/mikkeli/las-palmas-mikkeli/sivu/las-palmas-vip",
+    "https://www.raflaamo.fi/fi/ravintola/mikkeli/mikio-kitchen-bar/sivu/juhlat-ja-kokoukset",
+    "https://www.raflaamo.fi/fi/ravintola/mikkeli/mikio-kitchen-bar/sivu/tulossa",
+    "https://www.raflaamo.fi/fi/ravintola/mikkeli/rosso-mikkeli/sivu/kokoukset",
+    "https://www.raflaamo.fi/fi/ravintola/oulu/bistro-mesu/sivu/tutustu-tiloihimme",
+    "https://www.raflaamo.fi/fi/ravintola/tampere/bistro-tammer/sivu/bistro-tammerin-kabinetti",
+    "https://www.raflaamo.fi/fi/ravintola/tampere/la-famiglia-tampere/sivu/kabinetti",
+    "https://www.raflaamo.fi/fi/ravintola/tampere/sokos4/sivu/kokoustilat-ja-kabinetit",
+    "https://www.raflaamo.fi/fi/ravintola/turku/submarina/sivu/juhlattilaisuudet",
+    "https://www.raflaamo.fi/fi/ravintola/vaasa/ravintola-central/sivu/kokous-ja-juhlatilat",
+    "https://www.raflaamo.fi/fi/ravintola/vantaa/babista-jumbo/sivu/babistan-tarina",
+    "https://www.raflaamo.fi/fi/ravintola/vantaa/jyvanen-martinlaakso/sivu/varaa-kabinetti"
+  ]
+}
