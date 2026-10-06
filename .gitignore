@@ -1,4 +1,8 @@
 node_modules/
 packs/
 *.parquet
+# Exception: the committed UK+FI filtered enrichment extract (small,
+# versioned, every builder reads identical bytes). The 139MB research
+# dump stays local-only via the rule above.
+!data/ta-extract.parquet
 data/ch/

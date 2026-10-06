@@ -16,7 +16,7 @@ Stages per pack (each cached; logs to packs/<id>/build.log):
   sites    = first-party site spider (opt-in)    -> site.json (+ merge if --sites)
   merge    = site-hours merge (runs when site.json exists)
   ta       = stale-dump enrichment, match-only ("ta" areas only:
-             cuisines compare, gap hours, dietary flags, ratings)
+             cuisines compare, gap hours, dietary flags, recommend inputs)
 
 Areas: areas.json (id -> name, bbox [w,s,e,n], fsa FHRS id or null).
 Release layout (see docs/packs.md): packs/<id>/pois.json + manifest.json.
@@ -188,6 +188,7 @@ def build(area_id, args):
     m['counts']['orphan_hidden'] = flag_stale_orphans(pois_data, now)
     kept = flag_keep_evidence(pois_data, now)
     m['counts']['kept_by_rule'] = kept
+    m['weights'] = area_weights(area_id, pois_data)
     assert_position_invariants(pois_data, m, packdir)
     json.dump(pois_data, open(pois, 'w'), indent=1)
     json.dump(m, open(meta, 'w'), indent=1)
@@ -291,6 +292,9 @@ def flag_keep_evidence(pois_data, now):
                        'meaning': 'City of Helsinki Service Map (CC BY 4.0)'})
         if ev:
             p['keep_evidence'] = ev
+            # Tier (coarse, capped): corroborating-leg count, never a
+            # quality verdict. Browse sorts by it; search does not.
+            p['tier'] = min(len(ev), 3)
             for e in ev:
                 key = {'atp-contributor': 'atp', 'fsa-linked': 'fsa',
                        'ch-corroborated': 'ch', 'recent-osm-touch': 'recent_osm',
@@ -299,7 +303,49 @@ def flag_keep_evidence(pois_data, now):
                 kept[key] += 1
         else:
             p.pop('keep_evidence', None)
+            p['tier'] = 0
     return kept
+
+
+def area_weights(area_id, pois_data):
+    """Weighting (restored v1, lean): per-pack honesty flag + auto
+    OSM-hours signal + tier histogram.
+
+    The OSM hours-tagging rate (fraction of OSM-sourced records carrying
+    opening_hours_osm) is computable everywhere with no ground truth, and
+    measures hours-trust ONLY — never existence/recall. Country preferences
+    come from data/source-weights.yaml (hand table, n=2 measured); missing
+    PyYAML or missing country degrades to defaults + verified:false, loudly.
+    Weights settle enrichment ties only, never creation (see YAML invariant).
+    """
+    osm_sourced = [p for p in pois_data if 'osm' in p.get('sources', [])]
+    rate = (sum(1 for p in osm_sourced if p.get('opening_hours_osm'))
+            / len(osm_sourced)) if osm_sourced else 0.0
+    seg = (area_id.split('/') + ['', ''])[1]
+    country = {'gb': 'GB', 'fi': 'FI'}.get(seg.lower(), seg.upper() or '??')
+    table, version, entry = {}, 0, None
+    try:
+        import yaml
+        table = yaml.safe_load(open(ROOT / 'data' / 'source-weights.yaml')) or {}
+        version = table.get('version', 0)
+        entry = (table.get('countries') or {}).get(country)
+    except Exception as e:
+        print(f'weights: YAML unreadable ({str(e)[:60]}), defaults + verified:false')
+    tiers = {}
+    for p in pois_data:
+        tiers[p.get('tier', 0)] = tiers.get(p.get('tier', 0), 0) + 1
+    out = {'table_version': version, 'country': country,
+           'verified': bool(entry and entry.get('verified')),
+           # YAML dates deserialize to date objects — stringify so meta.json
+           # stays plain-JSON serializable.
+           'spot_checks': json.loads(json.dumps((entry or {}).get('spot_checks', []),
+                                                default=str)),
+           'osm_hours_rate': round(rate, 3),
+           'tier_histogram': tiers,
+           'hours_order': ((entry or {}).get('hours')
+                           or (table.get('defaults') or {}).get('hours', []))}
+    print(f"weights: {country} verified={out['verified']} osm_hours_rate={out['osm_hours_rate']} tiers={tiers}")
+    return out
 
 
 def assert_position_invariants(pois_data, m, packdir):
@@ -470,6 +516,7 @@ def manifest():
             'bytes': pois_f.stat().st_size,
             'total': counts.get('total'), 'built_at': m.get('built_at'),
             'complete': all(s in stages_ok for s in ('base', 'overture', 'nhs', 'atp')),
+            'verified': (m.get('weights') or {}).get('verified', False),
             'stages_ok': stages_ok,
             'sources': {k: v for k, v in m.items()
                         if k in ('fsa_extract_date', 'overture', 'nhs', 'atp', 'site', 'servicemap', 'ta', 'ch')},

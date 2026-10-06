@@ -301,7 +301,7 @@ function detailSkeleton(p) {
       ${(p.sources || []).includes('atp') ? (p.atp_method === 'created-chain' ? `· <b>New pin</b> — store record as published by ${esc(p.atp_brand || 'the chain')}, via AllThePlaces (CC0); position from the chain, not surveyed<br/>` : `· <b>Opening hours</b> — as published by ${esc(p.atp_brand || 'the chain')}, via AllThePlaces (CC0)<br/>`) : ''}
       ${(p.sources || []).includes('nhs') ? `· <b>Listed pharmacy</b> — NHS England${p.nhs_ods ? ` (ODS ${esc(p.nhs_ods)})` : ''}<br/>` : ''}
       ${(p.sources || []).includes('servicemap') ? `· <b>Municipal listing</b> — City of Helsinki Service Map (CC BY 4.0)${p.sm_id ? ` (unit ${esc(String(p.sm_id))})` : ''}<br/>` : ''}
-      ${(p.sources || []).includes('ta') ? `· <b>Cuisines, dietary notes${p.ta_hours ? ', hours' : ''} & rating</b> — archived research data, c.2021 (stale by design)<br/>` : ''}
+      ${(p.sources || []).includes('ta') ? `· <b>Cuisines, dietary notes${p.ta_hours ? ', hours' : ''}${p.ta_rec_n != null ? ', recommend score' : ''}</b> — archived research data (stale by design)<br/>` : ''}
       ${(p.sources || []).includes('ch') ? `· <b>Registered business</b> — Companies House${p.ch_incorporated ? `, incorporated ${esc(p.ch_incorporated)}` : ''} (registered office, may differ from trading address; uninspected)<br/>` : ''}
       ${(p.fsa_alias || []).length ? `· <b>Also registered as</b> — ${p.fsa_alias.map(a => `${esc(a.name)} (FHRS ${a.fsa_id})`).join('; ')}<br/>` : ''}
       ${(p.supersedes || []).length ? `· <b>Replaces at these premises</b> — ${p.supersedes.map(s => esc(s.name)).join('; ')}<br/>` : ''}
@@ -352,19 +352,28 @@ function debugHtml(p) {
 }
 
 function ratingHtml(p) {
-  // Archived research ratings + dietary marks, derived at render from
-  // numeric pack data (never stored as emoji — thresholds stay adjustable
-  // and OSM-compatible consumers strip ta_* cleanly). Vintage always shown:
-  // a medal on stale data must read as stale.
+  // Recommend display (Laplace-smoothed, Mangrove-compatible): legacy
+  // counts enter undecayed; decay starts when fresh reviews arrive, so no
+  // place is punished before new evidence exists. Single votes move an
+  // established place by ~1/(n+2) — never a cliff. Vintage lives in data
+  // (ta_rec_vintage), never on the card. Dietary marks + feature flags are
+  // affirmative-only. Thresholds stay adjustable; OSM consumers strip ta_*.
+  const recScore = (up, down) => (up + 1) / (up + down + 2);
+  const recReviews = n => {
+    if (n == null) return '';
+    if (n < 5) return String(n);
+    if (n < 20) return '~' + (Math.round(n / 5) * 5);
+    if (n < 100) return '~' + (Math.round(n / 10) * 10);
+    return '~' + (Math.round(n / 50) * 50);
+  };
   const diet = [
     p.ta_vegetarian ? '<span class="badge diet-veg">Vegetarian</span>' : '',
     p.ta_vegan ? '<span class="badge diet-vegan">🌱 Vegan</span>' : '',
     p.ta_gluten_free ? '<span class="badge diet-gf">Gluten-Free</span>' : '',
   ].filter(Boolean).join(' ');
-  if (p.ta_rating == null && !diet) return '';
-  const emoji = p.ta_rating === 5 ? '🥇' : p.ta_rating === 4.5 ? '✨' : p.ta_rating === 4 ? '👍' : '';
-  const rate = p.ta_rating != null
-    ? `<span style="font-size:14px">${emoji ? emoji + ' ' : ''}★ ${p.ta_rating}${p.ta_reviews ? ` <span style="color:#888;font-size:11px">(${p.ta_reviews} reviews, c.2021)</span>` : ''}</span>`
+  const rn = p.ta_rec_n;
+  const rate = rn != null
+    ? `<span style="font-size:14px">${Math.round(recScore(p.ta_rec_up || 0, p.ta_rec_down || 0) * 100)}% recommend <span style="color:#888;font-size:11px">(${recReviews(rn)} reviews)</span>${recScore(p.ta_rec_up || 0, p.ta_rec_down || 0) >= 0.65 && rn >= 5 ? ' <span class="badge src-atp">👍 Recommended</span>' : ''}</span>`
     : '';
   if (!rate && !diet) return '';
   return `<div style="margin-top:10px;font-size:13px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">${rate}${diet}</div>`;

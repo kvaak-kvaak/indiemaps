@@ -1,24 +1,30 @@
 #!/usr/bin/env python3
-"""Stale-dump enrichment (research parquet, keyless bulk read).
+"""Stale-dump enrichment (committed filtered extract, keyless bulk read).
 
-A 4-5 year old restaurant dump (~1M rows, 139 MB) is matched against pack
-POIs to recover cuisines, hours, dietary flags and ratings for venues that
-predate current sources. MATCH ONLY: rows that match nothing are discarded,
-and no POI is ever created — resurrecting closures from stale data is
-exactly what this stage must not do.
+data/ta-extract.parquet is cut from the 1.08M-row c.2021 research dump
+(UK nations + Finland, 24 columns — see docs/HANDOFF.md for the schema
+rationale). Committed and versioned, so every builder (CI included) reads
+identical bytes; sha recorded in meta.ta.
 
-Staleness doctrine (the file carries no timestamps; vintage is
-maintainer-declared c.2021):
+MATCH ONLY: rows that match nothing are discarded, and no POI is ever
+created — resurrecting closures from stale data is exactly what this
+stage must not do.
+
+Staleness doctrine:
 - Names/locations are match keys only, never written (pack names are
-  current-verified; the dump is stale by design — e.g. it holds the dead
-  'Victory Mansion', not TA-KO).
+  current-verified; the dump is stale by design).
 - Hours apply ONLY where the record has zero hours from any current
   source (OSM/ATP/site/NHS/Servicemap). Current hours always win by
   absence of competition.
 - Cuisines are compared, never merged (ta_cuisines + agree/extend/conflict).
 - Only affirmative dietary flags are stored (Y); N/empty render as unknown.
-- Ratings are display garnish only (numeric + count stored; emoji derived
-  at render): a 5.0 on a defunct venue must never read as endorsement.
+- Reviews become RECOMMEND INPUTS, not stars: rec_up/rec_down/rec_n feed
+  the Laplace+decay formula at render (shared with Mangrove). Legacy rows
+  enter undecayed; decay starts when fresh reviews arrive (no pre-decay
+  cliff — see HANDOFF). Averages were discarded at extract build as
+  ambiguous middle.
+- Feature flags (wheelchair/dog/playground/live-music) stored
+  affirmative-only, unrendered for now.
 - All review-derived keys live under ta_* so OSM-compatible consumers
   strip them cleanly (no reviews carry hours in OSM's schema).
 
@@ -31,8 +37,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from overture import toks, accept, nscore, dist_m, grid_index, nearby, norm_pc  # noqa
 
 ROOT = Path(__file__).resolve().parents[2]
-PARQUET = ROOT / 'restaurants.parquet'
-VINTAGE = 'c.2021 (maintainer-declared; file carries no timestamps)'
+PARQUET = ROOT / 'data' / 'ta-extract.parquet'
+REC_VINTAGE = '2021-06-01'
+REC_FORMULA = 'laplace-expdecay-v1'
 UK_PC = re.compile(r'([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})')
 FI_PC = re.compile(r'\b(\d{5})\b')
 DAY_ORDER = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
@@ -145,26 +152,27 @@ def main():
     ap.add_argument('--meta', required=True)
     a = ap.parse_args()
     if not PARQUET.exists():
-        # Research file, never committed: runs without it skip the stage
-        # green (nothing to enrich from). The file reaches builders only
-        # through an explicit distribution decision (release asset or
-        # committed filtered extract) — never silently, never by default.
-        print(f'stale dump absent ({PARQUET.name}), skipping ta stage')
+        # Committed extract: absent only if someone deleted it — loud skip.
+        print(f'stale extract absent ({PARQUET}), skipping ta stage')
         meta = json.load(open(a.meta))
-        meta['ta'] = {'skipped': 'parquet absent', 'vintage': VINTAGE,
+        meta['ta'] = {'skipped': 'extract absent',
                       'matched': 0}
         json.dump(meta, open(a.meta, 'w'), indent=1)
         return
+    import hashlib
+    sha = hashlib.sha256(open(PARQUET, 'rb').read()).hexdigest()[:16]
     w, s, e, n = map(float, a.bbox.split(','))
     import duckdb
     t0 = time.time()
     rows = duckdb.connect().execute(f"""SELECT restaurant_name, address, latitude, longitude,
       cuisines, vegetarian_friendly, vegan_options, gluten_free,
-      original_open_hours, avg_rating, total_reviews_count
+      original_open_hours, rec_up, rec_down, rec_n,
+      feat_wheelchair, feat_dog, feat_play, feat_music
     FROM read_parquet('{PARQUET}')
     WHERE latitude BETWEEN {s} AND {n} AND longitude BETWEEN {w} AND {e}""").fetchall()
     cols = ['name', 'address', 'lat', 'lng', 'cuisines', 'veg', 'vegan', 'gf',
-            'hours', 'rating', 'nrev']
+            'hours', 'rec_up', 'rec_down', 'rec_n',
+            'feat_wheelchair', 'feat_dog', 'feat_play', 'feat_music']
     rows = [dict(zip(cols, r)) for r in rows if r[0] and r[2] is not None and r[3] is not None]
     print(f'stale dump rows in bbox: {len(rows)} ({time.time()-t0:.0f}s)')
 
@@ -172,14 +180,16 @@ def main():
     # clear previous enrichment (re-run safe)
     for p in pois:
         for k in ('ta_cuisines', 'ta_cuisine_match', 'ta_hours', 'ta_vegetarian',
-                  'ta_vegan', 'ta_gluten_free', 'ta_rating', 'ta_reviews'):
+                  'ta_vegan', 'ta_gluten_free', 'ta_rec_up', 'ta_rec_down',
+                  'ta_rec_n', 'ta_rec_vintage', 'ta_rec_formula',
+                  'ta_wheelchair', 'ta_dog', 'ta_play', 'ta_music',
+                  'ta_rating', 'ta_reviews'):
             p.pop(k, None)
         p['sources'] = [s for s in p.get('sources', []) if s != 'ta']
 
     grid, cell = grid_index(rows, 'lat', 'lng') if rows else ({}, None)
-    matched = hours_added = diets_added = 0
+    matched = hours_added = diets_added = feats_added = 0
     cuisine_v = {'agree': 0, 'extend': 0, 'conflict': 0}
-    rating_bands = {'5.0': 0, '4.5': 0, '4.0': 0, 'other': 0, 'none': 0}
     for p in pois:
         if p.get('category') not in ('restaurant', 'cafe', 'pub'):
             continue
@@ -231,29 +241,53 @@ def main():
             diet = True
         if diet:
             diets_added += 1
+        # Recommend inputs (render computes Laplace+decay; Mangrove-native).
+        # Averages were discarded at extract build as ambiguous middle.
         try:
-            rating = float(best.get('rating')) if best.get('rating') is not None else None
+            up = int(best.get('rec_up') or 0)
         except (TypeError, ValueError):
-            rating = None
-        if rating is None:
-            rating_bands['none'] += 1
-        else:
-            p['ta_rating'] = rating
-            try:
-                p['ta_reviews'] = int(float(best.get('nrev') or 0))
-            except (TypeError, ValueError):
-                pass
-            rating_bands['5.0' if rating == 5.0 else '4.5' if rating == 4.5 else
-                         '4.0' if rating == 4.0 else 'other'] += 1
+            up = 0
+        try:
+            down = int(best.get('rec_down') or 0)
+        except (TypeError, ValueError):
+            down = 0
+        try:
+            n = int(best.get('rec_n') or 0)
+        except (TypeError, ValueError):
+            n = 0
+        if up or down or n:
+            p['ta_rec_up'] = up
+            p['ta_rec_down'] = down
+            p['ta_rec_n'] = n
+            p['ta_rec_vintage'] = REC_VINTAGE
+            p['ta_rec_formula'] = REC_FORMULA
+        feats = False
+        if best.get('feat_wheelchair'):
+            p['ta_wheelchair'] = True
+            feats = True
+        if best.get('feat_dog'):
+            p['ta_dog'] = True
+            feats = True
+        if best.get('feat_play'):
+            p['ta_play'] = True
+            feats = True
+        if best.get('feat_music'):
+            p['ta_music'] = True
+            feats = True
+        if feats:
+            feats_added += 1
         if 'ta' not in p.get('sources', []):
             p['sources'].append('ta')
     json.dump(pois, open(a.pois, 'w'), indent=1)
     meta = json.load(open(a.meta))
-    meta['ta'] = {'vintage': VINTAGE, 'rows_in_bbox': len(rows), 'matched': matched,
+    meta['ta'] = {'extract': PARQUET.name, 'extract_sha': sha,
+                  'rec_vintage': REC_VINTAGE, 'rec_formula': REC_FORMULA,
+                  'rows_in_bbox': len(rows), 'matched': matched,
                   'hours_added': hours_added, 'diets_added': diets_added,
-                  'cuisine_verdicts': cuisine_v, 'rating_bands': rating_bands}
+                  'feature_flags_added': feats_added,
+                  'cuisine_verdicts': cuisine_v}
     json.dump(meta, open(a.meta, 'w'), indent=1)
-    print(f'stale dump: {len(rows)} rows -> {matched} matched, +{hours_added} hours, +{diets_added} diets, cuisines {cuisine_v}, ratings {rating_bands}')
+    print(f'stale dump: {len(rows)} rows -> {matched} matched, +{hours_added} hours, +{diets_added} diets, +{feats_added} feature flags, cuisines {cuisine_v}')
 
 
 if __name__ == '__main__':
