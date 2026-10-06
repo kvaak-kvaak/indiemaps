@@ -385,3 +385,25 @@ Read these three docs first, in order:
   gaps (350 ok + 13 empty + 9 failed-both); cross-check remains
   optional. CI refetches ~400 files per build (no actions-cache
   yet — follow-up if build time bites).
+
+## Session log (2026-10-06, repull of the 9 failed spiders)
+
+- Commit 55f937e: supplement ladder Sep-19 + Aug-29 + Aug-22,
+  newest healthy export wins per spider. CI 37438576677 green on
+  third attempt (first two failed on Overpass 504 weather in base
+  stage, unrelated to the change; verified via build.log).
+- Recovered 2: jollyes_gb from Aug-29 (1 Southend feat,
+  wikidata-matched to OSM Jollyes node), cef_gb from Aug-22
+  (healthy nationally, zero Southend feats — correctly empty).
+  All 22 Sep-19 provenances unchanged (Sep-19 stays first).
+- Remaining 7 fail in ALL 5 runs checked (Aug-15 to Sep-26):
+  big_yellow, coop_food, gsf, heart_of_england, odeon,
+  soletrader, entertainer. Nothing exists upstream to pull —
+  unrecoverable until ATP fixes the spiders. complete=false
+  recorded, publish-on-partial holds.
+- Run discovery note: no S3 listing, no `latest` symlink; run IDs
+  found by bounded Friday-13:32 seconds scan (60 probes/date).
+  Known runs: Aug-15-13-32-20, Aug-22-13-32-16, Aug-29-13-32-18,
+  Sep-5-13-32-25, Sep-19-13-32-18, Sep-26-13-32-25. No Oct-3 run
+  at 13:32 (absent or different time).
+- Demo NOT promoted (still 1998).
