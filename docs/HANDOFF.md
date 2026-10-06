@@ -458,3 +458,27 @@ Read these three docs first, in order:
   exit 1 on bare-shown or unapproved provisional).
 - Full 47-area GB spider=true rebuild dispatched (release week
   Stream 1). Audit table due when it lands.
+
+## Session log (2026-10-06, FI chain stages + Helsinki reference)
+
+- Commit 4766842 (+553beed slice fix): chains_fi match-only stage
+  (Restel 142 + Raflaamo 677 snapshots committed under
+  data/chains_fi/) + prh corroboration stage (exact/anchored
+  matching, legal-suffix strip, municipality tiebreak-never-veto,
+  150-query cap, committed cache) + chain/prh keep legs +
+  orphan exemptions + chain_hours/phone in app.
+- PRH matcher took three iterations locally: legal suffixes
+  (Oy/Ab), then municipality hard-filter killed recall (28%
+  address coverage), then result-slice widened (API ignores
+  limit). Final: 14 local / 35 CI corroborated, 10 ceased
+  skipped, zero false attaches sampled.
+- Helsinki CI needed area-aware blind tiling (b72c7ab): metro
+  bbox is 12x Southend; fixed 2x2 kept 504ing the same tile
+  4x. Grid now scales (Helsinki 5x3, Southend behavior
+  unchanged). Same fix rescues dense London areas if the UK
+  run hits them. Only triggers on total-failure path.
+- Helsinki reference Q4 (37508331549): 7225 total, 0 audit
+  violations, FI verified=true, osm_hours_rate 0.622 (matches
+  the Hakaniemi community measurement), chains 109, prh 35,
+  ta 1015. Hidden 3176 (44% OSM-only stale — doctrine working).
+- 16-area FI sweep dispatched spider=false.
