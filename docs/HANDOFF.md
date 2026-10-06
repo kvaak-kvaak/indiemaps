@@ -447,3 +447,14 @@ Read these three docs first, in order:
 - Vela critique in docs/VELA_WEIGHTS_CRITIQUE.md for the other
   agent (brand-term dominance, flat-confidence contradiction,
   no corroboration count, dead iskiosk, visibility inheritance).
+
+## Session log (2026-10-06, release week Mon: quarantine + UK rebuild)
+
+- Quarantine list live: data/quarantine.json (fsa-1796273),
+  enforced at creation (companies.py, atp.js) + recount backstop
+  apply_quarantine() in build.py with meta counts. Local gate
+  test green. Commit c306117, CI Southend green.
+- Release-gate audit: scripts/pack/audit_packs.py (read-only,
+  exit 1 on bare-shown or unapproved provisional).
+- Full 47-area GB spider=true rebuild dispatched (release week
+  Stream 1). Audit table due when it lands.
