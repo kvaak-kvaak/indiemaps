@@ -45,9 +45,10 @@ const UA = { 'User-Agent': 'Indiemaps-atp/1.0 (chain-hours merge; contact via re
 // commercial (incl. charity shops, bookmakers, opticians, NCP car parks)
 // merges. Deliberately explicit: auditability over cleverness.
 const EXCLUDE_SPIDERS = new Set(`glasgow_city_council_kerb_grates_gb glasgow_city_council_street_lamps_gb glasgow_city_council_waste_baskets_gb sheffield_city_council_air_quality_gb sheffield_city_council_benches_gb sheffield_city_council_community_forestry_trees_gb sheffield_city_council_drain_nodes_gb sheffield_city_council_grit_bins_gb sheffield_city_council_litter_bins_gb sheffield_city_council_street_lights_gb sheffield_city_council_street_trees_gb naptan_gb national_rail_gb northern_powergrid_lv_supports_gb northern_railway_gb southeastern_railway_gb southern_railway_gb scotrail_gb transport_for_wales_gb traffic_england_gb traffic_scotland_gb church_of_england_gb church_of_scotland_gb gov_cma_fuel_gb gov_dfe_gias_gb gov_fuel_finder_gb gov_mot_gb nhs_england_gb nhs_scotland_gb changing_places_gb falco_bicycle_parking_gb connected_kerb_gb gridserve_gb insta_volt_gb osprey_gb esb_energy_gb evyve_gb genie_point_gb mer_gb smart_charge_gb believ_gb beev_gb chargy_gb charge_place_scotland_gb justpark_gb cashzone_gb`.split(/\s+/));
-// Bare (non-_gb) spiders with known GB coverage, kept from the original
-// hand list plus the High-Street additions. Everything else enters via _gb.
-const BARE_KEEP = new Set(`sainsburys lidl mcdonalds burger_king subway pret_a_manger caffe_nero starbucks_eu superdrug argos currys primark poundland ikea shell specsavers waterstones`.split(/\s+/));
+// Bare (non-suffixed) spiders with known GB/FI coverage, kept from the
+// original hand list plus High-Street and Finnish additions. Everything
+// else enters via suffix.
+const BARE_KEEP = new Set(`sainsburys lidl mcdonalds burger_king subway pret_a_manger caffe_nero starbucks_eu superdrug argos currys primark poundland ikea shell specsavers waterstones hesburger st1`.split(/\s+/));
 
 const rawArgs = process.argv.slice(2);
 const args = {};
@@ -99,9 +100,11 @@ async function poolAll(items, limit, fn) {
 // ---- index-driven fetch (sibling-build importer semantics) ----
 const primaryIdx = await (await fetchOk(`${runBase(RUN_PRIMARY)}/stats/_results.json`, 120000)).json();
 const primaryRows = new Map(primaryIdx.results.map(r => [r.spider, r]));
-// Merge set: every _gb spider minus infrastructure, plus curated bare names.
+// Merge set: every _gb spider minus infrastructure, every _fi spider
+// (all 8 are commercial), plus curated bare names. Bbox does the
+// geographic filtering — _fi spiders yield nothing outside Finland.
 const mergeSpiders = [...new Set([
-  ...[...primaryRows.keys()].filter(s => s.endsWith('_gb') && !EXCLUDE_SPIDERS.has(s)),
+  ...[...primaryRows.keys()].filter(s => (s.endsWith('_gb') || s.endsWith('_fi')) && !EXCLUDE_SPIDERS.has(s)),
   ...[...BARE_KEEP].filter(s => primaryRows.has(s)),
 ])].sort();
 console.log(`merge set: ${mergeSpiders.length} spiders (excluded ${EXCLUDE_SPIDERS.size} infra)`);
@@ -149,7 +152,7 @@ async function fetchSpider(spider, row, run) {
       if (r.ok) countries = countriesOf(await r.json());
     } catch { /* stats best-effort: unknown coverage still fetches */ }
     const knownNonUk = Object.keys(countries).length > 0
-      && Object.keys(countries).every(c => !['GB', 'UK', 'unknown', 'Unknown', 'None', ''].includes(c))
+      && Object.keys(countries).every(c => !['GB', 'UK', 'FI', 'unknown', 'Unknown', 'None', ''].includes(c))
       && Object.values(countries).reduce((a, b) => a + b, 0) === row.features;
     if (knownNonUk) return { status: 'outside_uk_by_country_counts', feats: [], countries };
     const file = path.join(ATP_CACHE, run, `${spider}.geojson`);
@@ -365,17 +368,18 @@ function atpCategory(f) {
   if (t === 'attraction' || t === 'viewpoint') return ['attraction', 'Attraction'];
   if (['parking', 'parking_space', 'bicycle_parking', 'motorcycle_parking'].includes(a)) return ['parking', 'Parking'];
   if (['fuel'].includes(a)) return ['transport', 'Transport'];
+  if (/^(st1|neste|teboil)\b/.test(f.spider)) return ['transport', 'Transport'];
   if (['bank', 'bureau_de_change', 'money_transfer'].includes(a)) return ['services', 'Services'];
   if (s) return ['shopping', 'Shop'];
   if (a || t) return ['services', 'Services'];
   const sp = f.spider;
-  if (/greggs|mcdonalds|burger_king|subway|pizza|kfc|nandos|wagamama|itsu|leon|tortilla|wendys|five_guys|pret|gails|wetherspoon|frankie|harvester|beefeater|toby_carvery|stonehouse|tgi_fridays|ask_italian|wildwood|fireaway|bella_italia|las_iguanas|chiquito|popeyes|taco_bell|creams|kaspa|wimpy|morleys|pepes|sams_chicken|chicken_cottage|kokoro|zambrero|banana_tree|giggling_squid|franco_manca|pho|wildwood|cafe_rouge|chef_and_brewer|farmhouse_inns|nicholsons|vintage_inns|ember_inns|hungry_horse|greene_king|youngs|fullers|marstons|sizzling|fayre|flaming_grill|table_table|bar_and_block|miller_and_carter|lounges|belhaven|robinsons|hall_and_woodhouse|stneg|pubs|inns|tavern|brewery|taproom/.test(sp)) return ['restaurant', 'Restaurant'];
+  if (/greggs|mcdonalds|burger_king|hesburger|subway|pizza|kfc|nandos|wagamama|itsu|leon|tortilla|wendys|five_guys|pret|gails|wetherspoon|frankie|harvester|beefeater|toby_carvery|stonehouse|tgi_fridays|ask_italian|wildwood|fireaway|bella_italia|las_iguanas|chiquito|popeyes|taco_bell|creams|wimpy|morleys|pepes|sams_chicken|chicken_cottage|kokoro|zambrero|banana_tree|giggling_squid|franco_manca|pho|cafe_rouge|chef_and_brewer|farmhouse_inns|nicholsons|vintage_inns|ember_inns|hungry_horse|greene_king|youngs|fullers|lounges|belhaven|bar_and_block|miller_and_carter|table_table|hall_and_woodhouse|pubs|inns|tavern|brewery|taproom/.test(sp)) return ['restaurant', 'Restaurant'];
   if (/costa|starbucks|caffe_nero|nero|coffee|cafe|tea|bird_blend|coffee_1|cornish_bakery|patisserie_valerie|paul_gb|benugo/.test(sp)) return ['cafe', 'Café'];
   if (/premier_inn|travelodge|village_hotels|holiday_inn|yha/.test(sp)) return ['hotel', 'Hotel'];
   if (/specsavers|vision_express|leightons|optical_express|my_dentist|damira|bupa|cvs_vets|vets4pets|medivet|dentist|dental|audika|amplifon|scrivens|boots_opticians|opticians/.test(sp)) return ['health', 'Health'];
   // Tagless retail: the shop tag is usually present, but a missing tag must
   // not dump Tesco into services. Bounded keyword list, services otherwise.
-  if (/tesco|sainsburys|asda|morrisons|aldi|lidl|spar|londis|budgens|costcutter|nisalocal|keystore|scotmid|coop_food|booker|family_shopper|iceland|heron_foods|farmfoods|argos|currys|primark|poundland|poundstretcher|home_bargains|b_and_m|qd_stores|ikea|dunelm|wickes|halfords|screwfix|pets_at_home|jollyes|card_factory|cardzone|cards_direct|scribbler|boots|superdrug|savers|rowlands|weldricks|day_lewis|matalan|peacocks|new_look|river_island|jd_sports|footasylum|decathlon|go_outdoors|millets|cotswold|cex|ryman|timpson|john_lewis|frasers|fenwick|house_of_fraser|marks_and_spencer|next|clarks|waterstones|the_works|entertainer|smythstoys|toys_r_us|yoursclothing|bonmarche|roman_originals|mint_velvet|whistles|reiss|moss|saltrock|white_stuff|fatface|crew_clothing|weird_fish|shoe_zone|schuh|soletrader|pavers|wynsors|charles_clinkard|hotter|deichmann|jigsaw|h_samuel|fraser_hart|beaverbrooks|warren_james|f_hinds|goldsmiths|oxfam|bhf|cancer_research|sue_ryder|salvation_army|shelter|marie_curie|debra|barnardos|hobbycraft|dfs|scs|oak_furnitureland|furniture_village|bensons|dreams|tapi|topps_tiles|wren_kitchens|magnet|toolstation|travis_perkins|jewson|huws_gray|leyland|dulux|crown_decorating|o2_gb|three_gb|ee_gb|fonehouse|ismash|max_spielmann|richer_sounds|sevenoaks|phone|mobile|book|stationery|fashion|clothes|boutique|jewell|furniture|florist|garden_centre|pets|toy|charity|shopping|retail|store|market|outlet|mall|supermarket|convenience|grocery|department/.test(sp)) return ['shopping', 'Shop'];
+  if (/tesco|sainsburys|asda|morrisons|aldi|lidl|spar|londis|budgens|costcutter|nisalocal|keystore|scotmid|coop_food|booker|family_shopper|iceland|heron_foods|farmfoods|argos|currys|primark|poundland|poundstretcher|home_bargains|b_and_m|qd_stores|ikea|dunelm|wickes|halfords|screwfix|pets_at_home|jollyes|card_factory|cardzone|cards_direct|scribbler|boots|superdrug|savers|rowlands|weldricks|day_lewis|matalan|peacocks|new_look|river_island|jd_sports|footasylum|decathlon|go_outdoors|millets|cotswold|cex|ryman|timpson|john_lewis|frasers|fenwick|house_of_fraser|marks_and_spencer|next|clarks|waterstones|the_works|entertainer|smythstoys|toys_r_us|yoursclothing|bonmarche|roman_originals|mint_velvet|whistles|reiss|moss|saltrock|white_stuff|fatface|crew_clothing|weird_fish|shoe_zone|schuh|soletrader|pavers|wynsors|charles_clinkard|hotter|deichmann|jigsaw|h_samuel|fraser_hart|beaverbrooks|warren_james|f_hinds|goldsmiths|oxfam|bhf|cancer_research|sue_ryder|salvation_army|shelter|marie_curie|debra|barnardos|hobbycraft|dfs|scs|oak_furnitureland|furniture_village|bensons|dreams|tapi|topps_tiles|wren_kitchens|magnet|toolstation|travis_perkins|jewson|huws_gray|leyland|dulux|crown_decorating|o2_gb|three_gb|ee_gb|fonehouse|ismash|max_spielmann|richer_sounds|sevenoaks|phone|mobile|book|stationery|fashion|clothes|boutique|jewell|furniture|florist|garden_centre|pets|toy|charity|shopping|retail|store|market|outlet|mall|supermarket|convenience|grocery|department|kioski|intersport|mazda|puuilo|tokmanni|halpa/.test(sp)) return ['shopping', 'Shop'];
   return ['services', 'Services'];
 }
 const normPc = pc => (pc || '').replace(/\s/g, '').toLowerCase() || null;
@@ -387,8 +391,12 @@ for (const f of feats) {
   // Anti-duplicate: if ANY existing record matches this feature under the
   // same matcher, it is the same store under a variant name — skip.
   if (pois.some(p => matchCandidate(p, f))) { skippedDupe++; continue; }
-  const ref = (f.nsi || '').replace(/[^a-z0-9_-]/gi, '').slice(0, 24)
-    || djb2(`${f.spider}|${normName(f.name)}|${f.lat.toFixed(5)}|${f.lng.toFixed(5)}`);
+  // Stable ids MUST include coordinates: nsi_id is brand-level (every
+  // Subway shares 'subway-6a374d') — nsi-only ids collapsed whole chains
+  // into one pin and silently dropped the rest (measured: Vantaa Dixi
+  // wearing Southend's id). Format: atp-<spider>-<nsi|spider>-<hash6>.
+  const ref = ((f.nsi || '').replace(/[^a-z0-9_-]/gi, '').slice(0, 24) || f.spider)
+    + '-' + djb2(`${f.spider}|${normName(f.name)}|${f.lat.toFixed(5)}|${f.lng.toFixed(5)}`);
   const id = `atp-${f.spider}-${ref}`;
   if (knownIds.has(id)) continue; // already created by an earlier run
   if (QUARANTINE.has(id)) { console.log(`quarantine: refusing to create ${id}`); skippedQuarantine++; continue; }

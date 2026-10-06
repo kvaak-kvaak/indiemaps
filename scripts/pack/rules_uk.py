@@ -3,6 +3,13 @@
 rounds (duplicates-services R1/R2/R3, station/facility guards, service-host
 attachment, CH evidence attachment).
 
+STATUS 2026-10-06: reference spec, NOT live — nothing imports this module.
+Live matching sits inline in scripts/build.js, scripts/atp.js and
+scripts/pack/overture.py. Do not wire it in piecemeal; the approved path is
+a single matcher-consolidation pass after the Q4 release, with these 25
+tests as the acceptance bar. Do not delete: the tests encode review
+decisions that must survive consolidation.
+
 Design: pure functions over plain record dicts
   {id, source, name, address, postcode, category, extra?}
 Every rule returns (decision, rule_name, evidence_dict) or None, where

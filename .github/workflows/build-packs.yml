@@ -34,6 +34,14 @@ jobs:
         with:
           node-version: '20'
       - run: pip install duckdb pyyaml
+      - uses: actions/cache@v4
+        # ATP spider downloads (hundreds of files, namespaced per run).
+        # Key on the fetch code: spider-set or logic changes re-fetch.
+        # Integrity is enforced in atp.js (feature-count check), so a
+        # stale cache entry fails loud and re-downloads, never silently.
+        with:
+          path: data/atp/raw
+          key: atp-raw-${{ hashFiles('scripts/atp.js') }}
       - name: Fetch Companies House snapshot
         # Monthly bulk product for the companies stage (new-Ltd tripwire).
         # ~469 MB once per run (not per area); gitignored cache dir. Tries
