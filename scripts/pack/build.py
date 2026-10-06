@@ -150,6 +150,7 @@ def build(area_id, args):
 
     m = json.load(open(meta))
     pois_data = json.load(open(pois))
+    pois_data, quarantined = apply_quarantine(pois_data, packdir)
     n = len(pois_data)
     hours = sum(1 for p in pois_data
                 if p.get('opening_hours_osm') or p.get('atp_hours')
@@ -186,6 +187,7 @@ def build(area_id, args):
     # other flaggers so nothing re-pops these flags.
     now = datetime.now(timezone.utc)
     m['counts']['orphan_hidden'] = flag_stale_orphans(pois_data, now)
+    m['counts']['quarantined'] = quarantined
     kept = flag_keep_evidence(pois_data, now)
     m['counts']['kept_by_rule'] = kept
     m['weights'] = area_weights(area_id, pois_data)
@@ -255,6 +257,22 @@ def osm_touch_fresh(p, now, days=182):
     except (ValueError, TypeError):
         pass
     return False
+
+
+def apply_quarantine(pois_data, packdir):
+    """User-decided, fail-closed: listed ids leave the pack no matter which
+    stage produced them — creation paths refuse them first (see
+    companies.py, atp.js), this is the backstop. Loud + counted."""
+    try:
+        qids = json.load(open(ROOT / 'data' / 'quarantine.json')).get('ids', {})
+    except Exception:
+        qids = {}
+    quarantined = [p['id'] for p in pois_data if p.get('id') in qids]
+    if quarantined:
+        pois_data = [p for p in pois_data if p.get('id') not in qids]
+        print(f'quarantine: dropped {quarantined}')
+        log(packdir, f'quarantine: dropped {quarantined}')
+    return pois_data, quarantined
 
 
 def flag_keep_evidence(pois_data, now):

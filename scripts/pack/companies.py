@@ -31,6 +31,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from overture import toks, accept, nscore, dist_m, grid_index, nearby, norm_pc  # noqa
 
 ROOT = Path(__file__).resolve().parents[2]
+
+
+def quarantine_ids():
+    try:
+        return set(json.load(open(ROOT / 'data' / 'quarantine.json')).get('ids', {}))
+    except Exception:
+        return set()
 # Snapshot dir overridable (tests, local extracts). Default is the CI
 # cache dir populated by the workflow's download step.
 CHDIR = Path(os.environ.get('CH_SNAPSHOT_DIR', ROOT / 'data' / 'ch'))
@@ -311,6 +318,9 @@ def main():
         cat, label = SIC_CAT.get(r['sic'][:5], ('restaurant', 'Restaurant'))
         addr = (r['addr'] + (f", {r['town']}" if r['town'] else '') +
                 (f", {r['postcode']}" if r['postcode'] else '')).strip(', ')
+        if f"ch-{r['number']}" in quarantine_ids():
+            print(f"quarantine: refusing to create ch-{r['number']}")
+            continue
         pois.append({
             'id': f"ch-{r['number']}", 'ch_number': r['number'],
             'ch_legal_name': r['name'], 'ch_incorporated': r['inc'],

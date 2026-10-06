@@ -59,6 +59,12 @@ const ATP_CACHE = args.cache || RAW; // shared spider downloads across packs
 const POIS_PATH = args.pois || path.join(DATA, 'pois.json');
 const META_PATH = args.meta || path.join(DATA, 'build-meta.json');
 const EXTRACT_PATH = args.extract || path.join(DATA, 'atp', 'extract.json');
+// Quarantine (user-decided): listed ids are never created, whatever the
+// spider says. The recount backstop (build.py) drops stragglers loudly.
+let QUARANTINE = new Set();
+try {
+  QUARANTINE = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(DATA, 'quarantine.json'), 'utf8')).ids || {}));
+} catch { /* absent list = nothing quarantined */ }
 
 const meta = JSON.parse(fs.readFileSync(META_PATH, 'utf8'));
 const bbox = args.bbox ? args.bbox.split(',').map(Number) : [meta.bbox.w, meta.bbox.s, meta.bbox.e, meta.bbox.n];
@@ -373,7 +379,7 @@ function atpCategory(f) {
   return ['services', 'Services'];
 }
 const normPc = pc => (pc || '').replace(/\s/g, '').toLowerCase() || null;
-let created = 0, skippedDupe = 0, hosted = 0;
+let created = 0, skippedDupe = 0, hosted = 0, skippedQuarantine = 0;
 const createdIds = [];
 const knownIds = new Set(pois.map(p => p.id));
 for (const f of feats) {
@@ -385,6 +391,7 @@ for (const f of feats) {
     || djb2(`${f.spider}|${normName(f.name)}|${f.lat.toFixed(5)}|${f.lng.toFixed(5)}`);
   const id = `atp-${f.spider}-${ref}`;
   if (knownIds.has(id)) continue; // already created by an earlier run
+  if (QUARANTINE.has(id)) { console.log(`quarantine: refusing to create ${id}`); skippedQuarantine++; continue; }
   const [category, category_label] = atpCategory(f);
   const addr = [f.housenumber, f.street].filter(Boolean).join(' ');
   const rec = {
@@ -428,4 +435,4 @@ fs.writeFileSync(POIS_PATH, JSON.stringify(pois, null, 2));
 
 meta.atp = { runs: { primary: RUN_PRIMARY, supplements: SUPPLEMENT_RUNS }, spiders: mergeSpiders.length, feats_in_bbox: feats.length, feats_with_hours: feats.filter(f => f.opening_hours).length, matched, web_matched: webMatched, wikidata_matched: qidMatched, hours_added: hoursAdded, hours_before: hoursBefore, hours_after: hoursAfter, created, hosted, skipped_dupe: skippedDupe, created_ids: createdIds, snapshot_sha: snapshotSha, complete: failed.length === 0, failed_spiders: failed.map(f => `${f.spider}:${f.status}`), supplemented: Object.fromEntries(ledger.filter(l => l.run !== RUN_PRIMARY && l.status === 'ok').map(l => [l.spider, l.run])), spider_runs: Object.fromEntries(ledger.filter(l => l.status === 'ok').map(l => [l.spider, l.run])) };
 fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2));
-console.log(`matched ${matched} listings (${webMatched} via website, ${qidMatched} via wikidata) | hours ${hoursBefore} → ${hoursAfter} (+${hoursAdded} from chains) | created ${created} (${hosted} hosted), skipped ${skippedDupe} same-store variants`);
+console.log(`matched ${matched} listings (${webMatched} via website, ${qidMatched} via wikidata) | hours ${hoursBefore} → ${hoursAfter} (+${hoursAdded} from chains) | created ${created} (${hosted} hosted), skipped ${skippedDupe} same-store variants, ${skippedQuarantine} quarantined`);
