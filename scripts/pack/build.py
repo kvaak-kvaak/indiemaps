@@ -143,7 +143,7 @@ def build(area_id, args):
         run(['node', 'scripts/merge-site.js', '--in', str(packdir / 'site.json'),
              '--pois', pois, '--meta', meta], packdir)
         mark_stage(packdir, meta, 'merge')
-    if 'ta' in stages and a.get('ta'):
+    if 'ta' in stages and a.get('ta', True):
         run(['python3', 'scripts/pack/ta.py', f'--bbox={bbox}',
              '--pois', pois, '--meta', meta], packdir)
         mark_stage(packdir, meta, 'ta')

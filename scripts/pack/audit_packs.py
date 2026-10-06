@@ -19,7 +19,8 @@ def main():
     root = Path(a.packs)
     rows, bad = [], 0
     for meta_f in sorted(root.glob('*/meta.json')) + sorted(root.glob('*/*/meta.json')) + \
-            sorted(root.glob('*/*/*/meta.json')) + sorted(root.glob('*/*/*/*/meta.json')):
+            sorted(root.glob('*/*/*/meta.json')) + sorted(root.glob('*/*/*/*/meta.json')) + \
+            sorted(root.glob('*/*/*/*/*/meta.json')):
         area = str(meta_f.parent.relative_to(root))
         pois_f = meta_f.parent / 'pois.json'
         if not pois_f.exists():
