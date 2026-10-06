@@ -310,21 +310,32 @@ async function fetchOsm() {
   try {
     return await fetchBox(s, w, n, e, 0);
   } catch (err) {
-    // last resort for ultra-dense bboxes (e.g. City of London): tile blindly.
-    // Tiles go back through fetchBox so cap-splitting still applies at depth.
+    // last resort for ultra-dense bboxes (e.g. City of London) or huge
+    // ones (Helsinki metro is ~12x Southend by area): tile blindly at
+    // Southend-scale or smaller. Tiles go back through fetchBox so
+    // cap-splitting still applies at depth.
     // NOTE: the binding must NOT be named `e` — it would shadow the east
     // coordinate and poison every tile with NaN (measured: killed 40 areas
     // when a 504 storm exhausted one subtile's retries).
-    console.log(`Overpass struggling (${err.message.slice(0, 80)}) — sub-tiling 2x2 blind`);
+    console.log(`Overpass struggling (${err.message.slice(0, 80)}) — sub-tiling blind`);
+    const area = (n - s) * (e - w), unit = 0.21 * 0.07; // Southend bbox
+    const cells = Math.min(16, Math.max(4, Math.ceil(area / unit)));
+    const cols = Math.ceil(Math.sqrt(cells * (e - w) / (n - s)));
+    const rows = Math.ceil(cells / cols);
+    console.log(`blind grid: ${cols}x${rows} for area ${area.toFixed(4)}`);
     const seen = new Map();
     let raw = 0;
-    for (const [ts, tw, tn, te] of splitBbox(s, w, n, e)) {
-      try {
-        const sub = await fetchBox(ts, tw, tn, te, 1);
-        for (const el of sub.list) seen.set(el.type + el.id, el);
-        raw += sub.raw;
-      } catch (e2) {
-        throw new Error(`Overpass tile failed: ${ts},${tw},${tn},${te}`);
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < cols; j++) {
+        const ts = s + (n - s) * i / rows, tn = s + (n - s) * (i + 1) / rows;
+        const tw = w + (e - w) * j / cols, te = w + (e - w) * (j + 1) / cols;
+        try {
+          const sub = await fetchBox(ts, tw, tn, te, 1);
+          for (const el of sub.list) seen.set(el.type + el.id, el);
+          raw += sub.raw;
+        } catch (e2) {
+          throw new Error(`Overpass tile failed: ${ts},${tw},${tn},${te}`);
+        }
       }
     }
     console.log(`tiled query: ${seen.size} unique nodes`);
