@@ -315,3 +315,42 @@ Read these three docs first, in order:
   vintage family, no action needed).
 - First dispatch sat queued ~25 min (runner backlog), then the run
   completed normally; no code or infra implications.
+
+## Session log (2026-10-06, ATP chain-pin creation + parking rule)
+
+- User confirmed test streets correct for OSM + Overture; approved
+  creating the rest of the ATP pins (all spiders) + parking category
+  off by default. Commit 373a7aa, CI 37389445712 green (spider=false,
+  release-safe), demo NOT promoted (still Oct-1 1981).
+- atp.js creation pass: unmatched features with no matchCandidate hit
+  anywhere become atp-{spider}-{nsi|hash} pins (stable ids, rerun
+  idempotent — verified locally: 2nd run created 0, matched 130).
+  Southend: created 20 (Spar, Londis, Subway, Costa Express, 5 banks
+  incl 3 ATM-only records, Halfords x2, Kwik Fit, Screwfix, Argos,
+  Pep&Co, Card Factory, Shell x2), skipped 14 same-store variants,
+  hosted 0. Total 1978 -> 1998. All 20 carry atp-contributor keep
+  evidence; position gate updated deliberately for 'atp-chain'.
+- Concessions: same-pc+housenumber + exactly one shopping host ->
+  hosted_in + search_only; host card shows "also here", concession
+  shows host link (server by-id + app detail, selectPoi fetches
+  search-only records by id). Zero/multi hosts -> standalone pin.
+- Parking: new category in build.js + server live mirror +
+  atpCategory. All-mode hides parking, 🅿️ chip opts in. BUT Southend
+  pack has 0 parking records — base/live Overpass queries never fetch
+  amenity=parking, and no ATP feature classified as parking. Rule is
+  live and waiting; if parking clutter is seen somewhere, it comes
+  from outside our packs — ask user where before fetching parking.
+- Watch item: 3 ATM-only bank records + Costa Express (likely a
+  machine) are thin-but-honest chain pins; Services will grow as
+  banks/fuel/DIY land there. Recategorisation is a follow-up, not
+  this change.
+
+## Session log (2026-10-06, demo promotion to 1998)
+
+- Promoted CI Southend run 37389445712 (1998 POIs, spider=false) to
+  demo: default view 1294 -> 1314 (+20 ATP chain pins), full search
+  1929, CH 142, parking 0 in view. Foodbank fsa-1796273 still absent
+  (quarantine holds). Backup in /tmp/opencode/backup-pre1998/.
+- New pins verified live: search + by-id (atp-subway-subway-6a374d)
+  with atp-contributor keep evidence; 🅿️ chip present, stats note
+  honest.

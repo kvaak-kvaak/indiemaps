@@ -1,5 +1,5 @@
 {
- "built_at": "2026-10-05T20:35:33.489Z",
+ "built_at": "2026-10-05T23:37:17.013Z",
  "fsa_extract_date": "2026-10-05",
  "fsa_authority": "FHRS893",
  "bbox": {
@@ -9,13 +9,13 @@
   "e": 0.825
  },
  "counts": {
-  "total": 1978,
+  "total": 1998,
   "fsa_only": 317,
   "merged": 407,
-  "osm_only": 329,
+  "osm_only": 330,
   "nhs_added": 11,
   "ch_added": 40,
-  "with_hours": 311,
+  "with_hours": 215,
   "osm_nodes_pulled": 1139,
   "osm_raw_response": 1203,
   "fsa_repinned": 0,
@@ -24,7 +24,15 @@
   "osm_duplicates_merged": 3,
   "stale_flagged": 8,
   "position_approx": 829,
-  "orphan_hidden": 657
+  "orphan_hidden": 657,
+  "kept_by_rule": {
+   "atp": 130,
+   "fsa": 1176,
+   "ch": 143,
+   "recent_osm": 77,
+   "nhs": 39,
+   "servicemap": 0
+  }
  },
  "with_hours": 102,
  "with_phone": 106,
@@ -37,8 +45,6 @@
   "overture",
   "nhs",
   "atp",
-  "sites",
-  "merge",
   "ta"
  ],
  "verify_positions": {
@@ -128,7 +134,7 @@
  "hazard_roads": {
   "coast_m": 100,
   "sparse_n": 5,
-  "segments": 2512,
+  "segments": 2547,
   "flagged": 27,
   "members": [
    {
@@ -283,14 +289,32 @@
   "wikidata_matched": 86,
   "hours_added": 64,
   "hours_before": 103,
-  "hours_after": 167
- },
- "site": {
-  "input": "/home/runner/work/indiemaps/indiemaps/packs/eu/gb/england/essex/southend-on-sea/site.json",
-  "sites": 497,
-  "matched": 460,
-  "hours_added": 111,
-  "conflicts": 19
+  "hours_after": 167,
+  "created": 20,
+  "hosted": 0,
+  "skipped_dupe": 14,
+  "created_ids": [
+   "atp-spar_gb-spar-1effe0",
+   "atp-londis_gb-londis-232829",
+   "atp-subway-subway-6a374d",
+   "atp-costa_coffee_gg_gb_im_je-costaexpress-3d5cac",
+   "atp-barclays_gb-barclays-53ff29",
+   "atp-hsbc_uk_gb-hsbcuk-e1e9d0",
+   "atp-lloyds_bank_gb-16a75c1",
+   "atp-natwest_gb-natwest-6bb648",
+   "atp-natwest_gb-natwest-8cfc37",
+   "atp-nationwide_gb-nationwide-e1e9d0",
+   "atp-halifax_gb-halifax-396707",
+   "atp-halfords_gb-halfords-078f70",
+   "atp-halfords_gb-halfordsautocentre-3b6d6",
+   "atp-kwik_fit_gb-kwikfit-b75a4b",
+   "atp-screwfix_gb-ysp2ew",
+   "atp-argos-argos-3930ea",
+   "atp-poundland-pepandco-94f7c8",
+   "atp-card_factory_gb-cardfactory-d8c200",
+   "atp-shell-shell-d42a8c",
+   "atp-shell-shellselect-cfb41f"
+  ]
  },
  "ta": {
   "skipped": "parquet absent",
