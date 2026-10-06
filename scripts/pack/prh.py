@@ -226,7 +226,9 @@ def stage(bbox, pois_path, meta_path, municipality):
                 continue
             queries += 1
             try:
-                res = search_companies(name, None, limit=10)
+                # API ignores small limits (60 rows seen for limit=5);
+                # slice wide, pick_hit() decides.
+                res = search_companies(name, None, limit=60)
             except Exception as ex:
                 print(f'prh: query failed for {name[:30]} ({str(ex)[:60]})')
                 continue
