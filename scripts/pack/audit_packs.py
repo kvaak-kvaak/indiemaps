@@ -43,6 +43,8 @@ def main():
             'supp': len(atp.get('supplemented', {})),
             'failed': len(atp.get('failed_spiders', [])),
             'ta': (m.get('ta') or {}).get('matched', '?'),
+            'prh': (m.get('prh') or {}).get('matched', '-'),
+            'chain': (m.get('chains_fi') or {}).get('matched', '-'),
             'bare': len(bare), 'prov': len(prov),
             'verified': w.get('verified', '?'),
             'complete': m.get('atp', {}).get('complete', '?'),
