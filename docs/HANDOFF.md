@@ -482,3 +482,22 @@ Read these three docs first, in order:
   the Hakaniemi community measurement), chains 109, prh 35,
   ta 1015. Hidden 3176 (44% OSM-only stale — doctrine working).
 - 16-area FI sweep dispatched spider=false.
+
+## Session log (2026-10-06, UK47 timeout recovery + _fi merge)
+
+- UK47 run hit the 330-min cap at 26/47 (timeout-minutes: 330).
+  19MB partial artifact banked all 26 (audit: 0 violations, all
+  verified=true). Remaining 21 (all London) split: batch A (11)
+  dispatched 37539667144, batch B (10) after.
+- _fi spiders (8) + bare hesburger/st1 in merge set (commit
+  5533a28); FI country added to pruning allowlist after it
+  wrongly skipped every FI spider as non-UK (caught locally).
+- ID integrity fix: nsi_id is brand-level (all Subways share
+  one) — ids now always location-bound (atp-<spider>-<nsi>-<hash>).
+  Caught via Vantaa Dixi wearing Southend's id; multi-branch
+  chains were silently collapsing to one pin.
+- rules_uk marked reference-spec (not live, not deleted);
+  ATP actions-cache added (keyed on atp.js hash).
+- ta enrichment default-on for all areas (extract covers UK+FI);
+  the 26 banked packs predate it — ta-only refresh pass due
+  after batch B (cheap: no downloads).
