@@ -419,3 +419,31 @@ Read these three docs first, in order:
   not a bug); six High-Street brands on the map with chain
   badges. Trussell Trust foodbank pin ships (real chain data,
   flagged 2026-10-06).
+
+## Session log (2026-10-06, ta-extract rewrite + tiers)
+
+- Commit 2890789 (+4e5fef0 pyyaml): data/ta-extract.parquet
+  (17.4MB, 177k rows, UK nations + Finland, 24 cols) cut from the
+  1.08M-row c.2021 dump; .gitignore exception with rationale.
+  CI 37488090876 + 37489784280 green (spider=false, release-safe).
+  Demo NOT promoted.
+- Schema: identity/city/coords, price_level, meals, cuisines,
+  Y/N diet flags, raw hours JSON, rec_up/down/n (+vintage
+  2021-06-01, formula laplace-expdecay-v1), 4 feature booleans,
+  features_other (6-value closed vocab), keywords stored-unrendered.
+  Parking clustered to one token; 13 junk tokens burned; averages
+  discarded; region/province/subscores/languages dropped.
+- ta.py rewired: rec fields replace stars, affirmative-only flags,
+  gap-only hours unchanged, extract sha in meta.ta. Southend:
+  622 rows -> 333 matched, +230 hours, +190 diets, +63 flags.
+  Helsinki: 1919 -> 832 matched, +180 hours, +322 diets.
+  Zero old star keys remain.
+- Display: Laplace % + binned reviews ("89% recommend · ~35
+  reviews"), Recommended badge >=65% + n>=5, no year on card,
+  decay starts at first fresh review (H>=2yr guardrail in spec).
+- Weights restored: source-weights.yaml v1 + area_weights +
+  manifest verified flag; per-pin tier (legs capped at 3);
+  browse sorts by tier, search untouched. GB verified=true.
+- Vela critique in docs/VELA_WEIGHTS_CRITIQUE.md for the other
+  agent (brand-term dominance, flat-confidence contradiction,
+  no corroboration count, dead iskiosk, visibility inheritance).
