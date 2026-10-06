@@ -407,3 +407,15 @@ Read these three docs first, in order:
   Sep-5-13-32-25, Sep-19-13-32-18, Sep-26-13-32-25. No Oct-3 run
   at 13:32 (absent or different time).
 - Demo NOT promoted (still 1998).
+
+## Session log (2026-10-06, demo promotion to 2043)
+
+- Promoted CI Southend run 37438576677 (2043 POIs, spider=false)
+  to demo: default view 1314 -> 1427 (+45 net records, +68
+  un-hidden orphans). Foodbank fsa-1796273 still absent.
+  Backup in /tmp/opencode/backup-pre2043/.
+- Verified live: Specsavers x2, Waterstones, Jollyes all
+  searchable as shopping (base shop=* mapping — consistent,
+  not a bug); six High-Street brands on the map with chain
+  badges. Trussell Trust foodbank pin ships (real chain data,
+  flagged 2026-10-06).

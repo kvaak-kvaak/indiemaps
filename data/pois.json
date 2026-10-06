@@ -546,14 +546,29 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 12,
    "candidates": 5
   },
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -2583,8 +2598,6 @@
   "atp_wikidata": "Q5943510",
   "atp_nsi": "hungryhorse-eaed91",
   "atp_hours": "Mo-Fr 11:00-23:00; Sa-Su 09:00-23:00",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -2855,8 +2868,6 @@
   "atp_wikidata": "Q4789707",
   "atp_nsi": "argos-3930ea",
   "atp_hours": "Mo-Fr 09:00-20:00; Sa 09:00-18:30; Su 10:00-16:00",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -3255,8 +3266,6 @@
   },
   "atp_wikidata": "Q297410",
   "atp_nsi": "asda-b98d4f",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -3467,14 +3476,30 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 34,
    "candidates": 55
   },
+  "atp_spider": "ask_italian_gb",
+  "atp_brand": "ASK Italian",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q4807056",
+  "atp_nsi": "askitalian-9b5453",
+  "atp_hours": "Mo-Fr 11:30-22:00; Sa 11:30-23:00; Su 11:30-21:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -4066,8 +4091,6 @@
   },
   "atp_wikidata": "Q4836931",
   "atp_hours": "Mo-Sa 08:00-21:00; Su 10:00-16:00",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -4639,7 +4662,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -4651,8 +4675,23 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "barnardos_gb",
+  "atp_brand": "Barnardo's",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q2884670",
+  "atp_nsi": "barnardos-f84d6b",
+  "atp_hours": "Mo-Sa 09:30-17:00; Su 10:00-16:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-664911542",
@@ -6275,10 +6314,26 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "betfred_gb",
+  "atp_brand": "Betfred",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 3
+  },
+  "atp_wikidata": "Q4897425",
+  "atp_nsi": "betfred-58d00b",
+  "atp_hours": "Mo-Sa 08:00-22:00; Su 08:00-21:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-12863367337",
@@ -6313,7 +6368,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -6326,8 +6382,23 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "betfred_gb",
+  "atp_brand": "Betfred",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q4897425",
+  "atp_nsi": "betfred-58d00b",
+  "atp_hours": "Mo-Su 08:00-22:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-12870279711",
@@ -6361,10 +6432,26 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "betfred_gb",
+  "atp_brand": "Betfred",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q4897425",
+  "atp_nsi": "betfred-58d00b",
+  "atp_hours": "Mo-Sa 08:00-22:00; Su 08:00-21:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-1043889720",
@@ -8183,10 +8270,26 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "bonmarche_gb",
+  "atp_brand": "Bonmarch\u00e9",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q4942146",
+  "atp_nsi": "bonmarche-7b1694",
+  "atp_hours": "Mo-Sa 09:00-17:30; Su 11:00-15:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-way-579520853",
@@ -8222,9 +8325,25 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
+  "atp_spider": "booker_gb",
+  "atp_brand": "Booker Wholesale",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q4943180",
+  "atp_nsi": "bookerwholesale-650ac6",
+  "atp_hours": "Mo-Fr 07:30-17:00; Sa 07:30-15:00; Su 09:00-13:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "recent-osm-touch",
     "meaning": "Map record touched within six months \u2014 retention, not proof of opening"
@@ -8440,8 +8559,6 @@
   },
   "atp_wikidata": "Q6123139",
   "atp_nsi": "boots-3d082e",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -8498,8 +8615,6 @@
   },
   "atp_wikidata": "Q4944037",
   "atp_nsi": "bootsopticians-610826",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -9776,7 +9891,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -9788,8 +9904,22 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "bhf_gb",
+  "atp_brand": "British Heart Foundation",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q4970039",
+  "atp_nsi": "britishheartfoundation-b7b967",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-512943",
@@ -10545,7 +10675,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -10557,8 +10688,22 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "budgens_gb",
+  "atp_brand": "Budgens",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q4985016",
+  "atp_nsi": "budgens-232829",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-1809197",
@@ -12492,8 +12637,6 @@
   "atp_wikidata": "Q5038192",
   "atp_nsi": "cardfactory-d8c200",
   "atp_hours": "Mo-Sa 09:00-17:30; Su 10:30-16:30",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -12533,10 +12676,26 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "cards_direct_gb",
+  "atp_brand": "Cards Direct",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q114826765",
+  "atp_nsi": "cardsdirect-da52c2",
+  "atp_hours": "Mo-Sa 09:00-17:30; Su 10:00-16:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-way-1296649894",
@@ -12886,7 +13045,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -12898,8 +13058,22 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "cash_converters_gb",
+  "atp_brand": "Cash Converters",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q5048645",
+  "atp_nsi": "cashconverters-1c62e9",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-way-1147372324",
@@ -17110,43 +17284,6 @@
   "unresolved_why": "stale-orphan"
  },
  {
-  "id": "osm-node-1045266596",
-  "fsa_id": null,
-  "osm_type": "node",
-  "osm_id": 1045266596,
-  "osm_touched": "2025-05-19T15:14:17Z",
-  "osm_version": 5,
-  "osm_fhrs_id": null,
-  "name": "Coral",
-  "category": "shopping",
-  "category_label": "Shop",
-  "lat": 51.5411323,
-  "lng": 0.695476,
-  "geo_precision": "osm",
-  "address": "Hamlet Court Road, Westcliff-on-Sea",
-  "postcode": null,
-  "phone": "",
-  "email": "",
-  "website": "",
-  "facebook": "",
-  "instagram": "",
-  "twitter": "",
-  "opening_hours_osm": "",
-  "opening_hours": {},
-  "cuisine": "",
-  "brand_wikidata": "Q54621344",
-  "wikipedia": null,
-  "wikidata": null,
-  "amenities": [],
-  "photos": [],
-  "description": "",
-  "sources": [
-   "osm"
-  ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
- },
- {
   "id": "osm-node-12163555966",
   "fsa_id": null,
   "osm_type": "node",
@@ -17178,10 +17315,26 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "coral_gb",
+  "atp_brand": "Coral",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q54621344",
+  "atp_nsi": "coral-58d00b",
+  "atp_hours": "Mo-Fr 08:30-21:30; Sa 09:00-21:00; Su 09:30-19:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-12862851872",
@@ -17215,10 +17368,79 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "coral_gb",
+  "atp_brand": "Coral",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q54621344",
+  "atp_nsi": "coral-58d00b",
+  "atp_hours": "Mo-Fr 07:30-22:00; Sa-Su 08:00-22:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "osm-node-1045266596",
+  "fsa_id": null,
+  "osm_type": "node",
+  "osm_id": 1045266596,
+  "osm_touched": "2025-05-19T15:14:17Z",
+  "osm_version": 5,
+  "osm_fhrs_id": null,
+  "name": "Coral",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.5411323,
+  "lng": 0.695476,
+  "geo_precision": "osm",
+  "address": "Hamlet Court Road, Westcliff-on-Sea",
+  "postcode": null,
+  "phone": "",
+  "email": "",
+  "website": "",
+  "facebook": "",
+  "instagram": "",
+  "twitter": "",
+  "opening_hours_osm": "",
+  "opening_hours": {},
+  "cuisine": "",
+  "brand_wikidata": "Q54621344",
+  "wikipedia": null,
+  "wikidata": null,
+  "amenities": [],
+  "photos": [],
+  "description": "",
+  "sources": [
+   "osm",
+   "atp"
+  ],
+  "atp_spider": "coral_gb",
+  "atp_brand": "Coral",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q54621344",
+  "atp_nsi": "coral-58d00b",
+  "atp_hours": "Mo-Sa 08:30-22:00; Su 08:00-22:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-1043934004",
@@ -17618,29 +17840,14 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm",
-   "atp"
+   "osm"
   ],
   "osm_match": {
    "score": 2.3,
    "dist_m": 89,
    "candidates": 49
   },
-  "atp_spider": "costa_coffee_gg_gb_im_je",
-  "atp_brand": "Costa",
-  "atp_method": "wikidata",
-  "atp_match": {
-   "score": 2.5,
-   "method": "wikidata",
-   "candidates": 3
-  },
-  "atp_wikidata": "Q608845",
-  "atp_hours": "Mo-Sa 07:00-18:00; Su 08:00-17:00",
   "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -17681,8 +17888,7 @@
   "sources": [
    "fsa",
    "osm",
-   "overture",
-   "atp"
+   "overture"
   ],
   "osm_match": {
    "score": 2.4,
@@ -17700,21 +17906,7 @@
   "overture_datasets": [
    "meta"
   ],
-  "atp_spider": "costa_coffee_gg_gb_im_je",
-  "atp_brand": "Costa",
-  "atp_method": "wikidata",
-  "atp_match": {
-   "score": 2.5,
-   "method": "wikidata",
-   "candidates": 2
-  },
-  "atp_wikidata": "Q608845",
-  "atp_hours": "Mo-Fr 06:00-18:30; Sa 06:30-18:30; Su 06:30-18:00",
   "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -17756,8 +17948,7 @@
    "fsa",
    "osm",
    "ch",
-   "overture",
-   "atp"
+   "overture"
   ],
   "osm_match": {
    "score": 2.4,
@@ -17777,21 +17968,7 @@
   "overture_datasets": [
    "meta"
   ],
-  "atp_spider": "costa_coffee_gg_gb_im_je",
-  "atp_brand": "Costa",
-  "atp_method": "wikidata",
-  "atp_match": {
-   "score": 2.5,
-   "method": "wikidata",
-   "candidates": 3
-  },
-  "atp_wikidata": "Q608845",
-  "atp_hours": "Mo-Sa 07:30-17:30; Su 08:30-16:30",
   "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -17832,8 +18009,7 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture",
-   "atp"
+   "overture"
   ],
   "osm_match": {
    "score": null,
@@ -17851,22 +18027,8 @@
   "overture_datasets": [
    "meta"
   ],
-  "atp_spider": "costa_coffee_gg_gb_im_je",
-  "atp_brand": "Costa",
-  "atp_method": "name",
-  "atp_match": {
-   "score": 0.8,
-   "method": "name",
-   "candidates": 1
-  },
-  "atp_wikidata": "Q608845",
-  "atp_hours": "Mo 07:00-19:00; Tu-Fr 06:30-20:30; Sa-Su 07:00-19:00",
   "position_approx": true,
   "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -17902,15 +18064,31 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "atp"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 16
   },
+  "atp_spider": "costcutter_gb",
+  "atp_brand": "Costcutter",
+  "atp_method": "exact-name",
+  "atp_match": {
+   "score": 2,
+   "method": "exact-name",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q5175072",
+  "atp_nsi": "costcutter-31620e",
+  "atp_hours": "Mo 08:00-20:00; Tu-Su 07:00-21:00",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -17947,7 +18125,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": null,
@@ -17965,8 +18144,23 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "costcutter_gb",
+  "atp_brand": "Costcutter",
+  "atp_method": "exact-name",
+  "atp_match": {
+   "score": 2,
+   "method": "exact-name",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q5175072",
+  "atp_nsi": "costcutter-31620e",
+  "atp_hours": "Mo-Su 08:00-19:00",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -18003,7 +18197,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": null,
@@ -18021,8 +18216,23 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "costcutter_gb",
+  "atp_brand": "Costcutter",
+  "atp_method": "exact-name",
+  "atp_match": {
+   "score": 2,
+   "method": "exact-name",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q5175072",
+  "atp_nsi": "costcutter-31620e",
+  "atp_hours": "Mo-Su 00:01-24:00",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -18061,10 +18271,26 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "costcutter_gb",
+  "atp_brand": "Costcutter",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q5175072",
+  "atp_nsi": "costcutter-31620e",
+  "atp_hours": "Mo 07:00-22:00; Tu-Su 07:00-21:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-513058",
@@ -18140,14 +18366,30 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 1,
    "dist_m": 73,
    "candidates": 4
   },
+  "atp_spider": "costcutter_gb",
+  "atp_brand": "Costcutter",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q5175072",
+  "atp_nsi": "costcutter-31620e",
+  "atp_hours": "Mo-Su 06:30-21:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -18648,10 +18890,25 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "creams_gb",
+  "atp_brand": "Creams",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q111811895",
+  "atp_nsi": "creams-546be0",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-1713652",
@@ -18927,7 +19184,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 2.3,
@@ -18944,7 +19202,21 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "mbplc_gb",
+  "atp_brand": "Nicholson's",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q113130666",
+  "atp_nsi": "nicholsons-eaed91",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -21722,7 +21994,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 1,
@@ -21740,7 +22013,22 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "dominos_pizza_gb",
+  "atp_brand": "Domino's",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q839466",
+  "atp_nsi": "dominos-16ff25",
+  "atp_hours": "Mo-Th 11:30-22:00; Fr-Sa 11:30-23:00; Su 11:30-22:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -21781,7 +22069,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
@@ -21799,7 +22088,22 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "dominos_pizza_gb",
+  "atp_brand": "Domino's",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q839466",
+  "atp_nsi": "dominos-16ff25",
+  "atp_hours": "Mo-Su 11:00-23:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -21835,15 +22139,31 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "atp"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 43
   },
+  "atp_spider": "dominos_pizza_gb",
+  "atp_brand": "Domino's",
+  "atp_method": "exact-name",
+  "atp_match": {
+   "score": 2,
+   "method": "exact-name",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q839466",
+  "atp_nsi": "dominos-16ff25",
+  "atp_hours": "Mo-Su 11:30-23:00",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -22039,7 +22359,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "facebook_source": "overture",
   "overture_id": "a3c7134c-26aa-4a82-8670-27f9acd6c867",
@@ -22050,8 +22371,23 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "dreams_gb",
+  "atp_brand": "Dreams",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q5306688",
+  "atp_nsi": "dreams-8fcb64",
+  "atp_hours": "Mo 10:00-19:00; Tu 10:00-20:00; We-Fr 10:00-19:00; Sa 09:00-18:00; Su 10:30-16:30",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-1993212",
@@ -23630,10 +23966,25 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "ee_gb",
+  "atp_brand": "EE",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q5322942",
+  "atp_nsi": "ee-94b138",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-513208",
@@ -24418,10 +24769,25 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-813949",
@@ -26322,7 +26688,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": null,
@@ -26350,8 +26717,22 @@
     "absorbed_by_registry": true
    }
   ],
+  "atp_spider": "fireaway_gb",
+  "atp_brand": "Fireaway",
+  "atp_method": "name",
+  "atp_match": {
+   "score": 1.3,
+   "method": "name",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q110484131",
+  "atp_nsi": "fireawaypizza-658eea",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -26809,8 +27190,7 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm",
-   "atp"
+   "osm"
   ],
   "osm_match": {
    "score": null,
@@ -26821,22 +27201,7 @@
   "osm_version": 2,
   "verified_position": "premises",
   "verified_from": "osm-node-2443645667",
-  "atp_spider": "costa_coffee_gg_gb_im_je",
-  "atp_brand": "Costa Express",
-  "atp_method": "name",
-  "atp_match": {
-   "score": 0.5,
-   "method": "name",
-   "candidates": 1
-  },
-  "atp_wikidata": "Q113556385",
-  "atp_nsi": "costaexpress-3d5cac",
-  "atp_hours": "Mo-Su 06:00-23:00",
   "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -26877,28 +27242,10 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm",
-   "atp"
+   "osm"
   ],
-  "atp_spider": "costa_coffee_gg_gb_im_je",
-  "atp_brand": "Costa Express",
-  "atp_method": "name",
-  "atp_match": {
-   "score": 0.5,
-   "method": "name",
-   "candidates": 1
-  },
-  "atp_wikidata": "Q113556385",
-  "atp_nsi": "costaexpress-3d5cac",
-  "atp_hours": "Mo-Su 06:00-23:00",
   "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ]
+  "unresolved_why": "stale-orphan"
  },
  {
   "id": "fsa-512495",
@@ -27428,7 +27775,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -27440,8 +27788,23 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "shoe_zone_gb",
+  "atp_brand": "Shoe Zone",
+  "atp_method": "name",
+  "atp_match": {
+   "score": 0.5,
+   "method": "name",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7500016",
+  "atp_nsi": "shoezone-c06ee3",
+  "atp_hours": "Mo-Sa 09:00-17:30; Su 10:00-16:30",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-1809208",
@@ -27668,7 +28031,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "facebook_source": "overture",
   "overture_id": "6e460e01-96fa-43a9-a02f-372fa9c8777d",
@@ -27679,8 +28043,23 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "formula_one_autocentres_gb",
+  "atp_brand": "Formula One Autocentres",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q79239635",
+  "atp_nsi": "formulaoneautocentres-3b6d68",
+  "atp_hours": "Mo-Fr 08:30-18:00; Sa 08:30-17:00; Su 10:00-16:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-513089",
@@ -30116,14 +30495,30 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 29,
    "candidates": 45
   },
+  "atp_spider": "grape_tree_gb",
+  "atp_brand": "Grape Tree",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q87071497",
+  "atp_nsi": "grapetree-edcb10",
+  "atp_hours": "Mo-Sa 09:00-17:30; Su 11:00-17:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -30164,7 +30559,8 @@
   "sources": [
    "osm",
    "overture",
-   "nhs"
+   "nhs",
+   "atp"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -30182,9 +30578,21 @@
    "dist_m": 7
   },
   "nhs_hours": "Mo 09:00-13:00,14:00-18:00; Tu 09:00-13:00,14:00-18:00; We 09:00-13:00,14:00-18:00; Th 09:00-13:00,14:00-18:00; Fr 09:00-13:00,14:00-18:00",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
+  "atp_spider": "coop_funeral_gb",
+  "atp_brand": "The Co-operative Funeralcare",
+  "atp_method": "name",
+  "atp_match": {
+   "score": 1,
+   "method": "name",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7726521",
+  "atp_nsi": "thecooperativefuneralcare-e90732",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "nhs-listed",
     "meaning": "NHS listed pharmacy (England)"
@@ -31478,7 +31886,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -31490,8 +31899,23 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "h_samuel_gb",
+  "atp_brand": "H.Samuel",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q5628558",
+  "atp_nsi": "hsamuel-f07ca3",
+  "atp_hours": "Mo-Sa 09:30-17:00; Su 10:00-16:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-12859374760",
@@ -31577,7 +32001,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -31589,8 +32014,22 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "h_t_pawnbrokers_gb",
+  "atp_brand": "H&T Pawnbrokers",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q105672451",
+  "atp_nsi": "handtpawnbrokers-c861e3",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-1914035",
@@ -31747,17 +32186,16 @@
   "overture_datasets": [
    "meta"
   ],
-  "atp_spider": "toby_carvery_gb",
+  "atp_spider": "mbplc_gb",
   "atp_brand": "Toby Carvery",
   "atp_method": "wikidata",
   "atp_match": {
    "score": 2.5,
    "method": "wikidata",
-   "candidates": 1
+   "candidates": 2
   },
   "atp_wikidata": "Q7811777",
   "atp_nsi": "tobycarvery-9b5453",
-  "atp_hours": "Mo-Th 08:00-22:00; Fr-Sa 08:00-23:00; Su 08:00-22:00",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -32190,14 +32628,30 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 14,
    "candidates": 1
   },
+  "atp_spider": "harvester_gb",
+  "atp_brand": "Harvester",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q5676915",
+  "atp_nsi": "harvester-9b5453",
+  "atp_hours": "Mo-Th 11:30-22:00; Fr-Sa 09:00-23:00; Su 09:00-22:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -32676,10 +33130,25 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "hays_travel_gb",
+  "atp_brand": "Hays Travel",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q70250954",
+  "atp_nsi": "haystravel-b1d32b",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-666372540",
@@ -32819,10 +33288,25 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-941263",
@@ -33276,7 +33760,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": null,
@@ -33294,8 +33779,23 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "hobbycraft_gb",
+  "atp_brand": "Hobbycraft",
+  "atp_method": "website",
+  "atp_match": {
+   "score": 1.8,
+   "method": "website",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q16984508",
+  "atp_nsi": "hobbycraft-25f394",
+  "atp_hours": "Mo-Fr 09:00-20:00; Sa 09:00-18:00; Su 10:00-16:00",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -33612,8 +34112,6 @@
   "atp_wikidata": "Q5888229",
   "atp_nsi": "homebargains-622078",
   "atp_hours": "Mo-Sa 08:00-20:00; Su 10:00-16:00",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -34270,7 +34768,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -34283,8 +34782,22 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "hotter_gb",
+  "atp_brand": "Hotter",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q91919346",
+  "atp_nsi": "hotter-eede13",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-13022999903",
@@ -37187,7 +37700,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "website_source": "overture",
   "facebook_source": "overture",
@@ -37199,7 +37713,22 @@
   "overture_datasets": [
    "AllThePlaces"
   ],
+  "atp_spider": "jollyes_gb",
+  "atp_brand": "Jollyes",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q45844955",
+  "atp_nsi": "jollyes-8ec028",
+  "atp_hours": "Mo-Fr 09:00-19:00; Sa 09:00-18:00; Su 10:00-16:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "recent-osm-touch",
     "meaning": "Map record touched within six months \u2014 retention, not proof of opening"
@@ -38203,7 +38732,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 1.3,
@@ -38220,7 +38750,22 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "kfc_gb",
+  "atp_brand": "KFC",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q524757",
+  "atp_nsi": "kfc-434abc",
+  "atp_hours": "Mo-Su 10:00-23:30",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -38261,7 +38806,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 2.3,
@@ -38278,7 +38824,22 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "kfc_gb",
+  "atp_brand": "KFC",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q524757",
+  "atp_nsi": "kfc-434abc",
+  "atp_hours": "Mo-Fr 10:00-22:00; Sa-Su 10:00-22:30",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -38321,7 +38882,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -38333,8 +38895,23 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "kfc_gb",
+  "atp_brand": "KFC",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q524757",
+  "atp_nsi": "kfc-434abc",
+  "atp_hours": "Mo-Su 10:00-22:30",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-1425437",
@@ -38370,7 +38947,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
@@ -38387,7 +38965,22 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "kfc_gb",
+  "atp_brand": "KFC",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q524757",
+  "atp_nsi": "kfc-434abc",
+  "atp_hours": "Mo-Su 10:00-23:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -39400,8 +39993,6 @@
   "atp_wikidata": "Q958053",
   "atp_nsi": "kwikfit-b75a4b",
   "atp_hours": "Mo-Fr 08:30-18:00; Sa 08:30-17:00",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -39823,10 +40414,26 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "ladbrokes_gb",
+  "atp_brand": "Ladbrokes",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q1799875",
+  "atp_nsi": "ladbrokes-afd1fc",
+  "atp_hours": "Mo-Fr 09:00-20:00; Sa 08:30-21:00; Su 08:30-19:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-512968",
@@ -42264,8 +42871,6 @@
   "atp_wikidata": "Q151954",
   "atp_nsi": "lidl-5866c3",
   "atp_hours": "Mo-Sa 08:00-22:00; Su 10:00-16:00",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -43713,8 +44318,6 @@
   },
   "atp_wikidata": "Q21008564",
   "atp_nsi": "londis-232829",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -43804,8 +44407,6 @@
   },
   "atp_wikidata": "Q21008564",
   "atp_nsi": "londis-232829",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -43858,8 +44459,6 @@
   },
   "atp_wikidata": "Q21008564",
   "atp_nsi": "londis-232829",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -45002,7 +45601,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": null,
@@ -45022,8 +45622,22 @@
   "overture_datasets": [
    "Foursquare"
   ],
+  "atp_spider": "majestic_gb",
+  "atp_brand": "Majestic",
+  "atp_method": "name",
+  "atp_match": {
+   "score": 1.2,
+   "method": "name",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q6737725",
+  "atp_hours": "Mo-We 10:00-19:00; Th-Fr 10:00-20:00; Sa 09:00-19:00; Su 10:00-17:00",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -46198,7 +46812,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -46210,7 +46825,22 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "matalan_gb",
+  "atp_brand": "Matalan",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q12061509",
+  "atp_nsi": "matalan-1132a1",
+  "atp_hours": "Mo-Fr 09:00-20:00; Sa 09:00-19:00; Su 10:30-16:30",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "recent-osm-touch",
     "meaning": "Map record touched within six months \u2014 retention, not proof of opening"
@@ -47462,7 +48092,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": null,
@@ -47480,8 +48111,23 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "miller_and_carter_gb",
+  "atp_brand": "Miller & Carter",
+  "atp_method": "website",
+  "atp_match": {
+   "score": 1.8,
+   "method": "website",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q87067401",
+  "atp_nsi": "millerandcarter-9b5453",
+  "atp_hours": "Mo-Tu 12:00-22:00; We-Sa 12:00-23:00; Su 12:00-22:00",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -47519,7 +48165,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
@@ -47536,7 +48183,22 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "millets_gb",
+  "atp_brand": "Millets",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q64822903",
+  "atp_nsi": "millets-f55d12",
+  "atp_hours": "Mo-Sa 09:00-17:30; Su 10:00-16:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -47829,9 +48491,24 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
+  "atp_spider": "mind_gb",
+  "atp_brand": "Mind",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q3314763",
+  "atp_nsi": "mind-b7b967",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "recent-osm-touch",
     "meaning": "Map record touched within six months \u2014 retention, not proof of opening"
@@ -48326,7 +49003,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
@@ -48343,7 +49021,22 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "lounges_gb",
+  "atp_brand": "Lounges",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q114313933",
+  "atp_nsi": "lounges-9b5453",
+  "atp_hours": "Mo-Th 09:00-22:00; Sa 09:00-23:00; Su 09:00-22:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -50279,30 +50972,14 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm",
-   "atp"
+   "osm"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 20,
    "candidates": 37
   },
-  "atp_spider": "nandos_gb_ie",
-  "atp_brand": "Nando's",
-  "atp_method": "wikidata",
-  "atp_match": {
-   "score": 2.5,
-   "method": "wikidata",
-   "candidates": 1
-  },
-  "atp_wikidata": "Q3472954",
-  "atp_nsi": "nandos-32ebee",
-  "atp_hours": "Mo-Tu 11:30-22:00; We-Fr 11:30-22:30; Sa 12:00-22:00; Su 11:30-22:00",
   "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -51434,7 +52111,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 0.9,
@@ -51452,7 +52130,21 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "nisalocal_gb",
+  "atp_brand": "Nisa",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q16999069",
+  "atp_hours": "Mo-Fr 05:00-20:00; Sa 06:00-19:00; Su 08:00-16:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -51530,14 +52222,29 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 2.3,
    "dist_m": 84,
    "candidates": 10
   },
+  "atp_spider": "nisalocal_gb",
+  "atp_brand": "Nisa",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q16999069",
+  "atp_hours": "Mo-Sa 07:30-19:30; Su 08:00-14:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -51575,7 +52282,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
@@ -51591,7 +52299,21 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "nisalocal_gb",
+  "atp_brand": "Nisa",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q16999069",
+  "atp_hours": "Mo-Fr 06:30-21:00; Sa 07:00-21:00; Su 08:00-19:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -52151,10 +52873,26 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "o2_gb",
+  "atp_brand": "O2",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q1759255",
+  "atp_nsi": "o2-d2c5a6",
+  "atp_hours": "Mo-Sa 09:00-17:30; Su 10:00-16:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-way-50706264",
@@ -54891,8 +55629,7 @@
   "sources": [
    "fsa",
    "osm",
-   "overture",
-   "atp"
+   "overture"
   ],
   "osm_match": {
    "score": null,
@@ -54913,21 +55650,7 @@
   "overture_datasets": [
    "meta"
   ],
-  "atp_spider": "j_d_wetherspoon",
-  "atp_brand": "Wetherspoon",
-  "atp_method": "exact-name",
-  "atp_match": {
-   "score": 2,
-   "method": "exact-name",
-   "candidates": 1
-  },
-  "atp_wikidata": "Q6109362",
-  "atp_nsi": "wetherspoon-eaed91",
   "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -54974,8 +55697,7 @@
   "description": "",
   "sources": [
    "osm",
-   "overture",
-   "atp"
+   "overture"
   ],
   "facebook_source": "overture",
   "overture_id": "a0dac806-0196-4ecb-aca6-eadbbc26a40e",
@@ -54986,21 +55708,7 @@
   "overture_datasets": [
    "meta"
   ],
-  "atp_spider": "j_d_wetherspoon",
-  "atp_brand": "Wetherspoon",
-  "atp_method": "wikidata",
-  "atp_match": {
-   "score": 2.5,
-   "method": "wikidata",
-   "candidates": 1
-  },
-  "atp_wikidata": "Q6109362",
-  "atp_nsi": "wetherspoon-eaed91",
   "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   },
    {
     "rule": "recent-osm-touch",
     "meaning": "Map record touched within six months \u2014 retention, not proof of opening"
@@ -55122,7 +55830,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
@@ -55139,7 +55848,21 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "patisserie_valerie_gb",
+  "atp_brand": "Patisserie Valerie",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q22101966",
+  "atp_nsi": "patisserievalerie-a89223",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -55695,7 +56418,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
@@ -55712,7 +56436,22 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "pepes_piri_piri_gb",
+  "atp_brand": "Pepe's",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q120645662",
+  "atp_nsi": "pepes-45095e",
+  "atp_hours": "Mo-Su 11:00-23:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -55924,8 +56663,6 @@
   "atp_wikidata": "Q7179258",
   "atp_nsi": "petsathome-8ec028",
   "atp_hours": "Mo-Fr 09:00-20:00; Sa 09:00-19:00; Su 10:00-16:00",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -56469,7 +57206,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
@@ -56485,7 +57223,21 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "pizza_gogo_gb",
+  "atp_brand": "Pizza GoGo",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q118121277",
+  "atp_nsi": "pizzagogo-45095e",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -57051,14 +57803,29 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 1.1,
    "dist_m": 28,
    "candidates": 46
   },
+  "atp_spider": "popeyes_gb",
+  "atp_brand": "Popeyes",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q1330910",
+  "atp_nsi": "popeyes-165c34",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -57151,7 +57918,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": null,
@@ -57169,8 +57937,21 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "stonegate_gb",
+  "atp_brand": "Popworld",
+  "atp_method": "website",
+  "atp_match": {
+   "score": 1.8,
+   "method": "website",
+   "candidates": 1
+  },
+  "atp_hours": "Tu closed",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -57407,7 +58188,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 1.2,
@@ -57424,7 +58206,22 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "poundstretcher_gb",
+  "atp_brand": "Poundstretcher",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7235675",
+  "atp_nsi": "poundstretcher-622078",
+  "atp_hours": "Mo-Sa 08:30-20:00; Su 10:00-16:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -57606,7 +58403,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
@@ -57623,7 +58421,22 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "poundstretcher_gb",
+  "atp_brand": "Poundstretcher",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7235675",
+  "atp_nsi": "poundstretcher-622078",
+  "atp_hours": "Mo-Sa 09:00-18:00; Su 10:00-16:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -57703,15 +58516,30 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "atp"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 3
   },
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "name",
+  "atp_match": {
+   "score": 1.3,
+   "method": "name",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -57750,9 +58578,24 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "recent-osm-touch",
     "meaning": "Map record touched within six months \u2014 retention, not proof of opening"
@@ -57832,15 +58675,30 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "atp"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 1
   },
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "name",
+  "atp_match": {
+   "score": 0.97,
+   "method": "name",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -58070,14 +58928,29 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 0.6,
    "dist_m": 9,
    "candidates": 13
   },
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -58163,14 +59036,29 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 3,
    "candidates": 1
   },
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 3
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -58206,15 +59094,30 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "atp"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 43
   },
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "name",
+  "atp_match": {
+   "score": 0.8,
+   "method": "name",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -58250,15 +59153,30 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "atp"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 9
   },
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "name",
+  "atp_match": {
+   "score": 0.8,
+   "method": "name",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -58295,7 +59213,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": null,
@@ -58311,8 +59230,22 @@
   "overture_datasets": [
    "AllThePlaces"
   ],
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "website",
+  "atp_match": {
+   "score": 1.8,
+   "method": "website",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -58349,14 +59282,29 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 1.1,
    "dist_m": 10,
    "candidates": 8
   },
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -58394,7 +59342,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 1,
@@ -58411,7 +59360,21 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -58450,10 +59413,25 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-13519546578",
@@ -58561,8 +59539,6 @@
   "atp_wikidata": "Q137023",
   "atp_nsi": "primark-5d2556",
   "atp_hours": "Mo-Sa 09:00-18:00; Su 10:00-16:30",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -62387,14 +63363,29 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 0.5,
    "dist_m": 53,
    "candidates": 2
   },
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -62926,7 +63917,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -62938,8 +63930,23 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "ryman_gb",
+  "atp_brand": "Ryman",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7385188",
+  "atp_nsi": "ryman-a503c5",
+  "atp_hours": "Mo-Sa 09:00-17:30; Su 10:00-17:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-1807641",
@@ -63208,7 +64215,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "website_source": "overture",
   "phone_source": "overture",
@@ -63221,8 +64229,23 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "safestore_gb",
+  "atp_brand": "Safestore",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q20713915",
+  "atp_nsi": "safestore-93b48c",
+  "atp_hours": "Mo-We 08:00-18:00; Th 08:00-20:00; Fr-Sa 08:00-18:00; Su 10:00-16:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-512807",
@@ -64216,10 +65239,25 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "saltrock_gb",
+  "atp_brand": "Saltrock",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7406195",
+  "atp_nsi": "saltrock-7b1694",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-964666",
@@ -64849,7 +65887,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": null,
@@ -64867,8 +65906,23 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "savers_gb",
+  "atp_brand": "Savers",
+  "atp_method": "exact-name",
+  "atp_match": {
+   "score": 2,
+   "method": "exact-name",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7428189",
+  "atp_nsi": "savers-b82430",
+  "atp_hours": "Mo-Fr 08:30-18:30; Sa 08:30-18:00; Su 10:00-17:00",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -64905,14 +65959,29 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 33,
    "candidates": 55
   },
+  "atp_spider": "savers_gb",
+  "atp_brand": "Savers",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q7428189",
+  "atp_nsi": "savers-b82430",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -65297,8 +66366,6 @@
    "candidates": 1
   },
   "atp_wikidata": "Q7439115",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -66227,10 +67294,26 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "shoe_zone_gb",
+  "atp_brand": "Shoe Zone",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7500016",
+  "atp_nsi": "shoezone-c06ee3",
+  "atp_hours": "Mo-Sa 09:00-17:30; Su 10:00-16:30",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-512988",
@@ -66889,10 +67972,26 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "miller_and_carter_gb",
+  "atp_brand": "Miller & Carter",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q87067401",
+  "atp_nsi": "millerandcarter-9b5453",
+  "atp_hours": "Mo-Tu 12:00-22:00; We-Sa 12:00-23:00; Su 12:00-22:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-4116795146",
@@ -68445,7 +69544,8 @@
   "description": "",
   "sources": [
    "fsa",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": null,
@@ -68461,8 +69561,22 @@
   "overture_datasets": [
    "AllThePlaces"
   ],
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "website",
+  "atp_match": {
+   "score": 1.8,
+   "method": "website",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
   "position_approx": true,
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -69962,47 +71076,6 @@
   ]
  },
  {
-  "id": "osm-way-649598460",
-  "fsa_id": null,
-  "osm_type": "way",
-  "osm_id": 649598460,
-  "osm_touched": "2026-08-26T16:50:29Z",
-  "osm_version": 6,
-  "osm_fhrs_id": null,
-  "name": "Southend Pier Railway",
-  "category": "attraction",
-  "category_label": "Attraction",
-  "lat": 51.5167077,
-  "lng": 0.7212152,
-  "geo_precision": "osm",
-  "address": "",
-  "postcode": null,
-  "phone": "",
-  "email": "",
-  "website": "",
-  "facebook": "",
-  "instagram": "",
-  "twitter": "",
-  "opening_hours_osm": "",
-  "opening_hours": {},
-  "cuisine": "",
-  "brand_wikidata": null,
-  "wikipedia": null,
-  "wikidata": null,
-  "amenities": [],
-  "photos": [],
-  "description": "",
-  "sources": [
-   "osm"
-  ],
-  "keep_evidence": [
-   {
-    "rule": "recent-osm-touch",
-    "meaning": "Map record touched within six months \u2014 retention, not proof of opening"
-   }
-  ]
- },
- {
   "id": "osm-way-709635847",
   "fsa_id": null,
   "osm_type": "way",
@@ -70206,6 +71279,47 @@
   },
   "overture_datasets": [
    "meta"
+  ],
+  "keep_evidence": [
+   {
+    "rule": "recent-osm-touch",
+    "meaning": "Map record touched within six months \u2014 retention, not proof of opening"
+   }
+  ]
+ },
+ {
+  "id": "osm-way-649598460",
+  "fsa_id": null,
+  "osm_type": "way",
+  "osm_id": 649598460,
+  "osm_touched": "2026-08-26T16:50:29Z",
+  "osm_version": 6,
+  "osm_fhrs_id": null,
+  "name": "Southend Pier Railway",
+  "category": "attraction",
+  "category_label": "Attraction",
+  "lat": 51.5167077,
+  "lng": 0.7212152,
+  "geo_precision": "osm",
+  "address": "",
+  "postcode": null,
+  "phone": "",
+  "email": "",
+  "website": "",
+  "facebook": "",
+  "instagram": "",
+  "twitter": "",
+  "opening_hours_osm": "",
+  "opening_hours": {},
+  "cuisine": "",
+  "brand_wikidata": null,
+  "wikipedia": null,
+  "wikidata": null,
+  "amenities": [],
+  "photos": [],
+  "description": "",
+  "sources": [
+   "osm"
   ],
   "keep_evidence": [
    {
@@ -71183,7 +72297,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -71195,8 +72310,21 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "specsavers",
+  "atp_brand": "Specsavers",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q2000610",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-12872726066",
@@ -71231,7 +72359,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -71243,8 +72372,21 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "specsavers",
+  "atp_brand": "Specsavers",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q2000610",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-1864725",
@@ -73390,7 +74532,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 2.3,
@@ -73406,7 +74549,21 @@
   "overture_datasets": [
    "AllThePlaces"
   ],
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
+  "atp_method": "website",
+  "atp_match": {
+   "score": 1.8,
+   "method": "website",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -73706,14 +74863,29 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 1.3,
    "dist_m": 40,
    "candidates": 1
   },
+  "atp_spider": "beefeater_gb",
+  "atp_brand": "Beefeater",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q4879766",
+  "atp_nsi": "beefeater-9b5453",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -75924,7 +77096,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
@@ -75941,7 +77114,22 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "tk_maxx_gb",
+  "atp_brand": "TK Maxx",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q23823668",
+  "atp_nsi": "tkmaxx-d02268",
+  "atp_hours": "Mo-Sa 09:00-18:00; Su 11:00-17:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -75981,14 +77169,30 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 1,
    "candidates": 42
   },
+  "atp_spider": "taco_bell_gb",
+  "atp_brand": "Taco Bell",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q752941",
+  "atp_nsi": "tacobell-a1c9df",
+  "atp_hours": "Mo-Th 10:00-23:00; Fr-Sa 10:00-23:50; Su 10:00-23:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -76171,10 +77375,26 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "tapi_gb",
+  "atp_brand": "Tapi Carpets",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q79223951",
+  "atp_nsi": "tapicarpets-40b39f",
+  "atp_hours": "Mo 09:30-18:00; Tu 09:30-19:00; We 09:30-18:00; Th 09:30-19:00; Fr 09:30-18:00; Sa 09:00-18:00; Su 10:00-16:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-512808",
@@ -78587,7 +79807,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -78599,8 +79820,22 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "the_body_shop_gb",
+  "atp_brand": "The Body Shop",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q837851",
+  "atp_nsi": "thebodyshop-a08666",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-512450",
@@ -78836,7 +80071,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
@@ -78853,7 +80089,21 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "stonegate_gb",
+  "atp_brand": "Craft Union",
+  "atp_method": "website",
+  "atp_match": {
+   "score": 1.8,
+   "method": "website",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q124956771",
+  "atp_hours": "Tu 11:00-23:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -79692,7 +80942,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 1.4,
@@ -79708,7 +80959,21 @@
   "overture_datasets": [
    "AllThePlaces"
   ],
+  "atp_spider": "chelmsford_star_coop_gb",
+  "atp_brand": "The Co-operative Food",
+  "atp_method": "website",
+  "atp_match": {
+   "score": 1.8,
+   "method": "website",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q107617274",
+  "atp_nsi": "thecooperativefood-a8278b",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -80229,8 +81494,7 @@
   "sources": [
    "fsa",
    "osm",
-   "overture",
-   "atp"
+   "overture"
   ],
   "osm_match": {
    "score": 1.3,
@@ -80246,21 +81510,7 @@
   "overture_datasets": [
    "meta"
   ],
-  "atp_spider": "j_d_wetherspoon",
-  "atp_brand": "Wetherspoon",
-  "atp_method": "wikidata",
-  "atp_match": {
-   "score": 2.5,
-   "method": "wikidata",
-   "candidates": 1
-  },
-  "atp_wikidata": "Q6109362",
-  "atp_nsi": "wetherspoon-eaed91",
   "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -82552,8 +83802,7 @@
   "sources": [
    "fsa",
    "osm",
-   "overture",
-   "atp"
+   "overture"
   ],
   "osm_match": {
    "score": 2.4,
@@ -82570,21 +83819,7 @@
   "overture_datasets": [
    "meta"
   ],
-  "atp_spider": "j_d_wetherspoon",
-  "atp_brand": "Wetherspoon",
-  "atp_method": "wikidata",
-  "atp_match": {
-   "score": 2.5,
-   "method": "wikidata",
-   "candidates": 1
-  },
-  "atp_wikidata": "Q6109362",
-  "atp_nsi": "wetherspoon-eaed91",
   "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -83944,7 +85179,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -83956,8 +85192,23 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "the_perfume_shop_gb",
+  "atp_brand": "The Perfume Shop",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q7756719",
+  "atp_nsi": "theperfumeshop-2906d0",
+  "atp_hours": "Mo-Sa 09:00-17:30; Su 10:00-16:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-512442",
@@ -84957,10 +86208,25 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "salvation_army_gb",
+  "atp_brand": "The Salvation Army",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 2
+  },
+  "atp_wikidata": "Q188307",
+  "atp_nsi": "thesalvationarmy-2031e0",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-way-616156285",
@@ -84996,9 +86262,24 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
+  "atp_spider": "salvation_army_gb",
+  "atp_brand": "The Salvation Army",
+  "atp_method": "exact-name",
+  "atp_match": {
+   "score": 2,
+   "method": "exact-name",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q188307",
+  "atp_nsi": "thesalvationarmy-2031e0",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "recent-osm-touch",
     "meaning": "Map record touched within six months \u2014 retention, not proof of opening"
@@ -85085,7 +86366,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "facebook_source": "overture",
   "overture_id": "452e35a7-8f2f-45b8-b8a3-66369713b54e",
@@ -85096,7 +86378,21 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "salvation_army_gb",
+  "atp_brand": "The Salvation Army",
+  "atp_method": "name",
+  "atp_match": {
+   "score": 1.2,
+   "method": "name",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q188307",
+  "atp_nsi": "thesalvationarmy-2031e0",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "recent-osm-touch",
     "meaning": "Map record touched within six months \u2014 retention, not proof of opening"
@@ -86672,7 +87968,8 @@
   "sources": [
    "fsa",
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "osm_match": {
    "score": 1.4,
@@ -86689,7 +87986,21 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "stonegate_gb",
+  "atp_brand": "Craft Union",
+  "atp_method": "website",
+  "atp_match": {
+   "score": 1.8,
+   "method": "website",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q124956771",
+  "atp_hours": "Tu 12:00-23:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -87337,7 +88648,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -87349,8 +88661,23 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "three_gb",
+  "atp_brand": "Three",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q407009",
+  "atp_nsi": "three-94b138",
+  "atp_hours": "Mo-Tu 09:00-17:30; We 09:30-17:30; Th-Sa 09:00-17:30; Su 10:30-16:30",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-way-1442681503",
@@ -87847,17 +89174,16 @@
   "overture_datasets": [
    "meta"
   ],
-  "atp_spider": "toby_carvery_gb",
+  "atp_spider": "mbplc_gb",
   "atp_brand": "Toby Carvery",
   "atp_method": "website",
   "atp_match": {
    "score": 1.8,
    "method": "website",
-   "candidates": 1
+   "candidates": 2
   },
   "atp_wikidata": "Q7811777",
   "atp_nsi": "tobycarvery-9b5453",
-  "atp_hours": "Mo-Su 08:00-22:00",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -87917,19 +89243,16 @@
   "overture_datasets": [
    "meta"
   ],
-  "atp_spider": "toby_carvery_gb",
+  "atp_spider": "mbplc_gb",
   "atp_brand": "Toby Carvery",
   "atp_method": "wikidata",
   "atp_match": {
    "score": 2.5,
    "method": "wikidata",
-   "candidates": 1
+   "candidates": 2
   },
   "atp_wikidata": "Q7811777",
   "atp_nsi": "tobycarvery-9b5453",
-  "atp_hours": "Mo-Su 08:00-22:00",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -88453,10 +89776,25 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "topps_tiles_gb",
+  "atp_brand": "Topps Tiles",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q17026595",
+  "atp_nsi": "toppstiles-d8218f",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-12875551541",
@@ -88679,7 +90017,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -88691,8 +90030,22 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "travelodge_gb",
+  "atp_brand": "Travelodge",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q9361374",
+  "atp_nsi": "travelodge-dec11e",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-way-1181161240",
@@ -88727,7 +90080,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -88739,7 +90093,22 @@
   "overture_datasets": [
    "meta"
   ],
+  "atp_spider": "travis_perkins_gb",
+  "atp_brand": "Travis Perkins",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q2450664",
+  "atp_nsi": "travisperkins-ae8e02",
+  "atp_hours": "Mo-Fr 07:30-17:00; Sa 08:00-12:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "recent-osm-touch",
     "meaning": "Map record touched within six months \u2014 retention, not proof of opening"
@@ -89134,10 +90503,25 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "tui_gb",
+  "atp_brand": "TUI",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q7795876",
+  "atp_hours": "Mo-Th 09:00-17:30; Fr 09:30-17:30; Sa 09:00-17:30; Su 10:00-16:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-12865510752",
@@ -91415,13 +92799,11 @@
   "atp_match": {
    "score": 1.8,
    "method": "website",
-   "candidates": 2
+   "candidates": 1
   },
   "atp_wikidata": "Q98456772",
   "atp_nsi": "tescoexpress-fe5937",
   "atp_hours": "Mo-Su 07:00-22:00",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -92168,7 +93550,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -92180,8 +93563,23 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "warren_james_gb",
+  "atp_brand": "Warren James",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q19604616",
+  "atp_nsi": "warrenjames-f07ca3",
+  "atp_hours": "Mo-Sa 09:15-17:30; Su 10:00-16:00",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-12865151122",
@@ -92216,7 +93614,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -92228,8 +93627,23 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "waterstones",
+  "atp_brand": "Waterstones",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q151779",
+  "atp_nsi": "waterstones-3a34ca",
+  "atp_hours": "Mo-Sa 09:00-17:30; Su 10:30-16:30",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "fsa-1761378",
@@ -92582,7 +93996,8 @@
   "sources": [
    "osm",
    "overture",
-   "nhs"
+   "nhs",
+   "atp"
   ],
   "website_source": "overture",
   "overture_id": "65659b6c-87e8-4552-a0b6-bdc1e5add49c",
@@ -92598,9 +94013,21 @@
    "dist_m": 50
   },
   "nhs_hours": "Mo 09:00-18:00; Tu 09:00-18:00; We 09:00-18:00; Th 09:00-18:00; Fr 09:00-18:00",
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan",
+  "atp_spider": "chelmsford_star_coop_gb",
+  "atp_brand": "The Co-operative Food",
+  "atp_method": "website",
+  "atp_match": {
+   "score": 1.8,
+   "method": "website",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q107617274",
+  "atp_nsi": "thecooperativefood-a8278b",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "nhs-listed",
     "meaning": "NHS listed pharmacy (England)"
@@ -93550,7 +94977,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -93562,8 +94990,22 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "tgjones_gb",
+  "atp_brand": "TGJones",
+  "atp_method": "website",
+  "atp_match": {
+   "score": 1.8,
+   "method": "website",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q133575797",
+  "atp_nsi": "tgjones-6728e7",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-5767772878",
@@ -93750,10 +95192,25 @@
   "photos": [],
   "description": "",
   "sources": [
-   "osm"
+   "osm",
+   "atp"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "william_hill_gb",
+  "atp_brand": "William Hill",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q4053147",
+  "atp_nsi": "williamhill-58d00b",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-node-12875551546",
@@ -94064,14 +95521,29 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 22,
    "candidates": 35
   },
+  "atp_spider": "wimpy_gb",
+  "atp_brand": "Wimpy",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q2811992",
+  "atp_nsi": "wimpy-658eea",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -94111,14 +95583,29 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 41,
    "candidates": 41
   },
+  "atp_spider": "wimpy_gb",
+  "atp_brand": "Wimpy",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q2811992",
+  "atp_nsi": "wimpy-658eea",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -94158,14 +95645,29 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 1.1,
    "dist_m": 9,
    "candidates": 6
   },
+  "atp_spider": "wimpy_gb",
+  "atp_brand": "Wimpy",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q2811992",
+  "atp_nsi": "wimpy-658eea",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -94358,14 +95860,30 @@
   "description": "",
   "sources": [
    "fsa",
-   "osm"
+   "osm",
+   "atp"
   ],
   "osm_match": {
    "score": 2.4,
    "dist_m": 15,
    "candidates": 26
   },
+  "atp_spider": "wingstop_gb",
+  "atp_brand": "Wingstop",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q8025339",
+  "atp_nsi": "wingstop-72c67c",
+  "atp_hours": "Mo 11:00-23:00,11:00-23:00; Tu-We 11:00-23:00; Th-Fr 11:00-24:00; Sa 11:00-24:00,11:00-24:00; Su 11:00-23:00,11:00-23:00",
   "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
    {
     "rule": "fsa-linked",
     "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
@@ -95565,7 +97083,8 @@
   "description": "",
   "sources": [
    "osm",
-   "overture"
+   "overture",
+   "atp"
   ],
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -95577,8 +97096,22 @@
   "overture_datasets": [
    "meta"
   ],
-  "position_unresolved": true,
-  "unresolved_why": "stale-orphan"
+  "atp_spider": "yoursclothing_gb",
+  "atp_brand": "Yours Clothing",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q84163322",
+  "atp_nsi": "yoursclothing-811b8c",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
  },
  {
   "id": "osm-way-151082777",
@@ -98648,130 +100181,165 @@
   ]
  },
  {
-  "id": "atp-spar_gb-spar-1effe0",
-  "name": "Spar-Southend on Sea",
-  "brand": "Spar",
-  "brand_wikidata": "Q610492",
-  "category": "shopping",
-  "category_label": "Shop",
-  "lat": 51.5359273,
-  "lng": 0.7612553,
-  "geo_precision": "atp",
-  "address": "ss13es",
-  "postcode": "ss13es",
-  "website": "https://www.spar.co.uk/store-locator/afb33088-spar-southend-on-sea",
-  "website_source": "atp",
-  "photos": [],
-  "description": "",
-  "sources": [
-   "atp"
-  ],
-  "atp_spider": "spar_gb",
-  "atp_brand": "Spar",
-  "atp_method": "created-chain",
-  "atp_wikidata": "Q610492",
-  "atp_nsi": "spar-1effe0",
-  "provisional_creation": "atp-chain",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ]
- },
- {
-  "id": "atp-londis_gb-londis-232829",
-  "name": "Londis BYFORDS FOOD HALL",
-  "brand": "Londis",
-  "brand_wikidata": "Q21008564",
-  "category": "shopping",
-  "category_label": "Shop",
-  "lat": 51.564786237395,
-  "lng": 0.64201354980469,
-  "geo_precision": "atp",
-  "address": "ss94ry",
-  "postcode": "ss94ry",
-  "website": "https://www.londis.co.uk/our-stores/byfords-food-hall",
-  "website_source": "atp",
-  "phone": "+44 1702 525903",
-  "phone_source": "atp",
-  "photos": [],
-  "description": "",
-  "sources": [
-   "atp"
-  ],
-  "atp_spider": "londis_gb",
-  "atp_brand": "Londis",
-  "atp_method": "created-chain",
-  "atp_wikidata": "Q21008564",
-  "atp_nsi": "londis-232829",
-  "provisional_creation": "atp-chain",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ]
- },
- {
-  "id": "atp-subway-subway-6a374d",
-  "name": "Subway Total Gas Station/C-Store",
-  "brand": "Subway",
-  "brand_wikidata": "Q244457",
-  "category": "restaurant",
-  "category_label": "Restaurant",
-  "lat": 51.57087741877171,
-  "lng": 0.6780868847785904,
-  "geo_precision": "atp",
-  "address": "ss41gp",
-  "postcode": "ss41gp",
-  "website": "https://restaurants.subway.com/united-kingdom/en/rochford/cheery-orchard-way",
-  "website_source": "atp",
-  "phone": "+44 1702 563019",
-  "phone_source": "atp",
-  "atp_hours": "Mo-Su 07:00-20:00",
-  "cuisine": "sandwich",
-  "photos": [],
-  "description": "",
-  "sources": [
-   "atp"
-  ],
-  "atp_spider": "subway",
-  "atp_brand": "Subway",
-  "atp_method": "created-chain",
-  "atp_wikidata": "Q244457",
-  "atp_nsi": "subway-6a374d",
-  "provisional_creation": "atp-chain",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ]
- },
- {
-  "id": "atp-costa_coffee_gg_gb_im_je-costaexpress-3d5cac",
-  "name": "Costa Express",
-  "brand": "Costa Express",
-  "brand_wikidata": "Q113556385",
+  "id": "atp-amazon_locker_gb-amazonlocker-f85b1f",
+  "name": "Amazon Locker - hanley",
+  "brand": "Amazon Locker",
+  "brand_wikidata": "Q16974764",
   "category": "services",
   "category_label": "Services",
-  "lat": 51.5722,
-  "lng": 0.640244,
+  "lat": 51.5442817,
+  "lng": 0.6910125,
   "geo_precision": "atp",
-  "address": "ss95hj",
-  "postcode": "ss95hj",
-  "atp_hours": "Mo-Su 06:30-22:30",
+  "address": "ss09lg",
+  "postcode": "ss09lg",
+  "atp_hours": "Mo-Sa 07:00-22:00; Su 10:00-16:00",
   "photos": [],
   "description": "",
   "sources": [
    "atp"
   ],
-  "atp_spider": "costa_coffee_gg_gb_im_je",
-  "atp_brand": "Costa Express",
+  "atp_spider": "amazon_locker_gb",
+  "atp_brand": "Amazon Locker",
   "atp_method": "created-chain",
-  "atp_wikidata": "Q113556385",
-  "atp_nsi": "costaexpress-3d5cac",
+  "atp_wikidata": "Q16974764",
+  "atp_nsi": "amazonlocker-f85b1f",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-argos-argos-3930ea",
+  "name": "Argos",
+  "brand": "Argos",
+  "brand_wikidata": "Q4789707",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.5406372,
+  "lng": 0.7090687,
+  "geo_precision": "atp",
+  "address": "ss11pl",
+  "postcode": "ss11pl",
+  "website": "https://www.argos.co.uk/stores/4826-southend-argos-inside-sainsburys",
+  "website_source": "atp",
+  "phone": "+44 345 850 8808",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Sa 09:00-20:00; Su 10:00-16:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "argos",
+  "atp_brand": "Argos",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q4789707",
+  "atp_nsi": "argos-3930ea",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-bank_of_scotland_gb-bankofscotland-e1e9d0",
+  "name": "Halifax Cash machine 108 High Street",
+  "brand": "Bank of Scotland",
+  "brand_wikidata": "Q627381",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.5380672,
+  "lng": 0.7135368,
+  "geo_precision": "atp",
+  "address": "ss11lb",
+  "postcode": "ss11lb",
+  "website": "https://branches.bankofscotland.co.uk/southend-on-sea/108-high-street/cash-machine-halifax-child",
+  "website_source": "atp",
+  "atp_hours": "Mo-Su 00:00-24:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "bank_of_scotland_gb",
+  "atp_brand": "Bank of Scotland",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q627381",
+  "atp_nsi": "bankofscotland-e1e9d0",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-audika_gb-9yf4cs",
+  "name": "Leigh-On-Sea",
+  "brand": "Audika",
+  "brand_wikidata": "Q2870745",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.5481514286365,
+  "lng": 0.632360087698272,
+  "geo_precision": "atp",
+  "address": "ss92ur",
+  "postcode": "ss92ur",
+  "website": "https://www.audika.co.uk/hearing-aids-centre/essex/audika-leigh-on-sea",
+  "website_source": "atp",
+  "phone": "+44 1702 711361",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 09:00-17:00; Sa-Su closed",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "audika_gb",
+  "atp_brand": "Audika",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q2870745",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-barnardos_gb-barnardos-f84d6b",
+  "name": "Barnardo's",
+  "brand": "Barnardo's",
+  "brand_wikidata": "Q2884670",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.548,
+  "lng": 0.6321,
+  "geo_precision": "atp",
+  "address": "ss92ur",
+  "postcode": "ss92ur",
+  "website": "https://shop.barnardos.org.uk/shop/leigh-on-sea",
+  "website_source": "atp",
+  "phone": "+44 1702 715750",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Sa 09:00-17:00; Su 10:00-16:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "barnardos_gb",
+  "atp_brand": "Barnardo's",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q2884670",
+  "atp_nsi": "barnardos-f84d6b",
   "provisional_creation": "atp-chain",
   "keep_evidence": [
    {
@@ -98814,162 +100382,30 @@
   ]
  },
  {
-  "id": "atp-hsbc_uk_gb-hsbcuk-e1e9d0",
-  "name": "HSBC - Southend-On-Sea - Cash Withdrawals and Note Deposits Through Self-Service",
-  "brand": "HSBC UK",
-  "brand_wikidata": "Q64767453",
+  "id": "atp-bhf_gb-1bcc9g1",
+  "name": "British Heart Foundation",
+  "brand": "British Heart Foundation",
+  "brand_wikidata": "Q4970039",
   "category": "services",
   "category_label": "Services",
-  "lat": 51.54052,
-  "lng": 0.711125,
+  "lat": 51.5566966,
+  "lng": 0.6863045,
   "geo_precision": "atp",
-  "address": "ss11tj",
-  "postcode": "ss11tj",
-  "website": "https://www.hsbc.co.uk/branch-list/southend-on-sea-cash-withdrawals-and-note-deposits-through-self-service/",
+  "address": "ss00qh",
+  "postcode": "ss00qh",
+  "website": "https://www.bhf.org.uk/what-we-do/find-bhf-near-you/clothing-bank-earls-hall-infant-junior-school",
   "website_source": "atp",
-  "atp_hours": "Mo-Fr 09:30-16:30; Sa 09:30-13:00",
-  "photos": [],
-  "description": "",
-  "sources": [
-   "atp"
-  ],
-  "atp_spider": "hsbc_uk_gb",
-  "atp_brand": "HSBC UK",
-  "atp_method": "created-chain",
-  "atp_wikidata": "Q64767453",
-  "atp_nsi": "hsbcuk-e1e9d0",
-  "provisional_creation": "atp-chain",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ]
- },
- {
-  "id": "atp-lloyds_bank_gb-16a75c1",
-  "name": "Cashpoint\u00ae 77 High Street",
-  "brand": "Lloyds Bank",
-  "brand_wikidata": "Q1152847",
-  "category": "services",
-  "category_label": "Services",
-  "lat": 51.536588764169046,
-  "lng": 0.7134347865081914,
-  "geo_precision": "atp",
-  "address": "ss11ht",
-  "postcode": "ss11ht",
-  "website": "https://branches.lloydsbank.com/southend-on-sea/77-high-street/cashpoint\u00ae",
-  "website_source": "atp",
-  "atp_hours": "Mo-Su 00:00-24:00",
-  "photos": [],
-  "description": "",
-  "sources": [
-   "atp"
-  ],
-  "atp_spider": "lloyds_bank_gb",
-  "atp_brand": "Lloyds Bank",
-  "atp_method": "created-chain",
-  "atp_wikidata": "Q1152847",
-  "provisional_creation": "atp-chain",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ]
- },
- {
-  "id": "atp-natwest_gb-natwest-6bb648",
-  "name": "NatWest",
-  "brand": "NatWest",
-  "brand_wikidata": "Q2740021",
-  "category": "services",
-  "category_label": "Services",
-  "lat": 51.5389332,
-  "lng": 0.7132314,
-  "geo_precision": "atp",
-  "address": "ss11jx",
-  "postcode": "ss11jx",
-  "website": "https://www.natwest.com/search-results/locator/branch.html?sortcode=555028&name=Southend",
-  "website_source": "atp",
-  "atp_hours": "Mo-Tu 09:30-16:30; We 10:00-16:30; Th-Fr 09:30-16:30; Sa 09:30-13:00",
-  "photos": [],
-  "description": "",
-  "sources": [
-   "atp"
-  ],
-  "atp_spider": "natwest_gb",
-  "atp_brand": "NatWest",
-  "atp_method": "created-chain",
-  "atp_wikidata": "Q2740021",
-  "atp_nsi": "natwest-6bb648",
-  "provisional_creation": "atp-chain",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ]
- },
- {
-  "id": "atp-natwest_gb-natwest-8cfc37",
-  "name": "Southend Card Centre",
-  "brand": "NatWest",
-  "brand_wikidata": "Q2740021",
-  "category": "services",
-  "category_label": "Services",
-  "lat": 51.56163090000002,
-  "lng": 0.6831187999999955,
-  "geo_precision": "atp",
-  "address": "ss00ej",
-  "postcode": "ss00ej",
-  "website": "https://www.natwest.com/search-results/locator/atm.html?sortcode=N810551&name=Southend-Card-Centre",
-  "website_source": "atp",
-  "photos": [],
-  "description": "",
-  "sources": [
-   "atp"
-  ],
-  "atp_spider": "natwest_gb",
-  "atp_brand": "NatWest",
-  "atp_method": "created-chain",
-  "atp_wikidata": "Q2740021",
-  "atp_nsi": "natwest-8cfc37",
-  "provisional_creation": "atp-chain",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ]
- },
- {
-  "id": "atp-nationwide_gb-nationwide-e1e9d0",
-  "name": "Nationwide",
-  "brand": "Nationwide",
-  "brand_wikidata": "Q846735",
-  "category": "services",
-  "category_label": "Services",
-  "lat": 51.540013,
-  "lng": 0.711268,
-  "geo_precision": "atp",
-  "address": "ss11qh",
-  "postcode": "ss11qh",
-  "website": "https://www.nationwide.co.uk/branches/southend-on-sea/14-london-road",
-  "website_source": "atp",
-  "phone": "+44 345 266 0226",
+  "phone": "+44 300 330 3322",
   "phone_source": "atp",
-  "atp_hours": "Mo-Tu 09:00-16:30; We 10:00-16:30; Th-Fr 09:00-16:30; Sa 09:30-13:00; Su closed",
   "photos": [],
   "description": "",
   "sources": [
    "atp"
   ],
-  "atp_spider": "nationwide_gb",
-  "atp_brand": "Nationwide",
+  "atp_spider": "bhf_gb",
+  "atp_brand": "British Heart Foundation",
   "atp_method": "created-chain",
-  "atp_wikidata": "Q846735",
-  "atp_nsi": "nationwide-e1e9d0",
+  "atp_wikidata": "Q4970039",
   "provisional_creation": "atp-chain",
   "keep_evidence": [
    {
@@ -98979,30 +100415,466 @@
   ]
  },
  {
-  "id": "atp-halifax_gb-halifax-396707",
-  "name": "Cash machine 108 High Street",
-  "brand": "Halifax",
-  "brand_wikidata": "Q3310164",
+  "id": "atp-busy_bees_gb-busybees-e7c9ca",
+  "name": "Busy Bees at Shoeburyness",
+  "brand": "Busy Bees",
+  "brand_wikidata": "Q28134563",
   "category": "services",
   "category_label": "Services",
-  "lat": 51.538125999394694,
-  "lng": 0.7133595256536429,
+  "lat": 51.529806,
+  "lng": 0.7806882,
   "geo_precision": "atp",
-  "address": "ss11lb",
-  "postcode": "ss11lb",
-  "website": "https://branches.halifax.co.uk/southend-on-sea/108-high-street/cash-machine",
+  "address": "ss39hx",
+  "postcode": "ss39hx",
+  "website": "https://www.busybeeschildcare.co.uk/nursery/shoeburyness",
   "website_source": "atp",
-  "atp_hours": "Mo-Su 00:00-24:00",
+  "phone": "+44 330 333 8133",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 08:00-18:00",
   "photos": [],
   "description": "",
   "sources": [
    "atp"
   ],
-  "atp_spider": "halifax_gb",
-  "atp_brand": "Halifax",
+  "atp_spider": "busy_bees_gb",
+  "atp_brand": "Busy Bees",
   "atp_method": "created-chain",
-  "atp_wikidata": "Q3310164",
-  "atp_nsi": "halifax-396707",
+  "atp_wikidata": "Q28134563",
+  "atp_nsi": "busybees-e7c9ca",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-budgens_gb-budgens-232829",
+  "name": "Budgens Budgens - Beaumont Court",
+  "brand": "Budgens",
+  "brand_wikidata": "Q4985016",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.544678119996,
+  "lng": 0.70734310000001,
+  "geo_precision": "atp",
+  "address": "ss26eb",
+  "postcode": "ss26eb",
+  "website": "https://www.budgens.co.uk/our-stores/budgens-beaumont-court",
+  "website_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "budgens_gb",
+  "atp_brand": "Budgens",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q4985016",
+  "atp_nsi": "budgens-232829",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-card_factory_gb-cardfactory-d8c200",
+  "name": "Card Factory",
+  "brand": "Card Factory",
+  "brand_wikidata": "Q5038192",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.540371,
+  "lng": 0.782044,
+  "geo_precision": "atp",
+  "address": "ss38da",
+  "postcode": "ss38da",
+  "phone": "+44 1702 298897",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Sa 09:00-17:30; Su 10:00-16:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "card_factory_gb",
+  "atp_brand": "Card Factory",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q5038192",
+  "atp_nsi": "cardfactory-d8c200",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-chelmsford_star_coop_gb-thecooperativefood-a8278",
+  "name": "Leigh On Sea",
+  "brand": "The Co-operative Food",
+  "brand_wikidata": "Q107617274",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.548191,
+  "lng": 0.6353719999999999,
+  "geo_precision": "atp",
+  "address": "ss92sh",
+  "postcode": "ss92sh",
+  "website": "https://chelmsfordstar.coop/store/leigh-on-sea/",
+  "website_source": "atp",
+  "phone": "+44 1702 716362",
+  "phone_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "chelmsford_star_coop_gb",
+  "atp_brand": "The Co-operative Food",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q107617274",
+  "atp_nsi": "thecooperativefood-a8278b",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-coop_funeral_gb-thecooperativefuneralcar",
+  "name": "Co-op Funeralcare, Southend",
+  "brand": "The Co-operative Funeralcare",
+  "brand_wikidata": "Q7726521",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.540901,
+  "lng": 0.706106,
+  "geo_precision": "atp",
+  "address": "ss26jj",
+  "postcode": "ss26jj",
+  "website": "https://www.coop.co.uk/funeralcare/funeral-directors/southend-on-sea/SS2-6JJ/15-queensway",
+  "website_source": "atp",
+  "phone": "+44 1702 342647",
+  "phone_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "coop_funeral_gb",
+  "atp_brand": "The Co-operative Funeralcare",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q7726521",
+  "atp_nsi": "thecooperativefuneralcare-e90732",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-costcutter_gb-costcutter-31620e",
+  "name": "Chase Road Costcutter",
+  "brand": "Costcutter",
+  "brand_wikidata": "Q5175072",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.53935602588205,
+  "lng": 0.7284985476397843,
+  "geo_precision": "atp",
+  "address": "ss12re",
+  "postcode": "ss12re",
+  "website": "https://store-locator.costcutter.co.uk/en-gb/southend-on-sea/southend-on-sea/50-chase-road/128932",
+  "website_source": "atp",
+  "atp_hours": "Mo-Su 07:00-23:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "costcutter_gb",
+  "atp_brand": "Costcutter",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q5175072",
+  "atp_nsi": "costcutter-31620e",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-coral_gb-coral-58d00b",
+  "name": "Coral",
+  "brand": "Coral",
+  "brand_wikidata": "Q54621344",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.548557,
+  "lng": 0.632235,
+  "geo_precision": "atp",
+  "address": "ss92sw",
+  "postcode": "ss92sw",
+  "phone": "+44 800 440011",
+  "phone_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "coral_gb",
+  "atp_brand": "Coral",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q54621344",
+  "atp_nsi": "coral-58d00b",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-cvs_vets_gb-3b5t55",
+  "name": "Earls Hall Veterinary Centre - Shoebury",
+  "brand": "Earls Hall Veterinary Centre - Shoebury",
+  "category": "health",
+  "category_label": "Health",
+  "lat": 51.52939668543083,
+  "lng": 0.779470058142174,
+  "geo_precision": "atp",
+  "address": "ss39ja",
+  "postcode": "ss39ja",
+  "website": "https://www.cvsvets.com/east/earls-hall-veterinary-centre-shoebury",
+  "website_source": "atp",
+  "phone": "+44 1702 299554",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 08:00-19:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "cvs_vets_gb",
+  "atp_brand": "Earls Hall Veterinary Centre - Shoebury",
+  "atp_method": "created-chain",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-cvs_vets_gb-8ayhru",
+  "name": "Earls Hall Veterinary Hospital",
+  "brand": "Earls Hall Veterinary Hospital",
+  "category": "health",
+  "category_label": "Health",
+  "lat": 51.55923911608757,
+  "lng": 0.6891444590806738,
+  "geo_precision": "atp",
+  "address": "ss00nn",
+  "postcode": "ss00nn",
+  "website": "https://www.cvsvets.com/east/earls-hall-veterinary-hospital",
+  "website_source": "atp",
+  "phone": "+44 1702 322222",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 08:00-19:30; Sa 08:00-17:30; Su 10:00-12:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "cvs_vets_gb",
+  "atp_brand": "Earls Hall Veterinary Hospital",
+  "atp_method": "created-chain",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-david_lloyd_gb-davidlloydclubs-2b43d7",
+  "name": "David Lloyd Clubs",
+  "brand": "David Lloyd Clubs",
+  "brand_wikidata": "Q5236716",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.565319,
+  "lng": 0.66747624,
+  "geo_precision": "atp",
+  "address": "",
+  "postcode": null,
+  "phone": "+44 1702 520355",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 06:00-22:30; Sa-Su 07:00-21:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "david_lloyd_gb",
+  "atp_brand": "David Lloyd Clubs",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q5236716",
+  "atp_nsi": "davidlloydclubs-2b43d7",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-dulux_decorator_centre_gb-duluxdecoratorcentre-058",
+  "name": "Dulux Decorator Centre",
+  "brand": "Dulux Decorator Centre",
+  "brand_wikidata": "Q115593557",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.54487,
+  "lng": 0.68888,
+  "geo_precision": "atp",
+  "address": "ss09lj",
+  "postcode": "ss09lj",
+  "website": "https://www.duluxdecoratorcentre.co.uk/stores/westcliffonsea",
+  "website_source": "atp",
+  "phone": "+44 1702 435992",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 07:00-17:00; Sa 08:00-17:00; Su closed",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "dulux_decorator_centre_gb",
+  "atp_brand": "Dulux Decorator Centre",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q115593557",
+  "atp_nsi": "duluxdecoratorcentre-058646",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-euro_car_parts_gb-eurocarparts-078f70",
+  "name": "Euro Car Parts",
+  "brand": "Euro Car Parts",
+  "brand_wikidata": "Q23782692",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.551075,
+  "lng": 0.711334,
+  "geo_precision": "atp",
+  "address": "ss25ef",
+  "postcode": "ss25ef",
+  "website": "https://www.eurocarparts.com/store-locator/southend",
+  "website_source": "atp",
+  "phone": "+44 1702 444600",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 08:00-18:00; Sa 08:00-16:00; Su closed",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "euro_car_parts_gb",
+  "atp_brand": "Euro Car Parts",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q23782692",
+  "atp_nsi": "eurocarparts-078f70",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-gap_trade_gb-gap-8a4d16",
+  "name": "Gap",
+  "brand": "Gap",
+  "brand_wikidata": "Q125624088",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.5690409830314,
+  "lng": 0.643820800781214,
+  "geo_precision": "atp",
+  "address": "ss95pr",
+  "postcode": "ss95pr",
+  "website": "https://www.gap.uk.com/depot-network/southend-on-sea",
+  "website_source": "atp",
+  "phone": "+44 1702 416922",
+  "phone_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "gap_trade_gb",
+  "atp_brand": "Gap",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q125624088",
+  "atp_nsi": "gap-8a4d16",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-game_gb-game-b2f4fe",
+  "name": "Game",
+  "brand": "Game",
+  "brand_wikidata": "Q5519813",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.567639,
+  "lng": 0.703242,
+  "geo_precision": "atp",
+  "address": "ss26fw",
+  "postcode": "ss26fw",
+  "website": "https://www.game.co.uk/southend-store-0297",
+  "website_source": "atp",
+  "phone": "+44 344 332 5297",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 09:00-20:00; Sa 09:00-19:00; Su 10:30-16:30",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "game_gb",
+  "atp_brand": "Game",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q5519813",
+  "atp_nsi": "game-b2f4fe",
   "provisional_creation": "atp-chain",
   "keep_evidence": [
    {
@@ -99082,6 +100954,277 @@
   ]
  },
  {
+  "id": "atp-halifax_gb-halifax-e1e9d0",
+  "name": "Halifax Southend-on-Sea",
+  "brand": "Halifax",
+  "brand_wikidata": "Q3310164",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.538077279709405,
+  "lng": 0.7134838963360757,
+  "geo_precision": "atp",
+  "address": "ss11lb",
+  "postcode": "ss11lb",
+  "website": "https://branches.halifax.co.uk/essex/108-high-street",
+  "website_source": "atp",
+  "phone": "+44 345 720 3040",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Tu 09:30-16:30; We 10:00-16:30; Th-Fr 09:30-16:30; Sa 09:30-15:00; Su closed",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "halifax_gb",
+  "atp_brand": "Halifax",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q3310164",
+  "atp_nsi": "halifax-e1e9d0",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-handelsbanken_gb-handelsbanken-1834eb",
+  "name": "Handelsbanken",
+  "brand": "Handelsbanken",
+  "brand_wikidata": "Q1421630",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.53623,
+  "lng": 0.7103114,
+  "geo_precision": "atp",
+  "address": "ss11ef",
+  "postcode": "ss11ef",
+  "website": "https://www.handelsbanken.co.uk/southendonsea",
+  "website_source": "atp",
+  "phone": "+44 1702 226140",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 09:00-17:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "handelsbanken_gb",
+  "atp_brand": "Handelsbanken",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q1421630",
+  "atp_nsi": "handelsbanken-1834eb",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-hsbc_uk_gb-hsbcuk-e1e9d0",
+  "name": "HSBC - Southend-On-Sea - Cash Withdrawals and Note Deposits Through Self-Service",
+  "brand": "HSBC UK",
+  "brand_wikidata": "Q64767453",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.54052,
+  "lng": 0.711125,
+  "geo_precision": "atp",
+  "address": "ss11tj",
+  "postcode": "ss11tj",
+  "website": "https://www.hsbc.co.uk/branch-list/southend-on-sea-cash-withdrawals-and-note-deposits-through-self-service/",
+  "website_source": "atp",
+  "atp_hours": "Mo-Fr 09:30-16:30; Sa 09:30-13:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "hsbc_uk_gb",
+  "atp_brand": "HSBC UK",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q64767453",
+  "atp_nsi": "hsbcuk-e1e9d0",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-hyundai_gb-hyundai-13eeb7",
+  "name": "Hyundai",
+  "brand": "Hyundai",
+  "brand_wikidata": "Q55931",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.57072,
+  "lng": 0.67939,
+  "geo_precision": "atp",
+  "address": "ss41gp",
+  "postcode": "ss41gp",
+  "website": "https://dealer.hyundai.co.uk/toomey-southend",
+  "website_source": "atp",
+  "phone": "+44 1702 563030",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 09:00-18:00; Sa 09:00-17:30; Su 10:00-16:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "hyundai_gb",
+  "atp_brand": "Hyundai",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q55931",
+  "atp_nsi": "hyundai-13eeb7",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-inpost_gb-inpost-6b37ec",
+  "name": "InPost",
+  "brand": "InPost",
+  "brand_wikidata": "Q3182097",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.54098,
+  "lng": 0.73602,
+  "geo_precision": "atp",
+  "address": "ss12ps",
+  "postcode": "ss12ps",
+  "website": "https://www.inpost.co.uk/lockers/UK00004348",
+  "website_source": "atp",
+  "atp_hours": "24/7",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "inpost_gb",
+  "atp_brand": "InPost",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q3182097",
+  "atp_nsi": "inpost-6b37ec",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-jennings_bet_gb-jenningsbet-58d00b",
+  "name": "JenningsBet",
+  "brand": "JenningsBet",
+  "brand_wikidata": "Q112925339",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.541761,
+  "lng": 0.657718,
+  "geo_precision": "atp",
+  "address": "ss91pe",
+  "postcode": "ss91pe",
+  "atp_hours": "Mo-Sa 08:30-22:00; Su 10:00-22:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "jennings_bet_gb",
+  "atp_brand": "JenningsBet",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q112925339",
+  "atp_nsi": "jenningsbet-58d00b",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-jewson_gb-jewson-8a4d16",
+  "name": "Jewson",
+  "brand": "Jewson",
+  "brand_wikidata": "Q6190226",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.544713,
+  "lng": 0.686286,
+  "geo_precision": "atp",
+  "address": "ss09hs",
+  "postcode": "ss09hs",
+  "website": "https://www.jewson.co.uk/branch-finder/westcliff-branch/",
+  "website_source": "atp",
+  "phone": "+44 1702 331131",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 07:00-17:00; Sa 08:00-12:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "jewson_gb",
+  "atp_brand": "Jewson",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q6190226",
+  "atp_nsi": "jewson-8a4d16",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-kutchenhaus_gb-kutchenhaus-26c64e",
+  "name": "Kutchenhaus",
+  "brand": "Kutchenhaus",
+  "brand_wikidata": "Q123029245",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.54163,
+  "lng": 0.69733,
+  "geo_precision": "atp",
+  "address": "ss07bx",
+  "postcode": "ss07bx",
+  "website": "https://uk.kutchenhaus.com/store-finder/southend-on-sea",
+  "website_source": "atp",
+  "phone": "+44 1702 345302",
+  "phone_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "kutchenhaus_gb",
+  "atp_brand": "Kutchenhaus",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q123029245",
+  "atp_nsi": "kutchenhaus-26c64e",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
   "id": "atp-kwik_fit_gb-kwikfit-b75a4b",
   "name": "Kwik Fit",
   "brand": "Kwik Fit",
@@ -99117,28 +101260,28 @@
   ]
  },
  {
-  "id": "atp-screwfix_gb-ysp2ew",
-  "name": "Screwfix",
-  "brand": "Screwfix",
-  "brand_wikidata": "Q7439115",
-  "category": "shopping",
-  "category_label": "Shop",
-  "lat": 51.5563718,
-  "lng": 0.7144499,
+  "id": "atp-leaders_romans_group_gb-sj7uv7",
+  "name": "Southend-On-Sea",
+  "brand": "Leaders",
+  "brand_wikidata": "Q111522674",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.5487613348,
+  "lng": 0.704387656897,
   "geo_precision": "atp",
-  "address": "ss25fz",
-  "postcode": "ss25fz",
-  "website": "https://www.screwfix.com/stores/NT3/southend-on-sea",
+  "address": "ss26ne",
+  "postcode": "ss26ne",
+  "website": "https://www.leaders.co.uk/southend-sea/",
   "website_source": "atp",
   "photos": [],
   "description": "",
   "sources": [
    "atp"
   ],
-  "atp_spider": "screwfix_gb",
-  "atp_brand": "Screwfix",
+  "atp_spider": "leaders_romans_group_gb",
+  "atp_brand": "Leaders",
   "atp_method": "created-chain",
-  "atp_wikidata": "Q7439115",
+  "atp_wikidata": "Q111522674",
   "provisional_creation": "atp-chain",
   "keep_evidence": [
    {
@@ -99148,32 +101291,359 @@
   ]
  },
  {
-  "id": "atp-argos-argos-3930ea",
-  "name": "Argos",
-  "brand": "Argos",
-  "brand_wikidata": "Q4789707",
+  "id": "atp-ladbrokes_gb-ladbrokes-afd1fc",
+  "name": "Ladbrokes",
+  "brand": "Ladbrokes",
+  "brand_wikidata": "Q1799875",
   "category": "shopping",
   "category_label": "Shop",
-  "lat": 51.5406372,
-  "lng": 0.7090687,
+  "lat": 51.56583,
+  "lng": 0.698229,
   "geo_precision": "atp",
-  "address": "ss11pl",
-  "postcode": "ss11pl",
-  "website": "https://www.argos.co.uk/stores/4826-southend-argos-inside-sainsburys",
-  "website_source": "atp",
-  "phone": "+44 345 850 8808",
+  "address": "ss26xg",
+  "postcode": "ss26xg",
+  "phone": "+44 800 731 6191",
   "phone_source": "atp",
-  "atp_hours": "Mo-Sa 09:00-20:00; Su 10:00-16:00",
+  "atp_hours": "Mo-Fr 08:30-21:00; Sa 08:00-20:30; Su 08:30-19:00",
   "photos": [],
   "description": "",
   "sources": [
    "atp"
   ],
-  "atp_spider": "argos",
-  "atp_brand": "Argos",
+  "atp_spider": "ladbrokes_gb",
+  "atp_brand": "Ladbrokes",
   "atp_method": "created-chain",
-  "atp_wikidata": "Q4789707",
-  "atp_nsi": "argos-3930ea",
+  "atp_wikidata": "Q1799875",
+  "atp_nsi": "ladbrokes-afd1fc",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-maidenhead_aquatics_gb-maidenheadaquatics-8ec02",
+  "name": "Maidenhead Aquatics",
+  "brand": "Maidenhead Aquatics",
+  "brand_wikidata": "Q120800751",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.565021,
+  "lng": 0.720856,
+  "geo_precision": "atp",
+  "address": "ss41lq",
+  "postcode": "ss41lq",
+  "website": "https://www.fishkeeper.co.uk/storefinder/Southend/",
+  "website_source": "atp",
+  "phone": "+44 1702 411099",
+  "phone_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "maidenhead_aquatics_gb",
+  "atp_brand": "Maidenhead Aquatics",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q120800751",
+  "atp_nsi": "maidenheadaquatics-8ec028",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-lloyds_bank_gb-16a75c1",
+  "name": "Cashpoint\u00ae 77 High Street",
+  "brand": "Lloyds Bank",
+  "brand_wikidata": "Q1152847",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.536588764169046,
+  "lng": 0.7134347865081914,
+  "geo_precision": "atp",
+  "address": "ss11ht",
+  "postcode": "ss11ht",
+  "website": "https://branches.lloydsbank.com/southend-on-sea/77-high-street/cashpoint\u00ae",
+  "website_source": "atp",
+  "atp_hours": "Mo-Su 00:00-24:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "lloyds_bank_gb",
+  "atp_brand": "Lloyds Bank",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q1152847",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-londis_gb-londis-232829",
+  "name": "Londis BYFORDS FOOD HALL",
+  "brand": "Londis",
+  "brand_wikidata": "Q21008564",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.564786237395,
+  "lng": 0.64201354980469,
+  "geo_precision": "atp",
+  "address": "ss94ry",
+  "postcode": "ss94ry",
+  "website": "https://www.londis.co.uk/our-stores/byfords-food-hall",
+  "website_source": "atp",
+  "phone": "+44 1702 525903",
+  "phone_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "londis_gb",
+  "atp_brand": "Londis",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q21008564",
+  "atp_nsi": "londis-232829",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-nationwide_gb-nationwide-e1e9d0",
+  "name": "Nationwide",
+  "brand": "Nationwide",
+  "brand_wikidata": "Q846735",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.540013,
+  "lng": 0.711268,
+  "geo_precision": "atp",
+  "address": "ss11qh",
+  "postcode": "ss11qh",
+  "website": "https://www.nationwide.co.uk/branches/southend-on-sea/14-london-road",
+  "website_source": "atp",
+  "phone": "+44 345 266 0226",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Tu 09:00-16:30; We 10:00-16:30; Th-Fr 09:00-16:30; Sa 09:30-13:00; Su closed",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "nationwide_gb",
+  "atp_brand": "Nationwide",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q846735",
+  "atp_nsi": "nationwide-e1e9d0",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-ncp_gb-nationalcarparks-822ef4",
+  "name": "Leigh on Sea  Station (C2C)",
+  "brand": "Leigh on Sea  Station (C2C)",
+  "category": "parking",
+  "category_label": "Parking",
+  "lat": 51.5404,
+  "lng": 0.64007,
+  "geo_precision": "atp",
+  "address": "",
+  "postcode": null,
+  "website": "https://www.ncp.co.uk/find-a-car-park/car-parks/leigh-on-sea-station-c2c/",
+  "website_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "ncp_gb",
+  "atp_brand": "Leigh on Sea  Station (C2C)",
+  "atp_method": "created-chain",
+  "atp_nsi": "nationalcarparks-822ef4",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-nisalocal_gb-6081sr",
+  "name": "Nisa Local 69-71 West Rd",
+  "brand": "Nisa",
+  "brand_wikidata": "Q16999069",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.54441356505462,
+  "lng": 0.6951485852104122,
+  "geo_precision": "atp",
+  "address": "ss09ay",
+  "postcode": "ss09ay",
+  "website": "https://www.nisalocally.co.uk/stores/essex/westcliff-on-sea/69-71-west-rd",
+  "website_source": "atp",
+  "phone": "+44 1702 340231",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Su 08:00-23:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "nisalocal_gb",
+  "atp_brand": "Nisa",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q16999069",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-natwest_gb-natwest-6bb648",
+  "name": "NatWest",
+  "brand": "NatWest",
+  "brand_wikidata": "Q2740021",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.5389332,
+  "lng": 0.7132314,
+  "geo_precision": "atp",
+  "address": "ss11jx",
+  "postcode": "ss11jx",
+  "website": "https://www.natwest.com/search-results/locator/branch.html?sortcode=555028&name=Southend",
+  "website_source": "atp",
+  "atp_hours": "Mo-Tu 09:30-16:30; We 10:00-16:30; Th-Fr 09:30-16:30; Sa 09:30-13:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "natwest_gb",
+  "atp_brand": "NatWest",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q2740021",
+  "atp_nsi": "natwest-6bb648",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-natwest_gb-natwest-8cfc37",
+  "name": "Southend Card Centre",
+  "brand": "NatWest",
+  "brand_wikidata": "Q2740021",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.56163090000002,
+  "lng": 0.6831187999999955,
+  "geo_precision": "atp",
+  "address": "ss00ej",
+  "postcode": "ss00ej",
+  "website": "https://www.natwest.com/search-results/locator/atm.html?sortcode=N810551&name=Southend-Card-Centre",
+  "website_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "natwest_gb",
+  "atp_brand": "NatWest",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q2740021",
+  "atp_nsi": "natwest-8cfc37",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-peacocks_gb-peacocks-c6ef05",
+  "name": "Peacocks",
+  "brand": "Peacocks",
+  "brand_wikidata": "Q7157762",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.540909,
+  "lng": 0.713038,
+  "geo_precision": "atp",
+  "address": "ss25sp",
+  "postcode": "ss25sp",
+  "website": "https://www.peacocks.co.uk/store-detail?storeID=6170&storeName=PEACOCKS-SOUTHEND",
+  "website_source": "atp",
+  "phone": "+44 1702 614989",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Sa 09:00-17:30; Su 10:00-16:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "peacocks_gb",
+  "atp_brand": "Peacocks",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q7157762",
+  "atp_nsi": "peacocks-c6ef05",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-photome_gb-photome-f9b213",
+  "name": "Photo-Me",
+  "brand": "Photo-Me",
+  "brand_wikidata": "Q123456627",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.5709257,
+  "lng": 0.6712827,
+  "geo_precision": "atp",
+  "address": "ss26sh",
+  "postcode": "ss26sh",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "photome_gb",
+  "atp_brand": "Photo-Me",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q123456627",
+  "atp_nsi": "photome-f9b213",
   "provisional_creation": "atp-chain",
   "keep_evidence": [
    {
@@ -99216,30 +101686,160 @@
   ]
  },
  {
-  "id": "atp-card_factory_gb-cardfactory-d8c200",
-  "name": "Card Factory",
-  "brand": "Card Factory",
-  "brand_wikidata": "Q5038192",
+  "id": "atp-premier_gb-premier-232829",
+  "name": "Premier Rogers Convenience Store",
+  "brand": "Premier",
+  "brand_wikidata": "Q7240340",
   "category": "shopping",
   "category_label": "Shop",
-  "lat": 51.540371,
-  "lng": 0.782044,
+  "lat": 51.5329161,
+  "lng": 0.7816347,
   "geo_precision": "atp",
-  "address": "ss38da",
-  "postcode": "ss38da",
-  "phone": "+44 1702 298897",
-  "phone_source": "atp",
-  "atp_hours": "Mo-Sa 09:00-17:30; Su 10:00-16:00",
+  "address": "ss39de",
+  "postcode": "ss39de",
+  "website": "https://www.premier-stores.co.uk/our-stores/rogers-convenience-store",
+  "website_source": "atp",
   "photos": [],
   "description": "",
   "sources": [
    "atp"
   ],
-  "atp_spider": "card_factory_gb",
-  "atp_brand": "Card Factory",
+  "atp_spider": "premier_gb",
+  "atp_brand": "Premier",
   "atp_method": "created-chain",
-  "atp_wikidata": "Q5038192",
-  "atp_nsi": "cardfactory-d8c200",
+  "atp_wikidata": "Q7240340",
+  "atp_nsi": "premier-232829",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-puregym_gb-puregym-2770cb",
+  "name": "PureGym",
+  "brand": "PureGym",
+  "brand_wikidata": "Q18345898",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.555782318115234,
+  "lng": 0.7275760173797607,
+  "geo_precision": "atp",
+  "address": "ss24hf",
+  "postcode": "ss24hf",
+  "website": "https://www.puregym.com/gyms/southend/",
+  "website_source": "atp",
+  "atp_hours": "Mo-Su 00:00-24:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "puregym_gb",
+  "atp_brand": "PureGym",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q18345898",
+  "atp_nsi": "puregym-2770cb",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-rexel_gb-rexel-091354",
+  "name": "Rexel",
+  "brand": "Rexel",
+  "brand_wikidata": "Q962489",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.56152131,
+  "lng": 0.716849076,
+  "geo_precision": "atp",
+  "address": "ss25te",
+  "postcode": "ss25te",
+  "website": "https://www.rexel.co.uk/uki/Southend-on-Sea/store/3AV",
+  "website_source": "atp",
+  "phone": "+44 1702 617222",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 07:00-17:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "rexel_gb",
+  "atp_brand": "Rexel",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q962489",
+  "atp_nsi": "rexel-091354",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-screwfix_gb-ysp2ew",
+  "name": "Screwfix",
+  "brand": "Screwfix",
+  "brand_wikidata": "Q7439115",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.5563718,
+  "lng": 0.7144499,
+  "geo_precision": "atp",
+  "address": "ss25fz",
+  "postcode": "ss25fz",
+  "website": "https://www.screwfix.com/stores/NT3/southend-on-sea",
+  "website_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "screwfix_gb",
+  "atp_brand": "Screwfix",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q7439115",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-salvation_army_gb-thesalvationarmy-2031e0",
+  "name": "The Salvation Army",
+  "brand": "The Salvation Army",
+  "brand_wikidata": "Q188307",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.5423625,
+  "lng": 0.6525989,
+  "geo_precision": "atp",
+  "address": "77-79 Broadway West, ss92bx",
+  "postcode": "ss92bx",
+  "website": "https://www.salvationarmy.org.uk/leigh-sea-charity-shop",
+  "website_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "salvation_army_gb",
+  "atp_brand": "The Salvation Army",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q188307",
+  "atp_nsi": "thesalvationarmy-2031e0",
   "provisional_creation": "atp-chain",
   "keep_evidence": [
    {
@@ -99309,6 +101909,444 @@
   "atp_method": "created-chain",
   "atp_wikidata": "Q124359752",
   "atp_nsi": "shellselect-cfb41f",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-spar_gb-spar-1effe0",
+  "name": "Spar-Southend on Sea",
+  "brand": "Spar",
+  "brand_wikidata": "Q610492",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.5359273,
+  "lng": 0.7612553,
+  "geo_precision": "atp",
+  "address": "ss13es",
+  "postcode": "ss13es",
+  "website": "https://www.spar.co.uk/store-locator/afb33088-spar-southend-on-sea",
+  "website_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "spar_gb",
+  "atp_brand": "Spar",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q610492",
+  "atp_nsi": "spar-1effe0",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-specsavers-1lw56t4",
+  "name": "Leigh-on-Sea",
+  "brand": "Specsavers",
+  "brand_wikidata": "Q2000610",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.541466,
+  "lng": 0.6568066,
+  "geo_precision": "atp",
+  "address": "ss91aj",
+  "postcode": "ss91aj",
+  "website": "https://www.specsavers.co.uk/stores/leighonsea",
+  "website_source": "atp",
+  "phone": "+44 1702 482344",
+  "phone_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "specsavers",
+  "atp_brand": "Specsavers",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q2000610",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-subway-subway-6a374d",
+  "name": "Subway Total Gas Station/C-Store",
+  "brand": "Subway",
+  "brand_wikidata": "Q244457",
+  "category": "restaurant",
+  "category_label": "Restaurant",
+  "lat": 51.57087741877171,
+  "lng": 0.6780868847785904,
+  "geo_precision": "atp",
+  "address": "ss41gp",
+  "postcode": "ss41gp",
+  "website": "https://restaurants.subway.com/united-kingdom/en/rochford/cheery-orchard-way",
+  "website_source": "atp",
+  "phone": "+44 1702 563019",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Su 07:00-20:00",
+  "cuisine": "sandwich",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "subway",
+  "atp_brand": "Subway",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q244457",
+  "atp_nsi": "subway-6a374d",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-the_food_warehouse_gb-thefoodwarehouse-a8278b",
+  "name": "The Food Warehouse",
+  "brand": "The Food Warehouse",
+  "brand_wikidata": "Q87263899",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.5697,
+  "lng": 0.705168,
+  "geo_precision": "atp",
+  "address": "ss26fw",
+  "postcode": "ss26fw",
+  "website": "https://www.iceland.co.uk/store-finder/store?StoreID=1818&StoreName=Southend-Food-Warehouse",
+  "website_source": "atp",
+  "phone": "+44 1702 410808",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Sa 08:00-21:00; Su 10:00-16:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "the_food_warehouse_gb",
+  "atp_brand": "The Food Warehouse",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q87263899",
+  "atp_nsi": "thefoodwarehouse-a8278b",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-tax_assist_gb-taxassistaccountants-697",
+  "name": "TaxAssist Accountants",
+  "brand": "TaxAssist Accountants",
+  "brand_wikidata": "Q122459380",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.545834,
+  "lng": 0.678257,
+  "geo_precision": "atp",
+  "address": "ss09su",
+  "postcode": "ss09su",
+  "website": "https://www.taxassist.co.uk/accountants/southend-on-sea/",
+  "website_source": "atp",
+  "phone": "+44 1702 841555",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 09:00-17:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "tax_assist_gb",
+  "atp_brand": "TaxAssist Accountants",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q122459380",
+  "atp_nsi": "taxassistaccountants-6972d1",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-the_gym_group_gb-thegymgroup-2770cb",
+  "name": "The Gym Group",
+  "brand": "The Gym Group",
+  "brand_wikidata": "Q48815022",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.541837,
+  "lng": 0.705174,
+  "geo_precision": "atp",
+  "address": "ss11pa",
+  "postcode": "ss11pa",
+  "website": "https://www.thegymgroup.com/find-a-gym/southend-gyms/southend/",
+  "website_source": "atp",
+  "atp_hours": "Mo-Su 00:00-24:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "the_gym_group_gb",
+  "atp_brand": "The Gym Group",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q48815022",
+  "atp_nsi": "thegymgroup-2770cb",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-tops_pizza_gb-1d5bfhe",
+  "name": "Southend",
+  "brand": "Tops Pizza",
+  "brand_wikidata": "Q24439136",
+  "category": "restaurant",
+  "category_label": "Restaurant",
+  "lat": 51.5557554,
+  "lng": 0.7158958,
+  "geo_precision": "atp",
+  "address": "ss25ew",
+  "postcode": "ss25ew",
+  "website": "https://topspizza.co.uk/southend",
+  "website_source": "atp",
+  "phone": "+44 1702 936393",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Su 12:00-23:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "tops_pizza_gb",
+  "atp_brand": "Tops Pizza",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q24439136",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-trade_point_gb-tradepoint-8a4d16",
+  "name": "TradePoint Southend",
+  "brand": "TradePoint",
+  "brand_wikidata": "Q115211017",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.557,
+  "lng": 0.729,
+  "geo_precision": "atp",
+  "address": "ss24dq",
+  "postcode": "ss24dq",
+  "website": "https://www.trade-point.co.uk/store/1372",
+  "website_source": "atp",
+  "phone": "+44 1702 455022",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Sa 07:00-20:00; Su 10:00-16:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "trade_point_gb",
+  "atp_brand": "TradePoint",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q115211017",
+  "atp_nsi": "tradepoint-8a4d16",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-trussell_trust_gb-thetrusselltrust-bdda3a",
+  "name": "Southend",
+  "brand": "Southend",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.5321,
+  "lng": 0.777,
+  "geo_precision": "atp",
+  "address": "ss39jd",
+  "postcode": "ss39jd",
+  "website": "https://southend.foodbank.org.uk",
+  "website_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "trussell_trust_gb",
+  "atp_brand": "Southend",
+  "atp_method": "created-chain",
+  "atp_nsi": "thetrusselltrust-bdda3a",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-vets4pets_gb-vets4pets-45f750",
+  "name": "Southend-On-Sea Vets for Pets",
+  "brand": "Vets4Pets",
+  "brand_wikidata": "Q16960196",
+  "category": "health",
+  "category_label": "Health",
+  "lat": 51.54057357346663,
+  "lng": 0.7300354823961691,
+  "geo_precision": "atp",
+  "address": "ss12ay",
+  "postcode": "ss12ay",
+  "website": "https://www.vets4pets.com/practices/vets-in-southend/vets4pets-southend-on-sea/",
+  "website_source": "atp",
+  "phone": "+44 1702 466718",
+  "phone_source": "atp",
+  "atp_hours": "Tu 08:30-12:00; We 08:30-14:00; Fr 08:30-16:00,08:30-17:00,08:30-19:00; Sa 09:00-13:00,09:00-14:00,09:00-17:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "vets4pets_gb",
+  "atp_brand": "Vets4Pets",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q16960196",
+  "atp_nsi": "vets4pets-45f750",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-webuyanycar_gb-webuyanycar-42e946",
+  "name": "webuyanycar Southend",
+  "brand": "We Buy Any Car",
+  "brand_wikidata": "Q7977432",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.54112,
+  "lng": 0.706468,
+  "geo_precision": "atp",
+  "address": "ss26jh",
+  "postcode": "ss26jh",
+  "website": "https://www.webuyanycar.com/branch-locator/southend/",
+  "website_source": "atp",
+  "phone": "+44 1702 418282",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 10:00-19:00; Sa 09:00-18:00; Su 10:00-17:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "webuyanycar_gb",
+  "atp_brand": "We Buy Any Car",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q7977432",
+  "atp_nsi": "webuyanycar-42e946",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-wolseley_gb-wolseley-8a4d16",
+  "name": "Wolseley",
+  "brand": "Wolseley",
+  "brand_wikidata": "Q8030423",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.56148,
+  "lng": 0.7166,
+  "geo_precision": "atp",
+  "address": "ss25te",
+  "postcode": "ss25te",
+  "website": "https://www.wolseley.co.uk/branch/southend/",
+  "website_source": "atp",
+  "phone": "+44 1702 601620",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 07:30-17:00; Sa 08:00-12:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "wolseley_gb",
+  "atp_brand": "Wolseley",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q8030423",
+  "atp_nsi": "wolseley-8a4d16",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ]
+ },
+ {
+  "id": "atp-yeep_gb-yeep-ad77d0",
+  "name": "Yeep",
+  "brand": "Yeep",
+  "brand_wikidata": "Q123421114",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.543189,
+  "lng": 0.718197,
+  "geo_precision": "atp",
+  "address": "ss25pb",
+  "postcode": "ss25pb",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "yeep_gb",
+  "atp_brand": "Yeep",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q123421114",
+  "atp_nsi": "yeep-ad77d0",
   "provisional_creation": "atp-chain",
   "keep_evidence": [
    {
