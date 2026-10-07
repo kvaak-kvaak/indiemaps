@@ -187,6 +187,8 @@ def main():
         metalookup = read_opl_metadata(str(opl))
         print(f'osm_fetch: OPL metadata for {len(metalookup)} objects', flush=True)
         els, null_ts, skipped, tag_skipped = [], 0, 0, 0
+        from collections import Counter
+        geoms, rej = Counter(), Counter()
         with open(seq) as f:
             for line in f:
                 line = line.strip().lstrip('\x1e')
@@ -199,8 +201,12 @@ def main():
                     continue
                 props = ft.get('properties') or {}
                 tags = {k: v for k, v in props.items() if not k.startswith('@')}
-                if not wanted(tags, (ft.get('geometry') or {}).get('type') != 'Point'):
+                gt = (ft.get('geometry') or {}).get('type')
+                geoms[gt] += 1
+                if not wanted(tags, gt != 'Point'):
                     tag_skipped += 1
+                    if tags.get('name'):
+                        rej[(gt, tags.get('amenity'), tags.get('shop'), tags.get('tourism'), tags.get('leisure'), tags.get('building'))] += 1
                     continue
                 el = normalize_feature(ft, metalookup)
                 if el is None:
@@ -212,6 +218,7 @@ def main():
     out = {'elements': els}
     json.dump(out, open(a.out, 'w'))
     print(f'osm_fetch: {len(els)} elements (tag-filtered {tag_skipped}, null-timestamp {null_ts}, skipped {skipped}) -> {a.out}', flush=True)
+    print(f'osm_fetch: export geoms {dict(geoms)}; named-rejected sample {dict(list(rej.items())[:15])}', flush=True)
     if null_ts and null_ts == len(els):
         raise SystemExit('osm_fetch: EVERY element lacks a timestamp — export schema changed, refusing')
 
