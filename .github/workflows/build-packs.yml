@@ -37,7 +37,19 @@ jobs:
         with:
           node-version: '20'
       - run: pip install duckdb pyyaml
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
+      - name: Install osmium (retrying, non-fatal)
+        # Dead mirrors hang apt indefinitely (measured: one run burned
+        # 4h52m here). Bounded retries, then the build continues WITHOUT
+        # PBF — build.py degrades loudly to Overpass when the binary is
+        # missing, and meta records which source built each pack.
+        run: |
+          for i in 1 2 3; do
+            sudo timeout 120 apt-get update -qq && break || sleep 15
+          done
+          for i in 1 2 3; do
+            sudo timeout 300 apt-get install -y -qq osmium-tool && break || sleep 15
+          done
+          which osmium || echo "OSMIUM_UNAVAILABLE=1" >> "$GITHUB_ENV"
       - uses: actions/cache@v4
         # ATP spider downloads (hundreds of files, namespaced per run).
         # Key on the fetch code: spider-set or logic changes re-fetch.
