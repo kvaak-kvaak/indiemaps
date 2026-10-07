@@ -59,6 +59,51 @@ def mark_stage(packdir, meta_path, stage):
         log(packdir, f'could not mark stage {stage}: {e}')
 
 
+# Per-country stage rule (user decision 2026-10-07): UK registers never
+# run on Finnish packs and vice versa. ADDING A COUNTRY means extending
+# the tuples below — never hunting call sites, never per-area flags.
+# Universal stages list their countries explicitly for the same reason.
+STAGE_COUNTRIES = {
+    'base': ('gb', 'fi'),
+    'verify_positions': ('gb', 'fi'),
+    'hazard_roads': ('gb', 'fi'),
+    'servicemap': ('fi',),  # + muni-flag gate inside (unchanged)
+    'ch': ('gb',),  # Companies House: UK only
+    'overture': ('gb', 'fi'),  # global dataset, bbox filters
+    'nhs': ('gb',),  # NHS England ODS; Scotland/Wales/NI need their own datasets
+    'atp': ('gb', 'fi'),  # _gb + _fi + globals; bbox filters
+    'sites': ('gb', 'fi'),
+    'merge': ('gb', 'fi'),
+    'chains_fi': ('fi',),
+    'prh': ('fi',),
+    'ta': ('gb', 'fi'),  # extract covers UK nations + Finland
+}
+
+
+def area_country(area_id):
+    seg = (area_id.split('/') + ['', ''])[1].lower()
+    return seg or '??'
+
+
+def stage_allowed(stage, area_id, packdir, meta):
+    """Country gate: off-country stages skip loudly (log + meta record),
+    never silently. Returns True iff the stage should run."""
+    if area_country(area_id) in STAGE_COUNTRIES.get(stage, ('gb', 'fi')):
+        return True
+    msg = f'stage {stage} not run here (country rule: {STAGE_COUNTRIES.get(stage)})'
+    print(msg, flush=True)
+    log(packdir, msg)
+    try:
+        m = json.load(open(meta))
+        skipped = m.setdefault('stages_skipped_country', [])
+        if stage not in skipped:
+            skipped.append(stage)
+        json.dump(m, open(meta, 'w'), indent=1)
+    except Exception:
+        pass  # meta may not exist yet this early; the log line stands
+    return False
+
+
 def build(area_id, args):
     if area_id not in AREAS:
         sys.exit(f'unknown area {area_id!r} (see areas.json)')
@@ -67,11 +112,14 @@ def build(area_id, args):
     packdir.mkdir(parents=True, exist_ok=True)
     bbox = ','.join(map(str, a['bbox']))
     pois, meta = str(packdir / 'pois.json'), str(packdir / 'meta.json')
-    stages = ['base', 'verify_positions', 'hazard_roads', 'servicemap', 'ch', 'overture', 'nhs', 'atp', 'sites', 'merge', 'chains_fi', 'prh', 'ta']
+    stages = list(STAGE_COUNTRIES)
     if args.only:
         stages = [args.only]
     elif args.from_stage:
         stages = stages[stages.index(args.from_stage):]
+    # Country rule: off-country stages leave the list here, loudly (log +
+    # meta record). All present and future stages gated at this one point.
+    stages = [s for s in stages if stage_allowed(s, area_id, packdir, meta)]
     log(packdir, f'=== pack {area_id} ({a["name"]}) stages={stages} ===')
 
     if 'base' in stages:
