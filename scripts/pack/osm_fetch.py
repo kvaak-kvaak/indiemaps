@@ -180,6 +180,9 @@ def main():
         # 12k nodes — every building-mapped venue lost downstream).
         sh('osmium', 'extract', '--overwrite', '--strategy=complete_ways', '-b',
            f'{w},{s},{e},{n}', '-o', str(area_full), str(national))
+        for key in ('data.count.nodes', 'data.count.ways', 'data.count.relations'):
+            val = sh('osmium', 'fileinfo', '-e', '-g', key, str(area_full)).stdout.strip()
+            print(f'osm_fetch: area_full {key}={val}', flush=True)
         area_loc = Path(tmp) / 'area-located.osm.pbf'
         sh('osmium', 'add-locations-to-ways', '--overwrite',
            '-o', str(area_loc), str(area_full))
