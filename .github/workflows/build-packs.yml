@@ -46,14 +46,18 @@ jobs:
         with:
           path: data/atp/raw
           key: atp-raw-${{ hashFiles('scripts/atp.js') }}
+      - run: echo "TODAY=$(date +%F)" >> "$GITHUB_ENV"
       - uses: actions/cache@v4
         # Geofabrik PBF extracts (GB 2.2GB + FI 770MB, daily files).
         # Date-keyed: first run of the day downloads, later runs reuse.
-        # The extract filename is stamped per pack in meta (osm_extract),
+        # Same-day duplicates are impossible (fixed key per day); older
+        # days age out via the 10GB limit. Freshness is enforced by the
+        # date sidecar (osm_fetch re-downloads when it disagrees), and
+        # the extract filename is stamped per pack in meta (osm_extract),
         # so a stale cache can never silently pose as fresh.
         with:
           path: data/osm
-          key: osm-pbf-${{ hashFiles('scripts/pack/osm_fetch.py') }}-${{ github.run_id }}
+          key: osm-pbf-${{ hashFiles('scripts/pack/osm_fetch.py') }}-${{ env.TODAY }}
           restore-keys: |
             osm-pbf-${{ hashFiles('scripts/pack/osm_fetch.py') }}-
       - name: Fetch Companies House snapshot
