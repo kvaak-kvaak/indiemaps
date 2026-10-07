@@ -586,3 +586,15 @@ Read these three docs first, in order:
   TODO: rename meta rec_formula to positive-share-display-v1
   (still says weighted-5step-v1 — string only, fold into next
   code commit). Commit 22377c9, CI green, bare 0.
+
+## Session log (2026-10-07, Camden green + refresh passes)
+
+- Camden green attempt 4 (PBF path, no Overpass involved):
+  18,109 total, 0 violations. UK 47/47 built.
+- Cache incident: run_id-suffixed PBF key stored 4x2.2GB dupes
+  (8.7GB of 10GB). Deleted via API, key changed to date-based.
+  Push/dispatch 500s were GitHub-side (cleared).
+- Refresh passes dispatched: 17 FI full spider=false (uniform
+  _fi + ta-default + PBF + rec-vector) + 26 UK full spider=false
+  (unifies Overpass-built packs to PBF + ta). London 21 already
+  current. Then: 64-pack audit, triage, Friday cut.
