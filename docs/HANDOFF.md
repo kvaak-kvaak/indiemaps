@@ -540,3 +540,16 @@ Read these three docs first, in order:
   code). Retry of the 5 dispatched with PBF default (37623506759).
 - Camden attempt 3 + depth-3 cap-split committed; Camden rerun
   waits for batch B load to clear.
+
+## Session log (2026-10-07, rec_n correction)
+
+- User caught a real error: total_reviews_count covers sub-category
+  reviews (2 overall votes vs 36 total measured; only 466k/1.08M
+  rows agree). rec_n redefined as the overall 5-step tally
+  (averages in denominator, out of up/down); total dropped.
+- Vintage/formula out of POIs into meta.ta; decay computed at
+  render (mg_up/mg_down/mg_first_at armed, w=1 today). Proven:
+  100/0 place goes 99.0% -> 98.1% on first downvote -> 97.3%
+  after a year -> 67% after a decade. No cliff anywhere.
+- Both extracts re-cut (committed 17.4MB + local 85MB parts).
+  CI green, zero legacy keys, bare 0. Commit c460ffe.
