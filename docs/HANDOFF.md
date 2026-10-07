@@ -616,3 +616,12 @@ Read these three docs first, in order:
   Helsinki refresh spider=false (37665454693), batchB-first
   artifact recovered 5 more. Then: ta-only pass over 16 FI
   (only gap: pre-default code), final audit, triage, cut.
+
+## Session log (2026-10-07/08, apt hang + re-dispatch)
+
+- Southend spider run burned 4h52m on `apt-get update` (dead
+  mirror, no timeout). Cancelled. Fix: bounded retries (120s/
+  300s x3) + non-fatal (build.py already degrades to Overpass
+  without the binary; meta records the source). CH/ATP/OSM
+  calls audited — all already bounded. Standing rule: no setup
+  step without a timeout. Commit 492df9d, re-dispatched.
