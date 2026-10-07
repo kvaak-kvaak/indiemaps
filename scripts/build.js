@@ -298,6 +298,7 @@ async function fetchBox(s, w, n, e, depth) {
         }
         return { list: [...seen.values()], raw: sums.raw };
       }
+      if (raw.length >= 2000) console.log(`OSM CAP-TRUNCATED at max depth (${s},${w},${n},${e}): ${raw.length} raw — counts logged, coverage may gap here`);
       return { list: raw.filter(el => el.tags?.name), raw: raw.length };
     }
     if (round < 2) await sleep(15000 * (round + 1)); // Overpass storms pass
@@ -334,7 +335,19 @@ async function fetchOsm() {
           for (const el of sub.list) seen.set(el.type + el.id, el);
           raw += sub.raw;
         } catch (e2) {
-          throw new Error(`Overpass tile failed: ${ts},${tw},${tn},${te}`);
+          // Dense-tile second chance (measured: same Camden tile 504'd
+          // twice): split once more before giving up. Bounded — sub-tiles
+          // that still fail throw with their own bounds.
+          console.log(`tile struggling (${ts},${tw},${tn},${te}) — splitting 2x2`);
+          try {
+            for (const [ss, sw, sn, se] of splitBbox(ts, tw, tn, te)) {
+              const sub = await fetchBox(ss, sw, sn, se, 2);
+              for (const el of sub.list) seen.set(el.type + el.id, el);
+              raw += sub.raw;
+            }
+          } catch (e3) {
+            throw new Error(`Overpass tile failed: ${ts},${tw},${tn},${te}`);
+          }
         }
       }
     }
