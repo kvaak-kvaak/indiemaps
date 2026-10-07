@@ -133,7 +133,7 @@ def normalize_feature(ft, metalookup):
             'tags': tags, 'timestamp': ts, 'version': ver}
 
 
-OPL_PREFIX = re.compile(r'^([nwr])(\d+) v(\d+) \S+ T(\S+)')
+OPL_PREFIX = re.compile(r'^([nwr])(\d+) v(\d+) .*? t(\S+)')
 
 
 def read_opl_metadata(path):
@@ -175,9 +175,6 @@ def main():
            '-f', 'geojsonseq', '-o', str(seq), str(area))
         opl = Path(tmp) / 'area.opl'
         sh('osmium', 'cat', '--overwrite', '-f', 'opl', '-o', str(opl), str(area))
-        with open(opl, 'rb') as dbg:
-            osample = dbg.read(400)
-        print(f'osm_fetch: opl head: {osample!r}', flush=True)
         metalookup = read_opl_metadata(str(opl))
         print(f'osm_fetch: OPL metadata for {len(metalookup)} objects', flush=True)
         els, null_ts, skipped = [], 0, 0
