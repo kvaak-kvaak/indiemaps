@@ -138,6 +138,9 @@ def main():
         seq = Path(tmp) / 'area.geojsonseq'
         sh('osmium', 'export', '--overwrite', '--add-unique-id=type_id',
            '-f', 'geojsonseq', '-o', str(seq), str(area))
+        with open(seq, 'rb') as dbg:
+            sample = dbg.read(600)
+        print(f'osm_fetch: export head: {sample!r}', flush=True)
         els, null_ts, skipped = [], 0, 0
         with open(seq) as f:
             for line in f:
