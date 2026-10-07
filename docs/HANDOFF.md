@@ -501,3 +501,12 @@ Read these three docs first, in order:
 - ta enrichment default-on for all areas (extract covers UK+FI);
   the 26 banked packs predate it — ta-only refresh pass due
   after batch B (cheap: no downloads).
+
+## Session log (2026-10-07, Camden tile fix + batch B)
+
+- Camden failed twice on the identical tile (pattern, not weather):
+  dense-tile second chance in build.js (split once more before
+  failing, bounded; cap-truncation at max depth logged loudly
+  instead of silent). Commit 160d0ec, Camden solo re-dispatched.
+- Batch B (10 areas) dispatched parallel per instruction (shared
+  Overpass load accepted).
