@@ -179,8 +179,9 @@ def main():
         area_loc = Path(tmp) / 'area-located.osm.pbf'
         sh('osmium', 'add-locations-to-ways', '--overwrite',
            '-o', str(area_loc), str(area_full))
-        info = sh('osmium', 'fileinfo', '-e', str(area_loc))
-        print(f'osm_fetch: area_loc census: {info.stdout.strip()!r}'[:400], flush=True)
+        for key in ('data.count.nodes', 'data.count.ways', 'data.count.relations'):
+            val = sh('osmium', 'fileinfo', '-e', '-g', key, str(area_loc)).stdout.strip()
+            print(f'osm_fetch: area_loc {key}={val}', flush=True)
         seq = Path(tmp) / 'area.geojsonseq'
         sh('osmium', 'export', '--overwrite', '--add-unique-id=type_id',
            '-f', 'geojsonseq', '-o', str(seq), str(area_loc))
