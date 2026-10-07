@@ -65,19 +65,7 @@ def ensure_national(cache, country):
             shutil.copyfileobj(r, f, length=1024 * 1024)
         print(f'osm_fetch: {raw.stat().st_size / 1e9:.2f} GB', flush=True)
         stamp.write_text(today)
-        filt = cache / f'{country}-shops.osm.pbf'
-        if filt.exists():
-            filt.unlink()  # tags-filter output belongs to the old extract
-    filt = cache / f'{country}-shops.osm.pbf'
-    if not filt.exists():
-        amen = ','.join(AMENITY.split())
-        tour = ','.join(TOURISM.split())
-        leis = ','.join(LEISURE.split())
-        print(f'osm_fetch: tags-filter {raw.name} -> {filt.name}', flush=True)
-        sh('osmium', 'tags-filter', '--overwrite', '-R', '-o', str(filt), str(raw),
-           f'n/amenity={amen}', 'n/shop', f'n/tourism={tour}', f'n/leisure={leis}',
-           f'w/amenity={amen}', 'w/shop', f'w/tourism={tour}')
-    return filt
+    return raw
 
 
 def normalize_feature(ft, metalookup):
@@ -164,12 +152,28 @@ def main():
     if not shutil.which('osmium'):
         raise SystemExit('osmium binary missing (CI installs osmium-tool)')
     w, s, e, n = a.bbox.split(',')
-    filt = ensure_national(Path(a.cache), a.country)
+    national = ensure_national(Path(a.cache), a.country)
     import tempfile
     with tempfile.TemporaryDirectory() as tmp:
-        area = Path(tmp) / 'area.osm.pbf'
+        # Order is load-bearing: extract first (keeps every node in bbox),
+        # locate ways against those nodes, THEN filter. tags-filter drops
+        # untagged member nodes, so filtering before locating silently
+        # deletes every building-mapped venue (measured: 322/1136 Southend
+        # records lost — all ways). Augmented ways survive the filter with
+        # geometry intact.
+        area_full = Path(tmp) / 'area-full.osm.pbf'
         sh('osmium', 'extract', '--overwrite', '-b',
-           f'{w},{s},{e},{n}', '-o', str(area), str(filt))
+           f'{w},{s},{e},{n}', '-o', str(area_full), str(national))
+        area_loc = Path(tmp) / 'area-located.osm.pbf'
+        sh('osmium', 'add-locations-to-ways', '--overwrite',
+           '-o', str(area_loc), str(area_full))
+        area = Path(tmp) / 'area.osm.pbf'
+        amen = ','.join(AMENITY.split())
+        tour = ','.join(TOURISM.split())
+        leis = ','.join(LEISURE.split())
+        sh('osmium', 'tags-filter', '--overwrite', '-o', str(area), str(area_loc),
+           f'n/amenity={amen}', 'n/shop', f'n/tourism={tour}', f'n/leisure={leis}',
+           f'w/amenity={amen}', 'w/shop', f'w/tourism={tour}')
         seq = Path(tmp) / 'area.geojsonseq'
         sh('osmium', 'export', '--overwrite', '--add-unique-id=type_id',
            '-f', 'geojsonseq', '-o', str(seq), str(area))
