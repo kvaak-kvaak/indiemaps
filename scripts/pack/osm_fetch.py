@@ -189,6 +189,7 @@ def main():
         els, null_ts, skipped, tag_skipped = [], 0, 0, 0
         from collections import Counter
         geoms, rej = Counter(), Counter()
+        way_lines, way_kept, probe = 0, 0, []
         with open(seq) as f:
             for line in f:
                 line = line.strip().lstrip('\x1e')
@@ -203,6 +204,10 @@ def main():
                 tags = {k: v for k, v in props.items() if not k.startswith('@')}
                 gt = (ft.get('geometry') or {}).get('type')
                 geoms[gt] += 1
+                if str(ft.get('id', '')).startswith('w'):
+                    way_lines += 1
+                    if len(probe) < 5:
+                        probe.append((ft.get('id'), gt, tags.get('amenity'), tags.get('shop'), tags.get('name', '')[:30]))
                 if not wanted(tags, gt != 'Point'):
                     tag_skipped += 1
                     if tags.get('name'):
@@ -214,11 +219,14 @@ def main():
                     continue
                 if el['timestamp'] is None:
                     null_ts += 1
+                if el['type'] == 'way':
+                    way_kept += 1
                 els.append(el)
     out = {'elements': els}
     json.dump(out, open(a.out, 'w'))
     print(f'osm_fetch: {len(els)} elements (tag-filtered {tag_skipped}, null-timestamp {null_ts}, skipped {skipped}) -> {a.out}', flush=True)
     print(f'osm_fetch: export geoms {dict(geoms)}; named-rejected sample {dict(list(rej.items())[:15])}', flush=True)
+    print(f'osm_fetch: way lines {way_lines}, ways kept {way_kept}, probe {probe}', flush=True)
     if null_ts and null_ts == len(els):
         raise SystemExit('osm_fetch: EVERY element lacks a timestamp — export schema changed, refusing')
 
