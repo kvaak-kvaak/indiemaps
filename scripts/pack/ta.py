@@ -30,7 +30,7 @@ Staleness doctrine:
 
   python3 ta.py --bbox=W,S,E,N --pois packs/<id>/pois.json --meta packs/<id>/meta.json
 """
-import argparse, json, re, sys, time
+import argparse, hashlib, json, re, sys, time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -65,6 +65,15 @@ def dump_postcode(address):
 
 def norm_cuisines(s):
     return [c.strip() for c in (s or '').split(',') if c.strip()]
+
+
+def row_key(name, lat, lng):
+    """Stable cross-build archive row key (shared with the sibling build —
+    both sides must compute it identically): sha1 of lower-trimmed name +
+    5dp coords, first 16 hex chars. Name included: coords alone collide
+    in food courts and malls."""
+    base = f'{(name or "").strip().lower()}|{float(lat):.5f}|{float(lng):.5f}'
+    return hashlib.sha1(base.encode()).hexdigest()[:16]
 
 
 def cuisine_verdict(pack_cuisines, dump_cuisines):
@@ -198,6 +207,7 @@ def main():
     grid, cell = grid_index(rows, 'lat', 'lng') if rows else ({}, None)
     matched = hours_added = diets_added = feats_added = 0
     cuisine_v = {'agree': 0, 'extend': 0, 'conflict': 0}
+    mappings = []
     for p in pois:
         if p.get('category') not in ('restaurant', 'cafe', 'pub'):
             continue
@@ -205,7 +215,7 @@ def main():
         if not names:
             continue
         ppc = norm_pc(p.get('postcode'))
-        best, bs = None, 0
+        best, bs, bdist, bpc = None, 0, None, False
         if rows:
             for j in nearby(grid, cell, p['lat'], p['lng']):
                 o = rows[j]
@@ -219,10 +229,16 @@ def main():
                     if accept(nm, o['name'] or '', ns, d, pc):
                         sc = ns + (0.3 if pc else 0)
                         if sc > bs:
-                            bs, best = sc, o
+                            bs, best, bdist, bpc = sc, o, d, pc
         if best is None:
             continue
         matched += 1
+        mappings.append({
+            'row_key': row_key(best.get('name'), best.get('lat'), best.get('lng')),
+            'archive_name': best.get('name'), 'archive_address': best.get('address'),
+            'poi_id': p.get('id'), 'poi_name': p.get('name'),
+            'score': round(bs, 3), 'postcode_hit': bpc,
+            'distance_m': round(bdist, 1) if bdist is not None else None})
         pack_cuis = ([p.get('cuisine')] if p.get('cuisine') else []) + (p.get('site_cuisine') or [])
         dc = norm_cuisines(best.get('cuisines'))
         if dc:
@@ -293,13 +309,17 @@ def main():
     json.dump(pois, open(a.pois, 'w'), indent=1)
     meta = json.load(open(a.meta))
     meta['ta'] = {'extract': PARQUET.name, 'extract_sha': sha,
-                  'rec_vintage': '2021-06-01', 'rec_formula': 'weighted-5step-v1',
+                  'rec_vintage': '2021-06-01', 'rec_formula': 'positive-share-display-v1',
                   'rec_prior_mean': round(prior, 3), 'rec_prior_c': C,
                   'rows_in_bbox': len(rows), 'matched': matched,
                   'hours_added': hours_added, 'diets_added': diets_added,
                   'feature_flags_added': feats_added,
                   'cuisine_verdicts': cuisine_v}
     json.dump(meta, open(a.meta, 'w'), indent=1)
+    # Cross-build match mapping (sibling-build comparison + mislink audit).
+    # Rewritten each run; row_key spec shared verbatim with the other chat.
+    match_path = Path(a.pois).parent / 'ta-matches.json'
+    json.dump(mappings, open(match_path, 'w'), indent=1)
     print(f'stale dump: {len(rows)} rows -> {matched} matched, +{hours_added} hours, +{diets_added} diets, +{feats_added} feature flags, cuisines {cuisine_v}')
 
 
