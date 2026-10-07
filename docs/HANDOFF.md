@@ -608,3 +608,11 @@ Read these three docs first, in order:
   (early meta may not exist — first version lost the record).
 - Verified both directions locally + Southend CI (servicemap/
   chains_fi/prh skipped loudly, pack green 2130 total).
+
+## Session log (2026-10-07, 64-pack audit assembly)
+
+- 51-pack interim audit: 0 violations everywhere. Assembling 64:
+  8 batchA-missing dispatched spider=true (37665450020),
+  Helsinki refresh spider=false (37665454693), batchB-first
+  artifact recovered 5 more. Then: ta-only pass over 16 FI
+  (only gap: pre-default code), final audit, triage, cut.
