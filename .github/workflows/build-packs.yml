@@ -16,6 +16,9 @@ on:
       areas:
         description: 'Space-separated area ids (default: all)'
         default: ''
+      osm_source:
+        description: 'OSM source for base (pbf = Geofabrik, overpass = live API)'
+        default: 'pbf'
 
 jobs:
   build:
@@ -84,10 +87,10 @@ jobs:
           # (--sites-all) for conflict/specificity signals, not residual-only.
           if [ -n "${{ inputs.areas }}" ]; then
             for a in ${{ inputs.areas }}; do
-              run_area "$a" "${{ inputs.spider && '--sites-all' || '' }}"
+              run_area "$a" "${{ inputs.spider && '--sites-all' || '' }} --osm-source ${{ inputs.osm_source }}"
             done
           else
-            python3 scripts/pack/build.py --all ${{ inputs.spider && '--sites-all' || '' }}
+            python3 scripts/pack/build.py --all ${{ inputs.spider && '--sites-all' || '' }} --osm-source ${{ inputs.osm_source }}
           fi
           if [ -s failed.txt ]; then echo "FAILED AREAS:"; cat failed.txt; fi
           true
