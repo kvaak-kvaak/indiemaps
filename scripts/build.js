@@ -286,9 +286,10 @@ async function fetchBox(s, w, n, e, depth) {
       // named-only check and silently drops qualifying POIs (measured:
       // Wendy's + Nagawa missing from a 388-named pull). Named filtering
       // happens after the tiling decision.
-      if (raw.length >= 2000 && depth < 2) {
+      if (raw.length >= 2000 && depth < 3) {
         // silent truncation guard: 'out 2000' caps ultra-dense bboxes.
-        // Sub-tile and merge.
+        // Sub-tile and merge. Depth allows metro centers (Camden) to split
+        // twice where towns split once.
         console.log(`OSM cap hit (${s},${w},${n},${e}) — sub-tiling`);
         const seen = new Map(), sums = { raw: 0 };
         for (const [ts, tw, tn, te] of splitBbox(s, w, n, e)) {
@@ -347,8 +348,7 @@ async function fetchOsm() {
             }
           } catch (e3) {
             throw new Error(`Overpass tile failed: ${ts},${tw},${tn},${te}`);
-          }
-        }
+          }        }
       }
     }
     console.log(`tiled query: ${seen.size} unique nodes`);
