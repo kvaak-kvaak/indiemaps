@@ -52,10 +52,10 @@ def main():
         if bare or prov:
             bad += 1
             print(f"VIOLATION {area}: bare={bare[:3]} prov={prov[:3]}")
-    print(f"{'area':28s} {'total':>6s} {'hidden':>6s} {'cre':>4s} {'sup':>3s} {'fail':>4s} {'ta':>5s} {'bare':>4s} {'prov':>4s} {'verif':>5s}")
+    print(f"{'area':28s} {'total':>6s} {'hidden':>6s} {'cre':>4s} {'sup':>3s} {'fail':>4s} {'ta':>5s} {'prh':>4s} {'chn':>4s} {'bare':>4s} {'prov':>4s} {'verif':>5s}")
     for r in rows:
         print(f"{r['area']:28s} {r['total']:6d} {r['hidden']:6d} {str(r['atp_created']):>4s} "
-              f"{r['supp']:3d} {r['failed']:4d} {str(r['ta']):>5s} {r['bare']:4d} {r['prov']:4d} {str(r['verified']):>5s}")
+              f"{r['supp']:3d} {r['failed']:4d} {str(r['ta']):>5s} {str(r['prh']):>4s} {str(r['chain']):>4s} {r['bare']:4d} {r['prov']:4d} {str(r['verified']):>5s}")
     print(f'{len(rows)} packs audited, {bad} violations')
     sys.exit(1 if bad else 0)
 
