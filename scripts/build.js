@@ -461,8 +461,16 @@ console.log(`with coordinates: ${geoKept.length} (dropped ${kept.length - geoKep
 const { linked: deduped, dupes: fsaDupes, queued: fsaQueued } = linkFsaDuplicates(geoKept);
 console.log(`FSA duplicate linking: ${fsaDupes} absorbed rows, ${fsaQueued} pairs queued, ${deduped.length} candidacies`);
 
-const { list: osm, raw: osmRaw } = await fetchOsm();
-console.log(`OSM named nodes: ${osm.length} (raw response: ${osmRaw})`);
+const OSM_FILE = args['osm-file'] || null; // Geofabrik-PBF elements (see osm_fetch.py); Overpass otherwise
+async function readOsmFile() {
+  const fc = JSON.parse(fs.readFileSync(OSM_FILE, 'utf8'));
+  const raw = fc.elements || [];
+  const list = raw.filter(el => el.tags?.name && el.lat != null && el.lon != null);
+  return { list, raw: raw.length };
+}
+
+const { list: osm, raw: osmRaw } = OSM_FILE ? await readOsmFile() : await fetchOsm();
+console.log(`OSM named nodes: ${osm.length} (raw response: ${osmRaw})${OSM_FILE ? ' [pbf]' : ''}`);
 
 // Category veto: an FSA *food-service* row must never merge a definitively
 // non-food OSM node, whatever the words say (measured: a takeaway stapled
@@ -680,6 +688,7 @@ fs.writeFileSync(META_OUT, JSON.stringify({
     osm_only: pois.filter(p => p.sources.length === 1 && p.sources[0] === 'osm').length,
     osm_nodes_pulled: osm.length,
     osm_raw_response: osmRaw,
+    osm_source: OSM_FILE ? 'geofabrik-pbf' : 'overpass-live',
     fsa_repinned: fsaRepinned,
     fsa_duplicates_linked: fsaDupes,
     fsa_duplicates_queued: fsaQueued,

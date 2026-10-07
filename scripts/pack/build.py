@@ -21,7 +21,7 @@ Stages per pack (each cached; logs to packs/<id>/build.log):
 Areas: areas.json (id -> name, bbox [w,s,e,n], fsa FHRS id or null).
 Release layout (see docs/packs.md): packs/<id>/pois.json + manifest.json.
 """
-import argparse, json, re, subprocess, sys, time
+import argparse, json, re, shutil, subprocess, sys, time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -77,6 +77,22 @@ def build(area_id, args):
     if 'base' in stages:
         cmd = ['node', 'scripts/build.js', f'--bbox={bbox}', '--pois', pois, '--meta', meta]
         cmd += ['--fsa', str(a['fsa']) if a.get('fsa') else 'none']
+        if args.osm_source == 'pbf' and shutil.which('osmium'):
+            # Geofabrik PBF primary (deterministic per extract vintage,
+            # zero Overpass load). Missing binary degrades loudly local.
+            from osm_fetch import osm_country
+            osm_el = str(packdir / 'osm-elements.json')
+            run(['python3', 'scripts/pack/osm_fetch.py',
+                 f'--country={osm_country(area_id)}', f'--bbox={bbox}',
+                 '--out', osm_el, '--cache', str(ROOT / 'data' / 'osm')], packdir)
+            cmd += [f'--osm-file={osm_el}']
+            m0 = json.load(open(meta))
+            stamp = ROOT / 'data' / 'osm' / f'{osm_country(area_id)}.date'
+            vintage = stamp.read_text().strip() if stamp.exists() else 'unknown'
+            m0.setdefault('counts', {})['osm_extract'] = f'{osm_country(area_id)}-latest.osm.pbf@{vintage}'
+            json.dump(m0, open(meta, 'w'), indent=1)
+        elif args.osm_source == 'pbf':
+            print('osm_fetch: no osmium binary, degrading loudly to Overpass')
         run(cmd, packdir)
         mark_stage(packdir, meta, 'base')
     if 'verify_positions' in stages:
@@ -575,6 +591,8 @@ def main():
     ap.add_argument('--sites-all', action='store_true',
                     help='site spider over all food sites incl. covered ones (conflict monitoring)')
     ap.add_argument('--skip-sites', action='store_true')
+    ap.add_argument('--osm-source', default='pbf', choices=['pbf', 'overpass'],
+                    help='OSM source for base (pbf degrades loudly to overpass without osmium)')
     ap.add_argument('--manifest', action='store_true')
     args = ap.parse_args()
     if args.manifest:

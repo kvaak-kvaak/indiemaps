@@ -34,6 +34,7 @@ jobs:
         with:
           node-version: '20'
       - run: pip install duckdb pyyaml
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
       - uses: actions/cache@v4
         # ATP spider downloads (hundreds of files, namespaced per run).
         # Key on the fetch code: spider-set or logic changes re-fetch.
@@ -42,6 +43,16 @@ jobs:
         with:
           path: data/atp/raw
           key: atp-raw-${{ hashFiles('scripts/atp.js') }}
+      - uses: actions/cache@v4
+        # Geofabrik PBF extracts (GB 2.2GB + FI 770MB, daily files).
+        # Date-keyed: first run of the day downloads, later runs reuse.
+        # The extract filename is stamped per pack in meta (osm_extract),
+        # so a stale cache can never silently pose as fresh.
+        with:
+          path: data/osm
+          key: osm-pbf-${{ hashFiles('scripts/pack/osm_fetch.py') }}-${{ github.run_id }}
+          restore-keys: |
+            osm-pbf-${{ hashFiles('scripts/pack/osm_fetch.py') }}-
       - name: Fetch Companies House snapshot
         # Monthly bulk product for the companies stage (new-Ltd tripwire).
         # ~469 MB once per run (not per area); gitignored cache dir. Tries
