@@ -523,3 +523,20 @@ Read these three docs first, in order:
   single country= parts, no query engine needed).
 - Next packs can read per-country parts directly; ta.py keeps
   using the committed UK+FI extract until then.
+
+## Session log (2026-10-07, PBF proof + batch B weather)
+
+- PBF proof CLOSED: 1133/1136 OSM records identical to Overpass era,
+  0 new, 3 missing all explained (intra-day edit race: PBF cut
+  ~02:00 UTC, demo Overpass pull ~09:10; Norton v1 etc. created in
+  the window). Unt determinism accepted: different vintages, listed
+  delta. Proof gate satisfied.
+- PBF chain bugs fixed along the way: export carries no metadata
+  (OPL join), short n/w ids, add-locations-to-ways DELETES untagged
+  member nodes (dropped, export resolves in-file), tags-filter
+  deletes ways (filter in Python), complete_ways explicit, stamp
+  after base (build.js rewrites meta), recount carries osm_source.
+- Batch B: 5/10 banked, 5 failed on Overpass storm (ran pre-PBF
+  code). Retry of the 5 dispatched with PBF default (37623506759).
+- Camden attempt 3 + depth-3 cap-split committed; Camden rerun
+  waits for batch B load to clear.
