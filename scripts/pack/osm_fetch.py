@@ -21,6 +21,7 @@ working); CI installs osmium-tool.
 """
 import argparse
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -79,23 +80,33 @@ def ensure_national(cache, country):
     return filt
 
 
-def normalize_feature(ft):
-    """osmium-exported geojsonseq feature -> Overpass-shaped element.
-    Defensive: metadata keys vary (@-prefixed or plain); missing
-    version/timestamp yields null and is counted loudly, never invented."""
+def normalize_feature(ft, metalookup):
+    """osmium-exported geojsonseq feature + OPL metadata -> Overpass-shaped
+    element. Geometry+tags from the export; version/timestamp from OPL
+    (the export carries no metadata). Missing metadata yields null and is
+    counted loudly, never invented."""
     props = ft.get('properties') or {}
     tags = {k: v for k, v in props.items() if not k.startswith('@')}
     geom = ft.get('geometry') or {}
     gtype, coords = geom.get('type'), geom.get('coordinates') or []
     fid = str(ft.get('id', ''))
-    if '/' in fid:
+    # osmium ids: short prefixes (n316782455) with --add-unique-id=type_id
+    if fid[:1] in ('n', 'w', 'r') and fid[1:].isdigit():
+        otype = {'n': 'node', 'w': 'way', 'r': 'relation'}[fid[:1]]
+        oid = int(fid[1:])
+    elif '/' in fid:
         otype, num = fid.split('/', 1)
+        try:
+            oid = int(num)
+        except (TypeError, ValueError):
+            return None
     else:
         otype = 'node' if gtype == 'Point' else 'way'
-        num = fid
-    try:
-        oid = int(num)
-    except (TypeError, ValueError):
+        try:
+            oid = int(fid)
+        except (TypeError, ValueError):
+            return None
+    if otype == 'relation':
         return None
     if gtype == 'Point' and len(coords) >= 2:
         lon, lat = coords[0], coords[1]
@@ -109,14 +120,38 @@ def normalize_feature(ft):
         if not xs:
             return None
         lon, lat = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2
-    ts = props.get('@timestamp', props.get('timestamp'))
-    ver = props.get('@version', props.get('version'))
-    try:
-        ver = int(ver) if ver is not None else None
-    except (TypeError, ValueError):
-        ver = None
+    ver, ts = metalookup.get((otype, oid), (None, None))
+    if ver is None:
+        ver = props.get('@version', props.get('version'))
+        try:
+            ver = int(ver) if ver is not None else None
+        except (TypeError, ValueError):
+            ver = None
+    if ts is None:
+        ts = props.get('@timestamp', props.get('timestamp'))
     return {'type': otype, 'id': oid, 'lat': lat, 'lon': lon,
             'tags': tags, 'timestamp': ts, 'version': ver}
+
+
+OPL_PREFIX = re.compile(r'^([nwr])(\d+) v(\d+) \S+ T(\S+)')
+
+
+def read_opl_metadata(path):
+    """{(type, id): (version, timestamp)} from `osmium cat -f opl`.
+    Only the fixed prefix is parsed (immune to tag escaping); tags come
+    from the geojsonseq export."""
+    out = {}
+    with open(path, errors='replace') as f:
+        for line in f:
+            m = OPL_PREFIX.match(line)
+            if not m:
+                continue
+            otype = {'n': 'node', 'w': 'way', 'r': 'relation'}[m.group(1)]
+            try:
+                out[(otype, int(m.group(2)))] = (int(m.group(3)), m.group(4))
+            except (TypeError, ValueError):
+                continue
+    return out
 
 
 def main():
@@ -138,9 +173,10 @@ def main():
         seq = Path(tmp) / 'area.geojsonseq'
         sh('osmium', 'export', '--overwrite', '--add-unique-id=type_id',
            '-f', 'geojsonseq', '-o', str(seq), str(area))
-        with open(seq, 'rb') as dbg:
-            sample = dbg.read(600)
-        print(f'osm_fetch: export head: {sample!r}', flush=True)
+        opl = Path(tmp) / 'area.opl'
+        sh('osmium', 'cat', '--overwrite', '-f', 'opl', '-o', str(opl), str(area))
+        metalookup = read_opl_metadata(str(opl))
+        print(f'osm_fetch: OPL metadata for {len(metalookup)} objects', flush=True)
         els, null_ts, skipped = [], 0, 0
         with open(seq) as f:
             for line in f:
@@ -152,7 +188,7 @@ def main():
                 except ValueError:
                     skipped += 1
                     continue
-                el = normalize_feature(ft)
+                el = normalize_feature(ft, metalookup)
                 if el is None:
                     skipped += 1
                     continue
