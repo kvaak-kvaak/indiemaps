@@ -86,7 +86,10 @@ def build(area_id, args):
                  f'--country={osm_country(area_id)}', f'--bbox={bbox}',
                  '--out', osm_el, '--cache', str(ROOT / 'data' / 'osm')], packdir)
             cmd += [f'--osm-file={osm_el}']
-            m0 = json.load(open(meta))
+            try:
+                m0 = json.load(open(meta))
+            except (FileNotFoundError, ValueError):
+                m0 = {}
             stamp = ROOT / 'data' / 'osm' / f'{osm_country(area_id)}.date'
             vintage = stamp.read_text().strip() if stamp.exists() else 'unknown'
             m0.setdefault('counts', {})['osm_extract'] = f'{osm_country(area_id)}-latest.osm.pbf@{vintage}'
