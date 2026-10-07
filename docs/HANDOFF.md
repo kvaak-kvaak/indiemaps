@@ -510,3 +510,16 @@ Read these three docs first, in order:
   instead of silent). Commit 160d0ec, Camden solo re-dispatched.
 - Batch B (10 areas) dispatched parallel per instruction (shared
   Overpass load accepted).
+
+## Session log (2026-10-07, partitioned ta extract)
+
+- data/ta-parts/: full 1,067,607-row rewrite in the new schema,
+  hive-partitioned by country (24 parts, 85MB total). Counts
+  reconcile exactly (UK+FI 177,409 = committed extract;
+  residual vocab closed at 6 values; spots verified).
+- LICENSE GATE: source public-domain claim unverified — local
+  only via *.parquet gitignore. No commit, no asset, until the
+  user clears it. Other chat reads via pyarrow (whole dir or
+  single country= parts, no query engine needed).
+- Next packs can read per-country parts directly; ta.py keeps
+  using the committed UK+FI extract until then.
