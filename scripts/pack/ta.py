@@ -167,12 +167,12 @@ def main():
     t0 = time.time()
     rows = duckdb.connect().execute(f"""SELECT restaurant_name, address, latitude, longitude,
       cuisines, vegetarian_friendly, vegan_options, gluten_free,
-      original_open_hours, rec_up, rec_down, rec_n,
+      original_open_hours, rec_stars, rec_n,
       feat_wheelchair, feat_dog, feat_play, feat_music
     FROM read_parquet('{PARQUET}')
     WHERE latitude BETWEEN {s} AND {n} AND longitude BETWEEN {w} AND {e}""").fetchall()
     cols = ['name', 'address', 'lat', 'lng', 'cuisines', 'veg', 'vegan', 'gf',
-            'hours', 'rec_up', 'rec_down', 'rec_n',
+            'hours', 'rec_stars', 'rec_n',
             'feat_wheelchair', 'feat_dog', 'feat_play', 'feat_music']
     rows = [dict(zip(cols, r)) for r in rows if r[0] and r[2] is not None and r[3] is not None]
     print(f'stale dump rows in bbox: {len(rows)} ({time.time()-t0:.0f}s)')
@@ -181,10 +181,9 @@ def main():
     # clear previous enrichment (re-run safe)
     for p in pois:
         for k in ('ta_cuisines', 'ta_cuisine_match', 'ta_hours', 'ta_vegetarian',
-                  'ta_vegan', 'ta_gluten_free', 'ta_rec_up', 'ta_rec_down',
-                  'ta_rec_n',
+                  'ta_vegan', 'ta_gluten_free', 'ta_rec_stars', 'ta_rec_n',
                   'ta_wheelchair', 'ta_dog', 'ta_play', 'ta_music',
-                  'ta_rating', 'ta_reviews'):
+                  'ta_rec_up', 'ta_rec_down', 'ta_rating', 'ta_reviews'):
             p.pop(k, None)
         p['sources'] = [s for s in p.get('sources', []) if s != 'ta']
 
@@ -242,24 +241,24 @@ def main():
             diet = True
         if diet:
             diets_added += 1
-        # Recommend inputs (render computes Laplace+decay; Mangrove-native).
-        # Averages were discarded at extract build as ambiguous middle.
+        # Recommend inputs: the full 5-step vector (weighted scoring needs
+        # the excellent/very-good split — collapsed up/down cannot compute
+        # it). rec_n is the overall tally (averages included in the
+        # denominator, out of the weights). Decay multiplies per level at
+        # render, armed on fresh inflow.
         try:
-            up = int(best.get('rec_up') or 0)
+            stars = [int(x or 0) for x in (best.get('rec_stars') or [])][:5]
+            while len(stars) < 5:
+                stars.append(0)
         except (TypeError, ValueError):
-            up = 0
-        try:
-            down = int(best.get('rec_down') or 0)
-        except (TypeError, ValueError):
-            down = 0
+            stars = [0, 0, 0, 0, 0]
         try:
             n = int(best.get('rec_n') or 0)
         except (TypeError, ValueError):
             n = 0
-        if up or down or n:
-            p['ta_rec_up'] = up
-            p['ta_rec_down'] = down
-            p['ta_rec_n'] = n
+        if any(stars) or n:
+            p['ta_rec_stars'] = stars
+            p['ta_rec_n'] = n or sum(stars)
         feats = False
         if best.get('feat_wheelchair'):
             p['ta_wheelchair'] = True
@@ -280,7 +279,7 @@ def main():
     json.dump(pois, open(a.pois, 'w'), indent=1)
     meta = json.load(open(a.meta))
     meta['ta'] = {'extract': PARQUET.name, 'extract_sha': sha,
-                  'rec_vintage': '2021-06-01', 'rec_formula': 'laplace-expdecay-v1',
+                  'rec_vintage': '2021-06-01', 'rec_formula': 'weighted-5step-v1',
                   'rows_in_bbox': len(rows), 'matched': matched,
                   'hours_added': hours_added, 'diets_added': diets_added,
                   'feature_flags_added': feats_added,
