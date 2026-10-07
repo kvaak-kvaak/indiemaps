@@ -553,3 +553,18 @@ Read these three docs first, in order:
   after a year -> 67% after a decade. No cliff anywhere.
 - Both extracts re-cut (committed 17.4MB + local 85MB parts).
   CI green, zero legacy keys, bare 0. Commit c460ffe.
+
+## Session log (2026-10-07, weighted 5-step recommend)
+
+- Tallies verified correct (zero inconsistent rows; 71/8/91 =
+  E. Mono 58/13/12/7/1 — averages were IN rec_n, invisible in
+  the binary score). Issue was philosophy, not arithmetic.
+- New math: s = 0.5 + S/4n, S = 2E+V-P-2T. No smoothing; <5
+  votes shows the actual number with a plain caveat; badge
+  still >=65% + n>=5. Decay per 5-step level, armed on fresh
+  inflow (Mangrove is 5-step native — no vote mapping needed).
+- Schema: rec_stars[5] + rec_n=sum; up/down/vintage/formula
+  gone from POIs (vintage+formula stay in meta.ta). Proven:
+  E.Mono 83%, lone excellent 100%+caveat, all-average 50%,
+  first fresh downvote on 100/0 legacy 99.3% -> 98.9%/yr.
+  Commit 5971a19, CI green, bare 0.
