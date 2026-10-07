@@ -180,15 +180,11 @@ def main():
         # 12k nodes — every building-mapped venue lost downstream).
         sh('osmium', 'extract', '--overwrite', '--strategy=complete_ways', '-b',
            f'{w},{s},{e},{n}', '-o', str(area_full), str(national))
-        for key in ('data.count.nodes', 'data.count.ways', 'data.count.relations'):
-            val = sh('osmium', 'fileinfo', '-e', '-g', key, str(area_full)).stdout.strip()
-            print(f'osm_fetch: area_full {key}={val}', flush=True)
-        area_loc = Path(tmp) / 'area-located.osm.pbf'
-        sh('osmium', 'add-locations-to-ways', '--overwrite',
-           '-o', str(area_loc), str(area_full))
-        for key in ('data.count.nodes', 'data.count.ways', 'data.count.relations'):
-            val = sh('osmium', 'fileinfo', '-e', '-g', key, str(area_loc)).stdout.strip()
-            print(f'osm_fetch: area_loc {key}={val}', flush=True)
+        # NOTE: no add-locations-to-ways — it deletes untagged member
+        # nodes (measured: 176k -> 12k), unlocating every building and
+        # silently deleting 322 Southend ways downstream. `osmium export`
+        # resolves way geometry from in-file nodes itself.
+        area_loc = area_full
         seq = Path(tmp) / 'area.geojsonseq'
         sh('osmium', 'export', '--overwrite', '--add-unique-id=type_id',
            '-f', 'geojsonseq', '-o', str(seq), str(area_loc))
@@ -196,10 +192,7 @@ def main():
         sh('osmium', 'cat', '--overwrite', '-f', 'opl', '-o', str(opl), str(area_loc))
         metalookup = read_opl_metadata(str(opl))
         print(f'osm_fetch: OPL metadata for {len(metalookup)} objects', flush=True)
-        els, null_ts, skipped, tag_skipped = [], 0, 0, 0
-        from collections import Counter
-        geoms, rej = Counter(), Counter()
-        way_lines, way_kept, probe = 0, 0, []
+        els, null_ts, skipped, tag_skipped, way_kept = [], 0, 0, 0, 0
         with open(seq) as f:
             for line in f:
                 line = line.strip().lstrip('\x1e')
@@ -213,15 +206,8 @@ def main():
                 props = ft.get('properties') or {}
                 tags = {k: v for k, v in props.items() if not k.startswith('@')}
                 gt = (ft.get('geometry') or {}).get('type')
-                geoms[gt] += 1
-                if str(ft.get('id', '')).startswith('w'):
-                    way_lines += 1
-                    if len(probe) < 5:
-                        probe.append((ft.get('id'), gt, tags.get('amenity'), tags.get('shop'), tags.get('name', '')[:30]))
                 if not wanted(tags, gt != 'Point'):
                     tag_skipped += 1
-                    if tags.get('name'):
-                        rej[(gt, tags.get('amenity'), tags.get('shop'), tags.get('tourism'), tags.get('leisure'), tags.get('building'))] += 1
                     continue
                 el = normalize_feature(ft, metalookup)
                 if el is None:
@@ -234,9 +220,7 @@ def main():
                 els.append(el)
     out = {'elements': els}
     json.dump(out, open(a.out, 'w'))
-    print(f'osm_fetch: {len(els)} elements (tag-filtered {tag_skipped}, null-timestamp {null_ts}, skipped {skipped}) -> {a.out}', flush=True)
-    print(f'osm_fetch: export geoms {dict(geoms)}; named-rejected sample {dict(list(rej.items())[:15])}', flush=True)
-    print(f'osm_fetch: way lines {way_lines}, ways kept {way_kept}, probe {probe}', flush=True)
+    print(f'osm_fetch: {len(els)} elements (ways {way_kept}, tag-filtered {tag_skipped}, null-timestamp {null_ts}, skipped {skipped}) -> {a.out}', flush=True)
     if null_ts and null_ts == len(els):
         raise SystemExit('osm_fetch: EVERY element lacks a timestamp — export schema changed, refusing')
 
