@@ -38,8 +38,9 @@ from overture import toks, accept, nscore, dist_m, grid_index, nearby, norm_pc  
 
 ROOT = Path(__file__).resolve().parents[2]
 PARQUET = ROOT / 'data' / 'ta-extract.parquet'
-REC_VINTAGE = '2021-06-01'
-REC_FORMULA = 'laplace-expdecay-v1'
+# rec_vintage/rec_formula live in meta.ta (extract-level, single source of
+# truth). The app computes decay at render from there; pins carry only
+# the counts.
 UK_PC = re.compile(r'([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})')
 FI_PC = re.compile(r'\b(\d{5})\b')
 DAY_ORDER = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
@@ -181,7 +182,7 @@ def main():
     for p in pois:
         for k in ('ta_cuisines', 'ta_cuisine_match', 'ta_hours', 'ta_vegetarian',
                   'ta_vegan', 'ta_gluten_free', 'ta_rec_up', 'ta_rec_down',
-                  'ta_rec_n', 'ta_rec_vintage', 'ta_rec_formula',
+                  'ta_rec_n',
                   'ta_wheelchair', 'ta_dog', 'ta_play', 'ta_music',
                   'ta_rating', 'ta_reviews'):
             p.pop(k, None)
@@ -259,8 +260,6 @@ def main():
             p['ta_rec_up'] = up
             p['ta_rec_down'] = down
             p['ta_rec_n'] = n
-            p['ta_rec_vintage'] = REC_VINTAGE
-            p['ta_rec_formula'] = REC_FORMULA
         feats = False
         if best.get('feat_wheelchair'):
             p['ta_wheelchair'] = True
@@ -281,7 +280,7 @@ def main():
     json.dump(pois, open(a.pois, 'w'), indent=1)
     meta = json.load(open(a.meta))
     meta['ta'] = {'extract': PARQUET.name, 'extract_sha': sha,
-                  'rec_vintage': REC_VINTAGE, 'rec_formula': REC_FORMULA,
+                  'rec_vintage': '2021-06-01', 'rec_formula': 'laplace-expdecay-v1',
                   'rows_in_bbox': len(rows), 'matched': matched,
                   'hours_added': hours_added, 'diets_added': diets_added,
                   'feature_flags_added': feats_added,

@@ -357,13 +357,24 @@ function debugHtml(p) {
 }
 
 function ratingHtml(p) {
-  // Recommend display (Laplace-smoothed, Mangrove-compatible): legacy
-  // counts enter undecayed; decay starts when fresh reviews arrive, so no
-  // place is punished before new evidence exists. Single votes move an
-  // established place by ~1/(n+2) — never a cliff. Vintage lives in data
-  // (ta_rec_vintage), never on the card. Dietary marks + feature flags are
-  // affirmative-only. Thresholds stay adjustable; OSM consumers strip ta_*.
-  const recScore = (up, down) => (up + 1) / (up + down + 2);
+  // Recommend display (Laplace-smoothed, Mangrove-compatible). The decay
+  // lives HERE, not in the data: legacy counts enter undecayed (w=1) and
+  // decay only once fresh reviews arrive (firstFresh arms the clock), so
+  // no place is punished before new evidence exists. Single votes move an
+  // established place by ~1/(n+2) — never a cliff. Vintage lives in
+  // meta.ta (extract level); the card shows no year. Thresholds stay
+  // adjustable; OSM consumers strip ta_*.
+  const REC_HALF_LIFE_YEARS = 2; // floor: configurable upward only (spec guardrail)
+  const recScore = q => {
+    const up = q.ta_rec_up || 0, down = q.ta_rec_down || 0;
+    const fUp = q.mg_up || 0, fDown = q.mg_down || 0; // Mangrove native (absent today)
+    let w = 1;
+    if (q.mg_first_at) {
+      const tYears = (Date.now() - Date.parse(q.mg_first_at)) / 31557600000;
+      w = Math.pow(2, -Math.max(0, tYears) / REC_HALF_LIFE_YEARS);
+    }
+    return (fUp + w * up + 1) / (fUp + w * up + fDown + w * down + 2);
+  };
   const recReviews = n => {
     if (n == null) return '';
     if (n < 5) return String(n);
@@ -377,8 +388,9 @@ function ratingHtml(p) {
     p.ta_gluten_free ? '<span class="badge diet-gf">Gluten-Free</span>' : '',
   ].filter(Boolean).join(' ');
   const rn = p.ta_rec_n;
+  const rs = recScore(p);
   const rate = rn != null
-    ? `<span style="font-size:14px">${Math.round(recScore(p.ta_rec_up || 0, p.ta_rec_down || 0) * 100)}% recommend <span style="color:#888;font-size:11px">(${recReviews(rn)} reviews)</span>${recScore(p.ta_rec_up || 0, p.ta_rec_down || 0) >= 0.65 && rn >= 5 ? ' <span class="badge src-atp">👍 Recommended</span>' : ''}</span>`
+    ? `<span style="font-size:14px">${Math.round(rs * 100)}% recommend <span style="color:#888;font-size:11px">(${recReviews(rn)} reviews)</span>${rs >= 0.65 && rn >= 5 ? ' <span class="badge src-atp">👍 Recommended</span>' : ''}</span>`
     : '';
   if (!rate && !diet) return '';
   return `<div style="margin-top:10px;font-size:13px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">${rate}${diet}</div>`;
