@@ -86,17 +86,17 @@ def build(area_id, args):
                  f'--country={osm_country(area_id)}', f'--bbox={bbox}',
                  '--out', osm_el, '--cache', str(ROOT / 'data' / 'osm')], packdir)
             cmd += [f'--osm-file={osm_el}']
-            try:
-                m0 = json.load(open(meta))
-            except (FileNotFoundError, ValueError):
-                m0 = {}
+        elif args.osm_source == 'pbf':
+            print('osm_fetch: no osmium binary, degrading loudly to Overpass')
+        run(cmd, packdir)
+        if args.osm_source == 'pbf' and shutil.which('osmium'):
+            # Stamp after base: build.js rewrites meta.json wholesale, so a
+            # pre-stamp would be wiped.
+            m0 = json.load(open(meta))
             stamp = ROOT / 'data' / 'osm' / f'{osm_country(area_id)}.date'
             vintage = stamp.read_text().strip() if stamp.exists() else 'unknown'
             m0.setdefault('counts', {})['osm_extract'] = f'{osm_country(area_id)}-latest.osm.pbf@{vintage}'
             json.dump(m0, open(meta, 'w'), indent=1)
-        elif args.osm_source == 'pbf':
-            print('osm_fetch: no osmium binary, degrading loudly to Overpass')
-        run(cmd, packdir)
         mark_stage(packdir, meta, 'base')
     if 'verify_positions' in stages:
         # No network: attested + premises merges on pack data only.
