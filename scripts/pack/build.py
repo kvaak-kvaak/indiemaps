@@ -197,6 +197,8 @@ def build(area_id, args):
         'with_hours': hours,
         # base-written diagnostics survive the recount:
         'osm_nodes_pulled': prev.get('osm_nodes_pulled'),
+        'osm_source': prev.get('osm_source'),
+        'osm_extract': prev.get('osm_extract'),
         'osm_raw_response': prev.get('osm_raw_response'),
         'fsa_repinned': prev.get('fsa_repinned', 0),
         'fsa_duplicates_linked': prev.get('fsa_duplicates_linked', 0),

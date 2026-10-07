@@ -32,13 +32,27 @@ UA = {'User-Agent': 'indiemaps-osmfetch/1.0 (+https://github.com/kvaak-kvaak/ind
 NATIONAL = {'gb': 'https://download.geofabrik.de/europe/great-britain-latest.osm.pbf',
             'fi': 'https://download.geofabrik.de/europe/finland-latest.osm.pbf'}
 # Mirror of osmQuery() tag classes in scripts/build.js — keep in sync.
-# Any drift here is a coverage change; the Southend PBF-vs-Overpass proof
-# diff guards it.
-AMENITY = ('restaurant cafe pub bar nightclub fast_food ice_cream pharmacy '
-           'doctors dentist cinema theatre arts_centre library place_of_worship '
-           'clinic optician')
-TOURISM = 'hotel guest_house hostel attraction museum gallery viewpoint'
-LEISURE = 'park nature_reserve miniature_golf sports_centre'
+# Nodes pull leisure; ways do not (Overpass has no leisure-way clause).
+# Filtering happens in Python on exported elements, NOT via tags-filter:
+# tags-filter drops untagged way member nodes, which silently deletes
+# every building-mapped venue (measured twice: 320+ Southend ways lost).
+AMENITY = set(('restaurant cafe pub bar nightclub fast_food ice_cream pharmacy '
+               'doctors dentist cinema theatre arts_centre library place_of_worship '
+               'clinic optician').split())
+TOURISM = set('hotel guest_house hostel attraction museum gallery viewpoint'.split())
+LEISURE = set('park nature_reserve miniature_golf sports_centre'.split())
+
+
+def wanted(tags, is_way):
+    if tags.get('amenity') in AMENITY:
+        return True
+    if 'shop' in tags:
+        return True
+    if tags.get('tourism') in TOURISM:
+        return True
+    if not is_way and tags.get('leisure') in LEISURE:
+        return True
+    return False
 
 
 def sh(*args, **kw):
@@ -155,33 +169,24 @@ def main():
     national = ensure_national(Path(a.cache), a.country)
     import tempfile
     with tempfile.TemporaryDirectory() as tmp:
-        # Order is load-bearing: extract first (keeps every node in bbox),
-        # locate ways against those nodes, THEN filter. tags-filter drops
-        # untagged member nodes, so filtering before locating silently
-        # deletes every building-mapped venue (measured: 322/1136 Southend
-        # records lost — all ways). Augmented ways survive the filter with
-        # geometry intact.
+        # Order is load-bearing: extract everything in bbox, locate ways
+        # against the present nodes, export all, filter tags in Python.
+        # osmium tags-filter drops untagged member nodes and silently
+        # deletes building-mapped venues — never filter PBF-side.
         area_full = Path(tmp) / 'area-full.osm.pbf'
         sh('osmium', 'extract', '--overwrite', '-b',
            f'{w},{s},{e},{n}', '-o', str(area_full), str(national))
         area_loc = Path(tmp) / 'area-located.osm.pbf'
         sh('osmium', 'add-locations-to-ways', '--overwrite',
            '-o', str(area_loc), str(area_full))
-        area = Path(tmp) / 'area.osm.pbf'
-        amen = ','.join(AMENITY.split())
-        tour = ','.join(TOURISM.split())
-        leis = ','.join(LEISURE.split())
-        sh('osmium', 'tags-filter', '--overwrite', '-o', str(area), str(area_loc),
-           f'n/amenity={amen}', 'n/shop', f'n/tourism={tour}', f'n/leisure={leis}',
-           f'w/amenity={amen}', 'w/shop', f'w/tourism={tour}')
         seq = Path(tmp) / 'area.geojsonseq'
         sh('osmium', 'export', '--overwrite', '--add-unique-id=type_id',
-           '-f', 'geojsonseq', '-o', str(seq), str(area))
+           '-f', 'geojsonseq', '-o', str(seq), str(area_loc))
         opl = Path(tmp) / 'area.opl'
-        sh('osmium', 'cat', '--overwrite', '-f', 'opl', '-o', str(opl), str(area))
+        sh('osmium', 'cat', '--overwrite', '-f', 'opl', '-o', str(opl), str(area_loc))
         metalookup = read_opl_metadata(str(opl))
         print(f'osm_fetch: OPL metadata for {len(metalookup)} objects', flush=True)
-        els, null_ts, skipped = [], 0, 0
+        els, null_ts, skipped, tag_skipped = [], 0, 0, 0
         with open(seq) as f:
             for line in f:
                 line = line.strip().lstrip('\x1e')
@@ -192,6 +197,11 @@ def main():
                 except ValueError:
                     skipped += 1
                     continue
+                props = ft.get('properties') or {}
+                tags = {k: v for k, v in props.items() if not k.startswith('@')}
+                if not wanted(tags, (ft.get('geometry') or {}).get('type') != 'Point'):
+                    tag_skipped += 1
+                    continue
                 el = normalize_feature(ft, metalookup)
                 if el is None:
                     skipped += 1
@@ -201,7 +211,7 @@ def main():
                 els.append(el)
     out = {'elements': els}
     json.dump(out, open(a.out, 'w'))
-    print(f'osm_fetch: {len(els)} elements (null-timestamp {null_ts}, skipped {skipped}) -> {a.out}', flush=True)
+    print(f'osm_fetch: {len(els)} elements (tag-filtered {tag_skipped}, null-timestamp {null_ts}, skipped {skipped}) -> {a.out}', flush=True)
     if null_ts and null_ts == len(els):
         raise SystemExit('osm_fetch: EVERY element lacks a timestamp — export schema changed, refusing')
 
