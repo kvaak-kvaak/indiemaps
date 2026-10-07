@@ -174,7 +174,11 @@ def main():
         # osmium tags-filter drops untagged member nodes and silently
         # deletes building-mapped venues — never filter PBF-side.
         area_full = Path(tmp) / 'area-full.osm.pbf'
-        sh('osmium', 'extract', '--overwrite', '-b',
+        # complete_ways is load-bearing, not a default: the extract must
+        # carry every member node or add-locations-to-ways cannot locate
+        # buildings (measured: default strategy kept 22k ways with only
+        # 12k nodes — every building-mapped venue lost downstream).
+        sh('osmium', 'extract', '--overwrite', '--strategy=complete_ways', '-b',
            f'{w},{s},{e},{n}', '-o', str(area_full), str(national))
         area_loc = Path(tmp) / 'area-located.osm.pbf'
         sh('osmium', 'add-locations-to-ways', '--overwrite',
