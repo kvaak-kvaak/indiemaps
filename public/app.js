@@ -357,28 +357,25 @@ function debugHtml(p) {
 }
 
 function ratingHtml(p) {
-  // Recommend display (weighted 5-step, Mangrove-compatible). Points:
-  // excellent +2, very good +1, average 0, poor −1, terrible −2; score =
-  // half the average points, shifted to a percentage. Averages anchor
-  // toward neutral instead of vanishing; excellent counts double a
-  // very-good. No smoothing: under 5 votes the actual number shows with
-  // a plain caveat. Decay lives HERE, not in the data: legacy counts
-  // enter undecayed (w=1) and decay per level only once fresh 5-step
-  // reviews arrive (firstFresh arms the clock). Vintage lives in meta.ta
-  // (extract level); the card shows no year. Thresholds stay adjustable;
-  // OSM consumers strip ta_*.
+  // Recommend display: OBSERVED positive share ((E+V)/n) — directly
+  // explainable against the vote piles, never an adjusted figure.
+  // Ranking and the badge use the five-level Bayesian score instead
+  // (ta_rec_bayes: empirical extract-global prior, C=10, stated in
+  // meta.ta). Adjusted scores are never presented as observed
+  // percentages. Averages stay in the denominator of both. No
+  // smoothing: under 5 votes the actual share shows with a plain
+  // caveat. Decay lives HERE, not in the data: legacy counts enter
+  // undecayed (w=1) and decay per level only once fresh 5-step
+  // reviews arrive (firstFresh arms the clock; auto-blend deferred
+  // until tested — historical and fresh render separately). Vintage
+  // lives in meta.ta (extract level); the card shows no year.
+  // Thresholds stay adjustable; OSM consumers strip ta_*.
   const REC_HALF_LIFE_YEARS = 2; // floor: configurable upward only (spec guardrail)
-  const recScore = q => {
+  const recShare = q => {
     const st = q.ta_rec_stars || [0, 0, 0, 0, 0];
-    const mg = q.mg_stars || [0, 0, 0, 0, 0]; // Mangrove native 5-step (absent today)
-    const w = q.mg_first_at
-      ? Math.pow(2, -Math.max(0, (Date.now() - Date.parse(q.mg_first_at)) / 31557600000) / REC_HALF_LIFE_YEARS)
-      : 1;
-    const S = (2 * st[0] + st[1] - st[3] - 2 * st[4]) * w
-      + (2 * mg[0] + mg[1] - mg[3] - 2 * mg[4]);
-    const n = (st[0] + st[1] + st[2] + st[3] + st[4]) * w + (mg[0] + mg[1] + mg[2] + mg[3] + mg[4]);
+    const n = st[0] + st[1] + st[2] + st[3] + st[4];
     if (!(n > 0)) return null;
-    return 0.5 + S / (4 * n);
+    return (st[0] + st[1]) / n;
   };
   const recReviews = n => {
     if (n == null) return '';
@@ -393,10 +390,11 @@ function ratingHtml(p) {
     p.ta_gluten_free ? '<span class="badge diet-gf">Gluten-Free</span>' : '',
   ].filter(Boolean).join(' ');
   const rn = p.ta_rec_n;
-  const rs = rn != null ? recScore(p) : null;
-  const rate = rs == null
+  const share = rn != null ? recShare(p) : null;
+  const bayes = p.ta_rec_bayes;
+  const rate = share == null
     ? ''
-    : `<span style="font-size:14px">${Math.round(rs * 100)}% recommend <span style="color:#888;font-size:11px">(${recReviews(rn)} reviews${rn < 5 ? ' · fewer than 5 reviews' : ''})</span>${rs >= 0.65 && rn >= 5 ? ' <span class="badge src-atp">👍 Recommended</span>' : ''}</span>`;
+    : `<span style="font-size:14px">${Math.round(share * 100)}% positive <span style="color:#888;font-size:11px">(${recReviews(rn)} reviews${rn < 5 ? ' · fewer than 5 reviews' : ''})</span>${bayes != null && bayes >= 4.0 && rn >= 5 ? ' <span class="badge src-atp">👍 Recommended</span>' : ''}</span>`;
   if (!rate && !diet) return '';
   return `<div style="margin-top:10px;font-size:13px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">${rate}${diet}</div>`;
 }

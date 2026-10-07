@@ -165,7 +165,14 @@ def main():
     w, s, e, n = map(float, a.bbox.split(','))
     import duckdb
     t0 = time.time()
-    rows = duckdb.connect().execute(f"""SELECT restaurant_name, address, latitude, longitude,
+    db = duckdb.connect()
+    # Empirical prior for five-level Bayesian ranking (stated openly in
+    # meta.ta, never hidden): extract-global mean star value. Ranking-only —
+    # the adjusted score is never displayed as an observed percentage.
+    prior = db.execute(f"""SELECT (5*SUM(rec_stars[1])+4*SUM(rec_stars[2])+3*SUM(rec_stars[3])+2*SUM(rec_stars[4])+SUM(rec_stars[5]))/(1.0*SUM(rec_n))
+    FROM read_parquet('{PARQUET}') WHERE rec_n>0""").fetchone()[0] or 4.0
+    C = 10
+    rows = db.execute(f"""SELECT restaurant_name, address, latitude, longitude,
       cuisines, vegetarian_friendly, vegan_options, gluten_free,
       original_open_hours, rec_stars, rec_n,
       feat_wheelchair, feat_dog, feat_play, feat_music
@@ -182,6 +189,7 @@ def main():
     for p in pois:
         for k in ('ta_cuisines', 'ta_cuisine_match', 'ta_hours', 'ta_vegetarian',
                   'ta_vegan', 'ta_gluten_free', 'ta_rec_stars', 'ta_rec_n',
+                  'ta_rec_bayes',
                   'ta_wheelchair', 'ta_dog', 'ta_play', 'ta_music',
                   'ta_rec_up', 'ta_rec_down', 'ta_rating', 'ta_reviews'):
             p.pop(k, None)
@@ -259,6 +267,12 @@ def main():
         if any(stars) or n:
             p['ta_rec_stars'] = stars
             p['ta_rec_n'] = n or sum(stars)
+            # Five-level Bayesian ranking score (Miller-style, empirical
+            # prior above). Orders pins and gates the badge; NEVER shown
+            # as an observed percentage — cards show positive share.
+            e5, v4, a3, p2, t1 = stars
+            nn = n or sum(stars) or 1
+            p['ta_rec_bayes'] = round((C * prior + 5 * e5 + 4 * v4 + 3 * a3 + 2 * p2 + t1) / (C + nn), 3)
         feats = False
         if best.get('feat_wheelchair'):
             p['ta_wheelchair'] = True
@@ -280,6 +294,7 @@ def main():
     meta = json.load(open(a.meta))
     meta['ta'] = {'extract': PARQUET.name, 'extract_sha': sha,
                   'rec_vintage': '2021-06-01', 'rec_formula': 'weighted-5step-v1',
+                  'rec_prior_mean': round(prior, 3), 'rec_prior_c': C,
                   'rows_in_bbox': len(rows), 'matched': matched,
                   'hours_added': hours_added, 'diets_added': diets_added,
                   'feature_flags_added': feats_added,

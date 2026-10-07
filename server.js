@@ -189,9 +189,11 @@ app.get('/api/pois', (req, res) => {
   const showHazard = q || req.query.include_hazard === '1';
   const hidden = p => p.position_hazard || p.unresolved_why === 'stale-orphan';
   const pool = q ? SRC : SRC.filter(p => (showHazard || !hidden(p)) && !p.search_only);
-  // Browse weighs by evidence tier (coarse corroboration count, computed in
-  // the build); search keeps match order. Parking stays opted-in via chip.
-  if (!q) pool.sort((a, b) => (b.tier || 0) - (a.tier || 0));
+  // Browse weighs by evidence tier, ties broken by Bayesian rating
+  // (ta_rec_bayes, computed at build, never displayed). Missing ratings
+  // sort by tier alone — neutral, never penalized. Search keeps order.
+  // Parking stays opted-in via chip.
+  if (!q) pool.sort((a, b) => (b.tier || 0) - (a.tier || 0) || (b.ta_rec_bayes || 0) - (a.ta_rec_bayes || 0));
   let out = pool.map(p => ({ ...p, richness: richness(p), community_reviews: (REVIEWS[p.id] || []).length }));
   if (bbox) out = out.filter(p => inBbox(p, bbox));
   if (category && category !== 'all') out = out.filter(p => p.category === category);
@@ -219,7 +221,7 @@ app.get('/api/combined', async (req, res) => {
   const showHazard = q || req.query.include_hazard === '1';
   const hidden = p => p.position_hazard || p.unresolved_why === 'stale-orphan';
   const pool = q ? SRC : SRC.filter(p => (showHazard || !hidden(p)) && !p.search_only);
-  if (!q) pool.sort((a, b) => (b.tier || 0) - (a.tier || 0));
+  if (!q) pool.sort((a, b) => (b.tier || 0) - (a.tier || 0) || (b.ta_rec_bayes || 0) - (a.ta_rec_bayes || 0));
   let curated = pool.map(p => ({ ...p, richness: richness(p) }));
   if (bbox) curated = curated.filter(p => inBbox(p, bbox));
   if (category && category !== 'all') curated = curated.filter(p => p.category === category);
