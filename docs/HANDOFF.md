@@ -568,3 +568,21 @@ Read these three docs first, in order:
   E.Mono 83%, lone excellent 100%+caveat, all-average 50%,
   first fresh downvote on 100/0 legacy 99.3% -> 98.9%/yr.
   Commit 5971a19, CI green, bare 0.
+
+## Session log (2026-10-07, positive-share + Bayes ranking)
+
+- Offline comparison (138k venues n>=5) decided it: weighted vs
+  Wilson top-30 overlap ZERO, vs Bayes ZERO, Wilson-vs-Bayes 17.
+  Thin unanimity crowned by raw score; both adjusted methods
+  demote it. Bayes-5 adopted (preserves grade distinction).
+- Display = positive share (E. Mono 78%), ranking/badge =
+  Bayes-5 (prior 4.125, C=10, stated in meta.ta), tiers sort
+  first with Bayes tiebreak, missing ratings neutral.
+  Badge >=4.0 + n>=5 (169/330 pass Southend).
+- Decay auto-blend deferred (accepted: single fresh review +
+  silence would zero legacy). Dormant path + explicit flag
+  intent; historical/fresh render separately when Mangrove lands.
+- Shared fixtures in docs/REC_SPEC.md for the other builder.
+  TODO: rename meta rec_formula to positive-share-display-v1
+  (still says weighted-5step-v1 — string only, fold into next
+  code commit). Commit 22377c9, CI green, bare 0.
