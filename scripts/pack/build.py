@@ -86,22 +86,19 @@ def area_country(area_id):
 
 
 def stage_allowed(stage, area_id, packdir, meta):
-    """Country gate: off-country stages skip loudly (log + meta record),
-    never silently. Returns True iff the stage should run."""
+    """Country gate: off-country stages skip loudly (log + recorded at
+    recount). Never silent. Returns True iff the stage should run."""
     if area_country(area_id) in STAGE_COUNTRIES.get(stage, ('gb', 'fi')):
         return True
     msg = f'stage {stage} not run here (country rule: {STAGE_COUNTRIES.get(stage)})'
     print(msg, flush=True)
     log(packdir, msg)
-    try:
-        m = json.load(open(meta))
-        skipped = m.setdefault('stages_skipped_country', [])
-        if stage not in skipped:
-            skipped.append(stage)
-        json.dump(m, open(meta, 'w'), indent=1)
-    except Exception:
-        pass  # meta may not exist yet this early; the log line stands
+    if stage not in _SKIPPED:
+        _SKIPPED.append(stage)
     return False
+
+
+_SKIPPED = []
 
 
 def build(area_id, args):
@@ -110,6 +107,7 @@ def build(area_id, args):
     a = AREAS[area_id]
     packdir = PACKS / area_id
     packdir.mkdir(parents=True, exist_ok=True)
+    _SKIPPED.clear()
     bbox = ','.join(map(str, a['bbox']))
     pois, meta = str(packdir / 'pois.json'), str(packdir / 'meta.json')
     stages = list(STAGE_COUNTRIES)
@@ -267,6 +265,7 @@ def build(area_id, args):
     now = datetime.now(timezone.utc)
     m['counts']['orphan_hidden'] = flag_stale_orphans(pois_data, now)
     m['counts']['quarantined'] = quarantined
+    m['stages_skipped_country'] = list(_SKIPPED)
     kept = flag_keep_evidence(pois_data, now)
     m['counts']['kept_by_rule'] = kept
     m['weights'] = area_weights(area_id, pois_data)
