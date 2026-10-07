@@ -598,3 +598,13 @@ Read these three docs first, in order:
   _fi + ta-default + PBF + rec-vector) + 26 UK full spider=false
   (unifies Overpass-built packs to PBF + ta). London 21 already
   current. Then: 64-pack audit, triage, Friday cut.
+
+## Session log (2026-10-07, per-country stage matrix)
+
+- STAGE_COUNTRIES live (commit 2684506+dbe2a44): full 13-stage
+  matrix, single gate where stages resolve, loud log lines.
+  ch/nhs gb-only, chains_fi/prh fi-only; adding France/Ireland
+  = extending tuples. Skipped record fixed to recount-time
+  (early meta may not exist — first version lost the record).
+- Verified both directions locally + Southend CI (servicemap/
+  chains_fi/prh skipped loudly, pack green 2130 total).
