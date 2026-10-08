@@ -525,6 +525,8 @@ def apply_aliases(pois_path, meta_path):
     pois = json.load(open(pois_path))
     applied = 0
     for e in entries:
+        if e.get('merge_osm'):
+            continue  # verify_positions Rule 2 owns merge entries, not renames
         if e.get('absorb'):
             if absorb_alias(pois, e):
                 applied += 1
