@@ -187,6 +187,7 @@ function collectFeats(spider, all, run, row, countries) {
     const [lon, lat] = ft.geometry.coordinates;
     if (!inBbox(lon, lat)) continue;
     const p = ft.properties || {};
+    rawFeats.push({ spider, run, feature: ft });
     feats.push({
       spider, run, brand: p.brand || p.name || spider, name: p.name || p.branch || '',
       branch: p.branch || '', lat, lng: lon,
@@ -204,6 +205,7 @@ function collectFeats(spider, all, run, row, countries) {
 }
 
 const feats = [];
+const rawFeats = []; // bounded ORIGINAL records (full properties+geometry) for raw-input handoffs
 const ledger = [];
 await poolAll(mergeSpiders, 8, async spider => {
   const row = primaryRows.get(spider);
@@ -232,6 +234,23 @@ const extractObj = { runs: { primary: RUN_PRIMARY, supplements: SUPPLEMENT_RUNS 
 const extractStr = JSON.stringify(extractObj);
 fs.writeFileSync(EXTRACT_PATH, extractStr);
 const snapshotSha = crypto.createHash('sha256').update(extractStr).digest('hex');
+// Raw-input handoff artifacts (frozen-input comparison; not consumed by
+// the pipeline itself): original bounded records + complete fetch ledger
+// with merge-set derivation.
+const rawStr = JSON.stringify({ runs: { primary: RUN_PRIMARY, supplements: SUPPLEMENT_RUNS }, bbox, count: rawFeats.length, records: rawFeats });
+fs.writeFileSync(path.join(path.dirname(EXTRACT_PATH), 'atp-raw.json'), rawStr);
+const ledgerObj = {
+  runs: { primary: RUN_PRIMARY, supplements: SUPPLEMENT_RUNS },
+  generated_at: new Date().toISOString(), bbox,
+  merge_set: {
+    index_spiders: primaryRows.size,
+    included: mergeSpiders.length,
+    excluded_infra: [...EXCLUDE_SPIDERS].sort(),
+    bare_kept: [...BARE_KEEP].filter(s => primaryRows.has(s)).sort(),
+  },
+  spiders: ledger,
+};
+fs.writeFileSync(path.join(path.dirname(EXTRACT_PATH), 'atp-ledger.json'), JSON.stringify(ledgerObj));
 
 // ---- match to built listings ----
 const normName = s => (s || '').toLowerCase().replace(/\bltd\b|\blimited\b|\bplc\b|\bthe\b/g, '').replace(/&/g, 'and').replace(/[^a-z0-9åäö ]/g, ' ').replace(/\s+/g, ' ').trim(); // åäö retained (FI/SE names)

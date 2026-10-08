@@ -345,6 +345,23 @@ def main():
                     'threshold_days': NEW_THRESHOLD_DAYS}
     json.dump(meta, open(a.meta, 'w'), indent=1)
     print(f'companies: {len(recs)} food rows -> {matched} corroborated, {created} created, {suppressed} formation-suppressed')
+    # Raw-input handoff artifact (frozen-input comparison; not consumed by
+    # the pipeline itself): snapshot identifier + selection rules + the
+    # bounded/targeted raw evidence rows used (matched + created
+    # candidates), before corroborate-or-create logic.
+    try:
+        snap_files = sorted(f.name for f in CHDIR.glob('*.csv') if f.name != 'food.csv')
+        ev_path = Path(a.pois).parent / 'ch-evidence.json'
+        ev_rows = [r for r in recs
+                   if r.get('lat') is not None and s <= r['lat'] <= n
+                   and w <= r.get('lng', 0) <= e]
+        json.dump({'snapshot_files': snap_files,
+                   'selection': {'sic': list(SIC_OK), 'new_days': NEW_THRESHOLD_DAYS,
+                                 'formation_addr_max': FORMATION_ADDR_MAX},
+                   'rows': ev_rows}, open(ev_path, 'w'))
+        print(f'companies evidence rows: {len(ev_rows)} -> {ev_path.name}')
+    except Exception as ex:
+        print(f'companies evidence skipped ({str(ex)[:100]})')
 
 
 if __name__ == '__main__':

@@ -397,6 +397,15 @@ const all = fsa ? fsa.FHRSEstablishment.EstablishmentCollection : [];
 const extractDate = fsa ? fsa.FHRSEstablishment.Header.ExtractDate : null;
 if (fsa) console.log(`FSA extract ${extractDate}, ${all.length} establishments`);
 else console.log('FSA skipped (--fsa none): OSM-only base');
+// Raw-input handoff artifact (frozen-input comparison; not consumed by the
+// pipeline itself): the exact authority JSON before matching or postcode
+// geocoding, with its extract date.
+if (fsa) {
+  try {
+    fs.writeFileSync(path.join(path.dirname(POIS_OUT), 'fhrs-raw.json'), JSON.stringify({ url: FSA_URL, extractDate, establishments: all }));
+    console.log(`FSA raw: ${all.length} establishments -> fhrs-raw.json`);
+  } catch (e) { console.log(`FSA raw write skipped (${e.message.slice(0, 80)})`); }
+}
 
 const kept = [];
 for (const e of all) {

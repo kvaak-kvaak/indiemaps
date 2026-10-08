@@ -6,3 +6,5 @@ packs/
 # dump stays local-only via the rule above.
 !data/ta-extract.parquet
 data/ch/
+# Frozen raw-input handoffs (local-only, copied to sibling builds by hand)
+handoff-southend/

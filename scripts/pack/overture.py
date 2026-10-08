@@ -76,6 +76,34 @@ def pull(w, s, e, n):
     raise RuntimeError(f'Overture pull failed x3: {str(last)[:120]}')
 
 
+def pull_raw(w, s, e, n, rel):
+    """Bounded ORIGINAL Places rows (raw-input handoff): every record in
+    the rectangle from the pinned release, before contact-only filtering
+    and before the Microsoft exclusion. Full columns: coordinates,
+    categories, confidence, contributor metadata and all available fields.
+    Not consumed by the pipeline itself."""
+    import duckdb
+    con = duckdb.connect()
+    con.execute("INSTALL httpfs; LOAD httpfs;")
+    con.execute("SET s3_region='us-west-2'; SET http_timeout=30000;")
+    rows = con.execute(f"""SELECT id, names.primary AS name,
+      (bbox.xmin+bbox.xmax)/2 AS lon, (bbox.ymin+bbox.ymax)/2 AS lat,
+      addresses AS addresses_raw, categories AS categories,
+      confidence AS confidence, websites AS websites, phones AS phones,
+      socials AS socials, sources AS sources, brand AS brand,
+      bbox AS bbox_raw
+    FROM read_parquet('{S3BASE_TMPL.format(rel=rel)}')
+    WHERE bbox.xmin <= {e} AND bbox.xmax >= {w} AND bbox.ymin <= {n} AND bbox.ymax >= {s}
+    """).fetchall()
+    cols = ['id', 'name', 'lon', 'lat', 'addresses', 'categories',
+            'confidence', 'websites', 'phones', 'socials', 'sources',
+            'brand', 'bbox_raw']
+    out = [dict(zip(cols, r)) for r in rows]
+    for o in out:
+        o['release'] = rel
+    return out
+
+
 def norm_pc(p):
     return (p or '').replace(' ', '').lower() or None
 
@@ -229,6 +257,16 @@ def main():
                         'meta_bonus': META_BONUS}
     json.dump(meta, open(a.meta, 'w'), indent=1)
     print(f'backfilled websites={filled_web} phones={filled_phone} socials={filled_soc} upgraded={upgraded_soc}')
+    # Raw-input handoff artifact (frozen-input comparison; not consumed by
+    # the pipeline itself): every Places row in the rectangle, pinned
+    # release, before contact-only filtering and the Microsoft exclusion.
+    try:
+        raw = pull_raw(w, s, e, n, meta['overture']['release'])
+        raw_path = Path(a.pois).parent / 'overture-raw.json'
+        json.dump(raw, open(raw_path, 'w'))
+        print(f'overture raw rows in bbox: {len(raw)} -> {raw_path.name}')
+    except Exception as ex:
+        print(f'overture raw pull skipped ({str(ex)[:100]})')
     apply_aliases(a.pois, a.meta)
 
 
