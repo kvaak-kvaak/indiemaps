@@ -28,6 +28,67 @@ const CAT_ICON = { restaurant: '🍽️', cafe: '☕', pub: '🍺', shopping: '�
 
 const CAT_TINT = { restaurant: '#fdecea', cafe: '#fef6e0', pub: '#f3e8dc', shopping: '#e8f0fe', hotel: '#ede7f6', attraction: '#e6f4ea', culture: '#feefe3', health: '#e0f7fa', services: '#eceff1', parking: '#e3f2fd', transport: '#e8eaf6' };
 
+// Pin icon granularity (user decision 2026-10-08): packs carry no OSM tag
+// detail, so one icon per category is all that's natively expressible.
+// Resolution order below — chain spider, then name keywords, then cuisine,
+// then the category fallback. Tints stay category-level. Pure frontend:
+// works on any pack, no rebuild.
+const SPIDER_ICON = {
+  mcdonalds: '🍔', burger_king: '🍔', hesburger: '🍔', wendys: '🍔', five_guys: '🍔',
+  kfc_gb: '🍗', popeyes_gb: '🍗', taco_bell_gb: '🌮', tortilla_gb: '🌯',
+  subway: '🥪', greggs_gb: '🥐', gails_bakery_gb: '🥐', pret_a_manger: '🥐',
+  pizza_hut_gb: '🍕', papa_johns_gb: '🍕', pizza_express_gb: '🍕', dominos_pizza_gb: '🍕', fireaway_gb: '🍕',
+  nandos_gb_ie: '🍗', wagamama_gb: '🍜', itsu_gb: '🍱', tortilla_gb: '🌯',
+  costa_coffee_gg_gb_im_je: '☕', starbucks_eu: '☕', caffe_nero: '☕',
+  j_d_wetherspoon: '🍺', greene_king_pubs_gb: '🍺',
+};
+const NAME_ICON = [
+  [/bank|halifax|natwest|hsbc|lloyds|barclays|nationwide|santander|tsb\b/, '🏦'],
+  [/pharmacy|chemist|boots|superdrug|well pharmacy/, '💊'],
+  [/post office|postoffice/, '📮'],
+  [/church|cathedral|chapel|mosque|synagogue|temple\b/, '⛪'],
+  [/station\b|railway/, '🚉'],
+  [/hotel|guest ?house|b&b\b|inn\b/, '🛏️'],
+  [/book|waterstones|library/, '📚'],
+  [/charity|oxfam|barnardo|salvation army|british heart|cancer research|sue ryder/, '❤️'],
+  [/flower|florist/, '💐'],
+  [/pet|vets\b|vet\b/, '🐾'],
+  [/dentist|dental|doctor|surgery|clinic|optician|specsavers/, '⚕️'],
+  [/gym|fitness|pool\b|swimming/, '🏋️'],
+  [/cinema|theatre|theater|museum|gallery/, '🎭'],
+  [/hair|barber|beauty|nails|tattoo/, '💇'],
+  [/car|garage|mot\b|tyre|kwik fit|halfords/, '🚗'],
+  [/launder|dry clean/, '🧺'],
+  [/bakery|cake\b|patisserie/, '🧁'],
+  [/fish|chippy|chip shop/, '🐟'],
+  [/kebab|turkish/, '🥙'],
+  [/chinese|noodle|wok/, '🍜'],
+  [/indian|curry|tandoori|balti/, '🍛'],
+  [/pizza|italian/, '🍕'],
+  [/sushi|japanese/, '🍣'],
+  [/chicken|peri|nando|kfc\b/, '🍗'],
+  [/burger|mcdonald|wendy|five guys/, '🍔'],
+  [/coffee|costa|starbucks|nero\b/, '☕'],
+  [/pub\b|bar\b|tavern|wetherspoon|greene king/, '🍺'],
+  [/school|college|academy/, '🏫'],
+];
+const CUISINE_ICON = [
+  [/pizza|italian/, '🍕'], [/burger|american/, '🍔'], [/sushi|japanese/, '🍣'],
+  [/chinese|noodle/, '🍜'], [/indian|curry|bangladeshi|pakistani|nepalese/, '🍛'],
+  [/turkish|kebab|lebanese|greek/, '🥙'], [/mexican|taco|burrito/, '🌯'],
+  [/thai|vietnamese|malaysian/, '🍜'], [/fish|seafood/, '🐟'],
+  [/bakery|cake|patisserie|dessert|ice_cream/, '🧁'], [/coffee|tea/, '☕'],
+  [/chicken/, '🍗'], [/vegan|vegetarian/, '🥗'], [/breakfast|brunch/, '🍳'],
+];
+function pinIcon(p) {
+  if (p.atp_spider && SPIDER_ICON[p.atp_spider]) return SPIDER_ICON[p.atp_spider];
+  const nm = (p.name || '').toLowerCase();
+  for (const [re, icon] of NAME_ICON) if (re.test(nm)) return icon;
+  const cu = ((p.site_cuisine || []).join(' ') + ' ' + (p.cuisine || '')).toLowerCase();
+  for (const [re, icon] of CUISINE_ICON) if (re.test(cu)) return icon;
+  return CAT_ICON[p.category] || '📍';
+}
+
 // ---------- opening-hours / open-now (parsed from REAL OSM opening_hours strings only) ----------
 const DAY_ORDER = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
 const jsDayToOsm = d => ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'][d];
@@ -186,7 +247,7 @@ function renderAll() {
     // with an uncertainty halo instead of full-authority markers. Same
     // class will cover the hazard tier (step 3) wherever reachable.
     el.className = `pin cat-${p.category}${p.sources?.length === 1 && p.sources[0] === 'osm' ? ' osm' : ''}${p.position_approx ? ' approx' : ''}${p.id === state.selectedId ? ' selected' : ''}`;
-    el.innerHTML = `<span>${CAT_ICON[p.category] || '📍'}</span>`;
+    el.innerHTML = `<span>${pinIcon(p)}</span>`;
     const m = L.marker([p.lat, p.lng], { icon: L.divIcon({ className: '', html: el.outerHTML, iconSize: [30, 30], iconAnchor: [15, 28] }), title: p.name });
     m.on('click', () => selectPoi(p.id, { pan: false }));
     clusters.addLayer(m); state.markers.set(p.id, m);
@@ -199,7 +260,7 @@ function renderAll() {
   resultsEl.innerHTML = list.slice(0, 200).map(p => {
     const o = openStatus(p);
     return `<div class="card${p.id === state.selectedId ? ' selected' : ''}" data-id="${p.id}">
-      <div class="tile" style="background:${CAT_TINT[p.category] || '#eee'}">${CAT_ICON[p.category] || '📍'}</div>
+      <div class="tile" style="background:${CAT_TINT[p.category] || '#eee'}">${pinIcon(p)}</div>
       <div><h3>${esc(p.name)}</h3>
         <div class="meta">${esc(p.category_label || p.category)}</div>
         <div class="meta">${esc((p.address || '').split(',').slice(0, 2).join(','))}</div>
@@ -218,7 +279,7 @@ function showHitMarker(p) {
   clearHitMarker();
   const el = document.createElement('div');
   el.className = `pin cat-${p.category} selected`;
-  el.innerHTML = `<span>${CAT_ICON[p.category] || '📍'}</span>`;
+  el.innerHTML = `<span>${pinIcon(p)}</span>`;
   hitMarker = L.marker([p.lat, p.lng], { icon: L.divIcon({ className: '', html: el.outerHTML, iconSize: [30, 30], iconAnchor: [15, 28] }), title: p.name, zIndexOffset: 1000 });
   hitMarker.addTo(map);
 }
@@ -253,7 +314,7 @@ function detailSkeleton(p) {
   const gUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name + ', ' + (p.address || 'Southend-on-Sea'))}`;
   const taUrl = `https://www.tripadvisor.co.uk/Search?q=${encodeURIComponent(p.name + ' ' + (p.address || ''))}`;
   return `
-  <div class="hero" id="hero"><div class="hero-empty"><span>${CAT_ICON[p.category] || '📍'}</span><p>No photo on record.</p></div></div>
+  <div class="hero" id="hero"><div class="hero-empty"><span>${pinIcon(p)}</span><p>No photo on record.</p></div></div>
   <div class="dpad">
     <h2>${esc(p.name)}</h2>
     <div class="sub">${esc(p.category_label || p.category)}${(p.site_cuisine || [])[0] ? ` · ${esc(p.site_cuisine.join(', '))}` : p.cuisine ? ` · ${esc(p.cuisine)}` : ''}${p.site_price ? ` · ${esc(p.site_price)}` : ''}</div>
@@ -464,7 +525,7 @@ function renderHero(p) {
   if (!heroPhotos.length) return; // keep honest placeholder
   const credit = ph => ph.credit || `📷 ${esc((ph.title || '').slice(0, 50))}`;
   hero.innerHTML = `
-    <img id="hero-img" src="${heroPhotos[0].thumb}" alt="${esc(heroPhotos[0].title || p.name)}" onerror="this.closest('#hero').innerHTML='<div class=&quot;hero-empty&quot;><span>${CAT_ICON[p.category] || '📍'}</span><p>Photo unavailable.</p></div>'" />
+    <img id="hero-img" src="${heroPhotos[0].thumb}" alt="${esc(heroPhotos[0].title || p.name)}" onerror="this.closest('#hero').innerHTML='<div class=&quot;hero-empty&quot;><span>${pinIcon(p)}</span><p>Photo unavailable.</p></div>'" />
     ${heroPhotos.length > 1 ? `<button class="hero-nav prev">‹</button><button class="hero-nav next">›</button><div class="hero-dots">${heroPhotos.map((_, i) => `<button data-i="${i}" class="${i === 0 ? 'on' : ''}"></button>`).join('')}</div>` : ''}
     <div class="hero-credit">${credit(heroPhotos[0])}</div>`;
   const setHero = i => {
@@ -553,7 +614,7 @@ async function suggest(v) {
     const j = await r.json();
     places = j.places || [];
   } catch {}
-  box.innerHTML = hits.map(p => `<div class="sug" data-poi="${p.id}"><span>${CAT_ICON[p.category] || '📍'}</span><span><div class="t">${esc(p.name)}</div><div class="s">${esc(p.address || p.category_label || '')}</div></span></div>`).join('')
+  box.innerHTML = hits.map(p => `<div class="sug" data-poi="${p.id}"><span>${pinIcon(p)}</span><span><div class="t">${esc(p.name)}</div><div class="s">${esc(p.address || p.category_label || '')}</div></span></div>`).join('')
     + places.slice(0, 3).map(pl => `<div class="sug" data-lat="${pl.lat}" data-lng="${pl.lng}"><span>📌</span><span><div class="t">${esc(pl.display_name.split(',').slice(0, 2).join(','))}</div><div class="s">${esc(pl.display_name.slice(0, 90))}</div></span></div>`).join('')
     || `<div class="sug"><span>🔍</span><span><div class="t">No matches</div></span></div>`;
   box.style.display = 'block';
@@ -662,7 +723,7 @@ function renderDiff() {
     L.polyline([[m.old.lat, m.old.lng], [m.cur.lat, m.cur.lng]], { color: '#d93025', weight: 2, dashArray: '5 4' }).addTo(diffLayers);
     const el = document.createElement('div');
     el.className = `pin cat-${m.cur.category}`;
-    el.innerHTML = `<span>${CAT_ICON[m.cur.category] || '📍'}</span>`;
+    el.innerHTML = `<span>${pinIcon(m.cur)}</span>`;
     const mk = L.marker([m.cur.lat, m.cur.lng], { icon: L.divIcon({ className: '', html: el.outerHTML, iconSize: [30, 30], iconAnchor: [15, 28] }), title: `${m.cur.name} (moved ${m.d}m)` });
     mk.bindPopup(`<b>${esc(m.cur.name)}</b><br>moved ${m.d}m<br>was: ${m.old.lat.toFixed(5)}, ${m.old.lng.toFixed(5)}<br>now: ${m.cur.lat.toFixed(5)}, ${m.cur.lng.toFixed(5)}<br>${esc(m.cur.verified_from ? 'via ' + m.cur.verified_from : (m.cur.verified_position ? m.cur.verified_position : 'unattributed move'))}`);
     mk.on('click', () => selectPoi(m.cur.id, { pan: false }));
