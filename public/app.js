@@ -212,6 +212,16 @@ function renderAll() {
 
 // ---------- detail panel ----------
 let heroPhotos = [], heroIdx = 0;
+let hitMarker = null;
+function clearHitMarker() { if (hitMarker) { map.removeLayer(hitMarker); hitMarker = null; } }
+function showHitMarker(p) {
+  clearHitMarker();
+  const el = document.createElement('div');
+  el.className = `pin cat-${p.category} selected`;
+  el.innerHTML = `<span>${CAT_ICON[p.category] || '📍'}</span>`;
+  hitMarker = L.marker([p.lat, p.lng], { icon: L.divIcon({ className: '', html: el.outerHTML, iconSize: [30, 30], iconAnchor: [15, 28] }), title: p.name, zIndexOffset: 1000 });
+  hitMarker.addTo(map);
+}
 async function selectPoi(id, { pan } = {}) {
   state.selectedId = id;
   let p = state.pois.find(x => x.id === id);
@@ -226,6 +236,9 @@ async function selectPoi(id, { pan } = {}) {
   if (pan) map.flyTo([p.lat, p.lng], Math.max(map.getZoom(), 15), { duration: 0.7 });
   history.replaceState(null, '', `?poi=${encodeURIComponent(id)}`);
   renderAll();
+  // Pin on hit: search-only records have no browse marker — place a
+  // transient one on selection so the map shows what the card describes.
+  if (!state.markers.has(p.id)) showHitMarker(p); else clearHitMarker();
   $('#detail').classList.remove('hidden');
   $('#detail-body').innerHTML = detailSkeleton(p);
   wireDetail(p);
@@ -570,7 +583,7 @@ $('#open-now-only').addEventListener('change', e => { state.openOnly = e.target.
 $('#audit-fsa-only').addEventListener('change', e => { state.auditFsaOnly = e.target.checked; loadPois(); });
 $('#show-hidden').addEventListener('change', e => { state.showHidden = e.target.checked; loadPois(); });
 $('#recenter').addEventListener('click', () => map.flyTo(SOUTHEND, 13, { duration: 0.8 }));
-$('#detail-close').addEventListener('click', () => { $('#detail').classList.add('hidden'); state.selectedId = null; history.replaceState(null, '', location.pathname); renderAll(); });
+$('#detail-close').addEventListener('click', () => { $('#detail').classList.add('hidden'); state.selectedId = null; clearHitMarker(); history.replaceState(null, '', location.pathname); renderAll(); });
 $('#cfg-link').addEventListener('click', async () => {
   const [c, m] = await Promise.all([fetch('/api/config').then(r => r.json()), fetch('/api/meta').then(r => r.json()).catch(() => ({}))]);
   toast(`FSA extract ${m.fsa_extract_date || '?'} · ${m.counts?.total || '?'} listings · ` + Object.entries(c.providers).map(([k, v]) => `${k}: ${v.status}`).join(' · ').slice(0, 90));

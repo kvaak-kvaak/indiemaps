@@ -342,7 +342,8 @@ def main():
     meta['ch'] = {'snapshot_rows_food': len(recs), 'matched': matched,
                     'pois_matched': len(pois_touched),
                     'created': created, 'formation_suppressed': suppressed,
-                    'threshold_days': NEW_THRESHOLD_DAYS}
+                    'threshold_days': NEW_THRESHOLD_DAYS,
+                    'snapshot_files': sorted(f.name for f in CHDIR.glob('*.csv') if f.name != 'food.csv')}
     json.dump(meta, open(a.meta, 'w'), indent=1)
     print(f'companies: {len(recs)} food rows -> {matched} corroborated, {created} created, {suppressed} formation-suppressed')
     # Raw-input handoff artifact (frozen-input comparison; not consumed by

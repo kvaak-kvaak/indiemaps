@@ -47,6 +47,7 @@ const FSA_EXCLUDE = new Set([
   'Importers/Exporters',
   'Distributors/Transporters',
   'Farm',
+  'Farmers/growers',
   'Other catering premises',
 ]);
 
@@ -621,6 +622,10 @@ for (const k of deduped) {
     osm_id: k.osm ? k.osm.id : null,
     name: k.name,
     category, category_label,
+    // Hospitals/childcare: kept searchable, pin on hit only (user decision
+    // 2026-10-08) — registered venues, not browse destinations. OSM-mapped
+    // hospitals stay normal pins (surveyed positions, mapper intent).
+    ...(k.type === 'Hospitals/Childcare/Caring Premises' && !k.osm ? { search_only: true } : {}),
     lat: k.osm ? k.osm.lat : k.lat,   // OSM position is survey-accurate; FSA geocode otherwise
     lng: k.osm ? k.osm.lon : k.lng,
     geo_precision: k.osm ? 'osm' : k.geo_precision,
