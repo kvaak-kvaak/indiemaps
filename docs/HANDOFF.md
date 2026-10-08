@@ -625,3 +625,13 @@ Read these three docs first, in order:
   without the binary; meta records the source). CH/ATP/OSM
   calls audited — all already bounded. Standing rule: no setup
   step without a timeout. Commit 492df9d, re-dispatched.
+
+## Session log (2026-10-08, demo promotion to 2130)
+
+- Promoted Q4 Southend (Oct-7, spider run 37701483502) to demo:
+  default view 1427 -> 1544. First pack with the full stack:
+  rec_stars/Bayes on 330 records, tiers sorting browse,
+  ta enrichment, PBF OSM source. Backup in
+  /tmp/opencode/backup-pre2130/.
+- Verified live: Akropolis 80% + bayes 4.157 + tier 1,
+  Specsavers x2 present.

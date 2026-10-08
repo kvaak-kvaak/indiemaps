@@ -1,6 +1,6 @@
 {
- "built_at": "2026-10-06T09:10:27.913Z",
- "fsa_extract_date": "2026-10-05",
+ "built_at": "2026-10-07T23:20:24.566Z",
+ "fsa_extract_date": "2026-10-06",
  "fsa_authority": "FHRS893",
  "bbox": {
   "s": 51.505,
@@ -9,33 +9,38 @@
   "e": 0.825
  },
  "counts": {
-  "total": 2043,
-  "fsa_only": 311,
+  "total": 2130,
+  "fsa_only": 299,
   "merged": 407,
-  "osm_only": 303,
+  "osm_only": 275,
   "nhs_added": 11,
-  "ch_added": 40,
-  "with_hours": 289,
-  "osm_nodes_pulled": 1139,
-  "osm_raw_response": 1207,
+  "ch_added": 39,
+  "with_hours": 632,
+  "osm_nodes_pulled": 1136,
+  "osm_source": "geofabrik-pbf",
+  "osm_extract": "gb-latest.osm.pbf@2026-10-07",
+  "osm_raw_response": 1200,
   "fsa_repinned": 0,
   "fsa_duplicates_linked": 0,
   "fsa_duplicates_queued": 11,
   "osm_duplicates_merged": 3,
   "stale_flagged": 8,
   "position_approx": 829,
-  "orphan_hidden": 589,
+  "orphan_hidden": 586,
+  "quarantined": [],
   "kept_by_rule": {
-   "atp": 277,
+   "atp": 367,
    "fsa": 1176,
    "ch": 143,
    "recent_osm": 77,
    "nhs": 39,
-   "servicemap": 0
+   "servicemap": 0,
+   "chain": 0,
+   "prh": 0
   }
  },
- "with_hours": 102,
- "with_phone": 106,
+ "with_hours": 101,
+ "with_phone": 104,
  "with_website": 316,
  "stages_ok": [
   "base",
@@ -45,6 +50,8 @@
   "overture",
   "nhs",
   "atp",
+  "sites",
+  "merge",
   "ta"
  ],
  "verify_positions": {
@@ -132,120 +139,7 @@
   ]
  },
  "hazard_roads": {
-  "coast_m": 100,
-  "sparse_n": 5,
-  "segments": 2547,
-  "flagged": 27,
-  "members": [
-   {
-    "id": "fsa-764431",
-    "name": "Adventure Inside Cafe"
-   },
-   {
-    "id": "fsa-1844112",
-    "name": "Casa Beach"
-   },
-   {
-    "id": "fsa-764433",
-    "name": "Chips With Dips"
-   },
-   {
-    "id": "fsa-1870325",
-    "name": "Curry Pot"
-   },
-   {
-    "id": "fsa-513253",
-    "name": "Dining-Saurs"
-   },
-   {
-    "id": "fsa-1993212",
-    "name": "Drift Caf\u00e9"
-   },
-   {
-    "id": "fsa-513076",
-    "name": "Essex Yacht Club"
-   },
-   {
-    "id": "fsa-516262",
-    "name": "Feelgoods Restaurant"
-   },
-   {
-    "id": "fsa-513247",
-    "name": "Fish And Chip Shop"
-   },
-   {
-    "id": "fsa-521341",
-    "name": "Genting Club Westcliff"
-   },
-   {
-    "id": "fsa-513250",
-    "name": "Hot Dog Bar At Adventure Island"
-   },
-   {
-    "id": "fsa-580693",
-    "name": "Hot Dog Kart At Adventure Island + Slush + Pancakes"
-   },
-   {
-    "id": "fsa-1806380",
-    "name": "Hybrid Hub Gym"
-   },
-   {
-    "id": "fsa-1496769",
-    "name": "Kingpins"
-   },
-   {
-    "id": "fsa-1498884",
-    "name": "Megabites Cafe"
-   },
-   {
-    "id": "fsa-764432",
-    "name": "Mini Donuts At Adventure Inside"
-   },
-   {
-    "id": "fsa-1537084",
-    "name": "No 1 Cockleshed"
-   },
-   {
-    "id": "fsa-812479",
-    "name": "Olivers On The Beach"
-   },
-   {
-    "id": "fsa-781372",
-    "name": "Oyster Creek Kitchen"
-   },
-   {
-    "id": "fsa-1807635",
-    "name": "Red Lounge"
-   },
-   {
-    "id": "fsa-513309",
-    "name": "Sands Restaurant"
-   },
-   {
-    "id": "fsa-744335",
-    "name": "The Green"
-   },
-   {
-    "id": "fsa-782394",
-    "name": "Tides"
-   },
-   {
-    "id": "fsa-513093",
-    "name": "Uncle Toms Cabin"
-   },
-   {
-    "id": "fsa-534822",
-    "name": "Wish You Were Here"
-   },
-   {
-    "id": "fsa-1349789",
-    "name": "YEMEK"
-   },
-   {
-    "id": "fsa-1675036",
-    "name": "Zinnia Restaurant"
-   }
-  ]
+  "skipped": "no coastline geometry"
  },
  "ch": {
   "snapshot_rows_food": 135552,
@@ -258,7 +152,7 @@
  "overture": {
   "release": "2026-09-23.1",
   "contact_rows_in_bbox": 7083,
-  "websites_filled": 756,
+  "websites_filled": 755,
   "phones_filled": 1002,
   "socials_filled": {
    "facebook": 1000,
@@ -288,86 +182,176 @@
     "2026-08-22-13-32-16"
    ]
   },
-  "spiders": 394,
+  "spiders": 404,
   "feats_in_bbox": 426,
   "feats_with_hours": 283,
   "matched": 212,
   "web_matched": 19,
   "wikidata_matched": 166,
   "hours_added": 109,
-  "hours_before": 103,
-  "hours_after": 212,
-  "created": 65,
+  "hours_before": 102,
+  "hours_after": 211,
+  "created": 155,
   "hosted": 0,
-  "skipped_dupe": 26,
+  "skipped_dupe": 67,
   "created_ids": [
-   "atp-amazon_locker_gb-amazonlocker-f85b1f",
-   "atp-argos-argos-3930ea",
-   "atp-bank_of_scotland_gb-bankofscotland-e1e9d0",
-   "atp-audika_gb-9yf4cs",
-   "atp-barnardos_gb-barnardos-f84d6b",
-   "atp-barclays_gb-barclays-53ff29",
-   "atp-bhf_gb-1bcc9g1",
-   "atp-busy_bees_gb-busybees-e7c9ca",
-   "atp-budgens_gb-budgens-232829",
-   "atp-card_factory_gb-cardfactory-d8c200",
-   "atp-chelmsford_star_coop_gb-thecooperativefood-a8278",
-   "atp-coop_funeral_gb-thecooperativefuneralcar",
-   "atp-costcutter_gb-costcutter-31620e",
-   "atp-coral_gb-coral-58d00b",
-   "atp-cvs_vets_gb-3b5t55",
-   "atp-cvs_vets_gb-8ayhru",
-   "atp-david_lloyd_gb-davidlloydclubs-2b43d7",
-   "atp-dulux_decorator_centre_gb-duluxdecoratorcentre-058",
-   "atp-euro_car_parts_gb-eurocarparts-078f70",
-   "atp-gap_trade_gb-gap-8a4d16",
-   "atp-game_gb-game-b2f4fe",
-   "atp-halfords_gb-halfords-078f70",
-   "atp-halfords_gb-halfordsautocentre-3b6d6",
-   "atp-halifax_gb-halifax-e1e9d0",
-   "atp-handelsbanken_gb-handelsbanken-1834eb",
-   "atp-hsbc_uk_gb-hsbcuk-e1e9d0",
-   "atp-hyundai_gb-hyundai-13eeb7",
-   "atp-inpost_gb-inpost-6b37ec",
-   "atp-jennings_bet_gb-jenningsbet-58d00b",
-   "atp-jewson_gb-jewson-8a4d16",
-   "atp-kutchenhaus_gb-kutchenhaus-26c64e",
-   "atp-kwik_fit_gb-kwikfit-b75a4b",
-   "atp-leaders_romans_group_gb-sj7uv7",
-   "atp-ladbrokes_gb-ladbrokes-afd1fc",
-   "atp-maidenhead_aquatics_gb-maidenheadaquatics-8ec02",
-   "atp-lloyds_bank_gb-16a75c1",
-   "atp-londis_gb-londis-232829",
-   "atp-nationwide_gb-nationwide-e1e9d0",
-   "atp-ncp_gb-nationalcarparks-822ef4",
-   "atp-nisalocal_gb-6081sr",
-   "atp-natwest_gb-natwest-6bb648",
-   "atp-natwest_gb-natwest-8cfc37",
-   "atp-peacocks_gb-peacocks-c6ef05",
-   "atp-photome_gb-photome-f9b213",
-   "atp-poundland-pepandco-94f7c8",
-   "atp-premier_gb-premier-232829",
-   "atp-puregym_gb-puregym-2770cb",
-   "atp-rexel_gb-rexel-091354",
-   "atp-screwfix_gb-ysp2ew",
-   "atp-salvation_army_gb-thesalvationarmy-2031e0",
-   "atp-shell-shell-d42a8c",
-   "atp-shell-shellselect-cfb41f",
-   "atp-spar_gb-spar-1effe0",
-   "atp-specsavers-1lw56t4",
-   "atp-subway-subway-6a374d",
-   "atp-the_food_warehouse_gb-thefoodwarehouse-a8278b",
-   "atp-tax_assist_gb-taxassistaccountants-697",
-   "atp-the_gym_group_gb-thegymgroup-2770cb",
-   "atp-tops_pizza_gb-1d5bfhe",
-   "atp-trade_point_gb-tradepoint-8a4d16",
-   "atp-trussell_trust_gb-thetrusselltrust-bdda3a",
-   "atp-vets4pets_gb-vets4pets-45f750",
-   "atp-webuyanycar_gb-webuyanycar-42e946",
-   "atp-wolseley_gb-wolseley-8a4d16",
-   "atp-yeep_gb-yeep-ad77d0"
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-1usbpl3",
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-l57f25",
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-bk3fk8",
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-1d8w33n",
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-6wfmkl",
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-1mmf280",
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-oghvdz",
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-13q7h49",
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-1e1of7v",
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-15aw3rx",
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-1hyhm70",
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-1ajunut",
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-sbof59",
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-1o63gu9",
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-kjm8sw",
+   "atp-amazon_locker_gb-amazonlocker-f85b1f-qptan3",
+   "atp-audika_gb-audika_gb-9yf4cs",
+   "atp-argos-argos-3930ea-ff38gd",
+   "atp-bank_of_scotland_gb-bankofscotland-e1e9d0-168gt8m",
+   "atp-barclays_gb-barclays-53ff29-tgiv97",
+   "atp-barnardos_gb-barnardos-f84d6b-13zo1xk",
+   "atp-bhf_gb-bhf_gb-1bcc9g1",
+   "atp-budgens_gb-budgens-232829-5wp1ab",
+   "atp-busy_bees_gb-busybees-e7c9ca-56ff0",
+   "atp-card_factory_gb-cardfactory-d8c200-14i14hq",
+   "atp-chelmsford_star_coop_gb-thecooperativefood-a8278-ag3a51",
+   "atp-coral_gb-coral-58d00b-d0gwu9",
+   "atp-coral_gb-coral-58d00b-1jq4fbb",
+   "atp-coral_gb-coral-58d00b-12v5k06",
+   "atp-coral_gb-coral-58d00b-1jnehq",
+   "atp-coral_gb-coral-58d00b-np7zxk",
+   "atp-coop_funeral_gb-thecooperativefuneralcar-1imp9jo",
+   "atp-coop_funeral_gb-thecooperativefuneralcar-7aifwc",
+   "atp-costcutter_gb-costcutter-31620e-148jd1p",
+   "atp-costcutter_gb-costcutter-31620e-3ww7e0",
+   "atp-costcutter_gb-costcutter-31620e-x88jr4",
+   "atp-costcutter_gb-costcutter-31620e-n44wdg",
+   "atp-cvs_vets_gb-cvs_vets_gb-3b5t55",
+   "atp-cvs_vets_gb-cvs_vets_gb-8ayhru",
+   "atp-david_lloyd_gb-davidlloydclubs-2b43d7-1qaw8s7",
+   "atp-dulux_decorator_centre_gb-duluxdecoratorcentre-058-alahof",
+   "atp-euro_car_parts_gb-eurocarparts-078f70-1oga5jc",
+   "atp-gap_trade_gb-gap-8a4d16-rkxtq9",
+   "atp-game_gb-game-b2f4fe-ri3iib",
+   "atp-halfords_gb-halfords-078f70-1bt9ekz",
+   "atp-halfords_gb-halfordsautocentre-3b6d6-1wsvs5m",
+   "atp-halifax_gb-halifax-e1e9d0-1c9k7ss",
+   "atp-handelsbanken_gb-handelsbanken-1834eb-vhohta",
+   "atp-hsbc_uk_gb-hsbcuk-e1e9d0-1y5qv6w",
+   "atp-hyundai_gb-hyundai-13eeb7-13r0m26",
+   "atp-inpost_gb-inpost-6b37ec-1nxnmyh",
+   "atp-inpost_gb-inpost-6b37ec-7uh54t",
+   "atp-inpost_gb-inpost-6b37ec-nmjmd",
+   "atp-inpost_gb-inpost-6b37ec-1s3bnc9",
+   "atp-inpost_gb-inpost-6b37ec-1aftc8u",
+   "atp-inpost_gb-inpost-6b37ec-1f33b4p",
+   "atp-inpost_gb-inpost-6b37ec-1mrud9z",
+   "atp-inpost_gb-inpost-6b37ec-1ykgvc5",
+   "atp-inpost_gb-inpost-6b37ec-1jvzhyw",
+   "atp-inpost_gb-inpost-6b37ec-1nzjkxz",
+   "atp-inpost_gb-inpost-6b37ec-6m6jsw",
+   "atp-inpost_gb-inpost-6b37ec-11x1wqs",
+   "atp-inpost_gb-inpost-6b37ec-1nleqsz",
+   "atp-inpost_gb-inpost-6b37ec-n6a3vj",
+   "atp-inpost_gb-inpost-6b37ec-xzjs2o",
+   "atp-inpost_gb-inpost-6b37ec-1opknz7",
+   "atp-inpost_gb-inpost-6b37ec-q8gvds",
+   "atp-inpost_gb-inpost-6b37ec-1mexlzo",
+   "atp-inpost_gb-inpost-6b37ec-1mvpiye",
+   "atp-inpost_gb-inpost-6b37ec-1ho6pzl",
+   "atp-inpost_gb-inpost-6b37ec-1cwtldj",
+   "atp-inpost_gb-inpost-6b37ec-15agamx",
+   "atp-inpost_gb-inpost-6b37ec-wvzn78",
+   "atp-inpost_gb-inpost-6b37ec-y3g7lp",
+   "atp-inpost_gb-inpost-6b37ec-1rox3ni",
+   "atp-inpost_gb-inpost-6b37ec-fuezf",
+   "atp-inpost_gb-inpost-6b37ec-g2k70k",
+   "atp-inpost_gb-inpost-6b37ec-1lhtkxs",
+   "atp-inpost_gb-inpost-6b37ec-g19zdt",
+   "atp-inpost_gb-inpost-6b37ec-wl5d3m",
+   "atp-jewson_gb-jewson-8a4d16-180xftf",
+   "atp-jewson_gb-jewson-8a4d16-1g5wnbc",
+   "atp-jennings_bet_gb-jenningsbet-58d00b-z0tiky",
+   "atp-ladbrokes_gb-ladbrokes-afd1fc-1b0k1tk",
+   "atp-ladbrokes_gb-ladbrokes-afd1fc-qy7j0x",
+   "atp-kwik_fit_gb-kwikfit-b75a4b-kxgafu",
+   "atp-kutchenhaus_gb-kutchenhaus-26c64e-1i4a5k",
+   "atp-leaders_romans_group_gb-leaders_romans_group_gb-sj7uv7",
+   "atp-lloyds_bank_gb-lloyds_bank_gb-16a75c1",
+   "atp-londis_gb-londis-232829-12z306r",
+   "atp-maidenhead_aquatics_gb-maidenheadaquatics-8ec02-8oo29",
+   "atp-natwest_gb-natwest-6bb648-1qiwdbf",
+   "atp-natwest_gb-natwest-8cfc37-xxbfif",
+   "atp-nationwide_gb-nationwide-e1e9d0-1uwcxir",
+   "atp-nationwide_gb-nationwide-e1e9d0-tnmda4",
+   "atp-nationwide_gb-nationwide-e1e9d0-e0vkwd",
+   "atp-ncp_gb-nationalcarparks-822ef4-xto6kr",
+   "atp-nisalocal_gb-nisalocal_gb-6081sr",
+   "atp-peacocks_gb-peacocks-c6ef05-2twbif",
+   "atp-photome_gb-photome-f9b213-19h7pwb",
+   "atp-photome_gb-photome-f9b213-3mjn7c",
+   "atp-photome_gb-photome-f9b213-55j96g",
+   "atp-photome_gb-photome-f9b213-19m6dsp",
+   "atp-photome_gb-photome-f9b213-1cuviny",
+   "atp-photome_gb-photome-f9b213-273l00",
+   "atp-photome_gb-photome-f9b213-jzewyk",
+   "atp-photome_gb-photome-f9b213-1bdv3sw",
+   "atp-premier_gb-premier-232829-f7hq45",
+   "atp-premier_gb-premier-232829-1vr55mq",
+   "atp-premier_gb-premier-232829-1ab0duq",
+   "atp-premier_gb-premier-232829-18ic39l",
+   "atp-premier_gb-premier-232829-pjmcjp",
+   "atp-premier_gb-premier-232829-uwm75y",
+   "atp-premier_gb-premier-232829-18hsemf",
+   "atp-premier_gb-premier-232829-15wjbv1",
+   "atp-premier_gb-premier-232829-1nf1frx",
+   "atp-premier_gb-premier-232829-ks7yk7",
+   "atp-premier_gb-premier-232829-kyvmbf",
+   "atp-premier_gb-premier-232829-7uz5m1",
+   "atp-premier_gb-premier-232829-mtt83k",
+   "atp-premier_gb-premier-232829-r7bxdk",
+   "atp-poundland-pepandco-94f7c8-dpy4am",
+   "atp-poundland-pepandco-94f7c8-1ba6o4f",
+   "atp-puregym_gb-puregym-2770cb-1khd7mo",
+   "atp-rexel_gb-rexel-091354-ianvnl",
+   "atp-screwfix_gb-screwfix_gb-ysp2ew",
+   "atp-salvation_army_gb-thesalvationarmy-2031e0-1nuzfx",
+   "atp-shell-shell-d42a8c-2wuj39",
+   "atp-shell-shellselect-cfb41f-1rwc8z1",
+   "atp-specsavers-specsavers-1lw56t4",
+   "atp-spar_gb-spar-1effe0-58gkjy",
+   "atp-spar_gb-spar-1effe0-1glsdim",
+   "atp-subway-subway-6a374d-1p73zos",
+   "atp-subway-subway-6a374d-1ucfi97",
+   "atp-tax_assist_gb-taxassistaccountants-697-exycnn",
+   "atp-tax_assist_gb-taxassistaccountants-697-1idtjzj",
+   "atp-the_gym_group_gb-thegymgroup-2770cb-1newub4",
+   "atp-the_food_warehouse_gb-thefoodwarehouse-a8278b-1mrk56f",
+   "atp-tops_pizza_gb-tops_pizza_gb-1d5bfhe",
+   "atp-trade_point_gb-tradepoint-8a4d16-2shoyb",
+   "atp-trussell_trust_gb-thetrusselltrust-bdda3a-12l824c",
+   "atp-trussell_trust_gb-thetrusselltrust-bdda3a-1ebc035",
+   "atp-trussell_trust_gb-thetrusselltrust-bdda3a-1g5ho8p",
+   "atp-vets4pets_gb-vets4pets-45f750-1soyn3h",
+   "atp-vets4pets_gb-vets4pets-45f750-zvrsbg",
+   "atp-vets4pets_gb-vets4pets-45f750-1mnnj7l",
+   "atp-vets4pets_gb-vets4pets-45f750-1qm2aca",
+   "atp-webuyanycar_gb-webuyanycar-42e946-oscouu",
+   "atp-webuyanycar_gb-webuyanycar-42e946-jandyk",
+   "atp-wolseley_gb-wolseley-8a4d16-1upao93",
+   "atp-yeep_gb-yeep-ad77d0-fqxbxd",
+   "atp-yeep_gb-yeep-ad77d0-lmcwsu",
+   "atp-yeep_gb-yeep-ad77d0-1v7xd7n",
+   "atp-yeep_gb-yeep-ad77d0-o7jd5f",
+   "atp-yeep_gb-yeep-ad77d0-1sw3o1s"
   ],
-  "snapshot_sha": "b277864d3aa03a3b386d14f28bacdb9daab53eb51d07fc677ed3853194d8229b",
+  "snapshot_sha": "5dc80cf95e1cd4d3256680a30cf2337de2b6edd2f2fe8a2fad8bbddea453996e",
   "complete": false,
   "failed_spiders": [
    "big_yellow_gb:failed_spider_errors_2",
@@ -448,6 +432,7 @@
    "budgens_gb": "2026-09-05-13-32-25",
    "bupa_gb": "2026-09-05-13-32-25",
    "burger_king": "2026-09-05-13-32-25",
+   "burger_king_fi": "2026-09-05-13-32-25",
    "busy_bees_gb": "2026-09-05-13-32-25",
    "buzz_bingo_gb": "2026-09-19-13-32-18",
    "cafe_rouge_gb": "2026-09-05-13-32-25",
@@ -551,6 +536,7 @@
    "harvester_gb": "2026-09-19-13-32-18",
    "hays_travel_gb": "2026-09-05-13-32-25",
    "heron_foods_gb": "2026-09-05-13-32-25",
+   "hesburger": "2026-09-05-13-32-25",
    "hobbycraft_gb": "2026-09-19-13-32-18",
    "home_bargains_gb": "2026-09-05-13-32-25",
    "hotter_gb": "2026-09-19-13-32-18",
@@ -562,6 +548,7 @@
    "hyundai_gb": "2026-09-05-13-32-25",
    "ikea": "2026-09-05-13-32-25",
    "inpost_gb": "2026-09-05-13-32-25",
+   "intersport_fi": "2026-09-05-13-32-25",
    "ismash_gb": "2026-09-05-13-32-25",
    "itsu_gb": "2026-09-05-13-32-25",
    "jack_wills_gb": "2026-09-05-13-32-25",
@@ -573,6 +560,7 @@
    "john_lewis_gb": "2026-09-19-13-32-18",
    "jollyes_gb": "2026-08-29-13-32-18",
    "just_for_pets_gb": "2026-09-05-13-32-25",
+   "k_market_fi": "2026-09-05-13-32-25",
    "keystore_gb": "2026-09-05-13-32-25",
    "kfc_gb": "2026-09-19-13-32-18",
    "kia_gb": "2026-09-05-13-32-25",
@@ -600,6 +588,7 @@
    "mamas_and_papas_gb": "2026-09-05-13-32-25",
    "marie_curie_gb": "2026-09-05-13-32-25",
    "matalan_gb": "2026-09-05-13-32-25",
+   "mazda_fi": "2026-09-05-13-32-25",
    "mazda_gb": "2026-09-05-13-32-25",
    "mbplc_gb": "2026-09-05-13-32-25",
    "mcdonalds": "2026-09-05-13-32-25",
@@ -642,6 +631,7 @@
    "photome_gb": "2026-09-05-13-32-25",
    "pizza_express_gb": "2026-09-05-13-32-25",
    "pizza_gogo_gb": "2026-09-05-13-32-25",
+   "pizza_hut_fi": "2026-09-05-13-32-25",
    "pizza_hut_gb": "2026-09-05-13-32-25",
    "places_leisure_gb": "2026-09-05-13-32-25",
    "popeyes_gb": "2026-09-05-13-32-25",
@@ -656,6 +646,7 @@
    "protyre_gb": "2026-09-05-13-32-25",
    "puregym_gb": "2026-09-05-13-32-25",
    "qd_stores_gb": "2026-09-05-13-32-25",
+   "r_kioski_fi": "2026-09-05-13-32-25",
    "radley_gb": "2026-09-05-13-32-25",
    "redcross_gb": "2026-09-05-13-32-25",
    "regis_salons_gb": "2026-09-05-13-32-25",
@@ -696,6 +687,7 @@
    "spar_northern_ireland_gb": "2026-09-05-13-32-25",
    "specsavers": "2026-09-05-13-32-25",
    "spotless_water_gb": "2026-09-05-13-32-25",
+   "st1": "2026-09-05-13-32-25",
    "starbucks_eu": "2026-09-05-13-32-25",
    "stonegate_gb": "2026-09-05-13-32-25",
    "stonehouse_gb": "2026-09-05-13-32-25",
@@ -704,6 +696,7 @@
    "suit_direct_gb": "2026-09-05-13-32-25",
    "sunglass_hut_gb": "2026-09-05-13-32-25",
    "superdrug": "2026-09-05-13-32-25",
+   "taco_bell_fi": "2026-09-05-13-32-25",
    "taco_bell_gb": "2026-09-05-13-32-25",
    "tanning_shop_ie_gb": "2026-09-05-13-32-25",
    "tapi_gb": "2026-09-05-13-32-25",
@@ -781,9 +774,61 @@
    "zambrero_gb": "2026-09-05-13-32-25"
   }
  },
+ "site": {
+  "input": "/home/runner/work/indiemaps/indiemaps/packs/eu/gb/england/essex/southend-on-sea/site.json",
+  "sites": 500,
+  "matched": 463,
+  "hours_added": 107,
+  "conflicts": 26
+ },
  "ta": {
-  "skipped": "parquet absent",
-  "vintage": "c.2021 (maintainer-declared; file carries no timestamps)",
-  "matched": 0
+  "extract": "ta-extract.parquet",
+  "extract_sha": "fed565ad732014d2",
+  "rec_vintage": "2021-06-01",
+  "rec_formula": "positive-share-display-v1",
+  "rec_prior_mean": 4.125,
+  "rec_prior_c": 10,
+  "rows_in_bbox": 622,
+  "matched": 334,
+  "hours_added": 176,
+  "diets_added": 190,
+  "feature_flags_added": 63,
+  "cuisine_verdicts": {
+   "agree": 10,
+   "extend": 206,
+   "conflict": 89
+  }
+ },
+ "stages_skipped_country": [
+  "servicemap",
+  "chains_fi",
+  "prh"
+ ],
+ "weights": {
+  "table_version": 1,
+  "country": "GB",
+  "verified": true,
+  "spot_checks": [
+   {
+    "area": "eu/gb/england/essex/southend-on-sea",
+    "box": "micro-centre",
+    "n_truth": 361,
+    "date": "2026-09-21"
+   }
+  ],
+  "osm_hours_rate": 0.089,
+  "tier_histogram": {
+   "1": 1298,
+   "0": 583,
+   "2": 243,
+   "3": 6
+  },
+  "hours_order": [
+   "site",
+   "atp",
+   "nhs",
+   "osm",
+   "ta"
+  ]
  }
 }
