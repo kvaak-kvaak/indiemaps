@@ -132,10 +132,13 @@ def main():
             shutil.copy(src, out / fname)
         try:
             doc = json.load(open(out / fname))
+            acquired = datetime.fromtimestamp(
+                (pack / fname).stat().st_mtime, tz=timezone.utc).isoformat() \
+                if (pack / fname).exists() else now
             manifest['files'][fname] = {
                 'sha256': sha(out / fname),
                 'source': spec['source'], 'attribution': spec['attribution'],
-                'acquired': now, 'bounds': BBOX, 'rows': spec['count'](doc),
+                'acquired': acquired, 'bounds': BBOX, 'rows': spec['count'](doc),
                 'complete': True}
         except Exception as ex:
             manifest['missing'].append({'file': fname, 'reason': f'unreadable: {str(ex)[:100]}'})
