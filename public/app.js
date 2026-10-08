@@ -152,6 +152,7 @@ function sourceBadges(p) {
   const extra = (p.position_approx ? '<span class="badge stacked" title="Area-placed: position comes from an uncorroborated batch geocode — placed by postcode area, not surveyed">area-placed</span>' : '')
     + (p.position_hazard ? '<span class="badge stacked" title="Needs manual placement: on a road class where geocoders fail and no surveyed position exists">needs-manual-placement</span>' : '')
     + (p.unresolved_why === 'stale-orphan' ? `<span class="badge stacked" title="Hidden: map record with no corroboration, untouched since ${esc((p.osm_touched || '').slice(0, 10)) || 'unknown date'}">stale orphan</span>` : '')
+    + (p.unresolved_why === 'seafront-contradiction' ? '<span class="badge stacked" title="Hidden: address says seafront but the mapped position is inland — needs manual placement">seafront mismatch</span>' : '')
     + (p.search_only ? '<span class="badge stacked" title="Search-only record: no standalone map marker">search-only</span>' : '');
   return keep + extra + (p.sources || [p.source]).map(s =>
     s === 'fsa' ? '<span class="badge src-fsa" title="Food Standards Agency open data">FSA</span>'
@@ -223,7 +224,7 @@ function filtered() {
     if (state.auditFsaOnly && (!(p.sources || []).includes('fsa') || (p.sources || []).includes('osm'))) return false;
     // Hidden view: exactly the server-hidden population (hazard tier +
     // stale orphans) — each card shows its reason. Nothing else.
-    if (state.showHidden && !(p.position_hazard || p.unresolved_why === 'stale-orphan')) return false;
+    if (state.showHidden && !(p.position_hazard || p.unresolved_why === 'stale-orphan' || p.unresolved_why === 'seafront-contradiction')) return false;
     if (state.cat !== 'all' && p.category !== state.cat) return false;
     if (state.cat === 'all' && p.category === 'parking') return false; // parking off by default — opt in via the 🅿️ chip
     if (state.q && !(p.name + ' ' + (p.category_label || '') + ' ' + (p.address || '')).toLowerCase().includes(state.q)) return false;

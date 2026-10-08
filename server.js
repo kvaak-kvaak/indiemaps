@@ -187,7 +187,7 @@ app.get('/api/pois', (req, res) => {
   // by id. Search-only records (services/parcels with host links) never
   // render as map pins but are always searchable. Records are never deleted.
   const showHazard = q || req.query.include_hazard === '1';
-  const hidden = p => p.position_hazard || p.unresolved_why === 'stale-orphan';
+  const hidden = p => p.position_hazard || p.unresolved_why === 'stale-orphan' || p.unresolved_why === 'seafront-contradiction';
   const pool = q ? SRC : SRC.filter(p => (showHazard || !hidden(p)) && !p.search_only);
   // Browse weighs by evidence tier, ties broken by Bayesian rating
   // (ta_rec_bayes, computed at build, never displayed). Missing ratings
@@ -219,7 +219,7 @@ app.get('/api/combined', async (req, res) => {
   const { bbox, category, q } = req.query;
   const SRC = poisFor(req);
   const showHazard = q || req.query.include_hazard === '1';
-  const hidden = p => p.position_hazard || p.unresolved_why === 'stale-orphan';
+  const hidden = p => p.position_hazard || p.unresolved_why === 'stale-orphan' || p.unresolved_why === 'seafront-contradiction';
   const pool = q ? SRC : SRC.filter(p => (showHazard || !hidden(p)) && !p.search_only);
   if (!q) pool.sort((a, b) => (b.tier || 0) - (a.tier || 0) || (b.ta_rec_bayes || 0) - (a.ta_rec_bayes || 0));
   let curated = pool.map(p => ({ ...p, richness: richness(p) }));

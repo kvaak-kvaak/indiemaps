@@ -28,6 +28,7 @@ from pathlib import Path
 UA = {'User-Agent': 'indiemaps-pack-builder/0.1 (+https://github.com/kvaak-kvaak/indiemaps)'}
 COAST_M = 100
 SPARSE_N = 5
+SEA_WORDS = re.compile(r'esplanade|seafront|\bpier\b|beach|marine parade|\bcliff\b|seaway|promenade|seaside', re.I)
 
 
 def coast_geometry(bbox):
@@ -136,12 +137,39 @@ def main():
         flagged.append((p['id'], p.get('name'), sk, round(d), density))
         print(f"hazard: {p.get('name')} [{p['id']}] street={sk!r} coast={round(d)}m numbers={density}")
 
+    # Seafront-address contradiction (measured: Pugzie's Kiosk 7 batch-pinned
+    # 1.5km inland at its postcode centroid, where the coastal gate above
+    # cannot fire because the WRONG position isn't coastal). Address says
+    # seafront, batch position says inland, no surveyed position to settle
+    # it: flagged for review, never moved, never deleted. Runs after
+    # verify_positions, so merged (surveyed-position) records skip by
+    # construction, same as the hazard rule.
+    contradicted = []
+    for p in pois:
+        if p.get('category') not in ('restaurant', 'cafe', 'pub'):
+            continue
+        if 'osm' in (p.get('sources', []) or []):
+            continue
+        if p.get('lat') is None:
+            continue
+        if not SEA_WORDS.search(p.get('address') or ''):
+            continue
+        d = min(dist_pt_seg_m(p['lng'], p['lat'], x, y) for x, y in segs)
+        if d <= COAST_M:
+            continue  # actually at the seafront: position and address agree
+        p['position_unresolved'] = True
+        p['unresolved_why'] = 'seafront-contradiction'
+        contradicted.append((p['id'], p.get('name'), round(d)))
+        print(f"contradiction: {p.get('name')} [{p['id']}] seafront address, {round(d)}m inland")
+
     json.dump(pois, open(a.pois, 'w'), indent=1)
     meta['hazard_roads'] = {'coast_m': COAST_M, 'sparse_n': SPARSE_N,
                             'segments': len(segs), 'flagged': len(flagged),
-                            'members': [{'id': i, 'name': n} for i, n, _, _, _ in flagged]}
+                            'members': [{'id': i, 'name': n} for i, n, _, _, _ in flagged],
+                            'contradictions': len(contradicted),
+                            'contradiction_members': [{'id': i, 'name': n} for i, n, _ in contradicted]}
     json.dump(meta, open(a.meta, 'w'), indent=1)
-    print(f'hazard_roads: {len(flagged)} flagged ({len(segs)} coast segments)')
+    print(f'hazard_roads: {len(flagged)} flagged, {len(contradicted)} contradictions ({len(segs)} coast segments)')
 
 
 if __name__ == '__main__':

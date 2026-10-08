@@ -20,6 +20,9 @@ without a merge. Overture rows never qualify as position donors.
   python3 verify_positions.py --pois packs/<id>/pois.json --meta packs/<id>/meta.json
 """
 import argparse, json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
 
 
 def norm(s):
@@ -76,7 +79,7 @@ def main():
     a = ap.parse_args()
     pois = json.load(open(a.pois))
     meta = json.load(open(a.meta))
-    attested, premises = [], []
+    attested, premises, alias_merges = [], [], []
 
     def eligible_f(p):
         s = p.get('sources', []) or []
@@ -139,11 +142,41 @@ def main():
         premises.append({'fsa': f['id'], 'osm': o['id'], 'name': f.get('name'),
                          'moved_m': round(d)})
 
+    # Rule 2 — maintainer-verified alias (user ground truth, e.g. mapper
+    # typo 'Puglies' for FSA 'Pugzie's Kiosk 7). Explicit fsa->osm mapping
+    # in data/aliases.json with non-empty evidence; every guard refuses
+    # loudly rather than merging on doubt. Same merge_into + audit trail.
+    try:
+        aliases = json.load(open(ROOT / 'data' / 'aliases.json')).get('aliases', [])
+    except Exception as ex:
+        print(f'verify-positions: aliases unreadable ({str(ex)[:60]}), alias rule off')
+        aliases = []
+    by_id = {p.get('id'): p for p in pois}
+    for al in aliases:
+        target = al.get('merge_osm')
+        if not target:
+            continue
+        f, o = by_id.get(al.get('id')), by_id.get(target)
+        if f is None or o is None:
+            print(f'verify-positions ALIAS REFUSED (missing record): {al.get("id")} -> {target}')
+            continue
+        if not (al.get('evidence') or []):
+            print(f'verify-positions ALIAS REFUSED (no evidence): {al.get("id")} -> {target}')
+            continue
+        if not eligible_f(f) or not (('osm' in (o.get('sources', []) or [])) and not o.get('superseded_by')):
+            print(f'verify-positions ALIAS REFUSED (ineligible): {al.get("id")} -> {target}')
+            continue
+        d = dist_m(f['lat'], f['lng'], o['lat'], o['lng'])
+        merge_into(f, o, 'alias', d)
+        alias_merges.append({'fsa': f['id'], 'osm': o['id'], 'name': f.get('name'),
+                             'moved_m': round(d), 'evidence': al['evidence'][:3]})
+
     json.dump(pois, open(a.pois, 'w'), indent=1)
     meta['verify_positions'] = {'attested_merges': attested,
-                                'premises_merges': premises}
+                                'premises_merges': premises,
+                                'alias_merges': alias_merges}
     json.dump(meta, open(a.meta, 'w'), indent=1)
-    print(f'verify-positions: {len(attested)} attested, {len(premises)} premises merges')
+    print(f'verify-positions: {len(attested)} attested, {len(premises)} premises, {len(alias_merges)} alias merges')
 
 
 if __name__ == '__main__':

@@ -483,7 +483,8 @@ def assert_position_invariants(pois_data, m, packdir):
                          f'without an approved creation path, e.g. {prov[:5]}')
     logged = {(e.get('fsa'), e.get('osm')) for e in
               (m.get('verify_positions') or {}).get('attested_merges', [])
-              + (m.get('verify_positions') or {}).get('premises_merges', [])}
+              + (m.get('verify_positions') or {}).get('premises_merges', [])
+              + (m.get('verify_positions') or {}).get('alias_merges', [])}
     unlogged = [p['id'] for p in pois_data if p.get('verified_position')
                 and (p['id'], p.get('verified_from')) not in logged]
     if unlogged:
@@ -499,7 +500,7 @@ def assert_position_invariants(pois_data, m, packdir):
     # pin with no leg is an explainability bug: fail loudly, never ship it.
     bare = [p['id'] for p in pois_data
             if not p.get('position_hazard')
-            and p.get('unresolved_why') != 'stale-orphan'
+            and p.get('unresolved_why') not in ('stale-orphan', 'seafront-contradiction')
             and not p.get('keep_evidence')]
     if bare:
         raise SystemExit(f'POSITION GATE: {len(bare)} shown pins without '
@@ -519,6 +520,8 @@ def flag_stale_orphans(pois_data, now):
     regardless of match method. Re-run safe (clears first)."""
     n = 0
     for p in pois_data:
+        if p.get('unresolved_why') == 'seafront-contradiction':
+            continue  # set by hazard_roads; owned there, never touched here
         p.pop('unresolved_why', None)
         s = p.get('sources', []) or []
         if 'osm' not in s or any(x in s for x in ('fsa', 'ch', 'servicemap', 'atp', 'chain', 'prh')):

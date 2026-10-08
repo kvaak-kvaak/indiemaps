@@ -28,6 +28,18 @@
     "ATP fireaway_gb Southend branch: housenumber 376-378, London Road, SS0 7HZ (chain-canonical address)",
     "Same postcode SS0 7HZ + shared brand token; different housenumbers so auto-link refused (human verified instead)"
    ]
+  },
+  {
+   "id": "fsa-513242",
+   "merge_osm": "osm-way-90626963",
+   "registered_name": "Pugzie's",
+   "verified": "2026-10-08",
+   "verified_by": "maintainer ground truth (user)",
+   "evidence": [
+    "User ground truth 2026-10-08: OSM 'Puglies' way 90626963 IS FSA 'Pugzie's Kiosk 7' (mapper typo, same seafront kiosk)",
+    "FSA 513242: Kiosk 7, Western Esplanade, SS1 1EE (batch position 1.5km off at postcode centroid)",
+    "OSM way 90626963: amenity=cafe building on Western Esplanade seafront (surveyed position)"
+   ]
   }
  ]
 }
