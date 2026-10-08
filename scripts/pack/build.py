@@ -361,7 +361,7 @@ def flag_keep_evidence(pois_data, now):
     record. Hidden-tier pins (hazard, stale-orphan) keep whatever evidence
     they have — evidence explains, hiding decides. Re-run safe."""
     kept = {'atp': 0, 'fsa': 0, 'ch': 0, 'recent_osm': 0, 'nhs': 0,
-            'servicemap': 0, 'chain': 0, 'prh': 0}
+            'servicemap': 0, 'chain': 0, 'prh': 0, 'ov_direct': 0}
     for p in pois_data:
         s = p.get('sources', []) or []
         ev = []
@@ -386,6 +386,9 @@ def flag_keep_evidence(pois_data, now):
         if 'servicemap' in s:
             ev.append({'rule': 'servicemap-record',
                        'meaning': 'City of Helsinki Service Map (CC BY 4.0)'})
+        if p.get('provisional_creation') == 'ov-direct':
+            ev.append({'rule': 'overture-direct',
+                       'meaning': 'Overture record at high provider confidence — parcel-grade position'})
         if 'chain' in s:
             ev.append({'rule': 'chain-record',
                        'meaning': 'Chain-published data (Restel/Raflaamo, first-party)'})
@@ -401,7 +404,7 @@ def flag_keep_evidence(pois_data, now):
                 key = {'atp-contributor': 'atp', 'fsa-linked': 'fsa',
                         'ch-corroborated': 'ch', 'recent-osm-touch': 'recent_osm',
                         'nhs-listed': 'nhs', 'chain-record': 'chain',
-                        'prh-listed': 'prh',
+                        'prh-listed': 'prh', 'overture-direct': 'ov_direct',
                         'servicemap-record': 'servicemap'}[e['rule']]
                 kept[key] += 1
         else:
@@ -458,9 +461,10 @@ def assert_position_invariants(pois_data, m, packdir):
       position_approx (the flag repair class: silent precision claims).
     - No provisional_creation records anywhere (creation rights are still
       barred project-wide; any future creation path must update this gate
-      deliberately, never slip past it). APPROVED PATH: 'atp-chain'
+      deliberately, never slip past it). APPROVED PATHS: 'atp-chain'
       (chain-spider provenance + same-matcher anti-duplicate, user-approved
-      2026-10-06) — anything else still fails.
+      2026-10-06) and 'ov-direct' (0.99 confidence + class map + same-matcher
+      anti-duplicate, user-approved 2026-10-08) — anything else still fails.
     - Every verified_position merge has a matching meta.verify_positions
       entry (auditable moves only).
     - Every position_hazard record names its triggering road class."""
@@ -473,7 +477,7 @@ def assert_position_invariants(pois_data, m, packdir):
                          f'position_approx, e.g. {bad_approx[:5]}')
     prov = [p['id'] for p in pois_data
             if p.get('provisional_creation')
-            and p.get('provisional_creation') != 'atp-chain']
+            and p.get('provisional_creation') not in ('atp-chain', 'ov-direct')]
     if prov:
         raise SystemExit(f'POSITION GATE: {len(prov)} provisional creations '
                          f'without an approved creation path, e.g. {prov[:5]}')

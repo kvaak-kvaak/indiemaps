@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
-"""Overture contact backfill: websites + phones for listings that lack them.
+"""Overture contact backfill + high-confidence direct creation.
 
-FSA carries no websites and unmapped OSM nodes carry no contact — but the same
-business usually exists in Overture (FSQ/Meta-sourced, Microsoft excluded).
-This stage fills ONLY empty website/phone fields, records overture_id, and
-appends 'overture' to sources. Never overwrites surveyed data, never invents.
+Backfill: websites + phones for listings that lack them (FSA carries no
+websites, unmapped OSM nodes carry no contact). Fills ONLY empty fields,
+never overwrites surveyed data, never invents.
+
+Direct creation (user-approved 2026-10-08, ov-direct path): unmatched
+Overture rows may become pins iff max(Meta-dataset confidence, Overture
+confidence) >= 0.99 AND the category maps to pins or search-only (junk
+classes excluded by map, default-exclude for unlisted). Positions are
+parcel-grade (geo_precision overture + position_approx, stated not
+surveyed). Ids from GERS ids (ov- + 16 hex). Quarantine applies. A new
+creation path deliberately extends the recount gate (see build.py).
 
 Identity note (recorded decision): overture_id is the Overture places-theme
 feature ID. Overture feature IDs are GERS IDs only where the entity
@@ -106,6 +113,108 @@ def pull_raw(w, s, e, n, rel):
     return out
 
 
+# Direct-creation class map (user-approved 2026-10-08): confidence gate
+# (max Meta/Overture >= 0.99) admits; this map decides pins vs
+# search-only vs excluded. Unlisted categories EXCLUDE (fail-closed:
+# new classes never sneak in). Schools searchable ("meh"), stations /
+# dealers / petrol pin (user decision); parking lots + manufacturers +
+# ATMs excluded (measured junk).
+OV_PIN = {
+    'restaurant': 'restaurant', 'fast_food_restaurant': 'restaurant',
+    'casual_eatery': 'restaurant', 'food_court': 'restaurant',
+    'cafe': 'cafe', 'coffee_shop': 'cafe', 'bakery': 'cafe',
+    'ice_cream_shop': 'cafe', 'bar': 'pub', 'pub': 'pub',
+    'brewery': 'pub', 'nightclub': 'pub',
+    'hotel': 'hotel', 'motel': 'hotel',
+    'fashion_and_apparel_store': 'shopping', 'convenience_store': 'shopping',
+    'food_and_beverage_store': 'shopping', 'hardware_home_and_garden_store': 'shopping',
+    'electronics_store': 'shopping', 'flowers_and_gifts_store': 'shopping',
+    'sporting_goods_store': 'shopping', 'shopping': 'shopping',
+    'shopping_mall': 'shopping', 'department_store': 'shopping',
+    'books_music_and_video_store': 'shopping', 'arts_crafts_and_hobby_store': 'shopping',
+    'second_hand_store': 'shopping', 'laundry_service': 'shopping',
+    'bank_or_credit_union': 'services', 'financial_service': 'services',
+    'food_bank': 'services', 'post_office': 'services',
+    'personal_or_beauty_service': 'services', 'personal_care_and_beauty_store': 'services',
+    'wellness_service': 'services', 'complementary_and_alternative_medicine': 'services',
+    'automotive_service': 'services', 'auto_dealer': 'services',
+    'gas_station': 'services', 'fueling_station': 'services',
+    'animal_or_pet_service': 'services',
+    'gym': 'services', 'fitness_studio': 'services', 'sport_or_fitness_facility': 'services',
+    'dental_clinic': 'health', 'outpatient_care_facility': 'health',
+    'doctors_office': 'health', 'hospital': 'health', 'pharmacy_and_drug_store': 'health',
+    'behavioral_or_mental_health_clinic': 'health', 'diagnostics_imaging_or_lab_service': 'health',
+    'medical_service': 'health',
+    'museum': 'culture', 'movie_theater': 'culture', 'library': 'culture',
+    'christian_place_of_worship': 'culture', 'hindu_place_of_worship': 'culture',
+    'jewish_place_of_worship': 'culture', 'muslim_place_of_worship': 'culture',
+    'art_gallery': 'culture', 'performing_arts_venue': 'culture',
+    'park': 'attraction', 'amusement_park': 'attraction', 'zoo': 'attraction',
+    'train_station': 'transport', 'public_transit_facility_or_service': 'transport',
+    'airport': 'transport',
+}
+OV_SEARCH = {
+    'elementary_school', 'high_school', 'preschool', 'specialty_school',
+    'place_of_learning', 'college_or_university',
+    'real_estate_service', 'professional_service', 'b2b_office_and_professional_service',
+    'technical_service', 'design_service', 'media_service', 'printing_service',
+    'legal_service', 'accounting_service', 'insurance_service',
+    'event_or_party_service', 'home_service', 'social_or_community_service',
+    'civic_organization', 'family_service', 'senior_living_facility',
+    'fire_station', 'police_station',
+    'corporate_or_business_office', 'coworking_space',
+}
+OV_CONF_PASS = 0.99  # max(Meta confidence, Overture confidence)
+
+ROOT = Path(__file__).resolve().parents[2]
+
+
+def quarantine_ids():
+    try:
+        return set(json.load(open(ROOT / 'data' / 'quarantine.json')).get('ids', {}))
+    except Exception:
+        return set()
+
+
+def ov_confidence(o):
+    """max(Meta-dataset confidence, Overture top-level confidence)."""
+    top = o.get('confidence') or 0
+    meta = 0
+    for s in (o.get('sources') or []):
+        try:
+            if isinstance(s, dict) and 'meta' in str(s.get('dataset', '')).lower():
+                meta = max(meta, s.get('confidence') or 0)
+        except Exception:
+            pass
+    try:
+        return max(float(top), float(meta))
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def row_matches_any_poi(o, pois):
+    """Creation anti-duplicate: does this raw row match ANY existing POI
+    under the same matcher (name + distance + postcode, no contact needed)?
+    Catches contact-bare rows the backfill pull can't see (measured: a
+    contact-bare Pasha Kebab Bar 53m from its FSA namesake)."""
+    for p in pois:
+        if not p.get('name'):
+            continue
+        d = dist_m(p['lat'], p['lng'], o['lat'], o['lon'])
+        ppc = norm_pc(p.get('postcode'))
+        try:
+            opc = norm_pc((o.get('addresses') or [{}])[0].get('postcode'))
+        except Exception:
+            opc = None
+        pc = bool(opc and ppc and opc == ppc)
+        if d > (250 if pc else 120):
+            continue
+        ns = nscore(p['name'], o.get('name') or '')
+        if accept(p['name'], o.get('name') or '', ns, d, pc):
+            return True
+    return False
+
+
 def norm_pc(p):
     return (p or '').replace(' ', '').lower() or None
 
@@ -176,6 +285,7 @@ def main():
     filled_web, filled_phone = 0, 0
     filled_soc = {'facebook': 0, 'instagram': 0, 'twitter': 0}
     upgraded_soc = {'facebook': 0, 'instagram': 0, 'twitter': 0}
+    claimed = set()  # Overture ids matched to a POI (creation skips these)
     for p in pois:
         # clear previous backfill (re-run safe); manual/ surveyed values stay
         if p.get('website_source') == 'overture':
@@ -210,6 +320,7 @@ def main():
                     bs, best = sc, o
         if best is None:
             continue
+        claimed.add(best.get('id'))
         contributed = False
         if not p.get('website') and best.get('website'):
             p['website'] = best['website']
@@ -251,14 +362,111 @@ def main():
             p['overture_datasets'] = sorted(x for x in (best.get('datasets') or []) if x != 'Overture')
             if 'overture' not in p.get('sources', []):
                 p['sources'].append('overture')
+    # Direct creation (ov-direct): unmatched rows passing the confidence
+    # gate and the class map become pins (or search-only). Same-matcher
+    # anti-duplicate: anything any POI would match is claimed above.
+    # Positions are parcel-grade (approx, stated). Re-run safe: stable
+    # GERS-based ids make creation idempotent.
+    created, created_ids, created_search, skipped_dupe = 0, [], 0, 0
+    gate_tally = {'pass': 0, 'unlisted': 0}
+    qids = quarantine_ids()
+    known_ids = {p.get('id') for p in pois}
+    try:
+        raw_all = pull_raw(w, s, e, n, (ov[0].get('release') if ov else RELEASE_PIN))
+    except Exception as ex:
+        print(f'overture direct creation skipped ({str(ex)[:100]})')
+        raw_all = []
+    for o in raw_all:
+        if not o.get('name') or o.get('id') in claimed:
+            continue
+        if row_matches_any_poi(o, pois):
+            skipped_dupe += 1
+            continue
+        if ov_confidence(o) < OV_CONF_PASS:
+            continue
+        cat = o.get('basic_category')
+        if cat in OV_PIN:
+            cls, search_only = OV_PIN[cat], False
+        elif cat in OV_SEARCH:
+            cls, search_only = 'services', True
+        else:
+            gate_tally['unlisted'] += 1
+            continue
+        gate_tally['pass'] += 1
+        oid = 'ov-' + str(o['id']).replace('-', '')[:16]
+        if oid in known_ids or oid in qids:
+            if oid in qids:
+                print(f'quarantine: refusing to create {oid}')
+            continue
+        addr = ''
+        try:
+            a0 = (o.get('addresses') or [{}])[0] or {}
+            addr = a0.get('freeform') or ''
+        except Exception:
+            pass
+        pc = None
+        try:
+            pc = norm_pc(a0.get('postcode')) if addr else None
+        except Exception:
+            pass
+        web = ph = ''
+        try:
+            ws, ps = o.get('websites') or [], o.get('phones') or []
+            web = ws[0] if ws else ''
+            ph = ps[0] if ps else ''
+        except Exception:
+            pass
+        o_brand = ''
+        try:
+            bn = (o.get('brand') or {}).get('names') or []
+            o_brand = (bn[0] or {}).get('primary', '') if bn else ''
+        except Exception:
+            pass
+        label = {'restaurant': 'Restaurant', 'cafe': 'Café', 'pub': 'Pub / Bar',
+                 'shopping': 'Shop', 'services': 'Services', 'health': 'Health',
+                 'culture': 'Culture', 'hotel': 'Hotel', 'attraction': 'Attraction',
+                 'transport': 'Transport', 'parking': 'Parking'}.get(cls, 'Services')
+        rec = {
+            'id': oid, 'name': o['name'], 'brand': o_brand,
+            'category': cls, 'category_label': label,
+            'lat': o.get('lat'), 'lng': o.get('lon'), 'geo_precision': 'overture',
+            'position_approx': True,
+            'address': addr, 'postcode': pc,
+            'photos': [], 'description': '',
+            'sources': ['overture'],
+            'overture_id': o['id'],
+            'overture_datasets': sorted(x.get('dataset') for x in (o.get('sources') or []) if isinstance(x, dict) and x.get('dataset')),
+            'overture_confidence': round(ov_confidence(o), 3),
+            'provisional_creation': 'ov-direct',
+        }
+        if web:
+            rec['website'], rec['website_source'] = web, 'overture'
+        if ph:
+            rec['phone'], rec['phone_source'] = ph, 'overture'
+        for net, frags in SOCIAL_DOMAINS:
+            for frag in frags:
+                url = pick_social(o.get('socials'), frag)
+                if url:
+                    rec[net], rec[f'{net}_source'] = url, 'overture'
+                    break
+        if search_only:
+            rec['search_only'] = True
+            created_search += 1
+        pois.append(rec)
+        known_ids.add(oid)
+        created += 1
+        created_ids.append(oid)
     json.dump(pois, open(a.pois, 'w'), indent=1)
     meta = json.load(open(a.meta))
     meta['overture'] = {'release': (ov[0].get('release') if ov else RELEASE_PIN), 'contact_rows_in_bbox': len(ov),
                         'websites_filled': filled_web, 'phones_filled': filled_phone,
                         'socials_filled': filled_soc, 'socials_upgraded': upgraded_soc,
-                        'meta_bonus': META_BONUS}
+                        'meta_bonus': META_BONUS,
+                        'created': created, 'created_search_only': created_search,
+                        'created_ids': created_ids, 'skipped_dupe': skipped_dupe,
+                        'gate_tally': gate_tally}
     json.dump(meta, open(a.meta, 'w'), indent=1)
-    print(f'backfilled websites={filled_web} phones={filled_phone} socials={filled_soc} upgraded={upgraded_soc}')
+    print(f'backfilled websites={filled_web} phones={filled_phone} socials={filled_soc} upgraded={upgraded_soc} | created {created} ({created_search} search-only), skipped {skipped_dupe} same-store variants, gate {gate_tally}')
     # Raw-input handoff artifact (frozen-input comparison; not consumed by
     # the pipeline itself): every Places row in the rectangle, pinned
     # release, before contact-only filtering and the Microsoft exclusion.
