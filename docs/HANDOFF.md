@@ -658,3 +658,19 @@ Read these three docs first, in order:
 - CH snapshot_files stamped in meta (Sept file confirmed).
 - Comparison actions shipped in handoff-southend/: atp-created
   slice (155), review-linkage sample (115), gap notes in README.
+
+## Session log (2026-10-08, Overture direct creation)
+
+- Commit 13e4ca5: ov-direct path in overture.py (0.99
+  max(Meta,Overture) gate + 3-class map + same-matcher
+  anti-dupe + quarantine + gate exception + overture-direct
+  keep leg). CI Southend green: created 541 (89 search-only),
+  391 same-store variants skipped, bare 0, total 2130->2622.
+- Audit caught two live issues pre-CI: nsi-style brand ids
+  (fixed by location-bound ids earlier pattern) and a
+  contact-bare Pasha duplicate the backfill pull can't see
+  (fixed by row_matches_any_poi over raw rows, not the
+  contact-filtered pull).
+- Known-visible: parcel-grade positions carry approx flags;
+  same-site siblings (Tesco Esso/Metro) and near-duplicate
+  church positions stay visible for audit, not merged.
