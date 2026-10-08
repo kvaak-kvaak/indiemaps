@@ -635,3 +635,16 @@ Read these three docs first, in order:
   /tmp/opencode/backup-pre2130/.
 - Verified live: Akropolis 80% + bayes 4.157 + tier 1,
   Specsavers x2 present.
+
+## Session log (2026-10-08, frozen handoff-southend/)
+
+- Built handoff-southend/ (local-only, gitignored, 15MB): OSM
+  elements + method note, FHRS 893, Overture raw (9787 rows,
+  full contributor licensing), ATP raw + ledger (404 spiders),
+  CH evidence (654 rows), NHS slice (39, all postcode-geocoded),
+  ta-matches (334) + manifest (SHAs, vintages, attribution).
+- Surprise: FHRS re-pull still carries extractDate 2026-10-06
+  (1477 establishments) — requested vintage recovered exactly.
+- Overture schema corrected (basic_category/taxonomy, no
+  `categories` column); per-source licenses confirmed
+  CDLA-Permissive-2.0 in the raw rows.
