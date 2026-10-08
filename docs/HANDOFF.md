@@ -674,3 +674,15 @@ Read these three docs first, in order:
 - Known-visible: parcel-grade positions carry approx flags;
   same-site siblings (Tesco Esso/Metro) and near-duplicate
   church positions stay visible for audit, not merged.
+
+## Session log (2026-10-08, demo promotion to 2622)
+
+- Promoted CI Southend run 37854808821 (ov-direct, spider=false)
+  to demo: default view 1544 -> 1774 (+541 created, +68 net
+  of hidden/excluded shifts). Foodbank absent. Backup in
+  /tmp/opencode/backup-pre2622/.
+- Verified live: Body Shop (shopping), hospital search class
+  intact, keep badges on ov pins. NOTE: Q4 release still holds
+  the older Southend (spider=false runs don't publish) — needs
+  a spider=true run to land ov-direct in Q4 + the 47-area
+  rollout, both pending user go.
