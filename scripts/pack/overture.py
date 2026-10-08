@@ -88,16 +88,18 @@ def pull_raw(w, s, e, n, rel):
     con.execute("SET s3_region='us-west-2'; SET http_timeout=30000;")
     rows = con.execute(f"""SELECT id, names.primary AS name,
       (bbox.xmin+bbox.xmax)/2 AS lon, (bbox.ymin+bbox.ymax)/2 AS lat,
-      addresses AS addresses_raw, categories AS categories,
-      confidence AS confidence, websites AS websites, phones AS phones,
+      addresses AS addresses_raw, basic_category AS basic_category,
+      taxonomy AS taxonomy, confidence AS confidence,
+      websites AS websites, phones AS phones,
       socials AS socials, sources AS sources, brand AS brand,
+      emails AS emails, operating_status AS operating_status,
       bbox AS bbox_raw
     FROM read_parquet('{S3BASE_TMPL.format(rel=rel)}')
     WHERE bbox.xmin <= {e} AND bbox.xmax >= {w} AND bbox.ymin <= {n} AND bbox.ymax >= {s}
     """).fetchall()
-    cols = ['id', 'name', 'lon', 'lat', 'addresses', 'categories',
-            'confidence', 'websites', 'phones', 'socials', 'sources',
-            'brand', 'bbox_raw']
+    cols = ['id', 'name', 'lon', 'lat', 'addresses', 'basic_category',
+            'taxonomy', 'confidence', 'websites', 'phones', 'socials',
+            'sources', 'brand', 'emails', 'operating_status', 'bbox_raw']
     out = [dict(zip(cols, r)) for r in rows]
     for o in out:
         o['release'] = rel
