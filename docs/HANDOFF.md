@@ -648,3 +648,13 @@ Read these three docs first, in order:
 - Overture schema corrected (basic_category/taxonomy, no
   `categories` column); per-source licenses confirmed
   CDLA-Permissive-2.0 in the raw rows.
+
+## Session log (2026-10-08, hospital/search-only + comparison actions)
+
+- FSA_EXCLUDE += Farmers/growers (9 gone); 147 hospital/childcare
+  records search_only (1 OSM-merged stays visible); pin-on-hit
+  transient marker in selectPoi (+ detail-close cleanup).
+  Commit 9d3a6ca, CI Southend green: 146 search_only, bare 0.
+- CH snapshot_files stamped in meta (Sept file confirmed).
+- Comparison actions shipped in handoff-southend/: atp-created
+  slice (155), review-linkage sample (115), gap notes in README.
