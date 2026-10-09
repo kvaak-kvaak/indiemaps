@@ -715,3 +715,15 @@ Read these three docs first, in order:
   pins flagged). Fixed to match the gate; Helsinki clean
   (11,014 total, 0 violations). Helsinki ov-created sanity:
   schools correctly search-only, categories sane.
+
+## Session log (2026-10-08, 64-pack gate GREEN)
+
+- Final audit: 64/64 packs, 0 violations (bare 0, prov 0,
+  verified all). Assembly notes: stale partial dirs from
+  failed runs block artifact extraction (clear area dir,
+  re-download); batchA/batchB-first artifacts recovered the
+  rest. Full table in /tmp/opencode/audit64.txt.
+- FI ta flags flipped (16 explicit False overrode default);
+  FI final all green with ta populated.
+- Release gate satisfied. Remaining: triage street-checks,
+  Friday cut (freeze+tag, notes, demo decision).
