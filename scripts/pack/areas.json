@@ -512,7 +512,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-centre-0.1x0.09"
  },
  "eu/fi/pirkanmaa/tampere": {
@@ -525,7 +525,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-centre-0.1x0.09"
  },
  "eu/fi/keski-suomi/jyvaskyla": {
@@ -538,7 +538,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-centre-0.1x0.09"
  },
  "eu/fi/pohjois-pohjanmaa/oulu": {
@@ -551,7 +551,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-centre-0.1x0.09"
  },
  "eu/fi/uusimaa/vantaa": {
@@ -564,7 +564,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-centre-0.1x0.09"
  },
  "eu/fi/uusimaa/porvoo": {
@@ -577,7 +577,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-centre-0.1x0.09"
  },
  "eu/fi/satakunta/pori": {
@@ -590,7 +590,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-centre-0.1x0.09"
  },
  "eu/fi/pohjanmaa/vaasa": {
@@ -603,7 +603,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-centre-0.1x0.09"
  },
  "eu/fi/pohjois-savo/kuopio": {
@@ -616,7 +616,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-centre-0.1x0.09"
  },
  "eu/fi/pohjois-karjala/joensuu": {
@@ -629,7 +629,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-centre-0.1x0.09"
  },
  "eu/fi/päijät-häme/lahti": {
@@ -642,7 +642,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-centre-0.1x0.09"
  },
  "eu/fi/etelä-karjala/lappeenranta": {
@@ -655,7 +655,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-centre-0.1x0.09"
  },
  "eu/fi/lappi/rovaniemi": {
@@ -668,7 +668,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-centre-0.1x0.09"
  },
  "eu/fi/uusimaa/espoo-tapiola": {
@@ -681,7 +681,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-district-centre"
  },
  "eu/fi/uusimaa/espoo-matinkyla": {
@@ -694,7 +694,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-district-centre"
  },
  "eu/fi/uusimaa/espoo-leppavaara": {
@@ -707,7 +707,7 @@
   ],
   "fsa": null,
   "servicemap_muni": null,
-  "ta": false,
+  "ta": true,
   "bbox_source": "nominatim-district-centre"
  }
 }
