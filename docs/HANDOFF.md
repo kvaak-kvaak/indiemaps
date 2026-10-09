@@ -705,3 +705,13 @@ Read these three docs first, in order:
 - FI-16 full spider=false rebuild (uniform final code: PBF, _fi,
   ta-default, rec-vector, country matrix) + Helsinki refresh in
   parallel. Then: 64-pack audit, triage, cut.
+
+## Session log (2026-10-08, FI ta flags + audit bug)
+
+- FI areas carried explicit 'ta': False (overrode default-on).
+  Flipped 16 to True; full spider=false uniformity rebuild
+  dispatched (ta + rec-vector + PBF + _fi in one pass).
+- Audit false alarm: prov check predated ov-direct (1341 Helsinki
+  pins flagged). Fixed to match the gate; Helsinki clean
+  (11,014 total, 0 violations). Helsinki ov-created sanity:
+  schools correctly search-only, categories sane.
