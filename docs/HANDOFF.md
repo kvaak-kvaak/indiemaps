@@ -699,3 +699,9 @@ Read these three docs first, in order:
 - Cross-consumer bug caught by CI: apply_aliases crashed on
   the merge_osm schema (KeyError) — fixed by ownership guard
   (Rule 2 owns merge entries). Two alias schemas now explicit.
+
+## Session log (2026-10-08, final uniformity passes)
+
+- FI-16 full spider=false rebuild (uniform final code: PBF, _fi,
+  ta-default, rec-vector, country matrix) + Helsinki refresh in
+  parallel. Then: 64-pack audit, triage, cut.
