@@ -13,7 +13,11 @@ One rule per row of the audit table; nothing here is advisory.
   never hidden.
 - Anything the pipeline moves (verified merges, chain snaps) is logged
   with the old and new position and the reason. Unlogged moves fail the
-  build.
+  build. Maintainer-verified renames (mapper typos, rebrands) merge
+  through explicit aliases with evidence — never by fuzzy matching.
+- A seafront address on an inland batch position is a contradiction:
+  flagged for review (the coastal gate keys on position, so it can't
+  see these), never moved, never deleted.
 
 ## Corroboration, not proximity
 
