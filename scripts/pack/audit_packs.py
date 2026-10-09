@@ -35,7 +35,7 @@ def main():
                 and x.get('unresolved_why') != 'stale-orphan'
                 and not x.get('keep_evidence')]
         prov = [x['id'] for x in p if x.get('provisional_creation')
-                and x.get('provisional_creation') != 'atp-chain']
+                and x.get('provisional_creation') not in ('atp-chain', 'ov-direct')]
         w = m.get('weights', {})
         rows.append({
             'area': area.split('/')[-1], 'total': len(p), 'hidden': hid,
