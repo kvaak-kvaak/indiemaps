@@ -1,9 +1,10 @@
-# IndieMaps POI packs — 2026 Q4 release notes (DRAFT)
+# IndieMaps POI packs — 2026 Q4 release (CUT 2026-10-09)
 
-> Numbers marked TBD fill in from the audit table on cut day. Nothing
-> ships with a red cell except listed exceptions below.
+64 areas, audit table green (0 violations): 269,718 POIs,
+117,740 hidden-with-reason, 37,683 archive-enriched, all packs
+verified. Coverage below; per-pack provenance in manifest.json.
 
-## Coverage (TBD)
+## Coverage (47 England + 17 Finland)
 
 - 64 areas: 47 England (Essex + all 32 London boroughs + City), 17 Finland
   (Helsinki metro incl. 3 Espoo sub-boxes, Tampere, Turku, + 12 cities).
