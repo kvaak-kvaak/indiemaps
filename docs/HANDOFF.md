@@ -735,3 +735,15 @@ Read these three docs first, in order:
   farmers excluded) to demo: default 1774 -> 1770 (net of
   hidden-class shifts). Backup in /tmp/opencode/backup-pre2622b/.
 - Verified live: Pugzie's at surveyed seafront position.
+
+## Session log (2026-10-09, FRIDAY CUT)
+
+- Q4 frozen with 64 packs (65 assets incl. manifest): 269,718
+  POIs, 117,740 hidden-with-reason, 37,683 archive-enriched.
+  Assembled locally (release.py union over staged packs),
+  uploaded with --clobber. Release notes carry real numbers.
+- Staging lessons: shell-quoted copy loops mangle paths (use
+  Python); stale partial dirs block artifact extraction; the
+  A/B old-pipeline copy trips naive audits (not an area, not
+  in manifest — correctly excluded from release).
+- Demo already on Oct-9 Southend (2622). Release week closed.
