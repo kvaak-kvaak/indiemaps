@@ -727,3 +727,11 @@ Read these three docs first, in order:
   FI final all green with ta populated.
 - Release gate satisfied. Remaining: triage street-checks,
   Friday cut (freeze+tag, notes, demo decision).
+
+## Session log (2026-10-09, demo promotion to 2622-Oct9)
+
+- Promoted CI Southend run 37862414020 (final code: ov-direct,
+  Pugzie's merge, contradiction flag, hospital search-only,
+  farmers excluded) to demo: default 1774 -> 1770 (net of
+  hidden-class shifts). Backup in /tmp/opencode/backup-pre2622b/.
+- Verified live: Pugzie's at surveyed seafront position.

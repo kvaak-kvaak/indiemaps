@@ -54693,6 +54693,8 @@
    "dist_m": null,
    "candidates": 4
   },
+  "position_unresolved": true,
+  "unresolved_why": "seafront-contradiction",
   "website_source": "overture",
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -60287,6 +60289,8 @@
    "dist_m": null,
    "candidates": 22
   },
+  "position_unresolved": true,
+  "unresolved_why": "seafront-contradiction",
   "website_source": "overture",
   "phone_source": "overture",
   "overture_id": "1cbcfb36-10e3-459b-8753-86e28e726a68",
@@ -61548,6 +61552,89 @@
   "tier": 2
  },
  {
+  "id": "fsa-512738",
+  "fsa_id": 512738,
+  "osm_type": "node",
+  "osm_id": 664907323,
+  "name": "Pizza Hut",
+  "category": "restaurant",
+  "category_label": "Takeaway",
+  "lat": 51.5424083,
+  "lng": 0.695237,
+  "geo_precision": "osm",
+  "address": "Pizza Hut Delivery, 382 - 384 London Road, Westcliff-On-Sea, Essex, SS0 7HZ",
+  "postcode": "SS0 7HZ",
+  "phone": "+44 1702 391333",
+  "email": "",
+  "website": "https://www.pizzahut.co.uk/huts/uk-1/7578-westcliff-on-sea/",
+  "facebook": "https://www.facebook.com/102076096521744",
+  "instagram": "",
+  "twitter": "",
+  "opening_hours_osm": "Mo-Th 11:00-23:00; Fr-Sa 11:00-24:00; Su 11:00-23:00",
+  "opening_hours": {},
+  "cuisine": "pizza",
+  "brand_wikidata": "Q107293079",
+  "wikipedia": null,
+  "wikidata": null,
+  "amenities": [
+   "Cuisine: pizza",
+   "Takeaway"
+  ],
+  "photos": [],
+  "description": "",
+  "sources": [
+   "fsa",
+   "osm",
+   "overture",
+   "atp",
+   "ta"
+  ],
+  "osm_match": {
+   "score": 2.4,
+   "dist_m": 9,
+   "candidates": 30
+  },
+  "facebook_source": "overture",
+  "overture_id": "9cae2fa7-3496-4a32-b4f5-67042353f425",
+  "overture_match": {
+   "name": "Pizza Hut Westcliff On Sea",
+   "dist_m": 3
+  },
+  "overture_datasets": [
+   "meta"
+  ],
+  "atp_spider": "pizza_hut_gb",
+  "atp_brand": "Pizza Hut Delivery",
+  "atp_method": "wikidata",
+  "atp_match": {
+   "score": 2.5,
+   "method": "wikidata",
+   "candidates": 1
+  },
+  "atp_wikidata": "Q107293079",
+  "atp_nsi": "pizzahutdelivery-45095e",
+  "ta_rec_stars": [
+   1,
+   0,
+   0,
+   0,
+   2
+  ],
+  "ta_rec_n": 3,
+  "ta_rec_bayes": 3.712,
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   },
+   {
+    "rule": "fsa-linked",
+    "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
+   }
+  ],
+  "tier": 2
+ },
+ {
   "id": "fsa-513389",
   "fsa_id": 513389,
   "osm_type": null,
@@ -61622,89 +61709,6 @@
   "ta_rec_n": 29,
   "ta_rec_bayes": 2.801,
   "position_approx": true,
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   },
-   {
-    "rule": "fsa-linked",
-    "meaning": "Food Standards Agency open data \u2014 registration evidence, not proof of opening"
-   }
-  ],
-  "tier": 2
- },
- {
-  "id": "fsa-512738",
-  "fsa_id": 512738,
-  "osm_type": "node",
-  "osm_id": 664907323,
-  "name": "Pizza Hut",
-  "category": "restaurant",
-  "category_label": "Takeaway",
-  "lat": 51.5424083,
-  "lng": 0.695237,
-  "geo_precision": "osm",
-  "address": "Pizza Hut Delivery, 382 - 384 London Road, Westcliff-On-Sea, Essex, SS0 7HZ",
-  "postcode": "SS0 7HZ",
-  "phone": "+44 1702 391333",
-  "email": "",
-  "website": "https://www.pizzahut.co.uk/huts/uk-1/7578-westcliff-on-sea/",
-  "facebook": "https://www.facebook.com/102076096521744",
-  "instagram": "",
-  "twitter": "",
-  "opening_hours_osm": "Mo-Th 11:00-23:00; Fr-Sa 11:00-24:00; Su 11:00-23:00",
-  "opening_hours": {},
-  "cuisine": "pizza",
-  "brand_wikidata": "Q107293079",
-  "wikipedia": null,
-  "wikidata": null,
-  "amenities": [
-   "Cuisine: pizza",
-   "Takeaway"
-  ],
-  "photos": [],
-  "description": "",
-  "sources": [
-   "fsa",
-   "osm",
-   "overture",
-   "atp",
-   "ta"
-  ],
-  "osm_match": {
-   "score": 2.4,
-   "dist_m": 9,
-   "candidates": 30
-  },
-  "facebook_source": "overture",
-  "overture_id": "9cae2fa7-3496-4a32-b4f5-67042353f425",
-  "overture_match": {
-   "name": "Pizza Hut Westcliff On Sea",
-   "dist_m": 3
-  },
-  "overture_datasets": [
-   "meta"
-  ],
-  "atp_spider": "pizza_hut_gb",
-  "atp_brand": "Pizza Hut Delivery",
-  "atp_method": "wikidata",
-  "atp_match": {
-   "score": 2.5,
-   "method": "wikidata",
-   "candidates": 1
-  },
-  "atp_wikidata": "Q107293079",
-  "atp_nsi": "pizzahutdelivery-45095e",
-  "ta_rec_stars": [
-   1,
-   0,
-   0,
-   0,
-   2
-  ],
-  "ta_rec_n": 3,
-  "ta_rec_bayes": 3.712,
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -64491,14 +64495,14 @@
  {
   "id": "fsa-513242",
   "fsa_id": 513242,
-  "osm_type": null,
-  "osm_id": null,
+  "osm_type": "way",
+  "osm_id": 90626963,
   "name": "Pugzie's",
   "category": "shopping",
   "category_label": "Food shop",
-  "lat": 51.533625,
-  "lng": 0.710313,
-  "geo_precision": "fsa",
+  "lat": 51.53465285,
+  "lng": 0.6944442,
+  "geo_precision": "osm",
   "address": "Kiosk 7, Western Esplanade, Westcliff-On-Sea, Essex, SS1 1EE",
   "postcode": "SS1 1EE",
   "phone": "",
@@ -64517,14 +64521,18 @@
   "photos": [],
   "description": "",
   "sources": [
-   "fsa"
+   "fsa",
+   "osm"
   ],
   "osm_match": {
    "score": null,
    "dist_m": null,
    "candidates": 2
   },
-  "position_approx": true,
+  "osm_touched": "2016-07-26T14:54:22Z",
+  "osm_version": 3,
+  "verified_position": "alias",
+  "verified_from": "osm-way-90626963",
   "keep_evidence": [
    {
     "rule": "fsa-linked",
@@ -72991,7 +72999,7 @@
    "osm",
    "atp"
   ],
-  "atp_spider": "mbplc_gb",
+  "atp_spider": "miller_and_carter_gb",
   "atp_brand": "Miller & Carter",
   "atp_method": "wikidata",
   "atp_match": {
@@ -73001,6 +73009,7 @@
   },
   "atp_wikidata": "Q87067401",
   "atp_nsi": "millerandcarter-9b5453",
+  "atp_hours": "Mo-Tu 12:00-22:00; We-Sa 12:00-23:00; Su 12:00-22:00",
   "keep_evidence": [
    {
     "rule": "atp-contributor",
@@ -83208,6 +83217,8 @@
    "dist_m": null,
    "candidates": 0
   },
+  "position_unresolved": true,
+  "unresolved_why": "seafront-contradiction",
   "position_approx": true,
   "keep_evidence": [
    {
@@ -99940,6 +99951,8 @@
    "dist_m": null,
    "candidates": 14
   },
+  "position_unresolved": true,
+  "unresolved_why": "seafront-contradiction",
   "website_source": "overture",
   "phone_source": "overture",
   "facebook_source": "overture",
@@ -129666,41 +129679,6 @@
   "tier": 1
  },
  {
-  "id": "atp-audika_gb-audika_gb-9yf4cs",
-  "name": "Leigh-On-Sea",
-  "brand": "Audika",
-  "brand_wikidata": "Q2870745",
-  "category": "shopping",
-  "category_label": "Shop",
-  "lat": 51.5481514286365,
-  "lng": 0.632360087698272,
-  "geo_precision": "atp",
-  "address": "ss92ur",
-  "postcode": "ss92ur",
-  "website": "https://www.audika.co.uk/hearing-aids-centre/essex/audika-leigh-on-sea",
-  "website_source": "atp",
-  "phone": "+44 1702 711361",
-  "phone_source": "atp",
-  "atp_hours": "Mo-Fr 09:00-17:00; Sa-Su closed",
-  "photos": [],
-  "description": "",
-  "sources": [
-   "atp"
-  ],
-  "atp_spider": "audika_gb",
-  "atp_brand": "Audika",
-  "atp_method": "created-chain",
-  "atp_wikidata": "Q2870745",
-  "provisional_creation": "atp-chain",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ],
-  "tier": 1
- },
- {
   "id": "atp-argos-argos-3930ea-ff38gd",
   "name": "Argos",
   "brand": "Argos",
@@ -129727,6 +129705,41 @@
   "atp_method": "created-chain",
   "atp_wikidata": "Q4789707",
   "atp_nsi": "argos-3930ea",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ],
+  "tier": 1
+ },
+ {
+  "id": "atp-audika_gb-audika_gb-9yf4cs",
+  "name": "Leigh-On-Sea",
+  "brand": "Audika",
+  "brand_wikidata": "Q2870745",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.5481514286365,
+  "lng": 0.632360087698272,
+  "geo_precision": "atp",
+  "address": "ss92ur",
+  "postcode": "ss92ur",
+  "website": "https://www.audika.co.uk/hearing-aids-centre/essex/audika-leigh-on-sea",
+  "website_source": "atp",
+  "phone": "+44 1702 711361",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 09:00-17:00; Sa-Su closed",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "audika_gb",
+  "atp_brand": "Audika",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q2870745",
   "provisional_creation": "atp-chain",
   "keep_evidence": [
    {
@@ -129771,39 +129784,6 @@
   "tier": 1
  },
  {
-  "id": "atp-budgens_gb-budgens-232829-5wp1ab",
-  "name": "Budgens Budgens - Beaumont Court",
-  "brand": "Budgens",
-  "brand_wikidata": "Q4985016",
-  "category": "shopping",
-  "category_label": "Shop",
-  "lat": 51.544678119996,
-  "lng": 0.70734310000001,
-  "geo_precision": "atp",
-  "address": "ss26eb",
-  "postcode": "ss26eb",
-  "website": "https://www.budgens.co.uk/our-stores/budgens-beaumont-court",
-  "website_source": "atp",
-  "photos": [],
-  "description": "",
-  "sources": [
-   "atp"
-  ],
-  "atp_spider": "budgens_gb",
-  "atp_brand": "Budgens",
-  "atp_method": "created-chain",
-  "atp_wikidata": "Q4985016",
-  "atp_nsi": "budgens-232829",
-  "provisional_creation": "atp-chain",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ],
-  "tier": 1
- },
- {
   "id": "atp-busy_bees_gb-busybees-e7c9ca-56ff0",
   "name": "Busy Bees at Shoeburyness",
   "brand": "Busy Bees",
@@ -129830,6 +129810,39 @@
   "atp_method": "created-chain",
   "atp_wikidata": "Q28134563",
   "atp_nsi": "busybees-e7c9ca",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ],
+  "tier": 1
+ },
+ {
+  "id": "atp-budgens_gb-budgens-232829-5wp1ab",
+  "name": "Budgens Budgens - Beaumont Court",
+  "brand": "Budgens",
+  "brand_wikidata": "Q4985016",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.544678119996,
+  "lng": 0.70734310000001,
+  "geo_precision": "atp",
+  "address": "ss26eb",
+  "postcode": "ss26eb",
+  "website": "https://www.budgens.co.uk/our-stores/budgens-beaumont-court",
+  "website_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "budgens_gb",
+  "atp_brand": "Budgens",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q4985016",
+  "atp_nsi": "budgens-232829",
   "provisional_creation": "atp-chain",
   "keep_evidence": [
    {
@@ -130116,41 +130129,6 @@
   "tier": 1
  },
  {
-  "id": "atp-gap_trade_gb-gap-8a4d16-rkxtq9",
-  "name": "Gap",
-  "brand": "Gap",
-  "brand_wikidata": "Q125624088",
-  "category": "shopping",
-  "category_label": "Shop",
-  "lat": 51.5690409830314,
-  "lng": 0.643820800781214,
-  "geo_precision": "atp",
-  "address": "ss95pr",
-  "postcode": "ss95pr",
-  "website": "https://www.gap.uk.com/depot-network/southend-on-sea",
-  "website_source": "atp",
-  "phone": "+44 1702 416922",
-  "phone_source": "atp",
-  "photos": [],
-  "description": "",
-  "sources": [
-   "atp"
-  ],
-  "atp_spider": "gap_trade_gb",
-  "atp_brand": "Gap",
-  "atp_method": "created-chain",
-  "atp_wikidata": "Q125624088",
-  "atp_nsi": "gap-8a4d16",
-  "provisional_creation": "atp-chain",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ],
-  "tier": 1
- },
- {
   "id": "atp-game_gb-game-b2f4fe-ri3iib",
   "name": "Game",
   "brand": "Game",
@@ -130177,6 +130155,41 @@
   "atp_method": "created-chain",
   "atp_wikidata": "Q5519813",
   "atp_nsi": "game-b2f4fe",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ],
+  "tier": 1
+ },
+ {
+  "id": "atp-gap_trade_gb-gap-8a4d16-rkxtq9",
+  "name": "Gap",
+  "brand": "Gap",
+  "brand_wikidata": "Q125624088",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.5690409830314,
+  "lng": 0.643820800781214,
+  "geo_precision": "atp",
+  "address": "ss95pr",
+  "postcode": "ss95pr",
+  "website": "https://www.gap.uk.com/depot-network/southend-on-sea",
+  "website_source": "atp",
+  "phone": "+44 1702 416922",
+  "phone_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "gap_trade_gb",
+  "atp_brand": "Gap",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q125624088",
+  "atp_nsi": "gap-8a4d16",
   "provisional_creation": "atp-chain",
   "keep_evidence": [
    {
@@ -131311,38 +131324,6 @@
   "tier": 1
  },
  {
-  "id": "atp-leaders_romans_group_gb-leaders_romans_group_gb-sj7uv7",
-  "name": "Southend-On-Sea",
-  "brand": "Leaders",
-  "brand_wikidata": "Q111522674",
-  "category": "services",
-  "category_label": "Services",
-  "lat": 51.5487613348,
-  "lng": 0.704387656897,
-  "geo_precision": "atp",
-  "address": "ss26ne",
-  "postcode": "ss26ne",
-  "website": "https://www.leaders.co.uk/southend-sea/",
-  "website_source": "atp",
-  "photos": [],
-  "description": "",
-  "sources": [
-   "atp"
-  ],
-  "atp_spider": "leaders_romans_group_gb",
-  "atp_brand": "Leaders",
-  "atp_method": "created-chain",
-  "atp_wikidata": "Q111522674",
-  "provisional_creation": "atp-chain",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ],
-  "tier": 1
- },
- {
   "id": "atp-londis_gb-londis-232829-12z306r",
   "name": "Londis BYFORDS FOOD HALL",
   "brand": "Londis",
@@ -131368,6 +131349,38 @@
   "atp_method": "created-chain",
   "atp_wikidata": "Q21008564",
   "atp_nsi": "londis-232829",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ],
+  "tier": 1
+ },
+ {
+  "id": "atp-leaders_romans_group_gb-leaders_romans_group_gb-sj7uv7",
+  "name": "Southend-On-Sea",
+  "brand": "Leaders",
+  "brand_wikidata": "Q111522674",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.5487613348,
+  "lng": 0.704387656897,
+  "geo_precision": "atp",
+  "address": "ss26ne",
+  "postcode": "ss26ne",
+  "website": "https://www.leaders.co.uk/southend-sea/",
+  "website_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "leaders_romans_group_gb",
+  "atp_brand": "Leaders",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q111522674",
   "provisional_creation": "atp-chain",
   "keep_evidence": [
    {
@@ -131413,39 +131426,6 @@
   "tier": 1
  },
  {
-  "id": "atp-natwest_gb-natwest-8cfc37-xxbfif",
-  "name": "Southend Card Centre",
-  "brand": "NatWest",
-  "brand_wikidata": "Q2740021",
-  "category": "services",
-  "category_label": "Services",
-  "lat": 51.56163090000002,
-  "lng": 0.6831187999999955,
-  "geo_precision": "atp",
-  "address": "ss00ej",
-  "postcode": "ss00ej",
-  "website": "https://www.natwest.com/search-results/locator/atm.html?sortcode=N810551&name=Southend-Card-Centre",
-  "website_source": "atp",
-  "photos": [],
-  "description": "",
-  "sources": [
-   "atp"
-  ],
-  "atp_spider": "natwest_gb",
-  "atp_brand": "NatWest",
-  "atp_method": "created-chain",
-  "atp_wikidata": "Q2740021",
-  "atp_nsi": "natwest-8cfc37",
-  "provisional_creation": "atp-chain",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ],
-  "tier": 1
- },
- {
   "id": "atp-nationwide_gb-nationwide-e1e9d0-tnmda4",
   "name": "Nationwide",
   "brand": "Nationwide",
@@ -131472,6 +131452,39 @@
   "atp_method": "created-chain",
   "atp_wikidata": "Q846735",
   "atp_nsi": "nationwide-e1e9d0",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ],
+  "tier": 1
+ },
+ {
+  "id": "atp-natwest_gb-natwest-8cfc37-xxbfif",
+  "name": "Southend Card Centre",
+  "brand": "NatWest",
+  "brand_wikidata": "Q2740021",
+  "category": "services",
+  "category_label": "Services",
+  "lat": 51.56163090000002,
+  "lng": 0.6831187999999955,
+  "geo_precision": "atp",
+  "address": "ss00ej",
+  "postcode": "ss00ej",
+  "website": "https://www.natwest.com/search-results/locator/atm.html?sortcode=N810551&name=Southend-Card-Centre",
+  "website_source": "atp",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "natwest_gb",
+  "atp_brand": "NatWest",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q2740021",
+  "atp_nsi": "natwest-8cfc37",
   "provisional_creation": "atp-chain",
   "keep_evidence": [
    {
@@ -131720,6 +131733,74 @@
   "atp_method": "created-chain",
   "atp_wikidata": "Q123456627",
   "atp_nsi": "photome-f9b213",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ],
+  "tier": 1
+ },
+ {
+  "id": "atp-poundland-pepandco-94f7c8-dpy4am",
+  "name": "Pep&Co",
+  "brand": "Pep&Co",
+  "brand_wikidata": "Q24908166",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.53511,
+  "lng": 0.715528,
+  "geo_precision": "atp",
+  "address": "ss11dq",
+  "postcode": "ss11dq",
+  "phone": "+44 1702 826353",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Sa 09:00-18:00; Su 10:30-16:30",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "poundland",
+  "atp_brand": "Pep&Co",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q24908166",
+  "atp_nsi": "pepandco-94f7c8",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ],
+  "tier": 1
+ },
+ {
+  "id": "atp-poundland-pepandco-94f7c8-1ba6o4f",
+  "name": "Pep&Co",
+  "brand": "Pep&Co",
+  "brand_wikidata": "Q24908166",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.54114,
+  "lng": 0.712394,
+  "geo_precision": "atp",
+  "address": "ss25sp",
+  "postcode": "ss25sp",
+  "phone": "+44 1702 464389",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Sa 09:00-18:00; Su 10:00-16:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "poundland",
+  "atp_brand": "Pep&Co",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q24908166",
+  "atp_nsi": "pepandco-94f7c8",
   "provisional_creation": "atp-chain",
   "keep_evidence": [
    {
@@ -132062,74 +132143,6 @@
   "atp_method": "created-chain",
   "atp_wikidata": "Q7240340",
   "atp_nsi": "premier-232829",
-  "provisional_creation": "atp-chain",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ],
-  "tier": 1
- },
- {
-  "id": "atp-poundland-pepandco-94f7c8-dpy4am",
-  "name": "Pep&Co",
-  "brand": "Pep&Co",
-  "brand_wikidata": "Q24908166",
-  "category": "shopping",
-  "category_label": "Shop",
-  "lat": 51.53511,
-  "lng": 0.715528,
-  "geo_precision": "atp",
-  "address": "ss11dq",
-  "postcode": "ss11dq",
-  "phone": "+44 1702 826353",
-  "phone_source": "atp",
-  "atp_hours": "Mo-Sa 09:00-18:00; Su 10:30-16:30",
-  "photos": [],
-  "description": "",
-  "sources": [
-   "atp"
-  ],
-  "atp_spider": "poundland",
-  "atp_brand": "Pep&Co",
-  "atp_method": "created-chain",
-  "atp_wikidata": "Q24908166",
-  "atp_nsi": "pepandco-94f7c8",
-  "provisional_creation": "atp-chain",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ],
-  "tier": 1
- },
- {
-  "id": "atp-poundland-pepandco-94f7c8-1ba6o4f",
-  "name": "Pep&Co",
-  "brand": "Pep&Co",
-  "brand_wikidata": "Q24908166",
-  "category": "shopping",
-  "category_label": "Shop",
-  "lat": 51.54114,
-  "lng": 0.712394,
-  "geo_precision": "atp",
-  "address": "ss25sp",
-  "postcode": "ss25sp",
-  "phone": "+44 1702 464389",
-  "phone_source": "atp",
-  "atp_hours": "Mo-Sa 09:00-18:00; Su 10:00-16:00",
-  "photos": [],
-  "description": "",
-  "sources": [
-   "atp"
-  ],
-  "atp_spider": "poundland",
-  "atp_brand": "Pep&Co",
-  "atp_method": "created-chain",
-  "atp_wikidata": "Q24908166",
-  "atp_nsi": "pepandco-94f7c8",
   "provisional_creation": "atp-chain",
   "keep_evidence": [
    {
@@ -132511,6 +132524,42 @@
   "tier": 1
  },
  {
+  "id": "atp-wolseley_gb-wolseley-8a4d16-1upao93",
+  "name": "Wolseley",
+  "brand": "Wolseley",
+  "brand_wikidata": "Q8030423",
+  "category": "shopping",
+  "category_label": "Shop",
+  "lat": 51.56148,
+  "lng": 0.7166,
+  "geo_precision": "atp",
+  "address": "ss25te",
+  "postcode": "ss25te",
+  "website": "https://www.wolseley.co.uk/branch/southend/",
+  "website_source": "atp",
+  "phone": "+44 1702 601620",
+  "phone_source": "atp",
+  "atp_hours": "Mo-Fr 07:30-17:00; Sa 08:00-12:00",
+  "photos": [],
+  "description": "",
+  "sources": [
+   "atp"
+  ],
+  "atp_spider": "wolseley_gb",
+  "atp_brand": "Wolseley",
+  "atp_method": "created-chain",
+  "atp_wikidata": "Q8030423",
+  "atp_nsi": "wolseley-8a4d16",
+  "provisional_creation": "atp-chain",
+  "keep_evidence": [
+   {
+    "rule": "atp-contributor",
+    "meaning": "Chain-published data via AllThePlaces"
+   }
+  ],
+  "tier": 1
+ },
+ {
   "id": "atp-yeep_gb-yeep-ad77d0-fqxbxd",
   "name": "Yeep",
   "brand": "Yeep",
@@ -132656,42 +132705,6 @@
   "atp_method": "created-chain",
   "atp_wikidata": "Q123421114",
   "atp_nsi": "yeep-ad77d0",
-  "provisional_creation": "atp-chain",
-  "keep_evidence": [
-   {
-    "rule": "atp-contributor",
-    "meaning": "Chain-published data via AllThePlaces"
-   }
-  ],
-  "tier": 1
- },
- {
-  "id": "atp-wolseley_gb-wolseley-8a4d16-1upao93",
-  "name": "Wolseley",
-  "brand": "Wolseley",
-  "brand_wikidata": "Q8030423",
-  "category": "shopping",
-  "category_label": "Shop",
-  "lat": 51.56148,
-  "lng": 0.7166,
-  "geo_precision": "atp",
-  "address": "ss25te",
-  "postcode": "ss25te",
-  "website": "https://www.wolseley.co.uk/branch/southend/",
-  "website_source": "atp",
-  "phone": "+44 1702 601620",
-  "phone_source": "atp",
-  "atp_hours": "Mo-Fr 07:30-17:00; Sa 08:00-12:00",
-  "photos": [],
-  "description": "",
-  "sources": [
-   "atp"
-  ],
-  "atp_spider": "wolseley_gb",
-  "atp_brand": "Wolseley",
-  "atp_method": "created-chain",
-  "atp_wikidata": "Q8030423",
-  "atp_nsi": "wolseley-8a4d16",
   "provisional_creation": "atp-chain",
   "keep_evidence": [
    {

@@ -1,6 +1,6 @@
 {
- "built_at": "2026-10-08T22:41:16.361Z",
- "fsa_extract_date": "2026-10-06",
+ "built_at": "2026-10-09T00:04:37.688Z",
+ "fsa_extract_date": "2026-10-08",
  "fsa_authority": "FHRS893",
  "bbox": {
   "s": 51.505,
@@ -10,22 +10,22 @@
  },
  "counts": {
   "total": 2622,
-  "fsa_only": 299,
-  "merged": 407,
+  "fsa_only": 298,
+  "merged": 408,
   "osm_only": 277,
   "nhs_added": 11,
   "ch_added": 39,
-  "with_hours": 606,
+  "with_hours": 607,
   "osm_nodes_pulled": 1136,
   "osm_source": "geofabrik-pbf",
-  "osm_extract": "gb-latest.osm.pbf@2026-10-08",
+  "osm_extract": "gb-latest.osm.pbf@2026-10-09",
   "osm_raw_response": 1200,
   "fsa_repinned": 0,
   "fsa_duplicates_linked": 0,
   "fsa_duplicates_queued": 11,
   "osm_duplicates_merged": 3,
   "stale_flagged": 8,
-  "position_approx": 829,
+  "position_approx": 828,
   "orphan_hidden": 586,
   "quarantined": [],
   "kept_by_rule": {
@@ -134,6 +134,19 @@
     "osm": "osm-way-113001569",
     "name": "Toby Carvery",
     "moved_m": 201
+   }
+  ],
+  "alias_merges": [
+   {
+    "fsa": "fsa-513242",
+    "osm": "osm-way-90626963",
+    "name": "Pugzie's",
+    "moved_m": 998,
+    "evidence": [
+     "User ground truth 2026-10-08: OSM 'Puglies' way 90626963 IS FSA 'Pugzie's Kiosk 7' (mapper typo, same seafront kiosk)",
+     "FSA 513242: Kiosk 7, Western Esplanade, SS1 1EE (batch position 1.5km off at postcode centroid)",
+     "OSM way 90626963: amenity=cafe building on Western Esplanade seafront (surveyed position)"
+    ]
    }
   ]
  },
@@ -250,6 +263,25 @@
    {
     "id": "fsa-1675036",
     "name": "Zinnia Restaurant"
+   }
+  ],
+  "contradictions": 4,
+  "contradiction_members": [
+   {
+    "id": "fsa-975257",
+    "name": "Natural Bite"
+   },
+   {
+    "id": "fsa-512639",
+    "name": "Pebbles One"
+   },
+   {
+    "id": "fsa-1151751",
+    "name": "Tea With The Tide"
+   },
+   {
+    "id": "fsa-1725622",
+    "name": "Visitor Information Centre Southend Pier"
    }
   ]
  },
@@ -853,12 +885,12 @@
   "matched": 274,
   "web_matched": 43,
   "wikidata_matched": 166,
-  "hours_added": 149,
+  "hours_added": 150,
   "hours_before": 102,
-  "hours_after": 251,
+  "hours_after": 252,
   "created": 106,
   "hosted": 0,
-  "skipped_dupe": 65,
+  "skipped_dupe": 66,
   "created_ids": [
    "atp-amazon_locker_gb-amazonlocker-f85b1f-1usbpl3",
    "atp-amazon_locker_gb-amazonlocker-f85b1f-l57f25",
@@ -876,11 +908,11 @@
    "atp-amazon_locker_gb-amazonlocker-f85b1f-1o63gu9",
    "atp-amazon_locker_gb-amazonlocker-f85b1f-kjm8sw",
    "atp-amazon_locker_gb-amazonlocker-f85b1f-qptan3",
-   "atp-audika_gb-audika_gb-9yf4cs",
    "atp-argos-argos-3930ea-ff38gd",
+   "atp-audika_gb-audika_gb-9yf4cs",
    "atp-bhf_gb-bhf_gb-1bcc9g1",
-   "atp-budgens_gb-budgens-232829-5wp1ab",
    "atp-busy_bees_gb-busybees-e7c9ca-56ff0",
+   "atp-budgens_gb-budgens-232829-5wp1ab",
    "atp-card_factory_gb-cardfactory-d8c200-14i14hq",
    "atp-chelmsford_star_coop_gb-thecooperativefood-a8278-ag3a51",
    "atp-coral_gb-coral-58d00b-d0gwu9",
@@ -889,8 +921,8 @@
    "atp-costcutter_gb-costcutter-31620e-x88jr4",
    "atp-david_lloyd_gb-davidlloydclubs-2b43d7-1qaw8s7",
    "atp-euro_car_parts_gb-eurocarparts-078f70-1oga5jc",
-   "atp-gap_trade_gb-gap-8a4d16-rkxtq9",
    "atp-game_gb-game-b2f4fe-ri3iib",
+   "atp-gap_trade_gb-gap-8a4d16-rkxtq9",
    "atp-halfords_gb-halfords-078f70-1bt9ekz",
    "atp-hyundai_gb-hyundai-13eeb7-13r0m26",
    "atp-inpost_gb-inpost-6b37ec-1nxnmyh",
@@ -924,11 +956,11 @@
    "atp-inpost_gb-inpost-6b37ec-g19zdt",
    "atp-inpost_gb-inpost-6b37ec-wl5d3m",
    "atp-jennings_bet_gb-jenningsbet-58d00b-z0tiky",
-   "atp-leaders_romans_group_gb-leaders_romans_group_gb-sj7uv7",
    "atp-londis_gb-londis-232829-12z306r",
+   "atp-leaders_romans_group_gb-leaders_romans_group_gb-sj7uv7",
    "atp-maidenhead_aquatics_gb-maidenheadaquatics-8ec02-8oo29",
-   "atp-natwest_gb-natwest-8cfc37-xxbfif",
    "atp-nationwide_gb-nationwide-e1e9d0-tnmda4",
+   "atp-natwest_gb-natwest-8cfc37-xxbfif",
    "atp-photome_gb-photome-f9b213-19h7pwb",
    "atp-photome_gb-photome-f9b213-3mjn7c",
    "atp-photome_gb-photome-f9b213-55j96g",
@@ -937,6 +969,8 @@
    "atp-photome_gb-photome-f9b213-273l00",
    "atp-photome_gb-photome-f9b213-jzewyk",
    "atp-photome_gb-photome-f9b213-1bdv3sw",
+   "atp-poundland-pepandco-94f7c8-dpy4am",
+   "atp-poundland-pepandco-94f7c8-1ba6o4f",
    "atp-premier_gb-premier-232829-f7hq45",
    "atp-premier_gb-premier-232829-1vr55mq",
    "atp-premier_gb-premier-232829-pjmcjp",
@@ -947,8 +981,6 @@
    "atp-premier_gb-premier-232829-7uz5m1",
    "atp-premier_gb-premier-232829-mtt83k",
    "atp-premier_gb-premier-232829-r7bxdk",
-   "atp-poundland-pepandco-94f7c8-dpy4am",
-   "atp-poundland-pepandco-94f7c8-1ba6o4f",
    "atp-rexel_gb-rexel-091354-ianvnl",
    "atp-salvation_army_gb-thesalvationarmy-2031e0-1nuzfx",
    "atp-spar_gb-spar-1effe0-58gkjy",
@@ -960,14 +992,14 @@
    "atp-trussell_trust_gb-thetrusselltrust-bdda3a-1ebc035",
    "atp-trussell_trust_gb-thetrusselltrust-bdda3a-1g5ho8p",
    "atp-webuyanycar_gb-webuyanycar-42e946-jandyk",
+   "atp-wolseley_gb-wolseley-8a4d16-1upao93",
    "atp-yeep_gb-yeep-ad77d0-fqxbxd",
    "atp-yeep_gb-yeep-ad77d0-lmcwsu",
    "atp-yeep_gb-yeep-ad77d0-1v7xd7n",
    "atp-yeep_gb-yeep-ad77d0-o7jd5f",
-   "atp-yeep_gb-yeep-ad77d0-1sw3o1s",
-   "atp-wolseley_gb-wolseley-8a4d16-1upao93"
+   "atp-yeep_gb-yeep-ad77d0-1sw3o1s"
   ],
-  "snapshot_sha": "548655d673e9172fe4d3845177a37bd5d6b3253cfdecbab47b3d9cb7c781da79",
+  "snapshot_sha": "544a8589824384b177ac24a3370739ad6cb42b1469e8763dfdd10de145031a8f",
   "complete": false,
   "failed_spiders": [
    "big_yellow_gb:failed_spider_errors_2",
