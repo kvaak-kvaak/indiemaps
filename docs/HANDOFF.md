@@ -686,3 +686,16 @@ Read these three docs first, in order:
   the older Southend (spider=false runs don't publish) — needs
   a spider=true run to land ov-direct in Q4 + the 47-area
   rollout, both pending user go.
+
+## Session log (2026-10-08, Pugzie's merge + contradiction flag)
+
+- fsa-513242 (Pugzie's Kiosk 7) merged to osm-way-90626963
+  via new verify_positions Rule 2 (alias-driven, evidence in
+  data/aliases.json): moved 998m to surveyed seafront position,
+  approx cleared, audit logged. Commit a2a50b2, CI green.
+- Seafront-contradiction flag (hazard_roads): 4 flagged
+  (Natural Bite, Pebbles One, Tea With Tide, Pier visitor
+  centre), hidden tier with reason, server/app/Audit wired.
+- Cross-consumer bug caught by CI: apply_aliases crashed on
+  the merge_osm schema (KeyError) — fixed by ownership guard
+  (Rule 2 owns merge entries). Two alias schemas now explicit.
