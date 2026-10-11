@@ -14,11 +14,31 @@
 # hours-trust only — a prolific mapper can tag a town without improving
 # existence coverage one bit.
 #
-# Tiers (per-pin, computed in build.py from keep-evidence legs): 3 = three
-# or more corroborating legs, 2 = two, 1 = one. Coarse and capped by
-# design — a tier is an evidence count, never a quality verdict.
+# Tiers (per-pin): WEIGHTED existence-trust sum, capped at 3, one decimal.
+# Ranks whether a pin deserves visibility — never creation, never quality.
+# OSM trust ramps with touch age (fresh <=182d, floor 0.3 at 547d/18mo,
+# 0.3 beyond or dateless-and-OSM-only); merged-but-undated legs take 0.7
+# until timestamps land. ta caps at 0.4 (useful ratings, stale by design).
+# Non-measured numbers are defaults + verified:false until measured (same
+# rule as above) — except FSA-top and the OSM ramp, which are measured.
 
 version: 1
+
+trust:
+  fsa-linked: 1.0
+  servicemap-record: 1.0
+  ch-corroborated: 0.8
+  prh-listed: 0.8
+  atp-contributor: 0.8
+  chain-record: 0.8
+  nhs-listed: 0.7
+  recent-osm-touch: 0.7
+  overture-direct: 0.6
+  ta-record: 0.4
+  aged-osm-floor: 0.3
+  merged-undated-osm: 0.7
+  fresh_days: 182
+  stale_days: 547
 
 defaults:
   # Current-source order; ta gap-only is enforced in code (ta.py), not here.

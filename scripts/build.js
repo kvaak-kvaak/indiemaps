@@ -620,6 +620,11 @@ for (const k of deduped) {
     fsa_id: k.fsa_id,
     osm_type: k.osm ? k.osm.type : null,
     osm_id: k.osm ? k.osm.id : null,
+    // Timestamps ride the merge (user decision 2026-10-08): merged pins
+    // are datable for the OSM trust ramp; dateless fall back to benefit
+    // of the doubt. Same keys verify_positions.merge_into already copies.
+    osm_touched: k.osm ? (k.osm.timestamp || null) : null,
+    osm_version: k.osm ? (k.osm.version ?? null) : null,
     name: k.name,
     category, category_label,
     // Hospitals/childcare: kept searchable, pin on hit only (user decision

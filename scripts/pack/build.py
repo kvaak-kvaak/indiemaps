@@ -327,14 +327,43 @@ def osm_touch_fresh(p, now, days=182):
     """Shared freshness helper (single threshold site — orphan rule and
     keep-evidence both read this, never separate constants). True iff the
     record carries a parseable OSM touch timestamp within `days`."""
+    age = osm_touch_age_days(p, now)
+    return age is not None and age < days
+
+
+def osm_touch_age_days(p, now):
+    """Touch age in days, or None when undatable. Single parse site."""
     try:
         if p.get('osm_touched'):
             touched = datetime.fromisoformat(
                 p['osm_touched'].replace('Z', '+00:00'))
-            return (now - touched).days < days
+            return (now - touched).days
     except (ValueError, TypeError):
         pass
-    return False
+    return None
+
+
+TRUST_DEFAULTS = {
+    'fsa-linked': 1.0, 'servicemap-record': 1.0, 'ch-corroborated': 0.8,
+    'prh-listed': 0.8, 'atp-contributor': 0.8, 'chain-record': 0.8,
+    'nhs-listed': 0.7, 'recent-osm-touch': 0.7, 'overture-direct': 0.6,
+    'ta-record': 0.4, 'aged-osm-floor': 0.3, 'merged-undated-osm': 0.7,
+    'fresh_days': 182, 'stale_days': 547,
+}
+
+
+def trust_weights():
+    """Existence-trust table (YAML `trust:`, code defaults fallback).
+    Missing/unreadable YAML degrades loudly to defaults — never silently."""
+    table = dict(TRUST_DEFAULTS)
+    try:
+        import yaml
+        y = yaml.safe_load(open(ROOT / 'data' / 'source-weights.yaml')) or {}
+        table.update((y.get('trust') or {}))
+        return table, True
+    except Exception as e:
+        print(f'trust: YAML unreadable ({str(e)[:60]}), code defaults')
+        return table, False
 
 
 def apply_quarantine(pois_data, packdir):
@@ -360,8 +389,12 @@ def flag_keep_evidence(pois_data, now):
     FSA-linked, CH-corroborated, recent OSM touch, NHS-listed, Servicemap
     record. Hidden-tier pins (hazard, stale-orphan) keep whatever evidence
     they have — evidence explains, hiding decides. Re-run safe."""
-    kept = {'atp': 0, 'fsa': 0, 'ch': 0, 'recent_osm': 0, 'nhs': 0,
-            'servicemap': 0, 'chain': 0, 'prh': 0, 'ov_direct': 0}
+    kept = {'atp': 0, 'fsa': 0, 'ch': 0, 'recent_osm': 0, 'aged_osm': 0,
+            'nhs': 0, 'servicemap': 0, 'chain': 0, 'prh': 0, 'ov_direct': 0,
+            'ta': 0}
+    trust, trust_ok = trust_weights()
+    if not trust_ok:
+        print('trust: weights unverified (defaults), see source-weights.yaml')
     for p in pois_data:
         s = p.get('sources', []) or []
         ev = []
@@ -376,16 +409,40 @@ def flag_keep_evidence(pois_data, now):
             ev.append({'rule': 'ch-corroborated',
                        'meaning': 'Companies House: incorporated business, '
                                   'uninspected'})
-        if 'osm' in s and osm_touch_fresh(p, now):
-            ev.append({'rule': 'recent-osm-touch',
-                       'meaning': 'Map record touched within six months — '
-                                  'retention, not proof of opening'})
+        if 'osm' in s:
+            age = osm_touch_age_days(p, now)
+            if age is not None and age < trust['fresh_days']:
+                ev.append({'rule': 'recent-osm-touch',
+                           'meaning': 'Map record touched within six months — '
+                                      'retention, not proof of opening'})
+            elif age is not None and age < trust['stale_days']:
+                # Ramp zone (user decision 2026-10-08): trust decays
+                # linearly to the floor — no cliff at any date.
+                ev.append({'rule': 'aged-osm-touch', 'osm_age_days': age,
+                           'meaning': f'Map record touched {age} days ago — '
+                                      'aging, verify before relying'})
+            elif age is not None or not any(x in s for x in ('fsa', 'ch', 'servicemap')):
+                # Past the floor, or dateless with nothing vouching:
+                # floor weight, never zero, never hidden by this (hiding
+                # stays with the orphan rule, which is untouched).
+                ev.append({'rule': 'aged-osm-touch', 'osm_age_days': trust['stale_days'],
+                           'meaning': 'Map record touch is old or undated — '
+                                      'verify before relying'})
+            else:
+                # Merged but undated (pre-timestamp-fix packs): benefit of
+                # the doubt at recent weight; the base fix makes this rare.
+                ev.append({'rule': 'recent-osm-touch',
+                           'meaning': 'Map-corroborated position (touch undated)'})
         if 'nhs' in s:
             ev.append({'rule': 'nhs-listed',
                        'meaning': 'NHS listed pharmacy (England)'})
         if 'servicemap' in s:
             ev.append({'rule': 'servicemap-record',
                        'meaning': 'City of Helsinki Service Map (CC BY 4.0)'})
+        if 'ta' in s:
+            ev.append({'rule': 'ta-record',
+                       'meaning': 'Archive enrichment (cuisines/hours/recommend) — '
+                                  'stale-capped, never existence evidence alone'})
         if p.get('provisional_creation') == 'ov-direct':
             ev.append({'rule': 'overture-direct',
                        'meaning': 'Overture record at high provider confidence — parcel-grade position'})
@@ -397,13 +454,30 @@ def flag_keep_evidence(pois_data, now):
                        'meaning': 'Finnish Trade Register: registered business, uninspected'})
         if ev:
             p['keep_evidence'] = ev
-            # Tier (coarse, capped): corroborating-leg count, never a
-            # quality verdict. Browse sorts by it; search does not.
-            p['tier'] = min(len(ev), 3)
+            # Tier: WEIGHTED existence-trust sum, capped at 3, one decimal
+            # (user decision 2026-10-08). FSA tops; OSM ramps with age;
+            # ta caps low. Ordering signal only — never quality, never
+            # creation. OSM ramp weight is computed, not table-read.
+            wsum = 0.0
+            for e in ev:
+                if e['rule'] == 'aged-osm-touch':
+                    f = 1 - (e['osm_age_days'] - trust['fresh_days']) / max(
+                        1, (trust['stale_days'] - trust['fresh_days']))
+                    wsum += trust['recent-osm-touch'] * max(0.0, min(1.0, f)) \
+                        + trust['aged-osm-floor'] * (1 - max(0.0, min(1.0, f)))
+                else:
+                    wsum += trust.get(e['rule'], 0.0)
+            p['tier'] = round(min(wsum, 3.0), 1)
+            # p_rank: transparent tier-major/Bayes-minor encoding for
+            # render order + future tile minzoom. Renders nowhere, decides
+            # nothing user-facing beyond the existing order. Bayes missing
+            # sorts neutrally (never penalized).
+            p['p_rank'] = round(p['tier'] * 10 + (p.get('ta_rec_bayes') or 0) / 10, 2)
             for e in ev:
                 key = {'atp-contributor': 'atp', 'fsa-linked': 'fsa',
                         'ch-corroborated': 'ch', 'recent-osm-touch': 'recent_osm',
-                        'nhs-listed': 'nhs', 'chain-record': 'chain',
+                        'aged-osm-touch': 'aged_osm', 'nhs-listed': 'nhs',
+                        'chain-record': 'chain', 'ta-record': 'ta',
                         'prh-listed': 'prh', 'overture-direct': 'ov_direct',
                         'servicemap-record': 'servicemap'}[e['rule']]
                 kept[key] += 1
