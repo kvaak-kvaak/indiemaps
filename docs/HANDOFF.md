@@ -758,3 +758,13 @@ Read these three docs first, in order:
 - Base merge carries osm_touched/version (merged pins datable;
   recent_osm 471->130 as assumed-fresh becomes measured-aged).
   CI Southend green: aged 1017, ta 361, bare 0, total steady.
+
+## Session log (2026-10-11, trust rollout: Southend + Westminster)
+
+- Recount driver (/tmp, mirrors build() recount exactly) applied
+  weighted tiers to staged Southend (Oct-9) + Westminster
+  (batchB-retry) packs: gates green, bare 0, Pugzie merge +
+  hospital search-only intact.
+- Q4: both assets re-uploaded, manifest entries refreshed
+  (65 assets = 64 + manifest). Demo promoted to recounted
+  Southend (default 1770, weighted tiers live on-map).
