@@ -747,3 +747,14 @@ Read these three docs first, in order:
   A/B old-pipeline copy trips naive audits (not an area, not
   in manifest — correctly excluded from release).
 - Demo already on Oct-9 Southend (2622). Release week closed.
+
+## Session log (2026-10-09, weighted existence trust)
+
+- Trust table live (commit b9fbeb8): FSA/servicemap 1.0, CH/PRH/
+  ATP/chain 0.8, NHS/fresh-OSM 0.7, OSM ramp 0.7->0.3 over
+  182-547d, floor 0.3 beyond/dateless-alone, ov-direct 0.6,
+  ta-record 0.4. Tier = weighted sum capped 3 (1dp); p_rank =
+  tier*10 + bayes/10 stored for order/minzoom, renders nowhere.
+- Base merge carries osm_touched/version (merged pins datable;
+  recent_osm 471->130 as assumed-fresh becomes measured-aged).
+  CI Southend green: aged 1017, ta 361, bare 0, total steady.
