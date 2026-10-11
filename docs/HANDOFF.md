@@ -768,3 +768,11 @@ Read these three docs first, in order:
 - Q4: both assets re-uploaded, manifest entries refreshed
   (65 assets = 64 + manifest). Demo promoted to recounted
   Southend (default 1770, weighted tiers live on-map).
+
+## Session log (2026-10-11, Q4 full uniformity push)
+
+- Recounted all 64 packs locally (current code, gates green,
+  0 violations, 270,210 POIs) and replaced all Q4 assets +
+  manifest: every pack now carries weighted tiers, p_rank,
+  rec-vector, and current keep-evidence. No rebuilds, no
+  downloads — recount is deterministic on staged packs.
