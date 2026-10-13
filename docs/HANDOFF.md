@@ -817,3 +817,15 @@ Read these three docs first, in order:
   Friends & Brgrs (addresses, no coords) — all parked, none
   worth a scraper today.
 - espresso_house ADDED (27 Helsinki-metro feats verified).
+
+## Session log (2026-10-13, ABC wired + s-etukortti parked)
+
+- ABC estate harvested (668 records, 100% coords, hours) from
+  embedded NEXT_DATA (single polite GET). EV-only (62) skipped
+  per doctrine; 100m premises cap after measured adjacent-
+  station false attaches. Helsinki CI green: 8 ABC matches.
+- s-etukortti search PARKED: results are client XHR with no
+  endpoint in HTML + 7 JS chunks (Vite app, not the s-kaupat
+  platform — "same search everywhere" disproven). Would need
+  browser network sniffing; out of scope. Sokos Hotels
+  (sokoshotels.fi) noted as a cleaner future target.
