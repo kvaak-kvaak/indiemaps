@@ -563,7 +563,7 @@
    60.338
   ],
   "fsa": null,
-  "servicemap_muni": null,
+  "servicemap_muni": "vantaa",
   "ta": true,
   "bbox_source": "nominatim-centre-0.1x0.09"
  },
@@ -680,7 +680,7 @@
    60.2116
   ],
   "fsa": null,
-  "servicemap_muni": null,
+  "servicemap_muni": "espoo",
   "ta": true,
   "bbox_source": "nominatim-district-centre"
  },
@@ -693,7 +693,7 @@
    60.1947
   ],
   "fsa": null,
-  "servicemap_muni": null,
+  "servicemap_muni": "espoo",
   "ta": true,
   "bbox_source": "nominatim-district-centre"
  },
@@ -706,7 +706,7 @@
    60.2547
   ],
   "fsa": null,
-  "servicemap_muni": null,
+  "servicemap_muni": "espoo",
   "ta": true,
   "bbox_source": "nominatim-district-centre"
  }

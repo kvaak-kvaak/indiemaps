@@ -48,7 +48,7 @@ const EXCLUDE_SPIDERS = new Set(`glasgow_city_council_kerb_grates_gb glasgow_cit
 // Bare (non-suffixed) spiders with known GB/FI coverage, kept from the
 // original hand list plus High-Street and Finnish additions. Everything
 // else enters via suffix.
-const BARE_KEEP = new Set(`sainsburys lidl mcdonalds burger_king subway pret_a_manger caffe_nero starbucks_eu superdrug argos currys primark poundland ikea shell specsavers waterstones hesburger st1`.split(/\s+/));
+const BARE_KEEP = new Set(`sainsburys lidl mcdonalds burger_king subway pret_a_manger caffe_nero starbucks_eu superdrug argos currys primark poundland ikea shell specsavers waterstones hesburger st1 espresso_house`.split(/\s+/));
 
 const rawArgs = process.argv.slice(2);
 const args = {};
