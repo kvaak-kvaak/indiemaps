@@ -776,3 +776,25 @@ Read these three docs first, in order:
   manifest: every pack now carries weighted tiers, p_rank,
   rec-vector, and current keep-evidence. No rebuilds, no
   downloads — recount is deterministic on staged packs.
+
+## Session log (2026-10-13, tiles Phase 0 Southend+Helsinki)
+
+- Emitter (scripts/tiles/emit.py): pins GeoJSON (class/subclass from
+  liberty sprite, rank over p_rank, minzoom YAML, flags, pt tier),
+  detail shards (z14, incl. rec_stars/bayes), name shards (token
+  prefix + alias variants + B&Q compact fallback), hidden tier in
+  names/details but never drawn, pack dupes deduped.
+- CI bake green (toolchain from source + cache): Southend 855KB,
+  Helsinki 244KB PMTiles. Tile content deterministic (filename
+  caveat found + fixed in workflow check).
+- Acceptance (independent node decoder; pip mapbox-vector-tile
+  Y-flips — do not use it for verification): Southend 2005/2005
+  round-trip, max drift 0.8m, 0 minzoom violations; Helsinki
+  6642/6642, 0.7m, 0 violations. Worst z14 tile 5.3KB (limit
+  500KB). TA-KO resolves both directions (bidirectional prefix
+  rule); Beach Hut/kiosks present; hazard absent from tiles,
+  present in names; Marhaba absent everywhere.
+- Helsinki pack carries 35 duplicate sm-* ids (upstream pack
+  issue, flagged for packs track; tiles dedupe).
+- Demo reference client (public/tiles-demo.html) serves locally;
+  browser click-through pending (user).
