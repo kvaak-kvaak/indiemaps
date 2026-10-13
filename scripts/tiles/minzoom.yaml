@@ -1,0 +1,10 @@
+# minzoom from p_rank percentile per region (configuration, not code).
+# Top 2% visible widest; rest arrive as you zoom. Percentiles computed
+# over the region's ranked pins; p_rank itself is tier-major/Bayes-minor
+# (see source-weights.yaml + build.py) — this table only maps it to zooms.
+percentiles:
+  - [2, 12]
+  - [10, 13]
+  - [30, 14]
+  - [60, 15]
+  - [100, 16]

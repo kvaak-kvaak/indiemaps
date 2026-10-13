@@ -1,0 +1,85 @@
+# Tile bake (Phase 0): packs -> PMTiles pins + flat detail/name shards.
+# Toolchain (tippecanoe from source + pmtiles CLI) is cached; longest lead
+# time in Phase 0, so it builds here once. No standing infra, static
+# artifacts only. Packs stay canonical; tiles are render cache.
+name: tiles
+
+on:
+  workflow_dispatch:
+    inputs:
+      areas:
+        description: 'Space-separated area ids (default: southend+helsinki)'
+        default: ''
+
+jobs:
+  toolchain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/cache@v4
+        with:
+          path: ~/tile-bin
+          key: tile-tools-pmtiles-1.31.2-tippecanoe-2.79.0
+      - name: Build toolchain if cache missed
+        run: |
+          if [ ! -x "$HOME/tile-bin/tippecanoe" ]; then
+            mkdir -p "$HOME/tile-bin"
+            sudo apt-get update -qq && sudo apt-get install -y -qq build-essential libsqlite3-dev zlib1g-dev
+            git clone --depth 1 --branch 2.79.0 https://github.com/felt/tippecanoe.git /tmp/tippecanoe
+            make -C /tmp/tippecanoe -j"$(nproc)" >/dev/null
+            cp /tmp/tippecanoe/tippecanoe "$HOME/tile-bin/"
+          fi
+          if [ ! -x "$HOME/tile-bin/pmtiles" ]; then
+            curl -sL https://github.com/protomaps/go-pmtiles/releases/download/v1.31.2/go-pmtiles_1.31.2_Linux_x86_64.tar.gz | tar -xz -C "$HOME/tile-bin" pmtiles
+          fi
+          "$HOME/tile-bin/tippecanoe" -v | head -1
+          "$HOME/tile-bin/pmtiles" version 2>&1 | head -1
+
+  bake:
+    needs: toolchain
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - run: pip install pyyaml
+      - uses: actions/cache@v4
+        with:
+          path: ~/tile-bin
+          key: tile-tools-pmtiles-1.31.2-tippecanoe-2.79.0
+      - name: Fetch packs (Q4 release assets)
+        run: |
+          mkdir -p /tmp/packs
+          for a in ${{ inputs.areas || 'eu/gb/england/essex/southend-on-sea eu/fi/uusimaa/helsinki' }}; do
+            slug=$(echo "$a" | tr '/' '-')
+            d=/tmp/packs/$a; mkdir -p "$d"
+            curl -sSL --retry 3 -o "$d/pois.json" "https://github.com/${{ github.repository }}/releases/download/pois-2026-Q4/${slug}.json"
+          done
+          ls /tmp/packs/eu/*/*/* | head -8
+      - name: Emit tile sources
+        run: |
+          export PATH="$HOME/tile-bin:$PATH"
+          for a in ${{ inputs.areas || 'eu/gb/england/essex/southend-on-sea eu/fi/uusimaa/helsinki' }}; do
+            slug=$(echo "$a" | tr '/' '-')
+            python3 scripts/tiles/emit.py --pois /tmp/packs/$a/pois.json --out /tmp/tiles/$slug
+          done
+      - name: Bake PMTiles (twice for determinism check)
+        run: |
+          export PATH="$HOME/tile-bin:$PATH"
+          for d in /tmp/tiles/*/; do
+            tippecanoe -l poi -z16 -Z10 --no-feature-limit --no-tile-size-limit -o "$d/pins.mbtiles" "$d/pins.geojson" --force 2>&1 | tail -2
+            pmtiles convert "$d/pins.mbtiles" "$d/pois.pmtiles" 2>&1 | tail -1
+            tippecanoe -l poi -z16 -Z10 --no-feature-limit --no-tile-size-limit -o "$d/pins2.mbtiles" "$d/pins.geojson" --force >/dev/null 2>&1
+            pmtiles convert "$d/pins2.mbtiles" "$d/pois2.pmtiles" >/dev/null 2>&1
+            echo "$d sha1: $(sha256sum "$d/pois.pmtiles" | cut -c1-12) sha2: $(sha256sum "$d/pois2.pmtiles" | cut -c1-12)"
+            pmtiles show "$d/pois.pmtiles" 2>/dev/null | head -20 || true
+          done
+      - uses: actions/upload-artifact@v7
+        with:
+          name: tiles
+          path: /tmp/tiles/
+          retention-days: 30

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IndieMaps tiles demo (Phase 0 reference client)</title>
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
+<style>
+  body { margin: 0; font-family: system-ui, sans-serif; }
+  #map { position: absolute; inset: 0; }
+  #panel { position: absolute; top: 10px; left: 10px; background: #fff; border-radius: 10px;
+    padding: 10px 12px; max-width: 340px; box-shadow: 0 2px 10px rgba(0,0,0,.2); font-size: 13px; }
+  #panel input { width: 100%; padding: 7px; margin: 4px 0; box-sizing: border-box; }
+  #card { margin-top: 8px; border-top: 1px solid #eee; padding-top: 8px; }
+  .row { display: flex; gap: 6px; margin: 6px 0; flex-wrap: wrap; }
+  button { cursor: pointer; }
+  #stats { color: #666; font-size: 12px; margin-top: 6px; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="panel">
+  <b>Tiles demo</b> (Southend Phase 0)
+  <div class="row"><input id="pmtiles-url" size="40" placeholder="pois.pmtiles URL" /></div>
+  <div class="row"><input id="details-base" size="40" placeholder="details/ base URL" /></div>
+  <div class="row"><input id="names-base" size="40" placeholder="names/ base URL" /></div>
+  <div class="row">
+    <label><input type="checkbox" id="f-veg" /> vegan</label>
+    <label><input type="checkbox" id="f-chair" /> wheelchair</label>
+    <label><input type="checkbox" id="f-chain" /> chain</label>
+  </div>
+  <div class="row"><input id="q" placeholder="search names (prefix shard)" /> <button id="go">Go</button></div>
+  <div id="card">Tap a pin, or search.</div>
+  <div id="stats"></div>
+</div>
+<script>
+const P = new pmtiles.PMTiles('');
+const map = new maplibregl.Map({
+  container: 'map',
+  style: 'https://tiles.openfreemap.org/styles/liberty',
+  center: [0.71, 51.54], zoom: 13,
+});
+function filters() {
+  const f = ['all'];
+  if (document.querySelector('#f-veg').checked) f.push(['==', ['get', 'vegan'], 1]);
+  if (document.querySelector('#f-chair').checked) f.push(['==', ['get', 'wheelchair'], 1]);
+  if (document.querySelector('#f-chain').checked) f.push(['==', ['get', 'chain'], 1]);
+  return f;
+}
+function addTiles() {
+  const url = document.querySelector('#pmtiles-url').value.trim();
+  if (!url) return;
+  const protocol = new pmtiles.Protocol();
+  maplibregl.addProtocol('pmtiles', protocol.tile);
+  const p = new pmtiles.PMTiles(url);
+  protocol.add(p);
+  map.addSource('poi', { type: 'vector', url: 'pmtiles://' + url });
+  map.addLayer({ id: 'poi-pin', type: 'circle', source: 'poi', 'source-layer': 'poi',
+    paint: { 'circle-radius': 5, 'circle-color': '#1a73e8' }, filter: filters() });
+  map.on('click', 'poi-pin', async e => {
+    const f = e.features[0].properties;
+    document.querySelector('#card').innerHTML = `<b>${escapeHtml(f.name || '?')}</b><br>id ${escapeHtml(f.id)} · rank ${f.rank} · minzoom ${f.minzoom}<br>loading detail…`;
+    const xt = lngLatToTile(e.lngLat.lng, e.lngLat.lat);
+    try {
+      const j = await fetchShard(document.querySelector('#details-base').value, xt.replace('/', '_'));
+      const d = j[f.id];
+      document.querySelector('#card').innerHTML = d
+        ? `<b>${escapeHtml(d.name)}</b><br>${escapeHtml(d.address || '')}<br>${escapeHtml(d.phone || '')} ${escapeHtml(d.website || '')}`
+        : 'detail missing for ' + escapeHtml(f.id);
+    } catch (err) { document.querySelector('#card').innerHTML = 'detail fetch failed: ' + escapeHtml(String(err).slice(0, 80)); }
+  });
+  for (const id of ['f-veg', 'f-chair', 'f-chain'])
+    document.querySelector('#' + id).addEventListener('change', () => map.setFilter('poi-pin', filters()));
+}
+function lngLatToTile(lng, lat) {
+  const n = 2 ** 14;
+  const xt = Math.floor((lng + 180) / 360 * n);
+  const lr = lat * Math.PI / 180;
+  const yt = Math.floor((1 - Math.log(Math.tan(lr) + 1 / Math.cos(lr)) / Math.PI) / 2 * n);
+  return xt + '/' + yt;
+}
+function escapeHtml(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+// Production serves .gz with Content-Encoding: gzip (transparent). Local
+// static servers don't, so fall back to the plain .json twin on failure.
+async function fetchShard(base, name) {
+  const b = base.replace(/\/$/, '');
+  try {
+    const r = await fetch(`${b}/${name}.json.gz`);
+    if (r.ok) return await r.json();
+  } catch {}
+  const r2 = await fetch(`${b}/${name}.json`);
+  return await r2.json();
+}
+document.querySelector('#go').addEventListener('click', async () => {
+  const q = document.querySelector('#q').value.trim().toLowerCase().replace(/[^a-z0-9 ]/g, '').split(/\s+/).filter(t => t.length >= 2);
+  if (!q.length) return;
+  const out = [];
+  for (const t of [q[0]]) {
+    try {
+      const es = await fetchShard(document.querySelector('#names-base').value, t.slice(0, 3));
+      for (const e of es) if (e.tok_full.startsWith(t)) out.push(e);
+    } catch {}
+  }
+  out.sort((a, b) => a.rank - b.rank);
+  document.querySelector('#stats').textContent = out.length + ' hits';
+  document.querySelector('#card').innerHTML = out.slice(0, 10).map(e =>
+    `<div>${escapeHtml(e.name)} <span style="color:#888">${e.lat.toFixed(4)},${e.lng.toFixed(4)}</span></div>`).join('') || 'no hits';
+  if (out.length) map.flyTo({ center: [out[0].lng, out[0].lat], zoom: 15 });
+});
+map.on('load', addTiles);
+</script>
+</body>
+</html>
