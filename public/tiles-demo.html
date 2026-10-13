@@ -98,12 +98,24 @@ document.querySelector('#go').addEventListener('click', async () => {
   if (!q.length) return;
   const out = [];
   for (const t of [q[0]]) {
-    try {
-      const es = await fetchShard(document.querySelector('#names-base').value, t.slice(0, 3));
-      for (const e of es) if (e.tok_full.startsWith(t)) out.push(e);
-    } catch {}
+    // Bidirectional prefix: indexed 'ta' must match query 'tako' and vice
+    // versa (short tokens live under short shards). Exact first.
+    const seen = new Set();
+    for (const key of [t.slice(0, 3), t.slice(0, 2), t.slice(0, 1)]) {
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      try {
+        const es = await fetchShard(document.querySelector('#names-base').value, key);
+        for (const e of es) {
+          if ((e.tok_full.startsWith(t) || t.startsWith(e.tok_full)) && !out.some(o => o.id === e.id)) {
+            e._exact = e.tok_full === t;
+            out.push(e);
+          }
+        }
+      } catch {}
+    }
   }
-  out.sort((a, b) => a.rank - b.rank);
+  out.sort((a, b) => ((b._exact ? 1 : 0) - (a._exact ? 1 : 0)) || (a.rank - b.rank));
   document.querySelector('#stats').textContent = out.length + ' hits';
   document.querySelector('#card').innerHTML = out.slice(0, 10).map(e =>
     `<div>${escapeHtml(e.name)} <span style="color:#888">${e.lat.toFixed(4)},${e.lng.toFixed(4)}</span></div>`).join('') || 'no hits';

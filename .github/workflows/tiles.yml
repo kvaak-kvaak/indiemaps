@@ -67,16 +67,43 @@ jobs:
             slug=$(echo "$a" | tr '/' '-')
             python3 scripts/tiles/emit.py --pois /tmp/packs/$a/pois.json --out /tmp/tiles/$slug
           done
-      - name: Bake PMTiles (twice for determinism check)
+      - name: Bake PMTiles + determinism check
         run: |
           export PATH="$HOME/tile-bin:$PATH"
           for d in /tmp/tiles/*/; do
-            tippecanoe -l poi -z16 -Z10 --no-feature-limit --no-tile-size-limit -o "$d/pins.mbtiles" "$d/pins.geojson" --force 2>&1 | tail -2
-            pmtiles convert "$d/pins.mbtiles" "$d/pois.pmtiles" 2>&1 | tail -1
-            tippecanoe -l poi -z16 -Z10 --no-feature-limit --no-tile-size-limit -o "$d/pins2.mbtiles" "$d/pins.geojson" --force >/dev/null 2>&1
-            pmtiles convert "$d/pins2.mbtiles" "$d/pois2.pmtiles" >/dev/null 2>&1
-            echo "$d sha1: $(sha256sum "$d/pois.pmtiles" | cut -c1-12) sha2: $(sha256sum "$d/pois2.pmtiles" | cut -c1-12)"
-            pmtiles show "$d/pois.pmtiles" 2>/dev/null | head -20 || true
+            tippecanoe -l poi -z16 -Z10 --no-feature-limit --no-tile-size-limit -o "$d/a.mbtiles" "$d/pins.geojson" --force 2>&1 | tail -1
+            tippecanoe -l poi -z16 -Z10 --no-feature-limit --no-tile-size-limit -o "$d/b.mbtiles" "$d/pins.geojson" --force >/dev/null 2>&1
+            python3 -c "
+import sqlite3, hashlib, sys
+def sig(f):
+    con = sqlite3.connect(f)
+    h = hashlib.sha256()
+    for zt, xt, yt, td in con.execute('SELECT zoom_level, tile_column, tile_row, tile_data FROM tiles ORDER BY zoom_level, tile_column, tile_row'):
+        h.update(bytes([zt]) + int(xt).to_bytes(4, 'big') + int(yt).to_bytes(4, 'big') + bytes(td))
+    return h.hexdigest()[:16]
+a = sig(sys.argv[1]); b = sig(sys.argv[2])
+print('deterministic tile bytes:', a == b, a)
+sys.exit(0 if a == b else 1)
+" "$d/a.mbtiles" "$d/b.mbtiles"
+            pmtiles convert "$d/a.mbtiles" "$d/pois.pmtiles" 2>&1 | tail -1
+            rm -f "$d/a.mbtiles" "$d/b.mbtiles"
+            pmtiles show "$d/pois.pmtiles" 2>/dev/null | head -12 || true
+            python3 -c "
+import json, hashlib
+from pathlib import Path
+d = Path('$d')
+m = json.load(open(d / 'manifest.json'))
+st = (d / 'pois.pmtiles').stat()
+h = hashlib.sha256()
+with open(d / 'pois.pmtiles', 'rb') as f:
+    for chunk in iter(lambda: f.read(1 << 20), b''):
+        h.update(chunk)
+m['built_at'] = __import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat()
+m['archives']['pois_pmtiles'] = {'url': None, 'bytes': st.st_size, 'sha256': h.hexdigest(),
+                                 'minzoom': 10, 'maxzoom': 16}
+json.dump(m, open(d / 'manifest.json', 'w'), indent=1)
+print('manifest filled:', st.st_size, 'bytes')
+"
           done
       - uses: actions/upload-artifact@v7
         with:

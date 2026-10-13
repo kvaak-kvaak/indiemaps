@@ -194,7 +194,16 @@ def main():
     drawable = [p for p in pois
                 if not p.get('position_hazard')
                 and p.get('unresolved_why') not in ('stale-orphan', 'seafront-contradiction')]
-    ranked = sorted(drawable, key=lambda p: (-(p.get('p_rank') or 0), p.get('id')))
+    # Pack-level duplicate ids (measured: 35 sm-* dupes in Helsinki) must
+    # not double-draw: keep first = best rank. (The pack dupe itself is a
+    # separate packs-track issue.)
+    seen_ids, unique = set(), []
+    for p in drawable:
+        if p.get('id') in seen_ids:
+            continue
+        seen_ids.add(p.get('id'))
+        unique.append(p)
+    ranked = sorted(unique, key=lambda p: (-(p.get('p_rank') or 0), p.get('id')))
     n = len(ranked)
     # Name rank for hidden-tier pins: they sort after everything drawable
     # (never shown, only searched) — same order family, no separate scale.
@@ -249,6 +258,15 @@ def main():
     frag = {'pins': len(feats), 'detail_shards': len(details),
             'name_shards': len(bypref), 'unmapped': sorted(unmapped)}
     json.dump(frag, open(out / 'emit.json', 'w'), indent=1)
+    manifest = {'schema_version': SCHEMA_VERSION, 'built_at': None,
+                'minzoom_table': 'scripts/tiles/minzoom.yaml',
+                'archives': {
+                    'pois_pmtiles': {'url': None, 'bytes': None, 'sha256': None,
+                                     'minzoom': 10, 'maxzoom': 16},
+                    'details': {'shards': len(details), 'format': 'json.gz (+plain twin)'},
+                    'names': {'shards': len(bypref), 'format': 'json.gz (+plain twin)'}},
+                'pins': len(feats), 'unmapped': sorted(unmapped)}
+    json.dump(manifest, open(out / 'manifest.json', 'w'), indent=1)
     print(f'tiles emit: {len(feats)} pins, {len(details)} detail shards, '
           f'{len(bypref)} name shards, unmapped={sorted(unmapped)}')
 
