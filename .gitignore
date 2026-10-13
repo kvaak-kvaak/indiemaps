@@ -8,3 +8,4 @@ packs/
 data/ch/
 # Frozen raw-input handoffs (local-only, copied to sibling builds by hand)
 handoff-southend/
+__pycache__/
