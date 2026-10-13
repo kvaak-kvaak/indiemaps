@@ -605,6 +605,14 @@ def ov_strong_agreement(p):
         return False
 
 
+# Static accommodation (user decision 2026-10-13/14): hotels, campsites
+# and caravan sites don't churn like food/retail — an old surveyed
+# record is still the best available position. Touch-dated pins in
+# these categories never go stale-orphan (they show on the aged-OSM
+# leg at floor weight); undated ones still hide.
+STATIC_ORPHAN_EXEMPT = {'hotel', 'camping'}
+
+
 def flag_stale_orphans(pois_data, now):
     """User-decided orphan rule: an OSM-sourced record with no FSA/CH/
     Servicemap/ATP/chain/PRH corroboration renders iff its OSM object was
@@ -622,6 +630,8 @@ def flag_stale_orphans(pois_data, now):
         if 'osm' not in s or any(x in s for x in ('fsa', 'ch', 'servicemap', 'atp', 'chain', 'prh')):
             continue
         if ov_strong_agreement(p):
+            continue
+        if p.get('category') in STATIC_ORPHAN_EXEMPT and osm_touch_age_days(p, now) is not None:
             continue
         if osm_touch_fresh(p, now):
             continue

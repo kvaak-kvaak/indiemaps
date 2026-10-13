@@ -165,6 +165,13 @@ Read these three docs first, in order:
     exempts from stale-orphan (Citybox Helsinki un-hides, +3246
     `overture-agreed` legs Helsinki-wide, orphan-hidden 4340→3634
     locally verified). RULES.md + RELEASE-2026-Q4.md updated.
+  - Static-accommodation follow-up (2026-10-14): hotels + new Camping
+    category (tourism=caravan_site/camp_site, previously never pulled
+    by either OSM path) exempt from stale-orphan while touch-dated —
+    49/121 Helsinki hotels were hidden, all stale-orphan, touches up
+    to 16 y old. Camping mapped in build.js + server.js mirror +
+    OSM-fetch PBF set (lockstep), 🏕️ chip/icon/tint, tiles lodging
+    class. Undated static pins still hide.
 - Stale-dump enrichment live (ta stage, local-only by decision): 1M-row
   research parquet matched against pack POIs (Southend+Helsinki gated via
   areas `"ta"` flag) — match-only, never creates; alias-aware keys;

@@ -35,6 +35,8 @@ verified. Coverage below; per-pack provenance in manifest.json.
   nothing to import from.
 - FI cities outside the capital region have no municipal source:
   thinner than Helsinki, honestly so.
+- Campsites/caravan sites newly pulled (Camping category) — absent
+  before, not hidden; low-churn static like hotels, same orphan rule.
 - Hotels mapped as resort/lodge/guest_house/inn/B&B/serviced-apartment
   in OSM are culled at Overture pull (hotel class only); e.g. Hotel
   Marski by Scandic (Microsoft-sourced, no other dataset) awaits the

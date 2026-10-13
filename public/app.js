@@ -24,9 +24,9 @@ map.addLayer(diffLayers);
 
 const $ = s => document.querySelector(s);
 const resultsEl = $('#results'), statsText = $('#stats-text');
-const CAT_ICON = { restaurant: '🍽️', cafe: '☕', pub: '🍺', shopping: '🛍️', hotel: '🛏️', attraction: '🎡', culture: '🎭', health: '⚕️', services: '✂️', parking: '🅿️', transport: '🚌' };
+const CAT_ICON = { restaurant: '🍽️', cafe: '☕', pub: '🍺', shopping: '🛍️', hotel: '🛏️', camping: '🏕️', attraction: '🎡', culture: '🎭', health: '⚕️', services: '✂️', parking: '🅿️', transport: '🚌' };
 
-const CAT_TINT = { restaurant: '#fdecea', cafe: '#fef6e0', pub: '#f3e8dc', shopping: '#e8f0fe', hotel: '#ede7f6', attraction: '#e6f4ea', culture: '#feefe3', health: '#e0f7fa', services: '#eceff1', parking: '#e3f2fd', transport: '#e8eaf6' };
+const CAT_TINT = { restaurant: '#fdecea', cafe: '#fef6e0', pub: '#f3e8dc', shopping: '#e8f0fe', hotel: '#ede7f6', camping: '#e8f5e9', attraction: '#e6f4ea', culture: '#feefe3', health: '#e0f7fa', services: '#eceff1', parking: '#e3f2fd', transport: '#e8eaf6' };
 
 // Pin icon granularity (user decision 2026-10-08): packs carry no OSM tag
 // detail, so one icon per category is all that's natively expressible.

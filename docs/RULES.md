@@ -51,7 +51,9 @@ creation and dropped at recount, loudly.
   Strong Overture identity agreement (exact-name / website / close-name
   ≥0.8 within 60 m at row confidence ≥0.99) exempts from stale-orphan:
   the provider confirms this exact place, same trust class as a
-  chain-published agreement.
+  chain-published agreement. Static accommodation (hotels, campsites,
+  caravan sites) never goes stale-orphan while touch-dated: low churn
+  means an old survey beats no survey; undated still hides.
 - Everything hidden stays reachable by search and by id, with its reason
   shown. "Show unresolved" reveals the whole hidden population.
 - Parking pins exist but stay off by default — too many, too rarely

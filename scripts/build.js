@@ -73,6 +73,10 @@ function mapOsmCategory(tags = {}) {
   if (['parking', 'parking_space', 'bicycle_parking', 'motorcycle_parking'].includes(a)) return ['parking', 'Parking'];
   if (['theatre', 'cinema', 'arts_centre', 'library', 'place_of_worship'].includes(a) || t === 'museum' || t === 'gallery') return ['culture', 'Culture'];
   if (t === 'hotel' || t === 'guest_house' || t === 'hostel') return ['hotel', 'Hotel'];
+  // Static accommodation part 2 (user decision 2026-10-14): caravan and
+  // camp sites are low-churn like hotels — pulled and labelled honestly
+  // as Camping, never folded into Hotel. Before the services fallthrough.
+  if (t === 'caravan_site' || t === 'camp_site') return ['camping', 'Camping'];
   if (t === 'attraction' || t === 'viewpoint' || l === 'park' || l === 'nature_reserve' || l === 'miniature_golf') return ['attraction', 'Attraction'];
   if (s) return ['shopping', 'Shop'];
   if (a || t) return ['services', 'Services'];
@@ -238,7 +242,7 @@ function osmQuery(s, w, n, e) {
   // Pub/bar/nightclub type exists, so excluding it hid clubs both sides.
   const amen = `"amenity"~"^(restaurant|cafe|pub|bar|nightclub|fast_food|ice_cream|pharmacy|doctors|dentist|cinema|theatre|arts_centre|library|place_of_worship|clinic|optician)$"`;
   const shop = `"shop"`;
-  const tour = `"tourism"~"^(hotel|guest_house|hostel|attraction|museum|gallery|viewpoint)$"`;
+  const tour = `"tourism"~"^(hotel|guest_house|hostel|caravan_site|camp_site|attraction|museum|gallery|viewpoint)$"`;
   const leis = `"leisure"~"^(park|nature_reserve|miniature_golf|sports_centre)$"`;
   return `[out:json][timeout:25];(node[${amen}](${s},${w},${n},${e});node[${shop}](${s},${w},${n},${e});node[${tour}](${s},${w},${n},${e});node[${leis}](${s},${w},${n},${e});way[${amen}](${s},${w},${n},${e});way[${shop}](${s},${w},${n},${e});way[${tour}](${s},${w},${n},${e}););out center meta 2000;`;
 }

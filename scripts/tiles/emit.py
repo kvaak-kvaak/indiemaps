@@ -36,6 +36,7 @@ CLASS_MAP = {
     'cafe': ('cafe', ''),
     'pub': ('bar', ''),
     'hotel': ('lodging', ''),
+    'camping': ('lodging', ''),  # overnight accommodation like hotel; OMT class already verified, no new sprite needed
     'attraction': ('attraction', ''),
     'culture': ('art_gallery', ''),
     'health': ('doctors', ''),
