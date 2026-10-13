@@ -15,6 +15,9 @@ verified. Coverage below; per-pack provenance in manifest.json.
 
 - Index-driven chain import (394 spiders, targeted supplements with
   provenance) — High-Street chains back on the map with chain badges.
+- Direct Overture creation (high-confidence curated rows the matchers
+  missed, Microsoft culled at pull) + strong-agreement exemption from
+  stale-orphan hiding (exact-name/website match at ≥0.99 confidence).
 - Finnish chains (Restel/Raflaamo, match-only) + Trade Register (PRH)
   corroboration for FI areas.
 - Research-extract enrichment live in every build (cuisines, gap-only
@@ -32,6 +35,10 @@ verified. Coverage below; per-pack provenance in manifest.json.
   nothing to import from.
 - FI cities outside the capital region have no municipal source:
   thinner than Helsinki, honestly so.
+- Hotels mapped as resort/lodge/guest_house/inn/B&B/serviced-apartment
+  in OSM are culled at Overture pull (hotel class only); e.g. Hotel
+  Marski by Scandic (Microsoft-sourced, no other dataset) awaits the
+  next area rebuild with the hotel-class fix — reachable by search now.
 - August-vintage supplements (Jollyes, CEF): stamped per-spider.
 - Thin-but-honest pins: ATM-only bank records, vending-machine
   chains (Costa Express), locker banks. Chain-published, labelled.

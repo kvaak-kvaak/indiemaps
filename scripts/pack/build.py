@@ -347,6 +347,7 @@ TRUST_DEFAULTS = {
     'fsa-linked': 1.0, 'servicemap-record': 1.0, 'ch-corroborated': 0.8,
     'prh-listed': 0.8, 'atp-contributor': 0.8, 'chain-record': 0.8,
     'nhs-listed': 0.7, 'recent-osm-touch': 0.7, 'overture-direct': 0.6,
+    'overture-agreed': 0.7,
     'ta-record': 0.4, 'aged-osm-floor': 0.3, 'merged-undated-osm': 0.7,
     'fresh_days': 182, 'stale_days': 547,
 }
@@ -391,7 +392,7 @@ def flag_keep_evidence(pois_data, now):
     they have — evidence explains, hiding decides. Re-run safe."""
     kept = {'atp': 0, 'fsa': 0, 'ch': 0, 'recent_osm': 0, 'aged_osm': 0,
             'nhs': 0, 'servicemap': 0, 'chain': 0, 'prh': 0, 'ov_direct': 0,
-            'ta': 0}
+            'ov_agreed': 0, 'ta': 0}
     trust, trust_ok = trust_weights()
     if not trust_ok:
         print('trust: weights unverified (defaults), see source-weights.yaml')
@@ -446,6 +447,9 @@ def flag_keep_evidence(pois_data, now):
         if p.get('provisional_creation') == 'ov-direct':
             ev.append({'rule': 'overture-direct',
                        'meaning': 'Overture record at high provider confidence — parcel-grade position'})
+        if ov_strong_agreement(p):
+            ev.append({'rule': 'overture-agreed',
+                       'meaning': 'Overture identity agreed (exact/website/close-name) at high confidence'})
         if 'chain' in s:
             ev.append({'rule': 'chain-record',
                        'meaning': 'Chain-published data (Restel/Raflaamo, first-party)'})
@@ -479,6 +483,7 @@ def flag_keep_evidence(pois_data, now):
                         'aged-osm-touch': 'aged_osm', 'nhs-listed': 'nhs',
                         'chain-record': 'chain', 'ta-record': 'ta',
                         'prh-listed': 'prh', 'overture-direct': 'ov_direct',
+                        'overture-agreed': 'ov_agreed',
                         'servicemap-record': 'servicemap'}[e['rule']]
                 kept[key] += 1
         else:
@@ -584,6 +589,22 @@ def assert_position_invariants(pois_data, m, packdir):
                   f'{sum(1 for p in pois_data if p.get("position_hazard"))} hazard)')
 
 
+def ov_strong_agreement(p):
+    """Strong Overture identity agreement (user decision 2026-10-13):
+    exact-name, website, or close-name (>=0.8 within 60m) match at row
+    confidence >= 0.99. Same trust class as chain-published agreement —
+    the provider confirms this exact place, not just its phone number."""
+    m = p.get('overture_match') or {}
+    if m.get('method') not in ('exact-name', 'website'):
+        if not (m.get('method') == 'name' and (m.get('score') or 0) >= 0.8
+                and (m.get('dist_m') or 999) < 60):
+            return False
+    try:
+        return float(p.get('overture_confidence') or 0) >= 0.99
+    except (TypeError, ValueError):
+        return False
+
+
 def flag_stale_orphans(pois_data, now):
     """User-decided orphan rule: an OSM-sourced record with no FSA/CH/
     Servicemap/ATP/chain/PRH corroboration renders iff its OSM object was
@@ -599,6 +620,8 @@ def flag_stale_orphans(pois_data, now):
         p.pop('unresolved_why', None)
         s = p.get('sources', []) or []
         if 'osm' not in s or any(x in s for x in ('fsa', 'ch', 'servicemap', 'atp', 'chain', 'prh')):
+            continue
+        if ov_strong_agreement(p):
             continue
         if osm_touch_fresh(p, now):
             continue

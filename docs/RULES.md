@@ -48,6 +48,10 @@ creation and dropped at recount, loudly.
   recorded reason: hazard tier (roads where geocoders fail), stale
   orphan (un corroborated and untouched for 6+ months), or search-only
   (concessions living on their host's card, parcels with host links).
+  Strong Overture identity agreement (exact-name / website / close-name
+  ≥0.8 within 60 m at row confidence ≥0.99) exempts from stale-orphan:
+  the provider confirms this exact place, same trust class as a
+  chain-published agreement.
 - Everything hidden stays reachable by search and by id, with its reason
   shown. "Show unresolved" reveals the whole hidden population.
 - Parking pins exist but stay off by default — too many, too rarely
@@ -56,8 +60,9 @@ creation and dropped at recount, loudly.
 ## Evidence on every pin
 
 - Every shown pin carries at least one keep-evidence leg (register,
-  chain, company, fresh map touch, pharmacy listing, municipal record)
-  with a human-readable meaning. Shown-without-evidence fails the build.
+  chain, company, fresh map touch, pharmacy listing, municipal record,
+  Overture identity agreement) with a human-readable meaning.
+  Shown-without-evidence fails the build.
 - Tiers are evidence counts (1–3), capped and coarse: sorting help,
   never a quality verdict. Weights settle field disagreements only
   (which hours to show), per `data/source-weights.yaml`.

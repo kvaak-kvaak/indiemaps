@@ -66,13 +66,14 @@ def pull(w, s, e, n):
               (bbox.xmin+bbox.xmax)/2 AS lon, (bbox.ymin+bbox.ymax)/2 AS lat,
               addresses[1].postcode AS postcode, websites[1] AS website, phones[1] AS phone,
               socials AS socials,
-              list_distinct([s2.dataset FOR s2 IN sources]) AS datasets
+              list_distinct([s2.dataset FOR s2 IN sources]) AS datasets,
+              confidence AS confidence
             FROM read_parquet('{S3BASE_TMPL.format(rel=rel)}')
             WHERE bbox.xmin <= {e} AND bbox.xmax >= {w} AND bbox.ymin <= {n} AND bbox.ymax >= {s}
               AND NOT list_contains(list_distinct([s2.dataset FOR s2 IN sources]), 'Microsoft')
               AND (len(websites) > 0 OR len(phones) > 0)
             """).fetchall()
-            cols = ['id', 'name', 'lon', 'lat', 'postcode', 'website', 'phone', 'socials', 'datasets']
+            cols = ['id', 'name', 'lon', 'lat', 'postcode', 'website', 'phone', 'socials', 'datasets', 'confidence']
             out = [dict(zip(cols, r)) for r in rows]
             for o in out:
                 o['release'] = rel
@@ -126,6 +127,9 @@ OV_PIN = {
     'ice_cream_shop': 'cafe', 'bar': 'pub', 'pub': 'pub',
     'brewery': 'pub', 'nightclub': 'pub',
     'hotel': 'hotel', 'motel': 'hotel',
+    'hostel': 'hotel', 'resort': 'hotel', 'lodge': 'hotel',
+    'guest_house': 'hotel', 'inn': 'hotel', 'bed_and_breakfast': 'hotel',
+    'serviced_apartment': 'hotel',
     'fashion_and_apparel_store': 'shopping', 'convenience_store': 'shopping',
     'food_and_beverage_store': 'shopping', 'hardware_home_and_garden_store': 'shopping',
     'electronics_store': 'shopping', 'flowers_and_gifts_store': 'shopping',
@@ -215,6 +219,20 @@ def row_matches_any_poi(o, pois):
     return False
 
 
+def normUrl(u):
+    """Store-specific URL normalisation (same semantics as atp.js): bare
+    homepages never qualify — every branch shares them."""
+    try:
+        s = str(u or '').strip().lower().replace('https://', '').replace('http://', '').replace('www.', '').rstrip('/')
+        if not s or any(c.isspace() for c in s):
+            return None
+        host, _, rest = s.partition('/')
+        path = rest.split('?')[0].split('#')[0]
+        return {'key': host + ('/' + path if path else ''), 'deep': len(path) > 0}
+    except Exception:
+        return None
+
+
 def norm_pc(p):
     return (p or '').replace(' ', '').lower() or None
 
@@ -298,17 +316,25 @@ def main():
         p.pop('overture_id', None)
         p.pop('overture_match', None)
         p.pop('overture_datasets', None)
+        p.pop('overture_confidence', None)
         p['sources'] = [s for s in p.get('sources', []) if s != 'overture']
         if p.get('website') and p.get('phone') and p.get('facebook') \
                 and p.get('instagram') and p.get('twitter'):
             continue
         ppc = norm_pc(p.get('postcode'))
-        best, bs = None, 0
+        best, bs, bmethod, bns = None, 0, '', 0
         for j in nearby(grid, cell, p['lat'], p['lng']):
             o = ov[j]
             d = dist_m(p['lat'], p['lng'], o['lat'], o['lon'])
             opc = norm_pc(o.get('postcode'))
             pc = bool(opc and ppc and opc == ppc)
+            # Pass 0 (website): equal store-specific URLs = same place.
+            if p.get('website') and o.get('website'):
+                ua, ub = normUrl(p['website']), normUrl(o['website'])
+                if ua and ub and ua['key'] == ub['key'] and ua['deep'] and d < 500:
+                    if 1.8 > bs:
+                        bs, best, bmethod, bns = 1.8, o, 'website', 1.0
+                    continue
             if d > (250 if pc else 120):
                 continue
             ns = nscore(p['name'], o['name'] or '')
@@ -317,7 +343,11 @@ def main():
                 if 'meta' in (o.get('datasets') or []):
                     sc += META_BONUS
                 if sc > bs:
+                    fn, pn = norm(p['name']), norm(o['name'] or '')
+                    exact = len(fn) >= 6 and fn == pn
                     bs, best = sc, o
+                    bns = ns
+                    bmethod = 'exact-name' if exact else 'name'
         if best is None:
             continue
         claimed.add(best.get('id'))
@@ -356,9 +386,17 @@ def main():
             p['overture_id'] = best['id']
             # Match diagnostics for the per-source debug UI: which Overture
             # row won (the id alone doesn't say what name matched), and which
-            # dataset it came from (FSQ-vs-Meta freshness audits).
+            # dataset it came from (FSQ-vs-Meta freshness audits). Method +
+            # score + row confidence feed the strong-agreement orphan
+            # exemption (user decision 2026-10-13): recorded on every match,
+            # not only when contact was filled.
             p['overture_match'] = {'name': best.get('name'),
-                                   'dist_m': round(dist_m(p['lat'], p['lng'], best['lat'], best['lon']))}
+                                   'dist_m': round(dist_m(p['lat'], p['lng'], best['lat'], best['lon'])),
+                                   'method': bmethod, 'score': round(bns, 3)}
+            try:
+                p['overture_confidence'] = round(float(best.get('confidence') or 0), 3)
+            except (TypeError, ValueError):
+                p['overture_confidence'] = 0.0
             p['overture_datasets'] = sorted(x for x in (best.get('datasets') or []) if x != 'Overture')
             if 'overture' not in p.get('sources', []):
                 p['sources'].append('overture')

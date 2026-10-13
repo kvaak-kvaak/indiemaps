@@ -34,6 +34,7 @@ trust:
   nhs-listed: 0.7
   recent-osm-touch: 0.7
   overture-direct: 0.6
+  overture-agreed: 0.7
   ta-record: 0.4
   aged-osm-floor: 0.3
   merged-undated-osm: 0.7
