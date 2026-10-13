@@ -1,18 +1,22 @@
 #!/usr/bin/env python3
-"""Finnish chain enrichment (Restel + Raflaamo snapshots, first-party data).
+"""Finnish chain enrichment (Restel + Raflaamo + ABC snapshots, first-party data).
 
-data/chains_fi/{restel,raflaamo}.json are one-off harvests (Oct 2026, metas
-beside them) of chain-published restaurant records: surveyed positions,
-phones, and (Restel, thin) hours. MATCH ONLY: rows that match nothing are
-discarded, no POI is ever created — snapshots age, and creation from aging
-data is exactly what this stage must not do.
+data/chains_fi/{restel,raflaamo,abc}.json are one-off harvests (Oct 2026,
+metas beside them) of chain-published records: surveyed positions, phones,
+and hours (Restel thin day-dicts, ABC OSM-syntax strings). MATCH ONLY: rows
+that match nothing are discarded, no POI is ever created — snapshots age,
+and creation from aging data is exactly what this stage must not do.
+
+EV-only ABC records (charging with no refuel/grocer/menu) are skipped at
+load, consistent with the EV-charger spider exclusion: chargers are not
+destinations. ABC rows match food, convenience and fuel POIs (not just
+restaurant/cafe/pub).
 
 Enrichment per match: chain_brand + chain_source, chain phone (fills
-empties only, same rule as Overture backfill), chain hours converted to
-OSM syntax (Restel day-dict; applied gap-only like ta_hours — current
-sources always win by absence of competition). Matched records join
-sources 'chain', which corroborates like ATP (chain-published position
-agreement) for the orphan rule and keep-evidence.
+empties only, same rule as Overture backfill), chain hours (gap-only like
+ta_hours — current sources always win by absence of competition). Matched
+records join sources 'chain', which corroborates like ATP (chain-published
+position agreement) for the orphan rule and keep-evidence.
 
 Re-run safe (clears chain_* first). FI areas only (wired in build.py).
 
@@ -25,7 +29,9 @@ from overture import toks, accept, nscore, dist_m, grid_index, nearby, norm_pc  
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCES = {'restel': ROOT / 'data' / 'chains_fi' / 'restel.json',
-           'raflaamo': ROOT / 'data' / 'chains_fi' / 'raflaamo.json'}
+           'raflaamo': ROOT / 'data' / 'chains_fi' / 'raflaamo.json',
+           'abc': ROOT / 'data' / 'chains_fi' / 'abc.json'}
+ABC_KEEP_CAPS = {'refuel', 'grocer', 'menu', 'food', 'restaurant', 'cafe', 'market', 'carwash'}
 DAYMAP = {'monday': 'Mo', 'tuesday': 'Tu', 'wednesday': 'We', 'thursday': 'Th',
           'friday': 'Fr', 'saturday': 'Sa', 'sunday': 'Su'}
 
@@ -57,6 +63,7 @@ def main():
     a = ap.parse_args()
     w, s, e, n = map(float, a.bbox.split(','))
     rows = []
+    ev_skipped = 0
     for src, path in SOURCES.items():
         try:
             data = json.load(open(path))
@@ -71,11 +78,15 @@ def main():
                 continue
             if not r.get('name'):
                 continue
+            if src == 'abc' and not set(r.get('capabilities') or []) & ABC_KEEP_CAPS:
+                ev_skipped += 1  # EV-only chargers are not destinations
+                continue
             rows.append({'src': src, 'name': r['name'], 'lat': lat, 'lng': lng,
                          'phone': r.get('phone') or '',
                          'postcode': (r.get('postcode') or '').replace(' ', '').lower() or None,
-                         'hours': r.get('hours') if src == 'restel' else None})
-    print(f'chains_fi rows in bbox: {len(rows)}')
+                         'hours': r.get('hours') if src in ('restel', 'abc') else None,
+                         'hours_osm': src == 'abc'})
+    print(f'chains_fi rows in bbox: {len(rows)} (EV-only skipped: {ev_skipped})')
 
     pois = json.load(open(a.pois))
     for p in pois:
@@ -86,7 +97,10 @@ def main():
     grid, cell = grid_index(rows, 'lat', 'lng') if rows else ({}, None)
     matched = hours_added = phones_added = 0
     for p in pois:
-        if p.get('category') not in ('restaurant', 'cafe', 'pub'):
+        # Restaurant chains match food POIs; ABC (fuel/convenience) also
+        # matches shops and stations. Others never match non-food.
+        food = p.get('category') in ('restaurant', 'cafe', 'pub')
+        if not food and p.get('category') not in ('shopping', 'transport'):
             continue
         if not p.get('name'):
             continue
@@ -95,9 +109,15 @@ def main():
         if rows:
             for j in nearby(grid, cell, p['lat'], p['lng']):
                 o = rows[j]
+                if not food and o.get('src') != 'abc':
+                    continue
                 d = dist_m(p['lat'], p['lng'], o['lat'], o['lng'])
                 if d > 150:
                     continue
+                if o.get('src') == 'abc' and d > 100:
+                    continue  # surveyed GPS both sides: premises-scale only
+                              # (measured: 128m/144m same-postcode pairs are
+                              # adjacent stations, not the same venue)
                 rpc = o.get('postcode')
                 pc = bool(rpc and ppc and rpc == ppc)
                 ns = nscore(p['name'], o['name'])
@@ -117,7 +137,7 @@ def main():
         if best.get('hours') and not (p.get('opening_hours_osm') or p.get('atp_hours')
                                       or p.get('site_hours') or p.get('nhs_hours')
                                       or p.get('sm_hours')):
-            h = restel_hours_to_osm(best['hours'])
+            h = best['hours'] if best.get('hours_osm') else restel_hours_to_osm(best['hours'])
             if h:
                 p['chain_hours'] = h
                 hours_added += 1
