@@ -829,3 +829,13 @@ Read these three docs first, in order:
   platform — "same search everywhere" disproven). Would need
   browser network sniffing; out of scope. Sokos Hotels
   (sokoshotels.fi) noted as a cleaner future target.
+
+## Session log (2026-10-13, tiles Phase 0 re-bake)
+
+- Fixed tiles.yml YAML (inline-Python indentation broke the
+  trigger — validation via local PyYAML parse is now the rule
+  before pushing workflow edits); moved inline code to
+  check_determinism.py + fill_manifest.py.
+- Fresh bake green: determinism check passes in CI, manifests
+  filled (Southend 243,502 bytes + sha). Round-trip on new
+  artifacts: 2005/2005, max drift 0.8m, 0 minzoom violations.
