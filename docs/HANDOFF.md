@@ -798,3 +798,22 @@ Read these three docs first, in order:
   issue, flagged for packs track; tiles dedupe).
 - Demo reference client (public/tiles-demo.html) serves locally;
   browser click-through pending (user).
+
+## Session log (2026-10-13, Helsinki sources pass)
+
+- Servicemap Espoo+Vantaa flagged (same adapter, 57+32 metro
+  food units verified at API). Espoo-Tapiola CI green: 34 units
+  -> 21 matched + 13 added, audit clean.
+- NoHo PARKED: city pages + ravintolat list carry corporate nav
+  only, no venue inventory; venues live on brand domains.
+  Restel (NoHo-owned) already wired. fetch_noho.py kept as the
+  documented pattern for the day a list exists.
+- S-ryhmä retail PARKED today: s-kaupat.fi persistently 429s,
+  Next.js-rendered, no clean endpoint in 3 probes; Alepa page
+  links out to the same platform with no data. Revisit when
+  rate limits cool or an endpoint surfaces.
+- Small chains: Kotipizza (Storyblok + keyed Google Maps, no
+  coords), Robert's (404 path), Jungle Juice (JS redirect),
+  Friends & Brgrs (addresses, no coords) — all parked, none
+  worth a scraper today.
+- espresso_house ADDED (27 Helsinki-metro feats verified).
