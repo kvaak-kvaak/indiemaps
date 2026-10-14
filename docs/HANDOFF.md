@@ -893,3 +893,22 @@ Read these three docs first, in order:
   along the 2 km pier, each correctly placed. Left as-is.
 - Asset-name note: release files ASCII-fold (etela, paijat) while
   manifest `file` keeps diacritics — download scripts must fold.
+
+## Session log (2026-10-14, Marski v2 + Microsoft-cull revisit)
+
+- CORRECTION (own the earlier miss): no Microsoft-only Overture row
+  exists anywhere in Helsinki (0/35,359 raw rows) — the "Microsoft-only"
+  diagnosis was wrong. Marski's row is meta+Overture @0.9989 with
+  Scandic URL/phone. The real blocker was the creation anti-dupe: the
+  hotel row name-matches the hidden Scandic-restaurant node 10 m away,
+  so creation deferred to a pin nobody sees.
+- Cull revisited as asked: it was dropping ALL Microsoft-touched rows
+  (2,835 in Helsinki, every one also Overture-sourced). Narrowed to
+  Microsoft-ONLY rows. Measured innocent in the event (5/91 test
+  creations), but the overbreadth is gone.
+- Creation anti-dupe now category-aware: same-category or shown-POI
+  matches still block; cross-category vs hidden POI creates ONLY for
+  accommodation (hotel/camping — building and restaurant genuinely
+  coexist). First attempt without the class gate forked 63 service pins
+  in one pass; gate cut it to 6 legit gaps (Marski, Sokos Torni, 2 St1,
+  Neste, Violanpuisto). Helsinki re-dispatched to land it.

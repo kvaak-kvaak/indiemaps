@@ -70,7 +70,7 @@ def pull(w, s, e, n):
               confidence AS confidence
             FROM read_parquet('{S3BASE_TMPL.format(rel=rel)}')
             WHERE bbox.xmin <= {e} AND bbox.xmax >= {w} AND bbox.ymin <= {n} AND bbox.ymax >= {s}
-              AND NOT list_contains(list_distinct([s2.dataset FOR s2 IN sources]), 'Microsoft')
+              AND list_distinct([s2.dataset FOR s2 IN sources]) != ['Microsoft']
               AND (len(websites) > 0 OR len(phones) > 0)
             """).fetchall()
             cols = ['id', 'name', 'lon', 'lat', 'postcode', 'website', 'phone', 'socials', 'datasets', 'confidence']
@@ -200,7 +200,11 @@ def row_matches_any_poi(o, pois):
     """Creation anti-duplicate: does this raw row match ANY existing POI
     under the same matcher (name + distance + postcode, no contact needed)?
     Catches contact-bare rows the backfill pull can't see (measured: a
-    contact-bare Pasha Kebab Bar 53m from its FSA namesake)."""
+    contact-bare Pasha Kebab Bar 53m from its FSA namesake). Returns the
+    matching POI (not just True): a cross-category match against a HIDDEN
+    POI is a different feature of one venue (measured: Hotel Marski row
+    vs hidden Scandic-restaurant node 10m away) — the caller may still
+    create, never fork a shown pin."""
     for p in pois:
         if not p.get('name'):
             continue
@@ -215,8 +219,8 @@ def row_matches_any_poi(o, pois):
             continue
         ns = nscore(p['name'], o.get('name') or '')
         if accept(p['name'], o.get('name') or '', ns, d, pc):
-            return True
-    return False
+            return p
+    return None
 
 
 def normUrl(u):
@@ -303,7 +307,9 @@ def main():
     filled_web, filled_phone = 0, 0
     filled_soc = {'facebook': 0, 'instagram': 0, 'twitter': 0}
     upgraded_soc = {'facebook': 0, 'instagram': 0, 'twitter': 0}
-    claimed = set()  # Overture ids matched to a POI (creation skips these)
+    claimed = {}  # Overture id -> claiming POI category (creation skips
+    # same-category claims only; a cross-category claim is a different
+    # feature of one venue and falls through to the dupe check)
     for p in pois:
         # clear previous backfill (re-run safe); manual/ surveyed values stay
         if p.get('website_source') == 'overture':
@@ -350,7 +356,7 @@ def main():
                     bmethod = 'exact-name' if exact else 'name'
         if best is None:
             continue
-        claimed.add(best.get('id'))
+        claimed[best.get('id')] = p.get('category')
         contributed = False
         if not p.get('website') and best.get('website'):
             p['website'] = best['website']
@@ -415,12 +421,7 @@ def main():
         print(f'overture direct creation skipped ({str(ex)[:100]})')
         raw_all = []
     for o in raw_all:
-        if not o.get('name') or o.get('id') in claimed:
-            continue
-        if row_matches_any_poi(o, pois):
-            skipped_dupe += 1
-            continue
-        if ov_confidence(o) < OV_CONF_PASS:
+        if not o.get('name'):
             continue
         cat = o.get('basic_category')
         if cat in OV_PIN:
@@ -430,6 +431,23 @@ def main():
         else:
             gate_tally['unlisted'] += 1
             continue
+        if cls == claimed.get(o.get('id')):
+            continue  # same-category backfill claim: true dupe
+        if ov_confidence(o) < OV_CONF_PASS:
+            continue
+        dupe = row_matches_any_poi(o, pois)
+        if dupe:
+            # Cross-category match against a hidden POI is a different
+            # feature of one venue ONLY for accommodation (measured: hotel
+            # row vs hidden restaurant node 10m away — the hotel building
+            # and its restaurant genuinely coexist as pins). Other classes
+            # stay blocked: a hidden POI of another category at the same
+            # spot is more likely one misclassified feature (measured: 63
+            # service forks in one Helsinki pass before this gate).
+            dupe_hidden = bool(dupe.get('position_hazard') or dupe.get('unresolved_why'))
+            if cls not in ('hotel', 'camping') or cls == dupe.get('category') or not dupe_hidden:
+                skipped_dupe += 1
+                continue
         gate_tally['pass'] += 1
         oid = 'ov-' + str(o['id']).replace('-', '')[:16]
         if oid in known_ids or oid in qids:

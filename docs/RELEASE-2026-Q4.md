@@ -38,9 +38,10 @@ verified. Coverage below; per-pack provenance in manifest.json.
 - Campsites/caravan sites newly pulled (Camping category) — absent
   before, not hidden; low-churn static like hotels, same orphan rule.
 - Hotels mapped as resort/lodge/guest_house/inn/B&B/serviced-apartment
-  in OSM are culled at Overture pull (hotel class only); e.g. Hotel
-  Marski by Scandic (Microsoft-sourced, no other dataset) awaits the
-  next area rebuild with the hotel-class fix — reachable by search now.
+  in OSM are pulled as Hotel (not culled); Overture creation is
+  category-aware (a hotel row is no longer vetoed by a hidden
+  restaurant node for the same venue). E.g. Hotel Marski by Scandic
+  (Overture 0.9989, unmapped in OSM) is an ov-direct pin.
 - August-vintage supplements (Jollyes, CEF): stamped per-spider.
 - Thin-but-honest pins: ATM-only bank records, vending-machine
   chains (Costa Express), locker banks. Chain-published, labelled.
