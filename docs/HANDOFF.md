@@ -874,3 +874,22 @@ Read these three docs first, in order:
 - Local verify Helsinki: 1041 rows -> 427 matched; Tampere: 127 -> 44
   (set_fi flowing nationwide). Open: Motonet x2 POIs same store (pack
   dupe triage, not tonight).
+
+## Session log (2026-10-14, FI rebuild + verify)
+
+- Run 38551997524 (17 FI, spider=true, commit 974a9ac) GREEN, Q4
+  published. Fresh chains live estate-wide: set_fi dominant everywhere
+  (Helsinki 48 + 250 across the other 15 areas), loc_norm/rest_off/
+  restel/raflaamo/abc/biltema/budgetsport matching in all areas.
+- Static exemption verified live: hidden hotels 0 in all 16 checked
+  packs (was 49 in Helsinki alone). Camping 0–3 per area, all shown.
+- Marski gap found in the same pass: the hotel is absent, not hidden
+  — base pull never fetched tourism=resort (old local pack had it from
+  a hotel-tagged era). Fix committed (a259034): pull + map
+  resort/lodge/motel/inn/B&B/serviced-apartment as hotel in all four
+  mappers (build.js, server.js, atp.js, osm_fetch PBF set); Helsinki
+  re-run 38620918256 dispatched to land it.
+- Pier Railway x8 triaged: not dupes — 8 distinct OSM way segments
+  along the 2 km pier, each correctly placed. Left as-is.
+- Asset-name note: release files ASCII-fold (etela, paijat) while
+  manifest `file` keeps diacritics — download scripts must fold.
