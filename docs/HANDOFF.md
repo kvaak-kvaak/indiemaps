@@ -912,3 +912,10 @@ Read these three docs first, in order:
   coexist). First attempt without the class gate forked 63 service pins
   in one pass; gate cut it to 6 legit gaps (Marski, Sokos Torni, 2 St1,
   Neste, Violanpuisto). Helsinki re-dispatched to land it.
+- ORDERING BUG caught by CI (not local): the hidden-gate read orphan
+  flags that don't exist yet at overture time (recount runs later) —
+  Marski/Torni silently skipped in production while local verify
+  passed. Dropped the hidden-gate; class gate carries it. Verified via
+  pre-recount simulation (flags stripped): all 6 create. Redispatched
+  spider=true (spider=false would drop site_hours — sites stage needs
+  --sites-all).
