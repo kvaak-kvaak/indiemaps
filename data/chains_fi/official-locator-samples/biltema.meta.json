@@ -1,0 +1,13 @@
+{
+  "chain": "Biltema",
+  "source_url": "https://www.biltema.fi/tavaratalot/",
+  "fetched_at": "2026-10-13T18:53:27.546315+00:00",
+  "rows": 28,
+  "with_coordinates": 27,
+  "sha256": "eb066fcafabbdccd1bd677561226d472e07f1397844875ee8abbcb2990ab7903",
+  "source_sha256": "99cf7878bc5b7ee5a89a6aeae6d62ea3ed1071ea8507809948d52e9f579d6729",
+  "completeness": "Full response array; nationwide completeness not independently established",
+  "published": false,
+  "eligible_location_rows": 27,
+  "eligibility": "Finland coordinate bounds, enabled/active/show_on_website when supplied; still requires identity and branch review"
+}

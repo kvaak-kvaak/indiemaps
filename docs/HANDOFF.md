@@ -856,3 +856,21 @@ Read these three docs first, in order:
 - Fresh bake green: determinism check passes in CI, manifests
   filled (Southend 243,502 bytes + sha). Round-trip on new
   artifacts: 2005/2005, max drift 0.8m, 0 minzoom violations.
+
+## Session log (2026-10-14, Fresh chain harvests wired)
+
+- Fresh lane delivered: s-etukortti-finland (3438 normalized,
+  nationwide, municipality-sharded) + helsinki-313, restaurant-official
+  156 (Espresso 78/Friends&Brgrs 38/Picnic 40, NoHo city-level
+  excluded), chain-expansion 82 (Pancho 58 + Fazer 24; Burger-Co/Soupster
+  address-only stay out), official-locator 585 normalized across 9
+  retail brands + Biltema/BudgetSport raw (hours/phone).
+- chains_fi.py: 5 new sources, per-row map_policy (existing/search_only/
+  host_review), Helsinki-wins overlap, setweek/Espresso/Fazer/BudgetSport
+  hours converters, grocery 100 m cap (Atusa/S-market 130 m near-miss),
+  brand-gate on city-named retail rows (Masku-is-not-Tokmanni cut 11
+  false attaches). Match-only, never creates. Committed slim
+  (normalized+meta/README); raw pages/shards local-only.
+- Local verify Helsinki: 1041 rows -> 427 matched; Tampere: 127 -> 44
+  (set_fi flowing nationwide). Open: Motonet x2 POIs same store (pack
+  dupe triage, not tonight).

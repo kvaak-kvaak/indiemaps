@@ -1,0 +1,10 @@
+{
+  "chain": "Budget Sport",
+  "source_url": "https://www.budgetsport.fi/myymalat/",
+  "rows": 10,
+  "source_sha256": "1784eee519c4feea9e256b45e771d8426bbd4f6b2fd1b2e95ae18ba5db7ea606",
+  "fetched_at": "2026-10-13T18:53:55.047023+00:00",
+  "sha256": "da48a49e66e25d405274e16a9bcd2cfcb067a583e0dfab0fc88119e63629c37c",
+  "published": false,
+  "completeness": "Embedded inventory, completeness not independently verified"
+}

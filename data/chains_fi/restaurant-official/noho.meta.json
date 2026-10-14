@@ -1,0 +1,7 @@
+{
+  "source_url": "https://www.noho.fi/wp-admin/admin-ajax.php?action=no_restaurant_feed&page=1&per_page=100&lang=fi",
+  "rows": 111,
+  "sha256": "429d2d20fd00b78e4cb150b9b60ce50aeacfb0907f66c217bbc6eeb7677417b5",
+  "scope": "Full listed inventory; independent national completeness not established",
+  "noho_note": "Directory entries may represent chains or entertainment venues; no coordinate creation"
+}

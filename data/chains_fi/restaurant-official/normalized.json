@@ -1,0 +1,5814 @@
+[
+  {
+    "id": "official:friends_and_brgrs/19264",
+    "name": "Friends & Brgrs Tikkurila",
+    "brand": "Friends & Brgrs",
+    "lat": 60.2889654,
+    "lng": 25.0336371,
+    "address": "Tikkurilantie 46, 01300, Vantaa",
+    "city": "Vantaa",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/19080",
+    "name": "Friends & Brgrs Oulu Ideapark",
+    "brand": "Friends & Brgrs",
+    "lat": 65.0776151336069,
+    "lng": 25.448880034671024,
+    "address": "Ritaharjuntie 49, 90540, Oulu",
+    "city": "Oulu",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/18960",
+    "name": "Friends & Brgrs Lempäälä Ideapark",
+    "brand": "Friends & Brgrs",
+    "lat": 61.357662,
+    "lng": 23.7959715,
+    "address": "Ideaparkinkatu 4, 37570, Lempäälä",
+    "city": "Hulikankulma",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/18887",
+    "name": "Friends & Brgrs Kivistö",
+    "brand": "Friends & Brgrs",
+    "lat": 60.31407979999999,
+    "lng": 24.8475791,
+    "address": "Topaasikuja 8, 01700, Vantaa",
+    "city": "Vantaa",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/18649",
+    "name": "Friends & Brgrs Seppälä, Jyväskylä",
+    "brand": "Friends & Brgrs",
+    "lat": 62.26409561091293,
+    "lng": 25.77529102563858,
+    "address": "Vasarakatu 29, 40320, Jyväskylä",
+    "city": "Jyväskylä",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/17560",
+    "name": "Friends & Brgrs Lippulaiva",
+    "brand": "Friends & Brgrs",
+    "lat": 60.15034370000001,
+    "lng": 24.6537507,
+    "address": "Espoonlahdenkatu 8, 02320, Espoo",
+    "city": "Espoo",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/17406",
+    "name": "Friends & Brgrs Kulttuurikasarmi",
+    "brand": "Friends & Brgrs",
+    "lat": 60.1699461,
+    "lng": 24.9356173,
+    "address": "Narinkka 2, 00100, Helsinki",
+    "city": "Helsinki",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/17234",
+    "name": "Friends & Brgrs Jumbo",
+    "brand": "Friends & Brgrs",
+    "lat": 60.29086659999999,
+    "lng": 24.9633138,
+    "address": "Vantaanportinkatu 3, 01510, Vantaa",
+    "city": "Vantaa",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/17144",
+    "name": "Friends & Brgrs Pori, Puuvilla",
+    "brand": "Friends & Brgrs",
+    "lat": 61.4942005,
+    "lng": 21.8002832,
+    "address": "Siltapuistokatu 14, 28100, Pori",
+    "city": "Pori",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/16499",
+    "name": "Friends & Brgrs Kouvola",
+    "brand": "Friends & Brgrs",
+    "lat": 60.8767542,
+    "lng": 26.65124,
+    "address": "Kauppakeskus Veturi, 45720, Kouvola",
+    "city": "Kouvola",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/16489",
+    "name": "Friends & Brgrs Sello",
+    "brand": "Friends & Brgrs",
+    "lat": 60.21821389999999,
+    "lng": 24.8108556,
+    "address": "Kauppakeskus Sello, 02600, Espoo",
+    "city": "Espoo",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15373",
+    "name": "Friends & Brgrs Messukeskus",
+    "brand": "Friends & Brgrs",
+    "lat": 60.2032647,
+    "lng": 24.9365411,
+    "address": "",
+    "city": "Helsinki",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15370",
+    "name": "Friends & Brgrs Myyrmanni",
+    "brand": "Friends & Brgrs",
+    "lat": 60.26014319999999,
+    "lng": 24.8534582,
+    "address": "Iskoskuja 3, 01600, Vantaa",
+    "city": "Vantaa",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15367",
+    "name": "Friends & Brgrs Turku, Länsikeskus",
+    "brand": "Friends & Brgrs",
+    "lat": 60.47375739999999,
+    "lng": 22.2278052,
+    "address": "Viilarinkatu 3, 20320, Turku",
+    "city": "Turku",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15364",
+    "name": "Friends & Brgrs Turku",
+    "brand": "Friends & Brgrs",
+    "lat": 60.450712,
+    "lng": 22.2616921,
+    "address": "Yliopistonkatu 29, 20100, Turku",
+    "city": "Turku",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15361",
+    "name": "Friends & Brgrs Vaasa",
+    "brand": "Friends & Brgrs",
+    "lat": 63.09656700000001,
+    "lng": 21.617955,
+    "address": "Hovioikeudenpuistikko 16, 65100, Vaasa",
+    "city": "Vaasa",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15357",
+    "name": "Friends & Brgrs Oulu",
+    "brand": "Friends & Brgrs",
+    "lat": 65.0110332,
+    "lng": 25.4736788,
+    "address": "Storgatan 25, 90590, Uleåborg",
+    "city": "Oulu",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15353",
+    "name": "Friends & Brgrs Nokia Arena",
+    "brand": "Friends & Brgrs",
+    "lat": 61.4936688,
+    "lng": 23.7738592,
+    "address": "Sorinkatu 3, 33100, Tampere",
+    "city": "Tampere",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15350",
+    "name": "Friends & Brgrs Tampere, Koskikeskus",
+    "brand": "Friends & Brgrs",
+    "lat": 61.4960148,
+    "lng": 23.7678514,
+    "address": "Hatanpään valtatie 1, 33100, Tampere",
+    "city": "Tampere",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15347",
+    "name": "Friends & Brgrs Tampere, Keskustori",
+    "brand": "Friends & Brgrs",
+    "lat": 61.49741950000001,
+    "lng": 23.7596528,
+    "address": "Hämeenkatu 17, 33200, Tammerfors",
+    "city": "Tampere",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15344",
+    "name": "Friends & Brgrs Seinäjoki, Ideapark",
+    "brand": "Friends & Brgrs",
+    "lat": 62.7943173,
+    "lng": 22.7947861,
+    "address": "Suupohjantie 57, 60320, Seinäjoki",
+    "city": "Seinäjoki",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15341",
+    "name": "Friends & Brgrs Rovaniemi",
+    "brand": "Friends & Brgrs",
+    "lat": 66.502752,
+    "lng": 25.7248179,
+    "address": "Koskikatu 25, 96200, Rovaniemi",
+    "city": "Rovaniemi",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15330",
+    "name": "Friends & Brgrs Mylly",
+    "brand": "Friends & Brgrs",
+    "lat": 60.4906745,
+    "lng": 22.2015091,
+    "address": "Myllynkatu 1, 21280, Raisio",
+    "city": null,
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15327",
+    "name": "Friends & Brgrs Lahti",
+    "brand": "Friends & Brgrs",
+    "lat": 60.982983,
+    "lng": 25.6631505,
+    "address": "Aleksanterinkatu 18, 15140, Lahti",
+    "city": "Lahti",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15324",
+    "name": "Friends & Brgrs Kuopio, Matkus",
+    "brand": "Friends & Brgrs",
+    "lat": 62.8230441,
+    "lng": 27.6039721,
+    "address": "Matkuksentie 60, 70800, Kuopio",
+    "city": "Kuopio",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15321",
+    "name": "Friends & Brgrs Jyväskylä",
+    "brand": "Friends & Brgrs",
+    "lat": 62.2426706,
+    "lng": 25.7480249,
+    "address": "Kauppakatu 24, 40100, Jyväskylä",
+    "city": "Jyväskylä",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15318",
+    "name": "Friends & Brgrs Pietarsaari",
+    "brand": "Friends & Brgrs",
+    "lat": 63.6747505,
+    "lng": 22.7073186,
+    "address": "Stationsvägen 5, 68600, Jakobstad",
+    "city": "Pietarsaari",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15313",
+    "name": "Friends & Brgrs Hyvinkää",
+    "brand": "Friends & Brgrs",
+    "lat": 60.6306074,
+    "lng": 24.8653722,
+    "address": "Hämeenkatu 9, 05800, Hyvinkää",
+    "city": "Hyvinkää",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15241",
+    "name": "Friends & Brgrs Redi",
+    "brand": "Friends & Brgrs",
+    "lat": 60.1875544,
+    "lng": 24.9781167,
+    "address": "Hermannin rantatie 5, 00580, Helsinki",
+    "city": "Helsinki",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15238",
+    "name": "Friends & Brgrs Itis",
+    "brand": "Friends & Brgrs",
+    "lat": 60.2115022,
+    "lng": 25.0819388,
+    "address": "Turunlinnantie 8, 00930, Helsinki",
+    "city": "Helsinki",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15235",
+    "name": "Friends & Brgrs Lauttis",
+    "brand": "Friends & Brgrs",
+    "lat": 60.1599643,
+    "lng": 24.8810025,
+    "address": "Lauttasaarentie 28, 00200, Helsinki",
+    "city": "Helsinki",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15232",
+    "name": "Friends & Brgrs Mikonkatu",
+    "brand": "Friends & Brgrs",
+    "lat": 60.16983259999999,
+    "lng": 24.9453179,
+    "address": "Mikaelsgatan 8, 00100, Helsinki",
+    "city": "Helsinki",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15229",
+    "name": "Friends & Brgrs Mall of Tripla",
+    "brand": "Friends & Brgrs",
+    "lat": 60.19823959999999,
+    "lng": 24.9298159,
+    "address": "Mall of Tripla, 00520, Helsinki",
+    "city": "Helsinki",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15226",
+    "name": "Friends & Brgrs Kaari",
+    "brand": "Friends & Brgrs",
+    "lat": 60.23596549999999,
+    "lng": 24.8905076,
+    "address": "Kantelettarentie 1, 00420, Helsinki",
+    "city": "Helsinki",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15223",
+    "name": "Friends & Brgrs Iso Omena",
+    "brand": "Friends & Brgrs",
+    "lat": 60.1611727,
+    "lng": 24.7371526,
+    "address": "Piispansilta 11, 02230, Espoo",
+    "city": "Espoo",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15217",
+    "name": "Friends & Brgrs Ainoa",
+    "brand": "Friends & Brgrs",
+    "lat": 60.1761796,
+    "lng": 24.8046807,
+    "address": "Tapionaukio 4, 02100, Espoo",
+    "city": "Espoo",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/15214",
+    "name": "Friends & Brgrs Joensuu",
+    "brand": "Friends & Brgrs",
+    "lat": 62.60095750000001,
+    "lng": 29.7624325,
+    "address": "Kauppatori 2, 80100, Joensuu",
+    "city": "Joensuu",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:friends_and_brgrs/53",
+    "name": "Friends & Brgrs Kokkola",
+    "brand": "Friends & Brgrs",
+    "lat": 63.82711189999999,
+    "lng": 23.1600856,
+    "address": "Mestarintie 10, 67600, Kokkola",
+    "city": "Kokkola",
+    "category": "fast_food",
+    "url": "https://www.friendsandbrgrs.fi/en/restaurants/"
+  },
+  {
+    "id": "official:picnic/4",
+    "name": "Picnic Asematunneli",
+    "brand": "Picnic",
+    "lat": 60.1708987,
+    "lng": 24.9413616,
+    "address": "Asematunneli  Helsinki,  Uusimaa 00100",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0407149821",
+    "hours_html": "<p dir=\"ltr\" style=\"line-height:1.38;margin-top:0pt;margin-bottom:0pt;\"><span style=\"font-size: 11pt; font-family: &quot;Google Sans Text&quot;; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;\">Ma-Pe 06.30-19.00</span></p><p dir=\"ltr\" style=\"line-height:1.38;margin-top:0pt;margin-bottom:0pt;\"><span style=\"font-size: 11pt; font-family: &quot;Google Sans Text&quot;; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;\">La 09.00-17.30</span></p><p dir=\"ltr\" style=\"line-height:1.38;margin-top:0pt;margin-bottom:0pt;\"><span style=\"font-size: 11pt; font-family: &quot;Google Sans Text&quot;; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;\">Su 10.00-17.00</span></p>"
+  },
+  {
+    "id": "official:picnic/40",
+    "name": "Picnic Dixi Tikkurila",
+    "brand": "Picnic",
+    "lat": 60.2935413,
+    "lng": 25.0440832,
+    "address": "Ratatie 11  Vantaa,  Uusimaa 01300",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0405741456",
+    "hours_html": "Ma-Pe&nbsp; &nbsp;7.30-20.00<div>La&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 8.30-18.00</div><div>Su&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;10.00-18.30</div><div><br></div><div>Poikkeusaukiolo La 10.10 8.30-17.00</div>"
+  },
+  {
+    "id": "official:picnic/5",
+    "name": "Picnic Forum&#44; Kukontori",
+    "brand": "Picnic",
+    "lat": 60.1685885,
+    "lng": 24.9379498,
+    "address": "Mannerheimintie 20  Helsinki,  Uusimaa 00100",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0407149830",
+    "hours_html": "Ma-Pe&nbsp; &nbsp;8.00-20.00<div>La&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10.00-19.00</div><div>Su&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;11.00-18.00</div><div><br></div>"
+  },
+  {
+    "id": "official:picnic/7",
+    "name": "Picnic Fredrikinkatu 28",
+    "brand": "Picnic",
+    "lat": 60.164585,
+    "lng": 24.9364478,
+    "address": "Fredrikinkatu 28  Helsinki,  Uusimaa 00120",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0407149824",
+    "hours_html": "<p style=\"box-sizing: border-box; position: relative; margin-top: 0px;\"><span style=\"color: rgb(80, 87, 94); font-family: inherit; font-size: 12px; font-weight: inherit;\">Ma-Pe 08.00-18.00&nbsp;<br></span><span style=\"color: rgb(80, 87, 94); font-family: inherit; font-size: 12px; font-weight: inherit;\">La 10.00-17.00<br></span><span style=\"font-family: inherit; font-weight: inherit; color: rgb(80, 87, 94); font-size: 12px;\">Su Suljettu&nbsp;</span></p>"
+  },
+  {
+    "id": "official:picnic/21",
+    "name": "Picnic Hämeentie 29&#44; Sörnäinen",
+    "brand": "Picnic",
+    "lat": 60.1874227,
+    "lng": 24.9620384,
+    "address": "Hämeentie 29  Helsinki,  Uusimaa 00500",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0407149840",
+    "hours_html": "Ma-To 7.00-19.00<div><span style=\"font-family: inherit; font-weight: inherit;\">Pe 7.00-18.00</span><div>La 8.30-17.00</div><div>Su 8.30-16.30</div><div><br></div><div>29.6. - 2.8.2026</div><div>Ma-pe 7.00-18.00</div><div>La 8.30-16.30</div><div>Su 8.30-16.00</div> </div>"
+  },
+  {
+    "id": "official:picnic/27",
+    "name": "Picnic Hansakeskus Kouvola",
+    "brand": "Picnic",
+    "lat": 60.8690546,
+    "lng": 26.7020697,
+    "address": "Keskikatu 4  Kouvola,  Kymenlaakso 45100",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0407149844",
+    "hours_html": "Ma-pe 8.00-17.00<div><div>La 9.00-14.30<br><div><div><div><span style=\"font-family: inherit; font-weight: inherit;\">Su Suljettu</span></div><div><br></div><div><br></div><div><br></div> </div> </div> </div> </div>"
+  },
+  {
+    "id": "official:picnic/48",
+    "name": "Picnic Helsinki-Vantaan lentoasema",
+    "brand": "Picnic",
+    "lat": 60.3156539,
+    "lng": 24.9653102,
+    "address": "Lentäjäntie 3  Vantaa,  Uusimaa 01530",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "+358505757759",
+    "hours_html": "ma-pe 05.00 - 22.00<div>la 05.00 - 22.00</div><div>su 05.00 - 22.00</div>"
+  },
+  {
+    "id": "official:picnic/8",
+    "name": "Picnic Herttoniemi",
+    "brand": "Picnic",
+    "lat": 60.1929386,
+    "lng": 25.0315053,
+    "address": "Hitsaajankatu 15  Helsinki,  Uusimaa 00810",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0405805406",
+    "hours_html": "<div><span style=\"font-family: inherit; font-weight: inherit;\">Ma-Pe 7.30-18.00</span></div><div><div>La 9.00-16.00</div><div>Su suljettu</div><div><br></div><div><span style=\"font-weight: 600;\">Poikkeusaukioloajat:</span></div></div><br>"
+  },
+  {
+    "id": "official:picnic/30",
+    "name": "Picnic IsoKristiina",
+    "brand": "Picnic",
+    "lat": 61.0567957,
+    "lng": 28.193752,
+    "address": "Kaivokatu 5 B  Lappeenranta,  Etelä-Karjala 53100",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0406647891",
+    "hours_html": "Ma-Pe 8.00-19.00<div>La 10.00-17.00</div><div>Su 12.00-16.00</div><div><br></div><div>Poikkeusaukioloajat:</div><div><br></div><div><br></div><div><br></div>"
+  },
+  {
+    "id": "official:picnic/38",
+    "name": "Picnic Jumbo",
+    "brand": "Picnic",
+    "lat": 60.2922012,
+    "lng": 24.964054,
+    "address": "Vantaanportinkatu 3  Vantaa,  Uusimaa 01510",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0406743572",
+    "hours_html": "<div><span style=\"font-family: inherit; font-weight: inherit;\">Ma-Pe 8.00-21.00</span></div><div>La 8.00-21.00</div><div>Su 11.00-18.00</div><div><br></div><div><br></div><div><br></div>"
+  },
+  {
+    "id": "official:picnic/44",
+    "name": "Picnic Kaari",
+    "brand": "Picnic",
+    "lat": 60.2366679,
+    "lng": 24.8926438,
+    "address": "Kantelettarentie 1  Helsinki,  Uusimaa 00420",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0503415453",
+    "hours_html": "<div><span style=\"font-family: inherit; font-weight: inherit;\">Ma-Pe&nbsp; &nbsp;09.00-20.00</span></div><div>La&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;10.00-19.00</div><div>Su&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;10.00-18.00</div><div><br></div><div>Poikkeuksellisesti pe 21.8 avoinna 09.00-19.00</div><div><br></div><div><br></div><div><br></div>"
+  },
+  {
+    "id": "official:picnic/10",
+    "name": "Picnic Kampintori (Kamppi 2. kerros)",
+    "brand": "Picnic",
+    "lat": 60.1691567,
+    "lng": 24.9332275,
+    "address": "Urho Kekkosen katu 1  Helsinki,  Uusimaa 00100",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0401801054",
+    "hours_html": "<p style=\"box-sizing: border-box; position: relative; margin-top: 0px;\">Ma-Pe 08.00-20.00<br>La 09.00-19.00<br>Su 11.00-19.00</p><p style=\"box-sizing: border-box; position: relative; margin-top: 0px;\">Poikkeusaukiolot:</p><p style=\"box-sizing: border-box; position: relative; margin-top: 0px;\">31.10 11-19</p>"
+  },
+  {
+    "id": "official:picnic/11",
+    "name": "Picnic Kamppi ( E-kerros)",
+    "brand": "Picnic",
+    "lat": 60.1691567,
+    "lng": 24.9332275,
+    "address": "Urho Kekkosen katu 1  Helsinki,  Uusimaa 00100",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "040 7149832",
+    "hours_html": "Ma-pe 7.00-21.00<div>La 7.00-21.00</div><div>Su 8.00-21.00</div><div><br></div><div><p style=\"margin: 0px 0px 0.8em; box-sizing: border-box; position: relative;\">Poikkeusaukiolot:</p><p style=\"margin: 0px 0px 0.8em; box-sizing: border-box; position: relative;\">31.10 8-21</p></div>"
+  },
+  {
+    "id": "official:picnic/12",
+    "name": "Picnic Kasarmikatu 42",
+    "brand": "Picnic",
+    "lat": 60.1659459,
+    "lng": 24.9475426,
+    "address": "Kasarmikatu 42  Helsinki,  Uusimaa 00130",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0407149831",
+    "hours_html": "<div><span style=\"color: rgb(44, 51, 56); font-size: 13px;\">Ma-To 07.30-19.00</span></div><div><span style=\"color: rgb(44, 51, 56); font-size: 13px;\">Pe 7.30-18.00<br></span></div><span style=\"color: rgb(44, 51, 56); font-size: 13px;\">La 10.30-17.00</span><br style=\"color: rgb(44, 51, 56); font-size: 13px;\"><div><span style=\"color: rgb(44, 51, 56); font-size: 13px;\">Su suljettu</span></div><div><span style=\"color: rgb(44, 51, 56); font-size: 13px;\"><br></span></div><div>Poikkeusaukiolo:</div><div>31.10. Suljettu</div><div><br></div>"
+  },
+  {
+    "id": "official:picnic/14",
+    "name": "Picnic Kauppakeskus Columbus",
+    "brand": "Picnic",
+    "lat": 60.2069143,
+    "lng": 25.1463826,
+    "address": "Vuotie 45  Helsinki,  Uusimaa 00980",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0417314943",
+    "hours_html": "<p><font size=\"2\">Ma-Pe 07.30-19:30<br>La 10.00-18.00<br>Su Suljettu</font></p><p><font size=\"2\"><b>3.8. - 31.8.2026</b><br>La 10.00-17.00</font></p><p><br></p>"
+  },
+  {
+    "id": "official:picnic/25",
+    "name": "Picnic Kauppakeskus Goodman&#44; Hämeenlinna",
+    "brand": "Picnic",
+    "lat": 60.9944142,
+    "lng": 24.4569526,
+    "address": "Kaivokatu 7  Hämeenlinna,  Kanta-Häme 13100",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0405705290",
+    "hours_html": "Ma-Pe 8.00-20.00<div>La 9.00-18.00</div><div>Su 11.00-18.00</div><br>"
+  },
+  {
+    "id": "official:picnic/1",
+    "name": "Picnic Lippulaiva",
+    "brand": "Picnic",
+    "lat": 60.1507827,
+    "lng": 24.6537791,
+    "address": "Espoonlahdenkatu 8  Espoo,  Uusimaa 02320",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "050 5228 482",
+    "hours_html": "<div><span style=\"font-family: inherit; font-weight: inherit;\">Ma-Pe 07.00-20.00</span><br></div><div><div>La 09.00-19.00</div><div>Su 09.00-18.00<br><br></div></div>"
+  },
+  {
+    "id": "official:picnic/33",
+    "name": "Picnic Lundi",
+    "brand": "Picnic",
+    "lat": 60.3936495,
+    "lng": 25.6642635,
+    "address": "Lundinkatu 12  Porvoo,  Uusimaa 06100",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0407149843",
+    "hours_html": "<div><div style=\"box-sizing: border-box;\"><span style=\"font-family: inherit; font-weight: inherit;\">Ma-Pe 08:00-19:00</span></div></div><div style=\"box-sizing: border-box;\">La 09:00-17:00</div><div style=\"box-sizing: border-box;\">Su Suljettu</div><div style=\"box-sizing: border-box;\"><br></div>"
+  },
+  {
+    "id": "official:picnic/16",
+    "name": "Picnic Mall Of Tripla",
+    "brand": "Picnic",
+    "lat": 60.198375,
+    "lng": 24.9325077,
+    "address": "Veturitie 11&#44; A-4054  Helsinki,  Uusimaa 00520",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0447311940",
+    "hours_html": "Ma-pe 7.00-21.00<div>La 8.00-21.00</div><div>Su 9.00-20.00</div><div><br></div><div><br></div><div><br></div>"
+  },
+  {
+    "id": "official:picnic/26",
+    "name": "Picnic Matkakeskus Jyväskylä",
+    "brand": "Picnic",
+    "lat": 62.2417292,
+    "lng": 25.7549688,
+    "address": "Hannikaisenkatu 20  Jyväskylä,  Keski-Suomi 40100",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0407149845",
+    "hours_html": "Ma-Pe 7.00-19.00<div>La-<span style=\"font-family: inherit; font-weight: inherit;\">Su 9.00-17.00</span></div><div><span style=\"font-family: inherit; font-weight: inherit;\"><br></span></div><div><span style=\"font-family: inherit; font-weight: inherit;\">Poikkeusaukioloajat:</span></div><div><br></div>"
+  },
+  {
+    "id": "official:picnic/28",
+    "name": "Picnic Matkus Kuopio",
+    "brand": "Picnic",
+    "lat": 62.8227748,
+    "lng": 27.6024022,
+    "address": "Matkuksentie 60  Kuopio,  Pohjois-Savo 70800",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0406613345",
+    "hours_html": "Ma-Pe 10.00-20.00<div>La 10.00-19.00</div><div>Su 11.00-18.00</div><div><br></div>"
+  },
+  {
+    "id": "official:picnic/15",
+    "name": "Picnic Melkonkatu 28",
+    "brand": "Picnic",
+    "lat": 60.1534826,
+    "lng": 24.8813016,
+    "address": "Melkonkatu 28  Helsinki,  Uusimaa 00210",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0407149822",
+    "hours_html": "<div><span style=\"font-family: inherit; font-weight: inherit;\">Ma-Pe 7.30-18.00</span></div><div>La 9.00-17.00</div><div><span style=\"font-family: inherit; font-weight: inherit;\">Su suljettu</span></div><br><div><br></div>"
+  },
+  {
+    "id": "official:picnic/34",
+    "name": "Picnic Mylly",
+    "brand": "Picnic",
+    "lat": 60.4908003,
+    "lng": 22.2010222,
+    "address": "Myllynkatu 1  Raisio,  Varsinais-Suomi 21280",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0403583156",
+    "hours_html": "Ma-Pe 9.00-20.00<div>La 9.00-20.00</div><div>Su 11.00-19.00</div><div><br></div><br><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div>"
+  },
+  {
+    "id": "official:picnic/46",
+    "name": "Picnic Myyrmanni",
+    "brand": "Picnic",
+    "lat": 60.2600044,
+    "lng": 24.8532226,
+    "address": "Iskoskuja 3a  Vantaa,  Uusimaa 01600",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0503409759",
+    "hours_html": "<div><div><span style=\"font-family: inherit; font-weight: inherit;\">Ma-Pe 7.30-20.00</span></div><div>La 10.00-19.00</div><div>Su 10.00-18.00</div> </div>"
+  },
+  {
+    "id": "official:picnic/41",
+    "name": "Picnic Oulunkylä",
+    "brand": "Picnic",
+    "lat": 60.2285912,
+    "lng": 24.9634062,
+    "address": "Kylänvanhimmantie 29  Helsinki,  Uusimaa 00640",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0407149841",
+    "hours_html": "Ma-Pe 08.00-18.00<div>La 10.00-17.00</div><div><span style=\"font-family: inherit; font-weight: inherit;\">Su Suljettu&nbsp;</span></div><br>"
+  },
+  {
+    "id": "official:picnic/18",
+    "name": "Picnic Pasilan Virastokeskus",
+    "brand": "Picnic",
+    "lat": 60.1989368,
+    "lng": 24.9352076,
+    "address": "Ratapihantie 7  Helsinki,  Uusimaa 00520",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0407774571",
+    "hours_html": "Ma-Pe 7.00-13.00<div>La Suljettu</div><div>Su Suljettu</div><div><br></div>"
+  },
+  {
+    "id": "official:picnic/39",
+    "name": "Picnic Prismakeskus Tikkurila",
+    "brand": "Picnic",
+    "lat": 60.2933308,
+    "lng": 25.0328426,
+    "address": "Unikkotie 13  Vantaa,  Uusimaa 01300",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0407149837",
+    "hours_html": "Ma-To 8.00-19.00<div>Pe 8.00-18.00</div><div>La 8.30-17.00</div><div>Su 9.00-16.30</div><div><br></div><div><b>29.6. - 2.8.2026</b></div><div>Ma-pe 8.00-18.00</div><div>La 9.30-16.00</div><div>Su 9.30-16.00</div>"
+  },
+  {
+    "id": "official:picnic/37",
+    "name": "Picnic Rajalla På Gransen",
+    "brand": "Picnic",
+    "lat": 65.8430199,
+    "lng": 24.1436943,
+    "address": "Länsiranta 10  Tornio,  Lapin maakunta 95400",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0400708660",
+    "hours_html": "Ma-Pe 10.00-19.00<div>La 10.00-18.00</div><div>Su 12.00-16.00</div><div><br></div><div>Poikkeusaukiolo:</div><div>Pe 21.8. suljemme poikkeuksellisesti klo 15</div><div>La 22.8. 11:00-16:00</div>"
+  },
+  {
+    "id": "official:picnic/36",
+    "name": "Picnic Ratina",
+    "brand": "Picnic",
+    "lat": 61.4930988,
+    "lng": 23.7676277,
+    "address": "Kauppakeskus Ratina  Tampere,  Pirkanmaa 33100",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0447126685",
+    "hours_html": "Ma-Pe 8.00-20.00<div>La 9.00-18.00</div><div>Su 11.00-18.00</div><div><br></div><div>Poikkeusaukioloaika:</div><div>31.10.2026 11.00-18.00</div>"
+  },
+  {
+    "id": "official:picnic/35",
+    "name": "Picnic Revontuli",
+    "brand": "Picnic",
+    "lat": 66.5029356,
+    "lng": 25.7246332,
+    "address": "Koskikatu 27 B  Rovaniemi,  Lapin maakunta 96100",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0404848911",
+    "hours_html": "Ma-Pe 07.30-20.00<div>La 9.00-18.00</div><div>Su 11.30-17.00</div><div><br></div><div>Poikkeusaukioloajat:</div><div>Ma 11.9. Suljemme poikkeuksellisesti klo 18</div>"
+  },
+  {
+    "id": "official:picnic/19",
+    "name": "Picnic Runeberginkatu 46",
+    "brand": "Picnic",
+    "lat": 60.1797163,
+    "lng": 24.9232673,
+    "address": "Runeberginkatu 46  Helsinki,  Uusimaa 00260",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0407149829",
+    "hours_html": "Ma-To 7.30-19.00<div>Pe 7.30-18.00</div><div>La 10.00-16.00</div><div>Su 10.30-16.30</div><div><br></div>"
+  },
+  {
+    "id": "official:picnic/42",
+    "name": "Picnic Ruoholahti",
+    "brand": "Picnic",
+    "lat": 60.1638018,
+    "lng": 24.9161409,
+    "address": "Itämerenkatu 11  Helsinki,  Uusimaa 00180",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0504708118",
+    "hours_html": "<div><span style=\"font-family: inherit;\">Ma-Pe&nbsp; klo 6.45-18.30</span></div><div>La&nbsp; klo 9.00-17.00</div><div>Su Suljettu</div><div><br></div><div>Poikkeusaukioloaika:<br>31.10.2026 Suljettu</div>"
+  },
+  {
+    "id": "official:picnic/45",
+    "name": "Picnic Seinäjoki",
+    "brand": "Picnic",
+    "lat": 62.7918664,
+    "lng": 22.8442554,
+    "address": "Ruukintie 2  Seinäjoki,  Etelä-Pohjanmaa 60100",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0504706802",
+    "hours_html": "<div><span style=\"font-family: inherit; font-weight: inherit;\">Ma-Pe 8.00-20.00</span></div><div>La 10.00-17.00</div><div>Su 11.00-17.00</div><div><br></div><div><b>Poikkeusaukioloajat:</b></div>"
+  },
+  {
+    "id": "official:picnic/2",
+    "name": "Picnic Sello",
+    "brand": "Picnic",
+    "lat": 60.2185911,
+    "lng": 24.8108101,
+    "address": "Leppävaarankatu 3-9  Espoo,  Uusimaa 02600",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0504796395",
+    "hours_html": "<div><span style=\"font-family: inherit; font-weight: inherit;\">Ma-Pe 7.30-21.00</span></div><div>La 8.00-20.00</div><p><span style=\"color: rgb(80, 87, 94); font-family: inherit; font-size: 12px; font-weight: inherit;\">Su 10.00-19.00</span></p><div style=\"border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-stretch: inherit; line-height: inherit; font-family: &quot;Whitney SSm A&quot;, &quot;Whitney SSm B&quot;, Arial; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 16px; margin: 0px; padding: 0px; vertical-align: baseline; display: table-row; color: rgb(0, 0, 0);\"><span class=\"explanation\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell;\"><br></span><span class=\"date\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell; width: 84px;\"><span class=\"date\" style=\"border: 0px; font-variant-alternates: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-stretch: inherit; line-height: 1.875rem; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell; width: 84px;\"></span><span class=\"date\" style=\"border: 0px; font-variant-alternates: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-stretch: inherit; line-height: 1.875rem; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell; width: 84px;\"></span><span class=\"date\" style=\"border: 0px; font-variant-alternates: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-stretch: inherit; line-height: 1.875rem; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell; width: 84px;\"></span><span class=\"date\" style=\"border: 0px; font-variant-alternates: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-stretch: inherit; line-height: 1.875rem; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell; width: 84px;\"></span><span class=\"date\" style=\"border: 0px; font-variant-alternates: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-stretch: inherit; line-height: 1.875rem; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell; width: 84px;\"></span><span class=\"date\" style=\"border: 0px; font-variant-alternates: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-stretch: inherit; line-height: 1.875rem; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell; width: 84px;\"><br></span></span><span class=\"time\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell;\"></span></div><div style=\"border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-stretch: inherit; line-height: inherit; font-family: &quot;Whitney SSm A&quot;, &quot;Whitney SSm B&quot;, Arial; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 16px; margin: 0px; padding: 0px; vertical-align: baseline; display: table-row; color: rgb(0, 0, 0);\"><span class=\"explanation\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell;\"></span><span class=\"date\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell; width: 84px;\"></span><span class=\"time\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell;\"><br></span></div><div style=\"border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-stretch: inherit; line-height: inherit; font-family: &quot;Whitney SSm A&quot;, &quot;Whitney SSm B&quot;, Arial; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 16px; margin: 0px; padding: 0px; vertical-align: baseline; display: table-row; color: rgb(0, 0, 0);\"><span class=\"explanation\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell;\"></span><span class=\"date\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell; width: 84px;\"></span><span class=\"time\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell;\"><br></span></div><div style=\"border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-stretch: inherit; line-height: inherit; font-family: &quot;Whitney SSm A&quot;, &quot;Whitney SSm B&quot;, Arial; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 16px; margin: 0px; padding: 0px; vertical-align: baseline; display: table-row; color: rgb(0, 0, 0);\"><span class=\"explanation\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell;\"></span><span class=\"date\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell; width: 84px;\"></span><span class=\"time\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell;\"><br></span></div><div style=\"border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-stretch: inherit; line-height: inherit; font-family: &quot;Whitney SSm A&quot;, &quot;Whitney SSm B&quot;, Arial; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 16px; margin: 0px; padding: 0px; vertical-align: baseline; display: table-row; color: rgb(0, 0, 0);\"><span class=\"explanation\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell;\"></span><span class=\"date\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell; width: 84px;\"></span><span class=\"time\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell;\"><br></span></div><div style=\"border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-stretch: inherit; line-height: inherit; font-family: &quot;Whitney SSm A&quot;, &quot;Whitney SSm B&quot;, Arial; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 16px; margin: 0px; padding: 0px; vertical-align: baseline; display: table-row; color: rgb(0, 0, 0);\"><span class=\"explanation\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell;\"></span><span class=\"date\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell; width: 84px;\"></span><span class=\"time\" style=\"border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.875rem; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 1.125rem; margin: 0px; padding: 5px 10px 5px 0px; vertical-align: baseline; display: table-cell;\"><br></span></div>"
+  },
+  {
+    "id": "official:picnic/29",
+    "name": "Picnic Syke Lahti",
+    "brand": "Picnic",
+    "lat": 60.987094,
+    "lng": 25.6645578,
+    "address": "Kauppakatu 18  Lahti,  Uusimaa 15140",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0406703291",
+    "hours_html": "Ma-Pe 7.30-19.00<br><div>La 9.00-18.00<br></div><div>Su Suljettu</div><div><br></div>"
+  },
+  {
+    "id": "official:picnic/3",
+    "name": "Picnic Tapiola",
+    "brand": "Picnic",
+    "lat": 60.1757288,
+    "lng": 24.8028202,
+    "address": "Länsituuli 6  Espoo,  Uusimaa 02100",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0407149823",
+    "hours_html": "<div>Ma-Pe 8.00-19.00</div><div>La 9.00-18.00<br>Su 10.00-17.00</div><div><br></div><div>Poikkeusaukiolot:</div><div>9.9 suljemme klo 17.30</div><div><br></div>"
+  },
+  {
+    "id": "official:picnic/22",
+    "name": "Picnic Topeliuksenkatu",
+    "brand": "Picnic",
+    "lat": 60.1839618,
+    "lng": 24.9175315,
+    "address": "Topeliuksenkatu 8  Helsinki,  Uusimaa 00250",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0407149827",
+    "hours_html": "<div><div><span style=\"font-family: inherit; font-weight: inherit;\">Ma-Pe 7.00-19.00</span></div><div>La 9.00-18.00</div><div>Su 10.00-18.00</div></div><div><br></div><div><b>Poikkeusaukioloajat:</b></div><div>15.8. 9:30-16:30</div>"
+  },
+  {
+    "id": "official:picnic/47",
+    "name": "Picnic Tuusula",
+    "brand": "Picnic",
+    "lat": 60.4026612,
+    "lng": 25.0271234,
+    "address": "koskenmäenpolku 1  Tuusula,  Uusimaa 04300",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0504432713",
+    "hours_html": "<div><span style=\"font-family: inherit; font-weight: inherit;\">Ma-pe: 8:00-19:00</span></div><div>La 10:00-18:00</div><div>Su 11:00-17:00</div>"
+  },
+  {
+    "id": "official:picnic/31",
+    "name": "Picnic Valkea",
+    "brand": "Picnic",
+    "lat": 65.0114012,
+    "lng": 25.4724047,
+    "address": "Isokatu 24-25  Oulu,  Pohjois-Pohjanmaa 90100",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0406211931",
+    "hours_html": "Ma-Pe 9.00-.20.00<div>La 10.00-19.00</div><div>Su 11.00-18.00</div><div><br></div><div><b>Poikkeusaukioloajat:</b><br>17.9. suljemme poikkeuksellisesti klo 18</div>"
+  },
+  {
+    "id": "official:picnic/24",
+    "name": "Picnic Willa",
+    "brand": "Picnic",
+    "lat": 60.6318629,
+    "lng": 24.8653805,
+    "address": "Torikatu 7  Hyvinkää,  Uusimaa 05800",
+    "category": "cafe",
+    "url": "https://picnic.fi/",
+    "phone": "0406612081",
+    "hours_html": "<div><span style=\"color: rgb(44, 51, 56); font-size: 13px; font-family: inherit; font-weight: inherit;\">Ma-Pe 08.00-20.00</span><br></div><div><span style=\"color: rgb(44, 51, 56); font-size: 13px;\">La 09.00-18.00</span><br style=\"color: rgb(44, 51, 56); font-size: 13px;\"><span style=\"color: rgb(44, 51, 56); font-size: 13px;\">Su 11.00-18.00</span></div><div><br></div><div><br></div>"
+  },
+  {
+    "id": "official:espresso_house/1201",
+    "name": "Espresso House Kamppi HKI",
+    "brand": "Espresso House",
+    "lat": 60.169094,
+    "lng": 24.93355,
+    "address": "Urho Kekkosen katu 1",
+    "postcode": "00100",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301201",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "06:30:00",
+        "openTo": "22:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "06:30:00",
+        "openTo": "22:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "06:30:00",
+        "openTo": "22:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "06:30:00",
+        "openTo": "22:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "06:30:00",
+        "openTo": "22:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "07:30:00",
+        "openTo": "22:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1204",
+    "name": "Espresso House Forum HKI",
+    "brand": "Espresso House",
+    "lat": 60.169306,
+    "lng": 24.938208,
+    "address": "Mannerheimintie 14-20",
+    "postcode": "00100",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301204",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1205",
+    "name": "Espresso House Iso Omena ESP",
+    "brand": "Espresso House",
+    "lat": 60.16214,
+    "lng": 24.738306,
+    "address": "Piispansilta 11",
+    "postcode": "02230",
+    "city": "ESPOO",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301205",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "06:30:00",
+        "openTo": "21:30:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "06:30:00",
+        "openTo": "21:30:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "06:30:00",
+        "openTo": "21:30:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "06:30:00",
+        "openTo": "21:30:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "06:30:00",
+        "openTo": "21:30:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:30:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:00:00",
+        "openTo": "20:30:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1207",
+    "name": "Espresso House Kaari HKI",
+    "brand": "Espresso House",
+    "lat": 60.236541,
+    "lng": 24.891805,
+    "address": "Kantelettarentie 1,",
+    "postcode": "00420",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301207",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1208",
+    "name": "Espresso House Itis HKI",
+    "brand": "Espresso House",
+    "lat": 60.212017,
+    "lng": 25.083053,
+    "address": "Itäkatu 1-7,",
+    "postcode": "00930",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301208",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:30:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "21:30:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "21:30:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "21:30:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:30:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "21:30:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1209",
+    "name": "Espresso House Malmin Nova HKI",
+    "brand": "Espresso House",
+    "lat": 60.251498,
+    "lng": 25.012565,
+    "address": "Ala-Malmin tori 5",
+    "postcode": "00700",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301209",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1211",
+    "name": "Espresso House Citycenter HKI",
+    "brand": "Espresso House",
+    "lat": 60.169867,
+    "lng": 24.941893,
+    "address": "Kaivokatu 8",
+    "postcode": "00100",
+    "city": "HELSINKI",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301211",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "06:30:00",
+        "openTo": "23:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "06:30:00",
+        "openTo": "23:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "06:30:00",
+        "openTo": "23:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "06:30:00",
+        "openTo": "23:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "06:30:00",
+        "openTo": "23:30:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "06:30:00",
+        "openTo": "23:30:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "07:30:00",
+        "openTo": "23:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1212",
+    "name": "Espresso House Kluuvi HKI",
+    "brand": "Espresso House",
+    "lat": 60.169165,
+    "lng": 24.947996,
+    "address": "Kluuvikatu 7",
+    "postcode": "00100",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0400157781",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": false,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1214",
+    "name": "Espresso House Seppä JKL",
+    "brand": "Espresso House",
+    "lat": 62.256303,
+    "lng": 25.775191,
+    "address": "Ahjokatu 5",
+    "postcode": "40320",
+    "city": "Jyväskylä",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301214",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "09:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "09:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "09:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "09:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "09:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1215",
+    "name": "Espresso House University Metro HKI",
+    "brand": "Espresso House",
+    "lat": 60.171184,
+    "lng": 24.947345,
+    "address": "Vuorikatu 12",
+    "postcode": "00100",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301215",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "00:00:00",
+        "openTo": "00:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1217",
+    "name": "Espresso House Hansa TKU",
+    "brand": "Espresso House",
+    "lat": 60.449912,
+    "lng": 22.264066,
+    "address": "Eerikinkatu 17",
+    "postcode": "20100",
+    "city": "Turku",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301217",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:30:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "20:30:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "20:30:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "20:30:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:30:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "18:30:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1218",
+    "name": "Espresso House Kauppakatu JKL",
+    "brand": "Espresso House",
+    "lat": 62.243232,
+    "lng": 25.747795,
+    "address": "Kauppakatu 35",
+    "postcode": "40100",
+    "city": "Jyväskylä",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301218",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1219",
+    "name": "Espresso House Mikonkatu HKI",
+    "brand": "Espresso House",
+    "lat": 60.170258,
+    "lng": 24.945783,
+    "address": "Mikonkatu 11",
+    "postcode": "00100",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301219",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": false,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1220",
+    "name": "Espresso House Jumbo",
+    "brand": "Espresso House",
+    "lat": 60.291901,
+    "lng": 24.965132,
+    "address": "Vantaanportinkatu 7",
+    "postcode": "01300",
+    "city": "Vantaa",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301220",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "09:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "09:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "09:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "09:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "09:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "11:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1221",
+    "name": "Espresso House Fredrikinkatu HKI",
+    "brand": "Espresso House",
+    "lat": 60.162828,
+    "lng": 24.939475,
+    "address": "Fredrikinkatu 27",
+    "postcode": "00120",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301221",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:30:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": false,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1223",
+    "name": "Espresso House Asemantunneli HKI",
+    "brand": "Espresso House",
+    "lat": 60.170822,
+    "lng": 24.941476,
+    "address": "Kaivokatu 1",
+    "postcode": "00100",
+    "city": "HELSINKI",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301223",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "00:00:00",
+        "openTo": "00:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1226",
+    "name": "Espresso House Otaniemi",
+    "brand": "Espresso House",
+    "lat": 60.18469,
+    "lng": 24.826042,
+    "address": "A Bloc",
+    "postcode": "02150",
+    "city": "Espoo",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301226",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "17:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "00:00:00",
+        "openTo": "00:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1227",
+    "name": "Espresso House Stockmann TRE",
+    "brand": "Espresso House",
+    "lat": 61.499021,
+    "lng": 23.770383,
+    "address": "Hämeenkatu 4",
+    "postcode": "33100",
+    "city": "Tampere",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301227",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1228",
+    "name": "Espresso House Ratina",
+    "brand": "Espresso House",
+    "lat": 61.492891,
+    "lng": 23.768674,
+    "address": "Vuolteenkatu 5",
+    "postcode": "33100",
+    "city": "Tampere",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301228",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1229",
+    "name": "Espresso House Yliopistonkatu TKU",
+    "brand": "Espresso House",
+    "lat": 60.451686,
+    "lng": 22.264539,
+    "address": "Yliopistonkatu 23",
+    "postcode": "20100",
+    "city": "TURKU",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301229",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "22:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "22:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "22:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "22:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "22:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "07:00:00",
+        "openTo": "22:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1230",
+    "name": "Espresso House Aleksanterinkatu Lahti",
+    "brand": "Espresso House",
+    "lat": 60.983278,
+    "lng": 25.658238,
+    "address": "Aleksanterinkatu 10",
+    "postcode": "15110",
+    "city": "Lahti",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301230",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": false,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1231",
+    "name": "Espresso House Flamingo",
+    "brand": "Espresso House",
+    "lat": 60.29079,
+    "lng": 24.96909,
+    "address": "Tasetie 8",
+    "postcode": "01510",
+    "city": "Vantaa",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301231",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1232",
+    "name": "Espresso House Matkus",
+    "brand": "Espresso House",
+    "lat": 62.82148,
+    "lng": 27.60605,
+    "address": "Matkuksentie 60",
+    "postcode": "70800",
+    "city": "Kuopio",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301232",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1233",
+    "name": "Espresso House Hakaniemi Metro",
+    "brand": "Espresso House",
+    "lat": 60.178795,
+    "lng": 24.950413,
+    "address": "Hakaniemen metroasema",
+    "postcode": "00530",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301233",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "00:00:00",
+        "openTo": "00:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "00:00:00",
+        "openTo": "00:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "00:00:00",
+        "openTo": "00:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "00:00:00",
+        "openTo": "00:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "00:00:00",
+        "openTo": "00:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "00:00:00",
+        "openTo": "00:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "00:00:00",
+        "openTo": "00:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1234",
+    "name": "Espresso House Espen Vaasa",
+    "brand": "Espresso House",
+    "lat": 63.09656,
+    "lng": 21.61796,
+    "address": "Hovioikeudenpuistikko 16",
+    "postcode": "65100 ",
+    "city": "Vaasa",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "020 7301234",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1235",
+    "name": "Espresso House Trio",
+    "brand": "Espresso House",
+    "lat": 60.9828,
+    "lng": 25.66245,
+    "address": "Aleksanterinkatu 18 ",
+    "postcode": "15140",
+    "city": "Lahti",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301235",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1236",
+    "name": "Espresso House Redi",
+    "brand": "Espresso House",
+    "lat": 60.187,
+    "lng": 24.978,
+    "address": "Hermannin rantatie 5 A",
+    "postcode": "00580",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "020 730 1236",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": true
+    }
+  },
+  {
+    "id": "official:espresso_house/1237",
+    "name": "Espresso House Pasaati",
+    "brand": "Espresso House",
+    "lat": 60.46663,
+    "lng": 26.94601,
+    "address": "Keskuskatu 10",
+    "postcode": "48100 ",
+    "city": "Kotka",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301237",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "12:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1238",
+    "name": "Espresso House Puuvilla",
+    "brand": "Espresso House",
+    "lat": 61.4952,
+    "lng": 21.8011,
+    "address": "Siltapuistokatu 14",
+    "postcode": "28100",
+    "city": "Pori",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301238",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1240",
+    "name": "Espresso House Skanssi",
+    "brand": "Espresso House",
+    "lat": 60.4298,
+    "lng": 22.32189,
+    "address": "Skanssinkatu 10",
+    "postcode": "20730 ",
+    "city": "Turku",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301240",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1242",
+    "name": "Espresso House Mylly Raisio",
+    "brand": "Espresso House",
+    "lat": 60.49078,
+    "lng": 22.201066,
+    "address": "Myllynkatu 1 ",
+    "postcode": "21280",
+    "city": "Raisio",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301242",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:30:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1243",
+    "name": "Espresso House Outlet Helsinki",
+    "brand": "Espresso House",
+    "lat": 60.274715,
+    "lng": 25.08158,
+    "address": "Tatti 17",
+    "postcode": "00760",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0405054719",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "10:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "10:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "10:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "10:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "10:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "10:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1244",
+    "name": "Espresso House Tripla 1. krs",
+    "brand": "Espresso House",
+    "lat": 60.198655,
+    "lng": 24.931373,
+    "address": "Fredikanterassi 1",
+    "postcode": "00520",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301244",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "00:00:00",
+        "openTo": "00:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1245",
+    "name": "Espresso House Airside Airport gate 29 (After security)",
+    "brand": "Espresso House",
+    "lat": 60.317988,
+    "lng": 24.96538,
+    "address": "Portti 29, 3.krs, Schengen-alue",
+    "postcode": "01530",
+    "city": "Vantaa",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "+358207301245",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "04:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "04:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "04:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "04:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "04:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "04:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "04:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1246",
+    "name": "Espresso House Entresse ",
+    "brand": "Espresso House",
+    "lat": 60.204102,
+    "lng": 24.65921,
+    "address": "Siltakatu 11",
+    "postcode": "02770",
+    "city": "Espoo",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301246",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "17:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1247",
+    "name": "Espresso House Ainoa",
+    "brand": "Espresso House",
+    "lat": 60.17624,
+    "lng": 24.80713,
+    "address": "Tapionaukio 4",
+    "postcode": "02100",
+    "city": "Espoo",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301247",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:30:00",
+        "openTo": "18:30:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1248",
+    "name": "Espresso House Willa",
+    "brand": "Espresso House",
+    "lat": 60.63133,
+    "lng": 24.86528,
+    "address": "Torikatu 7",
+    "postcode": "05800",
+    "city": "Hyvinkää",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0405541021",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:30:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1249",
+    "name": "Espresso House Ideapark Lempäälä",
+    "brand": "Espresso House",
+    "lat": 61.361465,
+    "lng": 23.795153,
+    "address": "Ideaparkinkatu 4",
+    "postcode": "37570",
+    "city": "Lempäälä",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301249",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1250",
+    "name": "Espresso House Ideapark Seinäjoki",
+    "brand": "Espresso House",
+    "lat": 62.792275,
+    "lng": 22.801418,
+    "address": "Suupohjantie 57",
+    "postcode": "60320",
+    "city": "Seinäjoki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301250",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "12:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1251",
+    "name": "Espresso House Plaza",
+    "brand": "Espresso House",
+    "lat": 60.386518,
+    "lng": 23.123636,
+    "address": "Vilhonkatu 8",
+    "postcode": "21400",
+    "city": "Salo",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301251",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:00:00",
+        "openTo": "18:30:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1252",
+    "name": "Espresso House Veturi Kouvola",
+    "brand": "Espresso House",
+    "lat": 60.87513,
+    "lng": 26.65329,
+    "address": "Tervasharjunkatu 1",
+    "postcode": "45720",
+    "city": "Kuusankoski",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301252",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1253",
+    "name": "Espresso House Tripla 4. krs",
+    "brand": "Espresso House",
+    "lat": 60.198619,
+    "lng": 24.931194,
+    "address": "Fredikanterassi 1",
+    "postcode": "00520",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301253",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:15:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:15:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:15:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:15:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:15:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:15:00",
+        "openTo": "21:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:30:00",
+        "openTo": "19:30:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1254",
+    "name": "Espresso House Lundi",
+    "brand": "Espresso House",
+    "lat": 60.39383,
+    "lng": 25.66406,
+    "address": "Lundinkatu 12",
+    "postcode": "06100",
+    "city": "Porvoo",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301254",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1255",
+    "name": "Espresso House Zeppelin Kempele",
+    "brand": "Espresso House",
+    "lat": 64.9034,
+    "lng": 25.5387,
+    "address": " Zeppeliinintie 1",
+    "postcode": "90450",
+    "city": "Kempele",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301255",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "11:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1256",
+    "name": "Espresso House Oulu Rotuaari",
+    "brand": "Espresso House",
+    "lat": 65.01249,
+    "lng": 25.47058,
+    "address": "Kirkkokatu 8",
+    "postcode": "90100",
+    "city": "Oulu",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301256",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:30:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "21:30:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "21:30:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "21:30:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:30:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "21:30:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1257",
+    "name": "Espresso House Iso Omena 2 MEET aukio",
+    "brand": "Espresso House",
+    "lat": 60.16153,
+    "lng": 24.73771,
+    "address": "Piispansilta 11",
+    "postcode": "02230",
+    "city": "Espoo",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301257",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:30:00",
+        "openTo": "19:30:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1258",
+    "name": "Espresso House Chydenia Kokkola",
+    "brand": "Espresso House",
+    "lat": 63.836411,
+    "lng": 23.13479,
+    "address": "Tehtaankatu 3-5",
+    "postcode": "67100",
+    "city": "Kokkola",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "020 7301258",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:30:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:00:00",
+        "openTo": "20:30:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:00:00",
+        "openTo": "20:30:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:00:00",
+        "openTo": "20:30:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:30:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1260",
+    "name": "Espresso House Ideapark Oulu",
+    "brand": "Espresso House",
+    "lat": 65.075958,
+    "lng": 25.447491,
+    "address": "Ritaharjuntie 49",
+    "postcode": "90540",
+    "city": "Oulu",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301260",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "10:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "12:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": false,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1261",
+    "name": "Espresso House Sampotalo",
+    "brand": "Espresso House",
+    "lat": 60.470394,
+    "lng": 25.087499,
+    "address": "Sibeliuksenkatu 18-22",
+    "postcode": "04400",
+    "city": "Järvenpää",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301261",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "18:30:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:30:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1262",
+    "name": "Espresso House Sampokeskus Rovaniemi",
+    "brand": "Espresso House",
+    "lat": 66.50213,
+    "lng": 25.73027,
+    "address": "Maakuntakatu 29-31 A",
+    "postcode": "96200",
+    "city": "Rovaniemi",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301262",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1263",
+    "name": "Espresso House Akseli Mikkeli",
+    "brand": "Espresso House",
+    "lat": 61.68869,
+    "lng": 27.27204,
+    "address": "Hallituskatu 7-9",
+    "postcode": "50100",
+    "city": "Mikkeli",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "020 7301263",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "11:00:00",
+        "openTo": "16:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1264",
+    "name": "Espresso House Sello ",
+    "brand": "Espresso House",
+    "lat": 60.21814,
+    "lng": 24.81282,
+    "address": "Leppävaarankatu 3-9",
+    "postcode": "02600",
+    "city": "Espoo",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301264",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1265",
+    "name": "Espresso House Rewell Vaasa",
+    "brand": "Espresso House",
+    "lat": 63.095919,
+    "lng": 21.614569,
+    "address": "Ylätori 2, kauppakeskus Rewell",
+    "postcode": "65100",
+    "city": "Vaasa",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "020 7301265",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1266",
+    "name": "Espresso House Koskikeskus Tampere",
+    "brand": "Espresso House",
+    "lat": 61.495658,
+    "lng": 23.766663,
+    "address": "Hatanpään valtatie 1",
+    "postcode": "33100",
+    "city": "Tampere",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301266",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1267",
+    "name": "Espresso House Börs TKU",
+    "brand": "Espresso House",
+    "lat": 60.451187,
+    "lng": 22.268466,
+    "address": "Eerikinkatu 10",
+    "postcode": "20100",
+    "city": "Turku",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "020 7301267",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1268",
+    "name": "Espresso House Karisma Lahti",
+    "brand": "Espresso House",
+    "lat": 60.98147,
+    "lng": 25.73723,
+    "address": "Kauppiaankatu 2",
+    "postcode": "15160",
+    "city": "Lahti",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "020 7301268",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:30:00",
+        "openTo": "18:30:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1269",
+    "name": "Espresso House Sibeliuksenkatu Hämeenlinna",
+    "brand": "Espresso House",
+    "lat": 60.995966,
+    "lng": 24.464698,
+    "address": "Sibeliuksenkatu 2",
+    "postcode": "13100",
+    "city": "Hämeenlinna",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "020 730 1269",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1270",
+    "name": "Espresso House Carlson Kuopio",
+    "brand": "Espresso House",
+    "lat": 62.891645,
+    "lng": 27.677048,
+    "address": "Haapaniemenkatu 22",
+    "postcode": "70100",
+    "city": "Kuopio",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "020 7301270",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1271",
+    "name": "Espresso House Airport Landside (Before security)",
+    "brand": "Espresso House",
+    "lat": 60.317119,
+    "lng": 24.967231,
+    "address": "Lentoasemantie 3",
+    "postcode": "01530",
+    "city": "Vantaa",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301271",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "04:00:00",
+        "openTo": "22:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "04:00:00",
+        "openTo": "22:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "04:00:00",
+        "openTo": "22:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "04:00:00",
+        "openTo": "22:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "04:00:00",
+        "openTo": "22:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "04:00:00",
+        "openTo": "22:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "04:00:00",
+        "openTo": "22:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1272",
+    "name": "Espresso House Iso Kristiina",
+    "brand": "Espresso House",
+    "lat": 61.05679,
+    "lng": 28.1941,
+    "address": "Kaivokatu 5 B",
+    "postcode": "53100",
+    "city": "Lappeenranta",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "020 7301272",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "18:30:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "17:30:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1274",
+    "name": "Espresso House Columbus",
+    "brand": "Espresso House",
+    "lat": 60.207561,
+    "lng": 25.145221,
+    "address": "Vuotie 45",
+    "postcode": "00980",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301274",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "07:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "17:30:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1275",
+    "name": "Espresso House Lippulaiva",
+    "brand": "Espresso House",
+    "lat": 60.149365,
+    "lng": 24.655572,
+    "address": "Espoonlahdenkatu 4",
+    "postcode": "02320",
+    "city": "Espoo",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "020 730 1275",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1276",
+    "name": "Espresso House Epstori SJK",
+    "brand": "Espresso House",
+    "lat": 62.79048,
+    "lng": 22.84164,
+    "address": "Kalevankatu 4",
+    "postcode": "60100",
+    "city": "Seinäjoki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "020 730 1276",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1277",
+    "name": "Espresso House Laurinkatu Lohja",
+    "brand": "Espresso House",
+    "lat": 60.25022,
+    "lng": 24.06458,
+    "address": "Laurinkatu 53",
+    "postcode": "08100",
+    "city": "Lohja",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301277",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "19:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "19:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "19:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "19:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "19:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1278",
+    "name": "Espresso House Hertsi",
+    "brand": "Espresso House",
+    "lat": 60.19423,
+    "lng": 25.0334,
+    "address": "Linnanrakentajantie 2",
+    "postcode": "00880",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "+358207301278",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1280",
+    "name": "Espresso House Rajalla",
+    "brand": "Espresso House",
+    "lat": 65.843429,
+    "lng": 24.145284,
+    "address": "Länsiranta 10",
+    "postcode": "95400",
+    "city": "Tornio",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301280",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:30:00",
+        "openTo": "20:30:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:30:00",
+        "openTo": "20:30:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:30:00",
+        "openTo": "20:30:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:30:00",
+        "openTo": "20:30:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:30:00",
+        "openTo": "20:30:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "10:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "11:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1281",
+    "name": "Espresso House Toriportti",
+    "brand": "Espresso House",
+    "lat": 65.012602,
+    "lng": 25.468112,
+    "address": "Torikatu 18",
+    "postcode": "90100",
+    "city": "Oulu",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301281",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1282",
+    "name": "Espresso House Iso Karhu",
+    "brand": "Espresso House",
+    "lat": 61.48428,
+    "lng": 21.79732,
+    "address": "Yrjönkatu 14",
+    "postcode": "28100",
+    "city": "Pori",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "+358207301282",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:30:00",
+        "openTo": "19:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:30:00",
+        "openTo": "19:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:30:00",
+        "openTo": "19:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:30:00",
+        "openTo": "19:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:30:00",
+        "openTo": "19:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "17:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1283",
+    "name": "Espresso House Kaivopiha",
+    "brand": "Espresso House",
+    "lat": 60.16982,
+    "lng": 24.94112,
+    "address": "Mannerheimintie 3",
+    "postcode": "00100",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "020 730 1283",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "08:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "08:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/1284",
+    "name": "Espresso House Kamppi 2 E-taso",
+    "brand": "Espresso House",
+    "lat": 60.169374,
+    "lng": 24.93317,
+    "address": "Urho Kekkosenkatu 1",
+    "postcode": "00100",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301284",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "06:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "06:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "06:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "06:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "06:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "07:00:00",
+        "openTo": "21:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "07:30:00",
+        "openTo": "21:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1285",
+    "name": "Espresso House Kivistö",
+    "brand": "Espresso House",
+    "lat": 60.313691,
+    "lng": 24.846401,
+    "address": "Vantaankoskentie 69",
+    "postcode": "01730",
+    "city": "Vantaa",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "020 7301285",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "09:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1286",
+    "name": "Espresso House Redi 2 Foodport",
+    "brand": "Espresso House",
+    "lat": 60.188959,
+    "lng": 24.978864,
+    "address": "Hermannin rantatie 5",
+    "postcode": "00540",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301286",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1287",
+    "name": "Espresso House Potkur Rauma",
+    "brand": "Espresso House",
+    "lat": 61.12787,
+    "lng": 21.50691,
+    "address": "Kauppakatu 3",
+    "postcode": "26100",
+    "city": "Rauma",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "+358207301287",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "08:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "08:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "08:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "08:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "08:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:30:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1288",
+    "name": "Espresso House Verkkokauppa_hki",
+    "brand": "Espresso House",
+    "lat": 60.155855,
+    "lng": 24.92103,
+    "address": "Tyynenmerenkatu 11",
+    "postcode": "00220",
+    "city": "Helsinki",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "0207301288",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "09:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "09:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "09:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "09:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "09:30:00",
+        "openTo": "20:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:30:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "10:30:00",
+        "openTo": "19:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/1289",
+    "name": "Espresso House Isomyy",
+    "brand": "Espresso House",
+    "lat": 62.602008,
+    "lng": 29.762991,
+    "address": "Kauppakatu 26",
+    "postcode": "80100",
+    "city": "Joensuu",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": null,
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "09:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "11:00:00",
+        "openTo": "17:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": false,
+      "takeAwayOnly": false
+    }
+  },
+  {
+    "id": "official:espresso_house/9003",
+    "name": "Espresso House Airside Airport gate 14 (After security)",
+    "brand": "Espresso House",
+    "lat": 60.3142,
+    "lng": 24.975,
+    "address": "Lentoasemantie 1",
+    "postcode": "01530",
+    "city": "Vantaa",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "+35850 5533 936",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "05:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "05:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "05:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "05:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "05:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "05:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "05:00:00",
+        "openTo": "18:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/9005",
+    "name": "Espresso House Airside Airport gate 25 (After security)",
+    "brand": "Espresso House",
+    "lat": 60.32003,
+    "lng": 24.96839,
+    "address": "Lentoasemantie 1",
+    "postcode": "01530",
+    "city": "Vantaa",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": null,
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "04:30:00",
+        "openTo": "22:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "04:30:00",
+        "openTo": "22:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "04:30:00",
+        "openTo": "22:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "04:30:00",
+        "openTo": "22:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "04:30:00",
+        "openTo": "22:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "04:30:00",
+        "openTo": "22:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "04:30:00",
+        "openTo": "22:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  },
+  {
+    "id": "official:espresso_house/9006",
+    "name": "Espresso House Sittkoffska Gården",
+    "brand": "Espresso House",
+    "lat": 60.09895,
+    "lng": 19.94243,
+    "address": "13 Torggatan",
+    "postcode": "22100",
+    "city": "Mariehamn",
+    "category": "cafe",
+    "url": "https://fi.espressohouse.com/loyda-meidat",
+    "phone": "+3581817612",
+    "hours": [
+      {
+        "weekDay": "Maanantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 0
+      },
+      {
+        "weekDay": "Tiistai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 1
+      },
+      {
+        "weekDay": "Keskiviikko",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 2
+      },
+      {
+        "weekDay": "Torstai",
+        "openFrom": "09:00:00",
+        "openTo": "20:00:00",
+        "sortOrder": 3
+      },
+      {
+        "weekDay": "Perjantai",
+        "openFrom": "09:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 4
+      },
+      {
+        "weekDay": "Lauantai",
+        "openFrom": "10:00:00",
+        "openTo": "19:00:00",
+        "sortOrder": 5
+      },
+      {
+        "weekDay": "Sunnuntai",
+        "openFrom": "11:00:00",
+        "openTo": "15:00:00",
+        "sortOrder": 6
+      }
+    ],
+    "features": {
+      "wifi": true,
+      "childFriendly": true,
+      "handicapFriendly": true,
+      "takeAwayOnly": null
+    }
+  }
+]

@@ -1,0 +1,395 @@
+{
+  "source": "s_etukortti_public_search",
+  "query": "helsinki",
+  "locale": "fi",
+  "fetched_at": "2026-10-13T14:04:17.221529+00:00",
+  "complete_for_query": true,
+  "complete_for_finland": false,
+  "error": null,
+  "rows": 313,
+  "sha256": "27db19bcb973dfde476694cd9820bdf2395f8a17cbe8adbbad5ab60900b0b558",
+  "pages": [
+    {
+      "page": 1,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi",
+      "sha256": "e1d4456fae39f53630250a9cf07dc7e18ccf3e74d859975392c734c64b9cfd6e",
+      "rows": 5
+    },
+    {
+      "page": 2,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzExLjIwODUzMiwiQmFyIEhraSIsImQyN2M0MWM0LTY3YzQtNDJmMS1hNjVlLTBlZmQzZmFiZTkzNyJdfQ",
+      "sha256": "63771b4c44df1d76c9212ada2f64dd292b8d27ee73f621960b906fec97d743e9",
+      "rows": 5
+    },
+    {
+      "page": 3,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzguNTEwNzQ5LCJDb2ZmZWUgSG91c2UgS2FubmVsbcOka2ksIEhlbHNpbmtpIiwiNGM1MmM3MmUtZTkzNS00NTljLWEzYjQtOWZmMzZlZjE0NGVhIl19",
+      "sha256": "8144a0d1ad4c27ff510e13a8d72123755c2e7b9a99991c4db0fc1752bfeab054",
+      "rows": 5
+    },
+    {
+      "page": 4,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzYuMjg5NzIxNSwiVGFwYXMgQmFyQ2Vsb25hIiwiMTdiNjEyMDEtNjIxYy00MDgyLWE5N2EtZWNlMTY2MGUzMWU4Il19",
+      "sha256": "402ddb5a5b16f3bc48dcf0f1fe86042cbc5d72d47e882fba906d3473de4f0cbc",
+      "rows": 5
+    },
+    {
+      "page": 5,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzUuOTk4Mzk4MywiVmx0YXZhIiwiMDk5MGQzZDktMzhiYi00OTJlLWJjNjktMmEwM2JlZDY4Y2U3Il19",
+      "sha256": "57c7f765d4081a1078ef4b7fbe12ad6cfc1e216f92ad1e26a27686e1cc7a17ce",
+      "rows": 5
+    },
+    {
+      "page": 6,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzUuNzQ1MTA2NywiQUJDIE1hbG1pIEhlbHNpbmtpIiwiMTU4YzA3ZTAtMWJjOS00NmJhLWI0NTUtMTcyMmM4NGU5Yzk2Il19",
+      "sha256": "9e86f234de0f09a06bdf4cf077abd5842cfd54b266ae85a16a6583bafed86f15",
+      "rows": 5
+    },
+    {
+      "page": 7,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzUuNzQ1MTA2NywiU2lsbcOkYXNlbWEgQ2l0eWNlbnRlciBIZWxzaW5raSIsImFlZWQ3MjI2LTliMTYtNDc1OS04NDM4LTgyNmYwZTFjMTEzOSJdfQ",
+      "sha256": "926d4c06c8c625fb926b0f93dfb227c5b81f089134a74a1e9a8281a6434b0b21",
+      "rows": 5
+    },
+    {
+      "page": 8,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzUuNzQ1MTA2NywiU2lsbcOkYXNlbWEgSGVsc2lua2kgS2Fpdm9waWhhIiwiZDI5ODU1ZDgtNmFlYS00NjVhLWFhODMtODYyNmFmZmFlMzQ5Il19",
+      "sha256": "3e70dad8edc6cdba095818345d13a3d1e3369438ba028d4cca16d2f1229b95a8",
+      "rows": 5
+    },
+    {
+      "page": 9,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzUuNTI5Mzc5LCJTaW5nIGFuZCBQb3JlIiwiZTkyYWZiNTAtYjMwZC00NjFmLWI1N2MtYmFlMDFhZmJlN2VlIl19",
+      "sha256": "691536e048f4514eb32910d16e7f149e9b7edd5341164613011c1a0604043948",
+      "rows": 5
+    },
+    {
+      "page": 10,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzUuMzM5OTQ5LCJBQkMgQ2FyV2FzaCBWdW9zYWFyaSBIZWxzaW5raSIsIjUwYTJmZDZkLTY2YmItNDY0YS05Yzg4LTcyNzhkYmUxOTkyMSJdfQ",
+      "sha256": "0861e78f26fd07918eb3d8c94b897d94ab61266b4560a7dbf9c4cb4a3f8b597c",
+      "rows": 5
+    },
+    {
+      "page": 11,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzUuMzM5OTQ5LCJPcmFsIEhhbW1hc2zDpMOka8Okcml0IEhlbHNpbmtpLCBIYWthbmllbWkiLCI4NTY3YTBhYi1kMDI0LTQwYWYtYjNkMC05ODcxMTMxMmFhNWIiXX0",
+      "sha256": "934bf5bf30f6d80e53e6a914beb77cb1bf4bb5499faf89f8ffb81463a2327686",
+      "rows": 5
+    },
+    {
+      "page": 12,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzUuMzM5OTQ5LCJQdWJsaWMgQ29ybmVyIE1pa29ua2F0dSwgSGVsc2lua2kiLCI0ZGI0MzZlYS0xMWU5LTQ5MTEtYTVmZS05ODQwYmQxZmY0YjQiXX0",
+      "sha256": "505f767eb88c3e270d071370ba25bf7e8e598a507ddd7fd4a5d6ea8af1bc6416",
+      "rows": 5
+    },
+    {
+      "page": 13,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzUuMDE4MDIsIkFCQyBBbGVwYSBWdW9zYWFyZW4gU2F0YW1hIEhlbHNpbmtpIiwiZjdlZjBkZjYtNzYwMy00ZWEwLWJkZGMtZmJmZGJmYTFmNDM1Il19",
+      "sha256": "6078c48fda5b98dbec81cb00c24f08250f2197593781758daf8a4f953d7e2f7b",
+      "rows": 5
+    },
+    {
+      "page": 14,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzUuMDE4MDIsIkFCQy1sYXRhdXMgUHJpc21hIEl0w6RrZXNrdXMgSGVsc2lua2kiLCJiMTAwMTUzYi01MGEwLTQ1OWQtYjhkNi0wNGIzOTNmZDRmY2EiXX0",
+      "sha256": "e8eef5f0e1ae73830806cbf4531afb46650c0856075314e9c97afad70692b99c",
+      "rows": 5
+    },
+    {
+      "page": 15,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzUuMDE4MDIsIk9yYWwgSGFtbWFzbMOkw6Rrw6RyaXQgSGVsc2lua2ksIEthdXBwYWtlc2t1cyBLYWFyaSIsImFlMDZmODBlLTM4ZjUtNDJmYy1iN2E2LTk5NGEyYWMzOTYyOCJdfQ",
+      "sha256": "987fe217a9d0b385de69921896b224822463e7a5204f45243403b51cadbce46d",
+      "rows": 5
+    },
+    {
+      "page": 16,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzUuMDE4MDIsIlJhZGlzc29uIEJsdSBSb3lhbCBIb3RlbCwgSGVsc2lua2kiLCJjNTNhYTc1YS00NWZlLTQ4ZWUtOGZkOS1jN2VmYzViZGZkYjciXX0",
+      "sha256": "1a4fcfcce09442eb6ce3da68b51497c3500bcd93d533ceccc7ccfe588125fb2d",
+      "rows": 5
+    },
+    {
+      "page": 17,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzUuMDE4MDIsIlMtUGFua2tpIFJhaG9pdHVzIEhlbHNpbmtpIEthbXBwaSIsIjA1MWUyNDllLTU0MjgtNDRmNS1hMTkzLTNiNmYxNDk4NzNmNiJdfQ",
+      "sha256": "8caf670489ae5c5b38fd4f5d8db15c4e66a79acba83b9a55e26dee8c1bc6c9a9",
+      "rows": 5
+    },
+    {
+      "page": 18,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzQuNzU2MDYzLCJBQkMtbGF0YXVzIFByaXNtYSBUcmlwbGEgUDMgSGVsc2lua2kiLCIxODIxNTdkMS1jNWNkLTQyZTgtYmQwMi0wNjdlZDc5MGY2Y2EiXX0",
+      "sha256": "1670fe1a7cbb293f332c888150b7bee442e9fc944b108d2a44f5293c038458ff",
+      "rows": 5
+    },
+    {
+      "page": 19,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzQuNzU2MDYzLCJBQkMtbGF0YXVzIFMtbWFya2V0IEtvbmFsYSBIZWxzaW5raSIsIjNmZGNiM2MzLTI4ZDYtNDRmNS04ZDZmLTU5OGQ2NDkxMzU5NiJdfQ",
+      "sha256": "96cb3054031b6a0cb10e3e74679ec990aa522d77589aae2f903c0d86814e21a7",
+      "rows": 5
+    },
+    {
+      "page": 20,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzQuNzU2MDYzLCJBQkMtbGF0YXVzIFMtbWFya2V0IFN1dXRhcmlsYSBIZWxzaW5raSIsImZjOTgwMWQyLWJiMWMtNGZhNS1iYjgyLWE5MWI1MWI1NTE0ZiJdfQ",
+      "sha256": "fbfd85377e2c1140ebca7ab993e715e1019ea3adb646c26e8d8a28fe55c5a97b",
+      "rows": 5
+    },
+    {
+      "page": 21,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzQuNzU2MDYzLCJTb2tvcyBIZWxzaW5raSBBc2lha2Fzb21pc3RhamFwYWx2ZWx1IGphIFMtUGFua2tpIiwiNWRlYjkwZDUtMGNmZS00NGE5LThjYTAtZTM3M2ZkNzgyYjQwIl19",
+      "sha256": "f67e835a86e638b1be9efc828ac1ef9fa87942832870f40b344672a9fd72229f",
+      "rows": 5
+    },
+    {
+      "page": 22,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzQuMzU1NTU5LCJBQkMtbGF0YXVzIFMtbWFya2V0IFZhbGxpbGEgSGVsc2lua2kgLTEua3JzIiwiNDY1NDk1YzItNWJhMi00M2Q4LTkyYzctZDliZjlmZjg1YTAwIl19",
+      "sha256": "fd174a977be3ae67e985cb35fc40e06757b64a969c8d1110acb700f079897d65",
+      "rows": 5
+    },
+    {
+      "page": 23,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzMuOTY3MTYwMiwiV2lsbGlhbSBLLiBNYW5uZXJoZWltaW50aWUiLCI5ZDAwNDE4Zi04NjI2LTRjZWYtYjVkNC0wYWJkN2M3MzcwZWUiXX0",
+      "sha256": "b4781180a5d1416a9b4675e278686d426499e9c34335a09fd741e9301829958c",
+      "rows": 5
+    },
+    {
+      "page": 24,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzMuMDg3ODg1LCJBbGVwYSBIa2ktVmFudGFhIExlbnRvYXNlbWEiLCJhMTFmYWMzMS0yMGQyLTQ1OTUtOGQ5OS1kZWJjMjA3MTA0MTAiXX0",
+      "sha256": "328cfffe596ec3ef475e7dfbeb8de1991531a50b0f862df7bd33680f57cd4de3",
+      "rows": 5
+    },
+    {
+      "page": 25,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJBbGVwYSBDYWxvbml1a3NlbmthdHUiLCJiNjc2NjRhYS05ZWZlLTRmYWQtYTRlNC1mYjFhNmQ1Y2QxYjUiXX0",
+      "sha256": "67880b11452c3f77d250f9210101374184a6c6370e5a299c1f64720b14964249",
+      "rows": 5
+    },
+    {
+      "page": 26,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJBbGVwYSBIZXJ0dG9uaWVtaSIsIjJkMThkNTkxLTUzOTQtNGQ4Zi1hOWNkLTU1NTllYzE4NTVjOCJdfQ",
+      "sha256": "1e89a305eaabe9d6f411016176ff353fa1e444b2743e552ad33814e107cf2eea",
+      "rows": 5
+    },
+    {
+      "page": 27,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJBbGVwYSBKw6R0a8Okc2FhcmkiLCI3ZmZkN2YwMy1mNDU1LTRjYjUtOWZjOS1mNWI2MGQzOTFiODMiXX0",
+      "sha256": "ca93deec8f923f45f12832bde623424d05c1a07f910bda95f6fc37315b5233a5",
+      "rows": 5
+    },
+    {
+      "page": 28,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJBbGVwYSBLYXRhamFub2trYSIsImQ3MjVhMTQ4LTVmM2ItNDAzZS1iMTk1LTRlNzBjYTY3N2VhOCJdfQ",
+      "sha256": "d9b336614ed07f2f47be2f7242239757949a0693615b1718880c1e11dbd18bb9",
+      "rows": 5
+    },
+    {
+      "page": 29,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJBbGVwYSBLcnV1bnV2dW9yZW5yYW50YSIsIjkyNTc2OWZkLTM0MzctNDU0OS1hZTZkLWFjMTY3Y2ZiMzY3YSJdfQ",
+      "sha256": "1c932a652cc3d842794c644548ef4296bf792067d1b5c8da46a870bfc65eaff5",
+      "rows": 5
+    },
+    {
+      "page": 30,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJBbGVwYSBMZWh0aXNhYXJpIiwiOWJiMmRlNjMtODA1MC00NTQwLTk2NDEtNDVkMDVjNmMyNjQ4Il19",
+      "sha256": "4e30602a47130c36dd5f51717e773219941e454809535b2314710efd2f3487a6",
+      "rows": 5
+    },
+    {
+      "page": 31,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJBbGVwYSBNYXVudWxhIiwiMGY0ZGNmYmUtOWNjNi00ODkwLWFhYjEtNTdiYzQ2ZGY4MDEyIl19",
+      "sha256": "cbca37aadf3d438ea639fc71d0cd71075b61a4abb5e0a98cd5db8ffadf83dfb1",
+      "rows": 5
+    },
+    {
+      "page": 32,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJBbGVwYSBNdW5ra2luaWVtaSIsIjE0MzdkMzI5LWY1ZTMtNDRkMi1iYzdjLWRkM2VkYmFmYTE5MCJdfQ",
+      "sha256": "d38235a647a632f35c3cf7c94061b4ade3aec44803ff636dabcc1c66e99e9a7f",
+      "rows": 5
+    },
+    {
+      "page": 33,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJBbGVwYSBQaWhsYWppc3RvIiwiOTJlNDFjNGYtZWRmOC00MTY1LWE5MzYtNGMxMDFhNDk0NGQ0Il19",
+      "sha256": "7cc545cb5a7aca5c3ad96661a8392d523e1d3c4e3545b504eb0c56b7c28ae33d",
+      "rows": 5
+    },
+    {
+      "page": 34,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJBbGVwYSBQb3J2b29ua2F0dSIsImU4YWFiYmE4LTlkZjQtNGU0MC04ZDRhLTZhNWM2MGJmNmUwZCJdfQ",
+      "sha256": "94fd643c41a994d022fa021cfcd6b8491727884bae1f354cb0aead014e28a439",
+      "rows": 5
+    },
+    {
+      "page": 35,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJBbGVwYSBSdW9ob2xhaGRlbmthdHUiLCI1YzhjZjYwNi1iYjNkLTQxOTktYjIxYS0yY2NkNzgxNGY3NGUiXX0",
+      "sha256": "5b9f9b07a404c657d8bef1f04a63c4c9026afab222c64de8492ff6b9349c99b2",
+      "rows": 5
+    },
+    {
+      "page": 36,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJBbGVwYSBUYXBhbmlua3lsw6QiLCJmZDJiZTc3OC1iMTM2LTQzNzUtODgzNS1lZjdhM2EzZDg3NTciXX0",
+      "sha256": "9fc21e8c975de4976cb21da60acc7d01516b31894ae21768bae2d81ff99a9d73",
+      "rows": 5
+    },
+    {
+      "page": 37,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJBbGVwYSBVbGxhbmxpbm5hIiwiZTZjMjliMjUtZjg4Mi00NGQ5LTg2MzQtYTE3NWJlZjk0YTUzIl19",
+      "sha256": "cb8222dbcad88207d42e9a345784890bb241a7bc38065956e514c519151aaadd",
+      "rows": 5
+    },
+    {
+      "page": 38,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJBbGVwYSBWaWhkaW50aWUiLCI4OWQ4N2YxNC02MjY4LTQyYjEtODI2OC02NDIwNmEwZjg0ODAiXX0",
+      "sha256": "88b5d8af92dc4ec27eca9a451c4d822d6d594ce9a1131cfe87feeb0c8a699b3b",
+      "rows": 5
+    },
+    {
+      "page": 39,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJBbGVwYSBWdW9zYWFyaSIsImUzODdlYmM3LWUyZWYtNDRmYi1hODEyLTA3ODUwYzM0ODcwMiJdfQ",
+      "sha256": "8f5a717aa32086155b5f7fff3f716de7f0db351c049ed8331bd43c15687f27ef",
+      "rows": 5
+    },
+    {
+      "page": 40,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJCaW9SZXggTGFzaXBhbGF0c2kiLCI0YzM3ZDIzMi01NjRiLTQ1ZmItYjE0Yi0xYjM2YjZmMGVlN2QiXX0",
+      "sha256": "cbf15ed914f9e9dcb14531395c9859a6f9f422dc96a4dcbb4d164bb588cb4e91",
+      "rows": 5
+    },
+    {
+      "page": 41,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJDaGljbydzIFZpaWtraSIsIjA5M2I3YmFlLTg0NDQtNDkxOS05YWM4LWZlMmRmZmViYzcyNiJdfQ",
+      "sha256": "dbcee702915e4aea7e514c4320d1c8517cfc7e2aa7a25635ca3534085887ddd1",
+      "rows": 5
+    },
+    {
+      "page": 42,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJGb29kIE1hcmtldCBIZXJra3UgSGVsc2luZ2luIEtlc2t1c3RhIiwiYjk2MTNlZTItOWYyMC00Yzg0LTkwYjAtZjFmMTcxNWY1MTMxIl19",
+      "sha256": "981d2ca4cac394eb99616677d9752bb1a6cbe35e276016e9e93e5c3ef66e6aa5",
+      "rows": 5
+    },
+    {
+      "page": 43,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJIT0stRWxhbm5vbiBIYXV0YXVzcGFsdmVsdSBNYWxtaSIsImVmNjE1YjQ1LTk4ZDAtNDBjZC1hZTJlLWY5YTRhODhkNGY4NiJdfQ",
+      "sha256": "9e41ce64761dd3b886acd5da38b1fe5964f005e1f291c8d2f0d1c308953bc0b0",
+      "rows": 5
+    },
+    {
+      "page": 44,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJIT0stRWxhbm5vbiBMYWtpcGFsdmVsdSBLYWxsaW8iLCJhN2EyNDg5Yy0wMGZlLTQwNDYtOTE3NS01NjJjMGQzNTk3OTYiXX0",
+      "sha256": "1be37d70d73e2d53a2c39a78aee3e9c63f83908527a70c695b1fbaa5438205a4",
+      "rows": 5
+    },
+    {
+      "page": 45,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJIaWV0YWxhaGRlbiBBcHRlZWtraSIsIjViYTViNGYyLWZiM2ItNDQyMi1iMWM1LWFiY2QwNmE3OTAxMyJdfQ",
+      "sha256": "cfe35e438b3e8257d0e4fe6b42eb2f00c1998c634ace28785d2c6cc32a8611ca",
+      "rows": 5
+    },
+    {
+      "page": 46,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJLb3J0dGVsaWtvbnR0b3JpIE15bGx5cHVybyIsIjA1ZDMyNjEzLTY0YmEtNDhhNy04Y2QyLTFmNWY3NjIxZTE5YyJdfQ",
+      "sha256": "ba89670840f67a10c25194db342c3e1bc2e4b7e982dd83705a7e145842ad094c",
+      "rows": 5
+    },
+    {
+      "page": 47,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJNdW1tb3R1bm5lbGkiLCI3N2ZlN2IxMC03ZjJlLTQ5N2EtYTMzMS0wNTU1OTE3YzkzNjQiXX0",
+      "sha256": "9812c8f224ff7188f80979b2eda035cd5170e98f0324c5d0036f8c2daf98cbb5",
+      "rows": 5
+    },
+    {
+      "page": 48,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJPcmlnaW5hbCBTb2tvcyBIb3RlbCBBbGJlcnQsIGFhbWlhaW5lbiIsIjUwZGUwNDRjLTljMTUtNDFkZC1iYjI3LTJhN2Q1MzBkNjVlMiJdfQ",
+      "sha256": "72550a5f7e1d04bcea39daf0211d663bee68a0158cb48b98c211f1c3012e8617",
+      "rows": 5
+    },
+    {
+      "page": 49,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJQcmFoYSIsIjUzM2MxZTJhLTZmZTEtNDZkMC1hZWMwLTBmODE4MjhkM2I4NyJdfQ",
+      "sha256": "b9b6d1f9663b2038dc354fe04f351a8c848c943eacd5816190f48be55cf133cf",
+      "rows": 5
+    },
+    {
+      "page": 50,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJQcmlzbWEgS2FhcmkgS2FubmVsbcOka2kgQXNpYWthc29taXN0YWphcGFsdmVsdSBqYSBTLVBhbmtraSIsIjljNjFhMDBmLWU0ZTktNGQ3ZS1iMGE0LTllNzA0NTliNTQ3MyJdfQ",
+      "sha256": "8e26b8e6cf5c2f08d589a72df112334dc115e5f9531533f3efdf28176f8941e4",
+      "rows": 5
+    },
+    {
+      "page": 51,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJQcmlzbWEgVmlpa2tpIiwiNjJjZTc1YjctOTNmMy00OGRmLTg4ZTItNTNiZmRhOWIzNTY5Il19",
+      "sha256": "e9dafb9992f57e497ac9dc6247911064ee8c2a9f22d84b3979788522dcc1b167",
+      "rows": 5
+    },
+    {
+      "page": 52,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJSYWRpc3NvbiBCbHUgUm95YWwga29rb3VzLSBqYSBqdWhsYXRpbGF0IiwiYzJlNWIxYTctOTgwYy00NDdmLWJhZDgtMDgzNjY5OWNhODZhIl19",
+      "sha256": "7917f47f4697a2c66310706f71284388227be0e6252344bbd741cd54da3cadb7",
+      "rows": 5
+    },
+    {
+      "page": 53,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJTLVBhbmtraWlyaSBLb2tvIFN1b21pIiwiNjVlNmU1ZGYtYTc5Ny00MjljLWJkMTctYjI5ZWQ5NWYwN2NhIl19",
+      "sha256": "c4facbf522474abffc48d4769f435c126630ad8c1c63d73031caa50f6ef5b0e7",
+      "rows": 5
+    },
+    {
+      "page": 54,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJTLW1hcmtldCBIZXJ0dG9uaWVtaSIsIjU5N2JiY2VhLWM1YzYtNDAxOC05YWMxLTMzZjVjMjQ2NzgxNSJdfQ",
+      "sha256": "eb81482c90929375bd67b803021708049c8f1d9b0e12db1e50ee6243b30ff940",
+      "rows": 5
+    },
+    {
+      "page": 55,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJTLW1hcmtldCBLb250dWxhIiwiZjkyNGIzNzMtZmNlOC00OWU4LThkMDEtNGU0ZTk2NDQ5YmM0Il19",
+      "sha256": "029f76ce9d36bb1f3515ac7613f26e98e1acf5f510b86542b6226c6638aca3d5",
+      "rows": 5
+    },
+    {
+      "page": 56,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJTLW1hcmtldCBNYXVudWxhIiwiZTQ5YjliMDQtMjk3Mi00OGY0LWE2MGItMTliNDM5ZjBhYTg5Il19",
+      "sha256": "e2d00134a4d72655ff8bb858363baf7dee244aa39b28c31916fc7676a119259c",
+      "rows": 5
+    },
+    {
+      "page": 57,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJTLW1hcmtldCBQaWhsYWphbcOka2kiLCJmZjlmOWNhNy1jNGFkLTRkNjctYTFmYi1lNTk2NDRjNmU3ODciXX0",
+      "sha256": "ca3eee4fd6a78dad169ecc7e92699298bef102a9d385d487e58876dfa2f39d2f",
+      "rows": 5
+    },
+    {
+      "page": 58,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJTLW1hcmtldCBUb3JwcGFyaW5tw6RraSIsImRiYjczMTRiLTYxNTgtNDM3NC04YWVmLTNkYjY2NDZhNTQwNCJdfQ",
+      "sha256": "920217f642782ddcdfc9176d2b3caf4f18ba0900db804a01624673ccbe984c55",
+      "rows": 5
+    },
+    {
+      "page": 59,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJTLW1hcmtldCBZbXB5csOkdGFsbyIsIjRjMThjZjZhLTM0ZWItNDUxOC1hYzc4LWZkYWFkMmQ5MTI2ZCJdfQ",
+      "sha256": "c6e955be20a9e18d9d6e15e5c44d01c85c3e839034ec3721567740020afee3ef",
+      "rows": 5
+    },
+    {
+      "page": 60,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJTaWlwaXlodGnDtiwgUy1tYXJrZXQgUmVkaSIsIjliMDVhNjk2LTRhMTEtNDM1YS04ZWRkLTczZDYyOTJiMmM2OCJdfQ",
+      "sha256": "9583c16fcfd74e1ca67c3690674d88de240645521e9686ad304bd8dada8a1661",
+      "rows": 5
+    },
+    {
+      "page": 61,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCJTcGFnaGV0dGVyaWEgS2FhcmkiLCJjODQ1MDRjNy0wNWMyLTRiNzEtYjYzYy00NzQ5ZjViYTRiMjMiXX0",
+      "sha256": "dcc1a11af36b2e94ec775402f24c07b66e9541ee2375b09c431d0d8df14b1364",
+      "rows": 5
+    },
+    {
+      "page": 62,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzIuMjA1NjU3LCLDhHNzw6RwYXJra2kgc29waW11c3B5c8Oka8O2aW50aSIsImQ5OTYxNTA5LTE3MzktNGYzNC05ZDE2LTIzNDhlOTA4NjAzMyJdfQ",
+      "sha256": "7edf9896e09dfc4e189702294ddbe5060fcb144ed5e12fee85c11784dcc91714",
+      "rows": 5
+    },
+    {
+      "page": 63,
+      "url": "https://s-etukortti.fi/data/pob-search?q=helsinki&locale=fi&cursor=eyJwcmVmZXJlbmNlIjoid2syNXA2Iiwic29ydCI6WzAuNDIwNDg0MDcsIlNvbG8gU29rb3MgSG90ZWwgTGFoZGVuIFNldXJhaHVvbmUiLCI2ZjdlZjA4MC01NGZjLTRlY2EtYjRiNy1hYzQyODE2NzlkODUiXX0",
+      "sha256": "053f6da07c577f54d47a562ec75442f85bf37f0fee27abf8ed4b48bcebf21942",
+      "rows": 3
+    }
+  ],
+  "raw_sha256": "f9eada52e01506e69593265da619d00e7bdf7f56dfa48f04936647a3bac783a0",
+  "raw_file": "places.raw.json",
+  "category_version": "s-etukortti-v1",
+  "category_provenance": "Locally inferred from explicit name and official URL, not supplied by API"
+}
