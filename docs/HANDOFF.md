@@ -925,3 +925,8 @@ Read these three docs first, in order:
   shown; site_hours intact (1007 Helsinki, 2085 FI-wide sliced for
   Fresh as fresh-site-fi.json); chains live in all 17 areas. FI estate
   inventory: 23,820 POIs (table in session artifacts).
+- Tiles FI (run 38649135809) green after ASCII-fold fix (release
+  assets fold ä, area ids don't — Lahti/Lappeenranta 404s before).
+  17 pois.pmtiles + manifests uploaded to pois-2026-Q4 as stable
+  public assets (2.1 MB total; Helsinki round-trip sha-verified).
+  Detail/name shards stay in the 30-day CI artifact for now.
