@@ -39,7 +39,7 @@ NATIONAL = {'gb': 'https://download.geofabrik.de/europe/great-britain-latest.osm
 AMENITY = set(('restaurant cafe pub bar nightclub fast_food ice_cream pharmacy '
                'doctors dentist cinema theatre arts_centre library place_of_worship '
                'clinic optician').split())
-TOURISM = set('hotel guest_house hostel caravan_site camp_site attraction museum gallery viewpoint'.split())
+TOURISM = set('hotel guest_house hostel motel inn bed_and_breakfast resort lodge serviced_apartment caravan_site camp_site attraction museum gallery viewpoint'.split())
 LEISURE = set('park nature_reserve miniature_golf sports_centre'.split())
 
 

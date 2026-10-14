@@ -96,7 +96,7 @@ function mapOsmCategory(tags = {}) {
   if (['pharmacy', 'doctors', 'dentist', 'clinic', 'hospital', 'optician'].includes(a)) return { category: 'health', label: 'Health' };
   if (['parking', 'parking_space', 'bicycle_parking', 'motorcycle_parking'].includes(a)) return { category: 'parking', label: 'Parking' };
   if (['theatre', 'cinema', 'arts_centre', 'library', 'place_of_worship'].includes(a) || t === 'museum' || t === 'gallery') return { category: 'culture', label: 'Culture' };
-  if (t === 'hotel' || t === 'guest_house' || t === 'hostel') return { category: 'hotel', label: 'Hotel' };
+  if (['hotel', 'guest_house', 'hostel', 'motel', 'inn', 'bed_and_breakfast', 'resort', 'lodge', 'serviced_apartment'].includes(t)) return { category: 'hotel', label: 'Hotel' };
   if (t === 'caravan_site' || t === 'camp_site') return { category: 'camping', label: 'Camping' };
   if (t === 'attraction' || t === 'viewpoint' || l === 'park' || l === 'nature_reserve' || l === 'miniature_golf') return { category: 'attraction', label: 'Attraction' };
   if (s) return { category: 'shopping', label: 'Shop' };

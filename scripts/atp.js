@@ -383,7 +383,7 @@ function atpCategory(f) {
   if (['pharmacy', 'doctors', 'dentist', 'clinic', 'hospital', 'optician', 'veterinary'].includes(a)) return ['health', 'Health'];
   if (['charity_shop'].includes(a)) return ['shopping', 'Charity shop'];
   if (['theatre', 'cinema', 'arts_centre', 'library', 'place_of_worship'].includes(a) || t === 'museum' || t === 'gallery') return ['culture', 'Culture'];
-  if (t === 'hotel' || t === 'guest_house' || t === 'hostel') return ['hotel', 'Hotel'];
+  if (['hotel', 'guest_house', 'hostel', 'motel', 'inn', 'bed_and_breakfast', 'resort', 'lodge', 'serviced_apartment'].includes(t)) return ['hotel', 'Hotel'];
   if (t === 'attraction' || t === 'viewpoint') return ['attraction', 'Attraction'];
   if (['parking', 'parking_space', 'bicycle_parking', 'motorcycle_parking'].includes(a)) return ['parking', 'Parking'];
   if (['fuel'].includes(a)) return ['transport', 'Transport'];
