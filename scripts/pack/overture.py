@@ -437,15 +437,16 @@ def main():
             continue
         dupe = row_matches_any_poi(o, pois)
         if dupe:
-            # Cross-category match against a hidden POI is a different
-            # feature of one venue ONLY for accommodation (measured: hotel
-            # row vs hidden restaurant node 10m away — the hotel building
-            # and its restaurant genuinely coexist as pins). Other classes
-            # stay blocked: a hidden POI of another category at the same
-            # spot is more likely one misclassified feature (measured: 63
-            # service forks in one Helsinki pass before this gate).
-            dupe_hidden = bool(dupe.get('position_hazard') or dupe.get('unresolved_why'))
-            if cls not in ('hotel', 'camping') or cls == dupe.get('category') or not dupe_hidden:
+            # Cross-category match is a different feature of one venue ONLY
+            # for accommodation (measured: hotel row vs Scandic-restaurant
+            # node 10m away — the hotel building and its restaurant
+            # genuinely coexist as pins, and the orphan flags the old code
+            # read here don't exist yet at overture time: recount runs
+            # later. So no hidden-gate — the class gate carries it). Other
+            # classes stay blocked: a same-spot POI of another category is
+            # more likely one misclassified feature (measured: 63 service
+            # forks in one Helsinki pass before this gate).
+            if cls not in ('hotel', 'camping') or cls == dupe.get('category'):
                 skipped_dupe += 1
                 continue
         gate_tally['pass'] += 1
