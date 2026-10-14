@@ -55,7 +55,9 @@ jobs:
         run: |
           mkdir -p /tmp/packs
           for a in ${{ inputs.areas || 'eu/gb/england/essex/southend-on-sea eu/fi/uusimaa/helsinki' }}; do
-            slug=$(echo "$a" | tr '/' '-')
+            # Release assets ASCII-fold (etela, paijat) while area ids keep
+            # diacritics — fold here (measured: Lahti/Lappeenranta 404s).
+            slug=$(echo "$a" | tr '/' '-' | sed 'y/äöåÄÖÅ/aoaAOA/')
             d=/tmp/packs/$a; mkdir -p "$d"
             curl -sSL --retry 3 -o "$d/pois.json" "https://github.com/${{ github.repository }}/releases/download/pois-2026-Q4/${slug}.json"
           done
@@ -64,7 +66,7 @@ jobs:
         run: |
           export PATH="$HOME/tile-bin:$PATH"
           for a in ${{ inputs.areas || 'eu/gb/england/essex/southend-on-sea eu/fi/uusimaa/helsinki' }}; do
-            slug=$(echo "$a" | tr '/' '-')
+            slug=$(echo "$a" | tr '/' '-' | sed 'y/äöåÄÖÅ/aoaAOA/')
             python3 scripts/tiles/emit.py --pois /tmp/packs/$a/pois.json --out /tmp/tiles/$slug
           done
       - name: Bake PMTiles + determinism check
