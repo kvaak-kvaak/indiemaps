@@ -919,3 +919,9 @@ Read these three docs first, in order:
   pre-recount simulation (flags stripped): all 6 create. Redispatched
   spider=true (spider=false would drop site_hours — sites stage needs
   --sites-all).
+- LANDED (run 38644254822 + a39c640 fix): Marski by Scandic + Sokos
+  Torni hotel pins shown in Q4 Helsinki (11004 POIs); Citybox shown
+  with overture-agreed leg; 0 hidden hotels FI-wide; camping 15/15
+  shown; site_hours intact (1007 Helsinki, 2085 FI-wide sliced for
+  Fresh as fresh-site-fi.json); chains live in all 17 areas. FI estate
+  inventory: 23,820 POIs (table in session artifacts).
