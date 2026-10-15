@@ -930,3 +930,8 @@ Read these three docs first, in order:
   17 pois.pmtiles + manifests uploaded to pois-2026-Q4 as stable
   public assets (2.1 MB total; Helsinki round-trip sha-verified).
   Detail/name shards stay in the 30-day CI artifact for now.
+- Builder extras published (Thu): fresh-site-fi.json (2,085 spider-
+  hour rows, join website / round-trip id) + inventory-fi.json (17
+  areas, 23,820 POIs, per-category field coverage) uploaded to
+  pois-2026-Q4 as public assets. Turku curl silently failed once —
+  always assert file set + counts after the download loop.
